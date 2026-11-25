@@ -364,3 +364,26 @@ is run, because each session's data is validated by the tool its session wrote.
 not a feature, but collapsing them would mean deleting other sessions' published work — which
 the standing instruction forbids. It is logged as a decision for the owner, not silently
 "fixed".
+
+## Merge and deploy results (final, this pass)
+
+| Item | Result |
+|---|---|
+| PR #5 — verified-source tree + reconciliation | **MERGED** at 2026-11-25T13:52:52Z, merge commit `a071b2d` |
+| PR #10 — section-strip correction (five trees) | **MERGED** at 2026-11-25T13:54:20Z, merge commit `caef9ef` |
+| Pages build after PR #10 | **built**, commit `caef9ef` |
+| Live audit pass | https://kanlerxz87-cyber.github.io/Jackbox1/audit-78005353/site/index.html |
+| Live primary workspace | https://kanlerxz87-cyber.github.io/Jackbox1/pages/index.html |
+| Live sourced dashboard | https://kanlerxz87-cyber.github.io/Jackbox1/docs/index.html |
+| Live main workspace tree | https://kanlerxz87-cyber.github.io/Jackbox1/workspace/index.html |
+
+**PR #5 required three reconciliations.** Main advanced seven times while this session worked. Each
+time, main was merged rather than force-pushed, and the tree was relocated to avoid overwriting another
+session's published files: root → `/workspace/` → finally `/audit-78005353/`. No session's work was
+deleted at any point.
+
+**Deployed-page verification.** The live `sell-vs-renew.html` was fetched after the build and its
+calculator output compared against an independent hand computation of the same arithmetic:
+tax $597,492, after-tax proceeds $2,474,508, renewal present value $2,641,539, differential $167,031 —
+identical in both. The live `calc.js` asset was also fetched and matches the repository.
+
