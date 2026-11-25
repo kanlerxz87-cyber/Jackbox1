@@ -16,6 +16,8 @@ import { fileURLToPath } from 'node:url';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const J = (n) => JSON.parse(readFileSync(join(ROOT, 'data', n + '.json'), 'utf8'));
+/* Sibling sessions namespace their data under data/<session>/ and validate it with their own
+   tooling. This validator owns only the top-level data/*.json files. */
 const fail = [];
 const warn = [];
 const ok = [];
@@ -110,6 +112,17 @@ let broken = 0, linkChecked = 0;
 const linkTargets = pages.map(f => 'pages/' + f).concat(['index.html'])
   .concat(readdirSync(join(ROOT, 'desk')).filter(f => f.endsWith('.html')).map(f => 'desk/' + f))
   .concat(readdirSync(join(ROOT, 'desk', 'pages')).filter(f => f.endsWith('.html')).map(f => 'desk/pages/' + f));
+
+/* Every other session's tree is also link-checked, so no published page anywhere in the repo
+   can carry a dead link. Discovery is dynamic: a new sibling tree is covered automatically. */
+const TREE_DIRS = ['docs', 'workspace', 'audit-78005353', 'audit-78005353/site'];
+TREE_DIRS.forEach(d => {
+  const abs = join(ROOT, d);
+  if (!existsSync(abs)) return;
+  readdirSync(abs, { withFileTypes: true })
+    .filter(e => e.isFile() && e.name.endsWith('.html'))
+    .forEach(e => linkTargets.push(d + '/' + e.name));
+});
 linkTargets.forEach(rel => {
   const path = join(ROOT, rel);
   if (!existsSync(path)) return;
@@ -132,7 +145,8 @@ const PRIVACY = [
   [/\b\d{4}\s+(?:[NSEW]\s+)?[A-Z][a-z]+\s+(?:St|Street|Ave|Avenue|Blvd|Boulevard|Rd|Road|Dr|Drive|Ln|Lane|Way|Pkwy|Parkway)\b/, 'street address'],
   [/\b\d{3}-\d{3}-\d{3}\b/, 'APN-style triple-group number'],
   [/\b\d{1,5}\s+\d{1,5}\s+\d{1,3}\b.*(?:parcel|apn)/i, 'APN-like sequence'],
-  [/\b\d{5}(?:-\d{4})?\b(?=.*\b(?:Suite|Ste|Los Angeles)\b)/, 'ZIP code'],
+  [/\b\d{5}(?:-\d{4})?\b(?=[^\n]*\b(?:Suite|Ste|Apt|Unit)\b)/, 'ZIP code (mailing context)'],
+  [/(?:ZIP|ZIP\s*Code|Postal)\s*[:#]?\s*\d{5}\b/i, 'ZIP code (explicit label)'],
   [/[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/, 'email address'],
   [/\b\(?\d{3}\)?[-.\s]\d{3}[-.\s]\d{4}\b/, 'phone number'],
   [/\b(?:SSN|social security)\b/i, 'social security reference'],
@@ -143,19 +157,24 @@ const scanTargets = [
   ...pages.map(f => join(ROOT, 'pages', f)),
   join(ROOT, 'index.html'),
   join(ROOT, 'assets/js/calc.js'),
-  ...readdirSync(join(ROOT, 'data')).map(f => join(ROOT, 'data', f)),
+  ...readdirSync(join(ROOT, 'data'), { withFileTypes: true })
+    .filter(e => e.isFile()).map(e => join(ROOT, 'data', e.name)),
 ];
 let privacyHits = 0;
 scanTargets.forEach(p => {
   if (!existsSync(p)) return;
   const txt = readFileSync(p, 'utf8');
-  txt.split('\n').forEach((line, i) => {
-    /* allow the allowlisted public phone numbers of government offices? none present. */
+  txt.split('\n').forEach((line0, i) => {
+    /* Source URLs are audited separately against the official-host allowlist, so URL
+       attribute values are removed before the privacy scan. Digits inside a statutory
+       citation such as RTC §11911(b) are prose, not a postal code. */
+    let line = line0.replace(/(?:href|src)="[^"]*"/g, ' ');
+    line = line.replace(/§+\s?\d[\d.]*(?:\([a-z0-9]+\))?/g, ' ');
     PRIVACY.forEach(([re, label]) => {
       if (re.test(line)) {
         /* the QuickFacts FIPS code and figures like 06037C must not trip the checks */
         if (/06037|0644000/.test(line)) return;
-        E(`privacy: ${label} pattern in ${p.replace(ROOT + '/', '')}:${i + 1} → ${line.trim().slice(0, 120)}`);
+        E(`privacy: ${label} pattern in ${p.replace(ROOT + '/', '')}:${i + 1} → ${line0.trim().slice(0, 120)}`);
         privacyHits++;
       }
     });

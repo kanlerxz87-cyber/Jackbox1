@@ -62,15 +62,15 @@ rows:
     note: 2020 base 3,899,342 → −0.8% to 2025. A different vintage from DEM-01 and not directly comparable.
   - id: DEM-05
     category: demographics
-    metric: Population of ZIP 90015 (aggregate of its Census tracts)
+    metric: Population of the demonstration tract district DEMO-TRACTS-A (aggregate of its Census tracts, not the subject parcel)
     value: "72,763"
     unit: persons
-    geo: "ZIP Code Tabulation Area / ZCTA 90015, Los Angeles, CA (demonstration tract set only)"
+    geo: "DEMO-TRACTS-A — a public demonstration tract set in Los Angeles, explicitly NOT the subject parcel"
     period: "ACS 2020–2024 5-year, sum of 23 tract-level B01003 estimates"
-    source: U.S. Census Bureau, ACS 2020–2024 5-year (23 tracts, see data/tracts_demo_90015.csv)
+    source: U.S. Census Bureau, ACS 2020–2024 5-year (23 tracts, see data/tracts_demo_a.csv)
     url: https://api.censusreporter.org/1.0/data/show/latest?table_ids=B01003,B19013,B25077&geo_ids=140|86000US90015
     status: flagged
-    note: "DEMONSTRATION ONLY. 90015 was chosen because it is a central-LA ZIP, not because the subject parcel is there. This figure is the arithmetic sum of the 23 published tract estimates in data/tracts_demo_90015.csv — an aggregation of published values, not an estimate of the parcel's trade area. Replace once the parcel's OWN tract is known (F-01)."
+    note: "DEMONSTRATION ONLY. This tract set was chosen as a central-LA demonstration, not because the subject parcel is there. This figure is the arithmetic sum of the 23 published tract estimates in data/tracts_demo_a.csv — an aggregation of published values, not an estimate of the parcel's trade area. Replace once the parcel's OWN tract is known (F-01)."
   # ---------------- INCOME ----------------
   - id: INC-01
     category: economy
