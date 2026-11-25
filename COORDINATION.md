@@ -582,7 +582,11 @@ Census vintage and the DOF E-1 release, and both are official.
 | E-001 | Create privacy-first static site scaffold in docs/ | done | ee4cc19f | `docs/analysis.html`, `docs/research.html`, `docs/css/style.css`, `docs/.nojekyll`, `.github/workflows/pages.yml` |
 | E-002 | Add sell-vs-hold/after-tax/risk/questions/suggestions/sources/flagged content | done (integrated as non-conflicting additions) | ee4cc19f | `docs/analysis.html`, `docs/research.html`, `docs/suggestions.html` (kept main's conflicting pages; preserved non-conflicting additions) |
 | E-003 | Verification and privacy checks | done | ee4cc19f | repo-wide read-only checks |
-| E-004 | PR #16 merge/integration | in_progress | ee4cc19f | repo-wide |
+| E-004 | PR #16 merge/integration | done | ee4cc19f | repo-wide |
+
+### Deployment (ee4cc19f)
+- 2026-11-25: PR https://github.com/kanlerxz87-cyber/Jackbox1/pull/16 merged to `main` (merge commit on main: 0ecc1d2).
+- 2026-11-25: GitHub Pages legacy build succeeded (`pages build and deployment`, run 45629902253, success) and Actions workflow `Deploy GitHub Pages` succeeded (run 45629903308, success). Pages API reports `status: built`, `build_type: legacy`, source `main:/`, live URL https://kanlerxz87-cyber.github.io/Jackbox1/.
 
 ### Verification (ee4cc19f)
 - 2026-11-25: Verified Census QuickFacts Los Angeles city, CA (https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045224) — population 3,869,089 (V2025); -0.8% Apr 1 2020 base to Jul 1 2025; median HH income $81,939 (2020-2024, 2024$); per capita $47,685; poverty 16.5%; owner-occupied 36.0%; median home value $921,200; median gross rent $1,933; labor force 66.4%; mean travel time 30.7 min; retail sales per capita $21,281 (2022); accommodation/food services sales $17,366,966 ($1,000, 2022).
