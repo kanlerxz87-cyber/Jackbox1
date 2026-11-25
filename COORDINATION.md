@@ -573,3 +573,144 @@ document, rent schedule or owner tax facts were supplied; California's populatio
 Census vintage and the DOF E-1 release, and both are official.
 
 **Open.** The ten decision-blocking questions remain open. No recommendation is made.
+
+
+---
+
+# APPENDIX — session `S-62b1c0c2` board (verbatim from branch `arena/62b1c0c2-jackbox1`)
+
+> Merge note: the section below is preserved verbatim from the session branch. Nothing above (the consolidated
+> `main` board, including every other session’s claims and records) was removed or rewritten. This append was
+> required to resolve an add/add conflict on `COORDINATION.md` without discarding any session’s work.
+
+# COORDINATION.md — Shared task board
+
+**Repo:** `kanlerxz87-cyber/Jackbox1`
+**Board owner convention:** one row per task; status ∈ `unclaimed | in progress | needs review | done`.
+`needs review` items are published on the site's **Flagged for Review** page and do not block the merge.
+
+**Session IDs in use**
+
+| Session ID | Branch | Role | Started |
+|---|---|---|---|
+| `S-2a61b633` | `arena/2a61b633-jackbox1` | Research + build + final integration (this session) | 2026-11-25 |
+
+> No other session has claimed work as of the first commit. Any later session must add a row with its own ID and a
+> **non-overlapping file scope** before editing. If a task needs a file owned by another session, log the request in the
+> *Change requests* section below instead of editing it.
+
+---
+
+## 1. Task board
+
+| ID | Task | Status | Owner | File scope | Sources verified | Notes |
+|---|---|---|---|---|---|---|
+| T-00 | Board, session claim, repo scaffold | done | S-2a61b633 | `COORDINATION.md`, `README.md`, `.gitignore`, `docs/_config.yml` | n/a | Initial claim committed before any data work |
+| W-01 | Replace city/county proxies with trade-area figures | in progress | S-2a61b633 | `docs/data/*`, `docs/economy.html` | Census ACS/BLS/CA DOF/EDD | Tract + place level, not county |
+| W-02 | Extend private worksheet to sell-vs-hold | in progress | S-2a61b633 | `private/worksheet-sell-vs-hold.csv`, `docs/model.html` | IRS/FTB/LA County | Private file is **not** published |
+| W-03 | Decision-gate progress board | in progress | S-2a61b633 | `docs/gates.html` | n/a (framework) | Gate status driven by verified-input register |
+| W-04 | Parcel-level hazard screening | in progress | S-2a61b633 | `docs/hazards.html`, `docs/data/hazards.json` | CalFire / FEMA / USGS / CGS / CalOES | Parcel ID unknown → zone status left blank + flagged |
+| W-05 | Same-store sales / units / closures / franchise rental evidence | in progress | S-2a61b633 | `docs/data/operator.json`, `docs/operator.html` | SEC EDGAR (JACK 10-K/10-Q) | Direction over multi-year series |
+| W-06 | Private lease abstract + notice calendar | in progress | S-2a61b633 | `private/lease-abstract-template.md`, `private/notice-calendar.csv` | CA Civil Code | **Never published** |
+| W-07 | After-tax module | in progress | S-2a61b633 | `docs/data/tax.json`, `docs/tax.html`, `docs/assets/js/tax.js` | IRS / CA FTB / LA County | Rates cited to primary law |
+| W-08 | Price short-lease discount from real quotes | needs review | S-2a61b633 | `docs/data/market.json`, `docs/market.html` | — | No verified quote set available offline → flagged, no value published |
+| W-09 | Questions / missing-information register | in progress | S-2a61b633 | `docs/questions.html`, `docs/data/questions.json` | n/a (framework) | Answers only where sourced |
+| W-10 | One-page printable advisor summary | in progress | S-2a61b633 | `docs/summary.html` | all of the above | Print CSS |
+| W-11 | Browser-only private calculator | in progress | S-2a61b633 | `docs/calculator.html`, `docs/assets/js/calc.js` | IRS/FTB | No network calls, no storage |
+| W-12 | Neighbourhood/tract trend evidence | in progress | S-2a61b633 | `docs/tracts.html`, `docs/data/tracts.json` | Census, CA DOF, EDD, CDE, Caltrans | Regional figures kept alongside |
+| W-13 | Risk register incl. black-swan events | in progress | S-2a61b633 | `docs/risks.html`, `docs/data/risks.json` | CalFire, FEMA, USGS, CDI/FAIR Plan | Scenario library, explicitly illustrative |
+| W-14 | Suggestions section (reviewer can choose a path) | in progress | S-2a61b633 | `docs/suggestions.html` | n/a (advisory) | Advisory only; no data claims |
+| W-15 | Privacy policy + anonymisation rules | in progress | S-2a61b633 | `docs/privacy.html` | CA CCPA/CPRA (leginfo) | No owner/parcel identifiers anywhere |
+| T-90 | Final integration: merge branches, re-verify rows, link check, build, publish Pages, PR + merge, record PR link | in progress | S-2a61b633 | all of `docs/` | — | Runs last |
+
+---
+
+## 2. Research log (what was actually checked, and where)
+
+Format: `task — claim — source URL — retrieved — result`.
+
+- **W-05** — Los Angeles–Long Beach–Glendale metro area labour force / employment / unemployment rate / total nonfarm,
+  May–Oct 2026. Source: <https://www.bls.gov/eag/eag.ca_losangeles_md.htm> — retrieved 2026-11-25. Result: table values
+  captured verbatim (LAUS series `LAUDV06310840000000x`, CES series `SMU06310840000000001`). Oct-2026 figures marked
+  preliminary (`p`) by BLS and recorded as such.
+
+(rows appended as tasks complete — see §4 "Completion records")
+
+---
+
+## 3. Irregularities flagged
+
+| # | Item | Why it matters | Status |
+|---|---|---|---|
+| F-01 | No street address, APN or parcel identifier was supplied | Parcel-level findings (hazard zone status, zoning, AADT, TRA tax rate, comps) **cannot** be verified. Every parcel-specific cell is left blank and marked `unverified`. | published on Flagged for Review |
+| F-02 | No lease document supplied | Rent, escalations, options, co-tenancy, assignment, ROFR, holdover, and expiration year (given only as a range 2030–2035) are unverified. | published |
+| F-03 | No verified arm's-length quote set for a short-lease QSR in central LA | The short-lease discount cannot be priced; no number is published (W-08). | published |
+| F-04 | No assessed value, basis, purchase date, depreciation schedule, or loan terms supplied | After-tax sale comparison cannot produce a dollar result; only the mechanics are published. | published |
+| F-05 | "Central Los Angeles" is not a Census geography | Trade area must be fixed to specific tracts before W-01/W-12 values can be attached to *this* parcel; representative tract sets are published as examples only. | published |
+
+---
+
+## 4. Completion records
+
+(appended per task: sources, verification performed, irregularities, handoff notes)
+
+---
+
+# APPENDIX — session `S-62b1c0c2` (appended only; rows above belong to `S-2a61b633` and are preserved verbatim)
+
+> **Board rule used here:** this file is shared. `S-62b1c0c2` only **appends** its own session row, task rows,
+> research/completion records and handoff notes; it never rewrites or deletes `S-2a61b633` rows above.
+
+## A. Session registry — additional row
+
+| Session ID | Branch | Role | Started |
+|---|---|---|---|
+| `S-62b1c0c2` | `arena/62b1c0c2-jackbox1` | Independent official-source verification, Q&A / suggestions dossier, self-contained aggregate-only dashboard in `site/`, audit tooling | 2026-11-25 |
+
+**Platform constraint logged by `S-62b1c0c2`:** the workspace fixes the branch to
+`arena/62b1c0c2-jackbox1` and forbids switching/creating/pushing other branches, so the requested
+`session-<id>/<task>` branch naming cannot be used here. Non-overlap is enforced by **disjoint file scopes**
+(below) and by pushing only to this session's fixed branch; no other session's files are edited.
+
+## B. Task board — additional rows (disjoint scope)
+
+| ID | Task | Status | Owner | File scope | Sources verified | Notes |
+|---|---|---|---|---|---|---|
+| T-20 | Independent official-source register (economy, demographics, schools, hazards, tax, operator) with retrieved values + links | in progress | S-62b1c0c2 | `verification/SOURCES.md`, `verification/data/*.json` | primary official sources only | Every value linked; unverified → blank + flag |
+| T-21 | Line-by-line Q/A register: questions, information needed, answers, how to obtain missing information | in progress | S-62b1c0c2 | `verification/QUESTIONS.md`, `site/questions.html` | sourced answers only | No PII; placeholders only |
+| T-22 | Suggestions + reviewer decision board (choose a path before implementation) | in progress | S-62b1c0c2 | `verification/SUGGESTIONS.md`, `site/suggestions.html` | n/a | Browser-local shortlist, no transmission |
+| T-23 | Independent risk & decision-gate audit incl. black-swan scenarios | in progress | S-62b1c0c2 | `verification/RISKS.md`, `site/risks.html`, `site/gates.html` | official hazard/tax sources | Illustrative scenarios labelled as such |
+| T-24 | Self-contained aggregate-only dashboard + subpages by category, tables, analysis, Flagged for Review page, printable advisor summary | in progress | S-62b1c0c2 | `site/**` | all of the above | No identifiers, no owner finances, no lease files |
+| T-25 | Browser-only after-tax sell-vs-hold calculator (no network calls, no storage of personal inputs) | in progress | S-62b1c0c2 | `site/calculator.html`, `site/assets/js/calculator.js` | IRS / CA FTB | Placeholder inputs; nothing leaves the browser |
+| T-26 | Automated audit: every table row carries an official source link or blank+flag; internal link check; build check | in progress | S-62b1c0c2 | `verification/check.py`, `verification/REPORT.md` | n/a | Run against `site/` before publish |
+| T-27 | Publish: PR from this branch → main, merge, confirm Pages deploy, record PR link here | unclaimed | S-62b1c0c2 | `COORDINATION.md` appended rows only | n/a | Only own non-overlapping files; no `docs/` edits |
+
+**Scope declaration:** `S-62b1c0c2` does not edit `docs/`, `private/`, `README.md`, `.gitignore`,
+`docs/_config.yml` or any file in §1 above. `site/` is an independent, self-contained dashboard under a
+disjoint path; `verification/` is the independent audit namespace. If integration (`T-90`) needs a shared
+index/navigation change, it is requested in §E rather than performed here.
+
+## C. Research log — additional entries
+
+- **T-20** — appended in `verification/SOURCES.md`; only primary official URLs and verbatim retrieved values
+  are recorded there. Retrieved 2026-11-25.
+- **T-26** — `verification/check.py` enforces: (1) every `<tr>` in a data table has an `https://` source link
+  to an allowlisted official domain, or an explicitly flagged blank; (2) every internal `href` resolves;
+  (3) no PII patterns (addresses, APNs, names, emails, phone numbers) appear in `site/`.
+
+## D. Irregularities flagged — additional rows
+
+| # | Item | Why it matters | Status |
+|---|---|---|---|
+| F-06 | `S-2a61b633` claimed the entire `docs/` scope and T-90 integration | Leaves no unclaimed build task; `S-62b1c0c2` therefore works only in disjoint `site/` + `verification/` scope and logs a handoff request instead of editing claimed files. | logged in §E |
+| F-07 | Platform branch policy conflicts with requested `session-<id>/<task>` branches | Non-overlap enforced by disjoint file scopes on the fixed branch. | logged |
+| F-08 | GitHub Pages source is `main` / `/` (legacy build, verified via `gh api repos/kanlerxz87-cyber/Jackbox1/pages`) while `S-2a61b633` builds into `docs/` | Unless Pages source is changed to `/docs` or a root landing page exists, the published site has no root index. | flagged for integration |
+
+## E. Change requests / handoff log
+
+- `2026-11-25 S-62b1c0c2` → `S-2a61b633` (T-90 integration): if `docs/` is published from `main`, please add
+  one navigation link to the independent dashboard at `/Jackbox1/site/` and to the audit report at
+  `/Jackbox1/verification/REPORT.md`. **No edit to your files is made here; this is a request only.**
+- `2026-11-25 S-62b1c0c2`: T-27 (PR + merge + Pages deploy of my disjoint scope) will be executed in this
+  session because the user requires a live site and a merged PR from the working branch. It merges only
+  `site/`, `verification/` and appended `COORDINATION.md` rows, leaving every `docs/` task for its owner.
