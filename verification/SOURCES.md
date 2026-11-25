@@ -1,0 +1,61 @@
+# Official source register
+
+Session: `S-62b1c0c2` · Retrieved: `2026-11-25`.
+
+Only official government and primary regulatory sources are used for published values. Where a direct fetch was blocked, the method column records that the value was transcribed from indexed content of the official page, and the item is flagged for manual review.
+
+| ID | Agency | Title | URL | Method | Retrieved |
+|---|---|---|---|---|---|
+| CENSUS-QF-CTY-INC | U.S. Census Bureau | QuickFacts — Los Angeles County, California (income & poverty) | https://www.census.gov/quickfacts/fact/table/losangelescountycalifornia/INC110223 | official page content retrieved through indexed official-page extraction; direct fetch was blocked by the Census CDN | 2026-11-25 |
+| CENSUS-QF-CTY-POP | U.S. Census Bureau | QuickFacts — Los Angeles County, California (population & education) | https://www.census.gov/quickfacts/fact/table/losangelescountycalifornia/EDU685224 | official page content retrieved through indexed official-page extraction; direct fetch was blocked by the Census CDN | 2026-11-25 |
+| CENSUS-QF-CTY-INT | U.S. Census Bureau | QuickFacts — Los Angeles County, California (population estimates) | https://www.census.gov/quickfacts/fact/table/losangelescountycalifornia/INT100223 | official page content retrieved through indexed official-page extraction | 2026-11-25 |
+| CENSUS-QF-CTY-HSG | U.S. Census Bureau | QuickFacts — Los Angeles County, California (housing & business) | https://www.census.gov/quickfacts/table/INC110214/06037 | official page content retrieved through indexed official-page extraction (legacy QuickFacts path) | 2026-11-25 |
+| CENSUS-QF-CMP | U.S. Census Bureau | QuickFacts — Los Angeles County, California; California | https://www.census.gov/quickfacts/fact/table/losangelescountycalifornia,CA/INC110221 | official page content retrieved through indexed official-page extraction | 2026-11-25 |
+| CENSUS-QF-COMP3 | U.S. Census Bureau | QuickFacts — Los Angeles County, city and Santa Monica city | https://www.census.gov/quickfacts/fact/map/losangelescountycalifornia,losangelescitycalifornia,santamonicacitycalifornia/BZA010219 | official page content retrieved through indexed official-page extraction | 2026-11-25 |
+| CENSUS-QF-CITY-INC | U.S. Census Bureau | QuickFacts — Los Angeles city, California (income, population, poverty) | https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/INC110223 | official page content retrieved through indexed official-page extraction; direct fetch was blocked by the Census CDN | 2026-11-25 |
+| CENSUS-QF-CITY-HSG | U.S. Census Bureau | QuickFacts — Los Angeles city, California (households, education, geography) | https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/HCN010217 | official page content retrieved through indexed official-page extraction | 2026-11-25 |
+| CENSUS-ACS-API | U.S. Census Bureau | American Community Survey Data via API | https://www.census.gov/programs-surveys/acs/data/data-via-api.html | direct page fetch | 2026-11-25 |
+| CENSUS-DATA | U.S. Census Bureau | data.census.gov | https://data.census.gov/ | official portal referenced from Census pages | 2026-11-25 |
+| CENSUS-ONTHEMAP | U.S. Census Bureau / LEHD | OnTheMap — workforce and commuting data | https://onthemap.ces.census.gov/ | direct page fetch | 2026-11-25 |
+| BLS-EAG-LA | U.S. Bureau of Labor Statistics | Economy at a Glance — Los Angeles-Long Beach-Glendale, CA Metropolitan Division | https://www.bls.gov/eag/eag.ca_losangeles_md.htm | direct page fetch (3 chunks, including footnotes) | 2026-11-25 |
+| EDD-OCT-2026 | California Employment Development Department | California adds 47,100 jobs in October (October 2026 press release) | https://edd.ca.gov/en/about_edd/news_releases_and_announcements/unemployment-october-2026 | direct page fetch (2 chunks) | 2026-11-25 |
+| EDD-LMI | California EDD Labor Market Information Division | Monthly Data Release | https://labormarketinfo.edd.ca.gov/data/monthly-data-release.html | official page content retrieved through indexed official-page extraction | 2026-11-25 |
+| DOF-ESTIMATES | California Department of Finance | Population and Housing Estimates (E-1 to E-8) | https://dof.ca.gov/forecasting/demographics/estimates/ | direct page fetch | 2026-11-25 |
+| BEA-GDP-CTY | U.S. Bureau of Economic Analysis | Gross Domestic Product by County and Personal Income by County, 2024 | https://www.bea.gov/data/gdp/gdp-by-county | direct page fetch | 2026-11-25 |
+| SCAG-CONNECT | Southern California Association of Governments | Connect SoCal (Regional Transportation Plan / Sustainable Communities Strategy) | https://scag.ca.gov/connect-socal | direct page fetch | 2026-11-25 |
+| CDE-DATAQUEST | California Department of Education | DataQuest | https://dq.cde.ca.gov/dataquest/ | direct page fetch | 2026-11-25 |
+| CDE-DATAFILES | California Department of Education | Downloadable Data Files | https://www.cde.ca.gov/ds/ad/downloadabledata.asp | official portal linked from CDE DataQuest | 2026-11-25 |
+| CALTRANS-PEMS | California Department of Transportation | Performance Measurement System (PeMS) — traffic data downloads | https://pems.dot.ca.gov/ | direct page fetch | 2026-11-25 |
+| LACITY-PLANNING | Los Angeles Department of City Planning | City Planning home / zoning search | https://planning.lacity.gov/ | direct page fetch | 2026-11-25 |
+| LACITY-ZONING | City of Los Angeles | New Zoning Code | https://zoning.lacity.gov/ | official portal linked from LA City Planning | 2026-11-25 |
+| LACOUNTY-ASSESSOR | Los Angeles County Assessor | Assessor — property search and tax relief | https://assessor.lacounty.gov/ | direct page fetch | 2026-11-25 |
+| BOE-PUB800-10 | California State Board of Equalization | Publication 800-10 — How Property Is Assessed for Property Tax Purposes | https://boe.ca.gov/pdf/pub800-10.pdf | direct PDF fetch | 2026-11-25 |
+| IRS-TC409 | Internal Revenue Service | Topic no. 409 — Capital gains and losses | https://www.irs.gov/taxtopics/tc409 | direct page fetch | 2026-11-25 |
+| IRS-TC559 | Internal Revenue Service | Topic no. 559 — Net investment income tax | https://www.irs.gov/taxtopics/tc559 | direct page fetch | 2026-11-25 |
+| IRS-P946 | Internal Revenue Service | Publication 946 (2025) — How To Depreciate Property | https://www.irs.gov/publications/p946 | direct page fetch and official indexed content | 2026-11-25 |
+| IRS-P544 | Internal Revenue Service | Publication 544 — Sales and Other Dispositions of Assets | https://www.irs.gov/publications/p544 | official publication linked from IRS Topic 409 | 2026-11-25 |
+| IRS-I8824 | Internal Revenue Service | Instructions for Form 8824 — Like-Kind Exchanges | https://www.irs.gov/pub/irs-prior/i8824--2020.pdf | official IRS PDF retrieved through indexed official content | 2026-11-25 |
+| FTB-CAPGAINS | California Franchise Tax Board | Capital gains and losses | https://www.ftb.ca.gov/file/personal/income-types/capital-gains-and-losses.html | direct page fetch | 2026-11-25 |
+| FTB-FEDCHANGES | California Franchise Tax Board | Summary of Federal Income Tax Changes — 2025 laws | https://www.ftb.ca.gov/about-ftb/data-reports-plans/summary-of-federal-income-tax-changes/index.html | direct page fetch | 2026-11-25 |
+| FTB-SCHCA | California Franchise Tax Board | 2025 Instructions for Schedule CA (540) | https://www.ftb.ca.gov/forms/2025/2025-540-ca-instructions.html | official page content retrieved through indexed official-page extraction | 2026-11-25 |
+| SEC-10K-INDEX | U.S. Securities and Exchange Commission | EDGAR — FY2025 Form 10-K filing index (accession 0000807882-25-000072) | https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/0000807882-25-000072-index.htm | direct page fetch | 2026-11-25 |
+| SEC-10K | U.S. Securities and Exchange Commission | Form 10-K for fiscal year ended September 28, 2025 | https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm | direct page fetch (multiple chunks) | 2026-11-25 |
+| SEC-R5 | U.S. Securities and Exchange Commission | 10-K interactive data — Consolidated Statements of Earnings | https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/R5.htm | direct page fetch | 2026-11-25 |
+| SEC-R33 | U.S. Securities and Exchange Commission | 10-K interactive data — Revenue (Tables), segment disaggregation | https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/R33.htm | direct page fetch | 2026-11-25 |
+| SEC-R10 | U.S. Securities and Exchange Commission | 10-K interactive data — Revenue note | https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/R10.htm | direct page fetch | 2026-11-25 |
+| SEC-Q4-8K | U.S. Securities and Exchange Commission | 8-K Exhibit 99.1 — Fourth Quarter and Full-Year 2025 Earnings | https://www.sec.gov/Archives/edgar/data/807882/000080788225000070/ex991-q425earningsrelease.htm | direct page fetch | 2026-11-25 |
+| SEC-Q2-8K | U.S. Securities and Exchange Commission | 8-K Exhibit 99.1 — Second Quarter 2025 Earnings | https://www.sec.gov/Archives/edgar/data/807882/000080788225000029/ex991-q225earningsrelease.htm | official SEC document retrieved through indexed official content | 2026-11-25 |
+| SEC-Q3-8K | U.S. Securities and Exchange Commission | 8-K Exhibit 99.1 — Third Quarter 2025 Earnings | https://www.sec.gov/Archives/edgar/data/807882/000080788225000042/ex991-q325earningsrelease.htm | official SEC document retrieved through indexed official content | 2026-11-25 |
+| SEC-FACTS | U.S. Securities and Exchange Commission | XBRL company facts — CIK 0000807882 | https://data.sec.gov/api/xbrl/companyfacts/CIK0000807882.json | direct page fetch | 2026-11-25 |
+| FEMA-MSC | Federal Emergency Management Agency | FEMA Flood Map Service Center | https://msc.fema.gov/portal/home | direct page fetch | 2026-11-25 |
+| FEMA-FLOOD-INS | Federal Emergency Management Agency | Flood Insurance / National Flood Insurance Program | https://www.fema.gov/flood-insurance | direct page fetch | 2026-11-25 |
+| FEMA-NRI | Federal Emergency Management Agency | National Risk Index for Natural Hazards | https://www.fema.gov/flood-maps/products-tools/national-risk-index | direct page fetch | 2026-11-25 |
+| CALFIRE-FHSZ | CAL FIRE / Office of the State Fire Marshal | Fire Hazard Severity Zones | https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones | direct page fetch | 2026-11-25 |
+| CGS-SHZP | California Geological Survey | California Seismic Hazards Program / EQ ZApp | https://www.conservation.ca.gov/cgs/shzp | direct page fetch | 2026-11-25 |
+| CGS-EQZAPP | California Geological Survey | CGS Regulatory Maps Geo Application (EQ ZApp) | https://maps.conservation.ca.gov/cgs/informationwarehouse/eqzapp | official portal linked from the CGS Seismic Hazards Program page | 2026-11-25 |
+| USGS-NSHM | U.S. Geological Survey | 2023 50-State Long-term National Seismic Hazard Model (revised 2026) | https://www.usgs.gov/programs/earthquake-hazards/science/2023-50-state-long-term-national-seismic-hazard-model-0 | direct page fetch | 2026-11-25 |
+| CEA | California Earthquake Authority | California Earthquake Authority | https://www.earthquakeauthority.com/ | direct page fetch | 2026-11-25 |
+| CDI-FAIR | California Department of Insurance | Commissioner approves major FAIR Plan expansion (2025 consumer alert) | https://www.insurance.ca.gov/0400-news/0102-alerts/2025/Commissioner-Lara-approves-major-FAIR-Pl.cfm | official page content retrieved through indexed official content | 2026-11-25 |
+| CDI-RES | California Department of Insurance | Residential Insurance: Homeowners and Renters — FAIR Plan | https://www.insurance.ca.gov/01-consumers/105-type/95-guides/03-res/Res-Ins-Guide.cfm | official page content retrieved through indexed official content | 2026-11-25 |
+| LEGINFO-CCPA | California Legislative Information | Civil Code Title 1.81.5 — California Consumer Privacy Act of 2018 | https://leginfo.legislature.ca.gov/faces/codes_displayText.xhtml?division=3.&part=4.&lawCode=CIV&title=1.81.5 | direct page fetch | 2026-11-25 |
+| GH-PAGES | GitHub | Repository Pages configuration (verified with the GitHub API) | https://github.com/kanlerxz87-cyber/Jackbox1/settings/pages | gh api repos/kanlerxz87-cyber/Jackbox1/pages | 2026-11-25 |
