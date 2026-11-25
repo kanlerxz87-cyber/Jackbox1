@@ -741,3 +741,53 @@ layer. A link to `/Jackbox1/audit/` is requested (not performed) in §E.
 | F-11 | `main` has no `.nojekyll`; legacy Jekyll build is used for a static site. | published (low severity) |
 | F-12 | Multiple sessions claimed overlapping scopes (`data/**`, `pages/**`, `site/**`, `tools/**`, `docs/**`); conflict risk at merge. | logged here |
 | F-13 | `main` COORDINATION.md and several branch COORDINATION.md files are different, incompatible boards; a merge will need a combined board preserving all rows. | logged here |
+
+---
+
+# Completion record — session `S-62b1c0c2` (2026-11-25)
+
+**PR:** <https://github.com/kanlerxz87-cyber/Jackbox1/pull/17> — "Add independent source-linked
+verification desk (audit/) and audit tooling". **Merge result:** pending at the time this row was written;
+the merged result and Pages deploy confirmation are appended in the follow-up record below after the merge.
+
+| ID | Task | Status | Files | Verification |
+|---|---|---|---|---|
+| T-20 | Official-source register with retrieved values and links | done | `verification/SOURCES.md`, `verification/data/dataset.json`, `audit/sources.html` | 53 official sources; retrieval method recorded per source |
+| T-21 | Question / information / answer register + discovery suggestions | done | `verification/QUESTIONS.md`, `audit/questions.html` | 30 questions, each with an official link; blank answers flagged |
+| T-22 | Suggestions + reviewer choose-a-path board | done | `verification/SUGGESTIONS.md`, `audit/suggestions.html` | 18 suggestions; memory-only shortlist, no persistence |
+| T-23 | Risk and decision-gate audit including black-swan scenarios | done | `verification/RISKS.md`, `audit/gates.html`, `audit/risks.html`, `audit/decisions.html` | 24 risk rows, 10 gates, 10 decision paths, each source-linked |
+| T-24 | Aggregate-only dashboard, subpages, tables, analysis, flagged page, printable one-pager | done | `audit/**` (22 pages) | every table row source-linked; no PII |
+| T-25 | Browser-only after-tax sell-vs-hold calculator | done | `audit/calculator.html`, `audit/assets/js/calculator.js` | verified IRS/FTB parameters; no network calls, no storage, no prefilled unverified numbers |
+| T-26 | Automated row/link/privacy validator and report | done | `verification/check.py`, `verification/REPORT.md`, `audit/review.html` | PASS 16/16; 429 rows; 25 files scanned |
+| T-27 | PR + merge + Pages deploy + record (this session's disjoint scope) | in progress | `COORDINATION.md` append-only rows | PR #17 created |
+
+**Sources used (full register with URLs and retrieval methods):** `verification/SOURCES.md` and
+`audit/sources.html`. Primary official publishers: census.gov, bls.gov, edd.ca.gov, dof.ca.gov, bea.gov,
+scag.ca.gov, dq.cde.ca.gov, cde.ca.gov, pems.dot.ca.gov, planning.lacity.gov, zoning.lacity.gov,
+assessor.lacounty.gov, boe.ca.gov, irs.gov, ftb.ca.gov, sec.gov, data.sec.gov, fema.gov, msc.fema.gov,
+osfm.fire.ca.gov, conservation.ca.gov, maps.conservation.ca.gov, usgs.gov, earthquakeauthority.com,
+insurance.ca.gov, leginfo.legislature.ca.gov, onthemap.ces.census.gov, data.census.gov, github.com.
+
+**Verification performed:** `python3 verification/build.py` (idempotent regeneration of 22 pages from
+`verification/data/dataset.json`); `python3 verification/check.py` — PASS 16/16: source-ID integrity, https and
+official-domain allowlist, 429/429 table rows with an official source link, every blank cell empty and flagged
+`data-unverified="1"`, header/cell-count consistency, internal and external link checks, personal-information
+pattern scan over 25 published files, and JavaScript network/storage/external-script restrictions. Full output:
+`verification/REPORT.md`. Link structure was also checked against the served subdirectory layout.
+
+**Irregularities:** published on `audit/flagged.html` with official source links (F-01…F-17 in the dataset),
+including: no parcel identifier; no lease document and only a user-supplied 2030–2035 expiry range; no verified
+short-lease quote set; no owner tax/basis inputs; "central Los Angeles" is not a Census geography; Census
+QuickFacts direct fetch blocked (indexed official content used, flagged for manual review); legacy QuickFacts
+housing path; BLS Oct-2026 preliminary values; CAL FIRE 2026 SRA public-comment update; PeMS upgrade;
+mismatched generic "Official reference" links on the published root site; overlapping session claims;
+incompatible COORDINATION.md schemas; and the fact that a public static site is not access-controlled.
+
+**Conflict resolution:** the `COORDINATION.md` add/add conflict on the rebase was resolved by appending this
+session's board verbatim after the consolidated `main` board. No line of any other session's board was deleted.
+Because `main` advanced repeatedly while this branch was prepared, `git pull --rebase origin main` was run before
+each push and the exclusive topic branch was updated with `--force-with-lease`; no other session's branch or file
+was rewritten.
+
+**Change request (not performed here):** the session owning the root `index.html` / navigation is asked to add
+one link to `/Jackbox1/audit/` and one to `/Jackbox1/verification/REPORT.md`.
