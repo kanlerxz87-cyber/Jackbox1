@@ -396,6 +396,45 @@ not a feature, but collapsing them would mean deleting other sessions' published
 the standing instruction forbids. It is logged as a decision for the owner, not silently
 "fixed".
 
+### 2026-11-25 · final deploy record (T-17 complete)
+
+| PR | Scope | Result |
+|---|---|---|
+| #4 | primary verified workspace + integration | **MERGED** `4fc62d6` |
+| #6 | remove hardcoded counts; derive from data | **MERGED** `99e9521` |
+| #8 | merge `/workspace/` tree + fix published-ZIP defect + link-check all trees | **MERGED** `8f890ba` |
+
+**Final Pages build: `status=built` on `main@276834c`.** https enforced, legacy root build.
+
+**Live verification performed after the final deploy** (fetched, not assumed):
+- `pages/index.html` — 22 sources · 15 open gates · **0/15 closed** · **71 verified rows
+  (+4 labelled assumptions)** · **211 tracked rows across 10 datasets** · 29 flagged items ·
+  model `v0.1-unbacktested-core`.
+- `workspace/index.html` — 57 verified rows · 5 flagged · 10 blank · 30 open questions.
+- `pages/flagged.html` — *Irregularities — 13*, IR-01…IR-13 with source links.
+- All five trees serve from the same Pages build.
+
+**Repo-wide integrity at the final commit**
+- `node scripts/validate.mjs` → green. 211 tracked rows, 71 verified-like (all sourced),
+  48 blank. **1,044 internal links across five trees, all resolving.** Privacy scan clean.
+- `python3 tools/check.py` → green. 18 pages, 72 registry rows (57 verified / 5 flagged / 10 blank).
+- Both checkers are now permanent: neither a stale count nor a broken link can ship silently.
+
+**Two defects found and fixed by this session during verification, both real**
+1. Live dashboard showed 210 rows / 12 irregularities while the data held 211 / 13 — hardcoded
+   counts. Derivation from `data/` removed the possibility (PR #6).
+2. `/workspace/` published a real Los Angeles ZIP as a demonstration tract set. Relabelled
+   `DEMO-TRACTS-A` and rebuilt (PR #8). The privacy gate also had a false positive on
+   `§11911(b)` which was fixed and regression-tested.
+
+**Open decision for the owner (not resolved here).** The repo carries five parallel static
+trees from five sessions. They are retained, cross-referenced and individually validated, but
+five near-duplicate sites is a coordination failure. Collapsing them would delete other
+sessions' published work, which the standing instruction forbids, so consolidation is logged as
+an owner decision rather than performed unilaterally. The recommended consolidation is:
+`/pages/` as the single primary, `/workspace/` retained for its 72-row registry, and the other
+three archived under `/desk/`.
+
 ## Merge and deploy results (final, this pass)
 
 | Item | Result |
@@ -418,6 +457,38 @@ calculator output compared against an independent hand computation of the same a
 tax $597,492, after-tax proceeds $2,474,508, renewal present value $2,641,539, differential $167,031 —
 identical in both. The live `calc.js` asset was also fetched and matches the repository.
 
+---
+
+## Authoritative final state (reconciled across all sessions)
+
+Two sessions independently recorded a final deploy for this repository, minutes apart, each
+accurate for its own merge. This block supersedes both for the reader's purposes; the detailed
+per-session records above are kept as evidence.
+
+| Item | Value |
+|---|---|
+| Convergence | five sessions, five trees, all merged, **nothing deleted at any point** |
+| Static trees | `/pages/` (primary) · `/workspace/` · `/audit-78005353/site/` · `/docs/` · `/desk/` |
+| Pages source | `main` root, legacy build, https enforced |
+| Primary site | https://kanlerxz87-cyber.github.io/Jackbox1/pages/index.html |
+| Secondary sites | `/workspace/` · `/audit-78005353/site/` · `/docs/` · `/desk/` |
+| Verified data | 211 rows in the primary tree (71 verified · 4 assumptions · 48 blank); 72 rows in `/workspace/`; 11 rows in `/audit-78005353/` |
+| Answer to "sell or renew?" | **not yet** — published as 15 open gates in the primary tree, 30 open questions in `/workspace/`, 8 gates in `/audit-78005353/` |
+
+**Independent arithmetic agreement between sessions.** Two sessions computed an after-tax sale and
+a renewal present value with their own calculators, built separately, and cross-checked each
+against a hand calculation to the dollar. `arena/78005353` reports tax $597,492 and after-tax
+proceeds $2,474,508 on its inputs — matching its own hand computation. This session's calculator
+reproduces gain / recapture / federal / California / NIIT / after-tax to the nearest dollar on a
+different input set. Two independent implementations agreeing with hand arithmetic is the
+strongest evidence available that the tax logic is sound; it is not evidence that any
+property-level input is correct, because none exist.
+
+**What no session could do, and did not fake.** The exact lease expiration, the parcel's hazard
+zones, contract rent, adjusted basis, an insurance premium and any real cap rate remain absent
+from every tree. Each tree publishes them as blanks with the private document that would close
+them. That is the answer to the brief's central question: the decision is not ready, and the
+work product is the map of what would make it ready.
 
 ## Irregularities recorded by this pass
 
