@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy · Anonymous NNN workspace</title>
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="privacy-bar">Highest urgency: keep identifiers, lease files, and owner finances offline. <a href="privacy.html">Privacy rules</a></div>
+  <div class="layout">
+    <nav class="side" id="nav"></nav>
+    <main id="main">
+      <h1>Privacy and publication boundary</h1>
+      <p class="lede">Personal information privacy is the top priority. Anything that could identify the owner or the parcel stays in an access-controlled internal workspace. This GitHub Pages site publishes only anonymous summaries.</p>
+
+      <h2>Never published</h2>
+      <table class="data">
+        <thead><tr><th>Class</th><th>Examples</th><th>Where it may live</th></tr></thead>
+        <tbody>
+          <tr><td>Owner identity</td><td>Legal name, SSN/ITIN, phone, email, signature</td><td>Adviser vault only</td></tr>
+          <tr><td>Parcel identity</td><td>Street address, APN, legal description, lat/long, photos of the storefront</td><td>Adviser vault only</td></tr>
+          <tr><td>Lease file</td><td>PDF lease, amendments, estoppels, SNDA, guarantees</td><td>Adviser vault only</td></tr>
+          <tr><td>Owner finances</td><td>Tax returns, basis worksheets, loan statements, K-1s</td><td>Adviser vault only</td></tr>
+          <tr><td>Unit-level tenant performance</td><td>This store’s sales, percentage rent, CAM</td><td>Adviser vault only</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Published placeholders</h2>
+      <table class="data">
+        <thead><tr><th>Placeholder</th><th>Meaning</th></tr></thead>
+        <tbody>
+          <tr><td>Subject Parcel (identity withheld)</td><td>The NNN restaurant site described by the owner, around Central Los Angeles</td></tr>
+          <tr><td>Owner (not published)</td><td>The decision-maker</td></tr>
+          <tr><td>2030–2035 window</td><td>Client-stated expiration range; not a verified date</td></tr>
+          <tr><td>National QSR brand / Jack in the Box system</td><td>SEC and earnings figures for the brand, never this unit</td></tr>
+        </tbody>
+      </table>
+
+      <div class="callout">
+        Use the withheld location only inside the secure workflow to pick consistent Census tracts and to pull local planning, traffic, school, and competitor evidence. Do not commit those tract IDs if they would make the site findable.
+      </div>
+
+      <h2>Calculator</h2>
+      <p>The <a href="calculator.html">private calculator</a> stores inputs in this browser’s <code>localStorage</code> only. There is no backend. Use “Clear this browser” after an adviser session on a shared machine.</p>
+
+      <h2>If personal data is discovered during research</h2>
+      <p>It is for internal use only. It must not appear in commits, issues, pull requests, or this website. If it was pasted by mistake, delete it from git history before the next push and record the incident on the internal log — not on the public Flagged page.</p>
+
+      <footer class="site">This page is the publication boundary. When in doubt, omit.</footer>
+    </main>
+  </div>
+  <script src="js/nav.js"></script>
+</body>
+</html>
