@@ -20,12 +20,12 @@
     },
     {
       "id": "OB-02",
-      "statement": "That is a 6.03% compound annual growth rate over 11.50 years.",
+      "statement": "That is a 6.03% compound annual growth rate over 11.496 years (4,199 days).",
       "value": 6.03,
       "unit": "percent per year",
       "status": "computed-from-observation",
       "source_id": "S-005",
-      "note": "Computed, not assumed. Arithmetic on OB-01."
+      "note": "Computed, not assumed. Arithmetic on OB-01. Unrounded value is 6.0257%; the 6.03 shown is that value rounded to two decimals."
     },
     {
       "id": "OB-03",

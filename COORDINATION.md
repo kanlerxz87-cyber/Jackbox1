@@ -34,8 +34,8 @@ append a row here and claim a task before touching files.
 | T-13 | W-10 One-page printable advisor summary | done | ses-41ea221b | `pages/print.html` |
 | T-14 | Flagged-for-Review page (unverified items + irregularities) | done | ses-41ea221b | `data/flagged.json`, `pages/flagged.html` |
 | T-15 | Line-by-line validator (sources, links, privacy scan) | done | ses-41ea221b | `scripts/validate.mjs` |
-| T-16 | **Integration**: merge, re-verify combined data, confirm build | in progress | ses-41ea221b | site-wide (index/nav only in integration) |
-| T-17 | Publish GitHub Pages + confirm deploy | unclaimed | — | repo settings (no files) |
+| T-16 | **Integration**: merge, re-verify combined data, confirm build | done | ses-41ea221b | site-wide (index/nav only in integration) |
+| T-17 | Publish GitHub Pages + confirm deploy | in progress | ses-41ea221b | repo settings (no files) |
 
 ## Shared outputs (integration-only)
 
@@ -73,3 +73,46 @@ with no commit, after appending `TAKEOVER` + its session ID to the Log. Do not r
 ## PR / deploy record
 
 Recorded at the bottom of this file once T-16/T-17 complete.
+
+### Integration session record (T-16) — ses-41ea221b
+
+**Merge.** Single active session, so no cross-branch merge was required. `arena/41ea221b-jackbox1`
+was branched from `main@4aa9dad` and is a strict fast-forward (`README.md` only in base).
+
+**Re-verification performed on the combined data, line by line:**
+- 43 machine-checked assertions comparing every published figure back to the captured source
+  response. Result: **43 of 43 match**. Re-run with the script in the PR description.
+- Two arithmetic recomputations: HPI vs 2026 Q1 peak = −0.82% (matches); CAGR = 6.026% at
+  11.496 years, published as 6.03 (matches, note added to `OB-02` for the rounding).
+- Back-test recomputed independently from the 47 FHFA observations: 7 overlapping pairs,
+  correlation −0.937, direction hit rate 100%, mean absolute error 1.70 pp. Matches.
+- Calculator tax arithmetic recomputed by hand outside the page: gain 1,020,000; recapture
+  slice 400,000; federal 201,498; California 94,860; NIIT 34,960; after-tax proceeds
+  1,588,683. The page produced identical figures.
+
+**Build checks (`node scripts/validate.mjs`) — all pass:**
+- 22 sources, every host on the official allowlist, all https, all dated.
+- 210 tracked rows; 71 verified-like rows all carry a resolving `source_id`;
+  48 unverified rows all have blank values (the validator fails if either invariant breaks).
+- 173 internal links resolve to a file that exists. Zero broken links.
+- Privacy scan over all pages, datasets and scripts: no address, APN, ZIP, email, phone,
+  SSN or EIN pattern found.
+- Calculator contains no `fetch`, `XMLHttpRequest`, `sendBeacon`, `localStorage`,
+  `sessionStorage`, `indexedDB`, `document.cookie`, `WebSocket` or `geolocation` call.
+- Structural check: all 11 pages tag-balanced, no `undefined` or `[object Object]` leaks.
+
+**Irregularities found** (12, detailed on `pages/flagged.html`): the parcel is unidentified
+(IR-01), the lease term is an eight-year window (IR-02), the brief conflates property-level
+and owner-level decisions (IR-03), the Census API requires a key (IR-04), CAL FIRE returned an
+empty feature set that must not be read as "unzoned" (IR-05), the FTB rate page failed to load
+(IR-06), LA County QuickFacts failed (IR-07), the HPI series used is the MSA not the
+metropolitan division (IR-08), CPI change is printed for September not October (IR-09), and no
+cap rate / rent / basis / insurance figure exists anywhere (IR-10). IR-11 and IR-12 record the
+reference-point hazard query and the deliberate asymmetry between the public tenant brand and
+the withheld owner identity.
+
+**Deliberate non-deliverables, stated on the site:** no sell/renew verdict, no cap rate, no
+dollar loss estimate for any hazard. Each is blocked by a named, documented gap and would have
+required inventing an input.
+
+**Flagged items do not block publication and are published on the Flagged for Review page.**
