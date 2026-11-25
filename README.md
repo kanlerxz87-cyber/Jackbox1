@@ -1,4 +1,37 @@
-<<<<<<< HEAD
+# Anonymous Central LA NNN workspace
+
+Public research site for an **anonymized** sell-versus-renew review of a Jack in the Box NNN lease described as located around Central Los Angeles.
+
+**This repository must not contain** owner names, street addresses, APNs, lease PDFs, tax returns, or unit-level sales.
+
+Four static trees are in the repo (parallel sessions; **all retained**):
+
+| Tree | Session | Entry |
+| --- | --- | --- |
+| Primary workspace | arena-41ea221b | `pages/index.html` (root `index.html` redirects here) |
+| Sourced dashboard | arena-f5a16939 | `docs/index.html` (sourced tables, decision gates, calculator) |
+| Desk tree | arena-8c9d9d97 | `desk/index.html` |
+| Verified workspace | arena-78005353 | `workspace/index.html` (47-row evidence register, 23 questions, gate board, after-tax calculator, printable one-pager) |
+
+GitHub Pages publishes the **repository root**, so `/`, `/pages/`, `/docs/`, `/desk/` and `/workspace/` all resolve.
+
+**No sell or renew recommendation is made.**
+
+A public static website is not an access-controlled vault. Keep lease files and owner finances offline. See [COORDINATION.md](COORDINATION.md) and the Flagged for Review pages (`pages/flags.html` and `docs/flagged.html`).
+
+
+---
+
+## Also in this repository: the desk tree
+
+An earlier session (`arena-8c9d9d97`) published a narrative desk tree at `/desk/` with its own
+overview and page set. It is retained unmodified and reachable at `desk/index.html`.
+
+## Preserved: earlier README of this tree
+
+The text below is the README written for the `arena/f5a16939` tree, kept verbatim so its record of
+sources, flags and next steps is not lost.
+
 # Jackbox property decision workspace
 
 An **anonymised, source-verified decision workspace** for a single-tenant Jack in the Box
@@ -109,28 +142,6 @@ Fifteen gates, sequenced on the *Open questions* page. Three cost nothing and on
 *Not investment, legal or tax advice. Engage a licensed appraiser, attorney and CPA before
 acting. See `COORDINATION.md` for the task board, sources, verification performed and the
 PR/deploy record.*
-=======
-# Anonymous Central LA NNN workspace
-
-Public research site for an **anonymized** sell-versus-renew review of a Jack in the Box NNN lease described as located around Central Los Angeles.
-
-**This repository must not contain** owner names, street addresses, APNs, lease PDFs, tax returns, or unit-level sales.
-
-Two static trees are in the repo (parallel sessions; both retained):
-
-| Tree | Session | Entry |
-| --- | --- | --- |
-| Repository root | arena-8c9d9d97 | `index.html`, `pages/`, `assets/` |
-| `docs/` | arena-f5a16939 | `docs/index.html` (sourced tables, decision gates, calculator) |
-
-GitHub Pages is configured to publish the **repository root**, so both `/` and `/docs/` can resolve.
-
-**No sell or renew recommendation is made.**
-
-A public static website is not an access-controlled vault. Keep lease files and owner finances offline. See [COORDINATION.md](COORDINATION.md) and the Flagged for Review pages (`pages/flags.html` and `docs/flagged.html`).
->>>>>>> origin/main
-
-
 ---
 
 ## Repository layout — three parallel builds, all retained
@@ -163,14 +174,16 @@ Public research site for an **anonymized** sell-versus-renew review of a Jack in
 
 **This repository must not contain** owner names, street addresses, APNs, lease PDFs, tax returns, or unit-level sales.
 
-Two static trees are in the repo (parallel sessions; both retained):
+Four static trees are in the repo (parallel sessions; **all retained**):
 
 | Tree | Session | Entry |
 | --- | --- | --- |
-| Repository root | arena-8c9d9d97 | `index.html`, `pages/`, `assets/` |
-| `docs/` | arena-f5a16939 | `docs/index.html` (sourced tables, decision gates, calculator) |
+| Primary workspace | arena-41ea221b | `pages/index.html` (root `index.html` redirects here) |
+| Sourced dashboard | arena-f5a16939 | `docs/index.html` (sourced tables, decision gates, calculator) |
+| Desk tree | arena-8c9d9d97 | `desk/index.html` |
+| Verified workspace | arena-78005353 | `workspace/index.html` (47-row evidence register, 23 questions, gate board, after-tax calculator, printable one-pager) |
 
-GitHub Pages is configured to publish the **repository root**, so both `/` and `/docs/` can resolve.
+GitHub Pages publishes the **repository root**, so `/`, `/pages/`, `/docs/`, `/desk/` and `/workspace/` all resolve.
 
 **No sell or renew recommendation is made.**
 
