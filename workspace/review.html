@@ -44,13 +44,13 @@
     <div class="pagehead">
       <p class="eyebrow">Integrity register</p>
       <h1>Flagged for Review</h1>
-      <p class="lede">Ten irregularities and every affected row, published rather than hidden.</p>
+      <p class="lede">12 irregularities and every affected row, published rather than hidden.</p>
     </div>
 
 <div class="notice warn">
   <strong>Everything questionable, in one place, with the source links intact</strong>
   Nothing on this page blocks the site from being used. Each item is published so it can be reviewed and closed, rather
-  than quietly dropped. Ten irregularities and 15 affected data rows.
+  than quietly dropped. 12 irregularities and 15 affected data rows.
 </div>
 
 <h2>Irregularities and anomalies</h2>
@@ -67,10 +67,10 @@
 <td class="note">HAZ-02 (earthquake = ~60% of modelled expected annual loss) is quoted from a private analysis of FEMA&#x27;s National Risk Index, not from FEMA directly. It is flagged and must not be published as a finding.</td><td class="note">Pull the NRI tract and county downloads from FEMA directly and recompute before citing.</td></tr><tr><td class="metric">F-07</td><td><strong>Measure ULA tiering is confirmed by a Council press release, not the administering department</strong></td>
 <td class="note">TAX-05 (5.5% above $10m) traces to a .gov Council District 4 release. TAX-04 (4% above $5m) traces to LAHD. Both are official, but the administering office page for the tier table was not retrieved.</td><td class="note">Ask the Office of Finance in writing for the tier schedule and the exemption analysis before pricing a sale.</td></tr><tr><td class="metric">F-08</td><td><strong>BLS marks several published figures preliminary, and one annual figure is incomplete</strong></td>
 <td class="note">LAB-01, LAB-04 to LAB-10 are preliminary. LAB-03 is an 11-month 2025 average because October 2025 was not collected during the federal shutdown.</td><td class="note">Re-pull before relying on any of them; the API values will change.</td></tr><tr><td class="metric">F-09</td><td><strong>Two population vintages appear on the same site</strong></td>
-<td class="note">DEM-01 (3,857,263) is an ACS 2020–2024 5-year estimate; DEM-04 (3,869,089) is a 2025 Vintage estimate. They are not interchangeable and must not be mixed in one trend.</td><td class="note">Keep them in separate series or use one vintage consistently.</td></tr><tr><td class="metric">F-11</td><td><strong>Four external source links were stale and have been corrected</strong></td>
+<td class="note">DEM-01 (3,857,263) is an ACS 2020–2024 5-year estimate; DEM-04 (3,869,089) is a 2025 Vintage estimate. They are not interchangeable and must not be mixed in one trend.</td><td class="note">Keep them in separate series or use one vintage consistently.</td></tr><tr><td class="metric">F-10</td><td><strong>Franchise-unit and royalty comparisons span a corporate restructuring</strong></td>
+<td class="note">FY2023 consolidated Del Taco; FY2025 does not. A 209,556 impairment charge sits inside the FY2025 segment table. Direction is unambiguous; ratios across years are not.</td><td class="note">Recompute any ratio directly from the filings rather than from any summary, including this site&#x27;s.</td></tr><tr><td class="metric">F-11</td><td><strong>Four external source links were stale and have been corrected</strong></td>
 <td class="note">The OSFM Fire Hazard Severity Zone map paths (two rows) and the CGS EQ Zapp path returned 404s, and the FEMA Map Service Center portal needed its full portal path. Corrected on 2026-11-25 and re-checked; the registry notes record the correction.</td><td class="note">Re-check every external link quarterly — link rot in government sites is routine, and a dead source link is indistinguishable from no source.</td></tr><tr><td class="metric">F-12</td><td><strong>The repository&#x27;s own README.md and COORDINATION.md were published with unresolved merge-conflict markers</strong></td>
-<td class="note">Both files on `main` contained `&lt;&lt;&lt;&lt;&lt;&lt;&lt;` / `=======` / `&gt;&gt;&gt;&gt;&gt;&gt;&gt;` blocks, so the live repository displayed raw conflict markers. Found during this session&#x27;s merge and resolved without discarding either version.</td><td class="note">Add a marker scan to any pre-merge check. `tools/check.py` in this session covers the published tree; the scan should be extended to the repository root.</td></tr><tr><td class="metric">F-10</td><td><strong>Franchise-unit and royalty comparisons span a corporate restructuring</strong></td>
-<td class="note">FY2023 consolidated Del Taco; FY2025 does not. A 209,556 impairment charge sits inside the FY2025 segment table. Direction is unambiguous; ratios across years are not.</td><td class="note">Recompute any ratio directly from the filings rather than from any summary, including this site&#x27;s.</td></tr></tbody></table></div>
+<td class="note">Both files on `main` contained `&lt;&lt;&lt;&lt;&lt;&lt;&lt;` / `=======` / `&gt;&gt;&gt;&gt;&gt;&gt;&gt;` blocks, so the live repository displayed raw conflict markers. Found during this session&#x27;s merge and resolved without discarding either version.</td><td class="note">Add a marker scan to any pre-merge check. `tools/check.py` in this session covers the published tree; the scan should be extended to the repository root.</td></tr></tbody></table></div>
 
 <h2>Rows that are blank by design (10)</h2>
 <div class="table-scroll"><table>
