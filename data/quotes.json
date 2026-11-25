@@ -1,0 +1,101 @@
+{
+  "meta": {
+    "dataset": "quotes",
+    "version": "1.0",
+    "as_of": "2026-11-25",
+    "owner_session": "ses-41ea221b",
+    "task": "Price the short-lease discount from real quotes",
+    "hard_rule": "This dataset contains NO cap rates. Not one. No official federal, state or county source publishes single-tenant QSR cap rates, and this session did not obtain broker quotes. Every quote row is therefore null and flagged. Inventing a cap rate here would silently drive the entire sell-versus-hold answer, which is exactly the failure mode the owner asked to avoid."
+  },
+  "why_this_matters": "A short-lease discount is the gap between the cap rate a buyer pays for 15 years of remaining term and the cap rate they pay for 3-5 years. For single-tenant retail that gap is commonly several hundred basis points, but 'commonly' is not a quote. Because the discount multiplies directly into value, a 100 bp error on a 5% cap rate is roughly a 17% error in price.",
+  "quote_log": [
+    {
+      "id": "Q-01",
+      "what": "Broker opinion: cap rate for a freestanding QSR pad with 7+ years remaining",
+      "source_type": "licensed broker / investment sales",
+      "value": null,
+      "unit": "cap rate, percent",
+      "date": null,
+      "status": "unverified",
+      "why_missing": "Not obtained. Requires a confidentiality agreement, a broker engaged under the owner's authority, and the parcel identity. Out of scope for a public repository."
+    },
+    {
+      "id": "Q-02",
+      "what": "Broker opinion: cap rate for the same pad with 3-5 years remaining",
+      "source_type": "licensed broker / investment sales",
+      "value": null,
+      "unit": "cap rate, percent",
+      "date": null,
+      "status": "unverified",
+      "why_missing": "Same as Q-01. This is the other end of the discount measurement."
+    },
+    {
+      "id": "Q-03",
+      "what": "Comparable sale: QSR pad, central Los Angeles, closed in last 24 months",
+      "source_type": "county recorded deed grantee/grantor plus broker confirmation",
+      "value": null,
+      "unit": "price and cap rate",
+      "date": null,
+      "status": "unverified",
+      "why_missing": "Public recorded deeds give price but not NOI, so a cap rate cannot be derived from public records alone. Price-only comps are insufficient to price a discount."
+    },
+    {
+      "id": "Q-04",
+      "what": "Comparable sale: QSR pad in the same submarket with similar remaining term",
+      "source_type": "licensed appraiser",
+      "value": null,
+      "unit": "cap rate",
+      "date": null,
+      "status": "unverified",
+      "why_missing": "Requires an appraisal engagement."
+    },
+    {
+      "id": "Q-05",
+      "what": "Lender quote: interest rate and LTV for a 5-year fixed loan on the asset",
+      "source_type": "commercial mortgage lender",
+      "value": null,
+      "unit": "rate and LTV",
+      "date": null,
+      "status": "unverified",
+      "why_missing": "Needed to establish the spread over the 10-year Treasury anchor (VA-01 at 4.92%). Without it the hold-side refinancing assumption floats free."
+    },
+    {
+      "id": "Q-06",
+      "what": "Insurance quote: annual premium for the building",
+      "source_type": "licensed insurance broker",
+      "value": null,
+      "unit": "USD per year",
+      "date": null,
+      "status": "unverified",
+      "why_missing": "Post-2025 fire market. Could plausibly move the hold case more than any rent assumption. Must not be estimated."
+    }
+  ],
+  "method_once_quotes_exist": {
+    "step_1": "Take the long-term cap rate from Q-01 and the short-term cap rate from Q-02 on the same asset, same submarket, same month. Any difference in asset quality invalidates the comparison.",
+    "step_2": "Short-lease discount = short-term cap rate minus long-term cap rate, in basis points.",
+    "step_3": "Value effect = NOI / long-term cap rate minus NOI / short-term cap rate. Report both the discount in bp and the value gap in dollars; they answer different questions.",
+    "step_4": "Sanity check against Q-03 and Q-04. If the broker-implied discount is not corroborated by at least one closed transaction or appraisal, treat it as an opinion and label it as such on the site.",
+    "step_5": "Back-test: apply the implied discount to three historical local sales if any can be documented, and show the error. Until step 5 can be run, the model stays labelled 'unbacktested'.",
+    "anti_pattern": "Do not average Q-01 and Q-02 into a single blended cap rate. The whole point is that they differ, and that difference is the priced risk."
+  },
+  "what_the_public_record_does_show": [
+    {
+      "id": "Q-07",
+      "what": "Risk-free anchor available for spread construction",
+      "value": 4.92,
+      "unit": "percent, 10-year Treasury, 2026-11-23",
+      "status": "verified",
+      "source_id": "S-004",
+      "note": "This is the only verified input on this page. Every cap-rate quote has to be expressed as a spread over it so the assumption is visible."
+    },
+    {
+      "id": "Q-08",
+      "what": "Local asset-price trend available for back-testing direction",
+      "value": 553.76,
+      "unit": "FHFA All-Transactions HPI, 2026 Q3",
+      "status": "verified",
+      "source_id": "S-005",
+      "note": "Metro-wide and residential-weighted, so it cannot price a QSR pad. It can, however, be used to test whether a claimed appreciation rate is plausible."
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Analysis | Jackbox1</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><div class="header-inner"><div class="brand"><div><h1>Jackbox1 Property Decision Workspace</h1><p>Decision support framework only. No sell/renew winner is selected until verified inputs exist.</p></div></div></div>
+    <nav class="nav" aria-label="Primary"><div class="nav-inner">
+      <a href="index.html">Dashboard</a><a href="research.html">Research</a><a href="hazards.html">Hazards</a><a class="active" href="analysis.html">Analysis</a><a href="questions.html">Questions &amp; Missing Info</a><a href="suggestions.html">Suggestions</a><a href="privacy.html">Privacy &amp; Handling</a><a href="sources.html">Sources</a><a href="flagged.html">Flagged for Review</a>
+    </div></nav>
+  </header>
+  <main id="main">
+    <h2 class="page-title">Analysis &amp; Decision Framework</h2>
+    <p class="page-lead">This page provides the sell-vs-renew/hold framework, after-tax comparison structure, risk register, and a printable executive summary. It intentionally contains no fabricated property economics. All property-specific values are blank until verified in a private, authorized workflow.</p>
+
+    <div class="notice danger" id="decision-rule">
+      <strong>Decision rule (non-negotiable):</strong> Do not select a sell or renew winner until verified inputs exist for lease terms, current NOI/cash flow, tenant credit/sales, parcel hazards/insurance, tax basis and after-tax consequences, debt, market comps/quotes, and owner objectives/liquidity constraints. Any recommendation before that point is speculative and must be flagged.
+    </div>
+
+    <section class="section" id="executive-summary">
+      <h2>W-10: One-Page Printable Executive Summary (For Advisors)</h2>
+      <div class="notice info">
+        <strong>Print tip:</strong> Use browser print (Ctrl/Cmd+P). This section is designed as a concise advisor briefing. It contains no personal identifiers.
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Item</th><th>Current Status</th><th>Verified Evidence</th><th>Decision Impact</th><th>Source / Reference</th></tr></thead>
+          <tbody>
+            <tr><td>Scenario</td><td>User-provided: NNN quick-service restaurant, Central LA area, lease expiry 2030–2035.</td><td>None in repo; scenario only.</td><td>Cannot underwrite until confirmed by lease/parcel records.</td><td><a href="flagged.html#F-001">F-001</a>, <a href="flagged.html#F-003">F-003</a></td></tr>
+            <tr><td>Decision</td><td><strong>No winner selected.</strong></td><td>Missing material inputs.</td><td>Premature decision creates avoidable tax, pricing, and liquidity risk.</td><td><a href="questions.html#decision-gates">Decision Gates</a></td></tr>
+            <tr><td>Public market context</td><td>LA city proxy indicators verified (population, income, poverty, housing, commute).</td><td>Census QuickFacts values reviewed 2026-11-25.</td><td>Context only; not trade-area or property NOI.</td><td><a href="https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045224">Census QuickFacts</a></td></tr>
+            <tr><td>Regional hazard context</td><td>LA region earthquake probabilities verified; parcel flood/fire/seismic unverified.</td><td>USGS UCERF3 regional probabilities.</td><td>Hold case must stress insurance, downtime, repairs, exit liquidity.</td><td><a href="https://www.usgs.gov/faqs/what-probability-earthquake-will-occur-los-angeles-area-san-francisco-bay-area">USGS</a></td></tr>
+            <tr><td>Lease economics</td><td>Unverified.</td><td></td><td>Rent, escalations, options, NNN responsibilities, and term drive value.</td><td><a href="flagged.html#F-002">F-002</a></td></tr>
+            <tr><td>After-tax outcome</td><td>Unverified.</td><td></td><td>Sale vs hold may flip after taxes, recapture, debt, and reinvestment assumptions.</td><td><a href="analysis.html#after-tax">After-Tax Module</a></td></tr>
+            <tr><td>Primary recommendation</td><td>Complete decision gates before committing to sell or renew.</td><td>Process control.</td><td>Preserves optionality and reduces irreversible error.</td><td><a href="questions.html#decision-gates">Decision Gates</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section" id="sell-hold">
+      <h2>W-02: Sell vs. Hold / Renew Comparison Template (Private Inputs Required)</h2>
+      <p class="small">All numeric fields are intentionally blank. Populate only with verified documents/quotes in a private workspace. Do not infer values.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Input / Metric</th><th>Sell Before Expiry</th><th>Renew / Hold</th><th>Status</th><th>Verification Source Required</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td>Verified lease expiration date</td><td></td><td></td><td><span class="status unverified">Unverified</span></td><td>Executed lease/amendment</td><td>Window 2030–2035 is user-provided only.</td></tr>
+            <tr><td>Remaining term at analysis date (years)</td><td></td><td></td><td><span class="status unverified">Unverified</span></td><td>Lease abstract + calendar</td><td>Short lease tail can create discount.</td></tr>
+            <tr><td>Base rent / annual NOI</td><td></td><td></td><td><span class="status unverified">Unverified</span></td><td>Rent roll, T12/T36, lease</td><td>NNN recoveries and landlord obligations must be reconciled.</td></tr>
+            <tr><td>Rent escalations / option rent</td><td></td><td></td><td><span class="status unverified">Unverified</span></td><td>Lease abstract</td><td>Renewal rent resets can change value materially.</td></tr>
+            <tr><td>Tenant credit / guaranty / sales</td><td></td><td></td><td><span class="status unverified">Unverified</span></td><td>Financial statements, guaranty, authorized disclosures</td><td>Corporate brand strength is not unit-level coverage.</td></tr>
+            <tr><td>Market cap rate / price quote</td><td></td><td></td><td><span class="status unverified">Unverified</span></td><td>Broker opinions, closed comps, lender quotes</td><td>Price short-lease discount from real quotes only.</td></tr>
+            <tr><td>Selling costs (broker, legal, closing)</td><td></td><td></td><td><span class="status unverified">Unverified</span></td><td>Engagement letters / estimates</td><td>Use verified quotes; do not assume.</td></tr>
+            <tr><td>Debt payoff / prepayment / assumption</td><td></td><td></td><td><span class="status unverified">Unverified</span></td><td>Loan documents, lender statement</td><td>Can materially change net proceeds.</td></tr>
+            <tr><td>Capex / deferred maintenance / retrofit</td><td></td><td></td><td><span class="status unverified">Unverified</span></td><td>PCA, engineering, lease obligations</td><td>NNN field responsibilities vary by lease.</td></tr>
+            <tr><td>Insurance and hazard cost</td><td></td><td></td><td><span class="status unverified">Unverified</span></td><td>Insurance quotes, hazard reports</td><td>Stress premium spikes/unavailability.</td></tr>
+            <tr><td>After-tax net proceeds / after-tax cash flow</td><td></td><td></td><td><span class="status unverified">Unverified</span></td><td>CPA/tax counsel model</td><td>See after-tax module below.</td></tr>
+            <tr><td>Reinvestment yield / opportunity cost</td><td></td><td></td><td><span class="status unverified">Unverified</span></td><td>Owner investment policy, verified options</td><td>Must reflect risk-adjusted alternatives.</td></tr>
+            <tr><td>Downside / tail-risk exposure</td><td></td><td></td><td><span class="status unverified">Unverified</span></td><td>Hazard, tenant, market stress tests</td><td>Include black-swan scenarios.</td></tr>
+            <tr><td>Decision score / winner</td><td></td><td></td><td><span class="status unverified">Blocked</span></td><td>All gates closed with verified evidence</td><td>No winner selected in this publication.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section" id="after-tax">
+      <h2>After-Tax Module (Template; CPA/Tax Counsel Required)</h2>
+      <div class="notice warning">
+        <strong>Not tax advice.</strong> This is a calculation framework only. Tax outcomes depend on verified owner-specific facts and current law. Use qualified CPA/tax counsel.
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>After-Tax Input</th><th>Sell Case</th><th>Hold/Renew Case</th><th>Status</th><th>Why It Matters</th><th>Official Reference</th></tr></thead>
+          <tbody>
+            <tr><td>Adjusted basis / depreciation taken</td><td></td><td></td><td><span class="status unverified">Unverified</span></td><td>Drives gain and depreciation recapture exposure.</td><td><a href="https://www.irs.gov/publications/p544">IRS Publication 544</a></td></tr>
+            <tr><td>Depreciation recapture / capital gain treatment</td><td></td><td></td><td><span class="status unverified">Unverified</span></td><td>Can materially reduce net sale proceeds.</td><td><a href="https://www.irs.gov/publications/p544">IRS Publication 544</a></td></tr>
+            <tr><td>State income tax impact</td><td></td><td></td><td><span class="status unverified">Unverified</span></td><td>State treatment can change net outcome.</td><td><a href="https://www.ftb.ca.gov/">California Franchise Tax Board</a></td></tr>
+            <tr><td>Installment sale / 1031 / other deferral eligibility</td><td></td><td></td><td><span class="status unverified">Unverified</span></td><td>May defer taxes but adds constraints/risk.</td><td><a href="https://www.irs.gov/businesses/small-businesses-self-employed/like-kind-exchanges-real-estate-tax-tips">IRS Like-Kind Exchanges</a></td></tr>
+            <tr><td>Debt repayment / prepayment penalty</td><td></td><td></td><td><span class="status unverified">Unverified</span></td><td>Affects cash available for reinvestment.</td><td><a href="https://www.consumerfinance.gov/">Consumer Financial Protection Bureau (general finance reference)</a></td></tr>
+            <tr><td>After-tax reinvestment rate of return</td><td></td><td></td><td><span class="status unverified">Unverified</span></td><td>Needed for opportunity-cost comparison.</td><td><a href="https://www.investor.gov/">Investor.gov (SEC investor education)</a></td></tr>
+            <tr><td>After-tax annual hold cash flow</td><td></td><td></td><td><span class="status unverified">Unverified</span></td><td>Hold case must be net of taxes, reserves, insurance, and capex.</td><td><a href="https://www.irs.gov/businesses/small-businesses-self-employed">IRS Small Business/Self-Employed</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Risk Register (Business-as-Usual and Black Swan)</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Risk</th><th>Type</th><th>Sell Case Exposure</th><th>Hold/Renew Case Exposure</th><th>Status</th><th>Mitigation / Evidence Needed</th><th>Source</th></tr></thead>
+          <tbody>
+            <tr><td>Lease rollover / vacancy at expiry</td><td>Business-as-usual</td><td>Price discount if sold near expiry with weak renewal visibility.</td><td>Potential income interruption, re-tenanting cost, downtime.</td><td><span class="status unverified">Unverified</span></td><td>Verify lease dates/options, tenant intent, market rent, re-tenanting cost.</td><td><a href="questions.html#lease-questions">Lease Questions</a></td></tr>
+            <tr><td>Tenant credit/sales deterioration</td><td>Business-as-usual</td><td>Buyer discounts or limited buyer pool.</td><td>Rent default/renewal risk.</td><td><span class="status unverified">Unverified</span></td><td>Obtain authorized financials; monitor corporate filings as context only.</td><td><a href="https://www.sec.gov/edgar/searchedgar/companysearch">SEC EDGAR</a></td></tr>
+            <tr><td>Interest rate / cap rate expansion</td><td>Business-as-usual</td><td>Lower sale price.</td><td>Higher refinance/exit cap risk later.</td><td><span class="status unverified">Unverified</span></td><td>Get current market quotes and lender terms; sensitivity test.</td><td><a href="https://www.federalreserve.gov/">Federal Reserve</a></td></tr>
+            <tr><td>Insurance cost spike / unavailability</td><td>Business-as-usual to severe</td><td>Buyer underwriting friction.</td><td>Reduced net cash flow, uncovered exposure.</td><td><span class="status unverified">Unverified</span></td><td>Parcel-specific quotes; stress deductibles and exclusions.</td><td><a href="https://www.insurance.ca.gov/">CA DOI</a></td></tr>
+            <tr><td>Earthquake major event</td><td>Black swan/tail</td><td>Pre-sale may avoid future physical risk but may miss upside; post-event sale difficult.</td><td>Repair cost, closure, tenant disruption, liquidity stress.</td><td><span class="status partial">Regional verified / parcel unverified</span></td><td>Parcel seismic screen, engineering, insurance, reserves.</td><td><a href="https://www.usgs.gov/faqs/what-probability-earthquake-will-occur-los-angeles-area-san-francisco-bay-area">USGS</a></td></tr>
+            <tr><td>Wildfire/smoke/access disruption</td><td>Tail/regional</td><td>Market disruption can affect timing.</td><td>Closure, cleanup, supply chain/access issues.</td><td><span class="status unverified">Unverified</span></td><td>Check FHSZ/local fire exposure and insurance.</td><td><a href="https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones">CAL FIRE/OSFM</a></td></tr>
+            <tr><td>Flooding/stormwater event</td><td>Tail/local</td><td>Can impair value if zone/claims discovered.</td><td>Damage, downtime, uncovered losses.</td><td><span class="status unverified">Unverified</span></td><td>FEMA MSC parcel screen; insurance and drainage review.</td><td><a href="https://msc.fema.gov/portal/home">FEMA MSC</a></td></tr>
+            <tr><td>Regulatory/tax law change</td><td>Policy risk</td><td>Transaction timing/tax impact.</td><td>Operating cost/tax burden changes.</td><td><span class="status unverified">Unverified</span></td><td>CPA/legal monitoring; scenario ranges.</td><td><a href="https://www.irs.gov/newsroom">IRS Newsroom</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Best Course of Action (Process Decision, Not Asset Winner)</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Action</th><th>Why Now</th><th>Status</th><th>Owner</th><th>Gate</th><th>Source</th></tr></thead>
+          <tbody>
+            <tr><td>Do not commit to sell or renew yet.</td><td>Material inputs are missing; decision would be speculative.</td><td><span class="status verified">Recommended</span></td><td>Owner + advisors</td><td>All gates</td><td><a href="questions.html#decision-gates">Decision Gates</a></td></tr>
+            <tr><td>Commission private lease abstract and notice calendar.</td><td>Lease term/options drive value and timing.</td><td><span class="status pending">Next step</span></td><td>Real estate attorney</td><td>G1 Lease</td><td><a href="questions.html#lease-questions">Lease Questions</a></td></tr>
+            <tr><td>Run private parcel hazard/insurance screen.</td><td>Tail risks can dominate NNN returns.</td><td><span class="status pending">Next step</span></td><td>Broker/engineer/insurance</td><td>G2 Hazard</td><td><a href="hazards.html">Hazards</a></td></tr>
+            <tr><td>Build private after-tax sell vs hold model.</td><td>Pre-tax winner can differ from after-tax winner.</td><td><span class="status pending">Next step</span></td><td>CPA/tax counsel</td><td>G3 Tax</td><td><a href="analysis.html#after-tax">After-Tax</a></td></tr>
+            <tr><td>Get real market quotes/comps for short lease tail.</td><td>Avoid pricing from assumptions.</td><td><span class="status pending">Next step</span></td><td>Investment sales broker</td><td>G4 Market</td><td><a href="questions.html#market-quotes">Market Quotes</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><p>Analysis is a decision-support framework, not investment, legal, tax, or engineering advice. No winner selected.</p></footer>
+</body>
+</html>

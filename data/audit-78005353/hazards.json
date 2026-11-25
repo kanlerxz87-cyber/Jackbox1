@@ -1,0 +1,125 @@
+{
+  "meta": {
+    "title": "Parcel-level hazard screening (W-04)",
+    "compiled": "2026-11-25",
+    "purpose": "Replace regional hazard context with the parcel's actual zone status. Two things are tracked separately: (a) whether the official programme and its lookup tool are confirmed to exist and what it measures, and (b) the parcel's own zone status. (b) is always unverified here because resolving it requires the private address.",
+    "status_legend": {
+      "program_verified": "The official programme, statute and lookup tool were confirmed on the agency's own site.",
+      "parcel_unverified": "The parcel-specific designation has NOT been read from an official source. It is left blank on purpose."
+    }
+  },
+  "hazards": [
+    {
+      "id": "HZ-EQ",
+      "hazard": "Earthquake ground shaking",
+      "official_source_name": "U.S. Geological Survey, National Seismic Hazard Model (2023 50-state update)",
+      "official_source_url": "https://www.usgs.gov/programs/earthquake-hazards/national-seismic-hazard-model-project",
+      "lookup_tool_name": "USGS Earthquake Hazard Toolbox",
+      "lookup_tool_url": "https://earthquake.usgs.gov/nshmp/",
+      "program_status": "verified",
+      "program_note": "USGS states that updates are complete for the 2023 National Seismic Hazard Model covering all 50 states. The Toolbox provides web applications for querying and computing hazard from the national models.",
+      "parcel_designation": null,
+      "parcel_status": "unverified",
+      "parcel_note": "Ground-motion values are coordinate-keyed. No value is asserted because the coordinates are private.",
+      "why_it_matters": "Unreinforced masonry or pre-1976 construction can carry retrofit obligations and uninsurable loss of use. A single-storey 1,372 sq ft prototype building is a comparatively resilient form, but only an engineer's report settles it.",
+      "loss_channels": ["Repair / rebuild cost", "Business interruption and loss of rent", "Deductible and insurance availability", "Exit liquidity after a regional event"],
+      "evidence_needed": ["Seismic retrofit or structural report by a licensed engineer (ADVISER-2)", "Current property insurance declarations page incl. earthquake coverage and deductible", "If the building is masonry-bearing-wall, the local retrofit ordinance timeline"]
+    },
+    {
+      "id": "HZ-FL",
+      "hazard": "Riverine and coastal flooding (NFIP flood hazard)",
+      "official_source_name": "FEMA, Flood Map Service Center — 'the official public source for flood hazard information produced in support of the National Flood Insurance Program'",
+      "official_source_url": "https://msc.fema.gov/portal/home",
+      "lookup_tool_name": "FEMA Flood Map Service Center address/coordinate search",
+      "lookup_tool_url": "https://msc.fema.gov/portal/search",
+      "program_status": "verified",
+      "program_note": "FEMA states flood maps are continually updated and that effective information may change or be superseded. A Flood Insurance Rate Map panel and effective date must be captured, not just a zone letter.",
+      "parcel_designation": null,
+      "parcel_status": "unverified",
+      "parcel_note": "The parcel's flood zone, FIRM panel number and effective date have not been read. Blank.",
+      "why_it_matters": "A Special Flood Hazard Area designation changes lender and insurance requirements and can force elevation or floodproofing on any rebuild, which directly affects the terminal value of the site.",
+      "loss_channels": ["Mandatory flood insurance cost", "Rebuild constraints", "Lender appetite at sale"],
+      "evidence_needed": ["FIRM panel number, zone and effective date for the parcel", "Flood insurance quote or declaration", "Any Letters of Map Amendment on file"]
+    },
+    {
+      "id": "HZ-FIRE",
+      "hazard": "Wildfire (Fire Hazard Severity Zone)",
+      "official_source_name": "CAL FIRE — Office of the State Fire Marshal, Fire Hazard Severity Zones",
+      "official_source_url": "https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones",
+      "lookup_tool_name": "FHSZ viewer / Zone Lookup",
+      "lookup_tool_url": "https://experience.arcgis.com/experience/5065c998b4b0462f9ec3c6c226c610a9",
+      "program_status": "verified",
+      "program_note": "Zones are Moderate, High or Very High, in State Responsibility Areas (SRA) and now Local Responsibility Area (LRA). SRA maps effective 1 April 2024. OSFM states that FHSZ maps evaluate 'hazard', not 'risk'. A 2026 SRA update is out for public comment from 9 November 2026 to 8 January 2027, so the current designation may change during the holding period.",
+      "parcel_designation": null,
+      "parcel_status": "unverified",
+      "parcel_note": "Whether the parcel sits in an SRA or LRA, and at what severity, has not been read. Blank.",
+      "why_it_matters": "For an urban central-Los Angeles parcel the exposure is usually not the wildland interface itself but smoke, power shut-offs and the post-event insurance repricing that follows a regional conflagration. Disclosure duties attach to FHSZ status in California.",
+      "loss_channels": ["Insurance non-renewal or repricing", "Disclosure on sale", "Utility power shut-off affecting a drive-thru"],
+      "evidence_needed": ["FHSZ designation from the OSFM viewer, with the date read", "Confirmation of SRA vs LRA responsibility", "Note on the pending 2026 SRA update"]
+    },
+    {
+      "id": "HZ-FAU",
+      "hazard": "Surface fault rupture",
+      "official_source_name": "California Geological Survey, Alquist-Priolo Earthquake Fault Zoning Act regulatory zones",
+      "official_source_url": "https://www.conservation.ca.gov/cgs",
+      "lookup_tool_name": "CGS Alquist-Priolo zone maps (by quadrangle)",
+      "lookup_tool_url": "https://maps.conservation.ca.gov/cgs/informationwarehouse/index.html?map=regulatorymaps",
+      "program_status": "unverified",
+      "program_note": "The CGS deep links attempted during this session returned the Department of Conservation 'Page Not Found' page, so the specific Alquist-Priolo page could not be confirmed. The programme itself is statutory and the CGS site root resolves. Recorded as an irregularity rather than asserted.",
+      "parcel_designation": null,
+      "parcel_status": "unverified",
+      "parcel_note": "Not read.",
+      "why_it_matters": "A regulatory zone would require a fault investigation before any rebuild or expansion, which is a schedule and cost risk on renewal capex.",
+      "loss_channels": ["Rebuild prohibition without investigation", "Schedule risk on remodel"],
+      "evidence_needed": ["Quadrangle name and Alquist-Priolo zone status", "Any existing geologic report in the lease file"]
+    },
+    {
+      "id": "HZ-NRI",
+      "hazard": "Composite multi-hazard risk score",
+      "official_source_name": "FEMA, National Risk Index (v1.20 data update, published through the Resilience Analysis and Planning Tool)",
+      "official_source_url": "https://www.fema.gov/flood-maps/products-tools/national-risk-index",
+      "lookup_tool_name": "FEMA RAPT / National Risk Index",
+      "lookup_tool_url": "https://www.fema.gov/emergency-managers/practitioners/resilience-analysis-and-planning-tool",
+      "program_status": "verified",
+      "program_note": "FEMA states the National Risk Index 'was created to help illustrate the United States communities most at risk for 18 natural hazards', and that the v1.20 update is available in RAPT. FEMA also publishes a data user guide.",
+      "parcel_designation": null,
+      "parcel_status": "unverified",
+      "parcel_note": "No county or tract score was read from an official page during this session, so no score is reproduced.",
+      "why_it_matters": "A composite score is useful for ranking, not for underwriting one building. It is included so the owner can see whether the parcel sits in an unusually exposed community, not as a proxy for the building's own condition.",
+      "loss_channels": ["Context only"],
+      "evidence_needed": ["Census tract NRI score, expected annual loss and social vulnerability, with the data vintage read from RAPT"]
+    },
+    {
+      "id": "HZ-TAX",
+      "hazard": "Property-tax relief after a disaster (recovery mechanism, not a hazard)",
+      "official_source_name": "Los Angeles County Assessor, Disaster Relief and Misfortune & Calamity claims",
+      "official_source_url": "https://assessor.lacounty.gov/tax-relief/disaster-relief",
+      "lookup_tool_name": "Assessor Misfortune & Calamity claim status / Property Search",
+      "lookup_tool_url": "https://assessor.lacounty.gov/homeowners/property-search",
+      "program_status": "verified",
+      "program_note": "The Assessor publishes a Disaster Relief page and a Misfortune & Calamity claim-status tool, and states that owners whose property was damaged by a natural disaster may be eligible for property tax relief.",
+      "parcel_designation": null,
+      "parcel_status": "unverified",
+      "parcel_note": "No claim has been filed or reviewed. Blank.",
+      "why_it_matters": "This is the only confirmed post-loss tax mechanism found. It is a mitigation of loss, not a substitute for insurance, and it is time-limited in practice.",
+      "loss_channels": ["Partial offset of assessed value after damage"],
+      "evidence_needed": ["Whether any prior M&C claim exists on the parcel", "The filing window that would apply after an event"]
+    }
+  ],
+  "gaps": [
+    {
+      "id": "HZ-GAP-1",
+      "item": "Insurance market access for the building",
+      "detail": "No official source read in this session states whether a carrier will write or renew commercial property cover for this building or this ZIP. The California FAIR Plan page attempted during this session returned a document-not-found error, so no programme detail is asserted here.",
+      "attempted_url": "https://www.insurance.ca.gov/01-consumers/105-type/95-guides/03-res/FAIR-plan.cfm",
+      "action": "Obtain the current declarations page and a renewal quote from the broker (ADVISER-3) and record the premium, deductible and earthquake exclusion in the private worksheet."
+    },
+    {
+      "id": "HZ-GAP-2",
+      "item": "Stress test of loss of rent, repairs and exit liquidity together",
+      "detail": "The brief asks for these three to be stressed together. The private calculator now carries a loss-of-rent and repair-shock input and an exit-cap-rate shock input, so the three can be run as one scenario. Running it requires the private lease abstract, which does not exist yet.",
+      "attempted_url": null,
+      "action": "Commission the lease abstract first. Without the rent, term, options and expense allocation, any stress number is an assumption, not a finding."
+    }
+  ]
+}

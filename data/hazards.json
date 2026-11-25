@@ -1,0 +1,223 @@
+{
+  "meta": {
+    "dataset": "hazards",
+    "version": "1.0",
+    "as_of": "2026-11-25",
+    "owner_session": "ses-41ea221b",
+    "task": "W-04 — parcel-level hazard screening (seismic, flood, fire)",
+    "critical_caveat": "The three official hazard tools below were successfully queried, but only at a REFERENCE POINT (downtown Los Angeles, 34.0522 / -118.2437) because the parcel coordinates are withheld. These are therefore demonstrations that the method works, NOT the parcel's zone status. Parcel zone status stays 'unverified' until G-03 is closed in a secure workflow. Nothing here may be quoted as the parcel's hazard rating."
+  },
+  "reference_point": {
+    "label": "REFERENCE-POINT-ALPHA (not the parcel)",
+    "lat": 34.0522,
+    "lon": -118.2437,
+    "description": "Downtown Los Angeles civic centre, used only to prove the query path and capture a real response."
+  },
+  "rows": [
+    {
+      "id": "HZ-01",
+      "hazard": "Seismic — design spectral response, short period (Ss)",
+      "geography": "REFERENCE-POINT-ALPHA",
+      "value": 2.25,
+      "unit": "g",
+      "status": "verified-reference-only",
+      "source_id": "S-006",
+      "source_query": "https://earthquake.usgs.gov/ws/designmaps/asce7-22.json?latitude=34.0522&longitude=-118.2437&riskCategory=III&siteClass=C",
+      "note": "Risk Category III and Site Class C assumed as a generic commercial default; both must be confirmed for the actual building."
+    },
+    {
+      "id": "HZ-02",
+      "hazard": "Seismic — design spectral response, 1-second period (S1)",
+      "geography": "REFERENCE-POINT-ALPHA",
+      "value": 0.72,
+      "unit": "g",
+      "status": "verified-reference-only",
+      "source_id": "S-006",
+      "source_query": "https://earthquake.usgs.gov/ws/designmaps/asce7-22.json?latitude=34.0522&longitude=-118.2437&riskCategory=III&siteClass=C"
+    },
+    {
+      "id": "HZ-03",
+      "hazard": "Seismic — design spectral acceleration short period (SDS)",
+      "geography": "REFERENCE-POINT-ALPHA",
+      "value": 1.53,
+      "unit": "g",
+      "status": "verified-reference-only",
+      "source_id": "S-006",
+      "source_query": "https://earthquake.usgs.gov/ws/designmaps/asce7-22.json?latitude=34.0522&longitude=-118.2437&riskCategory=III&siteClass=C"
+    },
+    {
+      "id": "HZ-04",
+      "hazard": "Seismic — design spectral acceleration 1-second (SD1)",
+      "geography": "REFERENCE-POINT-ALPHA",
+      "value": 0.68,
+      "unit": "g",
+      "status": "verified-reference-only",
+      "source_id": "S-006",
+      "source_query": "https://earthquake.usgs.gov/ws/designmaps/asce7-22.json?latitude=34.0522&longitude=-118.2437&riskCategory=III&siteClass=C"
+    },
+    {
+      "id": "HZ-05",
+      "hazard": "Seismic — Seismic Design Category",
+      "geography": "REFERENCE-POINT-ALPHA",
+      "value": "D",
+      "unit": "category",
+      "status": "verified-reference-only",
+      "source_id": "S-006",
+      "source_query": "https://earthquake.usgs.gov/ws/designmaps/asce7-22.json?latitude=34.0522&longitude=-118.2437&riskCategory=III&siteClass=C",
+      "note": "SDC D is the second-highest category. A commercial building here is expected to be designed for significant ground shaking."
+    },
+    {
+      "id": "HZ-06",
+      "hazard": "Earthquake count, magnitude 4.5+ within the central-LA bounding box",
+      "geography": "lat 33.7-34.4, lon -118.7 to -117.8",
+      "value": 4,
+      "unit": "events",
+      "status": "verified",
+      "source_id": "S-006",
+      "source_query": "https://earthquake.usgs.gov/fdsnws/event/1/count?format=geojson&starttime=2000-01-01&endtime=2026-11-25&minlatitude=33.7&maxlatitude=34.4&minlongitude=-118.7&maxlongitude=-117.8&minmagnitude=4.5",
+      "note": "Only four M4.5+ events in 26 years inside this box. The large expected losses come from rare, very large ruptures rather than frequent moderate ones — which is exactly why the stress case must be a tail scenario, not an average."
+    },
+    {
+      "id": "HZ-07",
+      "hazard": "FEMA flood zone",
+      "geography": "REFERENCE-POINT-ALPHA",
+      "value": "X",
+      "unit": "zone",
+      "status": "verified-reference-only",
+      "source_id": "S-007",
+      "source_query": "https://hazards.fema.gov/arcgis/rest/services/public/NFHL/MapServer/28/query?geometry=-118.2437,34.0522&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=FLD_ZONE,ZONE_SUBTY,STATIC_BFE,DFIRM_ID&returnGeometry=false&f=json",
+      "note": "Zone X, sub-type 'Area of Minimal Flood Hazard'; DFIRM panel 06037C. Base flood elevation returned as -9999, the NFHL null code, so no BFE applies in Zone X."
+    },
+    {
+      "id": "HZ-08",
+      "hazard": "FEMA flood zone at the parcel",
+      "geography": "PARCEL-001",
+      "value": null,
+      "unit": "zone",
+      "status": "unverified",
+      "source_id": "S-007",
+      "note": "Requires parcel coordinates. Zone X at the reference point must not be transferred to the parcel — flood zones change across a single block in Los Angeles."
+    },
+    {
+      "id": "HZ-09",
+      "hazard": "CAL FIRE Fire Hazard Severity Zone (LRA 2025 layer)",
+      "geography": "REFERENCE-POINT-ALPHA",
+      "value": null,
+      "unit": "zone",
+      "status": "unverified",
+      "source_id": "S-009",
+      "note": "The official 2025 LRA FHSZ feature service returned an empty feature set at the reference point, which is consistent with 'not zoned', but an empty response is not the same as an official 'unzoned' determination. Recorded as unverified rather than interpreted."
+    },
+    {
+      "id": "HZ-10",
+      "hazard": "CAL FIRE FHSZ at the parcel",
+      "geography": "PARCEL-001",
+      "value": null,
+      "unit": "zone",
+      "status": "unverified",
+      "source_id": "S-009",
+      "note": "Must be looked up on the official OSFM viewer by address/APN. Do not infer from city-level wildfire news."
+    },
+    {
+      "id": "HZ-11",
+      "hazard": "Federal disaster declarations, Los Angeles County",
+      "geography": "Los Angeles County",
+      "value": 20,
+      "unit": "declarations in the 20 most recent returned",
+      "status": "verified",
+      "source_id": "S-008",
+      "source_query": "https://www.fema.gov/api/open/v2/DisasterDeclarationsSummaries?$filter=state%20eq%20%27CA%27%20and%20substringof(%27Los%20Angeles%27,designatedArea)&$orderby=declarationDate%20desc&$top=20",
+      "note": "Most recent 20 range from 2018-11-12 to 2025-08-08."
+    },
+    {
+      "id": "HZ-12",
+      "hazard": "Most recent major disaster declaration affecting the county",
+      "geography": "Los Angeles County",
+      "value": "DR-4856, Wildfires and Straight-line Winds, declared 2025-01-08",
+      "unit": "declaration",
+      "status": "verified",
+      "source_id": "S-008",
+      "source_query": "https://www.fema.gov/api/open/v2/DisasterDeclarationsSummaries?$filter=state%20eq%20%27CA%27%20and%20substringof(%27Los%20Angeles%27,designatedArea)&$orderby=declarationDate%20desc&$top=20",
+      "note": "The January 2025 firestorm produced a county-wide major disaster declaration. This is the single most important recent evidence that the fire tail risk is live, not theoretical."
+    },
+    {
+      "id": "HZ-13",
+      "hazard": "Fire-management declarations in the county, 2024-2025",
+      "geography": "Los Angeles County",
+      "value": "FM-5549 Palisades, FM-5550 Eaton, FM-5551 Hurst, FM-5548 Franklin, FM-5537 Bridge, FM-5605 Canyon",
+      "unit": "declarations",
+      "status": "verified",
+      "source_id": "S-008",
+      "source_query": "https://www.fema.gov/api/open/v2/DisasterDeclarationsSummaries?$filter=state%20eq%20%27CA%27%20and%20substringof(%27Los%20Angeles%27,designatedArea)&$orderby=declarationDate%20desc&$top=20",
+      "note": "Six separate fire-management declarations in roughly 14 months."
+    },
+    {
+      "id": "HZ-14",
+      "hazard": "Flood and storm emergency declarations in the county, 2023-2024",
+      "geography": "Los Angeles County",
+      "value": "EM-3591, EM-3592, DR-4683, DR-4699, DR-4769",
+      "unit": "declarations",
+      "status": "verified",
+      "source_id": "S-008",
+      "source_query": "https://www.fema.gov/api/open/v2/DisasterDeclarationsSummaries?$filter=state%20eq%20%27CA%27%20and%20substringof(%27Los%20Angeles%27,designatedArea)&$orderby=declarationDate%20desc&$top=20",
+      "note": "Winter 2023 and 2024 atmospheric-river events each produced both emergency and major-disaster declarations covering the county."
+    },
+    {
+      "id": "HZ-15",
+      "hazard": "Pandemic declaration",
+      "geography": "Los Angeles County",
+      "value": "DR-4482, COVID-19 Pandemic, declared 2020-03-22",
+      "unit": "declaration",
+      "status": "verified",
+      "source_id": "S-008",
+      "note": "Reference case for a demand shock that closed dining rooms but did not physically damage the asset. Relevant to the rent-loss stress case."
+    },
+    {
+      "id": "HZ-16",
+      "hazard": "Building-specific seismic retrofit status",
+      "geography": "PARCEL-001",
+      "value": null,
+      "unit": null,
+      "status": "unverified",
+      "source_id": null,
+      "note": "Requires the structural/seismic report and any City of Los Angeles retrofit order. Not obtainable from public data without the address."
+    },
+    {
+      "id": "HZ-17",
+      "hazard": "Liquefaction and landslide susceptibility",
+      "geography": "PARCEL-001",
+      "value": null,
+      "unit": null,
+      "status": "unverified",
+      "source_id": null,
+      "note": "Requires the California Geological Survey seismic hazard zone maps for the specific quadrangle and the site geotechnical report."
+    },
+    {
+      "id": "HZ-18",
+      "hazard": "Insurance availability and pricing after the 2025 fires",
+      "geography": "PARCEL-001",
+      "value": null,
+      "unit": null,
+      "status": "unverified",
+      "source_id": null,
+      "note": "Requires the actual binder and quotes. This is the single largest unmodelled risk to the sell-versus-hold arithmetic and must not be assumed."
+    }
+  ],
+  "query_recipes": [
+    {
+      "hazard": "flood",
+      "how": "POST-free GET to the NFHL layer 28 query endpoint with the parcel lon/lat, inSR=4326, returnGeometry=false, outFields=FLD_ZONE,ZONE_SUBTY,STATIC_BFE,DFIRM_ID.",
+      "note": "A non-empty features array means the point is inside a mapped flood zone. An empty array means the point is not in a mapped zone, which is NOT the same as no flood risk."
+    },
+    {
+      "hazard": "seismic",
+      "how": "GET the USGS ASCE 7-22 endpoint with latitude, longitude, riskCategory and siteClass.",
+      "note": "SDC and SDS/SD1 come back directly; the full design spectrum is included if needed."
+    },
+    {
+      "hazard": "fire",
+      "how": "Query the CAL FIRE LRA FHSZ feature service at the parcel point, then confirm the classification on the official OSFM address viewer.",
+      "note": "An empty feature set is not a determination. Confirm on the viewer before relying on it."
+    }
+  ]
+}
