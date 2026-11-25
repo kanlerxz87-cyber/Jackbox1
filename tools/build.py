@@ -158,11 +158,10 @@ def status_badge(s: str) -> str:
 
 
 def value_cell(r: dict) -> str:
+    """The unit lives in its own column; repeating it here read as "5.8 percent | percent"."""
     if r["value"] == "":
         return '<td class="blank">blank — unverified</td>'
-    v = esc(r["value"])
-    unit = f' <span class="unit">{esc(r["unit"])}</span>' if r["unit"] and r["unit"] != "text" else ""
-    return f'<td class="num">{v}{unit}</td>'
+    return f'<td class="num">{esc(r["value"])}</td>'
 
 
 def source_cell(r: dict) -> str:
@@ -529,7 +528,7 @@ def build_economy(rows):
 
 def build_tracts(rows):
     import csv as _csv
-    with (DATA / "tracts_demo_90015.csv").open(encoding="utf-8") as fh:
+    with (DATA / "tracts_demo_a.csv").open(encoding="utf-8") as fh:
         tracts = list(_csv.DictReader(fh))
     url = "https://api.censusreporter.org/1.0/data/show/latest?table_ids=B01003,B19013,B25077&geo_ids=140|86000US90015"
     tr = []
@@ -582,7 +581,7 @@ did not publish a value for that tract — it is not zero and it has not been in
     sorted(tracts, key=lambda t: int(t["median_household_income"]))[0]["tract_short"]}) to
     <strong>${incs[-1]:,}</strong> (tract {
     sorted(tracts, key=lambda t: int(t["median_household_income"]))[-1]["tract_short"]}) —
-    a <strong>{ratio}× range inside a single ZIP code</strong>. The median tract value (${median_of_tracts:,}) sits
+    a <strong>{ratio}× range across this demonstration set</strong>. The median tract value (${median_of_tracts:,}) sits
     {median_gap}% below the city median of $81,939 (INC-01) — which is precisely why a city-level average tells you almost
     nothing about a specific corner.</p>
   </div>

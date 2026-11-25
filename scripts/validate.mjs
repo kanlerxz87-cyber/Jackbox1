@@ -115,7 +115,11 @@ const linkTargets = pages.map(f => 'pages/' + f).concat(['index.html'])
 
 /* Every other session's tree is also link-checked, so no published page anywhere in the repo
    can carry a dead link. Discovery is dynamic: a new sibling tree is covered automatically. */
-const TREE_DIRS = ['docs', 'workspace', 'audit-78005353', 'audit-78005353/site'];
+const TREE_DIRS = [
+  'docs', 'workspace', 'audit-78005353', 'audit-78005353/site',
+  // ledger-1ebd66da keeps its pages one level down, in its own pages/ directory
+  'ledger-1ebd66da', 'ledger-1ebd66da/pages',
+];
 TREE_DIRS.forEach(d => {
   const abs = join(ROOT, d);
   if (!existsSync(abs)) return;

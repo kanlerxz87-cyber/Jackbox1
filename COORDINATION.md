@@ -355,6 +355,7 @@ source data, which is the correct outcome.
 | `/audit-78005353/` | arena/78005353 | 11 |
 | `/desk/` | arena-8c9d9d97, f5a16939 | 8 |
 | `/docs/` | arena-f5a16939 | 17 |
+| `/ledger-1ebd66da/` | arena/1ebd66da | 15 |
 
 **Verification after this merge:** `node scripts/validate.mjs` green (211 rows); `tools/check.py`
 green (18 pages, 72 rows); all internal links resolve within each tree. Every tree's own checker
@@ -458,3 +459,71 @@ zones, contract rent, adjusted basis, an insurance premium and any real cap rate
 from every tree. Each tree publishes them as blanks with the private document that would close
 them. That is the answer to the brief's central question: the decision is not ready, and the
 work product is the map of what would make it ready.
+
+## Irregularities recorded by this pass
+
+- **IR-A1** Two official, non-comparable population vintages are in use across trees: Vintage 2024
+  (3,878,704) and QuickFacts V2025 (3,869,089). Both are correct for their vintage; consistent with
+  `arena-41ea221b`'s IR-13. This tree uses V2025 and states the vintage on every row.
+- **IR-A2** Reader-specific fetch failures, each with the attempted URL, are enumerated on
+  `audit-78005353/site/flagged.html` (FR-01 … FR-14): Census county QuickFacts, CA DIR fast-food wage,
+  CGS Alquist-Priolo, HUD FMR, CA FAIR Plan, and the retired CAL FIRE FHSZ URL.
+- **IR-A3** The widely reported **$20.00** California fast-food minimum wage could not be confirmed on
+  an official page in this pass and is **asserted nowhere** in this tree. Only the verified $16.90
+  general rate is used.
+- **IR-A4** BLS has an official gap: no October 2025 collection during the appropriations lapse, so no
+  October 2026 over-the-year CPI exists. Not an error in any tree.
+- **IR-A5** Five trees now exist in one repository. This is a coordination failure, not a design
+  choice; it is recorded rather than tidied away, because tidying it would mean deleting another
+  session's published work.
+- **IR-A6** A GitHub Pages site is not an access-controlled workspace. Every tree says so.
+
+## Log
+
+- 2026-11-25 13:38 UTC `arena-78005353`: claimed W-01…W-10 + INT-01; repo held only `README.md`.
+- 2026-11-25 `arena-78005353`: built the tree, data files and generator; opened PR #5.
+- 2026-11-25 `arena-78005353`: PR #5 blocked three times as main advanced. Each time main was merged
+  rather than force-pushed; no other session's file was overwritten. Published finally at
+  `/audit-78005353/`.
+
+---
+
+# Session `arena/1ebd66da-jackbox1` — record
+
+Claimed at a point when the repository held only `README.md` (`4aa9dad`). By the time the tree was
+ready, `main` had advanced **35 commits** (PRs #1–#5) and already carried five published trees:
+`/` (→ `pages/`), `/docs/`, `/desk/`, `/workspace/`, `/audit-78005353/`.
+
+| ID | Task | Status | Owner | File scope (exclusive) |
+|---|---|---|---|---|
+| L-01 | Verified evidence register: 55 rows, 24 official publishers | done | `arena/1ebd66da` | `ledger-1ebd66da/data/` |
+| L-02 | 15-page site (W-01…W-10 + risks, questions, suggestions, flagged, sources, privacy) | done | `arena/1ebd66da` | `ledger-1ebd66da/pages/`, `index.html` |
+| L-03 | Build + deploy gate, incl. a runtime privacy scan | done | `arena/1ebd66da` | `ledger-1ebd66da/scripts/` |
+| L-04 | Private offline sell-versus-hold + after-tax calculator | done | `arena/1ebd66da` | `ledger-1ebd66da/assets/js/calc*` |
+| L-05 | Real-HTTP link crawl | done | `arena/1ebd66da` | `ledger-1ebd66da/scripts/checklinks.mjs` |
+
+**Where it is published.** `ledger-1ebd66da/` — a directory no other session touches. Root
+`index.html` and this file are appended to, never rewritten: no existing line of either was removed.
+
+**Why it is a sixth tree rather than a merge.** The same reason recorded as **IR-A5** by an earlier
+session: consolidating the trees means deleting another session's published work. That remains the
+owner's decision, not a worker's.
+
+**Checks at integration.** `build.mjs` idempotent (second run: 0 pages updated).
+`verify.mjs`: 24 sources · 55 rows (44 verified / 11 blank-and-flagged) · 15 pages · 0 broken links ·
+0 privacy-pattern hits. `checklinks.mjs` against a real HTTP server at `/ledger-1ebd66da/`:
+18/18 targets resolve. `test-calculator.mjs`: 22/22 assertions on hand-checkable scenarios,
+plus assertions that the calculator performs no network call and touches no storage.
+
+**Defect found and fixed during integration (L-06).** Filesystem link resolution passed while the
+served site 404'd, because the tree's index.html links carried the publish prefix and were then being
+resolved against the tree root. The static checker could not see it. Fixed by keeping index.html links
+relative and adding an HTTP crawl to the check set — the lesson generalises to every tree here that is
+served from a subdirectory.
+
+**Irregularities carried forward** (unchanged from this session's own flagged page):
+the lease expiry is a 2030–2035 *range*, not a date; no parcel address or AIN was supplied; no lease
+document, rent schedule or owner tax facts were supplied; California's population differs between the
+Census vintage and the DOF E-1 release, and both are official.
+
+**Open.** The ten decision-blocking questions remain open. No recommendation is made.

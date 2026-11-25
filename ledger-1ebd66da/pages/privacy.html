@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy &amp; Anonymisation Policy — Hold or Sell Workspace</title>
+<meta name="description" content="How this workspace keeps parcel, lease and owner information offline, and what it means for the anonymous summaries published here.">
+<link rel="stylesheet" href="../assets/css/style.css">
+<script src="../assets/js/nav.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="brandmark">Hold or Sell <span class="tag">Decision Workspace</span></div>
+    <div class="env"><span>Privacy</span><span><strong>Evidence cut-off 2026-11-25</strong></span></div>
+  </div>
+</header>
+
+<nav class="nav" aria-label="Sections">
+  <div class="nav-inner">
+    <a href="../index.html">Overview</a>
+    <a href="economics.html">Trade Area</a>
+    <a href="worksheet.html">Sell v Hold</a>
+    <a href="decision-gates.html">Decision Gates</a>
+    <a href="hazards.html">Hazards</a>
+    <a href="tract-trends.html">Tract Trends</a>
+    <a href="rental-evidence.html">Rental Evidence</a>
+    <a href="lease-abstract.html">Lease Abstract</a>
+    <a href="risks.html">Risks</a>
+    <a href="open-questions.html">Open Questions</a>
+    <a href="suggestions.html">Suggestions</a>
+    <a href="flagged.html">Flagged</a>
+    <a href="sources.html">Sources</a>
+    <a href="advisory-summary.html">Summary</a>
+    <a href="privacy.html">Privacy</a>
+  </div>
+</nav>
+
+<main id="main" class="wrap">
+
+  <div class="page-head">
+    <p class="eyebrow">Policy</p>
+    <h1>Privacy and anonymisation policy</h1>
+    <p class="lede">
+      The brief set personal-information privacy as the highest priority and highest urgency, and
+      required that any personal information discovered during research be for internal use only and
+      never appear in the final website product. This page states exactly how that is enforced — as a
+      build-time check, not a promise.
+    </p>
+  </div>
+
+  <div class="notice notice--ok">
+    <strong>Enforcement, not intent.</strong> The build script (<code>scripts/verify.mjs</code>) fails
+    the site build if a US street address, latitude/longitude pair, telephone number, email address,
+    SSN pattern, or card-number-like string appears in any published page. The site cannot be deployed
+    with a privacy leak in it, because deployment is gated on that check passing.
+  </div>
+
+  <h2>The three-tier rule</h2>
+
+  <div class="table-scroll">
+    <table>
+      <caption><strong>What lives where</strong></caption>
+      <thead><tr><th>Tier</th><th>Contents</th><th>Location</th><th>On this site</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>Tier 1 — Public</strong></td>
+          <td>Aggregate, non-identifying findings: county and metro economic series, statutory tax rates, published tenant financials, the existence and purpose of official hazard lookups.</td>
+          <td>This GitHub Pages site.</td>
+          <td><span class="pill pill--ok">Published</span></td>
+        </tr>
+        <tr>
+          <td><strong>Tier 2 — Adviser</strong></td>
+          <td>The lease abstract, notice calendar, rent ledger, CAM reconciliations, hazard zone results for the parcel, comparable-sale analysis, CPA tax projection.</td>
+          <td>An access-controlled internal workspace, shared only with engaged advisers under confidentiality.</td>
+          <td><span class="pill pill--stop">Never published</span> — shown only as a blank row with a flag</td>
+        </tr>
+        <tr>
+          <td><strong>Tier 3 — Owner only</strong></td>
+          <td>Parcel address and AIN, owner identity and entity, tax returns and basis, personal financial position, tenant correspondence.</td>
+          <td>Owner's own records.</td>
+          <td><span class="pill pill--stop">Never published, never transmitted</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>What is excluded from every page, and how it is checked</h2>
+
+  <div class="table-scroll">
+    <table>
+      <caption><strong>Automated exclusion list</strong> Enforced by the build script. A violation fails the deploy.</caption>
+      <thead><tr><th>Data type</th><th>Detection</th><th>Why it is excluded</th></tr></thead>
+      <tbody>
+        <tr><td>US street address</td><td>Pattern match on street-number + street-name + street-type</td><td>An address identifies the parcel, and therefore the owner through public records.</td></tr>
+        <tr><td>Latitude / longitude pair</td><td>Pattern match on two decimal values ≥3 places separated by a comma</td><td>Functionally identical to an address for re-identification.</td></tr>
+        <tr><td>Telephone number</td><td>Pattern match on NANP formats</td><td>Personal contact data, and a route to the owner through a reverse lookup.</td></tr>
+        <tr><td>Email address</td><td>Pattern match on the standard <em>local-part</em> at-sign <em>domain</em> form</td><td>Same.</td></tr>
+        <tr><td>Social Security Number</td><td>Pattern match on <code>NNN-NN-NNNN</code></td><td>Direct identity theft risk.</td></tr>
+        <tr><td>Card-number-like sequence</td><td>13–19 digit run outside an href</td><td>Payment data. (SEC accession numbers in source URLs are explicitly exempted.)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>The calculator's privacy design</h2>
+
+  <div class="card">
+    <h3 style="margin-top:0">Nothing you type leaves the browser</h3>
+    <p>The sell-versus-hold calculator is the only interactive element on this site. It is engineered
+    so that it cannot collect data even by accident:</p>
+    <ul class="checks">
+      <li data-state="done"><strong>No network requests.</strong> The calculator performs no <code>fetch</code>, <code>XMLHttpRequest</code>, <code>WebSocket</code>, or image-beacon call. It cannot transmit, because it contains no transmission code.</li>
+      <li data-state="done"><strong>No storage.</strong> It does not touch <code>localStorage</code>, <code>sessionStorage</code>, <code>IndexedDB</code>, or cookies. Close the tab and the inputs are gone.</li>
+      <li data-state="done"><strong>No analytics.</strong> There is no Google Analytics, no tag manager, no pixel, and no third-party script of any kind. The site loads exactly two local files: <code>style.css</code> and one JavaScript file.</li>
+      <li data-state="done"><strong>No form action.</strong> The form's submit handler calls <code>preventDefault()</code>, so the browser never posts the values anywhere, including to GitHub Pages.</li>
+      <li data-state="done"><strong>No autocomplete capture.</strong> Form autocomplete is disabled, so the browser will not offer to save the values.</li>
+      <li data-state="done"><strong>Verifiable.</strong> Open your browser's developer tools, switch to the Network panel, and use the calculator. The only requests will be the page and its two assets.</li>
+    </ul>
+    <p class="small muted" style="margin-bottom:0">A caveat stated honestly: GitHub Pages, as the host,
+    sees the IP address and user-agent of any visitor to any page, as every web server does. That is
+    outside this site's control and applies to every page here, not just this one. What is within
+    control — the calculator's own behaviour — is designed to transmit nothing.</p>
+  </div>
+
+  <h2>Why the research itself stays anonymous</h2>
+
+  <div class="grid grid--2">
+    <div class="card" style="margin:0">
+      <h3 style="margin-top:0">The commercial reason</h3>
+      <ul class="tight small">
+        <li>A seller whose identity and timing are public negotiates from weakness.</li>
+        <li>A tenant who knows the landlord is testing the market gains leverage in a renewal discussion.</li>
+        <li>Neighbouring owners and competing buyers can act on the information before the owner does.</li>
+        <li>Comparable-sale research becomes harder once the market knows a specific asset is in play.</li>
+      </ul>
+    </div>
+    <div class="card" style="margin:0">
+      <h3 style="margin-top:0">The privacy reason</h3>
+      <ul class="tight small">
+        <li>An address plus a tax record identifies an owner in minutes, from public data.</li>
+        <li>An owner's financial position is nobody else's business.</li>
+        <li>A tenant's lease terms and store performance are commercially sensitive to the tenant.</li>
+        <li>Publishing any of it would create a permanent, searchable, cached record that cannot be recalled.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="notice notice--info">
+    <strong>The asymmetry that drives every choice here.</strong> A published page can be crawled,
+    cached and archived within hours, and there is no reliable way to undo it. A withheld detail can
+    always be shared privately later. Given that asymmetry, the default is always to withhold, and the
+    published site carries only what is safe to be permanent.
+  </div>
+
+  <h2>What a reader can and cannot infer from this site</h2>
+
+  <div class="table-scroll">
+    <table>
+      <caption><strong>Inference resistance</strong></caption>
+      <thead><tr><th>A reader knows</th><th>Can they identify the parcel?</th><th>Why</th></tr></thead>
+      <tbody>
+        <tr><td>It is a Jack in the Box with an NNN lease, expiring 2030–2035, in central Los Angeles</td><td><strong>Only by enumeration.</strong> There are 941 Jack in the Box restaurants in California, of which 845 are franchised; a determined reader could visit all central-LA locations and narrow the set slowly.</td><td>The site does not narrow it. It publishes no street, no AIN, and no location-specific data of any kind.</td></tr>
+        <tr><td>The decision being weighed</td><td>No</td><td>That frame applies to thousands of leased retail assets at any moment.</td></tr>
+        <tr><td>The owner's tax posture</td><td>No</td><td>Described only as questions, never answered with data.</td></tr>
+        <tr><td>The lease terms</td><td>No</td><td>Every commercial field is marked "not supplied".</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="small muted">Honest limitation: a public site that describes a specific asset's
+  <em>situation</em> inevitably narrows the field somewhat, even with no identifiers. That is why the
+  site publishes no location-specific finding at all — not even a hazard zone or a tract name — until
+  the owner chooses to, and why the flagged page records exactly which facts are being withheld.</p>
+
+  <h2>Data retention</h2>
+  <div class="table-scroll">
+    <table>
+      <caption><strong>Retention by data type</strong></caption>
+      <thead><tr><th>Data</th><th>Retained where</th><th>Retained how long</th><th>Deletion</th></tr></thead>
+      <tbody>
+        <tr><td>Calculator inputs</td><td>Browser memory only</td><td>Until the tab closes</td><td>Automatic</td></tr>
+        <tr><td>Site content</td><td>Git repository and GitHub Pages</td><td>Indefinitely; versioned in git history</td><td>By commit</td></tr>
+        <tr><td>Owner tax and lease documents</td><td>Owner's records and the adviser workspace</td><td>Owner's discretion</td><td>Owner's discretion</td></tr>
+        <tr><td>Server logs</td><td>GitHub Pages infrastructure</td><td>Governed by GitHub's policy, not this site's</td><td>Outside this site's control</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Compliance notes</h2>
+  <div class="card">
+    <p class="small"><strong>No personal data is processed by this site.</strong> Because the site
+    publishes only aggregate statistics from official sources and collects nothing, it does not act as
+    a data controller for personal information. This is a factual description of the architecture, not
+    a legal opinion; obtain counsel's view before relying on it in any jurisdiction with specific
+    requirements.</p>
+    <p class="small"><strong>Official statistics are not personal data.</strong> The economic series on
+    this site are published by government agencies in aggregate form. The Census Bureau's own
+    documentation notes that its estimates are derived from summary tables and do not reveal the
+    identity of any individual — the same principle this site applies.</p>
+    <p class="small" style="margin-bottom:0"><strong>Third parties named.</strong> Jack in the Box Inc.
+    is named as the tenant because it is a public company whose filings are already public. No
+    individual officer, employee, franchisee, or contact is named anywhere on this site.</p>
+  </div>
+
+  <p style="margin-top:1.6rem"><a href="sources.html">Next: the full official source register →</a></p>
+
+</main>
+
+<footer class="site">
+  <div class="inner">
+    <p><strong>Privacy.</strong> This is the policy that governs every page on this site. It is
+    enforced by the build script, not by convention. <a href="privacy.html">You are here →</a></p>
+    <p><a href="sources.html">Full source register</a> · <a href="flagged.html">Flagged for review</a> · <a href="../index.html">Back to overview</a></p>
+  </div>
+</footer>
+</body>
+</html>
