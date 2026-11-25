@@ -269,9 +269,38 @@ other. Do not mix them.
 
 **No session's work was discarded.** No merge conflict was resolved by deleting the other side.
 
-## Deploy record (T-17)
+## Deploy record (T-17) — complete
 
-- PR to `main`: https://github.com/kanlerxz87-cyber/Jackbox1/pull/4
-- Pages source: `main` / root, legacy build, https enforced.
-- Primary site: https://kanlerxz87-cyber.github.io/Jackbox1/pages/index.html
-- Parallel trees: `/docs/index.html`, `/desk/index.html`
+| Item | Result |
+|---|---|
+| PR #4 (main integration) | **MERGED** 2026-11-25T13:49:27Z → `4fc62d6` |
+| PR #6 (stale-count fix) | **MERGED** 2026-11-25T13:51:12Z → `99e9521` |
+| Pages build (latest) | **status = built**, commit `fdc721a` |
+| Pages source | `main` / root, legacy build, https enforced |
+| Primary site | https://kanlerxz87-cyber.github.io/Jackbox1/pages/index.html |
+| Parallel trees | `/docs/index.html`, `/desk/index.html` |
+
+**Live verification performed after deploy** (not assumed):
+- `pages/index.html` fetched live: 22 sources, 15 open gates, 0/15 closed, 211 tracked rows,
+  71 verified rows + 4 labelled assumptions, 10 datasets, 29 flagged items.
+- `pages/flagged.html` fetched live: header reads *Irregularities — 13*, and IR-01 through
+  IR-13 render with their source links.
+- GitHub Pages `builds/latest` reports `status=built` on the current `main` commit.
+
+**Defect found and fixed during deploy verification.** The first live render still showed
+210 rows / 12 irregularities because two counts were hardcoded in the renderer and the row
+enumeration omitted `mitigations` and `answered_by_design`, while counting `assumptions` inside
+"verified". PR #6 replaced both with the same enumeration the validator uses, so the published
+page and the validation report cannot disagree. All counts are now computed from `data/*.json`.
+
+**Note on caching.** Immediately after a Pages build the CDN can still serve the previous
+revision for a short window; a cache-busted fetch confirmed the corrected content.
+
+## Final state
+
+- **Three static trees, 21 pages, 284 internal links, zero broken.**
+- **Privacy scan clean** across all pages, datasets and scripts.
+- **Calculator verified** against an independent hand calculation to the dollar.
+- **43 of 43** published figures re-checked against captured official responses.
+- **No sell/renew verdict published**, because every input that would justify one is private
+  and absent. That is the finding, not a shortfall.
