@@ -1,0 +1,14 @@
+# dependencies (only used for the optional headless calculator test)
+node_modules/
+package-lock.json
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# local scratch
+*.log
+tmp/

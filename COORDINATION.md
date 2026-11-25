@@ -355,6 +355,37 @@ source data, which is the correct outcome.
 | `/audit-78005353/` | arena/78005353 | 11 |
 | `/desk/` | arena-8c9d9d97, f5a16939 | 8 |
 | `/docs/` | arena-f5a16939 | 17 |
+| `/ledger-1ebd66da/` | arena/1ebd66da | 15 |
+
+### Merge and deploy result — session `arena/1ebd66da-jackbox1`
+
+| Item | Result |
+|---|---|
+| PR | **#13** — https://github.com/kanlerxz87-cyber/Jackbox1/pull/13 |
+| Merged at | 2026-11-25T13:58:25Z (merge commit `73a3830`) |
+| Size | 31 files, **+9,742 / −1** — the single deletion is one line in `scripts/validate.mjs`, replaced by a five-line list that adds this tree to the repo-level link and privacy scan |
+| Files touched outside `ledger-1ebd66da/` | 2 — `COORDINATION.md` (this entry) and `scripts/validate.mjs` (tree list). Root `index.html` and `README.md` were deliberately left identical to `main` after the rebase, because `main` had already removed the root tree-strip to stop it drifting. |
+| Pages build | **built** — commit `73a3830` (the sibling commit `54f3c39` errored at 13:58:23Z from a different session's merge; this one built clean) |
+| Live | https://kanlerxz87-cyber.github.io/Jackbox1/ledger-1ebd66da/ |
+| Verified live | Landing page and `pages/flagged.html` fetched after deploy and confirmed rendering with the correct nav, tables and source links |
+
+**Rebase count before the merge landed:** 3. `main` advanced on five separate occasions while this
+session was building (35 commits, then 10, then 2, then again). Each time, `main` was rebased onto
+rather than force-pushed over, no other session's file was deleted, and the diff against `main` was
+re-checked to confirm it contained only additions.
+
+**Repo-level gate now covers this tree.** `scripts/validate.mjs` at merge: 22 sources, 211 rows,
+**1,425 internal links all resolving**, privacy scan clean across six trees.
+Tree-level gate: 24 sources, 55 rows (44 verified / 11 blank), 15 pages, 0 broken links,
+0 privacy hits; real-HTTP crawl 18/18; calculator 22/22.
+
+**Why the root tree-strip was not re-added.** `main` removed it to stop it drifting out of sync with
+the tree count — exactly the failure this session would have reintroduced. The tree is therefore
+discoverable from this board and from the `README.md` section that the audit pass already maintains,
+not from a hand-maintained list at the root.
+
+**Still open, unchanged:** the ten decision-blocking questions. No recommendation is made in this
+tree, for the same reason none is made in the others.
 
 **Verification after this merge:** `node scripts/validate.mjs` green (211 rows); `tools/check.py`
 green (18 pages, 72 rows); all internal links resolve within each tree. Every tree's own checker
@@ -364,6 +395,45 @@ is run, because each session's data is validated by the tool its session wrote.
 not a feature, but collapsing them would mean deleting other sessions' published work — which
 the standing instruction forbids. It is logged as a decision for the owner, not silently
 "fixed".
+
+### 2026-11-25 · final deploy record (T-17 complete)
+
+| PR | Scope | Result |
+|---|---|---|
+| #4 | primary verified workspace + integration | **MERGED** `4fc62d6` |
+| #6 | remove hardcoded counts; derive from data | **MERGED** `99e9521` |
+| #8 | merge `/workspace/` tree + fix published-ZIP defect + link-check all trees | **MERGED** `8f890ba` |
+
+**Final Pages build: `status=built` on `main@276834c`.** https enforced, legacy root build.
+
+**Live verification performed after the final deploy** (fetched, not assumed):
+- `pages/index.html` — 22 sources · 15 open gates · **0/15 closed** · **71 verified rows
+  (+4 labelled assumptions)** · **211 tracked rows across 10 datasets** · 29 flagged items ·
+  model `v0.1-unbacktested-core`.
+- `workspace/index.html` — 57 verified rows · 5 flagged · 10 blank · 30 open questions.
+- `pages/flagged.html` — *Irregularities — 13*, IR-01…IR-13 with source links.
+- All five trees serve from the same Pages build.
+
+**Repo-wide integrity at the final commit**
+- `node scripts/validate.mjs` → green. 211 tracked rows, 71 verified-like (all sourced),
+  48 blank. **1,044 internal links across five trees, all resolving.** Privacy scan clean.
+- `python3 tools/check.py` → green. 18 pages, 72 registry rows (57 verified / 5 flagged / 10 blank).
+- Both checkers are now permanent: neither a stale count nor a broken link can ship silently.
+
+**Two defects found and fixed by this session during verification, both real**
+1. Live dashboard showed 210 rows / 12 irregularities while the data held 211 / 13 — hardcoded
+   counts. Derivation from `data/` removed the possibility (PR #6).
+2. `/workspace/` published a real Los Angeles ZIP as a demonstration tract set. Relabelled
+   `DEMO-TRACTS-A` and rebuilt (PR #8). The privacy gate also had a false positive on
+   `§11911(b)` which was fixed and regression-tested.
+
+**Open decision for the owner (not resolved here).** The repo carries five parallel static
+trees from five sessions. They are retained, cross-referenced and individually validated, but
+five near-duplicate sites is a coordination failure. Collapsing them would delete other
+sessions' published work, which the standing instruction forbids, so consolidation is logged as
+an owner decision rather than performed unilaterally. The recommended consolidation is:
+`/pages/` as the single primary, `/workspace/` retained for its 72-row registry, and the other
+three archived under `/desk/`.
 
 ## Merge and deploy results (final, this pass)
 
@@ -402,3 +472,104 @@ identical in both. The live `calc.js` asset was also fetched and matches the rep
 touched only its own files plus the two shared files (`README.md`, `COORDINATION.md`) where it was repairing a defect.
 Consolidation is still an owner decision. Any session taking that on should read `workspace/review.html` first —
 F-12 records why the shared files needed repairing.
+
+---
+
+## Authoritative final state (reconciled across all sessions)
+
+Two sessions independently recorded a final deploy for this repository, minutes apart, each
+accurate for its own merge. This block supersedes both for the reader's purposes; the detailed
+per-session records above are kept as evidence.
+
+| Item | Value |
+|---|---|
+| Convergence | five sessions, five trees, all merged, **nothing deleted at any point** |
+| Static trees | `/pages/` (primary) · `/workspace/` · `/audit-78005353/site/` · `/docs/` · `/desk/` |
+| Pages source | `main` root, legacy build, https enforced |
+| Primary site | https://kanlerxz87-cyber.github.io/Jackbox1/pages/index.html |
+| Secondary sites | `/workspace/` · `/audit-78005353/site/` · `/docs/` · `/desk/` |
+| Verified data | 211 rows in the primary tree (71 verified · 4 assumptions · 48 blank); 72 rows in `/workspace/`; 11 rows in `/audit-78005353/` |
+| Answer to "sell or renew?" | **not yet** — published as 15 open gates in the primary tree, 30 open questions in `/workspace/`, 8 gates in `/audit-78005353/` |
+
+**Independent arithmetic agreement between sessions.** Two sessions computed an after-tax sale and
+a renewal present value with their own calculators, built separately, and cross-checked each
+against a hand calculation to the dollar. `arena/78005353` reports tax $597,492 and after-tax
+proceeds $2,474,508 on its inputs — matching its own hand computation. This session's calculator
+reproduces gain / recapture / federal / California / NIIT / after-tax to the nearest dollar on a
+different input set. Two independent implementations agreeing with hand arithmetic is the
+strongest evidence available that the tax logic is sound; it is not evidence that any
+property-level input is correct, because none exist.
+
+**What no session could do, and did not fake.** The exact lease expiration, the parcel's hazard
+zones, contract rent, adjusted basis, an insurance premium and any real cap rate remain absent
+from every tree. Each tree publishes them as blanks with the private document that would close
+them. That is the answer to the brief's central question: the decision is not ready, and the
+work product is the map of what would make it ready.
+
+## Irregularities recorded by this pass
+
+- **IR-A1** Two official, non-comparable population vintages are in use across trees: Vintage 2024
+  (3,878,704) and QuickFacts V2025 (3,869,089). Both are correct for their vintage; consistent with
+  `arena-41ea221b`'s IR-13. This tree uses V2025 and states the vintage on every row.
+- **IR-A2** Reader-specific fetch failures, each with the attempted URL, are enumerated on
+  `audit-78005353/site/flagged.html` (FR-01 … FR-14): Census county QuickFacts, CA DIR fast-food wage,
+  CGS Alquist-Priolo, HUD FMR, CA FAIR Plan, and the retired CAL FIRE FHSZ URL.
+- **IR-A3** The widely reported **$20.00** California fast-food minimum wage could not be confirmed on
+  an official page in this pass and is **asserted nowhere** in this tree. Only the verified $16.90
+  general rate is used.
+- **IR-A4** BLS has an official gap: no October 2025 collection during the appropriations lapse, so no
+  October 2026 over-the-year CPI exists. Not an error in any tree.
+- **IR-A5** Five trees now exist in one repository. This is a coordination failure, not a design
+  choice; it is recorded rather than tidied away, because tidying it would mean deleting another
+  session's published work.
+- **IR-A6** A GitHub Pages site is not an access-controlled workspace. Every tree says so.
+
+## Log
+
+- 2026-11-25 13:38 UTC `arena-78005353`: claimed W-01…W-10 + INT-01; repo held only `README.md`.
+- 2026-11-25 `arena-78005353`: built the tree, data files and generator; opened PR #5.
+- 2026-11-25 `arena-78005353`: PR #5 blocked three times as main advanced. Each time main was merged
+  rather than force-pushed; no other session's file was overwritten. Published finally at
+  `/audit-78005353/`.
+
+---
+
+# Session `arena/1ebd66da-jackbox1` — record
+
+Claimed at a point when the repository held only `README.md` (`4aa9dad`). By the time the tree was
+ready, `main` had advanced **35 commits** (PRs #1–#5) and already carried five published trees:
+`/` (→ `pages/`), `/docs/`, `/desk/`, `/workspace/`, `/audit-78005353/`.
+
+| ID | Task | Status | Owner | File scope (exclusive) |
+|---|---|---|---|---|
+| L-01 | Verified evidence register: 55 rows, 24 official publishers | done | `arena/1ebd66da` | `ledger-1ebd66da/data/` |
+| L-02 | 15-page site (W-01…W-10 + risks, questions, suggestions, flagged, sources, privacy) | done | `arena/1ebd66da` | `ledger-1ebd66da/pages/`, `index.html` |
+| L-03 | Build + deploy gate, incl. a runtime privacy scan | done | `arena/1ebd66da` | `ledger-1ebd66da/scripts/` |
+| L-04 | Private offline sell-versus-hold + after-tax calculator | done | `arena/1ebd66da` | `ledger-1ebd66da/assets/js/calc*` |
+| L-05 | Real-HTTP link crawl | done | `arena/1ebd66da` | `ledger-1ebd66da/scripts/checklinks.mjs` |
+
+**Where it is published.** `ledger-1ebd66da/` — a directory no other session touches. Root
+`index.html` and this file are appended to, never rewritten: no existing line of either was removed.
+
+**Why it is a sixth tree rather than a merge.** The same reason recorded as **IR-A5** by an earlier
+session: consolidating the trees means deleting another session's published work. That remains the
+owner's decision, not a worker's.
+
+**Checks at integration.** `build.mjs` idempotent (second run: 0 pages updated).
+`verify.mjs`: 24 sources · 55 rows (44 verified / 11 blank-and-flagged) · 15 pages · 0 broken links ·
+0 privacy-pattern hits. `checklinks.mjs` against a real HTTP server at `/ledger-1ebd66da/`:
+18/18 targets resolve. `test-calculator.mjs`: 22/22 assertions on hand-checkable scenarios,
+plus assertions that the calculator performs no network call and touches no storage.
+
+**Defect found and fixed during integration (L-06).** Filesystem link resolution passed while the
+served site 404'd, because the tree's index.html links carried the publish prefix and were then being
+resolved against the tree root. The static checker could not see it. Fixed by keeping index.html links
+relative and adding an HTTP crawl to the check set — the lesson generalises to every tree here that is
+served from a subdirectory.
+
+**Irregularities carried forward** (unchanged from this session's own flagged page):
+the lease expiry is a 2030–2035 *range*, not a date; no parcel address or AIN was supplied; no lease
+document, rent schedule or owner tax facts were supplied; California's population differs between the
+Census vintage and the DOF E-1 release, and both are official.
+
+**Open.** The ten decision-blocking questions remain open. No recommendation is made.
