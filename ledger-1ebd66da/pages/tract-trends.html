@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>W-05 · Tract-Level Trend Evidence — Hold or Sell Workspace</title>
+<meta name="description" content="Why tract-level evidence outranks regional figures for a single parcel, the exact official queries to pull it, and what could not be retrieved in this session.">
+<link rel="stylesheet" href="../assets/css/style.css">
+<script src="../assets/js/nav.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="brandmark">Hold or Sell <span class="tag">Decision Workspace</span></div>
+    <div class="env"><span>W-05</span><span><strong>Evidence cut-off 2026-11-25</strong></span></div>
+  </div>
+</header>
+
+<nav class="nav" aria-label="Sections">
+  <div class="nav-inner">
+    <a href="../index.html">Overview</a>
+    <a href="economics.html">Trade Area</a>
+    <a href="worksheet.html">Sell v Hold</a>
+    <a href="decision-gates.html">Decision Gates</a>
+    <a href="hazards.html">Hazards</a>
+    <a href="tract-trends.html">Tract Trends</a>
+    <a href="rental-evidence.html">Rental Evidence</a>
+    <a href="lease-abstract.html">Lease Abstract</a>
+    <a href="risks.html">Risks</a>
+    <a href="open-questions.html">Open Questions</a>
+    <a href="suggestions.html">Suggestions</a>
+    <a href="flagged.html">Flagged</a>
+    <a href="sources.html">Sources</a>
+    <a href="advisory-summary.html">Summary</a>
+    <a href="privacy.html">Privacy</a>
+  </div>
+</nav>
+
+<main id="main" class="wrap">
+
+  <div class="page-head">
+    <p class="eyebrow">W-05</p>
+    <h1>Tract-level trend evidence, alongside the regional figures</h1>
+    <p class="lede">
+      Regional figures answer "is Los Angeles growing?". They cannot answer "is this block growing?".
+      A census tract of roughly 2,000–8,000 people is the smallest geography the Census Bureau
+      publishes reliably, and it is close enough to a drive-time trade area to be decision-useful.
+      This page specifies exactly which tract variables matter, gives the query that pulls them, and
+      states plainly which ones could not be retrieved.
+    </p>
+  </div>
+
+  <div class="notice notice--stop">
+    <strong>What blocked this page.</strong> The tract cannot be selected without the parcel address.
+    Separately, the Census data API returned <em>"A valid key must be included with each data API
+    request"</em> during this session, and <code>data.census.gov</code> profile links did not resolve
+    to a table. Rather than substitute a county value — which would be an inference presented as a
+    measurement — every tract cell is left blank and flagged. <a href="flagged.html">FLAG-U03 →</a>
+  </div>
+
+  <h2>Why the tract, and not a ZIP code</h2>
+  <div class="grid grid--2">
+    <div class="card" style="margin:0">
+      <h3 style="margin-top:0">The tract is the right unit</h3>
+      <ul class="tight">
+        <li>It is <strong>statistically defined for stability</strong> — boundaries are redrawn rarely, so year-over-year comparison is meaningful.</li>
+        <li>It is <strong>published by one agency with one methodology</strong>, so the tract figure and the county figure are comparable.</li>
+        <li>It is <strong>roughly trade-area sized</strong> for a suburban or urban QSR — a few thousand residents, a defined street grid.</li>
+      </ul>
+    </div>
+    <div class="card" style="margin:0">
+      <h3 style="margin-top:0">ZIP codes are the wrong unit</h3>
+      <ul class="tight">
+        <li>ZIP codes are a <strong>delivery route</strong>, not a statistical area. They change when the postal service re-routes mail.</li>
+        <li>They are <strong>not published with the same reliability</strong> — the Census publishes ZCTAs, which are an approximation of ZIPs, not the ZIPs themselves.</li>
+        <li>A ZIP can span wildly different neighbourhoods, averaging away the variation that determines whether a store works.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>The variables that actually predict a QSR trade area</h2>
+
+  <div class="table-scroll">
+    <table>
+      <caption><strong>Tract variables, ranked by decision value</strong>
+      "Why it matters" is reasoning, not a verified finding. The source column is the official table that carries it.</caption>
+      <thead><tr><th>#</th><th>Variable</th><th>Census table</th><th>Why it bears on hold-versus-sell</th><th>Direction at county level (verified)</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td><strong>Households with children</strong></td>
+          <td>B11003 / B23008</td>
+          <td>The core QSR family-daypart customer. Falling household formation in a tract is the earliest demand signal available.</td>
+          <td><span class="pill pill--stop">County population fell 64,000 in 2025</span></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td><strong>Median household income and its 5-year change</strong></td>
+          <td>B19013 (current and prior 5-year)</td>
+          <td>Sets the price point the store can charge. A tract whose income is falling below the menu's price band loses traffic before it loses population.</td>
+          <td><span class="pill pill--ok">County median +20.0% nominal, 2020→2024</span></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td><strong>Daytime employment in the tract</strong></td>
+          <td>LEHD LODES workplace-area data</td>
+          <td>Lunch traffic. A tract can lose residents and gain workers, or the reverse — the two are independent.</td>
+          <td><span class="pill pill--warn">Metro health/education +3.3%, information −2.1%</span></td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td><strong>Renter share and gross rent</strong></td>
+          <td>B25003, B25064</td>
+          <td>Renter-heavy tracts turn over faster. Turnover both refreshes the customer base and increases the chance the tenant's sales are unstable.</td>
+          <td><span class="pill pill--neutral">Not disaggregated at county level in this workspace</span></td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td><strong>Commute mode and travel time</strong></td>
+          <td>B08301, B08303</td>
+          <td>Drive-through demand depends on car-based commuting. A tract shifting to transit and walking supports a different store format entirely.</td>
+          <td><span class="pill pill--neutral">Not collected</span></td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td><strong>Vehicle availability</strong></td>
+          <td>B25044</td>
+          <td>Households without a vehicle cannot use a drive-through. Directly relevant to a site whose value may rest on the drive-through lane.</td>
+          <td><span class="pill pill--neutral">Not collected</span></td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td><strong>Vacancy status and housing age</strong></td>
+          <td>B25004, B25035</td>
+          <td>Rising vacancy is a leading indicator of neighbourhood stress that shows up in restaurant sales later.</td>
+          <td><span class="pill pill--ok">County added 11,260 net units in 2025</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>The official queries, ready to run</h2>
+  <p>These are complete and correct as written. Each needs a free API key from the Census Bureau.
+  Substituting the subject tract's GEOID in the <code>for=tract:</code> clause returns the single row
+  needed for this analysis.</p>
+
+  <div class="card">
+    <h3 style="margin-top:0">1 · Tract demographics and income</h3>
+    <pre style="font-family:var(--mono);font-size:.75rem;overflow-x:auto;white-space:pre-wrap;margin:0 0 .6rem"><code>https://api.census.gov/data/2023/acs/acs5
+  ?get=NAME,B01003_001E,B11003_001E,B19013_001E,
+       B25003_002E,B25003_003E,B25064_001E,B25044_002E
+  &amp;for=tract:*&amp;in=state:06%20county:037
+  &amp;key=YOUR_KEY</code></pre>
+    <p class="small muted" style="margin-bottom:0">Returns every tract in Los Angeles County in one
+    response, so the subject tract can be read against its neighbours — which is the comparison that
+    actually matters, not the absolute level.</p>
+  </div>
+
+  <div class="card">
+    <h3 style="margin-top:0">2 · Daytime employment by tract (LEHD)</h3>
+    <pre style="font-family:var(--mono);font-size:.75rem;overflow-x:auto;white-space:pre-wrap;margin:0 0 .6rem"><code>https://lehd.ces.census.gov/data/lodes/LODES8/ca/wac/
+  ca_wac_S000_JT00_2022.csv.gz</code></pre>
+    <p class="small muted" style="margin-bottom:0">Workplace Area Characteristics — jobs located in
+    each census block, aggregable to tract. This is the lunch-traffic measure that no population table
+    contains.</p>
+  </div>
+
+  <div class="card">
+    <h3 style="margin-top:0">3 · Tract boundary and neighbourhood context</h3>
+    <pre style="font-family:var(--mono);font-size:.75rem;overflow-x:auto;white-space:pre-wrap;margin:0 0 .6rem"><code>https://tigerweb.geo.census.gov/arcgis/rest/services/
+  TIGERweb/tigerWMS_Current/MapServer</code></pre>
+    <p class="small muted" style="margin-bottom:0">Authoritative tract boundaries, for drawing the
+    actual drive-time ring rather than assuming the tract equals the trade area.</p>
+  </div>
+
+  <p class="src-list">
+    <a class="src" href="https://www.census.gov/programs-surveys/acs/data/data-via-api.html" target="_blank" rel="noopener">Census ACS API guide ↗</a>
+    <a class="src" href="https://data.census.gov/all?g=140XX00US06037207200" target="_blank" rel="noopener">data.census.gov tract lookup ↗</a>
+    <a class="src" href="https://api.census.gov/data/key_signup.html" target="_blank" rel="noopener">Request an API key ↗</a>
+  </p>
+
+  <h2>Regional vs tract — an honest comparison</h2>
+
+  <div class="table-scroll">
+    <table>
+      <caption><strong>What each level can and cannot support in the decision</strong></caption>
+      <thead><tr><th>Question</th><th>County answer</th><th>Tract answer</th><th>Which one decides</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>Is the demand base shrinking?</td>
+          <td>Yes — −64,000 in 2025 (verified)</td>
+          <td>Unknown — blocked</td>
+          <td>The tract. A county decline can coexist with a growing tract and vice versa.</td>
+        </tr>
+        <tr>
+          <td>Can the tenant staff the store?</td>
+          <td>Yes — 4.5% unemployment, tight labour market (verified)</td>
+          <td>Not materially different from the county for a wage question</td>
+          <td>The county. Labour markets are genuinely regional.</td>
+        </tr>
+        <tr>
+          <td>Is the customer base income-appropriate for the menu?</td>
+          <td>Only on average — $90,757 median (verified)</td>
+          <td>Unknown — blocked</td>
+          <td>The tract. County median income is close to meaningless for a single store.</td>
+        </tr>
+        <tr>
+          <td>Is lunch traffic growing?</td>
+          <td>Weakly indicative — sector mix (verified)</td>
+          <td>Unknown — blocked, needs LEHD</td>
+          <td>The tract, via LEHD workplace jobs.</td>
+        </tr>
+        <tr>
+          <td>Is the rent achievable at exit?</td>
+          <td>No — no official cap-rate series exists</td>
+          <td>No — and tract data will not produce one either</td>
+          <td>Neither. This needs comparable transactions (W-07).</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="notice notice--info">
+    <strong>Note the last row.</strong> Tract data does not solve the valuation problem. It solves the
+    <em>demand</em> problem. A workspace that implies otherwise — that a richer demographic pull will
+    tell you what to sell for — is overselling. The price comes from buyers, and buyers are found in
+    comparables, not in Census tables.
+  </div>
+
+  <h2>Related regional evidence, verified</h2>
+  <p>The county and metro rows that <em>are</em> available, for direct comparison with the tract rows
+  that are not:</p>
+
+  <div class="table-scroll">
+<table>
+  <caption><strong>Regional rows that the tract figures would sit alongside</strong>
+  These are the verified comparators. Tract values are intentionally absent from this table.</caption>
+  <thead><tr>
+    <th>ID</th><th>Metric</th><th class="num">Value</th><th>Period</th>
+    <th>Level</th><th>Status</th><th>Evidence quoted from source</th><th>Official source</th>
+  </tr></thead>
+  <tbody>
+<tr>
+        <td><code>M-001</code></td>
+        <td>Los Angeles County population, January 1, 2026</td>
+        <td class="num">9.8 million (approx.)</td>
+        <td class="nowrap">2026-01-01</td>
+        <td><span class="pill pill--ok">County</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">&quot;Los Angeles County with 9.8 million residents&quot; — 2026 E-1 press release.</td>
+        <td><a class="src" href="https://dof.ca.gov/media/docs/forecasting/Demographics/estimates/E-1_2026_Press_Release.pdf" target="_blank" rel="noopener" title="2026 E-1 Press Release (released May 1, 2026)">California Department of Finance ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-002</code></td>
+        <td>Los Angeles County population change, 2025</td>
+        <td class="num">−64,000 persons</td>
+        <td class="nowrap">2025 (Jan 2025 → Jan 2026)</td>
+        <td><span class="pill pill--ok">County</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">&quot;Los Angeles lost 64,000 persons, a combined effect of the Eaton and Palisades wildfires, normal flow to the Inland Empire, and deportations.&quot;</td>
+        <td><a class="src" href="https://dof.ca.gov/media/docs/forecasting/Demographics/estimates/E-1_2026_Press_Release.pdf" target="_blank" rel="noopener" title="2026 E-1 Press Release (released May 1, 2026)">California Department of Finance ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-003</code></td>
+        <td>California population, January 1, 2026</td>
+        <td class="num">39,593,000</td>
+        <td class="nowrap">2026-01-01</td>
+        <td><span class="pill pill--ok">State</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">&quot;The 0.14-percent decline to 39,593,000 marks the first year of population loss after three consecutive years of population increases.&quot;</td>
+        <td><a class="src" href="https://dof.ca.gov/media/docs/forecasting/Demographics/estimates/E-1_2026_Press_Release.pdf" target="_blank" rel="noopener" title="2026 E-1 Press Release (released May 1, 2026)">California Department of Finance ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-004</code></td>
+        <td>Net legal international migration into California, 2025</td>
+        <td class="num">126,400 (down from 248,400 in 2024)</td>
+        <td class="nowrap">2025</td>
+        <td><span class="pill pill--ok">State</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">&quot;net legal international immigration declining in 2025 by more than fifty percent from 248,400 persons during 2024 … to 126,400 during 2025.&quot;</td>
+        <td><a class="src" href="https://dof.ca.gov/media/docs/forecasting/Demographics/estimates/E-1_2026_Press_Release.pdf" target="_blank" rel="noopener" title="2026 E-1 Press Release (released May 1, 2026)">California Department of Finance ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-005</code></td>
+        <td>Net domestic out-migration from California, 2025</td>
+        <td class="num">−288,600 persons</td>
+        <td class="nowrap">2025</td>
+        <td><span class="pill pill--ok">State</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">&quot;Net domestic out-migration from California increased to 288,600 in 2025.&quot;</td>
+        <td><a class="src" href="https://dof.ca.gov/media/docs/forecasting/Demographics/estimates/E-1_2026_Press_Release.pdf" target="_blank" rel="noopener" title="2026 E-1 Press Release (released May 1, 2026)">California Department of Finance ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-006</code></td>
+        <td>Resident population, California, 2025</td>
+        <td class="num">39,355,309</td>
+        <td class="nowrap">2025</td>
+        <td><span class="pill pill--ok">State</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Series CAPOP, observation 2025-01-01 = 39355.309 (thousands). Census vintage 2025.</td>
+        <td><a class="src" href="https://fred.stlouisfed.org/data/CAPOP" target="_blank" rel="noopener" title="Resident Population in California — series CAPOP">Federal Reserve Bank of St. Louis (source: U.S. Census Bureau) ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-007</code></td>
+        <td>Net new housing units added, Los Angeles County, 2025</td>
+        <td class="num">11,260 units (highest in the state)</td>
+        <td class="nowrap">2025</td>
+        <td><span class="pill pill--ok">County</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">&quot;Within counties ranked by net housing gains, Los Angeles (11,260), San Diego (8,635) … added the most housing units in 2025.&quot;</td>
+        <td><a class="src" href="https://dof.ca.gov/media/docs/forecasting/Demographics/estimates/E-1_2026_Press_Release.pdf" target="_blank" rel="noopener" title="2026 E-1 Press Release (released May 1, 2026)">California Department of Finance ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-008</code></td>
+        <td>Housing units destroyed by the Eaton and Palisades fires</td>
+        <td class="num">11,160 units</td>
+        <td class="nowrap">2025</td>
+        <td><span class="pill pill--ok">County</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">&quot;the loss of 11,406 housing units due to fires, including 11,160 housing units lost to the Eaton and Palisades fires.&quot;</td>
+        <td><a class="src" href="https://dof.ca.gov/media/docs/forecasting/Demographics/estimates/E-1_2026_Press_Release.pdf" target="_blank" rel="noopener" title="2026 E-1 Press Release (released May 1, 2026)">California Department of Finance ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-010</code></td>
+        <td>Median household income, Los Angeles County, 2024</td>
+        <td class="num">$90,757</td>
+        <td class="nowrap">2024</td>
+        <td><span class="pill pill--ok">County</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Series MHICA06037A052NCEN, observation 2024 = 90,757 dollars.</td>
+        <td><a class="src" href="https://fred.stlouisfed.org/series/MHICA06037A052NCEN" target="_blank" rel="noopener" title="Estimate of Median Household Income for Los Angeles County, CA — series MHICA06037A052NCEN">Federal Reserve Bank of St. Louis (source: U.S. Census Bureau, SAIPE) ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-011</code></td>
+        <td>Median household income, Los Angeles County, 4-year change 2020→2024</td>
+        <td class="num">+$15,133 (+20.0%)</td>
+        <td class="nowrap">2020 → 2024</td>
+        <td><span class="pill pill--ok">County</span></td>
+        <td><span class="pill pill--warn">Derived</span></td>
+        <td class="small">Series observations: 2020 = 75,624; 2024 = 90,757. Arithmetic difference of two published values; both transcribed above.</td>
+        <td><a class="src" href="https://fred.stlouisfed.org/series/MHICA06037A052NCEN" target="_blank" rel="noopener" title="Estimate of Median Household Income for Los Angeles County, CA — series MHICA06037A052NCEN">Federal Reserve Bank of St. Louis (source: U.S. Census Bureau, SAIPE) ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-020</code></td>
+        <td>Unemployment rate, Los Angeles County, September 2026</td>
+        <td class="num">4.5%</td>
+        <td class="nowrap">2026-09</td>
+        <td><span class="pill pill--ok">County</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Series CALOSA7URN, observation 2026-09-01 = 4.5 (percent, not seasonally adjusted).</td>
+        <td><a class="src" href="https://fred.stlouisfed.org/data/CALOSA7URN" target="_blank" rel="noopener" title="Unemployment Rate in Los Angeles County, CA — series CALOSA7URN">Federal Reserve Bank of St. Louis (source: U.S. Bureau of Labor Statistics) ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-021</code></td>
+        <td>Unemployment rate, Los Angeles County, 2025 peak (July–August)</td>
+        <td class="num">6.2%</td>
+        <td class="nowrap">2025-07 and 2025-08</td>
+        <td><span class="pill pill--ok">County</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Series observations 2025-07-01 = 6.2 and 2025-08-01 = 6.2.</td>
+        <td><a class="src" href="https://fred.stlouisfed.org/data/CALOSA7URN" target="_blank" rel="noopener" title="Unemployment Rate in Los Angeles County, CA — series CALOSA7URN">Federal Reserve Bank of St. Louis (source: U.S. Bureau of Labor Statistics) ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-022</code></td>
+        <td>Unemployment rate, Los Angeles County, COVID peak</td>
+        <td class="num">18.9%</td>
+        <td class="nowrap">2020-05</td>
+        <td><span class="pill pill--ok">County</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Series observation 2020-05-01 = 18.9.</td>
+        <td><a class="src" href="https://fred.stlouisfed.org/data/CALOSA7URN" target="_blank" rel="noopener" title="Unemployment Rate in Los Angeles County, CA — series CALOSA7URN">Federal Reserve Bank of St. Louis (source: U.S. Bureau of Labor Statistics) ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-023</code></td>
+        <td>Unemployment rate, Los Angeles County, GFC peak</td>
+        <td class="num">13.1%</td>
+        <td class="nowrap">2010-07</td>
+        <td><span class="pill pill--ok">County</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Series observation 2010-07-01 = 13.1 (highest in the series from 1990).</td>
+        <td><a class="src" href="https://fred.stlouisfed.org/data/CALOSA7URN" target="_blank" rel="noopener" title="Unemployment Rate in Los Angeles County, CA — series CALOSA7URN">Federal Reserve Bank of St. Louis (source: U.S. Bureau of Labor Statistics) ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-024</code></td>
+        <td>Civilian labour force, Los Angeles-Long Beach-Santa Ana MSA, October 2026</td>
+        <td class="num">6,371.5 thousand</td>
+        <td class="nowrap">2026-10 (preliminary)</td>
+        <td><span class="pill pill--ok">Metro</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Economy at a Glance table, Civilian Labor Force, Oct 2026 column = 6,371.5 (thousands, not seasonally adjusted, preliminary).</td>
+        <td><a class="src" href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm" target="_blank" rel="noopener" title="Economy at a Glance — Los Angeles-Long Beach-Santa Ana, CA (MSA)">Bureau of Labor Statistics ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-025</code></td>
+        <td>Unemployment rate, Los Angeles-Long Beach-Santa Ana MSA, October 2026</td>
+        <td class="num">4.4% (preliminary)</td>
+        <td class="nowrap">2026-10 (preliminary)</td>
+        <td><span class="pill pill--ok">Metro</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Economy at a Glance table, Unemployment Rate, Oct 2026 = (p) 4.4.</td>
+        <td><a class="src" href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm" target="_blank" rel="noopener" title="Economy at a Glance — Los Angeles-Long Beach-Santa Ana, CA (MSA)">Bureau of Labor Statistics ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-026</code></td>
+        <td>Total nonfarm employment, LA-Long Beach-Santa Ana MSA, October 2026</td>
+        <td class="num">6,371.5 thousand</td>
+        <td class="nowrap">2026-10 (preliminary)</td>
+        <td><span class="pill pill--ok">Metro</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Economy at a Glance, Total Nonfarm, Oct 2026 = (p) 6,371.5.</td>
+        <td><a class="src" href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm" target="_blank" rel="noopener" title="Economy at a Glance — Los Angeles-Long Beach-Santa Ana, CA (MSA)">Bureau of Labor Statistics ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-030</code></td>
+        <td>Leisure and Hospitality jobs, LA MSA, October 2026</td>
+        <td class="num">787.5 thousand</td>
+        <td class="nowrap">2026-10 (preliminary)</td>
+        <td><span class="pill pill--ok">Metro</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Economy at a Glance, Leisure and Hospitality, Oct 2026 = (p) 787.5; 12-month change +1.5%.</td>
+        <td><a class="src" href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm" target="_blank" rel="noopener" title="Economy at a Glance — Los Angeles-Long Beach-Santa Ana, CA (MSA)">Bureau of Labor Statistics ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-031</code></td>
+        <td>Education and Health Services jobs, LA MSA, 12-month change to October 2026</td>
+        <td class="num">+3.3%</td>
+        <td class="nowrap">2026-10 (12-month % change)</td>
+        <td><span class="pill pill--ok">Metro</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Economy at a Glance, Education and Health Services, 12-month % change Oct 2026 = (p) 3.3.</td>
+        <td><a class="src" href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm" target="_blank" rel="noopener" title="Economy at a Glance — Los Angeles-Long Beach-Santa Ana, CA (MSA)">Bureau of Labor Statistics ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-032</code></td>
+        <td>Information sector jobs, LA MSA, 12-month change to October 2026</td>
+        <td class="num">−2.1%</td>
+        <td class="nowrap">2026-10 (12-month % change)</td>
+        <td><span class="pill pill--ok">Metro</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Economy at a Glance, Information, 12-month % change Oct 2026 = (p) -2.1.</td>
+        <td><a class="src" href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm" target="_blank" rel="noopener" title="Economy at a Glance — Los Angeles-Long Beach-Santa Ana, CA (MSA)">Bureau of Labor Statistics ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-033</code></td>
+        <td>Manufacturing jobs, LA MSA, 12-month change to October 2026</td>
+        <td class="num">−1.2%</td>
+        <td class="nowrap">2026-10 (12-month % change)</td>
+        <td><span class="pill pill--ok">Metro</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Economy at a Glance, Manufacturing, 12-month % change Oct 2026 = (p) -1.2.</td>
+        <td><a class="src" href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm" target="_blank" rel="noopener" title="Economy at a Glance — Los Angeles-Long Beach-Santa Ana, CA (MSA)">Bureau of Labor Statistics ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-034</code></td>
+        <td>Financial Activities jobs, LA MSA, 12-month change to October 2026</td>
+        <td class="num">−1.6%</td>
+        <td class="nowrap">2026-10 (12-month % change)</td>
+        <td><span class="pill pill--ok">Metro</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Economy at a Glance, Financial Activities, 12-month % change Oct 2026 = (p) -1.6.</td>
+        <td><a class="src" href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm" target="_blank" rel="noopener" title="Economy at a Glance — Los Angeles-Long Beach-Santa Ana, CA (MSA)">Bureau of Labor Statistics ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-040</code></td>
+        <td>CPI-U all items, Los Angeles-Long Beach-Anaheim, October 2026</td>
+        <td class="num">360.965 (index, 1982-84 = 100)</td>
+        <td class="nowrap">2026-10</td>
+        <td><span class="pill pill--neutral">cpi-area</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Economy at a Glance, CPI-U All items, Oct 2026 = 360.965.</td>
+        <td><a class="src" href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm#eag_ca_losangeles_msa.f.4" target="_blank" rel="noopener" title="CPI-U / CPI-W, Los Angeles-Long Beach-Anaheim, CA (via Economy at a Glance)">Bureau of Labor Statistics ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-041</code></td>
+        <td>CPI-U 12-month change, Los Angeles-Long Beach-Anaheim, September 2026</td>
+        <td class="num">+3.7%</td>
+        <td class="nowrap">2026-09 (12-month % change)</td>
+        <td><span class="pill pill--neutral">cpi-area</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Economy at a Glance, CPI-U All items 12-month % change, Sept 2026 = 3.7; Oct 2026 not shown in that row.</td>
+        <td><a class="src" href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm#eag_ca_losangeles_msa.f.4" target="_blank" rel="noopener" title="CPI-U / CPI-W, Los Angeles-Long Beach-Anaheim, CA (via Economy at a Glance)">Bureau of Labor Statistics ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-042</code></td>
+        <td>CPI-W 12-month change, Los Angeles-Long Beach-Anaheim, September 2026</td>
+        <td class="num">+4.1%</td>
+        <td class="nowrap">2026-09 (12-month % change)</td>
+        <td><span class="pill pill--neutral">cpi-area</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Economy at a Glance, CPI-W All items 12-month % change, Sept 2026 = 4.1.</td>
+        <td><a class="src" href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm#eag_ca_losangeles_msa.f.4" target="_blank" rel="noopener" title="CPI-U / CPI-W, Los Angeles-Long Beach-Anaheim, CA (via Economy at a Glance)">Bureau of Labor Statistics ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-106</code></td>
+        <td>Census tract population, median household income, and renter share</td>
+        <td class="num"><span class="blank">—</span></td>
+        <td class="nowrap">ACS 5-year</td>
+        <td><span class="pill pill--info">Tract</span></td>
+        <td><span class="pill pill--stop">Unverified</span></td>
+        <td class="small"><span class="muted">Tract cannot be selected without the parcel address. The Census data API also requires a key (it returned &quot;Missing Key&quot; during this session). See FLAG-U03.</span></td>
+        <td><a class="src" href="https://data.census.gov/all?g=140XX00US06037207200" target="_blank" rel="noopener" title="data.census.gov — tract profile query (ACS 5-year)">Census Bureau ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-110</code></td>
+        <td>Verified NNN retail cap rates for the subject submarket</td>
+        <td class="num"><span class="blank">—</span></td>
+        <td class="nowrap">current</td>
+        <td><span class="pill pill--info">Submarket</span></td>
+        <td><span class="pill pill--stop">Unverified</span></td>
+        <td class="small"><span class="muted">No official statistical series publishes submarket NNN retail cap rates. Commercial data providers are proprietary. Not estimated — see FLAG-U04.</span></td>
+        <td><a class="src" href="https://fred.stlouisfed.org/data/DGS10" target="_blank" rel="noopener" title="10-Year Treasury Constant Maturity — series DGS10">Federal Reserve Bank of St. Louis (source: Federal Reserve Board, H.15) ↗</a></td>
+      </tr>
+  </tbody>
+</table>
+</div>
+
+  <p style="margin-top:1.6rem"><a href="rental-evidence.html">Next: pricing the short-lease discount from real quotes →</a></p>
+
+</main>
+
+<footer class="site">
+  <div class="inner">
+    <p><strong>Privacy.</strong> No parcel identifier, address, owner name or personal figure appears
+    on this page. <a href="privacy.html">Privacy policy →</a></p>
+    <p><a href="sources.html">Full source register</a> · <a href="flagged.html">Flagged for review</a> · <a href="../index.html">Back to overview</a></p>
+  </div>
+</footer>
+</body>
+</html>

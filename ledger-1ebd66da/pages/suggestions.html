@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Suggestions &amp; Improvement Backlog — Hold or Sell Workspace</title>
+<meta name="description" content="A reviewable backlog of improvements to this workspace and to the decision process, each scored on impact, effort, risk and evidence, so a reviewer can choose the best path before implementing anything.">
+<link rel="stylesheet" href="../assets/css/style.css">
+<script src="../assets/js/nav.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="brandmark">Hold or Sell <span class="tag">Decision Workspace</span></div>
+    <div class="env"><span>Suggestions</span><span><strong>Evidence cut-off 2026-11-25</strong></span></div>
+  </div>
+</header>
+
+<nav class="nav" aria-label="Sections">
+  <div class="nav-inner">
+    <a href="../index.html">Overview</a>
+    <a href="economics.html">Trade Area</a>
+    <a href="worksheet.html">Sell v Hold</a>
+    <a href="decision-gates.html">Decision Gates</a>
+    <a href="hazards.html">Hazards</a>
+    <a href="tract-trends.html">Tract Trends</a>
+    <a href="rental-evidence.html">Rental Evidence</a>
+    <a href="lease-abstract.html">Lease Abstract</a>
+    <a href="risks.html">Risks</a>
+    <a href="open-questions.html">Open Questions</a>
+    <a href="suggestions.html">Suggestions</a>
+    <a href="flagged.html">Flagged</a>
+    <a href="sources.html">Sources</a>
+    <a href="advisory-summary.html">Summary</a>
+    <a href="privacy.html">Privacy</a>
+  </div>
+</nav>
+
+<main id="main" class="wrap">
+
+  <div class="page-head">
+    <p class="eyebrow">Review section</p>
+    <h1>Suggestions — pick a path before implementing anything</h1>
+    <p class="lede">
+      This section exists so a reviewer can choose. Every suggestion is scored on four dimensions,
+      states what it would change, and names its dependency. Nothing here has been implemented beyond
+      what is already live, and each item is deliberately small enough to accept or reject on its own
+      merits.
+    </p>
+  </div>
+
+  <div class="notice notice--info">
+    <strong>How to use this page.</strong> Read the score, then read the "what it changes" column.
+    Anything scoring 4+ on impact with 2 or less on effort is worth doing immediately. Anything with a
+    dependency stays parked until that dependency clears — doing it early would produce a confident
+    answer built on nothing.
+  </div>
+
+  <h2>Tier 1 — do these first: high impact, low effort, no dependency</h2>
+
+  <div class="table-scroll">
+    <table>
+      <caption><strong>Immediate improvements</strong> Scores: 1 = low, 5 = high. "Risk" is the risk of doing it wrong or of the change causing harm.</caption>
+      <thead><tr><th>ID</th><th>Suggestion</th><th>What it changes</th><th class="num">Impact</th><th class="num">Effort</th><th class="num">Risk</th><th>Dependency</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><code>S-01</code></td>
+          <td><strong>Provide the parcel address or AIN.</strong></td>
+          <td>Unblocks four pages at once: hazard screening, tract evidence, zoning, and the ULA jurisdiction test. It is the highest information-per-effort action available.</td>
+          <td class="num">5</td><td class="num">1</td><td class="num">1</td>
+          <td><span class="pill pill--ok">None</span></td>
+        </tr>
+        <tr>
+          <td><code>S-02</code></td>
+          <td><strong>Run the three hazard lookups and record the results.</strong></td>
+          <td>Converts W-04 from a method into a finding. Fills five blank cells with verified zone data.</td>
+          <td class="num">5</td><td class="num">1</td><td class="num">1</td>
+          <td><span class="pill pill--warn">S-01</span></td>
+        </tr>
+        <tr>
+          <td><code>S-03</code></td>
+          <td><strong>Request a Census API key and run the published tract query.</strong></td>
+          <td>Fills W-05 with real tract demographics and turns the trade-area argument from a proxy into a measurement.</td>
+          <td class="num">4</td><td class="num">1</td><td class="num">1</td>
+          <td><span class="pill pill--warn">S-01</span></td>
+        </tr>
+        <tr>
+          <td><code>S-04</code></td>
+          <td><strong>Add a "last verified" date to every table.</strong></td>
+          <td>Lets a reader see staleness at a glance. Data changes; a page without a date silently rots.</td>
+          <td class="num">3</td><td class="num">2</td><td class="num">1</td>
+          <td><span class="pill pill--ok">None</span></td>
+        </tr>
+        <tr>
+          <td><code>S-05</code></td>
+          <td><strong>Print the W-10 advisory summary and take it to an adviser.</strong></td>
+          <td>Turns a passive document into an agenda. The one-page brief is built for a fifteen-minute meeting.</td>
+          <td class="num">4</td><td class="num">1</td><td class="num">1</td>
+          <td><span class="pill pill--ok">None</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Tier 2 — worth doing once the owner's documents are in hand</h2>
+
+  <div class="table-scroll">
+    <table>
+      <caption><strong>Depends on private documents</strong></caption>
+      <thead><tr><th>ID</th><th>Suggestion</th><th>What it changes</th><th class="num">Impact</th><th class="num">Effort</th><th class="num">Risk</th><th>Dependency</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><code>S-06</code></td>
+          <td><strong>Commission a lease abstract and notice calendar, then reconcile them.</strong></td>
+          <td>Converts the 2030–2035 window into an actual date and a defensible hold horizon. This is the single largest value gain in the whole programme.</td>
+          <td class="num">5</td><td class="num">3</td><td class="num">2</td>
+          <td><span class="pill pill--warn">Q-17 to Q-19</span></td>
+        </tr>
+        <tr>
+          <td><code>S-07</code></td>
+          <td><strong>Add the after-tax exit leg to the hold case in the calculator.</strong></td>
+          <td>Makes the two comparison legs comparable. Currently Path A is after-tax and Path B is pre-tax, which systematically favours holding.</td>
+          <td class="num">4</td><td class="num">2</td><td class="num">2</td>
+          <td><span class="pill pill--warn">Q-20, Q-21</span></td>
+        </tr>
+        <tr>
+          <td><code>S-08</code></td>
+          <td><strong>Add a §1031 exchange scenario with a deferral toggle.</strong></td>
+          <td>A 1031 can eliminate the federal gain entirely. If it is available to this owner, it dominates almost every other variable on the worksheet — and the calculator currently omits it.</td>
+          <td class="num">5</td><td class="num">3</td><td class="num">3</td>
+          <td><span class="pill pill--warn">CPA engagement</span></td>
+        </tr>
+        <tr>
+          <td><code>S-09</code></td>
+          <td><strong>Model the state Mental Health Services Tax separately.</strong></td>
+          <td>Closes FLAG-U09. Currently the calculator uses the 12.30% Form 540 top bracket and explicitly excludes the separate 1% statute, which understates California tax on a large gain.</td>
+          <td class="num">3</td><td class="num">2</td><td class="num">2</td>
+          <td><span class="pill pill--warn">Official statute text</span></td>
+        </tr>
+        <tr>
+          <td><code>S-10</code></td>
+          <td><strong>Replace the point-estimate exit cap with a range and a probability band.</strong></td>
+          <td>Moves from a single number to a distribution, which is what a decision under uncertainty actually needs. The current sensitivity table is one-variable-at-a-time only.</td>
+          <td class="num">4</td><td class="num">3</td><td class="num">2</td>
+          <td><span class="pill pill--warn">S-11</span></td>
+        </tr>
+        <tr>
+          <td><code>S-11</code></td>
+          <td><strong>Build the comparable-sale dataset that prices the term coefficient.</strong></td>
+          <td>Closes Q-22 and FLAG-U04. Without it, the sell-versus-renew decision has no defensible price on either side.</td>
+          <td class="num">5</td><td class="num">4</td><td class="num">3</td>
+          <td><span class="pill pill--warn">Broker or database access</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Tier 3 — improvements to this workspace itself</h2>
+
+  <div class="table-scroll">
+    <table>
+      <caption><strong>Product and usability suggestions</strong></caption>
+      <thead><tr><th>ID</th><th>Suggestion</th><th>Rationale</th><th class="num">Impact</th><th class="num">Effort</th><th class="num">Risk</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><code>S-12</code></td>
+          <td><strong>Add a "download my inputs as JSON" button to the calculator.</strong></td>
+          <td>Lets the owner hand an adviser an exact, reproducible input set without retyping — while keeping everything local to the browser. Would need care to stay within the privacy rule.</td>
+          <td class="num">4</td><td class="num">2</td><td class="num">2</td>
+        </tr>
+        <tr>
+          <td><code>S-13</code></td>
+          <td><strong>Add scenario save/compare (A/B/C) to the calculator.</strong></td>
+          <td>An owner evaluating three renewal offers wants them side by side, not sequentially. Currently requires re-entry.</td>
+          <td class="num">4</td><td class="num">3</td><td class="num">2</td>
+        </tr>
+        <tr>
+          <td><code>S-14</code></td>
+          <td><strong>Add a printable tenant-credit one-pager generated from the 10-K rows.</strong></td>
+          <td>The credit analysis is already fully sourced; presenting it as a standalone sheet would make the lender conversation faster.</td>
+          <td class="num">3</td><td class="num">2</td><td class="num">1</td>
+        </tr>
+        <tr>
+          <td><code>S-15</code></td>
+          <td><strong>Add a machine-readable JSON export of the whole dataset.</strong></td>
+          <td>Lets an adviser's analyst work with the verified rows directly rather than scraping the page. Also makes the verification script's guarantee portable.</td>
+          <td class="num">3</td><td class="num">2</td><td class="num">1</td>
+        </tr>
+        <tr>
+          <td><code>S-16</code></td>
+          <td><strong>Add an explicit "assumption vs observation" tag to every number on the site.</strong></td>
+          <td>Partially present (verified / derived / unverified). Making "assumption" a first-class fourth state would force every opinion to declare itself.</td>
+          <td class="num">4</td><td class="num">2</td><td class="num">1</td>
+        </tr>
+        <tr>
+          <td><code>S-17</code></td>
+          <td><strong>Publish a "what changed" changelog page.</strong></td>
+          <td>A decision document that changes silently cannot be trusted over time. A dated changelog makes revisions visible.</td>
+          <td class="num">3</td><td class="num">2</td><td class="num">1</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Tier 4 — suggested only if the decision timeline is long</h2>
+
+  <div class="table-scroll">
+    <table>
+      <caption><strong>Higher effort, only justified with a multi-year horizon</strong></caption>
+      <thead><tr><th>ID</th><th>Suggestion</th><th>Rationale</th><th class="num">Impact</th><th class="num">Effort</th><th class="num">Risk</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><code>S-18</code></td>
+          <td><strong>Build and back-test a versioned cash-flow model.</strong></td>
+          <td>The brief asked for this explicitly — but conditioned it correctly on verified inputs and sufficient comparable history. Neither exists yet, so back-testing now would validate a model against nothing. Park it until G1–G5 clear.</td>
+          <td class="num">4</td><td class="num">5</td><td class="num">4</td>
+        </tr>
+        <tr>
+          <td><code>S-19</code></td>
+          <td><strong>Add a same-store sales and unit-count trend series from the tenant's filings.</strong></td>
+          <td>The brief's point that "a series shows direction, not one quarter" is correct. Extracting the multi-year series from successive 10-Ks would give a real trend rather than the three years currently shown.</td>
+          <td class="num">4</td><td class="num">4</td><td class="num">2</td>
+        </tr>
+        <tr>
+          <td><code>S-20</code></td>
+          <td><strong>Add school-performance and competitor-density evidence.</strong></td>
+          <td>Requested in the brief and currently absent. Would need official school data and a competitor point-of-interest dataset, with sources named before any number is published.</td>
+          <td class="num">3</td><td class="num">4</td><td class="num">3</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Recommended path — if a reviewer wants a single answer</h2>
+
+  <div class="card">
+    <h3 style="margin-top:0">Do S-01, then S-02 and S-03 in the same sitting</h3>
+    <p>Three actions, one afternoon, no fee. Together they close four of the six decision gates and
+    convert the largest block of blank cells on this site into verified findings. Nothing else on this
+    page produces as much decision value per hour of effort.</p>
+    <p><strong>Why not start with the lease abstract (S-06)?</strong> It has higher impact but it
+    requires an adviser engagement, and its usefulness depends on knowing which jurisdiction and which
+    hazard posture you are working with. If the parcel turns out to be in an adjacent city rather than
+    the City of Los Angeles, the tax analysis changes, and if it sits in a mapped hazard zone the
+    renewal strategy changes. Do the free work first, then commission the paid work with better
+    targeting.</p>
+    <p class="small muted" style="margin-bottom:0"><strong>What would change this recommendation:</strong>
+    if the owner already knows the jurisdiction and the hazard posture, S-06 becomes the first move and
+    should start immediately, in parallel with everything in Tier 1.</p>
+  </div>
+
+  <h2>What a reviewer should reject</h2>
+
+  <div class="table-scroll">
+    <table>
+      <caption><strong>Improvements deliberately not made — and why</strong></caption>
+      <thead><tr><th>Not doing</th><th>Reason</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Publishing an estimated cap rate</strong></td><td>No official source exists. A plausible number would be the most damaging possible addition to this site because it would be quoted without its caveat.</td></tr>
+        <tr><td><strong>Publishing an estimated parcel address</strong></td><td>The brief did not supply one. Guessing an address would attach verified hazard and zoning data to the wrong property — worse than publishing nothing.</td></tr>
+        <tr><td><strong>Filling unverified cells with a "typical" value</strong></td><td>A typical value for someone else's lease is not information about this lease. It would convert an honest blank into a confident error.</td></tr>
+        <tr><td><strong>Adding a headline recommendation</strong></td><td>The brief explicitly asked for no winner until verified inputs exist. A confident recommendation built on six blocked gates would be the exact failure the brief guards against.</td></tr>
+        <tr><td><strong>Adding analytics or tracking</strong></td><td>Contradicts the privacy requirement. The site has no scripts beyond its own two files.</td></tr>
+        <tr><td><strong>Adding an email capture form</strong></td><td>Collecting contact data would create the personal-information exposure this workspace is built to avoid.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="notice notice--ok">
+    <strong>How to file a change request.</strong> Every suggestion above has an ID. To request one,
+    state the ID and what should change. To propose something not listed, describe it in the same four
+    dimensions used here — what it changes, impact, effort, risk, dependency — so it can be compared
+    against the existing backlog rather than against nothing.
+  </div>
+
+  <p style="margin-top:1.6rem"><a href="flagged.html">Next: the items flagged for review →</a></p>
+
+</main>
+
+<footer class="site">
+  <div class="inner">
+    <p><strong>Privacy.</strong> This page collects no input and stores nothing. <a href="privacy.html">Privacy policy →</a></p>
+    <p><a href="sources.html">Full source register</a> · <a href="flagged.html">Flagged for review</a> · <a href="../index.html">Back to overview</a></p>
+  </div>
+</footer>
+</body>
+</html>

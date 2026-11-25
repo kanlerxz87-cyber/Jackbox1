@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Model &amp; stress · Jackbox property decision workspace</title>
+<meta name="description" content="Anonymised, source-verified decision workspace for a single-tenant quick-service restaurant parcel in central Los Angeles. Public aggregate findings only.">
+<meta name="robots" content="index,follow">
+<link rel="stylesheet" href="../assets/css/site.css">
+
+</head>
+<body>
+<header class="site">
+  <div class="wrap hdr">
+    <a class="brand" href="index.html"><span class="dot"></span>JACKBOX&nbsp;/&nbsp;PARCEL-001</a>
+    <nav class="main">
+        <a href="index.html">Dashboard</a>
+        <a href="market.html">Market &amp; trade area</a>
+        <a href="hazards.html">Hazard screening</a>
+        <a href="lease.html">Lease &amp; calendar</a>
+        <a href="decision.html">Sell vs hold</a>
+        <a href="scenarios.html" aria-current="page">Model &amp; stress</a>
+        <a href="questions.html">Open questions</a>
+        <a href="suggestions.html">Suggestions</a>
+        <a href="flagged.html">Flagged for review</a>
+        <a href="sources.html">Sources</a>
+        <a href="print.html">Printable brief</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <div class="wrap">
+
+<div class="eyebrow">Versioned cash-flow model · back-test · black-swan stress</div>
+<h1>Model &amp; stress</h1>
+<p class="lede">A versioned cash-flow model, back-tested wherever verified history exists, with observations and assumptions kept strictly apart. Then the stress cases — seismic, flood, fire, rent loss, repair cost and exit liquidity — stressed together, as the brief requires.</p>
+
+<div class="callout c-info"><strong>Version and scope</strong><b>v0.1-unbacktested-core</b> · Back-tested: The macro engine: the mean-reversion test in this file, reproducible from the 47 official FHFA observations. Not back-tested: Everything property-specific, because no property-specific data exists.</div>
+
+<h2>Observations — things the data says</h2>
+<p class="sub">Every row below is an observation or arithmetic computed from observations. No assumption is allowed in this table.</p>
+<div class="tbl-wrap"><table><thead><tr><th>ID</th><th>Observation</th><th class="num">Value</th><th>Kind</th><th>Official source</th></tr></thead><tbody>
+<tr><td>OB-01</td><td>The Los Angeles-Long Beach-Anaheim All-Transactions HPI rose from 282.59 (2015 Q1) to 553.76 (2026 Q3).</td><td class="num">282.59 <span class="faint">index points, 2015 Q1</span></td><td><span class="b b-ok">Observation</span></td><td class="src"><a href="https://fred.stlouisfed.org/graph/fredgraph.csv?id=ATNHPIUS31084Q" target="_blank" rel="noopener noreferrer">S-005</a><br><span class="faint">FHFA via FRED, St. Louis Fed</span></td></tr>
+<tr><td>OB-02</td><td>That is a 6.03% compound annual growth rate over 11.496 years (4,199 days).</td><td class="num">6.03 <span class="faint">percent per year</span></td><td><span class="b b-ok">Computed</span></td><td class="src"><a href="https://fred.stlouisfed.org/graph/fredgraph.csv?id=ATNHPIUS31084Q" target="_blank" rel="noopener noreferrer">S-005</a><br><span class="faint">FHFA via FRED, St. Louis Fed</span></td></tr>
+<tr><td>OB-03</td><td>Trailing 5-year appreciation in this metro has ranged from 4.57% to 9.04% per year across 27 rolling windows.</td><td class="num">4.57 – 9.04 <span class="faint">percent per year, min and max</span></td><td><span class="b b-ok">Computed</span></td><td class="src"><a href="https://fred.stlouisfed.org/graph/fredgraph.csv?id=ATNHPIUS31084Q" target="_blank" rel="noopener noreferrer">S-005</a><br><span class="faint">FHFA via FRED, St. Louis Fed</span></td></tr>
+<tr><td>OB-04</td><td>The most recent trailing 5-year window (2021 Q3 to 2026 Q3) is 4.57% — the LOWEST in the entire sample.</td><td class="num">4.57 <span class="faint">percent per year</span></td><td><span class="b b-ok">Computed</span></td><td class="src"><a href="https://fred.stlouisfed.org/graph/fredgraph.csv?id=ATNHPIUS31084Q" target="_blank" rel="noopener noreferrer">S-005</a><br><span class="faint">FHFA via FRED, St. Louis Fed</span></td></tr>
+<tr><td>OB-05</td><td>The metro index is 0.82% below its 2026 Q1 peak of 558.32.</td><td class="num">-0.82 <span class="faint">percent</span></td><td><span class="b b-ok">Computed</span></td><td class="src"><a href="https://fred.stlouisfed.org/graph/fredgraph.csv?id=ATNHPIUS31084Q" target="_blank" rel="noopener noreferrer">S-005</a><br><span class="faint">FHFA via FRED, St. Louis Fed</span></td></tr>
+<tr><td>OB-06</td><td>The 10-year Treasury yielded 4.92% on 2026-11-23, after ranging 4.84% to 5.15% during November 2026.</td><td class="num">4.92 <span class="faint">percent</span></td><td><span class="b b-ok">Observation</span></td><td class="src"><a href="https://fred.stlouisfed.org/data/DGS10" target="_blank" rel="noopener noreferrer">S-004</a><br><span class="faint">Federal Reserve Board (H.15) via FRED, St. Louis Fed</span></td></tr>
+<tr><td>OB-07</td><td>Metro unemployment was 4.6% in October 2026, down from 5.3% in June 2026.</td><td class="num">4.6 <span class="faint">percent, not seasonally adjusted</span></td><td><span class="b b-ok">Observation</span></td><td class="src"><a href="https://www.bls.gov/eag/eag.ca_losangeles_md.htm" target="_blank" rel="noopener noreferrer">S-002</a><br><span class="faint">U.S. Bureau of Labor Statistics</span></td></tr>
+<tr><td>OB-08</td><td>Local CPI rose 3.7% over 12 months to September 2026.</td><td class="num">3.7 <span class="faint">percent</span></td><td><span class="b b-ok">Observation</span></td><td class="src"><a href="https://www.bls.gov/eag/eag.ca_losangeles_md.htm" target="_blank" rel="noopener noreferrer">S-002</a><br><span class="faint">U.S. Bureau of Labor Statistics</span></td></tr>
+<tr><td>OB-09</td><td>Only 4 earthquakes of magnitude 4.5 or greater occurred in the central-LA bounding box in the 26 years from 2000 to 2026.</td><td class="num">4 <span class="faint">events</span></td><td><span class="b b-ok">Observation</span></td><td class="src"><a href="https://earthquake.usgs.gov/ws/designmaps/asce7-22.json" target="_blank" rel="noopener noreferrer">S-006</a><br><span class="faint">U.S. Geological Survey</span></td></tr>
+</tbody></table></div>
+
+<h2>The back-test</h2>
+<div class="card">
+  <p><b>Question:</b> Does trailing appreciation predict forward appreciation in this metro?</p>
+  <p><b>Design:</b> Split the 47 quarterly observations into overlapping pairs: trailing 5-year CAGR versus the following 5-year CAGR. 7 usable pairs.</p>
+  <div class="grid g3" style="margin:14px 0">
+    <div class="kpi"><div class="k-label">Correlation</div><div class="k-value" style="color:var(--warn)">-0.937</div><div class="k-note">trailing vs forward 5-yr growth</div></div>
+    <div class="kpi"><div class="k-label">Direction hit rate</div><div class="k-value">100%</div><div class="k-note">7 overlapping pairs</div></div>
+    <div class="kpi"><div class="k-label">Mean absolute error</div><div class="k-value">1.7 pp</div><div class="k-note">per 5-yr window</div></div>
+  </div>
+  <p><b>Interpretation.</b> Strongly NEGATIVE correlation. When the metro had been appreciating fast, the next five years were slower, and vice versa. Last five years 4.57%, next five whatever — extrapolation of the trailing rate is not merely unreliable here, it is systematically wrong in the same direction.</p>
+  <div class="callout c-warn"><strong>Honest limitations</strong><ul class="tight" style="margin-bottom:0"><li>Seven pairs is a very small sample. A 100% direction hit rate on seven observations is suggestive, not proof.</li><li>The index is metro-wide and weighted toward residential transactions. It cannot price a QSR pad and must not be used as the property&#39;s appreciation rate.</li><li>Overlapping windows are not independent, which overstates the apparent statistical strength.</li><li>The sample covers one interest-rate regime ending at 4.92% on the 10-year. A different rate regime could break the pattern.</li></ul></div>
+  <p class="sub" style="margin-bottom:0"><b>Conclusion.</b> The macro engine passes its back-test for the purpose it is actually used for: refusing to extrapolate. It does not, and cannot, produce a property-level forecast.</p>
+</div>
+
+<h2>Assumptions — things a person chose</h2>
+<p class="sub">Kept separate from observations on purpose. Each carries the reason it was chosen and the risk if it is wrong.</p>
+<div class="tbl-wrap"><table><thead><tr><th>ID</th><th>Assumption</th><th class="num">Value</th><th>Kind</th><th>Why</th></tr></thead><tbody>
+<tr><td>AS-01</td><td>Base-case property appreciation is set to 0% real until property-level comps exist.</td><td class="num">0 <span class="faint">percent per year real</span></td><td><span class="b b-warn">Assumption</span></td><td>Back-test shows trailing rates are mean-reverting and the current trailing rate is already the sample low. Assuming zero real growth is the only defensible default. A reader can override it in the calculator and the override is theirs, not this model&#39;s.</td></tr>
+<tr><td>AS-02</td><td>Discount rate must be at least the 10-year Treasury plus a property risk premium the reader sets explicitly.</td><td class="blank">—</td><td><span class="b b-warn">Assumption</span></td><td>4.92% is verified. The premium is not, so it has no default and the calculator will not run until the reader supplies one.</td></tr>
+<tr><td>AS-03</td><td>Rent escalations are compared against local CPI of 3.7% rather than assumed to track it.</td><td class="num">3.7 <span class="faint">percent</span></td><td><span class="b b-warn">Assumption</span></td><td class="blank">—</td></tr>
+<tr><td>AS-04</td><td>Property-level NOI, rent, expense recoveries, downtime, capex and renewal probability all remain UNSET.</td><td class="blank">—</td><td><span class="b b-warn">Assumption</span></td><td>Setting these without documents is the exact behaviour the owner prohibited. They are inputs in the browser calculator only.</td></tr>
+</tbody></table></div>
+
+<h2>Cash-flow engine</h2>
+<div class="card">
+  <p class="sub">Annual periods from the valuation date to a terminal year, with a separate terminal value block.</p>
+  <ul class="tight">
+    <li><b>Contract period.</b> Valuation date to lease expiration. Rent is contractual; the only uncertainty is tenant default.</li>
+    <li><b>Option period.</b> Each renewal option, exercised or not, modelled as a probability-weighted branch rather than a single path.</li>
+    <li><b>Post-expiry.</b> Vacancy, re-leasing cost, then market rent. This is where the hold case is usually weakest and where most simple models cheat by assuming instant re-lease at a higher rent.</li>
+  </ul>
+  <p class="sub"><b>Terminal value.</b> NOI at exit divided by an exit cap rate taken from a real quote (Q-01/Q-02). No exit cap rate is assumed here.</p>
+  <h3>Refusal conditions — the model will not answer without these</h3>
+  <ul class="tight"><li>Exit cap rate missing → do not compute terminal value.</li><li>Discount rate missing → do not compute present value.</li><li>Lease expiration date missing → do not compute the contract period.</li><li>Insurance premium missing → compute, but stamp the output &#39;insurance unverified&#39; because it is a top-three expense line.</li></ul>
+</div>
+
+<div class="grid g4" style="margin-top:16px">
+  <div class="kpi unverified"><div class="k-label">SC-01</div><div class="k-value" style="font-size:15px;color:var(--ink)">Renewal at market</div><div class="k-note">Tenant exercises its option; rent resets to market; no downtime.</div><div style="margin-top:8px"><span class="b b-bad">cannot run</span></div></div><div class="kpi unverified"><div class="k-label">SC-02</div><div class="k-value" style="font-size:15px;color:var(--ink)">Tenant vacates at expiry</div><div class="k-note">Tenant leaves; 12-24 months of downtime; re-leasing cost; market rent thereafter.</div><div style="margin-top:8px"><span class="b b-bad">cannot run</span></div></div><div class="kpi unverified"><div class="k-label">SC-03</div><div class="k-value" style="font-size:15px;color:var(--ink)">Sale now</div><div class="k-note">Sell at a quoted cap rate, net of selling costs, with the after-tax module applied.</div><div style="margin-top:8px"><span class="b b-bad">cannot run</span></div></div><div class="kpi unverified"><div class="k-label">SC-04</div><div class="k-value" style="font-size:15px;color:var(--ink)">Sale now with §1031 deferral</div><div class="k-note">Same as SC-03 but gain deferred into a replacement property within 45/180 days.</div><div style="margin-top:8px"><span class="b b-bad">cannot run</span></div></div>
+</div>
+
+<hr class="sep">
+
+<h2>Black-swan and base-case stress</h2>
+<p class="sub">The dangerous case is not any single hazard. It is the compound case: the building is damaged (repairs), the tenant cannot operate (rent loss), and every other owner in the submarket is trying to sell at the same time (exit liquidity gone). Each of the three is survivable; together they force a sale into the worst possible market. This module therefore models the joint case as the primary stress, not the union of separate shocks.</p>
+
+<h3>Verified probability context</h3>
+<div class="tbl-wrap"><table><thead><tr><th>ID</th><th>Verified finding</th><th>Why it matters</th><th>Official source</th></tr></thead><tbody>
+<tr><td>PC-01</td><td>Los Angeles County carried a county-wide major disaster declaration for wildfires and straight-line winds in January 2025 (DR-4856, declared 2025-01-08).</td><td>A &#39;black swan&#39; fire event is not a hypothetical for this county. It happened within the last 24 months.</td><td class="src"><a href="https://www.fema.gov/api/open/v2/DisasterDeclarationsSummaries" target="_blank" rel="noopener noreferrer">S-008</a><br><span class="faint">FEMA</span></td></tr>
+<tr><td>PC-02</td><td>Six separate fire-management declarations affected the county in roughly 14 months (FM-5537, FM-5548, FM-5549, FM-5550, FM-5551, FM-5605).</td><td>Fire risk here is a frequency question as well as a severity question.</td><td class="src"><a href="https://www.fema.gov/api/open/v2/DisasterDeclarationsSummaries" target="_blank" rel="noopener noreferrer">S-008</a><br><span class="faint">FEMA</span></td></tr>
+<tr><td>PC-03</td><td>Five flood and storm declarations affected the county in 2023-2024 (EM-3591, EM-3592, DR-4683, DR-4699, DR-4769).</td><td>Atmospheric-river flooding is a repeating, not one-off, exposure.</td><td class="src"><a href="https://www.fema.gov/api/open/v2/DisasterDeclarationsSummaries" target="_blank" rel="noopener noreferrer">S-008</a><br><span class="faint">FEMA</span></td></tr>
+<tr><td>PC-04</td><td>Only 4 earthquakes of magnitude 4.5+ in the central-LA box from 2000 to 2026, while ASCE 7-22 assigns Seismic Design Category D at the reference point.</td><td>Low frequency, high severity. A model calibrated on historical frequency will badly understate seismic loss. This is the classic black swan shape.</td><td class="src"><a href="https://earthquake.usgs.gov/ws/designmaps/asce7-22.json" target="_blank" rel="noopener noreferrer">S-006</a><br><span class="faint">U.S. Geological Survey</span></td></tr>
+<tr><td>PC-05</td><td>A COVID-19 major disaster declaration covered the county from 2020-03-22 (DR-4482), with no physical damage to the asset.</td><td>Rent loss without physical damage is a demonstrated, not theoretical, mechanism.</td><td class="src"><a href="https://www.fema.gov/api/open/v2/DisasterDeclarationsSummaries" target="_blank" rel="noopener noreferrer">S-008</a><br><span class="faint">FEMA</span></td></tr>
+</tbody></table></div>
+
+<h3>Scenarios</h3>
+<div class="tbl-wrap"><table><thead><tr><th>ID</th><th>Scenario</th><th>Class</th><th>Mechanism</th><th>Exit-liquidity effect</th></tr></thead><tbody>
+<tr><td>ST-01</td><td>Tenant vacates at expiration</td><td>business-as-usual</td><td>No renewal. 12-24 months of vacancy, tenant-improvement and leasing commissions, then market rent possibly below contract rent.</td><td>Moderate — a vacant pad sells, but at a materially higher cap rate</td></tr>
+<tr><td>ST-02</td><td>Insurance repricing</td><td>business-as-usual</td><td>Premium rises after a county-wide fire event even with zero damage to this building, because the whole market reprices.</td><td>High — a higher insurance line cuts NOI and therefore value at any given cap rate</td></tr>
+<tr><td>ST-03</td><td>Deferred capital failure</td><td>business-as-usual</td><td>Roof, HVAC or parking lot reaches end of life. In an NNN lease these are often still the landlord&#39;s obligation.</td><td>Moderate — buyers price the backlog in</td></tr>
+<tr><td>ST-04</td><td>Major seismic event</td><td>black-swan</td><td>Strong shaking damages structure or services. The tenant cannot trade. The building may be red-tagged pending evaluation.</td><td>Severe — the whole submarket is simultaneously impaired and buyers disappear</td></tr>
+<tr><td>ST-05</td><td>Wildfire at or near the parcel</td><td>black-swan</td><td>Direct damage, or mandated evacuation and smoke/ash closure without damage; utility shut-offs.</td><td>Severe in the surrounding area for an extended period</td></tr>
+<tr><td>ST-06</td><td>Flood</td><td>black-swan</td><td>Atmospheric-river or drainage failure inundates the site even outside a mapped high-risk zone.</td><td>Severe locally</td></tr>
+<tr><td>ST-07</td><td>Compound event (the case that actually threatens the owner)</td><td>black-swan</td><td>A hazard event damages the asset, the tenant stops paying, and the owner needs liquidity at the same moment the whole submarket is being sold into. Each leg alone is manageable; the joint case is what forces a distressed sale.</td><td>Severe — the asset cannot be sold except at a distressed discount, which is also the moment the owner most needs to sell</td></tr>
+<tr><td>ST-08</td><td>Rate shock at exit</td><td>market</td><td>Exit cap rate expands because the 10-year Treasury moves. November 2026 alone saw a 23 bp range (4.84% to 5.15%).</td><td>Direct and immediate — value moves inversely with the cap rate</td></tr>
+</tbody></table></div><p class="tbl-note">No dollar loss is stated anywhere: replacement cost, insured limits, deductibles and business-interruption terms are all private documents not supplied to this project.</p>
+
+<h3>Compound stress matrix</h3>
+<p class="sub">How each scenario behaves across the three stresses the owner asked to test together. Ratings are qualitative — <span class="faint">none / low / moderate / high / severe — qualitative only, no dollars</span></p>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Scenario</th><th>Rent loss</th><th>Repair cost</th><th>Exit liquidity</th></tr></thead>
+<tbody>
+<tr><td><b>ST-01 tenant vacates</b></td><td><span class="b b-warn">high</span></td><td><span class="b b-info">moderate</span></td><td><span class="b b-info">moderate</span></td></tr><tr><td><b>ST-02 insurance repricing</b></td><td><span class="b b-neutral">none</span></td><td><span class="b b-neutral">none</span></td><td><span class="b b-warn">high</span></td></tr><tr><td><b>ST-03 capex failure</b></td><td><span class="b b-neutral">low</span></td><td><span class="b b-warn">high</span></td><td><span class="b b-info">moderate</span></td></tr><tr><td><b>ST-04 seismic</b></td><td><span class="b b-bad">severe</span></td><td><span class="b b-bad">severe</span></td><td><span class="b b-bad">severe</span></td></tr><tr><td><b>ST-05 wildfire</b></td><td><span class="b b-bad">severe</span></td><td><span class="b b-warn">high</span></td><td><span class="b b-bad">severe</span></td></tr><tr><td><b>ST-06 flood</b></td><td><span class="b b-bad">severe</span></td><td><span class="b b-warn">high</span></td><td><span class="b b-bad">severe</span></td></tr><tr><td><b>ST-07 compound</b></td><td><span class="b b-bad">severe</span></td><td><span class="b b-bad">severe</span></td><td><span class="b b-bad">severe</span></td></tr><tr><td><b>ST-08 rate shock</b></td><td><span class="b b-neutral">none</span></td><td><span class="b b-neutral">none</span></td><td><span class="b b-warn">high</span></td></tr>
+</tbody></table></div>
+<div class="callout c-bad"><strong>The finding that matters</strong>Every severe row has severe exit liquidity in common. That is the real exposure: not the repair bill, but being forced to sell at the moment nobody is buying.</div>
+
+<h3>Mitigations</h3>
+<div class="tbl-wrap"><table><thead><tr><th>ID</th><th>Mitigation</th><th>Status</th><th>Cost</th><th>Official source</th></tr></thead><tbody>
+<tr><td>MT-01</td><td>Confirm and file the exact renewal-notice dates.</td><td><span class="b b-neutral">actionable-now</span></td><td>Hours of a lawyer&#39;s time</td><td class="blank" title="No official source could confirm this">no source — unverified</td></tr>
+<tr><td>MT-02</td><td>Obtain a property condition and seismic assessment before deciding.</td><td><span class="b b-neutral">actionable-now</span></td><td>Low four figures</td><td class="blank" title="No official source could confirm this">no source — unverified</td></tr>
+<tr><td>MT-03</td><td>Read the insurance binder end to end: limits, deductibles, business-interruption period, flood and quake exclusions, and the renewal date.</td><td><span class="b b-neutral">actionable-now</span></td><td>Free</td><td class="blank" title="No official source could confirm this">no source — unverified</td></tr>
+<tr><td>MT-04</td><td>File the decline-in-value application before 2026-11-30 if assessed value exceeds market value.</td><td><span class="b b-neutral">actionable-and-dated</span></td><td>Free</td><td class="src"><a href="https://assessor.lacounty.gov/proposition-13" target="_blank" rel="noopener noreferrer">S-019</a><br><span class="faint">Los Angeles County Assessor</span></td></tr>
+<tr><td>MT-05</td><td>Size and fund a liquidity reserve covering 12-18 months of debt service plus the insurance deductible.</td><td><span class="b b-neutral">requires-inputs</span></td><td>Opportunity cost of the reserve</td><td class="blank" title="No official source could confirm this">no source — unverified</td></tr>
+<tr><td>MT-06</td><td>Do not let the §1031 window become an emergency by identifying replacement candidates before listing.</td><td><span class="b b-neutral">actionable-now</span></td><td>Broker time</td><td class="src"><a href="https://www.irs.gov/pub/irs-news/fs-08-18.pdf" target="_blank" rel="noopener noreferrer">S-015</a><br><span class="faint">Internal Revenue Service</span></td></tr>
+<tr><td>MT-07</td><td>Diversify: do not let this single parcel be the majority of net worth.</td><td><span class="b b-neutral">portfolio-level</span></td><td>Transaction cost on any rebalancing</td><td class="blank" title="No official source could confirm this">no source — unverified</td></tr>
+</tbody></table></div>
+
+<div class="callout c-warn"><strong>The honest black-swan position</strong>The verified record shows this county has had major fire, flood and pandemic declarations within six years. It does not show the probability of any of them hitting this specific parcel in the next five years, because that probability depends on the parcel&#39;s zone status and construction, which are unverified. Any specific probability quoted here would be invented.</div>
+
+  </div>
+</main>
+<footer class="site">
+  <div class="wrap">
+    <p><b>Privacy.</b> This site publishes aggregate, non-identifying findings only. No parcel address, owner identity, APN, lease document, rent figure or personal finance appears anywhere in this repository or on this site. The parcel is referred to as <code>PARCEL-001</code> throughout.</p>
+    <p><b>Integrity.</b> Every data row carries a source identifier linking to an official source. Where an official source could not confirm a value, the value is left blank and listed on <a href="flagged.html">Flagged for review</a>. Nothing is inferred or filled in.</p>
+    <p class="faint">Data cut-off 2026-11-25 · Build 2026-11-25 · Not investment, legal or tax advice. Engage a licensed appraiser, attorney and CPA before acting.</p>
+  </div>
+</footer>
+</body>
+</html>

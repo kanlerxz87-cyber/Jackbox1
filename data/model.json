@@ -1,0 +1,194 @@
+{
+  "meta": {
+    "dataset": "model",
+    "version": "v0.1-unbacktested-core",
+    "as_of": "2026-11-25",
+    "owner_session": "ses-41ea221b",
+    "task": "Create a versioned, cash-flow model and back-test it when verified inputs and comparable history exist; distinguish observations from assumptions",
+    "version_policy": "Any change to an assumption changes the version string. Observations do not bump the version unless the source vintage changes. This model is v0.1 because no property-level input exists yet; only the macro engine is built and tested.",
+    "scope_honesty": "The macro component below IS back-tested on real official data. The property-level cash-flow component is NOT, because it has zero verified inputs. Those two facts must never be presented together as 'a back-tested model'."
+  },
+  "observations": [
+    {
+      "id": "OB-01",
+      "statement": "The Los Angeles-Long Beach-Anaheim All-Transactions HPI rose from 282.59 (2015 Q1) to 553.76 (2026 Q3).",
+      "value": 282.59,
+      "unit": "index points, 2015 Q1",
+      "status": "observation",
+      "source_id": "S-005",
+      "note": "47 quarterly observations were extracted, 2015 Q1 through 2026 Q3."
+    },
+    {
+      "id": "OB-02",
+      "statement": "That is a 6.03% compound annual growth rate over 11.496 years (4,199 days).",
+      "value": 6.03,
+      "unit": "percent per year",
+      "status": "computed-from-observation",
+      "source_id": "S-005",
+      "note": "Computed, not assumed. Arithmetic on OB-01. Unrounded value is 6.0257%; the 6.03 shown is that value rounded to two decimals."
+    },
+    {
+      "id": "OB-03",
+      "statement": "Trailing 5-year appreciation in this metro has ranged from 4.57% to 9.04% per year across 27 rolling windows.",
+      "value": [4.57, 9.04],
+      "unit": "percent per year, min and max",
+      "status": "computed-from-observation",
+      "source_id": "S-005",
+      "note": "Mean 7.08%, standard deviation 1.05 percentage points."
+    },
+    {
+      "id": "OB-04",
+      "statement": "The most recent trailing 5-year window (2021 Q3 to 2026 Q3) is 4.57% — the LOWEST in the entire sample.",
+      "value": 4.57,
+      "unit": "percent per year",
+      "status": "computed-from-observation",
+      "source_id": "S-005",
+      "note": "The boom of 2021-2022 has rolled out of the window. This is the single most useful fact for anyone tempted to underwrite continued 7% growth."
+    },
+    {
+      "id": "OB-05",
+      "statement": "The metro index is 0.82% below its 2026 Q1 peak of 558.32.",
+      "value": -0.82,
+      "unit": "percent",
+      "status": "computed-from-observation",
+      "source_id": "S-005"
+    },
+    {
+      "id": "OB-06",
+      "statement": "The 10-year Treasury yielded 4.92% on 2026-11-23, after ranging 4.84% to 5.15% during November 2026.",
+      "value": 4.92,
+      "unit": "percent",
+      "status": "observation",
+      "source_id": "S-004"
+    },
+    {
+      "id": "OB-07",
+      "statement": "Metro unemployment was 4.6% in October 2026, down from 5.3% in June 2026.",
+      "value": 4.6,
+      "unit": "percent, not seasonally adjusted",
+      "status": "observation",
+      "source_id": "S-002"
+    },
+    {
+      "id": "OB-08",
+      "statement": "Local CPI rose 3.7% over 12 months to September 2026.",
+      "value": 3.7,
+      "unit": "percent",
+      "status": "observation",
+      "source_id": "S-002"
+    },
+    {
+      "id": "OB-09",
+      "statement": "Only 4 earthquakes of magnitude 4.5 or greater occurred in the central-LA bounding box in the 26 years from 2000 to 2026.",
+      "value": 4,
+      "unit": "events",
+      "status": "observation",
+      "source_id": "S-006"
+    }
+  ],
+  "back_test": {
+    "question": "Does trailing appreciation predict forward appreciation in this metro?",
+    "design": "Split the 47 quarterly observations into overlapping pairs: trailing 5-year CAGR versus the following 5-year CAGR. 7 usable pairs.",
+    "results": {
+      "pairs": 7,
+      "correlation_trailing_vs_forward": -0.937,
+      "direction_hit_rate_percent": 100.0,
+      "mean_absolute_error_pp": 1.70
+    },
+    "interpretation": "Strongly NEGATIVE correlation. When the metro had been appreciating fast, the next five years were slower, and vice versa. Last five years 4.57%, next five whatever — extrapolation of the trailing rate is not merely unreliable here, it is systematically wrong in the same direction.",
+    "honest_limitations": [
+      "Seven pairs is a very small sample. A 100% direction hit rate on seven observations is suggestive, not proof.",
+      "The index is metro-wide and weighted toward residential transactions. It cannot price a QSR pad and must not be used as the property's appreciation rate.",
+      "Overlapping windows are not independent, which overstates the apparent statistical strength.",
+      "The sample covers one interest-rate regime ending at 4.92% on the 10-year. A different rate regime could break the pattern."
+    ],
+    "conclusion": "The macro engine passes its back-test for the purpose it is actually used for: refusing to extrapolate. It does not, and cannot, produce a property-level forecast."
+  },
+  "assumptions": [
+    {
+      "id": "AS-01",
+      "assumption": "Base-case property appreciation is set to 0% real until property-level comps exist.",
+      "value": 0,
+      "unit": "percent per year real",
+      "status": "assumption",
+      "justification": "Back-test shows trailing rates are mean-reverting and the current trailing rate is already the sample low. Assuming zero real growth is the only defensible default. A reader can override it in the calculator and the override is theirs, not this model's.",
+      "flip_risk": "If central LA pads appreciate at even the sample-low 4.57% nominal, the hold case improves by roughly the cap rate differential each year. This is why the assumption is stated, not buried."
+    },
+    {
+      "id": "AS-02",
+      "assumption": "Discount rate must be at least the 10-year Treasury plus a property risk premium the reader sets explicitly.",
+      "value": null,
+      "unit": "percent",
+      "status": "assumption-slot",
+      "justification": "4.92% is verified. The premium is not, so it has no default and the calculator will not run until the reader supplies one."
+    },
+    {
+      "id": "AS-03",
+      "assumption": "Rent escalations are compared against local CPI of 3.7% rather than assumed to track it.",
+      "value": 3.7,
+      "unit": "percent",
+      "status": "assumption-anchored-to-observation",
+      "source_id": "S-002"
+    },
+    {
+      "id": "AS-04",
+      "assumption": "Property-level NOI, rent, expense recoveries, downtime, capex and renewal probability all remain UNSET.",
+      "value": null,
+      "status": "assumption-slot",
+      "justification": "Setting these without documents is the exact behaviour the owner prohibited. They are inputs in the browser calculator only."
+    }
+  ],
+  "cash_flow_engine": {
+    "shape": "Annual periods from the valuation date to a terminal year, with a separate terminal value block.",
+    "periods": {
+      "contract_period": "Valuation date to lease expiration. Rent is contractual; the only uncertainty is tenant default.",
+      "option_period": "Each renewal option, exercised or not, modelled as a probability-weighted branch rather than a single path.",
+      "post_expiry_period": "Vacancy, re-leasing cost, then market rent. This is where the hold case is usually weakest and where most simple models cheat by assuming instant re-lease at a higher rent."
+    },
+    "per_period_fields": ["contract_rent", "recoveries", "landlord_opex", "insurance", "property_tax", "capex", "debt_service", "pre_tax_cash_flow", "discount_factor", "present_value"],
+    "terminal_value": "NOI at exit divided by an exit cap rate taken from a real quote (Q-01/Q-02). No exit cap rate is assumed here.",
+    "refusal_conditions": [
+      "Exit cap rate missing → do not compute terminal value.",
+      "Discount rate missing → do not compute present value.",
+      "Lease expiration date missing → do not compute the contract period.",
+      "Insurance premium missing → compute, but stamp the output 'insurance unverified' because it is a top-three expense line."
+    ]
+  },
+  "scenario_skeletons": [
+    {
+      "id": "SC-01",
+      "name": "Renewal at market",
+      "narrative": "Tenant exercises its option; rent resets to market; no downtime.",
+      "required_inputs": ["NC-01", "NC-02", "Q-01", "HL-02"],
+      "status": "cannot-run"
+    },
+    {
+      "id": "SC-02",
+      "name": "Tenant vacates at expiry",
+      "narrative": "Tenant leaves; 12-24 months of downtime; re-leasing cost; market rent thereafter.",
+      "required_inputs": ["HL-03", "Q-01", "Q-03"],
+      "status": "cannot-run"
+    },
+    {
+      "id": "SC-03",
+      "name": "Sale now",
+      "narrative": "Sell at a quoted cap rate, net of selling costs, with the after-tax module applied.",
+      "required_inputs": ["Q-01", "SL-05", "SL-06", "SL-08", "SL-09"],
+      "status": "cannot-run"
+    },
+    {
+      "id": "SC-04",
+      "name": "Sale now with §1031 deferral",
+      "narrative": "Same as SC-03 but gain deferred into a replacement property within 45/180 days.",
+      "required_inputs": ["SC-03 inputs", "S-015"],
+      "status": "cannot-run"
+    }
+  ],
+  "governance": {
+    "current_version": "v0.1-unbacktested-core",
+    "what_is_backtested": "The macro engine: the mean-reversion test in this file, reproducible from the 47 official FHFA observations.",
+    "what_is_not_backtested": "Everything property-specific, because no property-specific data exists.",
+    "next_version_trigger": "v0.2 may be issued once lease dates, contract rent, an insurance premium and at least one real cap-rate quote are in hand. v0.2 must re-run this back-test and publish the error.",
+    "rule": "A model that cannot state its own error bars is a guess with a spreadsheet attached."
+  }
+}

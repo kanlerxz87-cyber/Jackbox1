@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>W-02 · Sell v Hold, After-Tax — Hold or Sell Workspace</title>
+<meta name="description" content="A private, in-browser after-tax sale comparison against a discounted hold case for a single NNN-leased parcel. No data leaves the browser.">
+<link rel="stylesheet" href="../assets/css/style.css">
+<script src="../assets/js/nav.js" defer></script>
+<script src="../assets/js/calculator.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="brandmark">Hold or Sell <span class="tag">Decision Workspace</span></div>
+    <div class="env"><span>W-02 · W-06 · W-09</span><span><strong>Evidence cut-off 2026-11-25</strong></span></div>
+  </div>
+</header>
+
+<nav class="nav" aria-label="Sections">
+  <div class="nav-inner">
+    <a href="../index.html">Overview</a>
+    <a href="economics.html">Trade Area</a>
+    <a href="worksheet.html">Sell v Hold</a>
+    <a href="decision-gates.html">Decision Gates</a>
+    <a href="hazards.html">Hazards</a>
+    <a href="tract-trends.html">Tract Trends</a>
+    <a href="rental-evidence.html">Rental Evidence</a>
+    <a href="lease-abstract.html">Lease Abstract</a>
+    <a href="risks.html">Risks</a>
+    <a href="open-questions.html">Open Questions</a>
+    <a href="suggestions.html">Suggestions</a>
+    <a href="flagged.html">Flagged</a>
+    <a href="sources.html">Sources</a>
+    <a href="advisory-summary.html">Summary</a>
+    <a href="privacy.html">Privacy</a>
+  </div>
+</nav>
+
+<main id="main" class="wrap">
+
+  <div class="page-head">
+    <p class="eyebrow">W-02 · private worksheet extends to a sell-versus-hold comparison</p>
+    <h1>Two cases, side by side — and no winner declared</h1>
+    <p class="lede">
+      The brief asked for an after-tax sale comparison alongside a negotiated renewal case, with no
+      winner chosen until verified inputs exist. This page is that comparison, built as a calculator
+      that runs entirely in your browser. It ships with <strong>every field empty</strong>, because a
+      pre-filled default would be an assumption dressed as a fact.
+    </p>
+  </div>
+
+  <div class="notice notice--info">
+    <strong>Privacy — how this actually works.</strong> The calculator is a JavaScript file served from
+    this page. It makes no network requests, sets no cookies, writes nothing to
+    <code>localStorage</code> or <code>sessionStorage</code>, and has no analytics. Nothing you type is
+    transmitted to any server, including this one. Close the tab and the numbers are gone. You can
+    confirm this by opening your browser's network panel while using it — it will show no requests
+    beyond the page assets themselves.
+    <a href="privacy.html">Read the full privacy policy →</a>
+  </div>
+
+  <h2 id="calc">The calculator</h2>
+
+  <form id="c_form" class="calc" autocomplete="off" novalidate>
+    <div class="calc-head">
+      <h3>Sell-versus-hold inputs</h3>
+      <p>All figures in US dollars. Percentages as numbers (e.g. <code>6.5</code> for 6.5%). Nothing is stored or sent.</p>
+    </div>
+    <div class="calc-body">
+
+      <h3 style="margin-top:0">Path A — sell now</h3>
+      <div class="field-grid">
+        <div class="field">
+          <label for="c_salePrice">Expected gross sale price</label>
+          <input id="c_salePrice" type="number" min="0" step="1000" placeholder="0" inputmode="decimal">
+          <div class="hint">What a buyer would pay today with the current lease in place.</div>
+        </div>
+        <div class="field">
+          <label for="c_sellingCost">Selling costs (% of price)</label>
+          <input id="c_sellingCost" type="number" min="0" max="20" step="0.1" placeholder="0" inputmode="decimal">
+          <div class="hint">Broker commission, escrow, legal, due-diligence. Transfer taxes are handled separately below.</div>
+        </div>
+        <div class="field">
+          <label for="c_basis">Original cost basis</label>
+          <input id="c_basis" type="number" min="0" step="1000" placeholder="0" inputmode="decimal">
+          <div class="hint">Purchase price plus capitalised acquisition costs. Not the current assessed value.</div>
+        </div>
+        <div class="field">
+          <label for="c_accumDep">Accumulated depreciation taken</label>
+          <input id="c_accumDep" type="number" min="0" step="1000" placeholder="0" inputmode="decimal">
+          <div class="hint">Cumulative depreciation on the building. Reduces basis and is recaptured at up to 25%.</div>
+        </div>
+        <div class="field">
+          <label for="c_mortgage">Debt repaid at closing</label>
+          <input id="c_mortgage" type="number" min="0" step="1000" placeholder="0" inputmode="decimal">
+          <div class="hint">Outstanding principal. Reduces cash in hand, not the taxable gain.</div>
+        </div>
+      </div>
+
+      <h3>Path B — hold and exit</h3>
+      <div class="field-grid">
+        <div class="field">
+          <label for="c_noi">Year-one net operating income</label>
+          <input id="c_noi" type="number" min="0" step="1000" placeholder="0" inputmode="decimal">
+          <div class="hint">Base rent actually collectible, less the landlord's real non-reimbursed costs.</div>
+        </div>
+        <div class="field">
+          <label for="c_noiGrowth">NOI growth per year (%)</label>
+          <input id="c_noiGrowth" type="number" min="-20" max="20" step="0.1" placeholder="0" inputmode="decimal">
+          <div class="hint">From the lease escalator while the lease runs; from a market assumption after that. Label it.</div>
+        </div>
+        <div class="field">
+          <label for="c_holdExp">Annual landlord costs not reimbursed</label>
+          <input id="c_holdExp" type="number" min="0" step="1000" placeholder="0" inputmode="decimal">
+          <div class="hint">Only genuinely non-recoverable items. A true NNN lease should leave this near zero while the tenant is in place.</div>
+        </div>
+        <div class="field">
+          <label for="c_years">Hold horizon (years)</label>
+          <input id="c_years" type="number" min="1" max="30" step="1" placeholder="0" inputmode="numeric">
+          <div class="hint">Set this to the year the lease actually ends once FLAG-U01 is closed.</div>
+        </div>
+        <div class="field">
+          <label for="c_exitCap">Exit capitalisation rate (%)</label>
+          <input id="c_exitCap" type="number" min="1" max="20" step="0.05" placeholder="0" inputmode="decimal">
+          <div class="hint">Your assumption, not a verified figure. No official series publishes submarket NNN cap rates — see FLAG-U04.</div>
+        </div>
+        <div class="field">
+          <label for="c_discount">Discount rate (%)</label>
+          <input id="c_discount" type="number" min="0" max="30" step="0.05" placeholder="0" inputmode="decimal">
+          <div class="hint">Your required return. The 10-year Treasury at 4.92% is a floor reference, not an answer.</div>
+        </div>
+      </div>
+
+      <h3>Tax posture</h3>
+      <div class="field-grid">
+        <div class="field">
+          <label for="c_filing">Filing status</label>
+          <select id="c_filing">
+            <option value="mfj">Married filing jointly</option>
+            <option value="single">Single</option>
+            <option value="mfs">Married filing separately</option>
+            <option value="hoh">Head of household</option>
+          </select>
+          <div class="hint">Selects the 15% vs 20% federal capital-gain threshold.</div>
+        </div>
+        <div class="field">
+          <label for="c_otherIncome">Other taxable income this year</label>
+          <input id="c_otherIncome" type="number" min="0" step="1000" placeholder="0" inputmode="decimal">
+          <div class="hint">Used to decide whether the gain lands in the 15% or 20% federal tier.</div>
+        </div>
+        <div class="field">
+          <label for="c_niit">Net investment income tax applies?</label>
+          <select id="c_niit">
+            <option value="no">No / not sure — leave out</option>
+            <option value="yes">Yes — 3.8% applies</option>
+          </select>
+          <div class="hint">Depends on passive vs active treatment. Ask your CPA before choosing "yes".</div>
+        </div>
+        <div class="field">
+          <label for="c_recapture">Depreciation recapture modelled?</label>
+          <select id="c_recapture">
+            <option value="yes">Yes — at 25%</option>
+            <option value="no">No — exclude</option>
+          </select>
+          <div class="hint">Excluding it understates the tax. Only exclude if you have a specific reason.</div>
+        </div>
+        <div class="field">
+          <label for="c_ca">California income tax modelled?</label>
+          <select id="c_ca">
+            <option value="yes">Yes — at 12.30% top bracket</option>
+            <option value="no">No — exclude</option>
+          </select>
+          <div class="hint">California taxes capital gain as ordinary income. The 1% Mental Health Services Tax is <em>not</em> included — see FLAG-U09.</div>
+        </div>
+      </div>
+
+      <div class="calc-actions">
+        <button type="submit">Recalculate</button>
+        <button type="reset" class="secondary">Clear all inputs</button>
+        <span class="small muted" style="align-self:center">Results update as you type.</span>
+      </div>
+
+      <div id="c_out" class="results" aria-live="polite"></div>
+    </div>
+  </form>
+
+  <div class="notice notice--warn" style="margin-top:1.2rem">
+    <strong>Read the labels on the two cases before comparing them.</strong> Path A is
+    <em>after-tax</em>. Path B is <em>pre-tax</em>. Comparing them directly is an apples-to-oranges
+    move that systematically favours the hold, which is why the verdict box says so explicitly rather
+    than printing a winner. Making Path B after-tax requires the exit-year depreciation and entity
+    position, which is exactly the input set in FLAG-U05.
+  </div>
+
+  <h2 id="tax">The after-tax module — every rate, and where it comes from</h2>
+  <p>This is W-09: the verified tax rules turned into one number the owner can hold against the hold
+  case. Each rate below is transcribed from the official source in the same row. Where a rate
+  <em>might</em> apply but depends on a fact not in hand, it is shown as conditional and the
+  condition is named.</p>
+
+  <div class="table-scroll">
+<table>
+  <caption><strong>Tax parameters used by the calculator</strong>
+  Conditional rows are shown with the fact that would switch them on. No rate is applied silently.</caption>
+  <thead><tr>
+    <th>ID</th><th>Metric</th><th class="num">Value</th><th>Period</th>
+    <th>Level</th><th>Status</th><th>Evidence quoted from source</th><th>Official source</th>
+  </tr></thead>
+  <tbody>
+<tr>
+        <td><code>M-043</code></td>
+        <td>10-year U.S. Treasury constant maturity yield, 2026-11-23</td>
+        <td class="num">4.92%</td>
+        <td class="nowrap">2026-11-23</td>
+        <td><span class="pill pill--ok">National</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Series DGS10, observation 2026-11-23 = 4.92.</td>
+        <td><a class="src" href="https://fred.stlouisfed.org/data/DGS10" target="_blank" rel="noopener" title="10-Year Treasury Constant Maturity — series DGS10">Federal Reserve Bank of St. Louis (source: Federal Reserve Board, H.15) ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-050</code></td>
+        <td>Jack in the Box total revenues, FY2025 (ended 2025-09-28)</td>
+        <td class="num">$1.465 billion</td>
+        <td class="nowrap">FY2025</td>
+        <td><span class="pill pill--ok">Tenant</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Consolidated Statements of Earnings: Revenues $1,465,314 thousand (FY2024: $1,571,306; FY2023: $1,692,306).</td>
+        <td><a class="src" href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/R5.htm" target="_blank" rel="noopener" title="JACK 10-K FY2025 — Consolidated Statements of Earnings (XBRL R5)">Securities and Exchange Commission ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-051</code></td>
+        <td>Jack in the Box franchise rental revenues, FY2025</td>
+        <td class="num">$332.735 million (Jack in the Box segment)</td>
+        <td class="nowrap">FY2025</td>
+        <td><span class="pill pill--ok">Tenant</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Disaggregation of revenue: Franchise rental revenues — Jack in the Box $332,735 thousand; Del Taco $35,908 thousand; total $368,643 thousand.</td>
+        <td><a class="src" href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/R10.htm" target="_blank" rel="noopener" title="JACK 10-K FY2025 — Note: Revenue, disaggregation by segment and source (XBRL R10)">Securities and Exchange Commission ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-052</code></td>
+        <td>Jack in the Box net loss, FY2025</td>
+        <td class="num">−$80.719 million</td>
+        <td class="nowrap">FY2025</td>
+        <td><span class="pill pill--ok">Tenant</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Consolidated Statements of Earnings: Net (loss) earnings $(80,719) thousand (FY2024: $(36,695); FY2023: $130,826).</td>
+        <td><a class="src" href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/R5.htm" target="_blank" rel="noopener" title="JACK 10-K FY2025 — Consolidated Statements of Earnings (XBRL R5)">Securities and Exchange Commission ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-053</code></td>
+        <td>Jack in the Box impairment of goodwill and intangible assets, FY2025</td>
+        <td class="num">−$209.556 million</td>
+        <td class="nowrap">FY2025</td>
+        <td><span class="pill pill--ok">Tenant</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Consolidated Statements of Earnings: Impairment of goodwill and intangible assets $209,556 thousand (FY2024: $162,624; FY2023: $0).</td>
+        <td><a class="src" href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/R5.htm" target="_blank" rel="noopener" title="JACK 10-K FY2025 — Consolidated Statements of Earnings (XBRL R5)">Securities and Exchange Commission ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-054</code></td>
+        <td>Jack in the Box restaurants in California, as of 2025-09-28</td>
+        <td class="num">941 (96 company-operated, 845 franchised)</td>
+        <td class="nowrap">2025-09-28</td>
+        <td><span class="pill pill--ok">State</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Item 2. Properties table: California — Jack in the Box Company-Operated 96, Franchise 845, Total 941.</td>
+        <td><a class="src" href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm" target="_blank" rel="noopener" title="JACK 10-K FY2025 — Item 2. Properties (restaurant counts by state)">Securities and Exchange Commission ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-055</code></td>
+        <td>Share of Jack in the Box systemwide restaurants located in California and Texas</td>
+        <td class="num">approximately 70%</td>
+        <td class="nowrap">FY2025</td>
+        <td><span class="pill pill--ok">Tenant</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Item 1A: &quot;approximately 70% of our systemwide restaurants are located in the states of California and Texas.&quot;</td>
+        <td><a class="src" href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm" target="_blank" rel="noopener" title="JACK 10-K FY2025 — Item 2. Properties (restaurant counts by state)">Securities and Exchange Commission ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-070</code></td>
+        <td>Federal long-term capital gain rate — 20% bracket floor (single filer, 2025)</td>
+        <td class="num">taxable income above $533,400 (single)</td>
+        <td class="nowrap">2025 tax year</td>
+        <td><span class="pill pill--ok">National</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">&quot;A capital gains rate of 20% applies to the extent that your taxable income exceeds the thresholds set for the 15% capital gain rate&quot; — single threshold $533,400.</td>
+        <td><a class="src" href="https://www.irs.gov/taxtopics/tc409" target="_blank" rel="noopener" title="Topic no. 409, Capital gains and losses">Internal Revenue Service ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-071</code></td>
+        <td>Maximum rate on unrecaptured section 1250 gain</td>
+        <td class="num">25%</td>
+        <td class="nowrap">2025 tax year</td>
+        <td><span class="pill pill--ok">National</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">&quot;The portion of any unrecaptured section 1250 gain from selling section 1250 real property is taxed at a maximum 25% rate.&quot;</td>
+        <td><a class="src" href="https://www.irs.gov/taxtopics/tc409" target="_blank" rel="noopener" title="Topic no. 409, Capital gains and losses">Internal Revenue Service ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-072</code></td>
+        <td>Net investment income tax rate</td>
+        <td class="num">3.8%</td>
+        <td class="nowrap">2025 tax year</td>
+        <td><span class="pill pill--ok">National</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">&quot;A 3.8 percent net investment income tax (NIIT) applies to individuals … on the lesser of the net investment income, or the excess of MAGI over the threshold&quot; — $200,000 single / $250,000 MFJ.</td>
+        <td><a class="src" href="https://www.irs.gov/taxtopics/tc559" target="_blank" rel="noopener" title="Topic no. 559, Net investment income tax">Internal Revenue Service ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-073</code></td>
+        <td>California top marginal personal income tax rate listed on the 2024 Form 540 schedules</td>
+        <td class="num">12.30%</td>
+        <td class="nowrap">2024 tax year</td>
+        <td><span class="pill pill--ok">State</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Schedules X, Y and Z all end at &quot;12.30%&quot; — e.g. Schedule Y: $1,442,628 and over = $140,232.77 + 12.30% of the amount over $1,442,628.</td>
+        <td><a class="src" href="https://www.ftb.ca.gov/forms/2024/2024-540-tax-rate-schedules.pdf" target="_blank" rel="noopener" title="2024 California Tax Rate Schedules (Form 540)">California Franchise Tax Board ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-074</code></td>
+        <td>City of Los Angeles Measure ULA transfer tax — tier 1</td>
+        <td class="num">4% on value over $5,000,000 and under $10,000,000</td>
+        <td class="nowrap">Conveyances on/after 2023-04-01</td>
+        <td><span class="pill pill--ok">City</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">&quot;Impose a 4% tax on real property sales or transfers valued at over $5 million but less than $10 million.&quot;</td>
+        <td><a class="src" href="https://cityclerk.lacity.org/election/Initiative_Ordinance_ULA.pdf" target="_blank" rel="noopener" title="Initiative Ordinance ULA (November 2022 ballot text, Chief Legislative Analyst summary, CAO financial impact statement)">City of Los Angeles ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-075</code></td>
+        <td>City of Los Angeles Measure ULA transfer tax — tier 2</td>
+        <td class="num">5.5% on value of $10,000,000 or more</td>
+        <td class="nowrap">Conveyances on/after 2023-04-01</td>
+        <td><span class="pill pill--ok">City</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">&quot;Impose a 5.5% tax on real property sales or transfers valued at $10 million or more.&quot;</td>
+        <td><a class="src" href="https://cityclerk.lacity.org/election/Initiative_Ordinance_ULA.pdf" target="_blank" rel="noopener" title="Initiative Ordinance ULA (November 2022 ballot text, Chief Legislative Analyst summary, CAO financial impact statement)">City of Los Angeles ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-076</code></td>
+        <td>Existing combined City + County documentary transfer tax rate, City of Los Angeles</td>
+        <td class="num">0.56%</td>
+        <td class="nowrap">November 2022 CAO fiscal impact statement</td>
+        <td><span class="pill pill--ok">City</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">&quot;The special tax imposed is in addition to the existing 0.56 percent combined City and County tax rate on property sales and transfers.&quot;</td>
+        <td><a class="src" href="https://cityclerk.lacity.org/election/Initiative_Ordinance_ULA.pdf" target="_blank" rel="noopener" title="Initiative Ordinance ULA (November 2022 ballot text, Chief Legislative Analyst summary, CAO financial impact statement)">City of Los Angeles ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-077</code></td>
+        <td>ULA effective date for conveyances</td>
+        <td class="num">April 1, 2023</td>
+        <td class="nowrap">2023</td>
+        <td><span class="pill pill--ok">City</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">&quot;The tax is applicable to conveyances of real estate that occur on or after April 1, 2023.&quot;</td>
+        <td><a class="src" href="https://housing.lacity.gov/wp-content/uploads/2024/04/ULA-Exemptions-FAQ.pdf" target="_blank" rel="noopener" title="ULA Exemptions FAQ">City of Los Angeles Housing Department (LAHD) ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-109</code></td>
+        <td>Owner's adjusted basis, acquisition date, and accumulated depreciation</td>
+        <td class="num"><span class="blank">—</span></td>
+        <td class="nowrap">current</td>
+        <td><span class="pill pill--neutral">Owner</span></td>
+        <td><span class="pill pill--stop">Unverified</span></td>
+        <td class="small"><span class="muted">Not supplied. These four inputs determine the entire after-tax comparison; the calculator therefore requires the reader to enter them.</span></td>
+        <td><a class="src" href="https://www.irs.gov/taxtopics/tc409" target="_blank" rel="noopener" title="Topic no. 409, Capital gains and losses">Internal Revenue Service ↗</a></td>
+      </tr>
+  </tbody>
+</table>
+</div>
+
+  <div class="card">
+    <h3 style="margin-top:0">The stacking order, as the calculator applies it</h3>
+    <ol class="tight">
+      <li><strong>Net sale proceeds</strong> = gross price − selling costs − Measure ULA and transfer taxes if applicable.</li>
+      <li><strong>Adjusted basis</strong> = original basis − accumulated depreciation.</li>
+      <li><strong>Realised gain</strong> = net proceeds − adjusted basis. If negative, no tax and no recapture.</li>
+      <li><strong>Split the gain</strong> into unrecaptured §1250 gain (up to the depreciation taken) and long-term capital gain (the rest).</li>
+      <li><strong>Federal:</strong> §1250 portion at 25%; capital portion at 15% or 20% depending on total taxable income.</li>
+      <li><strong>Net investment income tax:</strong> 3.8% on the lesser of net investment income or MAGI above the threshold — applied here to the gain, conditional on passive treatment.</li>
+      <li><strong>California:</strong> the whole gain at the top printed marginal bracket, since capital gain is ordinary income in California.</li>
+      <li><strong>Cash in hand</strong> = net proceeds − all tax − debt repaid.</li>
+    </ol>
+    <p class="small muted" style="margin-bottom:0">Each line in the calculator's output corresponds to
+    one of these steps, so the arithmetic can be checked against the source rate rather than trusted.</p>
+  </div>
+
+  <div class="notice notice--stop">
+    <strong>Three things the calculator deliberately does not do.</strong>
+    <ol class="tight" style="margin-bottom:0">
+      <li>It does not apply Measure ULA automatically. ULA is a City-of-Los-Angeles tax; if the parcel
+      sits in an adjacent incorporated city it does not apply at all, and applying it wrongly would
+      overstate the tax by 4–5.5% of the entire sale price. Add it manually once FLAG-U02 is closed.</li>
+      <li>It does not model a §1031 exchange. A 1031 defers the federal gain entirely if replacement
+      property is identified and acquired on time, which can dominate every other variable on this page.
+      That is an adviser conversation, not a formula.</li>
+      <li>It does not model the 1% California Mental Health Services Tax above $1,000,000 of taxable
+      income, because that is a separate statute from the Form 540 schedules cited here (FLAG-U09).</li>
+    </ol>
+  </div>
+
+  <h2 id="renewal">The negotiated-renewal case — the third number</h2>
+  <p>The brief pairs the sale case with a <em>negotiated renewal</em>, not just a passive hold. That is
+  the right frame, because a renewal changes the exit capitalisation rate itself: a buyer pays less
+  for a property with two years of term than for the same property with ten. The renewal case is
+  therefore not "hold at whatever rent" — it is a trade:</p>
+
+  <div class="table-scroll">
+    <table>
+      <caption><strong>What a renewal could trade, and what each lever is worth</strong>
+      Levers are structural; the size of each effect is stated as a direction only, because the magnitude depends on FLAG-U01 and FLAG-U04.</caption>
+      <thead><tr><th>Lever</th><th>Landlord gives</th><th>Landlord gets</th><th>Net effect on exit value</th><th>Evidence status</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>Term extension</td>
+          <td>Removes the landlord's ability to re-let at market for the extended period</td>
+          <td>Converts a decaying asset into a stabilised one; a longer weighted-average term supports a tighter exit cap</td>
+          <td><span class="pill pill--ok">Strongly positive</span></td>
+          <td><span class="pill pill--stop">Option terms unknown — FLAG-U01</span></td>
+        </tr>
+        <tr>
+          <td>Rent reset</td>
+          <td>Possible reduction from the in-place rent</td>
+          <td>Certainty of collection, and a reset that reflects the tenant's real ability to pay</td>
+          <td><span class="pill pill--warn">Depends on the gap</span></td>
+          <td><span class="pill pill--stop">Base rent unknown — FLAG-U01</span></td>
+        </tr>
+        <tr>
+          <td>Renewal option grants</td>
+          <td>The landlord's future upside above the option rent</td>
+          <td>A higher probability the tenant actually renews, and a better story at sale</td>
+          <td><span class="pill pill--warn">Negative if granted cheaply</span></td>
+          <td><span class="pill pill--stop">Existing options unknown — FLAG-U01</span></td>
+        </tr>
+        <tr>
+          <td>Capital contribution / TI</td>
+          <td>Cash or a rent holiday now</td>
+          <td>A longer term and a refreshed store that protects the sales base</td>
+          <td><span class="pill pill--warn">Positive only if the term is long enough to amortise it</span></td>
+          <td><span class="pill pill--stop">Store condition unknown</span></td>
+        </tr>
+        <tr>
+          <td>Early-termination or co-tenancy relief</td>
+          <td>An exit for the tenant</td>
+          <td>Usually nothing — this is a concession to be resisted</td>
+          <td><span class="pill pill--stop">Negative</span></td>
+          <td><span class="pill pill--stop">Lease language unknown — FLAG-U01</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3 style="margin-top:0">Why the tenant's own disclosures matter to the renewal ask</h3>
+    <p>Jack in the Box discloses a portfolio <strong>weighted-average operating lease discount rate of
+    6.1%</strong> and a <strong>weighted-average remaining operating lease term of 11.2 years</strong>.
+    Those two numbers are the tenant's own view of the cost and duration of its real estate. A renewal
+    ask that prices the landlord's capital at well above 6.1% is asking the tenant to accept a worse
+    deal than its own book — it may simply not renew. A renewal ask that prices it well below is
+    leaving money on the table. The defensible zone sits around the tenant's disclosed cost of lease
+    capital, adjusted for the specific store's sales.</p>
+    <p class="small"><strong>What is still missing to turn that into a rent number:</strong> the store's
+    sales, because Jack in the Box's franchise rent is structured on a percentage of sales as well as a
+    base. Without store-level sales, a percentage-rent clause cannot be valued.</p>
+    <p class="src-list">
+      <a class="src" href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/R16.htm" target="_blank" rel="noopener">10-K lease note ↗</a>
+      <a class="src" href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/R10.htm" target="_blank" rel="noopener">10-K revenue disaggregation ↗</a>
+    </p>
+  </div>
+
+  <h2 id="inputs">Input register — every number the model needs, and its status</h2>
+
+  <div class="table-scroll">
+<table>
+  <caption><strong>Commercial terms and owner facts the model depends on</strong>
+  These rows are the reason the comparison cannot be closed. Each is empty by design.</caption>
+  <thead><tr>
+    <th>ID</th><th>Metric</th><th class="num">Value</th><th>Period</th>
+    <th>Level</th><th>Status</th><th>Evidence quoted from source</th><th>Official source</th>
+  </tr></thead>
+  <tbody>
+<tr>
+        <td><code>M-107</code></td>
+        <td>Lease commencement, expiry date, and renewal options</td>
+        <td class="num"><span class="blank">—</span></td>
+        <td class="nowrap">current lease</td>
+        <td><span class="pill pill--neutral">Lease</span></td>
+        <td><span class="pill pill--stop">Unverified</span></td>
+        <td class="small"><span class="muted">Brief states only &quot;set to expire on 2030-2035&quot;, which is a range, not a date. Lease document not supplied.</span></td>
+        <td><a class="src" href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/R16.htm" target="_blank" rel="noopener" title="JACK 10-K FY2025 — Note: Leases (XBRL R16)">Securities and Exchange Commission ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-108</code></td>
+        <td>Current base rent, escalation schedule, and expense pass-throughs</td>
+        <td class="num"><span class="blank">—</span></td>
+        <td class="nowrap">current lease</td>
+        <td><span class="pill pill--neutral">Lease</span></td>
+        <td><span class="pill pill--stop">Unverified</span></td>
+        <td class="small"><span class="muted">Not supplied. Without base rent no NOI, cap rate, or after-tax comparison can be computed — only the framework can be published.</span></td>
+        <td><a class="src" href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/R16.htm" target="_blank" rel="noopener" title="JACK 10-K FY2025 — Note: Leases (XBRL R16)">Securities and Exchange Commission ↗</a></td>
+      </tr>
+  </tbody>
+</table>
+</div>
+
+  <h2 id="next">What to do with the output</h2>
+  <ol class="tight">
+    <li><strong>Write down which input dominates.</strong> Run the calculator, then change one field at
+    a time. In almost every version of this model, the exit cap rate and the hold horizon dominate
+    everything else. That tells you where to spend adviser money.</li>
+    <li><strong>Send the same inputs to a CPA.</strong> The point of the calculator is to make the
+    conversation specific — "here is my basis, here is my horizon, here is my cap assumption, what is
+    my net" beats "should I sell?".</li>
+    <li><strong>Do not treat the sensitivity table as a probability distribution.</strong> It is a
+    one-variable-at-a-time stress, not a Monte Carlo. Correlated moves — a cap-rate expansion
+    alongside a NOI decline, which is what a real downturn looks like — are worse than any single row
+    shows. The <a href="risks.html">risk register</a> covers that case.</li>
+    <li><strong>Revisit when the lease abstract lands.</strong> Once the exact expiry and escalator are
+    known, the hold horizon stops being a guess and the comparison becomes decision-grade.</li>
+  </ol>
+
+  <p style="margin-top:1.6rem"><a href="decision-gates.html">Next: see which gate each missing input blocks →</a></p>
+
+</main>
+
+<footer class="site">
+  <div class="inner">
+    <p><strong>Privacy.</strong> Calculator inputs never leave your browser. No analytics, no cookies,
+    no storage. <a href="privacy.html">Privacy policy →</a></p>
+    <p><a href="sources.html">Full source register</a> · <a href="flagged.html">Flagged for review</a> · <a href="../index.html">Back to overview</a></p>
+  </div>
+</footer>
+</body>
+</html>

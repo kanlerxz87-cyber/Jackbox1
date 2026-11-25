@@ -3,130 +3,51 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hazards | Jackbox1</title>
-  <link rel="stylesheet" href="css/style.css">
+  <title>W-04 Hazard screening · Anonymous NNN workspace</title>
+  <link rel="stylesheet" href="css/app.css">
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header"><div class="header-inner"><div class="brand"><div><h1>Jackbox1 Property Decision Workspace</h1><p>Hazard screening is parcel-specific and must be performed privately. This page provides official regional context and the required screening workflow.</p></div></div></div>
-    <nav class="nav" aria-label="Primary"><div class="nav-inner">
-      <a href="index.html">Dashboard</a><a href="research.html">Research</a><a class="active" href="hazards.html">Hazards</a><a href="analysis.html">Analysis</a><a href="questions.html">Questions &amp; Missing Info</a><a href="suggestions.html">Suggestions</a><a href="privacy.html">Privacy &amp; Handling</a><a href="sources.html">Sources</a><a href="flagged.html">Flagged for Review</a>
-    </div></nav>
-  </header>
-  <main id="main">
-    <h2 class="page-title">Hazard &amp; Resilience Screening</h2>
-    <p class="page-lead">W-04 requires parcel-level hazard screening. Because no parcel address/APN is published, this page provides verified regional context from official sources and a required private screening checklist. Do not infer parcel safety from regional data.</p>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="privacy-bar">Do not enter the subject address into this public page. <a href="privacy.html">Privacy rules</a></div>
+  <div class="layout">
+    <nav class="side" id="nav"></nav>
+    <main id="main">
+      <h1>W-04 · Parcel-level hazard screening</h1>
+      <p class="lede">Requirement: replace regional hazard context with the parcel’s actual zone status for earthquake, fire, and flood, then privately check engineering and insurance, and stress loss of rent, repairs, and exit liquidity together. Status: regional rows filled from USGS; parcel rows blank.</p>
 
-    <div class="notice danger">
-      <strong>No parcel lookup performed.</strong> FEMA flood zone, CAL FIRE FHSZ, seismic site conditions, liquefaction, fault rupture, insurance availability, and retrofit requirements are <strong>unverified</strong> for the subject property. These checks must be completed privately with authorized parcel location and qualified professionals.
-    </div>
+      <div class="callout bad">Publishing a pin, APN, or screenshot of the store on a hazard map would identify the asset. Run the official viewers offline. Record results in the adviser vault.</div>
 
-    <section class="section">
-      <h2>Verified Regional Hazard Context</h2>
+      <div id="t-haz"></div>
+
+      <h2>Official viewers (open privately)</h2>
+      <ul>
+        <li><a href="https://maps.conservation.ca.gov/cgs/EQZApp/app/" target="_blank" rel="noopener">California Geological Survey EQ Zapp</a> — Alquist-Priolo, liquefaction, earthquake-induced landslide.</li>
+        <li><a href="https://www.usgs.gov/faqs/what-probability-earthquake-will-occur-los-angeles-area-san-francisco-bay-area" target="_blank" rel="noopener">USGS UCERF3 probabilities</a> and <a href="https://pubs.usgs.gov/fs/2015/3009/" target="_blank" rel="noopener">Fact Sheet 2015-3009</a>.</li>
+        <li><a href="https://msc.fema.gov/portal/home" target="_blank" rel="noopener">FEMA Map Service Center</a> / National Flood Hazard Layer.</li>
+        <li><a href="https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones/fire-hazard-severity-zones-maps" target="_blank" rel="noopener">CAL FIRE Fire Hazard Severity Zone maps</a>.</li>
+        <li><a href="https://myhazards.caloes.ca.gov/" target="_blank" rel="noopener">Cal OES MyHazards</a> — combined state/federal layers.</li>
+      </ul>
+
+      <h2>Business-as-usual vs black swan</h2>
       <div class="table-wrap">
-        <table>
-          <thead><tr><th>Hazard</th><th>Regional Indicator</th><th>Value</th><th>Geography / Scope</th><th>Status</th><th>Decision Implication</th><th>Official Source</th></tr></thead>
+        <table class="data">
+          <thead><tr><th>Class</th><th>Example</th><th>What this site does</th></tr></thead>
           <tbody>
-            <tr>
-              <td>Earthquake</td>
-              <td>30-year probability of magnitude ≥ 6.7 earthquake</td>
-              <td>60%</td>
-              <td>Los Angeles region (UCERF3)</td>
-              <td><span class="status verified">Verified</span></td>
-              <td>Material regional seismic risk; parcel-specific shaking, liquefaction, fault proximity, and building vulnerability still required.</td>
-              <td><a href="https://www.usgs.gov/faqs/what-probability-earthquake-will-occur-los-angeles-area-san-francisco-bay-area">USGS FAQ (UCERF3)</a></td>
-            </tr>
-            <tr>
-              <td>Earthquake</td>
-              <td>30-year probability of magnitude ≥ 7.0 earthquake</td>
-              <td>46%</td>
-              <td>Los Angeles region (UCERF3)</td>
-              <td><span class="status verified">Verified</span></td>
-              <td>Large-event scenario should be stress-tested for business interruption and exit liquidity.</td>
-              <td><a href="https://www.usgs.gov/faqs/what-probability-earthquake-will-occur-los-angeles-area-san-francisco-bay-area">USGS FAQ (UCERF3)</a></td>
-            </tr>
-            <tr>
-              <td>Earthquake</td>
-              <td>30-year probability of magnitude ≥ 7.5 earthquake</td>
-              <td>31%</td>
-              <td>Los Angeles region (UCERF3)</td>
-              <td><span class="status verified">Verified</span></td>
-              <td>Severe tail-risk event; include in black-swan/tail-risk stress case.</td>
-              <td><a href="https://www.usgs.gov/faqs/what-probability-earthquake-will-occur-los-angeles-area-san-francisco-bay-area">USGS FAQ (UCERF3)</a></td>
-            </tr>
-            <tr>
-              <td>Flood</td>
-              <td>Parcel FEMA flood zone / NFHL panel</td>
-              <td></td>
-              <td>Subject parcel (withheld)</td>
-              <td><span class="status unverified">Unverified</span></td>
-              <td>Flood zone affects insurance, lender requirements, and downtime risk.</td>
-              <td><a href="https://msc.fema.gov/portal/home">FEMA Map Service Center</a></td>
-            </tr>
-            <tr>
-              <td>Wildfire / Fire Hazard</td>
-              <td>Parcel CAL FIRE/OSFM Fire Hazard Severity Zone</td>
-              <td></td>
-              <td>Subject parcel (withheld)</td>
-              <td><span class="status unverified">Unverified</span></td>
-              <td>FHSZ and local brush/wildland interface conditions affect insurance, hardening, and business interruption exposure.</td>
-              <td><a href="https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones">CAL FIRE / OSFM FHSZ</a></td>
-            </tr>
-            <tr>
-              <td>Multi-hazard</td>
-              <td>Parcel-specific hazard planning profile</td>
-              <td></td>
-              <td>Subject parcel (withheld)</td>
-              <td><span class="status unverified">Unverified</span></td>
-              <td>Use state/local hazard planning tools privately; do not publish parcel report.</td>
-              <td><a href="https://myhazards.caloes.ca.gov/">Cal OES MyHazards</a></td>
-            </tr>
-            <tr>
-              <td>Insurance market</td>
-              <td>Property/earthquake/flood/fire insurance availability and premium</td>
-              <td></td>
-              <td>Subject parcel (withheld)</td>
-              <td><span class="status unverified">Unverified</span></td>
-              <td>NNN does not eliminate owner exposure to uninsured losses, deductible shock, or liquidity stress.</td>
-              <td><a href="https://www.insurance.ca.gov/">California Department of Insurance</a></td>
-            </tr>
+            <tr><td>Business as usual</td><td>Brand SSS negative; county unemployment 5.9%; ordinary vacancy</td><td>Published as sourced observations or proxies</td></tr>
+            <tr><td>Black swan</td><td>Damaging earthquake (UCERF3 regional probabilities), wildfire like Palisades/Eaton 2025, FEMA flood, insurance retreat</td><td>Maps linked; parcel result blank; calculator only accepts extra vacancy months — not a PML</td></tr>
           </tbody>
         </table>
       </div>
-    </section>
-
-    <section class="section">
-      <h2>W-04 Parcel-Level Screening Checklist (Private Workflow)</h2>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Check</th><th>Tool / Source</th><th>What to Capture (Internal)</th><th>Status</th><th>Risk if Ignored</th></tr></thead>
-          <tbody>
-            <tr><td>Flood zone and FIRM panel</td><td><a href="https://msc.fema.gov/portal/home">FEMA MSC</a> / <a href="https://www.fema.gov/flood-maps/national-flood-hazard-layer">FEMA NFHL</a></td><td>Zone, panel, effective date, LOMC, flood insurance requirement.</td><td><span class="status unverified">Unverified</span></td><td>Unpriced flood insurance, lender constraints, downtime.</td></tr>
-            <tr><td>Fire Hazard Severity Zone</td><td><a href="https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones">CAL FIRE / OSFM</a></td><td>SRA/LRA designation, local fire district requirements, defensible-space/hardening obligations.</td><td><span class="status unverified">Unverified</span></td><td>Insurance nonrenewal/premium spikes, retrofit capex.</td></tr>
-            <tr><td>Earthquake shaking/fault/liquefaction</td><td><a href="https://www.usgs.gov/programs/earthquake-hazards">USGS Earthquake Hazards</a>; <a href="https://earthquake.usgs.gov/hazards/hazmaps/">USGS Hazard Maps</a></td><td>Ground shaking, nearby faults, liquefaction/landslide susceptibility, site class.</td><td><span class="status unverified">Unverified</span></td><td>Structural damage, business interruption, repair cost, financing impairment.</td></tr>
-            <tr><td>Local hazard disclosure</td><td><a href="https://myhazards.caloes.ca.gov/">Cal OES MyHazards</a></td><td>Earthquake, flood, fire, tsunami/seiche where applicable; local emergency planning context.</td><td><span class="status unverified">Unverified</span></td><td>Missed local hazard disclosure or planning requirement.</td></tr>
-            <tr><td>Insurance quotes and exclusions</td><td><a href="https://www.insurance.ca.gov/">CA Dept. of Insurance</a>; licensed brokers</td><td>Property, quake, flood, liability, loss-of-rent, deductible, exclusions, replacement-cost assumptions.</td><td><span class="status unverified">Unverified</span></td><td>Uninsurable loss or liquidity drain after event.</td></tr>
-            <tr><td>Engineering/retrofit assessment</td><td>Licensed structural/civil/geotechnical engineer</td><td>Building condition, seismic retrofit needs, utility resilience, probable maximum loss.</td><td><span class="status unverified">Unverified</span></td><td>Capex shock and valuation discount at exit.</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Risk Stress Tests Required Before Decision</h2>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Stress Case</th><th>Scenario</th><th>Inputs Needed</th><th>Status</th><th>Expected Decision Use</th><th>Source / Method</th></tr></thead>
-          <tbody>
-            <tr><td>Business interruption</td><td>Hazard event causes temporary closure/reduced access.</td><td>Lease interruption clause, insurance deductible/waiting period, rent abatement terms, debt service.</td><td><span class="status unverified">Unverified</span></td><td>Test hold-case liquidity and downside.</td><td><a href="https://www.insurance.ca.gov/">CA DOI</a>; lease abstract (private)</td></tr>
-            <tr><td>Repair capex shock</td><td>Earthquake/fire/flood damage requires uninsured or deductible-funded repairs.</td><td>Engineering estimate, insurance terms, reserves, lender covenants.</td><td><span class="status unverified">Unverified</span></td><td>Compare sell-now liquidity vs hold capital call risk.</td><td><a href="https://www.usgs.gov/programs/earthquake-hazards">USGS</a>; private engineering</td></tr>
-            <tr><td>Exit liquidity stress</td><td>Post-event market discounts or buyer financing constraints.</td><td>Historical comps, lender appetite, cap rate sensitivity, remaining lease term.</td><td><span class="status unverified">Unverified</span></td><td>Assess whether holding through lease tail increases trapped-capital risk.</td><td><a href="questions.html#market-quotes">Market Quote Questions</a></td></tr>
-            <tr><td>Insurance unavailability</td><td>Coverage reduced, nonrenewed, or materially repriced.</td><td>Current policy, renewal quotes, FAIR Plan/secondary options, NNN obligations.</td><td><span class="status unverified">Unverified</span></td><td>May change hold viability independent of NOI.</td><td><a href="https://www.insurance.ca.gov/">CA DOI</a></td></tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-  </main>
-  <footer class="footer"><p>Regional hazard context is not parcel clearance. Parcel-specific screens must be private and professional.</p></footer>
+      <p>Do not fill a dollar “disaster loss” without an engineer’s probable-maximum-loss study and an insurance quote. Inventing that number would be a hallucination.</p>
+      <footer class="site">Regional probability ≠ parcel zone.</footer>
+    </main>
+  </div>
+  <script src="js/nav.js"></script>
+  <script src="js/tables.js"></script>
+  <script>
+    fetch("data/findings.json").then(function (r) { return r.json(); }).then(function (d) {
+      renderTable(document.getElementById("t-haz"), d.hazards, COLS);
+    });
+  </script>
 </body>
 </html>

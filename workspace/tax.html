@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>After-Tax Module · Jack in the Box — NNN Leasehold Decision Workspace</title>
+<meta name="description" content="Verified-source decision workspace for a single-tenant Jack in the Box under a triple-net lease in central Los Angeles.">
+<meta name="robots" content="index,follow">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="site">
+  <div class="wrap bar">
+    <div class="brand">Jack in the Box · NNN leasehold decision workspace
+      <span>Aggregate findings only — no owner, parcel or lease identifiers</span></div>
+    <div class="privacy">Privacy-first: anonymised by design</div>
+  </div>
+</header>
+<nav class="site" aria-label="Sections">
+  <div class="wrap">
+    <ul>
+      <li><a href="index.html">Overview</a></li>
+      <li><a href="questions.html">Questions &amp; Gaps</a></li>
+      <li><a href="economy.html">Trade Area</a></li>
+      <li><a href="tracts.html">Tract Evidence</a></li>
+      <li><a href="operator.html">Tenant Strength</a></li>
+      <li><a href="hazards.html">Hazard Screen</a></li>
+      <li><a href="tax.html">After-Tax</a></li>
+      <li><a href="market.html">Short-Lease Pricing</a></li>
+      <li><a href="model.html">Sell vs Hold</a></li>
+      <li><a href="gates.html">Decision Gates</a></li>
+      <li><a href="risks.html">Risk Register</a></li>
+      <li><a href="calculator.html">Calculator</a></li>
+      <li><a href="suggestions.html">Suggestions</a></li>
+      <li><a href="review.html">Flagged for Review</a></li>
+      <li><a href="sources.html">Sources</a></li>
+      <li><a href="summary.html">One-Page Summary</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+    </ul>
+  </div>
+</nav>
+<main>
+  <div class="wrap">
+    <div class="pagehead">
+      <p class="eyebrow">W-07 · After-tax machinery</p>
+      <h1>After-Tax Module</h1>
+      <p class="lede">The statutory pieces that turn a sale price into a net number — each tied to primary law.</p>
+    </div>
+
+<div class="notice info">
+  <strong>W-07 · The machinery, verified to primary law</strong>
+  Every rate below traces to the Constitution, a statute on leginfo, the IRS, the FTB or a City department. What is
+  <em>not</em> here is a dollar answer: without basis, depreciation history and entity form, an after-tax number would be
+  fiction. The <a href="calculator.html">browser calculator</a> applies these verified rules to figures you supply locally.
+</div>
+
+<div class="tiles"><div class="card"><div class="kicker">TAX-01 · Article XIII A, §1(a) (Prop 13, 1978)</div><div class="stat">1.0</div><small>Prop 13 base rate · percent of full cash value<br><span class="badge b-verified">verified</span></small></div><div class="card"><div class="kicker">TAX-07 · Taxable year 2025 rates as published</div><div class="stat">25</div><small>Unrecaptured §1250 ceiling · percent<br><span class="badge b-verified">verified</span></small></div><div class="card"><div class="kicker">TAX-04 · In effect for conveyances on/after 2023-04-01</div><div class="stat">4.0</div><small>Measure ULA, $5m–$10m · percent of consideration<br><span class="badge b-verified">verified</span></small></div><div class="card"><div class="kicker">TAX-06 · In effect 2013-01-01 onward</div><div class="stat">3.8</div><small>Net investment income tax · percent<br><span class="badge b-verified">verified</span></small></div></div>
+
+<h2>Property tax — the holding cost</h2>
+<div class="table-scroll"><table>
+<caption>Article XIII A. The base rate is 1%; voter-approved debt sits on top, so the effective bill is higher than 1% — which is why the calculator asks for the actual tax rate area rate rather than assuming 1%.</caption>
+<thead><tr><th>Metric</th><th>Value</th><th>Unit / basis</th><th>Geography</th><th>Period</th><th>Source</th><th>Status</th><th>Verification note</th></tr></thead><tbody>
+<tr data-status="verified">
+<td class="metric">Maximum ad valorem property tax rate (Article XIII A base)<br><span class="unit">TAX-01</span></td>
+<td class="num">1.0</td>
+<td class="unit">percent of full cash value</td>
+<td>California</td>
+<td>Article XIII A, §1(a) (Prop 13, 1978)</td>
+<td class="src"><a href="https://leginfo.legislature.ca.gov/faces/codes_displayText.xhtml?lawCode=CONS&amp;article=XIII%20A" rel="noopener">California Constitution, Article XIII A</a></td>
+<td><span class="badge b-verified">verified</span></td>
+<td class="note">Voter-approved bonded debt and assessments sit on top (§1(b)) — the effective bill exceeds 1%.</td>
+</tr>
+<tr data-status="verified">
+<td class="metric">Annual increase cap on the full cash value base<br><span class="unit">TAX-02</span></td>
+<td class="num">2.0</td>
+<td class="unit">percent maximum per year</td>
+<td>California</td>
+<td>Article XIII A, §2(b)</td>
+<td class="src"><a href="https://leginfo.legislature.ca.gov/faces/codes_displayText.xhtml?lawCode=CONS&amp;article=XIII%20A" rel="noopener">California Constitution, Article XIII A</a></td>
+<td><span class="badge b-verified">verified</span></td>
+<td class="note">Capped by CPI or 2%, whichever is lower; the base can also be reduced for decline in value.</td>
+</tr>
+</tbody></table></div>
+
+<h2>Transfer tax — the sale cost</h2>
+<div class="table-scroll"><table>
+<caption>Two layers: the county documentary transfer tax under RTC 11911, and the City of Los Angeles Measure ULA surtax above $5m. Measure ULA at 4–5.5% is larger than most owners expect and is often the difference between selling and holding.</caption>
+<thead><tr><th>Metric</th><th>Value</th><th>Unit / basis</th><th>Geography</th><th>Period</th><th>Source</th><th>Status</th><th>Verification note</th></tr></thead><tbody>
+<tr data-status="verified">
+<td class="metric">County documentary transfer tax rate<br><span class="unit">TAX-03</span></td>
+<td class="num">0.55 per $500 of consideration</td>
+<td class="unit">USD per USD 500</td>
+<td>Counties that adopt an ordinance (state authorisation)</td>
+<td>Revenue &amp; Taxation Code §11911(a)</td>
+<td class="src"><a href="https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=RTC&amp;sectionNum=11911" rel="noopener">California Legislative Information, RTC 11911</a></td>
+<td><span class="badge b-verified">verified</span></td>
+<td class="note">Equivalent to 0.11%. Cities may add half of that again under §11911(b). The City of Los Angeles has its own ordinance — confirm the current rate at the Recorder before modelling.</td>
+</tr>
+<tr data-status="verified">
+<td class="metric">Measure ULA surtax on real property conveyances over $5,000,000<br><span class="unit">TAX-04</span></td>
+<td class="num">4.0</td>
+<td class="unit">percent of consideration</td>
+<td>City of Los Angeles</td>
+<td>In effect for conveyances on/after 2023-04-01</td>
+<td class="src"><a href="https://housing.lacity.gov/partners/funding-programs" rel="noopener">City of Los Angeles Housing Department — ULA funding programme</a></td>
+<td><span class="badge b-verified">verified</span></td>
+<td class="note">LAHD states the tax applies to conveyances of real property over $5 million; the 4%/5.5% tiering is confirmed in the Council District 4 release linked from the review page. A sale at or above $5m would carry this on top of the county transfer tax.</td>
+</tr>
+<tr data-status="verified">
+<td class="metric">Measure ULA surtax on real property conveyances of $10,000,000 or more<br><span class="unit">TAX-05</span></td>
+<td class="num">5.5</td>
+<td class="unit">percent of consideration</td>
+<td>City of Los Angeles</td>
+<td>In effect for conveyances on/after 2023-04-01</td>
+<td class="src"><a href="https://cd4.lacity.gov/press-releases/cd4release_measureula_022223/" rel="noopener">City of Los Angeles Council District 4 press release on Measure ULA implementation</a></td>
+<td><span class="badge b-verified">verified</span></td>
+<td class="note">A .gov source, not the administering department page. Confirm with the Office of Finance before relying on it.</td>
+</tr>
+</tbody></table></div>
+
+<h2>Income tax on the gain</h2>
+<div class="table-scroll"><table>
+<caption>The federal and California layers that apply to an individual owner. Note the sequencing: depreciation recapture is taxed at up to 25% before the remaining gain reaches the 20% capital-gain rate, and California taxes the whole gain as ordinary income at up to 13.3%.</caption>
+<thead><tr><th>Metric</th><th>Value</th><th>Unit / basis</th><th>Geography</th><th>Period</th><th>Source</th><th>Status</th><th>Verification note</th></tr></thead><tbody>
+<tr data-status="verified">
+<td class="metric">Net investment income tax rate<br><span class="unit">TAX-06</span></td>
+<td class="num">3.8</td>
+<td class="unit">percent</td>
+<td>United States</td>
+<td>In effect 2013-01-01 onward</td>
+<td class="src"><a href="https://www.irs.gov/individuals/net-investment-income-tax" rel="noopener">Internal Revenue Service</a></td>
+<td><span class="badge b-verified">verified</span></td>
+<td class="note">Applies to the lesser of net investment income or MAGI over $200k single / $250k MFJ.</td>
+</tr>
+<tr data-status="verified">
+<td class="metric">Maximum rate on unrecaptured section 1250 gain<br><span class="unit">TAX-07</span></td>
+<td class="num">25</td>
+<td class="unit">percent</td>
+<td>United States</td>
+<td>Taxable year 2025 rates as published</td>
+<td class="src"><a href="https://www.irs.gov/taxtopics/tc409" rel="noopener">Internal Revenue Service, Topic 409</a></td>
+<td><span class="badge b-verified">verified</span></td>
+<td class="note">This is the depreciation-recapture ceiling that matters most for a long-held NNN building. IRS states it as a maximum.</td>
+</tr>
+<tr data-status="verified">
+<td class="metric">Long-term capital gain rate brackets (0 / 15 / 20%)<br><span class="unit">TAX-08</span></td>
+<td class="num">0 / 15 / 20</td>
+<td class="unit">percent</td>
+<td>United States</td>
+<td>Taxable year beginning 2025</td>
+<td class="src"><a href="https://www.irs.gov/taxtopics/tc409" rel="noopener">Internal Revenue Service, Topic 409</a></td>
+<td><span class="badge b-verified">verified</span></td>
+<td class="note">Thresholds as published for 2025; indexation changes annually.</td>
+</tr>
+<tr data-status="verified">
+<td class="metric">California additional income tax above $1,000,000 taxable income (Mental Health Services Tax)<br><span class="unit">TAX-09</span></td>
+<td class="num">1.0</td>
+<td class="unit">percent</td>
+<td>California</td>
+<td>RTC §17043 (Prop 63)</td>
+<td class="src"><a href="https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=RTC&amp;sectionNum=17043" rel="noopener">California Legislative Information, RTC 17043</a></td>
+<td><span class="badge b-verified">verified</span></td>
+<td class="note">On top of the ordinary schedule. For 2025 that schedule tops out at 12.3% (FTB Schedule X/Y/Z).</td>
+</tr>
+<tr data-status="verified">
+<td class="metric">California top marginal ordinary rate (2025 schedules)<br><span class="unit">TAX-10</span></td>
+<td class="num">12.3</td>
+<td class="unit">percent</td>
+<td>California</td>
+<td>Taxable year 2025</td>
+<td class="src"><a href="https://www.ftb.ca.gov/forms/2025/2025-540-tax-rate-schedules.pdf" rel="noopener">California Franchise Tax Board, 2025 Form 540 Tax Rate Schedules</a></td>
+<td><span class="badge b-verified">verified</span></td>
+<td class="note">Top bracket begins at $742,953 (single) / $1,485,906 (MFJ). Plus TAX-09 above $1m.</td>
+</tr>
+</tbody></table></div>
+
+<h2>Depreciation — what creates the recapture</h2>
+<div class="table-scroll"><table>
+<caption>39-year straight-line on the building (land is not depreciable), mid-month convention, zero salvage. Every year of depreciation converts what would have been capital gain into unrecaptured §1250 gain at up to 25% — which is why the total tax on a sale is not simply the capital-gain rate.</caption>
+<thead><tr><th>Metric</th><th>Value</th><th>Unit / basis</th><th>Geography</th><th>Period</th><th>Source</th><th>Status</th><th>Verification note</th></tr></thead><tbody>
+<tr data-status="verified">
+<td class="metric">Depreciation recovery period for nonresidential real property<br><span class="unit">TAX-11</span></td>
+<td class="num">39</td>
+<td class="unit">years, straight line, mid-month convention</td>
+<td>United States</td>
+<td>26 U.S.C. §168(b)(3)(A), (c), (d)(2)</td>
+<td class="src"><a href="https://www.govinfo.gov/content/pkg/USCODE-2023-title26/html/USCODE-2023-title26-subtitleA-chap1-subchapB-partVI-sec168.htm" rel="noopener">U.S. Code, Title 26 §168 (GovInfo, 2023 edition)</a></td>
+<td><span class="badge b-verified">verified</span></td>
+<td class="note">Salvage value treated as zero (§168(b)(4)). Drives the recapture figure on sale.</td>
+</tr>
+<tr data-status="verified">
+<td class="metric">Section 1031 like-kind exchange — real property only<br><span class="unit">TAX-12</span></td>
+<td class="num">Real property only (post-2017)</td>
+<td class="unit">text</td>
+<td>United States</td>
+<td>TCJA effective 2018-01-01</td>
+<td class="src"><a href="https://www.irs.gov/businesses/small-businesses-self-employed/like-kind-exchanges-real-estate-tax-tips" rel="noopener">Internal Revenue Service, like-kind exchanges — real estate tax tips</a></td>
+<td><span class="badge b-verified">verified</span></td>
+<td class="note">A deferral route that changes the sell-versus-hold arithmetic; not modelled automatically.</td>
+</tr>
+</tbody></table></div>
+
+<h2>Worked example of the mechanics (illustrative inputs only)</h2>
+<div class="table-scroll">
+<table>
+<caption>Illustrative only. The purchase price, basis and depreciation below are invented round numbers chosen to show how the
+verified rates stack; they are <b>not</b> values for the subject property. Real figures go in the calculator, in the reader's browser.</caption>
+<thead><tr><th>Step</th><th>Rule applied</th><th>Illustration</th></tr></thead>
+<tbody>
+<tr><td>Sale price</td><td>—</td><td class="num">6,000,000</td></tr>
+<tr><td>Less adjusted basis</td><td>39-yr straight line, zero salvage (TAX-11)</td><td class="num">3,400,000</td></tr>
+<tr><td>Total gain</td><td>—</td><td class="num">2,600,000</td></tr>
+<tr><td>Of which depreciation taken</td><td>Taxed as unrecaptured §1250, max 25% (TAX-07)</td><td class="num">1,100,000</td></tr>
+<tr><td>Remaining long-term gain</td><td>20% federal bracket at this income (TAX-08)</td><td class="num">1,500,000</td></tr>
+<tr><td>Federal recapture tax</td><td>25% × 1,100,000</td><td class="num">275,000</td></tr>
+<tr><td>Federal capital gains tax</td><td>20% × 1,500,000</td><td class="num">300,000</td></tr>
+<tr><td>Net investment income tax</td><td>3.8% on the net gain (TAX-06)</td><td class="num">98,800</td></tr>
+<tr><td>California income tax on gain</td><td>13.3% top marginal (12.3% + 1%) (TAX-09, TAX-10)</td><td class="num">345,800</td></tr>
+<tr><td>Transfer costs</td><td>County 0.11% + city 0.055% + Measure ULA 4% in the City of L.A. (TAX-03, TAX-04)</td><td class="num">249,900</td></tr>
+<tr><td><strong>Approximate net proceeds</strong></td><td>Arithmetic on the rows above</td><td class="num"><strong>4,730,500</strong></td></tr>
+</tbody></table></div>
+<div class="notice warn">
+  <strong>This example is not advice and not a projection</strong>
+  It ignores the mortgage, closing prorations, any suspended losses, state AMT interactions, the entity's own tax status,
+  and the possibility of a 1031 exchange. It exists to show that roughly <b>21% of the sale price</b> can disappear in tax
+  and transfer cost in this illustration — and materially more if the basis is lower — which is the single fact that most changes a sell-versus-hold conversation.
+</div>
+
+<h2>All tax rows</h2>
+<div class="filter" data-filter="#tax-table">
+  <label for="q-tax-table">Search these rows</label>
+  <input id="q-tax-table" type="search" placeholder="metric, source, geography…">
+  <select aria-label="Filter by verification status">
+    <option value="">all statuses</option>
+    <option value="verified">verified only</option>
+    <option value="flagged">flagged only</option>
+    <option value="unverified">unverified (blank) only</option>
+  </select>
+  <span class="note" data-count></span>
+</div>
+<div id="tax-table"><div class="table-scroll"><table>
+<caption>Every tax and legal rule used on this site, linked to primary law.</caption>
+<thead><tr><th>Metric</th><th>Value</th><th>Unit / basis</th><th>Geography</th><th>Period</th><th>Source</th><th>Status</th><th>Verification note</th></tr></thead><tbody>
+<tr data-status="verified">
+<td class="metric">Maximum ad valorem property tax rate (Article XIII A base)<br><span class="unit">TAX-01</span></td>
+<td class="num">1.0</td>
+<td class="unit">percent of full cash value</td>
+<td>California</td>
+<td>Article XIII A, §1(a) (Prop 13, 1978)</td>
+<td class="src"><a href="https://leginfo.legislature.ca.gov/faces/codes_displayText.xhtml?lawCode=CONS&amp;article=XIII%20A" rel="noopener">California Constitution, Article XIII A</a></td>
+<td><span class="badge b-verified">verified</span></td>
+<td class="note">Voter-approved bonded debt and assessments sit on top (§1(b)) — the effective bill exceeds 1%.</td>
+</tr>
+<tr data-status="verified">
+<td class="metric">Annual increase cap on the full cash value base<br><span class="unit">TAX-02</span></td>
+<td class="num">2.0</td>
+<td class="unit">percent maximum per year</td>
+<td>California</td>
+<td>Article XIII A, §2(b)</td>
+<td class="src"><a href="https://leginfo.legislature.ca.gov/faces/codes_displayText.xhtml?lawCode=CONS&amp;article=XIII%20A" rel="noopener">California Constitution, Article XIII A</a></td>
+<td><span class="badge b-verified">verified</span></td>
+<td class="note">Capped by CPI or 2%, whichever is lower; the base can also be reduced for decline in value.</td>
+</tr>
+<tr data-status="verified">
+<td class="metric">County documentary transfer tax rate<br><span class="unit">TAX-03</span></td>
+<td class="num">0.55 per $500 of consideration</td>
+<td class="unit">USD per USD 500</td>
+<td>Counties that adopt an ordinance (state authorisation)</td>
+<td>Revenue &amp; Taxation Code §11911(a)</td>
+<td class="src"><a href="https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=RTC&amp;sectionNum=11911" rel="noopener">California Legislative Information, RTC 11911</a></td>
+<td><span class="badge b-verified">verified</span></td>
+<td class="note">Equivalent to 0.11%. Cities may add half of that again under §11911(b). The City of Los Angeles has its own ordinance — confirm the current rate at the Recorder before modelling.</td>
+</tr>
+<tr data-status="verified">
+<td class="metric">Measure ULA surtax on real property conveyances over $5,000,000<br><span class="unit">TAX-04</span></td>
+<td class="num">4.0</td>
+<td class="unit">percent of consideration</td>
+<td>City of Los Angeles</td>
+<td>In effect for conveyances on/after 2023-04-01</td>
+<td class="src"><a href="https://housing.lacity.gov/partners/funding-programs" rel="noopener">City of Los Angeles Housing Department — ULA funding programme</a></td>
+<td><span class="badge b-verified">verified</span></td>
+<td class="note">LAHD states the tax applies to conveyances of real property over $5 million; the 4%/5.5% tiering is confirmed in the Council District 4 release linked from the review page. A sale at or above $5m would carry this on top of the county transfer tax.</td>
+</tr>
+<tr data-status="verified">
+<td class="metric">Measure ULA surtax on real property conveyances of $10,000,000 or more<br><span class="unit">TAX-05</span></td>
+<td class="num">5.5</td>
+<td class="unit">percent of consideration</td>
+<td>City of Los Angeles</td>
+<td>In effect for conveyances on/after 2023-04-01</td>
+<td class="src"><a href="https://cd4.lacity.gov/press-releases/cd4release_measureula_022223/" rel="noopener">City of Los Angeles Council District 4 press release on Measure ULA implementation</a></td>
+<td><span class="badge b-verified">verified</span></td>
+<td class="note">A .gov source, not the administering department page. Confirm with the Office of Finance before relying on it.</td>
+</tr>
+<tr data-status="verified">
+<td class="metric">Net investment income tax rate<br><span class="unit">TAX-06</span></td>
+<td class="num">3.8</td>
+<td class="unit">percent</td>
+<td>United States</td>
+<td>In effect 2013-01-01 onward</td>
+<td class="src"><a href="https://www.irs.gov/individuals/net-investment-income-tax" rel="noopener">Internal Revenue Service</a></td>
+<td><span class="badge b-verified">verified</span></td>
+<td class="note">Applies to the lesser of net investment income or MAGI over $200k single / $250k MFJ.</td>
+</tr>
+<tr data-status="verified">
+<td class="metric">Maximum rate on unrecaptured section 1250 gain<br><span class="unit">TAX-07</span></td>
+<td class="num">25</td>
+<td class="unit">percent</td>
+<td>United States</td>
+<td>Taxable year 2025 rates as published</td>
+<td class="src"><a href="https://www.irs.gov/taxtopics/tc409" rel="noopener">Internal Revenue Service, Topic 409</a></td>
+<td><span class="badge b-verified">verified</span></td>
+<td class="note">This is the depreciation-recapture ceiling that matters most for a long-held NNN building. IRS states it as a maximum.</td>
+</tr>
+<tr data-status="verified">
+<td class="metric">Long-term capital gain rate brackets (0 / 15 / 20%)<br><span class="unit">TAX-08</span></td>
+<td class="num">0 / 15 / 20</td>
+<td class="unit">percent</td>
+<td>United States</td>
+<td>Taxable year beginning 2025</td>
+<td class="src"><a href="https://www.irs.gov/taxtopics/tc409" rel="noopener">Internal Revenue Service, Topic 409</a></td>
+<td><span class="badge b-verified">verified</span></td>
+<td class="note">Thresholds as published for 2025; indexation changes annually.</td>
+</tr>
+<tr data-status="verified">
+<td class="metric">California additional income tax above $1,000,000 taxable income (Mental Health Services Tax)<br><span class="unit">TAX-09</span></td>
+<td class="num">1.0</td>
+<td class="unit">percent</td>
+<td>California</td>
+<td>RTC §17043 (Prop 63)</td>
+<td class="src"><a href="https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=RTC&amp;sectionNum=17043" rel="noopener">California Legislative Information, RTC 17043</a></td>
+<td><span class="badge b-verified">verified</span></td>
+<td class="note">On top of the ordinary schedule. For 2025 that schedule tops out at 12.3% (FTB Schedule X/Y/Z).</td>
+</tr>
+<tr data-status="verified">
+<td class="metric">California top marginal ordinary rate (2025 schedules)<br><span class="unit">TAX-10</span></td>
+<td class="num">12.3</td>
+<td class="unit">percent</td>
+<td>California</td>
+<td>Taxable year 2025</td>
+<td class="src"><a href="https://www.ftb.ca.gov/forms/2025/2025-540-tax-rate-schedules.pdf" rel="noopener">California Franchise Tax Board, 2025 Form 540 Tax Rate Schedules</a></td>
+<td><span class="badge b-verified">verified</span></td>
+<td class="note">Top bracket begins at $742,953 (single) / $1,485,906 (MFJ). Plus TAX-09 above $1m.</td>
+</tr>
+<tr data-status="verified">
+<td class="metric">Depreciation recovery period for nonresidential real property<br><span class="unit">TAX-11</span></td>
+<td class="num">39</td>
+<td class="unit">years, straight line, mid-month convention</td>
+<td>United States</td>
+<td>26 U.S.C. §168(b)(3)(A), (c), (d)(2)</td>
+<td class="src"><a href="https://www.govinfo.gov/content/pkg/USCODE-2023-title26/html/USCODE-2023-title26-subtitleA-chap1-subchapB-partVI-sec168.htm" rel="noopener">U.S. Code, Title 26 §168 (GovInfo, 2023 edition)</a></td>
+<td><span class="badge b-verified">verified</span></td>
+<td class="note">Salvage value treated as zero (§168(b)(4)). Drives the recapture figure on sale.</td>
+</tr>
+<tr data-status="verified">
+<td class="metric">Section 1031 like-kind exchange — real property only<br><span class="unit">TAX-12</span></td>
+<td class="num">Real property only (post-2017)</td>
+<td class="unit">text</td>
+<td>United States</td>
+<td>TCJA effective 2018-01-01</td>
+<td class="src"><a href="https://www.irs.gov/businesses/small-businesses-self-employed/like-kind-exchanges-real-estate-tax-tips" rel="noopener">Internal Revenue Service, like-kind exchanges — real estate tax tips</a></td>
+<td><span class="badge b-verified">verified</span></td>
+<td class="note">A deferral route that changes the sell-versus-hold arithmetic; not modelled automatically.</td>
+</tr>
+</tbody></table></div></div>
+  </div>
+</main>
+<footer class="site">
+  <div class="wrap">
+    <div>Built 2026-11-25 from <code>data/registry.yaml</code>. 17 pages, no external scripts, no tracking.</div>
+    <div><a href="privacy.html">Privacy &amp; anonymisation</a> · <a href="review.html">Flagged for review</a> · <a href="sources.html">Sources</a></div>
+  </div>
+</footer>
+<script src="assets/js/app.js" defer></script>
+</body>
+</html>

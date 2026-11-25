@@ -3,75 +3,55 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Suggestions | Jackbox1</title>
-  <link rel="stylesheet" href="css/style.css">
+  <title>Suggestions · Anonymous NNN workspace</title>
+  <link rel="stylesheet" href="css/app.css">
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header"><div class="header-inner"><div class="brand"><div><h1>Jackbox1 Property Decision Workspace</h1><p>Suggestions for improving the site and decision process. Review before implementing.</p></div></div></div>
-    <nav class="nav" aria-label="Primary"><div class="nav-inner">
-      <a href="index.html">Dashboard</a><a href="research.html">Research</a><a href="hazards.html">Hazards</a><a href="analysis.html">Analysis</a><a href="questions.html">Questions &amp; Missing Info</a><a class="active" href="suggestions.html">Suggestions</a><a href="privacy.html">Privacy &amp; Handling</a><a href="sources.html">Sources</a><a href="flagged.html">Flagged for Review</a>
-    </div></nav>
-  </header>
-  <main id="main">
-    <h2 class="page-title">Suggestions (Review Before Implementation)</h2>
-    <p class="page-lead">This section is dedicated to improvement suggestions. Each suggestion includes rationale, prerequisites, privacy impact, and status. No suggestion should be implemented if it introduces PII exposure, fabricates data, or bypasses source verification.</p>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="privacy-bar">Review suggestions here before changing the site or the decision process. <a href="privacy.html">Privacy rules</a></div>
+  <div class="layout">
+    <nav class="side" id="nav"></nav>
+    <main id="main">
+      <h1>Suggestions — review before implementing</h1>
+      <p class="lede">This page is the change-control queue. Nothing here is auto-implemented. Pick a path, then edit. Do not mix a site change with a sell/renew commitment.</p>
 
-    <div class="notice info">
-      <strong>Review gate:</strong> Suggestions below are proposals, not implemented features. A human reviewer should select the path, confirm privacy controls, and approve before implementation.
-    </div>
-
-    <section class="section">
-      <h2>Suggestion Register</h2>
+      <h2>Decision-process suggestions</h2>
       <div class="table-wrap">
-        <table>
-          <thead><tr><th>ID</th><th>Suggestion</th><th>Improves</th><th>Prerequisites / Missing Info</th><th>Privacy Impact</th><th>Priority</th><th>Status</th><th>Source / Rationale</th></tr></thead>
+        <table class="data">
+          <thead><tr><th>ID</th><th>Suggestion</th><th>Why</th><th>Risk if skipped</th><th>Recommended path</th></tr></thead>
           <tbody>
-            <tr id="S-001"><td>S-001</td><td>Create a private, client-side-only after-tax calculator (no network calls, no storage by default).</td><td>Decision speed and scenario comparison.</td><td>Verified tax basis, rent, debt, sale costs, reinvestment assumptions; CPA review.</td><td>High sensitivity if mishandled. Must run locally in browser; no telemetry; explicit "do not enter PII" warning.</td><td>High</td><td><span class="status pending">Proposed</span></td><td><a href="https://owasp.org/www-project-top-ten/">OWASP</a>; <a href="https://www.irs.gov/publications/p544">IRS Pub 544</a></td></tr>
-            <tr id="S-002"><td>S-002</td><td>Add a secure internal parcel-screen packet generator (FEMA/CalFire/USGS links prefilled after private location entry).</td><td>W-04 hazard screening completeness.</td><td>Authorized parcel location; access-controlled environment.</td><td>High. Parcel location must remain internal; public site should only show anonymized status.</td><td>High</td><td><span class="status pending">Proposed</span></td><td><a href="https://msc.fema.gov/portal/home">FEMA MSC</a>; <a href="https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones">CAL FIRE FHSZ</a></td></tr>
-            <tr id="S-003"><td>S-003</td><td>Build a private trade-area data pull (ACS + local planning/traffic/school layers) with anonymized public summary export.</td><td>W-01 and neighbourhood evidence quality.</td><td>Secure parcel location; GIS tooling; data governance.</td><td>Medium/High. Raw tract selection may be sensitive if too granular; publish aggregate only.</td><td>High</td><td><span class="status pending">Proposed</span></td><td><a href="https://www.census.gov/programs-surveys/acs/">ACS</a>; <a href="https://data.census.gov/">data.census.gov</a></td></tr>
-            <tr id="S-004"><td>S-004</td><td>Add a versioned decision log with assumption register, sensitivity ranges, and approval signatures (private).</td><td>Auditability and decision discipline.</td><td>Defined owner/advisor review process.</td><td>Medium. Keep signatures/identities internal; public log only shows anonymized status.</td><td>Medium</td><td><span class="status pending">Proposed</span></td><td><a href="https://www.nist.gov/privacy-framework">NIST Privacy Framework</a></td></tr>
-            <tr id="S-005"><td>S-005</td><td>Add broker quote intake template for short-lease discount pricing (W-02/W-market).</td><td>Real-market pricing instead of assumptions.</td><td>Broker engagement; comp confidentiality agreements as needed.</td><td>Medium. Comps may be confidential; publish only anonymized ranges if permitted.</td><td>High</td><td><span class="status pending">Proposed</span></td><td><a href="questions.html#market-quotes">Market Quote Questions</a></td></tr>
-            <tr id="S-006"><td>S-006</td><td>Add scenario stress-test module: earthquake, wildfire, insurance shock, vacancy, cap-rate expansion.</td><td>Tail-risk visibility and wealth preservation.</td><td>Insurance quotes, engineering estimates, lease clauses, market assumptions.</td><td>Low if synthetic; medium if using private financials.</td><td>High</td><td><span class="status pending">Proposed</span></td><td><a href="https://www.usgs.gov/programs/earthquake-hazards">USGS</a>; <a href="https://www.insurance.ca.gov/">CA DOI</a></td></tr>
-            <tr id="S-007"><td>S-007</td><td>Implement automated source-check script for all table URLs and capture fetch dates in a verification log.</td><td>Verification discipline and maintenance.</td><td>CI workflow permission; approved link-check policy.</td><td>Low. Only public URLs checked.</td><td>Medium</td><td><span class="status pending">Proposed</span></td><td><a href="https://github.com/features/actions">GitHub Actions</a></td></tr>
-            <tr id="S-008"><td>S-008</td><td>Add a printable advisor packet export that excludes all private fields by design.</td><td>W-10 usability.</td><td>Finalized template; PII redaction tests.</td><td>Medium. Export must pass redaction checklist before sharing.</td><td>Medium</td><td><span class="status pending">Proposed</span></td><td><a href="analysis.html#executive-summary">Executive Summary</a></td></tr>
-            <tr id="S-009"><td>S-009</td><td>Create a trigger-date calendar (lease notice, broker refresh, insurance renewal, tax planning checkpoints).</td><td>Prevents missed deadlines and forced decisions.</td><td>Verified lease dates and advisor schedule.</td><td>High if dates tied to identifiable property; keep calendar private.</td><td>High</td><td><span class="status pending">Proposed</span></td><td><a href="questions.html#lease-questions">Lease Questions</a></td></tr>
-            <tr id="S-010"><td>S-010</td><td>Add comparative reinvestment dashboard (private): muni bonds, diversified REITs, DST/1031 options, cash reserve.</td><td>Opportunity-cost comparison for sell case.</td><td>Owner risk profile, tax constraints, verified product documents.</td><td>Medium. Financial profile must remain private.</td><td>Medium</td><td><span class="status pending">Proposed</span></td><td><a href="https://www.investor.gov/">Investor.gov</a></td></tr>
+            <tr><td>S1</td><td>Order a lease abstract and a notice calendar this week, offline</td><td>Expiration is only a 2030–2035 window</td><td>Missing an option-notice date</td><td>Counsel / abstractor; do not upload the PDF</td></tr>
+            <tr><td>S2</td><td>Run CGS / FEMA / CAL FIRE / MyHazards privately and store screenshots in the vault</td><td>W-04 is blank at parcel level</td><td>Uninsurable or unmodeled disaster</td><td>Adviser session, not this website</td></tr>
+            <tr><td>S3</td><td>Select census tracts once, freeze them, then pull ACS 5-year</td><td>W-01 still uses city/county proxies</td><td>Wrong income/population story</td><td>Private GIS; publish only aggregates</td></tr>
+            <tr><td>S4</td><td>Collect two written cap-rate/price quotes that state remaining term</td><td>Short-lease discount cannot be invented</td><td>Selling too cheap or holding too long</td><td>Fee appraisers or NNN desks; keep letters offline</td></tr>
+            <tr><td>S5</td><td>Have the CPA fill the calculator, then screenshot the output into the vault</td><td>After-tax number is the comparable the owner asked for</td><td>Comparing pre-tax sale to pre-tax hold</td><td>No tax returns on GitHub</td></tr>
+            <tr><td>S6</td><td>Ask the tenant, in writing, about renewal intent and any closure program</td><td>Brand closed 86 units in FY 2025</td><td>Learning of a closure after listing</td><td>Landlord notice under the lease</td></tr>
+            <tr><td>S7</td><td>Do not sign a listing or a renewal until G1–G6 are green</td><td>W-03</td><td>Irreversible tax or term mistake</td><td>Wait</td></tr>
           </tbody>
         </table>
       </div>
-    </section>
 
-    <section class="section" id="calculator">
-      <h2>Private Calculator Suggestion (Not Implemented)</h2>
+      <h2>Site-improvement suggestions</h2>
       <div class="table-wrap">
-        <table>
-          <thead><tr><th>Requirement</th><th>Recommendation</th><th>Status</th><th>Rationale</th><th>Source</th></tr></thead>
+        <table class="data">
+          <thead><tr><th>ID</th><th>Suggestion</th><th>Why it improves decisions</th><th>Do not do</th></tr></thead>
           <tbody>
-            <tr><td>Execution model</td><td>Client-side only; no form POST, no analytics on inputs, no third-party scripts.</td><td><span class="status pending">Proposed</span></td><td>Prevents leakage of owner financials.</td><td><a href="https://owasp.org/www-project-top-ten/">OWASP</a></td></tr>
-            <tr><td>Data persistence</td><td>Default no storage; optional encrypted local export only after explicit user action.</td><td><span class="status pending">Proposed</span></td><td>Minimizes retained sensitive data.</td><td><a href="https://www.nist.gov/privacy-framework">NIST Privacy Framework</a></td></tr>
-            <tr><td>Inputs</td><td>Rent, expenses, capex, debt, basis, tax rates, sale costs, reinvestment return, hazard/insurance stress.</td><td><span class="status pending">Proposed</span></td><td>Supports W-02 and after-tax comparison.</td><td><a href="analysis.html#sell-hold">Sell vs Hold</a></td></tr>
-            <tr><td>Outputs</td><td>After-tax sell proceeds, after-tax hold cash flow, sensitivity table, downside flags; no recommendation without verified inputs.</td><td><span class="status pending">Proposed</span></td><td>Avoids false precision and premature decision.</td><td><a href="analysis.html#decision-rule">Decision Rule</a></td></tr>
+            <tr><td>U1</td><td>After tracts are chosen, add a “trade-area ACS” table with no tract IDs</td><td>Closes W-01 without doxxing the corner</td><td>Do not publish a map pin</td></tr>
+            <tr><td>U2</td><td>Parse the official 10-K HTML for franchise rental revenue and add a verified row</td><td>The rental-revenue cell is blank on purpose today</td><td>Do not paste secondary-site scrapes</td></tr>
+            <tr><td>U3</td><td>Add FY 2023 SSS only from the 10-K if confirmed</td><td>Longer same-store series</td><td>Do not back-fill from blogs</td></tr>
+            <tr><td>U4</td><td>Add a printable “gate certificate” that stays red until localStorage flags are set</td><td>Stops accidental “we decided”</td><td>Do not auto-green gates</td></tr>
+            <tr><td>U5</td><td>Move this GitHub repo to private if not already intended public</td><td>The remote is public; more eyes on any slip</td><td>Do not put identifiers in issues</td></tr>
+            <tr><td>U6</td><td>Add Census Reporter + data.census.gov dual links on every ACS row after a data.census.gov fetch succeeds</td><td>Primary publisher preference</td><td>Do not delete Census Reporter until data.census.gov is captured</td></tr>
+            <tr><td>U7</td><td>Keep the calculator free of example dollar amounts</td><td>Example NOI would be mistaken for this property</td><td>Do not ship demo numbers</td></tr>
           </tbody>
         </table>
       </div>
-    </section>
 
-    <section class="section">
-      <h2>Review Checklist Before Implementing Any Suggestion</h2>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Check</th><th>Pass Criteria</th><th>Status</th><th>Reviewer</th><th>Source</th></tr></thead>
-          <tbody>
-            <tr><td>Privacy review</td><td>No PII/parcel/financial identifiers exposed in public artifacts.</td><td><span class="status pending">Required</span></td><td>Owner/privacy reviewer</td><td><a href="privacy.html">Privacy &amp; Handling</a></td></tr>
-            <tr><td>Source verification</td><td>Every new table row has official source link; unverified values blank/flagged.</td><td><span class="status pending">Required</span></td><td>Analyst/reviewer</td><td><a href="sources.html">Sources</a></td></tr>
-            <tr><td>Decision safety</td><td>No sell/renew winner shown unless all decision gates closed.</td><td><span class="status pending">Required</span></td><td>Owner/advisors</td><td><a href="analysis.html#decision-rule">Decision Rule</a></td></tr>
-            <tr><td>Security review</td><td>No secrets, no untrusted scripts, no sensitive data transmission.</td><td><span class="status pending">Required</span></td><td>Engineering/security reviewer</td><td><a href="https://owasp.org/www-project-top-ten/">OWASP</a></td></tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-  </main>
-  <footer class="footer"><p>Suggestions are advisory. Human review and privacy verification are required before implementation.</p></footer>
+      <h2>Choose a path (human review)</h2>
+      <p>Suggested order if the goal is wealth preservation with manageable risk: <strong>S1 → S6 → S2 → S4 → S5 → S3 → S7</strong>. That sequence protects notice dates and insurance first, then price, then tax, then trade-area color. Site edits U5 and U7 can happen immediately; U1–U4 wait for data.</p>
+      <footer class="site">Implementing a suggestion requires a separate commit after someone checks this page.</footer>
+    </main>
+  </div>
+  <script src="js/nav.js"></script>
 </body>
 </html>

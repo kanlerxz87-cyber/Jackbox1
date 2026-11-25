@@ -3,93 +3,95 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Questions &amp; Missing Info | Jackbox1</title>
-  <link rel="stylesheet" href="css/style.css">
+  <title>Questions and gaps · Anonymous NNN workspace</title>
+  <link rel="stylesheet" href="css/app.css">
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header"><div class="header-inner"><div class="brand"><div><h1>Jackbox1 Property Decision Workspace</h1><p>Questions, missing information, and decision gates required before a sell/renew decision.</p></div></div></div>
-    <nav class="nav" aria-label="Primary"><div class="nav-inner">
-      <a href="index.html">Dashboard</a><a href="research.html">Research</a><a href="hazards.html">Hazards</a><a href="analysis.html">Analysis</a><a class="active" href="questions.html">Questions &amp; Missing Info</a><a href="suggestions.html">Suggestions</a><a href="privacy.html">Privacy &amp; Handling</a><a href="sources.html">Sources</a><a href="flagged.html">Flagged for Review</a>
-    </div></nav>
-  </header>
-  <main id="main">
-    <h2 class="page-title">Questions, Information Needed, and Answers</h2>
-    <p class="page-lead">This page lists what must be known before any sell-or-renew decision can be reasonably made. It separates current knowns, unknowns, required evidence, and discovery methods. No personal identifiers are requested on this public site; all sensitive inputs must be collected in a secure, access-controlled workflow.</p>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="privacy-bar">Answers that would identify the parcel stay offline. <a href="privacy.html">Privacy rules</a></div>
+  <div class="layout">
+    <nav class="side" id="nav"></nav>
+    <main id="main">
+      <h1>Questions, known information, and missing information</h1>
+      <p class="lede">No sell or renew decision is reasonable until the open items below are closed with official or private-document evidence. Suggestions for discovering missing facts are in the last column.</p>
 
-    <div class="notice warning">
-      <strong>Rule:</strong> A question is "answered" only when supported by verified evidence. User-provided scenario details are recorded as unverified context, not confirmed answers.
-    </div>
-
-    <section class="section" id="decision-gates">
-      <h2>W-03: Decision-Gate Progress Board</h2>
+      <h2>A. Title, lease, and money (subject — all private)</h2>
       <div class="table-wrap">
-        <table>
-          <thead><tr><th>Gate</th><th>Decision Question</th><th>Minimum Evidence to Close</th><th>Status</th><th>Blocker</th><th>Source / Workflow</th></tr></thead>
+        <table class="data">
+          <thead>
+            <tr><th>Question</th><th>What we have</th><th>What we do not have</th><th>How to discover</th></tr>
+          </thead>
           <tbody>
-            <tr><td>G1 Lease &amp; Term</td><td>What exactly is the lease term, option structure, and landlord/tenant responsibility?</td><td>Executed lease, amendments, option notices, lease abstract, notice calendar.</td><td><span class="status unverified">Open</span></td><td>No lease documents in workspace.</td><td><a href="privacy.html">Private handling</a></td></tr>
-            <tr><td>G2 Property &amp; Hazard</td><td>What parcel-specific hazards, insurance costs, and physical risks affect hold value?</td><td>FEMA/CalFire/USGS parcel screens, insurance quotes, engineering/PCA reports.</td><td><span class="status unverified">Open</span></td><td>No parcel location used; no reports.</td><td><a href="hazards.html">Hazard workflow</a></td></tr>
-            <tr><td>G3 Financial &amp; Tax</td><td>What is the after-tax sell outcome vs after-tax hold outcome?</td><td>Rent roll/T12, tax basis, depreciation schedule, debt, CPA after-tax model.</td><td><span class="status unverified">Open</span></td><td>No financial/tax records.</td><td><a href="analysis.html#after-tax">After-tax module</a></td></tr>
-            <tr><td>G4 Market &amp; Exit</td><td>What is the market value today given remaining lease term and risk?</td><td>Broker BOVs, closed comps, buyer/lender feedback, short-lease discount evidence.</td><td><span class="status unverified">Open</span></td><td>No quotes/comps.</td><td><a href="questions.html#market-quotes">Market quotes</a></td></tr>
-            <tr><td>G5 Tenant &amp; Operations</td><td>Is tenant/unit performance strong enough to support renewal or sale pricing?</td><td>Authorized sales/coverage, guaranty, corporate/unit disclosures, renewal intent.</td><td><span class="status unverified">Open</span></td><td>No tenant financials.</td><td><a href="https://www.sec.gov/edgar/searchedgar/companysearch">SEC EDGAR (context only)</a></td></tr>
-            <tr><td>G6 Owner Objectives</td><td>Which option better fits wealth preservation, liquidity, growth, and risk tolerance?</td><td>Owner investment policy, liquidity needs, reserve requirements, risk limits.</td><td><span class="status unverified">Open</span></td><td>No owner profile in workspace.</td><td><a href="privacy.html">Private handling</a></td></tr>
-            <tr><td>G7 Decision</td><td>Sell before expiry, renew/hold, or defer with trigger dates?</td><td>All G1–G6 closed; sensitivity and downside scenarios reviewed.</td><td><span class="status unverified">Blocked</span></td><td>All prior gates open.</td><td><a href="analysis.html#decision-rule">Decision rule</a></td></tr>
+            <tr><td>Who holds fee title, and is it subject to a ground lease?</td><td>Client: NNN restaurant. Unverified.</td><td>Owner of record, vesting, exceptions, ground vs fee.</td><td>LA County Assessor and a preliminary title report — internal only.</td></tr>
+            <tr><td>When does the lease expire?</td><td>Client-stated window 2030–2035.</td><td>Exact expiration, options, and option notice dates.</td><td>Private lease abstract; build a notice calendar before any commitment.</td></tr>
+            <tr><td>What is contract rent, how does it bump, is there percentage rent?</td><td>Blank.</td><td>Rent schedule, breakpoints, audit rights.</td><td>Lease plus the last 24 months of rent invoices.</td></tr>
+            <tr><td>What NNN expenses exist and who pays insurance, roof, and parking lot?</td><td>Label “NNN” only.</td><td>True triple-net vs modified; capex carve-outs.</td><td>Lease abstract; insurance binder; roof report.</td></tr>
+            <tr><td>Is there a corporate guarantee or only the franchisee?</td><td>Blank.</td><td>Guarantor, net worth covenant, assignment clause.</td><td>Lease and any recorded memorandum.</td></tr>
+            <tr><td>What is remaining loan principal, rate, prepay, and due date?</td><td>Blank.</td><td>Entire debt stack.</td><td>Lender statement; do not publish.</td></tr>
+            <tr><td>What is tax basis and accumulated depreciation?</td><td>Blank.</td><td>Depreciation schedules, cost segregation, 1031 carryover basis.</td><td>Form 4562 history with the CPA — calculator only, never on the site.</td></tr>
+            <tr><td>What written sale or refinance quotes exist for this remaining term?</td><td>Blank.</td><td>Cap rate, price, and any “short-lease discount.”</td><td>Two independent written opinions. Do not use asking prices from other unidentified stores.</td></tr>
+            <tr><td>Has the tenant requested renewal, kick-out, or closure under the brand’s block-closure program?</td><td>Brand closed 86 restaurants in FY 2025 (system, not this unit).</td><td>Any notice concerning this unit.</td><td>Tenant correspondence file.</td></tr>
           </tbody>
         </table>
       </div>
-    </section>
 
-    <section class="section" id="lease-questions">
-      <h2>Lease &amp; Property Questions</h2>
+      <h2>B. Trade area and economy (W-01)</h2>
       <div class="table-wrap">
-        <table>
-          <thead><tr><th>ID</th><th>Question</th><th>Current Known Answer</th><th>Status</th><th>Information Needed</th><th>How to Discover (Secure/Official)</th><th>Source</th></tr></thead>
+        <table class="data">
+          <thead>
+            <tr><th>Question</th><th>What we have</th><th>What we do not have</th><th>How to discover</th></tr>
+          </thead>
           <tbody>
-            <tr><td>Q-001</td><td>What is the exact lease expiration date and all option/notice deadlines?</td><td>User-provided window: 2030–2035 (unverified).</td><td><span class="status unverified">Unverified</span></td><td>Executed lease, amendments, option exhibits, notice letters.</td><td>Private lease abstract by CRE attorney; create confidential notice calendar.</td><td><a href="flagged.html#F-003">F-003</a></td></tr>
-            <tr><td>Q-002</td><td>Is the lease truly absolute NNN, and what landlord obligations remain?</td><td>User-provided: NNN (unverified).</td><td><span class="status unverified">Unverified</span></td><td>Lease clauses for roof/structure, insurance, taxes, CAM, environmental, casualty, condemnation.</td><td>Lease abstract; attorney review; reconcile with historical invoices.</td><td><a href="flagged.html#F-002">F-002</a></td></tr>
-            <tr><td>Q-003</td><td>What is current rent, escalation schedule, and option rent?</td><td></td><td><span class="status unverified">Missing</span></td><td>Rent roll, lease schedule, payment history.</td><td>Obtain from owner/accounting records in secure workspace; verify against bank deposits.</td><td><a href="analysis.html#sell-hold">Sell/Hold Template</a></td></tr>
-            <tr><td>Q-004</td><td>Who is the tenant/guarantor and what is their credit/sales strength?</td><td></td><td><span class="status unverified">Missing</span></td><td>Guaranty, financial statements, unit sales, rent coverage.</td><td>Authorized tenant disclosures; use SEC EDGAR only for corporate context.</td><td><a href="https://www.sec.gov/edgar/searchedgar/companysearch">SEC EDGAR</a></td></tr>
-            <tr><td>Q-005</td><td>What is the property's physical condition and deferred maintenance?</td><td></td><td><span class="status unverified">Missing</span></td><td>PCA, roof/HVAC/parking/environmental reports.</td><td>Commission third-party inspections privately.</td><td><a href="https://www.epa.gov/environmental-topics">EPA Environmental Topics (general)</a></td></tr>
+            <tr><td>Which census tracts form a consistent trade area?</td><td>City and county proxies only.</td><td>Tract IDs, 1- and 3-mile rings, drive-time.</td><td>Private geocode → data.census.gov ACS tables S0101, S1901, S1701, DP04.</td></tr>
+            <tr><td>Population trend in the trade area?</td><td>LA city +31,276 from 2023–2024 (PEP).</td><td>Tract time series.</td><td>ACS 5-year for selected tracts; CA DOF only if a matching city is appropriate.</td></tr>
+            <tr><td>Income and poverty in the trade area?</td><td>City MHI $82,263; county MHI $90,845 (ACS 2024 1-year via Census Reporter).</td><td>Tract MHI, which can be far from the city median in Central LA.</td><td>ACS S1901 for selected tracts.</td></tr>
+            <tr><td>Jobs and unemployment?</td><td>LA County unemployment 5.9% NSA in Sep 2025 (EDD).</td><td>Place-of-work jobs near the parcel; QCEW for the ZIP.</td><td>BLS QCEW; Census LEHD LODES; EDD sub-county.</td></tr>
+            <tr><td>Schools?</td><td>Blank on purpose.</td><td>Assigned district and school performance.</td><td>CDE DataQuest after private address lookup. Do not publish school names if they locate the site.</td></tr>
+            <tr><td>Traffic?</td><td>City mean commute 31.7 minutes — not AADT.</td><td>Intersection counts.</td><td>LADOT / Caltrans PeMS. Keep the count station private.</td></tr>
+            <tr><td>Planning / land use?</td><td>Central City Community Plan exists; current ACS for that plan area not verified here.</td><td>Zoning, pending entitlements, streetscape projects.</td><td>ZIMAS (planning.lacity.gov) privately.</td></tr>
+            <tr><td>Competitors and closures nearby?</td><td>Blank.</td><td>Competitive set.</td><td>Field survey; do not publish a map of nearby QSR that pins the corner.</td></tr>
           </tbody>
         </table>
       </div>
-    </section>
 
-    <section class="section" id="market-quotes">
-      <h2>Market, Tax, and Risk Questions</h2>
+      <h2>C. Tenant system (direction, not this store)</h2>
       <div class="table-wrap">
-        <table>
-          <thead><tr><th>ID</th><th>Question</th><th>Current Known Answer</th><th>Status</th><th>Information Needed</th><th>How to Discover (Secure/Official)</th><th>Source</th></tr></thead>
+        <table class="data">
+          <thead>
+            <tr><th>Question</th><th>What we have</th><th>What we do not have</th><th>How to discover</th></tr>
+          </thead>
           <tbody>
-            <tr><td>Q-006</td><td>What is the property worth today with the remaining lease term?</td><td></td><td><span class="status unverified">Missing</span></td><td>At least 2-3 BOVs, closed comps, buyer feedback, lender terms.</td><td>Engage qualified NNN investment sales brokers; document comp dates/cap rates/lease terms.</td><td><a href="flagged.html#F-010">F-010</a></td></tr>
-            <tr><td>Q-007</td><td>What is the after-tax net from selling now vs holding/renewing?</td><td></td><td><span class="status unverified">Missing</span></td><td>Tax basis, depreciation, debt, closing costs, reinvestment plan.</td><td>CPA/tax counsel model using verified records; review IRS/FTB rules.</td><td><a href="https://www.irs.gov/publications/p544">IRS Pub 544</a></td></tr>
-            <tr><td>Q-008</td><td>What parcel-specific hazards and insurance constraints exist?</td><td>Regional LA earthquake probabilities verified; parcel-specific unknown.</td><td><span class="status partial">Partial</span></td><td>FEMA flood zone, FHSZ, seismic/site, insurance quotes.</td><td>Private parcel screen using FEMA/CalFire/USGS/Cal OES and licensed brokers.</td><td><a href="hazards.html">Hazards</a></td></tr>
-            <tr><td>Q-009</td><td>How resilient is local demand for this specific trade area?</td><td>City-level proxies verified; trade-area unknown.</td><td><span class="status partial">Proxy only</span></td><td>Tract/trade-area demographics, traffic, competition, anchor demand.</td><td>Secure GIS workflow; ACS/data.census.gov, LA Planning, LADOT, LAUSD.</td><td><a href="research.html#trade-area">W-01 Workflow</a></td></tr>
-            <tr><td>Q-010</td><td>What is the owner's liquidity need, risk tolerance, and reinvestment alternative?</td><td></td><td><span class="status unverified">Missing</span></td><td>Owner objectives, reserve policy, debt maturity, alternative investments.</td><td>Private advisor interview; document as internal-only inputs.</td><td><a href="privacy.html">Privacy &amp; Handling</a></td></tr>
-            <tr><td>Q-011</td><td>What happens in downside/black-swan scenarios?</td><td>Regional seismic risk verified; other tail scenarios unmodeled.</td><td><span class="status partial">Partial</span></td><td>Insurance, reserves, lease casualty clauses, downtime assumptions, exit liquidity.</td><td>Stress-test model with engineering/insurance/legal inputs.</td><td><a href="analysis.html">Risk Register</a></td></tr>
-            <tr><td>Q-012</td><td>Should the owner sell, renew, or wait with trigger dates?</td><td>No decision selected.</td><td><span class="status unverified">Blocked</span></td><td>Close G1–G6 with verified evidence.</td><td>Decision meeting after gates closed; document assumptions and sensitivity.</td><td><a href="analysis.html#decision-rule">Decision Rule</a></td></tr>
+            <tr><td>Is the brand growing or shrinking?</td><td>FY 2025: SSS −4.2%; 31 opened / 86 closed; year-end 2,136 vs 2,191 in the prior-year column.</td><td>Whether this unit is on the closure list.</td><td>Tenant letter; franchisee health; 10-K risk factors.</td></tr>
+            <tr><td>What is franchise rental revenue at the parent?</td><td>Blank in this build (10-K iXBRL not parsed to confirmed dollars).</td><td>Confirmed 10-K line items.</td><td>Read Jack in the Box Inc. Form 10-K on SEC.gov (CIK 0000807882).</td></tr>
+            <tr><td>FY 2026 outlook?</td><td>Guidance: SSS −1% to +1%; units 2,050–2,100; 50–100 closures.</td><td>Binding effect on this lease.</td><td>Treat as guidance, not a forecast of the subject.</td></tr>
           </tbody>
         </table>
       </div>
-    </section>
 
-    <section class="section">
-      <h2>Missing Information Discovery Plan</h2>
+      <h2>D. Hazards and black swans (W-04)</h2>
       <div class="table-wrap">
-        <table>
-          <thead><tr><th>Missing Information</th><th>Priority</th><th>Discovery Method</th><th>Responsible Party</th><th>Security Handling</th><th>Source / Tool</th></tr></thead>
+        <table class="data">
+          <thead>
+            <tr><th>Question</th><th>What we have</th><th>What we do not have</th><th>How to discover</th></tr>
+          </thead>
           <tbody>
-            <tr><td>Executed lease and amendments</td><td>Critical</td><td>Request from owner/advisor document vault; abstract privately.</td><td>Owner / CRE attorney</td><td>Offline/access-controlled; no public upload.</td><td><a href="privacy.html">Privacy</a></td></tr>
-            <tr><td>Rent roll, T12, expenses, debt</td><td>Critical</td><td>Accounting records, lender statements, bank verification.</td><td>Owner / CPA</td><td>Private financial workspace.</td><td><a href="privacy.html">Privacy</a></td></tr>
-            <tr><td>Parcel hazard reports</td><td>Critical</td><td>Authorized parcel lookup on FEMA/CalFire/USGS/Cal OES; order insurance/engineering reports.</td><td>Broker / engineer / insurer</td><td>Parcel ID withheld from public site.</td><td><a href="hazards.html">Hazards</a></td></tr>
-            <tr><td>Market BOVs/comps</td><td>High</td><td>Request 2-3 NNN broker opinions and closed comp sets.</td><td>Investment sales broker</td><td>Internal only; publish anonymized ranges only if authorized.</td><td><a href="questions.html#market-quotes">Market Questions</a></td></tr>
-            <tr><td>Trade-area data</td><td>High</td><td>Secure GIS/ACS pull for selected tracts; traffic and planning review.</td><td>Analyst / advisor</td><td>No parcel geometry published.</td><td><a href="https://data.census.gov/">data.census.gov</a></td></tr>
-            <tr><td>Tax model inputs</td><td>High</td><td>CPA collects basis, depreciation, entity, residency, reinvestment assumptions.</td><td>CPA / tax counsel</td><td>Private tax workspace.</td><td><a href="https://www.irs.gov/">IRS</a></td></tr>
+            <tr><td>Earthquake?</td><td>USGS/UCERF3: 60% / 46% / 31% chance of M≥6.7 / 7.0 / 7.5 in 30 years in the LA area.</td><td>Parcel shaking, liquefaction, landslide, building retrofit.</td><td>CGS EQ Zapp; USGS design maps; structural engineer; insurance quote.</td></tr>
+            <tr><td>Flood?</td><td>Blank.</td><td>FEMA zone, BFE, SFHA.</td><td>msc.fema.gov privately.</td></tr>
+            <tr><td>Fire?</td><td>CAL FIRE FHSZ maps exist for LA County; parcel class blank. 2025 Palisades/Eaton fires are a regional reminder, not a parcel status.</td><td>FHSZ class, defensible space, insurance availability.</td><td>osfm.fire.ca.gov maps; Cal OES MyHazards; insurer.</td></tr>
+            <tr><td>Stress: loss of rent, repairs, exit liquidity together?</td><td>Calculator allows extra vacancy months only.</td><td>Engineering PML, business-interruption, and bid-ask after a disaster.</td><td>Insurance + engineer + two post-stress quotes. Do not invent a black-swan dollar loss.</td></tr>
           </tbody>
         </table>
       </div>
-    </section>
-  </main>
-  <footer class="footer"><p>Questions are complete enough to start due diligence, but answers remain unverified until evidence is collected privately.</p></footer>
+
+      <h2>E. Decision question (not answered)</h2>
+      <div class="callout warn">
+        <strong>Best course of action today:</strong> do not sell and do not renew. Close G1–G7. Preserve option value by watching lease notice dates. Wealth preservation here means avoiding an irreversible commitment on city-level averages and an unverified 2030–2035 window.
+      </div>
+      <p>Risk of selling too early: tax leakage (federal LTCG + 25% unrecaptured 1250 + 3.8% NIIT + California ordinary rates), loss of Prop 13 basis for a buyer that may be priced into a lower bid, and selling into a brand-level SSS decline without knowing this unit. Risk of holding/renewing blindly: tenant closure program, shorter remaining term cap-rate expansion, seismic/flood/fire uninsured loss, and concentration in one Central LA QSR. Neither path is ranked until inputs exist.</p>
+
+      <footer class="site">Every blank cell is intentional.</footer>
+    </main>
+  </div>
+  <script src="js/nav.js"></script>
 </body>
 </html>

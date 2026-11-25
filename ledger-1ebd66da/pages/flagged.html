@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flagged for Review — Irregularities &amp; Unverified Items</title>
+<meta name="description" content="Every irregularity, contradiction and unverified item in this workspace, with the official source that would close it, published for post-publication review.">
+<link rel="stylesheet" href="../assets/css/style.css">
+<script src="../assets/js/nav.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="brandmark">Hold or Sell <span class="tag">Decision Workspace</span></div>
+    <div class="env"><span>Flagged for review</span><span><strong>Evidence cut-off 2026-11-25</strong></span></div>
+  </div>
+</header>
+
+<nav class="nav" aria-label="Sections">
+  <div class="nav-inner">
+    <a href="../index.html">Overview</a>
+    <a href="economics.html">Trade Area</a>
+    <a href="worksheet.html">Sell v Hold</a>
+    <a href="decision-gates.html">Decision Gates</a>
+    <a href="hazards.html">Hazards</a>
+    <a href="tract-trends.html">Tract Trends</a>
+    <a href="rental-evidence.html">Rental Evidence</a>
+    <a href="lease-abstract.html">Lease Abstract</a>
+    <a href="risks.html">Risks</a>
+    <a href="open-questions.html">Open Questions</a>
+    <a href="suggestions.html">Suggestions</a>
+    <a href="flagged.html">Flagged</a>
+    <a href="sources.html">Sources</a>
+    <a href="advisory-summary.html">Summary</a>
+    <a href="privacy.html">Privacy</a>
+  </div>
+</nav>
+
+<main id="main" class="wrap">
+
+  <div class="page-head">
+    <p class="eyebrow">Review queue</p>
+    <h1>Flagged for review</h1>
+    <p class="lede">
+      Everything that could not be verified, every place where the brief pulled in two directions, and
+      every irregularity found while building this workspace. These items do not block publication —
+      they are published <em>because</em> they are unresolved, so the reader can see precisely where the
+      evidence stops.
+    </p>
+  </div>
+
+  <div class="grid grid--4">
+    <div class="kpi stop"><div class="label">Data flags</div><div class="value">9</div><div class="meta">FLAG-U01 to U09</div></div>
+    <div class="kpi stop"><div class="label">Unverified metric rows</div><div class="value">11</div><div class="meta">Value column empty by design</div></div>
+    <div class="kpi warn"><div class="label">Contradictions in the brief</div><div class="value">3</div><div class="meta">Resolved, documented below</div></div>
+    <div class="kpi info"><div class="label">Sources that failed to load</div><div class="value">5</div><div class="meta">Retry instructions given</div></div>
+  </div>
+
+  <h2>Data flags</h2>
+
+  <div class="table-scroll">
+    <table>
+      <caption><strong>FLAG-U01 → U09 · unresolved data questions</strong>
+      Each states what is missing, why it matters, and the exact official or private source that would close it.</caption>
+      <thead><tr><th>Flag</th><th>Item</th><th>What is missing</th><th>Why it blocks something</th><th>Closing source</th></tr></thead>
+      <tbody>
+        <tr id="FLAG-U01">
+          <td><code>FLAG-U01</code></td>
+          <td><strong>Lease terms and owner tax facts</strong></td>
+          <td>Exact expiry (a 2030–2035 range was given), base rent, escalators, renewal options, expense structure, adjusted basis, accumulated depreciation, entity and filing status.</td>
+          <td>Blocks G3 and G4. Without them the hold horizon is a guess and the after-tax number cannot exist. The sell-versus-hold comparison cannot be closed.</td>
+          <td>Private lease abstract + CPA projection. No public source can supply these.</td>
+        </tr>
+        <tr id="FLAG-U02">
+          <td><code>FLAG-U02</code></td>
+          <td><strong>Parcel identity and jurisdiction</strong></td>
+          <td>Address or AIN; the incorporated city or unincorporated area the parcel sits in.</td>
+          <td>Blocks G2, Q-13 to Q-16, and the Measure ULA test. If the parcel is outside the City of Los Angeles, ULA does not apply at all — a swing of up to 5.5% of the sale price.</td>
+          <td><a href="https://portal.assessor.lacounty.gov/" target="_blank" rel="noopener">LA County Assessor Portal ↗</a></td>
+        </tr>
+        <tr id="FLAG-U03">
+          <td><code>FLAG-U03</code></td>
+          <td><strong>Census tract values</strong></td>
+          <td>Tract population, median household income, renter share, vehicle availability, workplace jobs.</td>
+          <td>Blocks G6. County figures cannot be shrunk to a trade area, and substituting them would be an inference presented as a measurement.</td>
+          <td><a href="https://www.census.gov/programs-surveys/acs/data/data-via-api.html" target="_blank" rel="noopener">Census ACS API ↗</a> (requires a free key) · <a href="https://data.census.gov/all?g=140XX00US06037207200" target="_blank" rel="noopener">data.census.gov tract lookup ↗</a></td>
+        </tr>
+        <tr id="FLAG-U04">
+          <td><code>FLAG-U04</code></td>
+          <td><strong>Submarket NNN capitalisation rates and the term discount</strong></td>
+          <td>Closed comparable trades with cap rate and remaining lease term.</td>
+          <td>Blocks G5 and Q-22. No official statistical series publishes these. Without them there is no defensible price on either side of the decision.</td>
+          <td>Recorded deeds plus a paid transaction database, or a broker with a closed-deal record. Proprietary — no public alternative exists.</td>
+        </tr>
+        <tr id="FLAG-U05">
+          <td><code>FLAG-U05</code></td>
+          <td><strong>Passive versus active treatment of the rental and the gain</strong></td>
+          <td>Whether the owner materially participates, and the entity structure.</td>
+          <td>Decides whether the 3.8% NIIT applies to the gain <em>and</em> to the rental income during the hold. The calculator can only apply it as a toggle, not resolve it.</td>
+          <td>CPA, citing the material-participation tests. <a href="https://www.irs.gov/taxtopics/tc559" target="_blank" rel="noopener">IRS Topic 559 ↗</a></td>
+        </tr>
+        <tr id="FLAG-U06">
+          <td><code>FLAG-U06</code></td>
+          <td><strong>Two official population figures that disagree</strong></td>
+          <td>California's 2025 population: 39,355,309 (Census vintage 2025) versus 39,593,000 for January 2026 (California DOF E-1).</td>
+          <td>Not an error — different agencies, different methods, different dates. Flagged so nobody averages them or treats a 238,000-person gap as a data quality failure.</td>
+          <td><a href="https://fred.stlouisfed.org/data/CAPOP" target="_blank" rel="noopener">Census series CAPOP ↗</a> · <a href="https://dof.ca.gov/forecasting/demographics/estimates-e1/" target="_blank" rel="noopener">DOF E-1 ↗</a></td>
+        </tr>
+        <tr id="FLAG-U07">
+          <td><code>FLAG-U07</code></td>
+          <td><strong>The brief's action verbs imply mutually exclusive conclusions</strong></td>
+          <td>The brief asks simultaneously to "determine the best course of action" and to "not select a winner until verified inputs exist".</td>
+          <td>Resolved in favour of the second instruction, because it is the more specific and the more defensible. This workspace therefore publishes a <em>sequence of actions</em> and a <em>decision framework</em>, not a verdict. Recorded here so the choice is visible and reversible.</td>
+          <td>—</td>
+        </tr>
+        <tr id="FLAG-U08">
+          <td><code>FLAG-U08</code></td>
+          <td><strong>"Around central Los Angeles" is not a jurisdiction</strong></td>
+          <td>The phrase could describe the City of Los Angeles, but also Vernon, Huntington Park, Maywood, Bell, Cudahy, Commerce, or unincorporated County territory — all adjacent to central LA.</td>
+          <td>Each has different transfer taxes, rent rules and planning regimes. Treated as an input requirement rather than an assumption.</td>
+          <td><a href="https://portal.assessor.lacounty.gov/" target="_blank" rel="noopener">LA County Assessor Portal ↗</a></td>
+        </tr>
+        <tr id="FLAG-U09">
+          <td><code>FLAG-U09</code></td>
+          <td><strong>California Mental Health Services Tax not modelled</strong></td>
+          <td>The 1% surcharge on taxable income above $1,000,000 is a separate statute from the Form 540 rate schedules cited here.</td>
+          <td>The after-tax calculator uses the 12.30% top printed bracket and therefore <em>understates</em> California tax on a large gain. Flagged rather than estimated, because the surcharge interacts with the base in a way that needs the statute text and a CPA.</td>
+          <td><a href="https://www.ftb.ca.gov/forms/2024/2024-540-tax-rate-schedules.pdf" target="_blank" rel="noopener">FTB 2024 rate schedules ↗</a> plus the separate statute — to be obtained and verified before the figure is added.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Unverified metric rows</h2>
+  <p>Eleven rows in the dataset have no value. They are shown here with the same table used everywhere
+  else, so the empty cells and the evidence text sit side by side.</p>
+
+  <div class="table-scroll">
+<table>
+  <caption><strong>Unverified register — 11 items</strong>
+  Every cell in the Value column is intentionally empty. Each row names the official tool that would close it. Nothing here was estimated.</caption>
+  <thead><tr>
+    <th>ID</th><th>Metric</th><th class="num">Value</th><th>Period</th>
+    <th>Level</th><th>Status</th><th>Evidence quoted from source</th><th>Official source</th>
+  </tr></thead>
+  <tbody>
+<tr>
+        <td><code>M-100</code></td>
+        <td>Assessor parcel number (AIN)</td>
+        <td class="num"><span class="blank">—</span></td>
+        <td class="nowrap">current</td>
+        <td><span class="pill pill--warn">Parcel</span></td>
+        <td><span class="pill pill--stop">Unverified</span></td>
+        <td class="small"><span class="muted">No AIN or address was supplied with this brief. Lookup tool cited so the reader can pull the record.</span></td>
+        <td><a class="src" href="https://portal.assessor.lacounty.gov/" target="_blank" rel="noopener" title="Assessor Portal (search by AIN or address)">County of Los Angeles ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-101</code></td>
+        <td>Assessed land value / improvement value</td>
+        <td class="num"><span class="blank">—</span></td>
+        <td class="nowrap">current roll</td>
+        <td><span class="pill pill--warn">Parcel</span></td>
+        <td><span class="pill pill--stop">Unverified</span></td>
+        <td class="small"><span class="muted">Requires the AIN (M-100). Base-year assessed value drives property tax and the sale-versus-hold carry cost; it is not published here.</span></td>
+        <td><a class="src" href="https://portal.assessor.lacounty.gov/" target="_blank" rel="noopener" title="Assessor Portal (search by AIN or address)">County of Los Angeles ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-102</code></td>
+        <td>Parcel area</td>
+        <td class="num"><span class="blank">—</span></td>
+        <td class="nowrap">current</td>
+        <td><span class="pill pill--warn">Parcel</span></td>
+        <td><span class="pill pill--stop">Unverified</span></td>
+        <td class="small"><span class="muted">Not supplied. Needed for land-value-per-square-foot comparison against closed sales.</span></td>
+        <td><a class="src" href="https://portal.assessor.lacounty.gov/" target="_blank" rel="noopener" title="Assessor Portal (search by AIN or address)">County of Los Angeles ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-103</code></td>
+        <td>FEMA flood zone for the parcel</td>
+        <td class="num"><span class="blank">—</span></td>
+        <td class="nowrap">current effective FIRM</td>
+        <td><span class="pill pill--warn">Parcel</span></td>
+        <td><span class="pill pill--stop">Unverified</span></td>
+        <td class="small"><span class="muted">Requires an address or coordinates in the Flood Map Service Center. Not supplied.</span></td>
+        <td><a class="src" href="https://msc.fema.gov/portal/home" target="_blank" rel="noopener" title="FEMA Flood Map Service Center">Federal Emergency Management Agency ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-104</code></td>
+        <td>CGS seismic hazard zone status (fault rupture / liquefaction / landslide)</td>
+        <td class="num"><span class="blank">—</span></td>
+        <td class="nowrap">current</td>
+        <td><span class="pill pill--warn">Parcel</span></td>
+        <td><span class="pill pill--stop">Unverified</span></td>
+        <td class="small"><span class="muted">EQ Zapp is address-driven. Not supplied.</span></td>
+        <td><a class="src" href="https://www.conservation.ca.gov/cgs/geohazards/eq-zapp" target="_blank" rel="noopener" title="EQ Zapp: California Earthquake Hazards Zone Application">California Department of Conservation ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-105</code></td>
+        <td>CAL FIRE Fire Hazard Severity Zone for the parcel</td>
+        <td class="num"><span class="blank">—</span></td>
+        <td class="nowrap">current</td>
+        <td><span class="pill pill--warn">Parcel</span></td>
+        <td><span class="pill pill--stop">Unverified</span></td>
+        <td class="small"><span class="muted">FHSZ is a mapped zone lookup. Note the state page itself distinguishes &quot;hazard&quot; (physical conditions over 30–50 years) from &quot;risk&quot;.</span></td>
+        <td><a class="src" href="https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones" target="_blank" rel="noopener" title="Fire Hazard Severity Zones (SRA and LRA)">CAL FIRE ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-106</code></td>
+        <td>Census tract population, median household income, and renter share</td>
+        <td class="num"><span class="blank">—</span></td>
+        <td class="nowrap">ACS 5-year</td>
+        <td><span class="pill pill--info">Tract</span></td>
+        <td><span class="pill pill--stop">Unverified</span></td>
+        <td class="small"><span class="muted">Tract cannot be selected without the parcel address. The Census data API also requires a key (it returned &quot;Missing Key&quot; during this session). See FLAG-U03.</span></td>
+        <td><a class="src" href="https://data.census.gov/all?g=140XX00US06037207200" target="_blank" rel="noopener" title="data.census.gov — tract profile query (ACS 5-year)">Census Bureau ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-107</code></td>
+        <td>Lease commencement, expiry date, and renewal options</td>
+        <td class="num"><span class="blank">—</span></td>
+        <td class="nowrap">current lease</td>
+        <td><span class="pill pill--neutral">Lease</span></td>
+        <td><span class="pill pill--stop">Unverified</span></td>
+        <td class="small"><span class="muted">Brief states only &quot;set to expire on 2030-2035&quot;, which is a range, not a date. Lease document not supplied.</span></td>
+        <td><a class="src" href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/R16.htm" target="_blank" rel="noopener" title="JACK 10-K FY2025 — Note: Leases (XBRL R16)">Securities and Exchange Commission ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-108</code></td>
+        <td>Current base rent, escalation schedule, and expense pass-throughs</td>
+        <td class="num"><span class="blank">—</span></td>
+        <td class="nowrap">current lease</td>
+        <td><span class="pill pill--neutral">Lease</span></td>
+        <td><span class="pill pill--stop">Unverified</span></td>
+        <td class="small"><span class="muted">Not supplied. Without base rent no NOI, cap rate, or after-tax comparison can be computed — only the framework can be published.</span></td>
+        <td><a class="src" href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/R16.htm" target="_blank" rel="noopener" title="JACK 10-K FY2025 — Note: Leases (XBRL R16)">Securities and Exchange Commission ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-109</code></td>
+        <td>Owner's adjusted basis, acquisition date, and accumulated depreciation</td>
+        <td class="num"><span class="blank">—</span></td>
+        <td class="nowrap">current</td>
+        <td><span class="pill pill--neutral">Owner</span></td>
+        <td><span class="pill pill--stop">Unverified</span></td>
+        <td class="small"><span class="muted">Not supplied. These four inputs determine the entire after-tax comparison; the calculator therefore requires the reader to enter them.</span></td>
+        <td><a class="src" href="https://www.irs.gov/taxtopics/tc409" target="_blank" rel="noopener" title="Topic no. 409, Capital gains and losses">Internal Revenue Service ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-110</code></td>
+        <td>Verified NNN retail cap rates for the subject submarket</td>
+        <td class="num"><span class="blank">—</span></td>
+        <td class="nowrap">current</td>
+        <td><span class="pill pill--info">Submarket</span></td>
+        <td><span class="pill pill--stop">Unverified</span></td>
+        <td class="small"><span class="muted">No official statistical series publishes submarket NNN retail cap rates. Commercial data providers are proprietary. Not estimated — see FLAG-U04.</span></td>
+        <td><a class="src" href="https://fred.stlouisfed.org/data/DGS10" target="_blank" rel="noopener" title="10-Year Treasury Constant Maturity — series DGS10">Federal Reserve Bank of St. Louis (source: Federal Reserve Board, H.15) ↗</a></td>
+      </tr>
+  </tbody>
+</table>
+</div>
+
+  <h2>Contradictions inside the brief, and how each was resolved</h2>
+
+  <div class="table-scroll">
+    <table>
+      <caption><strong>Three tensions, resolved explicitly</strong> Recorded so a reviewer can disagree with the resolution rather than having to discover it.</caption>
+      <thead><tr><th>#</th><th>Tension</th><th>Side A</th><th>Side B</th><th>Resolution adopted</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td><strong>Decide, versus don't decide yet</strong></td>
+          <td>"I want to know what the best course of action and decision to make is."</td>
+          <td>"Prepare an after-tax sale comparison … without selecting a winner until verified inputs exist."</td>
+          <td><strong>Side B.</strong> It is the more specific instruction, and it is the only one compatible with the no-hallucination rule. The workspace delivers the full framework, the sequence of actions, and the exact price of closing each gap.</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td><strong>Deep research, versus no inference</strong></td>
+          <td>"Do deep research to build a reliable projection system for the area."</td>
+          <td>"Never infer or fill in values. If a value can't be confirmed from an official source, leave it blank."</td>
+          <td><strong>Side B governs the data; Side A governs the method.</strong> The projection <em>method</em> is specified in full (W-07's regression, the stress frame, the discounting approach). No projection <em>number</em> is published, because none can be verified.</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td><strong>Public site, versus private data</strong></td>
+          <td>"Create a github page live site … containing all entries and findings."</td>
+          <td>"Personal information … must not appear in the final website product."</td>
+          <td><strong>Both, separated by construction.</strong> Everything aggregate and non-identifying is published. Everything identifying — parcel, lease, owner, tax facts — is excluded and its absence is visible as a blank with a flag. The calculator holds private inputs only inside the reader's browser.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Sources that failed to load during this session</h2>
+  <p>Recorded so the next session can retry rather than assume the data does not exist. None of these
+  failures caused a value to be estimated — each one produced a blank and a flag.</p>
+
+  <div class="table-scroll">
+    <table>
+      <caption><strong>Retry list</strong></caption>
+      <thead><tr><th>Source</th><th>What failed</th><th>Impact</th><th>Retry</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><a href="https://api.census.gov/data/2023/acs/acs5?get=NAME,B01003_001E&for=county:037&in=state:06" target="_blank" rel="noopener">Census data API</a></td>
+          <td>Returned "A valid key must be included with each data API request".</td>
+          <td>Tract values unavailable → FLAG-U03.</td>
+          <td>Request a free key, then run the query on the <a href="tract-trends.html">tract page</a>.</td>
+        </tr>
+        <tr>
+          <td><a href="https://data.census.gov/all?g=140XX00US06037207200" target="_blank" rel="noopener">data.census.gov</a></td>
+          <td>Deep links resolved to a generic search page rather than a populated table.</td>
+          <td>Same as above.</td>
+          <td>Use the URL builder in the interface, or the API once keyed.</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.census.gov/quickfacts/fact/table/losangelescountycalifornia/PST045224" target="_blank" rel="noopener">Census QuickFacts</a></td>
+          <td>Page fetch failed repeatedly.</td>
+          <td>None — the same variables were obtained from SAIPE via FRED and from DOF E-1.</td>
+          <td>Retry; useful only as a cross-check now.</td>
+        </tr>
+        <tr>
+          <td><a href="https://data.lacounty.gov/" target="_blank" rel="noopener">LA County Open Data</a></td>
+          <td>API endpoint returned an error.</td>
+          <td>No parcel-level county data.</td>
+          <td>Retry with the parcel AIN once known.</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.cdtfa.ca.gov/taxes-and-fees/taxable-sales-by-county.htm" target="_blank" rel="noopener">California CDTFA taxable sales by county</a></td>
+          <td>Page fetch failed.</td>
+          <td>No county retail-sales series — a genuine gap in the demand evidence, since it would proxy restaurant-industry sales.</td>
+          <td><strong>Worth retrying.</strong> This is the most valuable of the five gaps, because a county taxable-sales series would give a direct read on restaurant demand rather than a demographic proxy.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>What is deliberately absent from this site</h2>
+
+  <div class="grid grid--2">
+    <div class="card" style="margin:0;border-left:4px solid var(--stop)">
+      <h3 style="margin-top:0">Excluded by design — privacy</h3>
+      <ul class="tight small">
+        <li>Parcel address, AIN, or legal description</li>
+        <li>Owner name, entity name, or any identifying detail</li>
+        <li>Any lease term, rent figure, or date from the actual lease</li>
+        <li>Tenant contact details or store-level sales</li>
+        <li>Any personal financial figure, tax return data, or guarantor information</li>
+        <li>Any photograph or document scan of the property</li>
+      </ul>
+      <p class="small muted" style="margin-bottom:0">The verification script enforces this: the build
+      fails if a street address, coordinate pair, phone number, email address, or identifier pattern
+      appears in any published page.</p>
+    </div>
+    <div class="card" style="margin:0;border-left:4px solid var(--warn)">
+      <h3 style="margin-top:0">Excluded by design — no verified source</h3>
+      <ul class="tight small">
+        <li>Any capitalisation rate for the submarket</li>
+        <li>Any estimate of the property's value</li>
+        <li>Any projection of future rent or sales</li>
+        <li>School performance rankings</li>
+        <li>Competitor density or traffic counts</li>
+        <li>Any probability assigned to a risk scenario</li>
+      </ul>
+      <p class="small muted" style="margin-bottom:0">Each of these is listed on the
+      <a href="suggestions.html">suggestions page</a> as a candidate improvement with the source that
+      would be required to add it properly.</p>
+    </div>
+  </div>
+
+  <h2>How to submit a correction</h2>
+  <div class="card">
+    <p>Every claim on this site carries an ID — a metric row (<code>M-xxx</code>), a flag
+    (<code>FLAG-Uxx</code>), a question (<code>Q-xx</code>), a risk (<code>R-xx</code>) or a
+    suggestion (<code>S-xx</code>). A correction is most useful when it names the ID, states what is
+    wrong, and links the official source that supersedes it.</p>
+    <p class="small" style="margin-bottom:0">A correction that cannot cite an official source will be
+    added to this page as an open item rather than applied to the data, because the rule that governs
+    the dataset is that nothing enters it unverified. That applies to corrections as much as to the
+    original figures.</p>
+  </div>
+
+  <p style="margin-top:1.6rem"><a href="privacy.html">Next: the privacy policy that governs all of the above →</a></p>
+
+</main>
+
+<footer class="site">
+  <div class="inner">
+    <p><strong>Privacy.</strong> This page lists what is excluded and why. It contains no excluded
+    detail. <a href="privacy.html">Privacy policy →</a></p>
+    <p><a href="sources.html">Full source register</a> · <a href="flagged.html">Flagged for review</a> · <a href="../index.html">Back to overview</a></p>
+  </div>
+</footer>
+</body>
+</html>

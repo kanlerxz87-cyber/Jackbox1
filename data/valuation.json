@@ -1,0 +1,158 @@
+{
+  "meta": {
+    "dataset": "valuation",
+    "version": "1.0",
+    "as_of": "2026-11-25",
+    "owner_session": "ses-41ea221b",
+    "task": "W-02 — extend the private worksheet to a sell-versus-hold comparison; after-tax module",
+    "design_rule": "This dataset computes METHOD, not a verdict. It defines exactly which inputs each side needs, which of those inputs are verified, and it refuses to emit a single preferred number while required inputs are missing. The live arithmetic happens in the reader's browser (assets/js/calc.js) on inputs the reader owns; nothing typed there is transmitted or stored."
+  },
+  "market_anchors": [
+    {
+      "id": "VA-01",
+      "metric": "10-year Treasury constant maturity",
+      "value": 4.92,
+      "unit": "percent",
+      "period": "2026-11-23",
+      "status": "verified",
+      "source_id": "S-004",
+      "use": "Risk-free anchor. A commercial cap rate is built as this plus a spread; the spreadsheet must not hard-code a cap rate without showing the spread."
+    },
+    {
+      "id": "VA-02",
+      "metric": "10-year Treasury, 30-day range",
+      "value": 5.15,
+      "unit": "percent (high on 2026-11-13)",
+      "period": "2026-11-02 to 2026-11-23",
+      "status": "verified",
+      "source_id": "S-004",
+      "use": "A 23 basis point move in three weeks is a reminder that exit cap rate assumptions move. Low was 4.84% on 2026-11-05."
+    },
+    {
+      "id": "VA-03",
+      "metric": "CPI-U 12-month change, Los Angeles-Long Beach-Anaheim",
+      "value": 3.7,
+      "unit": "percent",
+      "period": "September 2026",
+      "status": "verified",
+      "source_id": "S-002",
+      "use": "Local inflation. Rent escalations below this are real decreases."
+    },
+    {
+      "id": "VA-04",
+      "metric": "All-Transactions HPI, metro, latest vs peak in extracted window",
+      "value": -0.82,
+      "unit": "percent from peak",
+      "period": "2026 Q3 vs 2026 Q1",
+      "status": "verified",
+      "source_id": "S-005",
+      "use": "The metro index has rolled over slightly. Two quarters is not a trend; it is a reason not to model permanent appreciation."
+    },
+    {
+      "id": "VA-05",
+      "metric": "Metro unemployment rate",
+      "value": 4.6,
+      "unit": "percent",
+      "period": "October 2026 preliminary",
+      "status": "verified",
+      "source_id": "S-002",
+      "use": "Basis for the rent-loss stress probability, not for the base case."
+    }
+  ],
+  "sell_side_inputs": [
+    { "id": "SL-01", "input": "Contract rent in place", "required": true, "status": "unverified", "why": "Drives NOI. Private; lives only in the browser calculator." },
+    { "id": "SL-02", "input": "Landlord-reimbursed operating expenses", "required": true, "status": "unverified", "why": "NNN recoveries; unverified whether all three nets are truly recovered." },
+    { "id": "SL-03", "input": "Exit cap rate", "required": true, "status": "unverified", "why": "No official source publishes single-tenant QSR cap rates. Must come from actual broker quotes, not a guess." },
+    { "id": "SL-04", "input": "Remaining lease term at sale", "required": true, "status": "owner-asserted-window", "why": "2030-2035 window is too wide. See G-04." },
+    { "id": "SL-05", "input": "Adjusted basis (land plus depreciated building)", "required": true, "status": "unverified", "why": "Private. Required for the after-tax leg." },
+    { "id": "SL-06", "input": "Accumulated depreciation taken", "required": true, "status": "unverified", "why": "Drives unrecaptured section 1250 gain at the 25% federal ceiling." },
+    { "id": "SL-07", "input": "Outstanding mortgage balance and prepayment penalty", "required": true, "status": "unverified", "why": "Net proceeds, not gross price, is what funds a replacement asset." },
+    { "id": "SL-08", "input": "Selling costs (commission, title, transfer tax, legal)", "required": true, "status": "unverified", "why": "Typically 3-6% of price; materially changes the after-tax number." },
+    { "id": "SL-09", "input": "Owner filing status and other taxable income", "required": true, "status": "unverified", "why": "Private and decisive: it sets the federal bracket, the NIIT threshold test and the California bracket." },
+    { "id": "SL-10", "input": "State of residence for the year of sale", "required": true, "status": "unverified", "why": "California taxes gains as ordinary income; a different domicile changes the arithmetic entirely." }
+  ],
+  "hold_side_inputs": [
+    { "id": "HL-01", "input": "Remaining contract rent through expiration", "required": true, "status": "unverified", "why": "The thing being given up by selling." },
+    { "id": "HL-02", "input": "Probability and rent level of renewal", "required": true, "status": "unverified", "why": "Set as an explicit distribution, never a single number." },
+    { "id": "HL-03", "input": "Downtime months and re-leasing cost if the tenant leaves", "required": true, "status": "unverified", "why": "QSR pads can sit vacant for 12-24 months; this is the main hold-side risk." },
+    { "id": "HL-04", "input": "Capital expenditure backlog", "required": true, "status": "unverified", "why": "Roof, HVAC, parking, seismic retrofit. NNN often leaves structure and roof with the landlord." },
+    { "id": "HL-05", "input": "Insurance premium trajectory", "required": true, "status": "unverified", "why": "Post-2025 fire-market repricing is the biggest single swing factor for a California hold." },
+    { "id": "HL-06", "input": "Interest rate on any refinancing", "required": true, "status": "unverified", "why": "Anchored to VA-01 plus a spread." },
+    { "id": "HL-07", "input": "Discount rate for the hold cash flows", "required": true, "status": "unverified", "why": "Must be at least the cost of capital, otherwise holding always wins on paper." }
+  ],
+  "tax_rules": [
+    {
+      "id": "TX-01",
+      "rule": "Federal long-term capital gain rate",
+      "detail": "0% / 15% / 20% by taxable income; 20% applies above the top threshold",
+      "status": "verified",
+      "source_id": "S-013"
+    },
+    {
+      "id": "TX-02",
+      "rule": "Unrecaptured section 1250 gain",
+      "detail": "Taxed at a maximum 25% rate",
+      "status": "verified",
+      "source_id": "S-013",
+      "why_it_matters": "Depreciation taken over a long hold comes back at 25%, which is often higher than the 20% rate on the rest of the gain. Owners routinely under-reserve for this."
+    },
+    {
+      "id": "TX-03",
+      "rule": "Net investment income tax",
+      "detail": "3.8% on the lesser of net investment income or MAGI above 200k single / 250k MFJ",
+      "status": "verified",
+      "source_id": "S-014"
+    },
+    {
+      "id": "TX-04",
+      "rule": "California treatment of capital gains",
+      "detail": "No preferential rate; net capital gain is taxed as ordinary income at California PIT rates",
+      "status": "verified",
+      "source_id": "S-017"
+    },
+    {
+      "id": "TX-05",
+      "rule": "California treatment, confirmation",
+      "detail": "Schedule CA (540) line 7a instructions state California taxes long and short term gains as regular income with no special long-term rate",
+      "status": "verified",
+      "source_id": "S-018"
+    },
+    {
+      "id": "TX-06",
+      "rule": "Section 1031 deferral",
+      "detail": "Business or investment real property qualifies; 45 days to identify, 180 days to complete, or the return due date if earlier",
+      "status": "verified",
+      "source_id": "S-015",
+      "why_it_matters": "Deferral is the only structural lever that changes the after-tax comparison without changing the price. It must be evaluated BEFORE the sale, not after."
+    },
+    {
+      "id": "TX-07",
+      "rule": "Depreciation and adjusted basis",
+      "detail": "Adjusted basis is cost less depreciation allowed or allowable; recapture follows from that",
+      "status": "verified",
+      "source_id": "S-016"
+    },
+    {
+      "id": "TX-08",
+      "rule": "California PIT brackets",
+      "detail": "Progressive 1% to 12.3%, plus the 1% mental health surcharge above the top threshold",
+      "status": "unverified",
+      "source_id": null,
+      "why_it_matters": "The FTB bracket page failed to load during this session. The calculator therefore takes the marginal California rate as a reader input rather than baking in a number that could not be checked line by line."
+    }
+  ],
+  "gates": [
+    { "id": "G-04", "question": "What is the exact lease expiration date and what options exist?", "blocks": ["sell side", "hold side"], "status": "open" },
+    { "id": "G-05", "question": "What is contract rent, and are all three nets actually recovered?", "blocks": ["sell side"], "status": "open" },
+    { "id": "G-06", "question": "What are two to three real broker cap-rate quotes for this asset class and submarket?", "blocks": ["sell side"], "status": "open" },
+    { "id": "G-07", "question": "What is adjusted basis and accumulated depreciation?", "blocks": ["after-tax"], "status": "open" },
+    { "id": "G-08", "question": "What is the actual insurance premium and renewal date?", "blocks": ["hold side"], "status": "open" },
+    { "id": "G-09", "question": "Is there a financing prepayment penalty?", "blocks": ["sell side"], "status": "open" },
+    { "id": "G-10", "question": "Has the building any unremediated seismic or accessibility deficiency?", "blocks": ["hold side", "sale timing"], "status": "open" }
+  ],
+  "decision_rule": {
+    "statement": "Do not select a winner until G-04 through G-10 are closed with documents. Of the ten, G-04 alone can change the answer by more than any market forecast in this project.",
+    "why_no_winner_today": "The sell side is missing 10 of 10 inputs and the hold side 7 of 7. Any 'recommended' verdict produced from that would be fabricated, which the owner explicitly prohibited.",
+    "what_can_be_said_now": "Three things are already decidable and do not require a winner: (1) the decline-in-value filing on NC-07 is a dated, low-cost, verified action; (2) the renewal-notice calendar must be pinned even if the sell path is chosen, because an option that lapses removes leverage from any sale; (3) §1031 must be considered before signing a sale, because it cannot be elected retroactively."
+  }
+}

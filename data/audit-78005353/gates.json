@@ -1,0 +1,132 @@
+{
+  "meta": {
+    "title": "Decision-gate progress board (W-03)",
+    "compiled": "2026-11-25",
+    "how_to_read": "A gate is CLOSED only when every requirement under it has been evidenced with a document or an official source. An OPEN gate blocks the decision that depends on it. The portal does not issue a sell-or-renew verdict while any gate that feeds it is open.",
+    "rule": "'Blocked' means the gate cannot be closed by any party until a third party delivers something. 'Open' means it can be closed by work already in scope."
+  },
+  "gates": [
+    {
+      "id": "G-1",
+      "name": "Lease facts established",
+      "state": "blocked",
+      "feeds": ["sell", "renew"],
+      "summary": "The lease has not been abstracted. The expiry is known only as a five-year window and no option or notice dates are recorded.",
+      "requirements": [
+        { "text": "Executed lease and all amendments in the private workspace", "done": false },
+        { "text": "Private abstract covering rent schedule, term, options, expense allocation, landlord obligations, guaranty", "done": false },
+        { "text": "Dated notice calendar reconciled line by line against the abstract", "done": false }
+      ],
+      "closed_by": "ADVISER-1 (counsel)",
+      "consequence_if_open": "No renewal commitment can be made and no option window can be protected."
+    },
+    {
+      "id": "G-2",
+      "name": "Value evidence exists",
+      "state": "blocked",
+      "feeds": ["sell"],
+      "summary": "There is no appraisal, no opinion of value and no closed comparable. The sale case currently has no denominator.",
+      "requirements": [
+        { "text": "Dated appraisal or broker opinion with the income approach shown explicitly", "done": false },
+        { "text": "At least three closed, dated comparable sales with cap rate and term remaining", "done": false },
+        { "text": "Short-lease discount derived from observed pairs, not a rule of thumb", "done": false }
+      ],
+      "closed_by": "ADVISER-3 (broker) and ADVISER-4 (appraiser)",
+      "consequence_if_open": "The sale price in any comparison would be an assumption. The calculator will run, but its output is labelled an assumption-driven result."
+    },
+    {
+      "id": "G-3",
+      "name": "Tax inputs established",
+      "state": "blocked",
+      "feeds": ["sell"],
+      "summary": "The after-tax module is built and its rules are verified against IRS and FTB pages, but the owner's basis, land/building split, accumulated depreciation and residence state are unknown.",
+      "requirements": [
+        { "text": "Adjusted basis, land and building split, from the original closing statement", "done": false },
+        { "text": "Accumulated depreciation from filed returns", "done": false },
+        { "text": "Owner's state of residence and filing status confirmed", "done": false },
+        { "text": "1031 feasibility decided, with a qualified intermediary if pursued", "done": false }
+      ],
+      "closed_by": "ADVISER-5 (CPA)",
+      "consequence_if_open": "The after-tax sale comparison cannot be produced. Gross proceeds can be shown; net proceeds cannot."
+    },
+    {
+      "id": "G-4",
+      "name": "Physical condition and hazard zones established",
+      "state": "blocked",
+      "feeds": ["sell", "renew"],
+      "summary": "The four national hazard programmes are confirmed and their lookup tools are linked, but the parcel's own designations are not read, and there is no condition report and no insurance file.",
+      "requirements": [
+        { "text": "Flood zone, FIRM panel and effective date recorded", "done": false },
+        { "text": "CAL FIRE FHSZ designation and SRA/LRA responsibility recorded", "done": false },
+        { "text": "USGS ground-motion values recorded for the coordinates", "done": false },
+        { "text": "Property condition assessment, including roof and lot", "done": false },
+        { "text": "Insurance declarations page with earthquake cover and deductibles", "done": false }
+      ],
+      "closed_by": "OWNER-1, ADVISER-2 (engineer), ADVISER-3 (insurance)",
+      "consequence_if_open": "The risk-adjusted hold case is incomplete; a black-swan stress test would be generic rather than parcel-specific."
+    },
+    {
+      "id": "G-5",
+      "name": "Trade-area evidence at the right geography",
+      "state": "open",
+      "feeds": ["renew", "sell"],
+      "summary": "City-level figures are verified and the metro labour market is verified. Every figure is a proxy for a trade area, and the county comparator could not be loaded.",
+      "requirements": [
+        { "text": "City-level income, population, poverty, education verified", "done": true },
+        { "text": "Metro employment and unemployment verified, with sector detail", "done": true },
+        { "text": "County benchmark loaded", "done": false },
+        { "text": "Tract or ZCTA figures pulled on a consistent vintage for the trade area", "done": false },
+        { "text": "Competitor and new-supply count for the drive-time ring", "done": false }
+      ],
+      "closed_by": "OWNER-1 in the private workspace; the method is published here",
+      "consequence_if_open": "Market direction is established for the city, not for the corner. Direction is usable; magnitude is not."
+    },
+    {
+      "id": "G-6",
+      "name": "Owner objective stated in writing",
+      "state": "open",
+      "feeds": ["sell", "renew", "hold"],
+      "summary": "The brief states wealth preservation with growth at manageable risk. That is a direction, not a constraint set, so no option can be tested against it.",
+      "requirements": [
+        { "text": "Required income per year", "done": false },
+        { "text": "Minimum liquidity and maximum single-asset concentration", "done": false },
+        { "text": "Earliest date cash could be needed", "done": false },
+        { "text": "Estate and succession timing", "done": false }
+      ],
+      "closed_by": "OWNER-1 with ADVISER-5",
+      "consequence_if_open": "The portal can rank options on economics, but cannot say which is best for the owner."
+    },
+    {
+      "id": "G-7",
+      "name": "Privacy controls in force",
+      "state": "closed",
+      "feeds": ["all"],
+      "summary": "The public product contains no address, parcel number, owner name, tenant-identifying detail or owner finance. Identifiers appear only as placeholders. Private material is specified to stay in an offline workspace with a named access list.",
+      "requirements": [
+        { "text": "No personal or parcel identifiers anywhere in this repository or on the site", "done": true },
+        { "text": "Every private-workflow step labelled as private in the published method", "done": true },
+        { "text": "Access list naming authorised advisers held offline", "done": false }
+      ],
+      "closed_by": "OWNER-1",
+      "consequence_if_open": "The public side is compliant; the offline control still needs its written list."
+    }
+  ],
+  "decision_status": {
+    "sell_before_expiry": {
+      "state": "cannot be evaluated",
+      "blocked_by": ["G-1", "G-2", "G-3", "G-4"],
+      "plain": "There is no price and no tax number, so 'sell' has neither a numerator nor a denominator."
+    },
+    "renew_lease": {
+      "state": "cannot be evaluated",
+      "blocked_by": ["G-1", "G-4", "G-6"],
+      "plain": "The rent, the option mechanics and the notice dates are unknown, so there is nothing to compare a renewal offer against."
+    },
+    "hold_to_expiry": {
+      "state": "cannot be evaluated",
+      "blocked_by": ["G-1", "G-4", "G-6"],
+      "plain": "Holding is a live option by default. Its costs are unknown until the capital schedule and insurance file exist."
+    },
+    "overall": "No recommendation is issued. What can be said with evidence is on the Market and Trade Area pages; what cannot be said is listed on the Questions page."
+  }
+}
