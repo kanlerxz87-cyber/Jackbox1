@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Decision Gates — Parcel Decision Workspace</title>
+<meta name="description" content="An anonymised, source-linked decision workspace for a single-tenant quick-service parcel in central Los Angeles. Contains no personal or parcel-identifying information.">
+<meta name="robots" content="index, follow">
+<link rel="stylesheet" href="assets/css/app.css">
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">PDW</span>
+      <span class="brand-text">
+        <strong>Parcel Decision Workspace</strong>
+        <span>Anonymised &middot; source-linked &middot; no personal data</span>
+      </span>
+    </a>
+    <div class="header-meta">
+      <b>PARCEL-A &middot; OWNER-1 &middot; TENANT-A</b><br>
+      Central Los Angeles &middot; NNN &middot; expiry window 2030&ndash;2035<br>
+      Evidence compiled 2026-11-25
+    </div>
+  </div>
+</header>
+
+<nav class="site-nav" aria-label="Sections">
+  <div class="nav-inner">
+      <a href="index.html">Dashboard</a>
+      <a href="gates.html" aria-current="page">Decision Gates</a>
+      <a href="sell-vs-renew.html">Sell vs Renew</a>
+      <a href="market.html">Market &amp; Economy</a>
+      <a href="location.html">Trade Area</a>
+      <a href="hazards.html">Hazards &amp; Risk</a>
+      <a href="questions.html">Questions</a>
+      <a href="suggestions.html">Suggestions</a>
+      <a href="sources.html">Sources</a>
+      <a href="flagged.html">Flagged for Review</a>
+  </div>
+</nav>
+
+<main id="main">
+<div class="no-print" style="border:1px solid var(--line);background:#f7f9fc;border-radius:10px;padding:.7rem 1rem;margin-bottom:1.2rem;font-size:.84rem;color:var(--ink-soft)">
+<strong style="display:block;font-size:.68rem;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:.3rem">Workspace sections &mdash; three independent research trees, all published</strong>
+<a href="../../index.html">Root</a> &nbsp;&middot;&nbsp; <a href="../../workspace/index.html">Main workspace</a> &nbsp;&middot;&nbsp; <a href="../../docs/index.html">Sourced dashboard</a> &nbsp;&middot;&nbsp; <b>Independent audit pass (this section)</b>
+</div>
+
+
+<p class="lede">7 gates stand between this file and a decision. 6 are not closed. The board exists so that progress
+is visible without pretending the work is done.</p>
+
+<div class="grid three">
+  <div class="card kpi"><span class="label">Sell before expiry</span>
+    <span class="value blank">cannot be evaluated</span>
+    <span class="sub">There is no price and no tax number, so &#x27;sell&#x27; has neither a numerator nor a denominator.</span>
+    <span class="sub tiny muted">Blocked by G-1, G-2, G-3, G-4</span></div>
+  <div class="card kpi"><span class="label">Renew the lease</span>
+    <span class="value blank">cannot be evaluated</span>
+    <span class="sub">The rent, the option mechanics and the notice dates are unknown, so there is nothing to compare a renewal offer against.</span>
+    <span class="sub tiny muted">Blocked by G-1, G-4, G-6</span></div>
+  <div class="card kpi"><span class="label">Hold to expiry</span>
+    <span class="value blank">cannot be evaluated</span>
+    <span class="sub">Holding is a live option by default. Its costs are unknown until the capital schedule and insurance file exist.</span>
+    <span class="sub tiny muted">Blocked by G-1, G-4, G-6</span></div>
+</div>
+
+<div class="notice">No recommendation is issued. What can be said with evidence is on the Market and Trade Area pages; what cannot be said is listed on the Questions page.</div>
+
+<h2>The gates</h2>
+
+<div class="gate blocked" id="G-1">
+  <h3>G-1 &middot; Lease facts established <span class="badge stop">blocked</span></h3>
+  <p class="why">The lease has not been abstracted. The expiry is known only as a five-year window and no option or notice dates are recorded.</p>
+  <div class="progress-shell"><div class="bar"><span style="width:0%"></span></div><span class="small muted">0/3</span></div>
+  <ul class="clean small"><li>Executed lease and all amendments in the private workspace <span class="badge gray">outstanding</span></li><li>Private abstract covering rent schedule, term, options, expense allocation, landlord obligations, guaranty <span class="badge gray">outstanding</span></li><li>Dated notice calendar reconciled line by line against the abstract <span class="badge gray">outstanding</span></li></ul>
+  <p class="tiny muted"><b>Closed by:</b> ADVISER-1 (counsel) &nbsp;&middot;&nbsp; <b>If left open:</b> No renewal commitment can be made and no option window can be protected.</p>
+</div>
+<div class="gate blocked" id="G-2">
+  <h3>G-2 &middot; Value evidence exists <span class="badge stop">blocked</span></h3>
+  <p class="why">There is no appraisal, no opinion of value and no closed comparable. The sale case currently has no denominator.</p>
+  <div class="progress-shell"><div class="bar"><span style="width:0%"></span></div><span class="small muted">0/3</span></div>
+  <ul class="clean small"><li>Dated appraisal or broker opinion with the income approach shown explicitly <span class="badge gray">outstanding</span></li><li>At least three closed, dated comparable sales with cap rate and term remaining <span class="badge gray">outstanding</span></li><li>Short-lease discount derived from observed pairs, not a rule of thumb <span class="badge gray">outstanding</span></li></ul>
+  <p class="tiny muted"><b>Closed by:</b> ADVISER-3 (broker) and ADVISER-4 (appraiser) &nbsp;&middot;&nbsp; <b>If left open:</b> The sale price in any comparison would be an assumption. The calculator will run, but its output is labelled an assumption-driven result.</p>
+</div>
+<div class="gate blocked" id="G-3">
+  <h3>G-3 &middot; Tax inputs established <span class="badge stop">blocked</span></h3>
+  <p class="why">The after-tax module is built and its rules are verified against IRS and FTB pages, but the owner&#x27;s basis, land/building split, accumulated depreciation and residence state are unknown.</p>
+  <div class="progress-shell"><div class="bar"><span style="width:0%"></span></div><span class="small muted">0/4</span></div>
+  <ul class="clean small"><li>Adjusted basis, land and building split, from the original closing statement <span class="badge gray">outstanding</span></li><li>Accumulated depreciation from filed returns <span class="badge gray">outstanding</span></li><li>Owner&#x27;s state of residence and filing status confirmed <span class="badge gray">outstanding</span></li><li>1031 feasibility decided, with a qualified intermediary if pursued <span class="badge gray">outstanding</span></li></ul>
+  <p class="tiny muted"><b>Closed by:</b> ADVISER-5 (CPA) &nbsp;&middot;&nbsp; <b>If left open:</b> The after-tax sale comparison cannot be produced. Gross proceeds can be shown; net proceeds cannot.</p>
+</div>
+<div class="gate blocked" id="G-4">
+  <h3>G-4 &middot; Physical condition and hazard zones established <span class="badge stop">blocked</span></h3>
+  <p class="why">The four national hazard programmes are confirmed and their lookup tools are linked, but the parcel&#x27;s own designations are not read, and there is no condition report and no insurance file.</p>
+  <div class="progress-shell"><div class="bar"><span style="width:0%"></span></div><span class="small muted">0/5</span></div>
+  <ul class="clean small"><li>Flood zone, FIRM panel and effective date recorded <span class="badge gray">outstanding</span></li><li>CAL FIRE FHSZ designation and SRA/LRA responsibility recorded <span class="badge gray">outstanding</span></li><li>USGS ground-motion values recorded for the coordinates <span class="badge gray">outstanding</span></li><li>Property condition assessment, including roof and lot <span class="badge gray">outstanding</span></li><li>Insurance declarations page with earthquake cover and deductibles <span class="badge gray">outstanding</span></li></ul>
+  <p class="tiny muted"><b>Closed by:</b> OWNER-1, ADVISER-2 (engineer), ADVISER-3 (insurance) &nbsp;&middot;&nbsp; <b>If left open:</b> The risk-adjusted hold case is incomplete; a black-swan stress test would be generic rather than parcel-specific.</p>
+</div>
+<div class="gate open" id="G-5">
+  <h3>G-5 &middot; Trade-area evidence at the right geography <span class="badge warn">open</span></h3>
+  <p class="why">City-level figures are verified and the metro labour market is verified. Every figure is a proxy for a trade area, and the county comparator could not be loaded.</p>
+  <div class="progress-shell"><div class="bar"><span style="width:40%"></span></div><span class="small muted">2/5</span></div>
+  <ul class="clean small"><li>&#10003; City-level income, population, poverty, education verified <span class="badge ok">done</span></li><li>&#10003; Metro employment and unemployment verified, with sector detail <span class="badge ok">done</span></li><li>County benchmark loaded <span class="badge gray">outstanding</span></li><li>Tract or ZCTA figures pulled on a consistent vintage for the trade area <span class="badge gray">outstanding</span></li><li>Competitor and new-supply count for the drive-time ring <span class="badge gray">outstanding</span></li></ul>
+  <p class="tiny muted"><b>Closed by:</b> OWNER-1 in the private workspace; the method is published here &nbsp;&middot;&nbsp; <b>If left open:</b> Market direction is established for the city, not for the corner. Direction is usable; magnitude is not.</p>
+</div>
+<div class="gate open" id="G-6">
+  <h3>G-6 &middot; Owner objective stated in writing <span class="badge warn">open</span></h3>
+  <p class="why">The brief states wealth preservation with growth at manageable risk. That is a direction, not a constraint set, so no option can be tested against it.</p>
+  <div class="progress-shell"><div class="bar"><span style="width:0%"></span></div><span class="small muted">0/4</span></div>
+  <ul class="clean small"><li>Required income per year <span class="badge gray">outstanding</span></li><li>Minimum liquidity and maximum single-asset concentration <span class="badge gray">outstanding</span></li><li>Earliest date cash could be needed <span class="badge gray">outstanding</span></li><li>Estate and succession timing <span class="badge gray">outstanding</span></li></ul>
+  <p class="tiny muted"><b>Closed by:</b> OWNER-1 with ADVISER-5 &nbsp;&middot;&nbsp; <b>If left open:</b> The portal can rank options on economics, but cannot say which is best for the owner.</p>
+</div>
+<div class="gate closed" id="G-7">
+  <h3>G-7 &middot; Privacy controls in force <span class="badge ok">closed</span></h3>
+  <p class="why">The public product contains no address, parcel number, owner name, tenant-identifying detail or owner finance. Identifiers appear only as placeholders. Private material is specified to stay in an offline workspace with a named access list.</p>
+  <div class="progress-shell"><div class="bar"><span style="width:67%"></span></div><span class="small muted">2/3</span></div>
+  <ul class="clean small"><li>&#10003; No personal or parcel identifiers anywhere in this repository or on the site <span class="badge ok">done</span></li><li>&#10003; Every private-workflow step labelled as private in the published method <span class="badge ok">done</span></li><li>Access list naming authorised advisers held offline <span class="badge gray">outstanding</span></li></ul>
+  <p class="tiny muted"><b>Closed by:</b> OWNER-1 &nbsp;&middot;&nbsp; <b>If left open:</b> The public side is compliant; the offline control still needs its written list.</p>
+</div>
+
+<h2>Why the board is ordered this way</h2>
+<div class="card">
+  <p class="small">G-1 comes first because it is both the cheapest to close and the most time-sensitive. A renewal
+  notice window that passes cannot be reopened by any amount of analysis. G-2 and G-3 come next because together
+  they produce the only two numbers a sell-versus-renew comparison actually needs: what the asset would fetch, and
+  what the owner would keep. G-4 sits inside both cases, because a hazard designation and an insurance file change
+  the hold case and the buyer's view of the sale case at the same time. G-5 and G-6 are open rather than blocked:
+  they can be closed by work already in scope, and the site is built to do the published half of G-5.</p>
+  <p class="small">G-7 is the only closed gate. It is closed because the privacy control is verifiable in the artefact
+  itself: you can read every page of this site and find no identifier. The remaining item under G-7 &mdash; the written
+  access list &mdash; lives offline by necessity, which is why the gate is marked closed on the public side only.</p>
+</div>
+
+<h2>How to move a gate</h2>
+<ol class="steps">
+  <li>Open the gate's page entry and read the outstanding requirements. Each one names the document, not a task.</li>
+  <li>Check the <a href="questions.html">Questions</a> register for the matching question. It carries the owner and the source.</li>
+  <li>Check <a href="suggestions.html">Suggestions</a> for the cheapest route to that document, with a falsifier.</li>
+  <li>When the document arrives, change <code>done</code> to <code>true</code> in <code>data/gates.json</code> and rebuild. Do not edit the HTML.</li>
+</ol>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <strong>Parcel Decision Workspace</strong> &mdash; built 2026-11-25.<br>
+      An independent audit pass. Main workspace: <a href="../../workspace/index.html">/workspace/</a>. Root: <a href="../../index.html">/</a>.<br>
+      Public product. Contains no address, parcel number, owner name, lease text or financial figure belonging to any person or entity.
+      Private material is held offline with authorised advisers.
+    </div>
+    <nav aria-label="Footer">
+      <a href="sources.html">Sources</a>
+      <a href="flagged.html">Flagged for Review</a>
+      <a href="questions.html">Open Questions</a>
+      <a href="advisor-summary.html">One-Page Summary</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>
