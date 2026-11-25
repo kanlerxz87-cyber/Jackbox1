@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Methods · Anonymous NNN workspace</title>
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="privacy-bar">Observations vs assumptions. <a href="privacy.html">Privacy rules</a></div>
+  <div class="layout">
+    <nav class="side" id="nav"></nav>
+    <main id="main">
+      <h1>Methods</h1>
+      <h2>What counts as verified</h2>
+      <p>A value is marked verified or is shown as a sourced proxy only if it was read from an official .gov page, an SEC filing, or the issuer’s earnings release in this session. Census Reporter is treated as an ACS republisher and flagged for confirmation on data.census.gov.</p>
+      <h2>What is left blank</h2>
+      <p>Anything not read from those pages, including 10-K dollar lines that remained iXBRL-only, parcel zones, rents, and cap rates. Blank is not zero.</p>
+      <h2>Observation vs assumption vs guidance vs client-stated</h2>
+      <ul>
+        <li><strong>Observation:</strong> a historical official number (PEP population, EDD unemployment, FY 2025 SSS).</li>
+        <li><strong>Proxy:</strong> an official number for a larger geography than the parcel.</li>
+        <li><strong>Guidance:</strong> the issuer’s FY 2026 outlook.</li>
+        <li><strong>Client-stated:</strong> NNN, Central LA, 2030–2035 window.</li>
+        <li><strong>Assumption:</strong> discount rate, rent growth, extra vacancy months in the calculator.</li>
+      </ul>
+      <h2>Why there is no projection model on this site</h2>
+      <p>A versioned cash-flow model is allowed only when verified inputs and sufficient comparable history exist. They do not. Brand SSS is two years, not a local rent series. City population is not NOI. Inventing a 2030–2035 price path would violate the no-hallucination rule.</p>
+      <h2>Calculator math</h2>
+      <p>Described on the <a href="after-tax.html">after-tax module</a> page. Hold NPV sums discounted NOI minus capex, with optional year-1 vacancy, and <em>no</em> terminal value.</p>
+      <h2>Privacy method</h2>
+      <p>No scraping of assessor records for a named owner. No store directory lookup that would list Central LA Jack in the Box addresses on this site.</p>
+      <footer class="site">Session arena-f5a16939 · 2026-11-25</footer>
+    </main>
+  </div>
+  <script src="js/nav.js"></script>
+</body>
+</html>
