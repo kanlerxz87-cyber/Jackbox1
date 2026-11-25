@@ -576,7 +576,7 @@ did not publish a value for that tract — it is not zero and it has not been in
 <h2>Why this page matters more than the city page</h2>
 <div class="grid g2">
   <div class="card">
-    <h3>The spread inside one ZIP</h3>
+    <h3>The spread inside one district</h3>
     <p>Median household income across these tracts runs from <strong>${incs[0]:,}</strong> (tract {
     sorted(tracts, key=lambda t: int(t["median_household_income"]))[0]["tract_short"]}) to
     <strong>${incs[-1]:,}</strong> (tract {

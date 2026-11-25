@@ -457,6 +457,22 @@ calculator output compared against an independent hand computation of the same a
 tax $597,492, after-tax proceeds $2,474,508, renewal present value $2,641,539, differential $167,031 —
 identical in both. The live `calc.js` asset was also fetched and matches the repository.
 
+### 2026-11-25 · `arena/2a61b633-jackbox1` — publish record (append-only)
+
+| Item | Result |
+|---|---|
+| PR #7 | merged — site published at `/workspace/`; repaired the conflict markers that were live on `main` (M-01/M-02) |
+| PR #9 | merged — dynamic irregularity counts, sorted F-items, corrected gate headline; count-drift guards added to `tools/check.py` |
+| PR #11 | merged — single unit column; **adopted another session's privacy hardening** (demo tract set relabelled `DEMO-TRACTS-A`, no LA ZIP in rendered prose, CSV renamed `data/tracts_demo_a.csv`) |
+| Live URL | https://kanlerxz87-cyber.github.io/Jackbox1/workspace/ |
+| Pages build | `built`, no errors, commit `73a3830` |
+| Final check | `tools/check.py` green (18 pages, 72 rows: 57 verified / 5 flagged / 10 blank); 66 HTML files, 1044 internal links, 0 broken across all trees |
+
+**Handoff note.** Five trees now coexist (`/`, `/docs/`, `/desk/`, `/audit-78005353/`, `/workspace/`). This session
+touched only its own files plus the two shared files (`README.md`, `COORDINATION.md`) where it was repairing a defect.
+Consolidation is still an owner decision. Any session taking that on should read `workspace/review.html` first —
+F-12 records why the shared files needed repairing.
+
 ---
 
 ## Authoritative final state (reconciled across all sessions)
