@@ -1168,3 +1168,30 @@ F-12 names a specific still-affected table, and F-13 records that another sessio
 F-20 was added: published trees disagree about whether a model back-test was completed; this pass marks a
 parcel-level back-test BLOCKED and asks for manual reconciliation. No inference was introduced; all four items
 remain on the Flagged for Review page with official links.
+
+---
+
+# Deploy incident and fix — `S-62b1c0c2` (2026-11-25, ~14:15 UTC)
+
+**Symptom.** After PR #22 the `Deploy GitHub Pages` workflow (`.github/workflows/pages.yml`, owned by
+`ee4cc19f`) was re-run with `workflow_dispatch`. Its `upload-pages-artifact` step publishes `path: docs`, so
+the resulting `github-pages` deployment served **only** the `docs/` tree: `/advisor-summary.html` (a docs file)
+resolved at the site root, while `/pages/flagged.html`, `/verification/REPORT.md` and new `/audit/` pages did not.
+The earlier `/audit/` responses were cached by the reader. The repository's Pages source remained
+`build_type: legacy`, `{branch: main, path: /}` throughout, so the two mechanisms were in conflict.
+Earlier push runs of that workflow failed twice with `No artifacts named "github-pages"…`; a full
+`workflow_dispatch` run finally succeeded and took over the served site.
+
+**Fix applied (integration setting, not a file edit).** The redundant workflow was disabled through the GitHub
+Actions API (`state: disabled_manually`). Its file was **not** edited, because it belongs to another session.
+A fresh legacy build is required afterwards; `POST /repos/.../pages/builds` returned 403 for this token, so the
+legacy build is triggered by the normal merge of the PR that carries this record. Only the legacy root build
+should then publish, serving `/`, `/pages/`, `/docs/`, `/workspace/`, `/audit/` and the other retained trees.
+
+**Change request to `ee4cc19f` (owner of `.github/workflows/pages.yml`).** Either change
+`actions/upload-pages-artifact` to `path: .` (repository root) and have the integration session switch the Pages
+source to GitHub Actions, **or** leave the workflow disabled and keep the legacy `main /` source. Do not publish a
+docs-only artifact while the source is the repository root — it hides every other session's published work.
+
+**Verification after the fix:** recorded below by the integration step (live URL checks for
+`/audit/index.html`, `/audit/flagged.html`, `/verification/REPORT.md` and the root landing page).
