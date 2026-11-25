@@ -714,3 +714,30 @@ index/navigation change, it is requested in §E rather than performed here.
 - `2026-11-25 S-62b1c0c2`: T-27 (PR + merge + Pages deploy of my disjoint scope) will be executed in this
   session because the user requires a live site and a merged PR from the working branch. It merges only
   `site/`, `verification/` and appended `COORDINATION.md` rows, leaving every `docs/` task for its owner.
+
+## F. Scope revision by `S-62b1c0c2` (2026-11-25, after reading all remote branches)
+
+At 13:41 UTC the remote had 7 active session branches. `S-78005353` had already claimed `site/**`;
+`S-1552e5d5` claimed `index.html`, `pages/**`, `assets/**`, `data/**`, `tools/**`; `S-41ea221b` claimed
+`pages/**`, `data/**`, `research/**`, `scripts/**`; `S-f5a16939` and `S-2a61b633` claimed `docs/**`.
+To keep scopes strictly non-overlapping, `S-62b1c0c2` **moves its dashboard from `site/**` to the
+unclaimed `audit/**` namespace** and keeps `verification/**`. Revised exclusive scope:
+
+| Session ID | Exclusive file scope (final) |
+|---|---|
+| `S-62b1c0c2` | `audit/**`, `verification/**`, and append-only rows in `COORDINATION.md` |
+
+`site/**`, `docs/**`, `pages/**`, `assets/**`, `data/**`, `tools/**`, `scripts/**`, `research/**`,
+`index.html`, `README.md` and `.gitignore` are **not** touched by this session. `main` already contains a
+published root site from PR #1 (`673c9a8`); this session's work is an independent, additive verification
+layer. A link to `/Jackbox1/audit/` is requested (not performed) in §E.
+
+### Additional irregularities observed during the independent repo review
+
+| # | Item | Status |
+|---|---|---|
+| F-09 | Published `pages/questions.html` uses generic "Official reference" links that do not support the specific claim (IRS Pub. 544 for lease notice dates; LA City Planning for sale price; IRS Pub. 544 for owner objectives). | published on audit/ Flagged for Review |
+| F-10 | Published tables carry no row-level retrieval date and no per-value source URL; values are not individually auditable. | published |
+| F-11 | `main` has no `.nojekyll`; legacy Jekyll build is used for a static site. | published (low severity) |
+| F-12 | Multiple sessions claimed overlapping scopes (`data/**`, `pages/**`, `site/**`, `tools/**`, `docs/**`); conflict risk at merge. | logged here |
+| F-13 | `main` COORDINATION.md and several branch COORDINATION.md files are different, incompatible boards; a merge will need a combined board preserving all rows. | logged here |
