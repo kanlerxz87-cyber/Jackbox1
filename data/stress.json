@@ -1,0 +1,227 @@
+{
+  "meta": {
+    "dataset": "stress",
+    "version": "1.0",
+    "as_of": "2026-11-25",
+    "owner_session": "ses-41ea221b",
+    "task": "Black-swan and business-as-usual stress: seismic, flood, fire, rent loss, repairs, exit liquidity — stressed together, not separately",
+    "core_insight": "The dangerous case is not any single hazard. It is the compound case: the building is damaged (repairs), the tenant cannot operate (rent loss), and every other owner in the submarket is trying to sell at the same time (exit liquidity gone). Each of the three is survivable; together they force a sale into the worst possible market. This module therefore models the joint case as the primary stress, not the union of separate shocks.",
+    "scenario_values": "No monetary loss figure is stated anywhere in this file. Doing so would require the replacement cost, insurance limits, deductibles and business-interruption terms, none of which have been supplied. Scenarios are stated as mechanism plus the specific private document that would let them be quantified."
+  },
+  "probability_context_verified": [
+    {
+      "id": "PC-01",
+      "finding": "Los Angeles County carried a county-wide major disaster declaration for wildfires and straight-line winds in January 2025 (DR-4856, declared 2025-01-08).",
+      "status": "verified",
+      "source_id": "S-008",
+      "implication": "A 'black swan' fire event is not a hypothetical for this county. It happened within the last 24 months."
+    },
+    {
+      "id": "PC-02",
+      "finding": "Six separate fire-management declarations affected the county in roughly 14 months (FM-5537, FM-5548, FM-5549, FM-5550, FM-5551, FM-5605).",
+      "status": "verified",
+      "source_id": "S-008",
+      "implication": "Fire risk here is a frequency question as well as a severity question."
+    },
+    {
+      "id": "PC-03",
+      "finding": "Five flood and storm declarations affected the county in 2023-2024 (EM-3591, EM-3592, DR-4683, DR-4699, DR-4769).",
+      "status": "verified",
+      "source_id": "S-008",
+      "implication": "Atmospheric-river flooding is a repeating, not one-off, exposure."
+    },
+    {
+      "id": "PC-04",
+      "finding": "Only 4 earthquakes of magnitude 4.5+ in the central-LA box from 2000 to 2026, while ASCE 7-22 assigns Seismic Design Category D at the reference point.",
+      "status": "verified",
+      "source_id": "S-006",
+      "implication": "Low frequency, high severity. A model calibrated on historical frequency will badly understate seismic loss. This is the classic black swan shape."
+    },
+    {
+      "id": "PC-05",
+      "finding": "A COVID-19 major disaster declaration covered the county from 2020-03-22 (DR-4482), with no physical damage to the asset.",
+      "status": "verified",
+      "source_id": "S-008",
+      "implication": "Rent loss without physical damage is a demonstrated, not theoretical, mechanism."
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "ST-01",
+      "class": "business-as-usual",
+      "name": "Tenant vacates at expiration",
+      "mechanism": "No renewal. 12-24 months of vacancy, tenant-improvement and leasing commissions, then market rent possibly below contract rent.",
+      "rent_loss_exposure": "Full contract rent for the downtime period",
+      "repair_exposure": "Tenant-removal and make-good costs",
+      "exit_liquidity_effect": "Moderate — a vacant pad sells, but at a materially higher cap rate",
+      "probability_evidence": "Not an extreme event. This is the base-case risk of any single-tenant asset.",
+      "can_quantify_now": false,
+      "requires": ["NC-03", "HL-03", "Q-01", "Q-02"]
+    },
+    {
+      "id": "ST-02",
+      "class": "business-as-usual",
+      "name": "Insurance repricing",
+      "mechanism": "Premium rises after a county-wide fire event even with zero damage to this building, because the whole market reprices.",
+      "rent_loss_exposure": "None directly",
+      "repair_exposure": "None directly",
+      "exit_liquidity_effect": "High — a higher insurance line cuts NOI and therefore value at any given cap rate",
+      "probability_evidence": "The January 2025 firestorm is a verified county-wide trigger (PC-01).",
+      "can_quantify_now": false,
+      "requires": ["Q-06", "NC-08"]
+    },
+    {
+      "id": "ST-03",
+      "class": "business-as-usual",
+      "name": "Deferred capital failure",
+      "mechanism": "Roof, HVAC or parking lot reaches end of life. In an NNN lease these are often still the landlord's obligation.",
+      "rent_loss_exposure": "Possible if the failure interrupts tenant operations",
+      "repair_exposure": "Lumpy and certain over a 5-9 year hold",
+      "exit_liquidity_effect": "Moderate — buyers price the backlog in",
+      "probability_evidence": "Structural, not stochastic. Certainty is high; timing is unknown.",
+      "can_quantify_now": false,
+      "requires": ["HL-04", "property condition assessment"]
+    },
+    {
+      "id": "ST-04",
+      "class": "black-swan",
+      "name": "Major seismic event",
+      "mechanism": "Strong shaking damages structure or services. The tenant cannot trade. The building may be red-tagged pending evaluation.",
+      "rent_loss_exposure": "Total, from the event until the building is safe to reoccupy",
+      "repair_exposure": "Structural and MEP; potentially exceeding insured limits",
+      "exit_liquidity_effect": "Severe — the whole submarket is simultaneously impaired and buyers disappear",
+      "probability_evidence": "SDC D at the reference point (PC-04); low historical frequency, high severity.",
+      "can_quantify_now": false,
+      "requires": ["HZ-16", "HZ-17", "insurance binder with limits, deductibles, business interruption", "seismic retrofit report"]
+    },
+    {
+      "id": "ST-05",
+      "class": "black-swan",
+      "name": "Wildfire at or near the parcel",
+      "mechanism": "Direct damage, or mandated evacuation and smoke/ash closure without damage; utility shut-offs.",
+      "rent_loss_exposure": "Total during closure or evacuation",
+      "repair_exposure": "Facade, roof, glazing, smoke remediation",
+      "exit_liquidity_effect": "Severe in the surrounding area for an extended period",
+      "probability_evidence": "PC-01 and PC-02: county-wide declarations are verified and recent.",
+      "can_quantify_now": false,
+      "requires": ["HZ-10", "insurance binder", "defensible-space inspection"]
+    },
+    {
+      "id": "ST-06",
+      "class": "black-swan",
+      "name": "Flood",
+      "mechanism": "Atmospheric-river or drainage failure inundates the site even outside a mapped high-risk zone.",
+      "rent_loss_exposure": "Total during remediation",
+      "repair_exposure": "Interior, MEP, site drainage",
+      "exit_liquidity_effect": "Severe locally",
+      "probability_evidence": "PC-03: five county declarations in two winters.",
+      "can_quantify_now": false,
+      "requires": ["HZ-08", "insurance flood rider status", "site drainage survey"]
+    },
+    {
+      "id": "ST-07",
+      "class": "black-swan",
+      "name": "Compound event (the case that actually threatens the owner)",
+      "mechanism": "A hazard event damages the asset, the tenant stops paying, and the owner needs liquidity at the same moment the whole submarket is being sold into. Each leg alone is manageable; the joint case is what forces a distressed sale.",
+      "rent_loss_exposure": "Total, and simultaneous with the repair bill",
+      "repair_exposure": "Uninsured or over-deductible portion lands exactly when rent has stopped",
+      "exit_liquidity_effect": "Severe — the asset cannot be sold except at a distressed discount, which is also the moment the owner most needs to sell",
+      "probability_evidence": "Compound severity is implied by PC-01 through PC-05 but no official source publishes joint-probability estimates for this parcel.",
+      "can_quantify_now": false,
+      "requires": ["ST-04 through ST-06 inputs", "liquidity reserve size", "loan covenants and cash-management triggers"]
+    },
+    {
+      "id": "ST-08",
+      "class": "market",
+      "name": "Rate shock at exit",
+      "mechanism": "Exit cap rate expands because the 10-year Treasury moves. November 2026 alone saw a 23 bp range (4.84% to 5.15%).",
+      "rent_loss_exposure": "None",
+      "repair_exposure": "None",
+      "exit_liquidity_effect": "Direct and immediate — value moves inversely with the cap rate",
+      "probability_evidence": "Verified rate volatility in a single month (OB-06 / VA-02).",
+      "can_quantify_now": true,
+      "requires": ["exit cap rate quote Q-01"],
+      "note": "This is the only scenario whose mechanism can be sized from verified data today, and it does not even need the parcel."
+    }
+  ],
+  "compound_stress_matrix": {
+    "description": "How each scenario behaves across the three stresses the owner asked to test together.",
+    "columns": ["rent loss", "repair cost", "exit liquidity"],
+    "ratings_key": "none / low / moderate / high / severe — qualitative only, no dollars",
+    "rows": [
+      { "scenario": "ST-01 tenant vacates", "rent": "high", "repair": "moderate", "liquidity": "moderate" },
+      { "scenario": "ST-02 insurance repricing", "rent": "none", "repair": "none", "liquidity": "high" },
+      { "scenario": "ST-03 capex failure", "rent": "low", "repair": "high", "liquidity": "moderate" },
+      { "scenario": "ST-04 seismic", "rent": "severe", "repair": "severe", "liquidity": "severe" },
+      { "scenario": "ST-05 wildfire", "rent": "severe", "repair": "high", "liquidity": "severe" },
+      { "scenario": "ST-06 flood", "rent": "severe", "repair": "high", "liquidity": "severe" },
+      { "scenario": "ST-07 compound", "rent": "severe", "repair": "severe", "liquidity": "severe" },
+      { "scenario": "ST-08 rate shock", "rent": "none", "repair": "none", "liquidity": "high" }
+    ],
+    "reading": "Every severe row has severe exit liquidity in common. That is the real exposure: not the repair bill, but being forced to sell at the moment nobody is buying."
+  },
+  "mitigations": [
+    {
+      "id": "MT-01",
+      "mitigation": "Confirm and file the exact renewal-notice dates.",
+      "costs": "Hours of a lawyer's time",
+      "addresses": ["ST-01"],
+      "status": "actionable-now",
+      "why": "Cheapest risk reduction available. A missed option is the only irreversible loss on this page."
+    },
+    {
+      "id": "MT-02",
+      "mitigation": "Obtain a property condition and seismic assessment before deciding.",
+      "costs": "Low four figures",
+      "addresses": ["ST-03", "ST-04", "ST-07"],
+      "status": "actionable-now"
+    },
+    {
+      "id": "MT-03",
+      "mitigation": "Read the insurance binder end to end: limits, deductibles, business-interruption period, flood and quake exclusions, and the renewal date.",
+      "costs": "Free",
+      "addresses": ["ST-02", "ST-04", "ST-05", "ST-06"],
+      "status": "actionable-now",
+      "why": "This single document converts four unquantifiable scenarios into quantifiable ones."
+    },
+    {
+      "id": "MT-04",
+      "mitigation": "File the decline-in-value application before 2026-11-30 if assessed value exceeds market value.",
+      "costs": "Free",
+      "addresses": ["ST-02", "ST-08"],
+      "status": "actionable-and-dated",
+      "source_id": "S-019",
+      "why": "Cuts the property tax line, which is the largest fixed expense in a NNN hold, and the window closes in days."
+    },
+    {
+      "id": "MT-05",
+      "mitigation": "Size and fund a liquidity reserve covering 12-18 months of debt service plus the insurance deductible.",
+      "costs": "Opportunity cost of the reserve",
+      "addresses": ["ST-07"],
+      "status": "requires-inputs",
+      "why": "The compound scenario is survivable with liquidity and fatal without it. This is the single most effective structural mitigation for an individual owner."
+    },
+    {
+      "id": "MT-06",
+      "mitigation": "Do not let the §1031 window become an emergency by identifying replacement candidates before listing.",
+      "costs": "Broker time",
+      "addresses": ["ST-08"],
+      "status": "actionable-now",
+      "source_id": "S-015",
+      "why": "A forced 45-day identification under pressure is how owners make bad replacement decisions."
+    },
+    {
+      "id": "MT-07",
+      "mitigation": "Diversify: do not let this single parcel be the majority of net worth.",
+      "costs": "Transaction cost on any rebalancing",
+      "addresses": ["ST-07", "ST-08"],
+      "status": "portfolio-level",
+      "why": "Concentration is the actual reason a compound event threatens the owner's wealth. The property can be fine and the owner still ruined by illiquidity."
+    }
+  ],
+  "black_swan_statement": {
+    "what_can_be_insured": "Direct physical damage, subject to limits and deductibles. Business interruption, subject to a period limit.",
+    "what_cannot_be_insured": "The simultaneous collapse of exit liquidity across the submarket, and the loss of the lease's remaining term if the tenant chooses not to return.",
+    "the_honest_position": "The verified record shows this county has had major fire, flood and pandemic declarations within six years. It does not show the probability of any of them hitting this specific parcel in the next five years, because that probability depends on the parcel's zone status and construction, which are unverified. Any specific probability quoted here would be invented."
+  }
+}

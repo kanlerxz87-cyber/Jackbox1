@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sell vs hold · Jackbox property decision workspace</title>
+<meta name="description" content="Anonymised, source-verified decision workspace for a single-tenant quick-service restaurant parcel in central Los Angeles. Public aggregate findings only.">
+<meta name="robots" content="index,follow">
+<link rel="stylesheet" href="../assets/css/site.css">
+<script src="../assets/js/calc.js" defer></script>
+</head>
+<body>
+<header class="site">
+  <div class="wrap hdr">
+    <a class="brand" href="index.html"><span class="dot"></span>JACKBOX&nbsp;/&nbsp;PARCEL-001</a>
+    <nav class="main">
+        <a href="index.html">Dashboard</a>
+        <a href="market.html">Market &amp; trade area</a>
+        <a href="hazards.html">Hazard screening</a>
+        <a href="lease.html">Lease &amp; calendar</a>
+        <a href="decision.html" aria-current="page">Sell vs hold</a>
+        <a href="scenarios.html">Model &amp; stress</a>
+        <a href="questions.html">Open questions</a>
+        <a href="suggestions.html">Suggestions</a>
+        <a href="flagged.html">Flagged for review</a>
+        <a href="sources.html">Sources</a>
+        <a href="print.html">Printable brief</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <div class="wrap">
+
+<div class="eyebrow">W-02 · Sell versus hold · after-tax module · short-lease discount</div>
+<h1>Sell versus hold</h1>
+<p class="lede">An after-tax sale comparison side by side with a negotiated renewal case, and no winner declared until verified inputs exist. Below: what each side requires, what is verified, the tax rules that apply, how the short-lease discount must be measured, and a calculator that keeps every private number inside your browser.</p>
+
+<div class="callout c-bad"><strong>No winner is declared on this page — deliberately</strong>The sell side is missing 10 of 10 inputs and the hold side 7 of 7. Any &#39;recommended&#39; verdict produced from that would be fabricated, which the owner explicitly prohibited.<br><br><b>What can be said now:</b> Three things are already decidable and do not require a winner: (1) the decline-in-value filing on NC-07 is a dated, low-cost, verified action; (2) the renewal-notice calendar must be pinned even if the sell path is chosen, because an option that lapses removes leverage from any sale; (3) §1031 must be considered before signing a sale, because it cannot be elected retroactively.</div>
+
+<h2>Verified market anchors</h2>
+<div class="tbl-wrap"><table><thead><tr><th>ID</th><th>Anchor</th><th class="num">Value</th><th>Period</th><th>Status</th><th>Official source</th></tr></thead><tbody>
+<tr><td>VA-01</td><td>10-year Treasury constant maturity</td><td class="num">4.92 <span class="faint">percent</span></td><td>2026-11-23</td><td><span class="b b-ok">Verified</span></td><td class="src"><a href="https://fred.stlouisfed.org/data/DGS10" target="_blank" rel="noopener noreferrer">S-004</a><br><span class="faint">Federal Reserve Board (H.15) via FRED, St. Louis Fed</span></td></tr>
+<tr><td>VA-02</td><td>10-year Treasury, 30-day range</td><td class="num">5.15 <span class="faint">percent (high on 2026-11-13)</span></td><td>2026-11-02 to 2026-11-23</td><td><span class="b b-ok">Verified</span></td><td class="src"><a href="https://fred.stlouisfed.org/data/DGS10" target="_blank" rel="noopener noreferrer">S-004</a><br><span class="faint">Federal Reserve Board (H.15) via FRED, St. Louis Fed</span></td></tr>
+<tr><td>VA-03</td><td>CPI-U 12-month change, Los Angeles-Long Beach-Anaheim</td><td class="num">3.7 <span class="faint">percent</span></td><td>September 2026</td><td><span class="b b-ok">Verified</span></td><td class="src"><a href="https://www.bls.gov/eag/eag.ca_losangeles_md.htm" target="_blank" rel="noopener noreferrer">S-002</a><br><span class="faint">U.S. Bureau of Labor Statistics</span></td></tr>
+<tr><td>VA-04</td><td>All-Transactions HPI, metro, latest vs peak in extracted window</td><td class="num">-0.82 <span class="faint">percent from peak</span></td><td>2026 Q3 vs 2026 Q1</td><td><span class="b b-ok">Verified</span></td><td class="src"><a href="https://fred.stlouisfed.org/graph/fredgraph.csv?id=ATNHPIUS31084Q" target="_blank" rel="noopener noreferrer">S-005</a><br><span class="faint">FHFA via FRED, St. Louis Fed</span></td></tr>
+<tr><td>VA-05</td><td>Metro unemployment rate</td><td class="num">4.6 <span class="faint">percent</span></td><td>October 2026 preliminary</td><td><span class="b b-ok">Verified</span></td><td class="src"><a href="https://www.bls.gov/eag/eag.ca_losangeles_md.htm" target="_blank" rel="noopener noreferrer">S-002</a><br><span class="faint">U.S. Bureau of Labor Statistics</span></td></tr>
+</tbody></table></div>
+
+<h2>The two sides, input by input</h2>
+<div class="grid g2">
+  <div>
+    <h3 style="margin-top:0">Sell side — 10 required inputs</h3>
+    <div class="tbl-wrap"><table><thead><tr><th>ID</th><th>Input</th><th>Status</th></tr></thead><tbody>
+<tr><td>SL-01</td><td>Contract rent in place</td><td><span class="b b-bad">Unverified</span></td></tr>
+<tr><td>SL-02</td><td>Landlord-reimbursed operating expenses</td><td><span class="b b-bad">Unverified</span></td></tr>
+<tr><td>SL-03</td><td>Exit cap rate</td><td><span class="b b-bad">Unverified</span></td></tr>
+<tr><td>SL-04</td><td>Remaining lease term at sale</td><td><span class="b b-warn">Owner-asserted</span></td></tr>
+<tr><td>SL-05</td><td>Adjusted basis (land plus depreciated building)</td><td><span class="b b-bad">Unverified</span></td></tr>
+<tr><td>SL-06</td><td>Accumulated depreciation taken</td><td><span class="b b-bad">Unverified</span></td></tr>
+<tr><td>SL-07</td><td>Outstanding mortgage balance and prepayment penalty</td><td><span class="b b-bad">Unverified</span></td></tr>
+<tr><td>SL-08</td><td>Selling costs (commission, title, transfer tax, legal)</td><td><span class="b b-bad">Unverified</span></td></tr>
+<tr><td>SL-09</td><td>Owner filing status and other taxable income</td><td><span class="b b-bad">Unverified</span></td></tr>
+<tr><td>SL-10</td><td>State of residence for the year of sale</td><td><span class="b b-bad">Unverified</span></td></tr>
+</tbody></table></div>
+  </div>
+  <div>
+    <h3 style="margin-top:0">Hold side — 7 required inputs</h3>
+    <div class="tbl-wrap"><table><thead><tr><th>ID</th><th>Input</th><th>Status</th></tr></thead><tbody>
+<tr><td>HL-01</td><td>Remaining contract rent through expiration</td><td><span class="b b-bad">Unverified</span></td></tr>
+<tr><td>HL-02</td><td>Probability and rent level of renewal</td><td><span class="b b-bad">Unverified</span></td></tr>
+<tr><td>HL-03</td><td>Downtime months and re-leasing cost if the tenant leaves</td><td><span class="b b-bad">Unverified</span></td></tr>
+<tr><td>HL-04</td><td>Capital expenditure backlog</td><td><span class="b b-bad">Unverified</span></td></tr>
+<tr><td>HL-05</td><td>Insurance premium trajectory</td><td><span class="b b-bad">Unverified</span></td></tr>
+<tr><td>HL-06</td><td>Interest rate on any refinancing</td><td><span class="b b-bad">Unverified</span></td></tr>
+<tr><td>HL-07</td><td>Discount rate for the hold cash flows</td><td><span class="b b-bad">Unverified</span></td></tr>
+</tbody></table></div>
+  </div>
+</div>
+
+<h2>After-tax module — the rules that are verified</h2>
+<p class="sub">The owner asked for one number to compare against the hold case. Here is the tax machinery that produces it, every element sourced. What is missing is not the rule, it is the owner's basis and bracket.</p>
+<div class="tbl-wrap"><table><thead><tr><th>ID</th><th>Rule</th><th>Detail</th><th>Status</th><th>Official source</th></tr></thead><tbody>
+<tr><td>TX-01</td><td>Federal long-term capital gain rate</td><td>0% / 15% / 20% by taxable income; 20% applies above the top threshold</td><td><span class="b b-ok">Verified</span></td><td class="src"><a href="https://www.irs.gov/taxtopics/tc409" target="_blank" rel="noopener noreferrer">S-013</a><br><span class="faint">Internal Revenue Service</span></td></tr>
+<tr><td>TX-02</td><td>Unrecaptured section 1250 gain</td><td>Taxed at a maximum 25% rate</td><td><span class="b b-ok">Verified</span></td><td class="src"><a href="https://www.irs.gov/taxtopics/tc409" target="_blank" rel="noopener noreferrer">S-013</a><br><span class="faint">Internal Revenue Service</span></td></tr>
+<tr><td>TX-03</td><td>Net investment income tax</td><td>3.8% on the lesser of net investment income or MAGI above 200k single / 250k MFJ</td><td><span class="b b-ok">Verified</span></td><td class="src"><a href="https://www.irs.gov/taxtopics/tc559" target="_blank" rel="noopener noreferrer">S-014</a><br><span class="faint">Internal Revenue Service</span></td></tr>
+<tr><td>TX-04</td><td>California treatment of capital gains</td><td>No preferential rate; net capital gain is taxed as ordinary income at California PIT rates</td><td><span class="b b-ok">Verified</span></td><td class="src"><a href="https://www.ftb.ca.gov/file/personal/income-types/capital-gains-and-losses.html" target="_blank" rel="noopener noreferrer">S-017</a><br><span class="faint">California Franchise Tax Board</span></td></tr>
+<tr><td>TX-05</td><td>California treatment, confirmation</td><td>Schedule CA (540) line 7a instructions state California taxes long and short term gains as regular income with no special long-term rate</td><td><span class="b b-ok">Verified</span></td><td class="src"><a href="https://www.ftb.ca.gov/forms/2025/2025-540-ca-instructions.html" target="_blank" rel="noopener noreferrer">S-018</a><br><span class="faint">California Franchise Tax Board</span></td></tr>
+<tr><td>TX-06</td><td>Section 1031 deferral</td><td>Business or investment real property qualifies; 45 days to identify, 180 days to complete, or the return due date if earlier</td><td><span class="b b-ok">Verified</span></td><td class="src"><a href="https://www.irs.gov/pub/irs-news/fs-08-18.pdf" target="_blank" rel="noopener noreferrer">S-015</a><br><span class="faint">Internal Revenue Service</span></td></tr>
+<tr><td>TX-07</td><td>Depreciation and adjusted basis</td><td>Adjusted basis is cost less depreciation allowed or allowable; recapture follows from that</td><td><span class="b b-ok">Verified</span></td><td class="src"><a href="https://www.irs.gov/publications/p946" target="_blank" rel="noopener noreferrer">S-016</a><br><span class="faint">Internal Revenue Service</span></td></tr>
+<tr><td>TX-08</td><td>California PIT brackets</td><td>Progressive 1% to 12.3%, plus the 1% mental health surcharge above the top threshold</td><td><span class="b b-bad">Unverified</span></td><td class="blank" title="No official source could confirm this">no source — unverified</td></tr>
+</tbody></table></div>
+
+<div class="callout c-info">
+  <strong>Three tax facts that change the sell decision most</strong>
+  <ul class="tight" style="margin-bottom:0">
+    <li><b>Depreciation comes back at 25%.</b> Unrecaptured section 1250 gain is capped at a 25% federal rate — often higher than the 20% applied to the rest of the gain. Long holds accumulate a lot of it.</li>
+    <li><b>California offers no relief.</b> Net capital gain is taxed as ordinary income. There is no state equivalent of the federal preferential rate.</li>
+    <li><b>§1031 must be decided before signing.</b> Forty-five days to identify, one hundred and eighty to complete. It cannot be elected retroactively.</li>
+  </ul>
+</div>
+
+<h2>Pricing the short-lease discount from real quotes</h2>
+<p class="sub">A short-lease discount is the gap between the cap rate a buyer pays for 15 years of remaining term and the cap rate they pay for 3-5 years. For single-tenant retail that gap is commonly several hundred basis points, but &#39;commonly&#39; is not a quote. Because the discount multiplies directly into value, a 100 bp error on a 5% cap rate is roughly a 17% error in price.</p>
+<div class="tbl-wrap"><table><thead><tr><th>ID</th><th>Quote required</th><th>Source type</th><th class="num">Value</th><th>Status</th><th>Official source</th></tr></thead><tbody>
+<tr><td>Q-01</td><td>Broker opinion: cap rate for a freestanding QSR pad with 7+ years remaining</td><td>licensed broker / investment sales</td><td class="blank">—</td><td><span class="b b-bad">Unverified</span></td><td class="blank" title="No official source could confirm this">no source — unverified</td></tr>
+<tr><td>Q-02</td><td>Broker opinion: cap rate for the same pad with 3-5 years remaining</td><td>licensed broker / investment sales</td><td class="blank">—</td><td><span class="b b-bad">Unverified</span></td><td class="blank" title="No official source could confirm this">no source — unverified</td></tr>
+<tr><td>Q-03</td><td>Comparable sale: QSR pad, central Los Angeles, closed in last 24 months</td><td>county recorded deed grantee/grantor plus broker confirmation</td><td class="blank">—</td><td><span class="b b-bad">Unverified</span></td><td class="blank" title="No official source could confirm this">no source — unverified</td></tr>
+<tr><td>Q-04</td><td>Comparable sale: QSR pad in the same submarket with similar remaining term</td><td>licensed appraiser</td><td class="blank">—</td><td><span class="b b-bad">Unverified</span></td><td class="blank" title="No official source could confirm this">no source — unverified</td></tr>
+<tr><td>Q-05</td><td>Lender quote: interest rate and LTV for a 5-year fixed loan on the asset</td><td>commercial mortgage lender</td><td class="blank">—</td><td><span class="b b-bad">Unverified</span></td><td class="blank" title="No official source could confirm this">no source — unverified</td></tr>
+<tr><td>Q-06</td><td>Insurance quote: annual premium for the building</td><td>licensed insurance broker</td><td class="blank">—</td><td><span class="b b-bad">Unverified</span></td><td class="blank" title="No official source could confirm this">no source — unverified</td></tr>
+</tbody></table></div><p class="tbl-note">Six quote slots, all empty. No official source publishes single-tenant QSR cap rates, and no broker quotes were obtained — so the honest value is blank, not a guess.</p>
+
+<div class="card">
+  <h3 style="margin-top:0">Method, ready to run the moment quotes exist</h3>
+  <ol class="tight">
+    <li>Take the long-term cap rate from Q-01 and the short-term cap rate from Q-02 on the same asset, same submarket, same month. Any difference in asset quality invalidates the comparison.</li>
+    <li>Short-lease discount = short-term cap rate minus long-term cap rate, in basis points.</li>
+    <li>Value effect = NOI / long-term cap rate minus NOI / short-term cap rate. Report both the discount in bp and the value gap in dollars; they answer different questions.</li>
+    <li>Sanity check against Q-03 and Q-04. If the broker-implied discount is not corroborated by at least one closed transaction or appraisal, treat it as an opinion and label it as such on the site.</li>
+    <li>Back-test: apply the implied discount to three historical local sales if any can be documented, and show the error. Until step 5 can be run, the model stays labelled &#39;unbacktested&#39;.</li>
+  </ol>
+  <div class="callout c-warn" style="margin-bottom:0"><strong>Anti-pattern</strong>Do not average Q-01 and Q-02 into a single blended cap rate. The whole point is that they differ, and that difference is the priced risk.</div>
+</div>
+
+<h2>The gates that block a verdict</h2>
+<div class="tbl-wrap"><table><thead><tr><th>ID</th><th>Question</th><th>Blocks</th><th>Status</th></tr></thead><tbody>
+<tr><td>G-04</td><td>What is the exact lease expiration date and what options exist?</td><td>sell side, hold side</td><td><span class="b b-neutral">open</span></td></tr>
+<tr><td>G-05</td><td>What is contract rent, and are all three nets actually recovered?</td><td>sell side</td><td><span class="b b-neutral">open</span></td></tr>
+<tr><td>G-06</td><td>What are two to three real broker cap-rate quotes for this asset class and submarket?</td><td>sell side</td><td><span class="b b-neutral">open</span></td></tr>
+<tr><td>G-07</td><td>What is adjusted basis and accumulated depreciation?</td><td>after-tax</td><td><span class="b b-neutral">open</span></td></tr>
+<tr><td>G-08</td><td>What is the actual insurance premium and renewal date?</td><td>hold side</td><td><span class="b b-neutral">open</span></td></tr>
+<tr><td>G-09</td><td>Is there a financing prepayment penalty?</td><td>sell side</td><td><span class="b b-neutral">open</span></td></tr>
+<tr><td>G-10</td><td>Has the building any unremediated seismic or accessibility deficiency?</td><td>hold side, sale timing</td><td><span class="b b-neutral">open</span></td></tr>
+</tbody></table></div>
+
+<hr class="sep">
+
+<h2 id="calculator">Private calculator</h2>
+<p class="sub">Everything you type stays in this browser tab. There is no network request, no analytics, no storage, and nothing is written to this repository. Verify it yourself: the calculator is a single JavaScript file with no dependencies, and it never calls <code>fetch</code>.</p>
+
+<div class="calc" id="calc">
+  <fieldset>
+    <legend>1 · Sale today</legend>
+    <div class="fields">
+      <div class="field"><label for="c_price">Sale price (USD)</label><input id="c_price" type="number" min="0" step="1000" placeholder="0"><div class="hint">Your broker's opinion or a contract price.</div></div>
+      <div class="field"><label for="c_cap_in">Cap rate paid (offer), %</label><input id="c_cap_in" type="number" min="0" step="0.05" placeholder="e.g. 5.75"><div class="hint">From a real quote, not a guess.</div></div>
+      <div class="field"><label for="c_sellcost">Selling costs, % of price</label><input id="c_sellcost" type="number" min="0" step="0.1" value="4"><div class="hint">Commission, title, transfer tax, legal. 3–6% typical.</div></div>
+      <div class="field"><label for="c_basis">Adjusted basis (USD)</label><input id="c_basis" type="number" min="0" step="1000" placeholder="0"><div class="hint">Cost + improvements − depreciation taken.</div></div>
+      <div class="field"><label for="c_deprec">Accumulated depreciation (USD)</label><input id="c_deprec" type="number" min="0" step="1000" placeholder="0"><div class="hint">Drives the 25% recapture slice.</div></div>
+      <div class="field"><label for="c_mortgage">Mortgage payoff (USD)</label><input id="c_mortgage" type="number" min="0" step="1000" value="0"><div class="hint">Balance plus any prepayment penalty.</div></div>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>2 · Tax position</legend>
+    <div class="fields">
+      <div class="field"><label for="c_filing">Filing status</label><select id="c_filing">
+        <option value="single">Single</option>
+        <option value="mfj" selected>Married filing jointly</option>
+        <option value="mfs">Married filing separately</option>
+        <option value="hoh">Head of household</option>
+      </select></div>
+      <div class="field"><label for="c_income">Other taxable income (USD)</label><input id="c_income" type="number" min="0" step="1000" value="0"><div class="hint">Sets the bracket the gain lands in.</div></div>
+      <div class="field"><label for="c_ca">California marginal rate, %</label><input id="c_ca" type="number" min="0" max="13.3" step="0.1" value="9.3"><div class="hint">Enter your own bracket. This is not baked in — see <a href="flagged.html">IR-06</a>.</div></div>
+      <div class="field"><label for="c_reinvest">Reinvest with §1031?</label><select id="c_reinvest">
+        <option value="no" selected>No — recognise the gain</option>
+        <option value="yes">Yes — defer everything</option>
+      </select><div class="hint">Deferral is not forgiveness; basis carries over.</div></div>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>3 · Hold and renew</legend>
+    <div class="fields">
+      <div class="field"><label for="c_rent">Contract rent, year 1 (USD)</label><input id="c_rent" type="number" min="0" step="1000" placeholder="0"><div class="hint">Annual base rent.</div></div>
+      <div class="field"><label for="c_opex">Landlord expense not recovered (USD/yr)</label><input id="c_opex" type="number" min="0" step="1000" value="0"><div class="hint">The part that is genuinely not reimbursed.</div></div>
+      <div class="field"><label for="c_ins">Insurance (USD/yr)</label><input id="c_ins" type="number" min="0" step="1000" placeholder="0"><div class="hint">Leave blank if unknown — output will be flagged.</div></div>
+      <div class="field"><label for="c_tax">Property tax (USD/yr)</label><input id="c_tax" type="number" min="0" step="1000" placeholder="0"><div class="hint">Post-decline-in-value if you file.</div></div>
+      <div class="field"><label for="c_esc">Rent escalation, %/yr</label><input id="c_esc" type="number" step="0.1" value="2"><div class="hint">Compare against local CPI of 3.7%.</div></div>
+      <div class="field"><label for="c_years">Years remaining</label><input id="c_years" type="number" min="1" max="20" step="1" value="5"><div class="hint">From the lease, not the 2030–2035 window.</div></div>
+      <div class="field"><label for="c_disc">Discount rate, %</label><input id="c_disc" type="number" min="0" step="0.1" placeholder="0"><div class="hint">At least 4.92% (10-yr UST) plus a risk premium. No default — this is yours.</div></div>
+      <div class="field"><label for="c_cap_out">Exit cap rate, %</label><input id="c_cap_out" type="number" min="0" step="0.05" placeholder="0"><div class="hint">Terminal value is not computed without it.</div></div>
+      <div class="field"><label for="c_vac">Vacancy months at expiry</label><input id="c_vac" type="number" min="0" max="36" step="1" value="12"><div class="hint">Downtime before re-leasing.</div></div>
+      <div class="field"><label for="c_capex">Capex backlog (USD)</label><input id="c_capex" type="number" min="0" step="1000" value="0"><div class="hint">Roof, HVAC, seismic, parking.</div></div>
+    </div>
+  </fieldset>
+
+  <div class="btnrow">
+    <button id="c_run" type="button">Compute comparison</button>
+    <button id="c_clear" class="ghost" type="button">Clear all</button>
+  </div>
+
+  <div id="c_out" class="hidden">
+    <div class="out" id="c_kpis"></div>
+    <div id="c_warnbox"></div>
+    <div id="c_table"></div>
+  </div>
+</div>
+
+<div class="callout c-info"><strong>Why there is no default cap rate or discount rate</strong>A cap rate multiplies straight into value: 100 basis points on a 5% cap is roughly a 17% swing in price. Shipping a default would make an assumption look like an answer. Both fields start empty on purpose, and the calculator refuses to produce a terminal value without them.</div>
+
+  </div>
+</main>
+<footer class="site">
+  <div class="wrap">
+    <p><b>Privacy.</b> This site publishes aggregate, non-identifying findings only. No parcel address, owner identity, APN, lease document, rent figure or personal finance appears anywhere in this repository or on this site. The parcel is referred to as <code>PARCEL-001</code> throughout.</p>
+    <p><b>Integrity.</b> Every data row carries a source identifier linking to an official source. Where an official source could not confirm a value, the value is left blank and listed on <a href="flagged.html">Flagged for review</a>. Nothing is inferred or filled in.</p>
+    <p class="faint">Data cut-off 2026-11-25 · Build 2026-11-25 · Not investment, legal or tax advice. Engage a licensed appraiser, attorney and CPA before acting.</p>
+  </div>
+</footer>
+</body>
+</html>

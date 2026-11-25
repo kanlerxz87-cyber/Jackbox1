@@ -1,0 +1,151 @@
+{
+  "meta": {
+    "dataset": "flagged",
+    "version": "1.0",
+    "as_of": "2026-11-25",
+    "owner_session": "ses-41ea221b",
+    "purpose": "Everything that could not be confirmed against an official source, plus every irregularity found while verifying line by line. These items are published deliberately, with source links, so they can be reviewed after the site is live. They do not block publication.",
+    "counting_rule": "An item is 'unverified' if a value is required for the decision but no official source could confirm it in this session. It is left blank in the data, never filled with an estimate."
+  },
+  "irregularities": [
+    {
+      "id": "IR-01",
+      "severity": "high",
+      "title": "The parcel is not identified anywhere in the repository or the brief",
+      "detail": "The brief says 'around central los Angeles' but supplies no address, APN or coordinates. Privacy rules forbid publishing them, but they are also simply absent. Every parcel-level deliverable — tract census, flood zone, fire severity zone, traffic count, competitive ring — therefore cannot be completed, only prepared.",
+      "impact": "W-01 and W-04 are structurally blocked at the parcel level. The site publishes the method and the reference-point proof instead of the parcel answer.",
+      "action_requested": "Supply the location in the secure workspace. Do not send it through chat and do not commit it.",
+      "sources": ["S-007", "S-006", "S-009", "S-020"]
+    },
+    {
+      "id": "IR-02",
+      "severity": "high",
+      "title": "The lease expiration is stated as an eight-year window (2030-2035)",
+      "detail": "An eight-year window is not a term. A 2030 expiration with no options and a 2031 expiration with two five-year options are different assets, priced differently. No public source — including the tenant's SEC filings — discloses per-store lease expiration dates at this granularity, so the window could not be externally verified either.",
+      "impact": "The single largest driver of value in this project is unresolved. The site refuses to price the asset until it is fixed.",
+      "action_requested": "Provide the executed lease or state the four calendar dates directly.",
+      "sources": ["S-011"]
+    },
+    {
+      "id": "IR-03",
+      "severity": "medium",
+      "title": "The brief mixes two different decision makers",
+      "detail": "It asks for the best decision 'for the property and myself as an individual'. Those can conflict. The property-optimal answer might be 'hold for the rent', while the owner-optimal answer might be 'sell to reduce concentration'. Resolving that requires private net-worth and liquidity data that cannot appear on a public site.",
+      "impact": "The site separates the two: it can describe the property arithmetic, but the portfolio-fit judgement is flagged as an adviser conversation.",
+      "action_requested": "Confirm which framing has priority, or treat both as constraints.",
+      "sources": []
+    },
+    {
+      "id": "IR-04",
+      "severity": "medium",
+      "title": "The Census data API rejected every keyless request",
+      "detail": "Requests to api.census.gov/data/2024/acs/acs5 returned a 'Missing Key' page. A free key is required. This blocked the tract-level pull that W-01 depends on.",
+      "impact": "No tract-level demographic figures could be retrieved this session. All city-level figures are marked as failing the trade-area test rather than being passed off as trade-area numbers.",
+      "action_requested": "Register a key and re-run the documented query in data/tradearea.json.",
+      "sources": ["S-020"]
+    },
+    {
+      "id": "IR-05",
+      "severity": "medium",
+      "title": "The CAL FIRE LRA 2025 feature service returned an empty result at the reference point",
+      "detail": "The query succeeded but returned zero features. An empty result is consistent with 'not in a zoned area' but is not an official determination. It was recorded as unverified rather than interpreted as 'no fire hazard'.",
+      "impact": "Fire zone status remains unknown even at the reference point. Interpreting an empty response as 'safe' would be exactly the kind of inference the owner prohibited.",
+      "action_requested": "Confirm on the official OSFM address viewer.",
+      "sources": ["S-009"]
+    },
+    {
+      "id": "IR-06",
+      "severity": "medium",
+      "title": "The California FTB tax rate schedule page failed to load",
+      "detail": "The 2025 540 tax rate schedules page did not return content during this session. The 1% to 12.3% range and the mental health surcharge are widely cited but were not verified line by line here.",
+      "impact": "No California marginal rate is baked into the calculator. The reader supplies it. California's lack of a preferential capital-gain rate itself IS verified (S-017, S-018).",
+      "action_requested": "Download the current 540 rate schedule PDF from ftb.ca.gov and confirm the brackets.",
+      "sources": ["S-017", "S-018"]
+    },
+    {
+      "id": "IR-07",
+      "severity": "low",
+      "title": "The Los Angeles County QuickFacts page failed repeatedly",
+      "detail": "Two attempts to fetch the county-level QuickFacts table failed. City-level figures were used instead and labelled as city-level.",
+      "impact": "No county-level demographics are presented. This is disclosed rather than substituting city figures silently.",
+      "action_requested": "Retry, or pull county figures directly from the ACS API once the key exists.",
+      "sources": ["S-001"]
+    },
+    {
+      "id": "IR-08",
+      "severity": "low",
+      "title": "Metro HPI series choice: 31084 (MSA) rather than 31080 (metropolitan division)",
+      "detail": "The first attempt at ATNHPIUS31080Q failed to fetch. The FHFA series that loaded was ATNHPIUS31084Q, the Los Angeles-Long Beach-Anaheim MSA. The two are different geographies.",
+      "impact": "Every HPI figure in this project is the MSA. Nothing was relabelled as the division. The back-test result is therefore metro-wide, which is stated in the model's limitations.",
+      "action_requested": "Confirm the MSA is the intended geography, or re-pull the division series.",
+      "sources": ["S-005"]
+    },
+    {
+      "id": "IR-09",
+      "severity": "low",
+      "title": "CPI 12-month change is printed for September, not October",
+      "detail": "The BLS Economy at a Glance table lists the October 2026 CPI index value (360.965) but the 12-month change column stops at September (3.7%). The October change was not printed.",
+      "impact": "The site shows the September change and says so, rather than computing an October change from an index into which a base-period assumption would have to be introduced.",
+      "action_requested": "None — this is a disclosure, not an error.",
+      "sources": ["S-002"]
+    },
+    {
+      "id": "IR-10",
+      "severity": "high",
+      "title": "No cap rate, rent, basis or insurance figure exists anywhere in this repository",
+      "detail": "Six named quote slots (Q-01 to Q-06) and all sell-side and hold-side inputs are null. There is no official federal, state or county source for single-tenant QSR cap rates, and no broker quotes were obtained.",
+      "impact": "W-02 and the after-tax module are delivered as a verified METHOD with a working browser calculator, not as a computed comparison. Any published verdict would have required inventing a cap rate.",
+      "action_requested": "Engage brokers and an appraiser, and supply basis and insurance documents privately.",
+      "sources": ["S-004", "S-013", "S-015"]
+    },
+    {
+      "id": "IR-11",
+      "severity": "low",
+      "title": "Hazard screening used a downtown reference point, not the parcel",
+      "detail": "All three hazard queries were run at 34.0522 / -118.2437 to prove the method and capture genuine official responses. Those values are labelled reference-only in every row.",
+      "impact": "The dashboard shows real USGS and FEMA output, clearly stamped as not the parcel. This demonstrates capability without pretending to have the answer.",
+      "action_requested": "Re-run the three prepared queries with the parcel coordinates.",
+      "sources": ["S-006", "S-007"]
+    },
+    {
+      "id": "IR-12",
+      "severity": "low",
+      "title": "Tenant identity is public, owner identity is not in this repository",
+      "detail": "Jack in the Box Inc. is an SEC registrant, so its filings are legitimately public and are cited. The franchisee entity and the owner are private and appear nowhere. No public record in this repo can link the parcel to a person.",
+      "impact": "Confirms the privacy model held: the site names a public corporate brand and nothing else.",
+      "action_requested": "None.",
+      "sources": ["S-011", "S-012"]
+    }
+  ],
+  "unverified_values": [
+    { "id": "UV-01", "item": "Parcel census tract and tract demographics", "why": "IR-01 plus IR-04", "page": "market" },
+    { "id": "UV-02", "item": "1/3/5-mile ring aggregates", "why": "No official source publishes ring aggregates; must be computed or bought", "page": "market" },
+    { "id": "UV-03", "item": "Parcel FEMA flood zone", "why": "IR-01, IR-11", "page": "hazards" },
+    { "id": "UV-04", "item": "Parcel CAL FIRE severity zone", "why": "IR-01, IR-05", "page": "hazards" },
+    { "id": "UV-05", "item": "Parcel seismic design values", "why": "IR-01, IR-11", "page": "hazards" },
+    { "id": "UV-06", "item": "Seismic retrofit status", "why": "Requires private report", "page": "hazards" },
+    { "id": "UV-07", "item": "Liquefaction and landslide susceptibility", "why": "Requires CGS quadrangle maps for the exact site", "page": "hazards" },
+    { "id": "UV-08", "item": "Insurance premium, limits, deductibles, BI period", "why": "Private binder", "page": "decision" },
+    { "id": "UV-09", "item": "Contract rent and expense recoveries", "why": "Private lease", "page": "decision" },
+    { "id": "UV-10", "item": "Exit cap rate and short-lease discount", "why": "IR-10", "page": "decision" },
+    { "id": "UV-11", "item": "Adjusted basis and accumulated depreciation", "why": "Private tax records", "page": "decision" },
+    { "id": "UV-12", "item": "California marginal bracket", "why": "IR-06", "page": "decision" },
+    { "id": "UV-13", "item": "Exact lease expiration and option dates", "why": "IR-02", "page": "lease" },
+    { "id": "UV-14", "item": "Traffic count on the adjacent street", "why": "IR-01; segment unknown", "page": "market" },
+    { "id": "UV-15", "item": "Competitive QSR set within 3 miles", "why": "Requires field survey or licensed vendor", "page": "market" },
+    { "id": "UV-16", "item": "Franchisee financials and guaranty", "why": "Private", "page": "lease" }
+  ],
+  "what_was_verified": [
+    "Los Angeles city population, income, poverty, education, housing, retail sales (Census QuickFacts)",
+    "Metro labour force, unemployment, sector employment, CPI (BLS)",
+    "47 quarters of metro HPI and the derived back-test statistics (FHFA via FRED)",
+    "10-year Treasury at 4.92% on 2026-11-23 and its November range (Federal Reserve H.15 via FRED)",
+    "Reference-point FEMA flood zone, USGS seismic parameters and SDC, and the central-LA earthquake count",
+    "Twenty county disaster declarations with numbers and dates (OpenFEMA)",
+    "Federal capital gain rates, 25% recapture, 3.8% NIIT thresholds, §1031 45/180-day limits, depreciation basis rules (IRS)",
+    "California has no preferential capital gain rate (FTB)",
+    "Decline-in-value window: opens 2026-07-02, deadline 2026-11-30 (LA County Assessor)",
+    "Caltrans is the official AADT source for state highways (Caltrans)",
+    "Jack in the Box is an SEC registrant with public 10-K and XBRL revenue (SEC)"
+  ]
+}

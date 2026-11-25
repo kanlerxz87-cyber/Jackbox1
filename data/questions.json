@@ -1,0 +1,208 @@
+{
+  "meta": {
+    "dataset": "questions",
+    "version": "1.0",
+    "as_of": "2026-11-25",
+    "owner_session": "ses-41ea221b",
+    "purpose": "A clear list of the questions, information and answers that must be resolved before any decision about PARCEL-001 can reasonably be made — separated into what we HAVE, what we DO NOT HAVE, and how each gap gets closed.",
+    "rule": "Every open question names (a) why it blocks the decision, (b) who holds it, (c) how to discover it, and (d) whether it can be obtained without revealing private data. A question with no discovery path is not a question, it is a wish."
+  },
+  "have": [
+    { "id": "HV-01", "item": "Metro labour market and unemployment", "evidence": "4.6% unemployment, October 2026, and a full sector breakdown", "source_id": "S-002" },
+    { "id": "HV-02", "item": "Metro asset-price trend, 47 quarters", "evidence": "HPI 282.59 to 553.76, with a completed mean-reversion back-test", "source_id": "S-005" },
+    { "id": "HV-03", "item": "Current risk-free rate", "evidence": "10-year Treasury 4.92% on 2026-11-23", "source_id": "S-004" },
+    { "id": "HV-04", "item": "City demographic and income baseline", "evidence": "Population 3,869,089; median household income $81,939; poverty 16.5%", "source_id": "S-001" },
+    { "id": "HV-05", "item": "County disaster history", "evidence": "20 most recent declarations enumerated, including DR-4856 and DR-4482", "source_id": "S-008" },
+    { "id": "HV-06", "item": "Hazard query method that works", "evidence": "FEMA NFHL, USGS ASCE 7-22 and CAL FIRE services all returned real responses", "source_id": "S-007" },
+    { "id": "HV-07", "item": "Federal and California tax treatment of a sale", "evidence": "Capital gain rates, 25% recapture, 3.8% NIIT, California ordinary-income treatment, §1031 timing", "source_id": "S-013" },
+    { "id": "HV-08", "item": "Tenant credit context", "evidence": "Jack in the Box is an SEC registrant; 10-K and XBRL revenue series are public", "source_id": "S-011" },
+    { "id": "HV-09", "item": "A dated, verified action item", "evidence": "Decline-in-value deadline 2026-11-30", "source_id": "S-019" }
+  ],
+  "do_not_have": [
+    {
+      "id": "G-01",
+      "priority": 1,
+      "question": "What is the parcel's exact location, and therefore its census tract, flood zone, fire zone and submarket?",
+      "why_blocks": "Every parcel-specific figure in this project is empty because of this. Tract demographics, flood zone, fire severity zone and the whole competitive ring are all downstream of one address.",
+      "holder": "Owner (private)",
+      "discovery": "Provide the address or APN in the secure workspace only. Then run the three prepared hazard queries in data/hazards.json and the tract pull in data/tradearea.json.",
+      "privacy_safe": "Yes — the queries return zone classifications that can be summarised without publishing the address.",
+      "status": "open"
+    },
+    {
+      "id": "G-02",
+      "priority": 2,
+      "question": "Why did the Census tract pull fail, and can it be made to work?",
+      "why_blocks": "Blocks W-01 entirely. Without tract data there is no trade area, only city-level averages that the owner correctly rejected as proxies.",
+      "holder": "Anyone with a Census API key",
+      "discovery": "The API returned 'Missing Key' for every keyless request. Register a free key at the Census key signup page and re-run the documented query in data/tradearea.json.",
+      "privacy_safe": "Yes — tract data is public aggregate data.",
+      "status": "open",
+      "note": "This is the cheapest gap to close and it unlocks the largest block of work."
+    },
+    {
+      "id": "G-03",
+      "priority": 1,
+      "question": "What are the parcel's actual seismic, flood and fire zone statuses?",
+      "why_blocks": "W-04 exists to replace regional hazard context with actual zone status. Until this closes, the site can only show that the method works at a reference point.",
+      "holder": "Owner / public records once address is known",
+      "discovery": "Run the three queries with the parcel coordinates; confirm fire on the official OSFM viewer; order a property condition and seismic assessment.",
+      "privacy_safe": "Yes for the zone lookup. No for the assessment, which names the address.",
+      "status": "open"
+    },
+    {
+      "id": "G-04",
+      "priority": 1,
+      "question": "What is the exact lease expiration date, and what renewal options exist?",
+      "why_blocks": "The brief says 2030-2035. That eight-year spread is the difference between a 3-year and a 9-year asset. It changes the answer more than any forecast in this project.",
+      "holder": "Owner / the lease document",
+      "discovery": "Lease abstract by a qualified abstractor. Only dates and structure need to leave the private workspace.",
+      "privacy_safe": "Yes — dates carry no personal information.",
+      "status": "open"
+    },
+    {
+      "id": "G-05",
+      "priority": 2,
+      "question": "What is the contract rent, and are all three nets truly recovered?",
+      "why_blocks": "Drives NOI and therefore both the sale value and the hold value.",
+      "holder": "Owner / lease and CAM reconciliation",
+      "discovery": "Rent roll plus three years of expense reconciliations.",
+      "privacy_safe": "No — must stay private. Entered only into the browser calculator.",
+      "status": "open"
+    },
+    {
+      "id": "G-06",
+      "priority": 1,
+      "question": "What cap rate will a buyer actually pay for this asset, and what discount applies to its remaining term?",
+      "why_blocks": "There is no official source for single-tenant QSR cap rates. Every sell-side number depends on this.",
+      "holder": "Licensed brokers and appraiser",
+      "discovery": "Engage two or three brokers for a written opinion under NDA; obtain one appraisal. Record quotes as spreads over the verified 4.92% Treasury.",
+      "privacy_safe": "No — quotes are asset-specific and confidential.",
+      "status": "open"
+    },
+    {
+      "id": "G-07",
+      "priority": 2,
+      "question": "What is the adjusted basis and accumulated depreciation?",
+      "why_blocks": "Without it there is no after-tax comparison, only a pre-tax one, which understates the cost of selling.",
+      "holder": "Owner's CPA / tax returns and depreciation schedules",
+      "discovery": "Request the depreciation schedule and prior returns from the preparer.",
+      "privacy_safe": "No — strictly private.",
+      "status": "open"
+    },
+    {
+      "id": "G-08",
+      "priority": 1,
+      "question": "What is the current insurance premium, and what exactly does the policy cover?",
+      "why_blocks": "Post-2025 California repricing makes insurance a top-three expense and the main unquantified hold risk.",
+      "holder": "Insurance broker",
+      "discovery": "Read the binder: limits, deductibles, business-interruption period, flood and earthquake sub-limits, exclusions, renewal date.",
+      "privacy_safe": "No — private, but only the premium and coverage shape are needed for the model.",
+      "status": "open"
+    },
+    {
+      "id": "G-09",
+      "priority": 3,
+      "question": "Is there debt on the property, and does it have a prepayment penalty or lockout?",
+      "why_blocks": "Changes net sale proceeds and can make a sale uneconomic in a given window.",
+      "holder": "Lender / loan documents",
+      "discovery": "Loan statement and promissory note.",
+      "privacy_safe": "No — private.",
+      "status": "open"
+    },
+    {
+      "id": "G-10",
+      "priority": 2,
+      "question": "Are there unremediated building deficiencies — seismic, accessibility, roof, HVAC?",
+      "why_blocks": "Buyers price these in; a hold has to pay for them.",
+      "holder": "Property condition assessor; City of Los Angeles records",
+      "discovery": "Commission a property condition assessment; pull permit history and any retrofit orders.",
+      "privacy_safe": "Mixed — the report is private, the permit history is public.",
+      "status": "open"
+    },
+    {
+      "id": "G-11",
+      "priority": 2,
+      "question": "What is the competitive set within 1, 3 and 5 miles?",
+      "why_blocks": "Tenant renewal intent is a function of store performance, which is a function of nearby competition and traffic.",
+      "holder": "Licensed data vendor or field survey",
+      "discovery": "Field survey of QSR units in the ring, or a licensed location-intelligence subscription. Note that vendor data is not official and must be labelled as such.",
+      "privacy_safe": "Yes — public businesses.",
+      "status": "open"
+    },
+    {
+      "id": "G-12",
+      "priority": 2,
+      "question": "What is the actual traffic count on the adjacent street?",
+      "why_blocks": "AADT is the standard QSR demand proxy and a major rent driver.",
+      "holder": "Caltrans for state highways; City of Los Angeles for surface streets",
+      "discovery": "Caltrans publishes AADT files by segment (see S-010). City streets require the city traffic engineering office.",
+      "privacy_safe": "Yes",
+      "status": "open",
+      "note": "Cannot be pulled until the adjacent segment is known — blocked by G-01."
+    },
+    {
+      "id": "G-13",
+      "priority": 2,
+      "question": "Is the tenant franchisee creditworthy, and what does the guaranty actually cover?",
+      "why_blocks": "The lease is only as good as the operator behind it. Jack in the Box the brand is not the same credit as the franchisee entity.",
+      "holder": "Franchisee financials / guaranty",
+      "discovery": "Request franchisee financial statements and the guaranty. Public brand filings (S-011) do not substitute.",
+      "privacy_safe": "No — private.",
+      "status": "open"
+    },
+    {
+      "id": "G-14",
+      "priority": 3,
+      "question": "What is the owner's own liquidity position and concentration?",
+      "why_blocks": "The best property decision can still be wrong for the person if it leaves them illiquid or over-concentrated.",
+      "holder": "Owner",
+      "discovery": "Internal net-worth and liquidity statement, reviewed with an adviser. Never published.",
+      "privacy_safe": "No — strictly private.",
+      "status": "open"
+    },
+    {
+      "id": "G-15",
+      "priority": 3,
+      "question": "What is the exact California marginal rate that will apply to the gain?",
+      "why_blocks": "The FTB bracket page could not be loaded during this session, so no bracket is baked into the calculator.",
+      "holder": "California FTB",
+      "discovery": "Download the current year 540 tax rate schedule PDF directly from ftb.ca.gov and verify the top bracket and mental-health surcharge.",
+      "privacy_safe": "Yes",
+      "status": "open"
+    }
+  ],
+  "answered_by_design": [
+    {
+      "id": "AD-01",
+      "question": "Should this site publish the parcel address or owner identity?",
+      "answer": "No. Never. See PRIVACY.md. The site is built so that it is useful with the address removed.",
+      "status": "decided"
+    },
+    {
+      "id": "AD-02",
+      "question": "Should a sell or renew recommendation be published now?",
+      "answer": "No. Both sides are missing every property-level input. Publishing a verdict would require inventing inputs, which the owner prohibited. The site publishes the decision rule and the gates instead.",
+      "status": "decided"
+    },
+    {
+      "id": "AD-03",
+      "question": "Should a cap rate be assumed for illustration?",
+      "answer": "No. A cap rate multiplies directly into value; an assumed one would silently become the answer. The calculator takes it as a reader input.",
+      "status": "decided"
+    }
+  ],
+  "sequence": {
+    "why_order_matters": "G-01 unlocks G-03 and G-12. G-04 is independent and can start today. G-02 is free and unlocks the whole of W-01. Doing G-06 before G-04 would price the wrong asset.",
+    "recommended_order": [
+      { "step": 1, "gaps": ["G-02"], "why": "Free, fast, unlocks trade-area work." },
+      { "step": 2, "gaps": ["G-04"], "why": "Highest decision impact per hour spent. Prevents an irreversible loss." },
+      { "step": 3, "gaps": ["G-01", "G-03"], "why": "Unlocks every parcel-level figure." },
+      { "step": 4, "gaps": ["G-08", "G-10"], "why": "Converts four black-swan scenarios from qualitative to quantified." },
+      { "step": 5, "gaps": ["G-06", "G-05"], "why": "Only meaningful once the remaining term is known." },
+      { "step": 6, "gaps": ["G-07", "G-09"], "why": "Needed for the after-tax module to say anything real." },
+      { "step": 7, "gaps": ["G-11", "G-12", "G-13"], "why": "Refines the renewal probability once the shape of the decision exists." },
+      { "step": 8, "gaps": ["G-14", "G-15"], "why": "Final portfolio fit and state tax precision." }
+    ]
+  }
+}
