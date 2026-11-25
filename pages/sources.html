@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sources · Jackbox property decision workspace</title>
+<meta name="description" content="Anonymised, source-verified decision workspace for a single-tenant quick-service restaurant parcel in central Los Angeles. Public aggregate findings only.">
+<meta name="robots" content="index,follow">
+<link rel="stylesheet" href="../assets/css/site.css">
+
+</head>
+<body>
+<header class="site">
+  <div class="wrap hdr">
+    <a class="brand" href="index.html"><span class="dot"></span>JACKBOX&nbsp;/&nbsp;PARCEL-001</a>
+    <nav class="main">
+        <a href="index.html">Dashboard</a>
+        <a href="market.html">Market &amp; trade area</a>
+        <a href="hazards.html">Hazard screening</a>
+        <a href="lease.html">Lease &amp; calendar</a>
+        <a href="decision.html">Sell vs hold</a>
+        <a href="scenarios.html">Model &amp; stress</a>
+        <a href="questions.html">Open questions</a>
+        <a href="suggestions.html">Suggestions</a>
+        <a href="flagged.html">Flagged for review</a>
+        <a href="sources.html" aria-current="page">Sources</a>
+        <a href="print.html">Printable brief</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <div class="wrap">
+
+<div class="eyebrow">Source register</div>
+<h1>Sources</h1>
+<p class="lede">Every figure on this site traces to one of these 22 official sources. All are government or Federal-Reserve-hosted, retrieved 2026-11-25, and enforced by an automated allowlist check in the build.</p>
+
+<div class="callout c-info"><strong>Verification rule applied</strong>A row is only marked verified if the value was read directly from the official page or API response during this session. Where an official source could not be reached, the row is left blank and listed on <a href="flagged.html">Flagged for review</a> — never filled with an estimate.</div>
+
+<div class="tbl-wrap"><table><thead><tr><th>ID</th><th>Publisher</th><th>Document</th><th>Used for</th><th>Retrieved</th></tr></thead><tbody>
+<tr><td>S-001</td><td>U.S. Census Bureau</td><td>&lt;a href=&quot;https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045224&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;QuickFacts: Los Angeles city, California (V2025 population estimates; 2020-2024 ACS 5-year)&lt;/a&gt;</td><td>Population, age, income, housing, education, industry receipts, land area for the CITY of Los Angeles.</td><td>2026-11-25</td></tr>
+<tr><td>S-002</td><td>U.S. Bureau of Labor Statistics</td><td>&lt;a href=&quot;https://www.bls.gov/eag/eag.ca_losangeles_md.htm&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Economy at a Glance: Los Angeles-Long Beach-Glendale, CA (data extracted 2026-11-20)&lt;/a&gt;</td><td>Labor force, unemployment rate, nonfarm and sector employment, CPI for the metropolitan division.</td><td>2026-11-25</td></tr>
+<tr><td>S-003</td><td>Federal Housing Finance Agency</td><td>&lt;a href=&quot;https://www.fhfa.gov/data/hpi/datasets&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;FHFA House Price Index datasets (purchase-only, MSAs)&lt;/a&gt;</td><td>Source of record for the MSA house price index series used under S-005.</td><td>2026-11-25</td></tr>
+<tr><td>S-004</td><td>Federal Reserve Board (H.15) via FRED, St. Louis Fed</td><td>&lt;a href=&quot;https://fred.stlouisfed.org/data/DGS10&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;DGS10 — 10-Year Treasury constant maturity&lt;/a&gt;</td><td>Risk-free rate anchor for discounting. Latest observation 2026-11-23.</td><td>2026-11-25</td></tr>
+<tr><td>S-005</td><td>FHFA via FRED, St. Louis Fed</td><td>&lt;a href=&quot;https://fred.stlouisfed.org/graph/fredgraph.csv?id=ATNHPIUS31084Q&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;ATNHPIUS31084Q — All-Transactions House Price Index, Los Angeles-Long Beach-Anaheim MSA&lt;/a&gt;</td><td>House price trend and back-test anchor for the metro.</td><td>2026-11-25</td></tr>
+<tr><td>S-006</td><td>U.S. Geological Survey</td><td>&lt;a href=&quot;https://earthquake.usgs.gov/ws/designmaps/asce7-22.json&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;ASCE 7-22 Web Services — seismic design parameters (hazard tool)&lt;/a&gt;</td><td>Seismic design values (Ss, S1, SDC) at a stated latitude/longitude.</td><td>2026-11-25</td></tr>
+<tr><td>S-007</td><td>FEMA</td><td>&lt;a href=&quot;https://hazards.fema.gov/arcgis/rest/services/public/NFHL/MapServer/28&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;National Flood Hazard Layer (NFHL) — ArcGIS MapServer, layer 28 (flood hazard zones)&lt;/a&gt;</td><td>FEMA flood zone designation at a stated latitude/longitude.</td><td>2026-11-25</td></tr>
+<tr><td>S-008</td><td>FEMA</td><td>&lt;a href=&quot;https://www.fema.gov/api/open/v2/DisasterDeclarationsSummaries&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;OpenFEMA API v2 — DisasterDeclarationsSummaries&lt;/a&gt;</td><td>Federal disaster declarations affecting Los Angeles County.</td><td>2026-11-25</td></tr>
+<tr><td>S-009</td><td>CAL FIRE — Office of the State Fire Marshal</td><td>&lt;a href=&quot;https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Fire Hazard Severity Zones (FHSZ) — 2025 Local Responsibility Area zones; official FHSZ viewer&lt;/a&gt;</td><td>Fire hazard severity zone classification; official lookup front door.</td><td>2026-11-25</td></tr>
+<tr><td>S-010</td><td>Caltrans</td><td>&lt;a href=&quot;https://dot.ca.gov/programs/traffic-operations/census&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Traffic Census Program — Annual Average Daily Traffic (AADT) by state highway&lt;/a&gt;</td><td>Traffic-volume evidence source for the adjacent state highway (parcel-specific segment not yet identified).</td><td>2026-11-25</td></tr>
+<tr><td>S-011</td><td>U.S. Securities and Exchange Commission (EDGAR)</td><td>&lt;a href=&quot;https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Jack in the Box Inc. Form 10-K, fiscal year ended 2025-09-28 (accession 0000807882-25-000072)&lt;/a&gt;</td><td>Corporate credit and operating context for the tenant (public filer).</td><td>2026-11-25</td></tr>
+<tr><td>S-012</td><td>U.S. Securities and Exchange Commission (XBRL API)</td><td>&lt;a href=&quot;https://data.sec.gov/api/xbrl/companyconcept/CIK0000807882/us-gaap/Revenues.json&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Jack in the Box Inc. — companyconcept Revenues (CIK 0000807882)&lt;/a&gt;</td><td>Annual and interim revenue series, machine-readable.</td><td>2026-11-25</td></tr>
+<tr><td>S-013</td><td>Internal Revenue Service</td><td>&lt;a href=&quot;https://www.irs.gov/taxtopics/tc409&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Topic no. 409 — Capital gains and losses&lt;/a&gt;</td><td>Federal long-term capital gain rates, 25% unrecaptured section 1250 rate.</td><td>2026-11-25</td></tr>
+<tr><td>S-014</td><td>Internal Revenue Service</td><td>&lt;a href=&quot;https://www.irs.gov/taxtopics/tc559&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Topic no. 559 — Net investment income tax&lt;/a&gt;</td><td>3.8% NIIT and MAGI thresholds.</td><td>2026-11-25</td></tr>
+<tr><td>S-015</td><td>Internal Revenue Service</td><td>&lt;a href=&quot;https://www.irs.gov/pub/irs-news/fs-08-18.pdf&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;FS-2008-18 — Like-kind exchanges under IRC Section 1031&lt;/a&gt;</td><td>45-day identification / 180-day completion limits for deferral.</td><td>2026-11-25</td></tr>
+<tr><td>S-016</td><td>Internal Revenue Service</td><td>&lt;a href=&quot;https://www.irs.gov/publications/p946&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Publication 946 — How to depreciate property&lt;/a&gt;</td><td>Adjusted basis and depreciation-recapture mechanics.</td><td>2026-11-25</td></tr>
+<tr><td>S-017</td><td>California Franchise Tax Board</td><td>&lt;a href=&quot;https://www.ftb.ca.gov/file/personal/income-types/capital-gains-and-losses.html&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Capital gains and losses&lt;/a&gt;</td><td>California has no preferential capital-gain rate; gains taxed as ordinary income.</td><td>2026-11-25</td></tr>
+<tr><td>S-018</td><td>California Franchise Tax Board</td><td>&lt;a href=&quot;https://www.ftb.ca.gov/forms/2025/2025-540-ca-instructions.html&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;2025 Instructions for Schedule CA (540), line 7a&lt;/a&gt;</td><td>Confirms California taxes long- and short-term gains as regular income.</td><td>2026-11-25</td></tr>
+<tr><td>S-019</td><td>Los Angeles County Assessor</td><td>&lt;a href=&quot;https://assessor.lacounty.gov/proposition-13&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Proposition 13 and decline-in-value (DIV) programme pages&lt;/a&gt;</td><td>Assessment practice, DIV filing window (2026-2027 window opens 2026-07-02, deadline 2026-11-30), disaster relief.</td><td>2026-11-25</td></tr>
+<tr><td>S-020</td><td>U.S. Census Bureau</td><td>&lt;a href=&quot;https://api.census.gov/data/2024/acs/acs5&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;American Community Survey API (tract-level tables; requires an API key)&lt;/a&gt;</td><td>Planned tract-level pull. NOT usable yet: requests without a key return &#39;Missing Key&#39;. Flagged.</td><td>2026-11-25</td></tr>
+<tr><td>S-021</td><td>U.S. Census Bureau</td><td>&lt;a href=&quot;https://www.census.gov/quickfacts/fact/faq/losangelescitycalifornia/PST045225&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;QuickFacts methodology and value notes&lt;/a&gt;</td><td>Explains sampling error, vintage incomparability, and suppression flags.</td><td>2026-11-25</td></tr>
+<tr><td>S-022</td><td>U.S. Census Bureau</td><td>&lt;a href=&quot;https://www.census.gov/programs-surveys/acs/guidance/comparing-acs-data/2024.html&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;American Community Survey 2024 5-year comparison guidance&lt;/a&gt;</td><td>Caution on comparing ACS 5-year vintages.</td><td>2026-11-25</td></tr>
+</tbody></table></div>
+
+<h2>Allowlisted hosts</h2>
+<p class="sub">The build fails if any source URL is outside this list, so an unofficial or scraped source cannot silently enter the register.</p>
+<div class="card"><p class="src" style="word-break:break-all;margin:0">www.census.gov · api.census.gov · www.bls.gov · data.bls.gov · www.fhfa.gov · fred.stlouisfed.org · earthquake.usgs.gov · hazards.fema.gov · www.fema.gov · osfm.fire.ca.gov · www.fire.ca.gov · services8.arcgis.com · services.gis.ca.gov · dot.ca.gov · www.sec.gov · data.sec.gov · www.irs.gov · www.ftb.ca.gov · assessor.lacounty.gov · www.lacity.org · planning.lacity.org · data.lacity.org · geohub.lacity.org · www.cdph.ca.gov · www2.calstate.edu · www.cde.ca.gov · www.hud.gov · www.federalreserve.gov</p></div>
+
+<h2>Reproducing any figure</h2>
+<p class="sub">Where a source is a machine-readable endpoint, the exact query is recorded in the dataset so any number can be reproduced:</p>
+<ul class="tight">
+  <li>Hazard queries: <code>data/hazards.json</code> → <code>query_recipes</code></li>
+  <li>Trade-area query: <code>data/tradearea.json</code> → <code>tract_pull_plan</code></li>
+  <li>Back-test inputs and arithmetic: <code>data/model.json</code> → <code>observations</code></li>
+</ul>
+
+  </div>
+</main>
+<footer class="site">
+  <div class="wrap">
+    <p><b>Privacy.</b> This site publishes aggregate, non-identifying findings only. No parcel address, owner identity, APN, lease document, rent figure or personal finance appears anywhere in this repository or on this site. The parcel is referred to as <code>PARCEL-001</code> throughout.</p>
+    <p><b>Integrity.</b> Every data row carries a source identifier linking to an official source. Where an official source could not confirm a value, the value is left blank and listed on <a href="flagged.html">Flagged for review</a>. Nothing is inferred or filled in.</p>
+    <p class="faint">Data cut-off 2026-11-25 · Build 2026-11-25 · Not investment, legal or tax advice. Engage a licensed appraiser, attorney and CPA before acting.</p>
+  </div>
+</footer>
+</body>
+</html>

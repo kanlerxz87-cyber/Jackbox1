@@ -13,7 +13,7 @@ Run:  python3 tools/build_site.py
 import json, os, re, html, datetime, pathlib, sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-DATA = ROOT / "data"
+DATA = ROOT / "data" / "workspace"  # namespaced so sibling trees keep their own data/
 SITE = ROOT / "workspace"  # this site lives at /workspace/ on the published root
 
 BUILD_DATE = "2026-11-25"

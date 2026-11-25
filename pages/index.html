@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dashboard · Jackbox property decision workspace</title>
+<meta name="description" content="Anonymised, source-verified decision workspace for a single-tenant quick-service restaurant parcel in central Los Angeles. Public aggregate findings only.">
+<meta name="robots" content="index,follow">
+<link rel="stylesheet" href="../assets/css/site.css">
+
+</head>
+<body>
+<header class="site">
+  <div class="wrap hdr">
+    <a class="brand" href="index.html"><span class="dot"></span>JACKBOX&nbsp;/&nbsp;PARCEL-001</a>
+    <nav class="main">
+        <a href="index.html" aria-current="page">Dashboard</a>
+        <a href="market.html">Market &amp; trade area</a>
+        <a href="hazards.html">Hazard screening</a>
+        <a href="lease.html">Lease &amp; calendar</a>
+        <a href="decision.html">Sell vs hold</a>
+        <a href="scenarios.html">Model &amp; stress</a>
+        <a href="questions.html">Open questions</a>
+        <a href="suggestions.html">Suggestions</a>
+        <a href="flagged.html">Flagged for review</a>
+        <a href="sources.html">Sources</a>
+        <a href="print.html">Printable brief</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <div class="wrap">
+
+<div class="eyebrow">Anonymised decision workspace · data cut-off 2026-11-25</div>
+<h1>Sell before expiry, or renew?<br><span style="color:var(--ink-dim);font-size:22px;font-weight:520">A verified evidence base, an explicit decision rule, and no invented numbers.</span></h1>
+<p class="lede">A single-tenant quick-service restaurant parcel in central Los Angeles, on a triple-net lease expiring between 2030 and 2035. This workspace collects, organises and verifies every factor that could affect the decision — and is explicit about what is still unknown.</p>
+
+<div class="ribbon">
+  <div class="chip">Parcel <b>PARCEL-001</b> · address withheld by design</div>
+  <div class="chip">Official sources <b>22</b></div>
+  <div class="chip">Open gates <b>15</b></div>
+  <div class="chip">Flagged items <b>29</b></div>
+  <div class="chip">Model version <b>v0.1-unbacktested-core</b></div>
+</div>
+
+<div class="callout c-bad"><strong>The headline finding, stated plainly</strong>No decision gate can be closed from public data alone. The two inputs that decide this case — the exact lease term and a real cap rate — exist only in private documents. Everything on this site is the scaffolding around those two facts.</div>
+
+
+<div class="grid g4">
+  <div class="kpi"><div class="k-label">Gates closed</div><div class="k-value" style="color:var(--bad)">0 / 15</div><div class="k-note">Decision inputs still open</div></div>
+  <div class="kpi"><div class="k-label">Verified data rows</div><div class="k-value" style="color:var(--ok)">70</div><div class="k-note">each with an official source link</div></div>
+  <div class="kpi"><div class="k-label">Tracked rows</div><div class="k-value">201</div><div class="k-note">across 8 datasets</div></div>
+  <div class="kpi"><div class="k-label">Official sources</div><div class="k-value">22</div><div class="k-note">all government or Fed-hosted</div></div>
+</div>
+
+<h2>Decision-gate progress board <span class="faint" style="font-weight:400">— W-03</span></h2>
+<p class="sub">A gate closes only when an official source or a private document answers it. Nothing here is marked closed on assumption. The board is the honest answer to &ldquo;can a decision be made yet?&rdquo; — <b>not yet, and here is exactly why</b>.</p>
+<div class="grid g2" style="margin-top:16px">
+  <div>
+    <h3 style="margin-top:0">Closed (0 of 15)</h3>
+    <div class="callout c-bad" style="margin-top:0"><strong>Zero closed</strong>No decision gate can close without the parcel location or the lease dates. This is the finding, not a failure of the work.</div>
+    
+    <h3>Open (15 of 15)</h3>
+    <div class="gate"><div class="idx">G-01</div><div class="body"><div class="q">Parcel location known (so tract, zones and ring can be computed)</div><div class="meta">Not in repo; must stay private.</div></div><div class="state"><span class="b b-bad">open</span></div></div><div class="gate"><div class="idx">G-02</div><div class="body"><div class="q">Census tract data retrieved for the trade area</div><div class="meta">API key required.</div></div><div class="state"><span class="b b-bad">open</span></div></div><div class="gate"><div class="idx">G-03</div><div class="body"><div class="q">Parcel flood / fire / seismic zone status confirmed</div><div class="meta">Depends on G-01.</div></div><div class="state"><span class="b b-bad">open</span></div></div><div class="gate"><div class="idx">G-04</div><div class="body"><div class="q">Exact lease expiration and renewal-option dates</div><div class="meta">Highest-impact gap.</div></div><div class="state"><span class="b b-bad">open</span></div></div><div class="gate"><div class="idx">G-05</div><div class="body"><div class="q">Contract rent and NNN recoveries</div><div class="meta">Private lease.</div></div><div class="state"><span class="b b-bad">open</span></div></div><div class="gate"><div class="idx">G-06</div><div class="body"><div class="q">Two or three real cap-rate quotes and a short-lease discount</div><div class="meta">No official source exists.</div></div><div class="state"><span class="b b-bad">open</span></div></div><div class="gate"><div class="idx">G-07</div><div class="body"><div class="q">Adjusted basis and accumulated depreciation</div><div class="meta">Private tax records.</div></div><div class="state"><span class="b b-bad">open</span></div></div><div class="gate"><div class="idx">G-08</div><div class="body"><div class="q">Insurance premium, limits and renewal date</div><div class="meta">Private binder.</div></div><div class="state"><span class="b b-bad">open</span></div></div><div class="gate"><div class="idx">G-09</div><div class="body"><div class="q">Financing terms and prepayment penalty</div><div class="meta">Private loan documents.</div></div><div class="state"><span class="b b-bad">open</span></div></div><div class="gate"><div class="idx">G-10</div><div class="body"><div class="q">Building condition and seismic assessment</div><div class="meta">Requires engagement.</div></div><div class="state"><span class="b b-bad">open</span></div></div><div class="gate"><div class="idx">G-11</div><div class="body"><div class="q">Competitive QSR set within 3 miles</div><div class="meta">Field survey or vendor.</div></div><div class="state"><span class="b b-bad">open</span></div></div><div class="gate"><div class="idx">G-12</div><div class="body"><div class="q">Adjacent-street traffic count</div><div class="meta">Depends on G-01.</div></div><div class="state"><span class="b b-bad">open</span></div></div><div class="gate"><div class="idx">G-13</div><div class="body"><div class="q">Franchisee financials and guaranty</div><div class="meta">Private.</div></div><div class="state"><span class="b b-bad">open</span></div></div><div class="gate"><div class="idx">G-14</div><div class="body"><div class="q">Owner liquidity and concentration</div><div class="meta">Private; adviser conversation.</div></div><div class="state"><span class="b b-bad">open</span></div></div><div class="gate"><div class="idx">G-15</div><div class="body"><div class="q">California marginal bracket confirmed</div><div class="meta">FTB page failed to load.</div></div><div class="state"><span class="b b-bad">open</span></div></div>
+  </div>
+  <div>
+    <h3 style="margin-top:0">Work completed (7)</h3>
+    <div class="gate"><div class="idx">01</div><div class="body"><div class="q">Official source register built and every row linked</div><div class="meta">22 official sources, all on an allowlisted host.</div></div><div class="state"><span class="b b-ok">done</span></div></div><div class="gate"><div class="idx">02</div><div class="body"><div class="q">Metro market and labour evidence verified</div><div class="meta">BLS, FHFA, Federal Reserve.</div></div><div class="state"><span class="b b-ok">done</span></div></div><div class="gate"><div class="idx">03</div><div class="body"><div class="q">Hazard query method proven end to end</div><div class="meta">FEMA, USGS and CAL FIRE services all returned real responses.</div></div><div class="state"><span class="b b-ok">done</span></div></div><div class="gate"><div class="idx">04</div><div class="body"><div class="q">Tax rules for a sale verified</div><div class="meta">IRS capital gains, 25% recapture, 3.8% NIIT, §1031; FTB no-preference rule.</div></div><div class="state"><span class="b b-ok">done</span></div></div><div class="gate"><div class="idx">05</div><div class="body"><div class="q">Macro model built and back-tested</div><div class="meta">Mean reversion in 5-year appreciation, correlation −0.937 over 7 overlapping pairs.</div></div><div class="state"><span class="b b-ok">done</span></div></div><div class="gate"><div class="idx">06</div><div class="body"><div class="q">Browser-only calculator built, transmits nothing</div><div class="meta">Rent, basis and tax stay on the reader&#39;s machine.</div></div><div class="state"><span class="b b-ok">done</span></div></div><div class="gate"><div class="idx">07</div><div class="body"><div class="q">Decision rule published instead of a verdict</div><div class="meta">No winner selected while inputs are missing.</div></div><div class="state"><span class="b b-ok">done</span></div></div>
+    <div class="callout c-warn" style="margin-top:16px">
+      <strong>Read the two columns together</strong>
+      A large amount of verified work can coexist with zero closed decision gates. The work is real: it is the evidence base and the method. The gates are what still stand between that evidence and a signature.
+    </div>
+  </div>
+</div>
+
+
+<h2>Executive summary</h2>
+<div class="card">
+<p><b>The question.</b> For a single-tenant Jack in the Box on a triple-net lease in central Los Angeles, with an expiration reported somewhere between 2030 and 2035: sell before expiry, or renew?</p>
+<p><b>The answer today.</b> It cannot be answered responsibly yet, and this site says so rather than manufacturing a verdict. Both the sell side and the hold side are missing every property-level input. A recommendation built on those inputs would be a fabricated cap rate attached to an eight-year date window.</p>
+<p><b>What the verified evidence does say.</b></p>
+<ul class="tight">
+  <li>The metro labour market is sound but not accelerating: 4.6% unemployment in October 2026, total nonfarm employment up 0.9% year-over-year, with leisure and hospitality up 2.0%.</li>
+  <li>The metro housing index has rolled over at the margin: 4.57% annualised over the last five years, the <b>lowest of 27 rolling windows</b> in the sample, and 0.82% below its 2026 Q1 peak.</li>
+  <li>Trailing appreciation does not predict forward appreciation here. Across 7 overlapping pairs the correlation is <b>−0.937</b>. Extrapolating the last five years would be systematically wrong, in the optimistic direction.</li>
+  <li>The risk-free rate is 4.92% and moved 31 basis points within November 2026 alone. Exit cap rates are not stable.</li>
+  <li>The county has absorbed a major wildfire disaster declaration, five storm and flood declarations and a pandemic declaration within six years. Tail risk here is demonstrated, not hypothetical.</li>
+  <li>California offers no preferential capital-gain rate, depreciation recapture is taxed at up to 25% federally, and the 3.8% net investment income tax may apply. The sale is more expensive after tax than most owners assume.</li>
+</ul>
+<p><b>What can be done this week without any new spending.</b> Three things, and one has a hard deadline:</p>
+<ol class="tight">
+  <li><b>Before 2026-11-30:</b> if assessed value exceeds market value, file the decline-in-value application. It is free and the window closes in days.</li>
+  <li>Pin the four lease dates — option window opens, option deadline, tenant notice, expiration. A lapsed option is the only irreversible loss in this project.</li>
+  <li>Register a free Census API key so the tract-level trade-area analysis can run.</li>
+</ol>
+<p><b>What it would take to answer the real question.</b> Fifteen named information gates, listed above and detailed on <a href="questions.html">Open questions</a>. One of them — the exact lease expiration and its options — matters more than every forecast on this site combined.</p>
+</div>
+
+<h2>What this workspace covers</h2>
+<div class="grid g3">
+  <a class="card" href="market.html" style="display:block;color:inherit"><div class="eyebrow">W-01</div><h3 style="margin:0 0 6px">Market &amp; trade area</h3><p class="sub" style="margin:0">City and county figures are shown only to prove they are the wrong unit of analysis. The tract and ring work is prepared, and blocked on one free API key.</p></a>
+  <a class="card" href="hazards.html" style="display:block;color:inherit"><div class="eyebrow">W-04</div><h3 style="margin:0 0 6px">Hazard screening</h3><p class="sub" style="margin:0">Seismic, flood and fire. Real FEMA and USGS responses captured at a reference point, with the parcel's own zones explicitly still unknown.</p></a>
+  <a class="card" href="lease.html" style="display:block;color:inherit"><div class="eyebrow">Lease</div><h3 style="margin:0 0 6px">Abstract &amp; notice calendar</h3><p class="sub" style="margin:0">Identity-free abstract and a reconciled calendar, including the one dated item that expires in days.</p></a>
+  <a class="card" href="decision.html" style="display:block;color:inherit"><div class="eyebrow">W-02</div><h3 style="margin:0 0 6px">Sell vs hold</h3><p class="sub" style="margin:0">Both sides, the after-tax module, the short-lease discount method, and a calculator that keeps your numbers in your browser.</p></a>
+  <a class="card" href="scenarios.html" style="display:block;color:inherit"><div class="eyebrow">Model</div><h3 style="margin:0 0 6px">Model &amp; stress</h3><p class="sub" style="margin:0">A versioned cash-flow model with a completed back-test, plus the compound black-swan case nobody models.</p></a>
+  <a class="card" href="questions.html" style="display:block;color:inherit"><div class="eyebrow">Gaps</div><h3 style="margin:0 0 6px">Open questions</h3><p class="sub" style="margin:0">Fifteen blocking questions, each with the holder, the discovery path, and a recommended order.</p></a>
+  <a class="card" href="suggestions.html" style="display:block;color:inherit"><div class="eyebrow">Review</div><h3 style="margin:0 0 6px">Suggestions</h3><p class="sub" style="margin:0">Four paths and twelve proposals. You choose the path before anything is implemented.</p></a>
+  <a class="card" href="flagged.html" style="display:block;color:inherit"><div class="eyebrow">Integrity</div><h3 style="margin:0 0 6px">Flagged for review</h3><p class="sub" style="margin:0">Twelve irregularities and sixteen unverified values, each with its source and what would close it.</p></a>
+  <a class="card" href="print.html" style="display:block;color:inherit"><div class="eyebrow">W-10</div><h3 style="margin:0 0 6px">Printable brief</h3><p class="sub" style="margin:0">One page for your advisers. No private figures, safe to hand over.</p></a>
+</div>
+
+<div class="callout c-info"><strong>How to read a blank</strong>A dash in a table means the value is genuinely unknown, not zero and not unimportant. Each one is listed on <a href="flagged.html">Flagged for review</a> with the exact document or lookup that would fill it.</div>
+
+  </div>
+</main>
+<footer class="site">
+  <div class="wrap">
+    <p><b>Privacy.</b> This site publishes aggregate, non-identifying findings only. No parcel address, owner identity, APN, lease document, rent figure or personal finance appears anywhere in this repository or on this site. The parcel is referred to as <code>PARCEL-001</code> throughout.</p>
+    <p><b>Integrity.</b> Every data row carries a source identifier linking to an official source. Where an official source could not confirm a value, the value is left blank and listed on <a href="flagged.html">Flagged for review</a>. Nothing is inferred or filled in.</p>
+    <p class="faint">Data cut-off 2026-11-25 · Build 2026-11-25 · Not investment, legal or tax advice. Engage a licensed appraiser, attorney and CPA before acting.</p>
+  </div>
+</footer>
+</body>
+</html>
