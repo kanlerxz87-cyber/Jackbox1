@@ -13,8 +13,8 @@ Run:  python3 tools/build_site.py
 import json, os, re, html, datetime, pathlib, sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-DATA = ROOT / "data" / "workspace"  # namespaced so sibling trees keep their own data/
-SITE = ROOT / "workspace"  # this site lives at /workspace/ on the published root
+DATA = ROOT / "data" / "audit-78005353"  # namespaced so sibling trees keep their own data/
+SITE = ROOT / "audit-78005353" / "site"  # independent audit pass, published at /audit-78005353/site/
 
 BUILD_DATE = "2026-11-25"
 
@@ -110,7 +110,7 @@ def page(filename, title, eyebrow, body, lede="", extra_head="", wide_note=""):
 <main id="main">
 <div class="no-print" style="border:1px solid var(--line);background:#f7f9fc;border-radius:10px;padding:.7rem 1rem;margin-bottom:1.2rem;font-size:.84rem;color:var(--ink-soft)">
 <strong style="display:block;font-size:.68rem;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:.3rem">Workspace sections &mdash; three independent research trees, all published</strong>
-<a href="../index.html">Desk home</a> &nbsp;&middot;&nbsp; <a href="../pages/market.html">Desk pages</a> &nbsp;&middot;&nbsp; <a href="../docs/index.html">Sourced dashboard</a> &nbsp;&middot;&nbsp; <b>Verified workspace (this section)</b>
+<a href="../../index.html">Root</a> &nbsp;&middot;&nbsp; <a href="../../workspace/index.html">Main workspace</a> &nbsp;&middot;&nbsp; <a href="../../docs/index.html">Sourced dashboard</a> &nbsp;&middot;&nbsp; <b>Independent audit pass (this section)</b>
 </div>
 {lede_html}
 {body}
@@ -120,7 +120,7 @@ def page(filename, title, eyebrow, body, lede="", extra_head="", wide_note=""):
   <div class="footer-inner">
     <div>
       <strong>Parcel Decision Workspace</strong> &mdash; built {BUILD_DATE}.<br>
-      Part of a three-section workspace: <a href="../index.html">Desk home</a> &middot; <a href="../pages/market.html">Desk pages</a> &middot; <a href="../docs/index.html">Sourced dashboard</a>.<br>
+      An independent audit pass. Main workspace: <a href="../../workspace/index.html">/workspace/</a>. Root: <a href="../../index.html">/</a>.<br>
       Public product. Contains no address, parcel number, owner name, lease text or financial figure belonging to any person or entity.
       Private material is held offline with authorised advisers.
     </div>
