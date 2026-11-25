@@ -11,12 +11,20 @@
 | Session ID | Branch | Role | Started | File scope (exclusive) |
 |---|---|---|---|---|
 | `S-2a61b633` | `arena/2a61b633-jackbox1` | Research + `docs/` site + final integration (observed on remote at commit `5ee5ce7`) | 2026-11-25 | `docs/**`, `private/**`, `README.md`, `.gitignore`, `COORDINATION.md` (their §1–§4) |
-| `S-1552e5d5` | `arena/1552e5d5-jackbox1` | Independent line-by-line verification + root-level published site + final integration for this branch (this file's §5 onward) | 2026-11-25 | `index.html`, `pages/**`, `assets/**`, `data/**`, `tools/**`, `.nojekyll`, `COORDINATION.md` (§5 onward, append-only), `SITE_REVIEW.md` |
+| `S-1552e5d5` | `arena/1552e5d5-jackbox1` | Independent line-by-line verification + published site + final integration for this branch (this file's §5 onward) | 2026-11-25 | `index.html`, `web/**` (pages, assets, data, tools), `.nojekyll`, `COORDINATION.md` (§5 onward, append-only), `SITE_REVIEW.md` |
 
-**Claim recorded before any data work.** Scopes are non-overlapping at file level: the other session owns `docs/**`;
-this session owns the root-level published site and its own append-only board section. GitHub Pages on `main` is
-currently configured with source `{branch: main, path: /}`, so the root `index.html` is the live landing page;
-`docs/**` (if it lands on `main`) remains reachable at `/docs/` and is not overwritten by this session.
+**Claim recorded before any data work.** Five additional session branches were observed on the remote before the
+site build (`arena/41ea221b-jackbox1`, `arena/78005353-jackbox1`, `arena/8c9d9d97-jackbox1`,
+`arena/f5a16939-jackbox1`, `arena/2a61b633-jackbox1`). Their boards claim root `index.html`, `pages/**`,
+`assets/**`, `data/**`, `site/**`, `docs/**`, `scripts/**`. To keep this session's file scope non-overlapping at
+file level, **all site content lives under `web/**`** (its own pages, assets, data and tools), with only a small
+root `index.html` landing page plus this append-only board section and `SITE_REVIEW.md` outside it. A second,
+self-contained landing page is generated at `web/index.html`, so the deliverable survives even if another
+integration session subsequently replaces the root `index.html`.
+
+GitHub Pages on `main` is configured with source `{branch: main, path: /}`, so the root `index.html` is the live
+landing page; `docs/**` and any other session's tree are served as separate paths and are not overwritten here.
+This session leaves the Pages source setting unchanged.
 
 ### Platform constraints logged as deviations (for reviewer)
 
@@ -70,22 +78,22 @@ not a Census geography.
 | ID | Task | Status | Owner | File scope | Sources / verification |
 |---|---|---|---|---|---|
 | I-00 | Board + session claim, commit and push | done | S-1552e5d5 | `COORDINATION.md` | n/a |
-| I-01 | Line-by-line repository review + `SITE_REVIEW.md` | in progress | S-1552e5d5 | `SITE_REVIEW.md`, `pages/repo-review.html` | repo files + official docs |
-| I-02 | Official source register (`data/sources.json`) | in progress | S-1552e5d5 | `data/sources.json` | every URL fetched in this session |
-| I-03 | Verified data tables (every row = official URL or blank+flag) | in progress | S-1552e5d5 | `data/*.json`, `tools/build.py` | `tools/verify.py` |
-| I-04 | Executive / printable one-page summary | in progress | S-1552e5d5 | `pages/summary.html` | all of the above |
-| I-05 | Decision gates + Q&A + missing-information discovery plan | in progress | S-1552e5d5 | `pages/gates.html`, `pages/questions.html` | framework; sourced answers only |
-| I-06 | Trade area + demographics + tract trends + labour + schools + traffic | in progress | S-1552e5d5 | `pages/economy.html`, `pages/tracts.html` | Census, BLS, CA EDD/DOF, CDE, Caltrans |
-| I-07 | Tenant / operator direction (multi-year series) | in progress | S-1552e5d5 | `pages/operator.html` | SEC EDGAR |
-| I-08 | Hazard + insurance screening (parcel zone status blank until APN) | in progress | S-1552e5d5 | `pages/hazards.html` | CAL FIRE, FEMA, CGS/USGS, CDI |
-| I-09 | After-tax module + private browser-only calculator | in progress | S-1552e5d5 | `pages/tax.html`, `pages/calculator.html`, `assets/js/*.js` | IRS, CA FTB, BOE |
-| I-10 | Short-lease discount from verified quotes (no quotes → flagged) | needs review | S-1552e5d5 | `pages/market.html` | — |
-| I-11 | Risk register incl. black-swan / business-as-usual scenarios | in progress | S-1552e5d5 | `pages/risks.html` | official hazard + insurance sources |
-| I-12 | Suggestions section with reviewer path selector | in progress | S-1552e5d5 | `pages/suggestions.html` | advisory only, no data claims |
-| I-13 | Privacy / anonymisation policy | in progress | S-1552e5d5 | `pages/privacy.html` | CCPA/CPRA (leginfo.legislature.ca.gov) |
-| I-14 | Flagged for Review page (all unverified rows + irregularities) | in progress | S-1552e5d5 | `pages/flagged.html` | all sources |
-| I-15 | Build, row verification, internal link check, Pages deployment | in progress | S-1552e5d5 | `tools/*`, `index.html`, `assets/**` | `tools/verify.py`, `tools/check_links.py` |
-| I-90 | PR → merge to `main` → confirm Pages deploy → record PR link here | unclaimed | S-1552e5d5 | `COORDINATION.md` §9 | `gh` |
+| I-01 | Line-by-line repository review + `SITE_REVIEW.md` | done | S-1552e5d5 | `SITE_REVIEW.md`, `web/repo-review.html` | repo files + official docs |
+| I-02 | Official source register (`web/data/sources.json`) | done | S-1552e5d5 | `web/data/sources.json` | every URL fetched in this session |
+| I-03 | Verified data tables (every row = official URL or blank+flag) | done | S-1552e5d5 | `web/data/*.json`, `web/tools/build.py` | `web/tools/verify.py` |
+| I-04 | Executive / printable one-page summary | done | S-1552e5d5 | `web/summary.html`, `web/print.html` | all of the above |
+| I-05 | Decision gates + Q&A + missing-information discovery plan | done | S-1552e5d5 | `web/gates.html`, `web/questions.html` | framework; sourced answers only |
+| I-06 | Trade area + demographics + tract trends + labour + schools + traffic | done | S-1552e5d5 | `web/economy.html`, `web/data/findings.json` | Census, BLS, CA EDD/DOF, CDE, Caltrans |
+| I-07 | Tenant / operator direction (multi-year series) | done | S-1552e5d5 | `web/operator.html` | SEC EDGAR |
+| I-08 | Hazard + insurance screening (parcel zone status blank until APN) | done | S-1552e5d5 | `web/hazards.html` | CAL FIRE, FEMA, CGS/USGS, CDI |
+| I-09 | After-tax module + private browser-only calculator | done | S-1552e5d5 | `web/tax.html`, `web/calculator.html` | IRS, CA FTB, BOE |
+| I-10 | Short-lease discount from verified quotes (no quotes → flagged) | needs review | S-1552e5d5 | `web/tax.html` (blank rows) | — |
+| I-11 | Risk register incl. black-swan / business-as-usual scenarios | done | S-1552e5d5 | `web/risks.html` | official hazard + insurance sources |
+| I-12 | Suggestions section with reviewer path selector | done | S-1552e5d5 | `web/suggestions.html` | advisory only, no data claims |
+| I-13 | Privacy / anonymisation policy | done | S-1552e5d5 | `web/privacy.html` | CCPA/CPRA (leginfo.legislature.ca.gov) |
+| I-14 | Flagged for Review page (all unverified rows + irregularities) | done | S-1552e5d5 | `web/flagged.html` | all sources |
+| I-15 | Build, row verification, internal link check (deploy in I-90) | done (deploy in I-90) | S-1552e5d5 | `web/tools/*`, `web/*.html`, `web/assets/**`, root `index.html` | `web/tools/verify.py`, `web/tools/check_links.py` |
+| I-90 | PR → merge to `main` → confirm Pages deploy → record PR link here | in progress | S-1552e5d5 | `COORDINATION.md` §9 | `gh` |
 
 ---
 
@@ -107,7 +115,66 @@ Format: `task — claim — source URL — retrieved — result`. Only claims ac
   <https://www.census.gov/quickfacts/fact/table/losangelescountycalifornia,losangelescitycalifornia/INC110223> —
   retrieved 2026-11-25 — V2025 population estimates, 2020–2024 income, housing, education, business figures.
 
-(§6 is appended as each source is fetched; see `data/sources.json` for the machine-readable register.)
+(§6 is appended as each source is fetched; see `web/data/sources.json` for the machine-readable register.)
+
+### Additional research log (I-01 … I-15, 2026-11-25)
+
+- I-03 — Census QuickFacts, LA County/LA City: V2025 population, 2020 Census, ACS 2020–2024
+  income/housing/education, 2022 Economic Census, 2023 County Business Patterns, geography —
+  <https://www.census.gov/quickfacts/fact/table/losangelescountycalifornia,losangelescitycalifornia/INC110223> —
+  all 4 chunks retrieved; notes/flags/definitions read; mixed vintages flagged (R-08).
+- I-03 — CA DOF E-1 2026 press release + methodology page —
+  <https://dof.ca.gov/media/docs/forecasting/demographics/estimates/e-1_2026_press_release.Pdf> and
+  <https://dof.ca.gov/forecasting/demographics/estimates-e1/> — 1/1/2026 provisional and 1/1/2025
+  revised city/county estimates, 11,160 housing units lost to Eaton/Palisades fires, methodology
+  states summary tables do not reveal any individual.
+- I-03 — BLS Economy at a Glance, LA–Long Beach–Glendale MD — <https://www.bls.gov/eag/eag.ca_losangeles_md.htm> —
+  all 3 chunks retrieved; May–Oct 2026 labour, sector, CPI tables and footnotes; Oct 2026 `p` flagged (R-09).
+- I-03 — CA EDD October 2026 LMI release — <https://labormarketinfo.edd.ca.gov/file/lfmonth/la$pds.pdf> —
+  seasonally adjusted unemployment, nonfarm level, month/year industry changes; preliminary/benchmark noted.
+- I-03 — SCAG Connect SoCal 2024 Demographics & Growth Forecast Technical Report —
+  <https://www.scag.ca.gov/sites/default/files/2024-05/23-2987-tr-demographics-growth-forecast-final-040424.pdf> —
+  Table 2, Figure 2 and the subregional-uncertainty statement read; labelled projection (R-14).
+- I-03 — CDE LAUSD district profile and largest-district list —
+  <https://www.cde.ca.gov/sdprofile/details.aspx?cds=19647330000000> and
+  <https://www.cde.ca.gov/ds/ad/ceflargesmalldist.asp> — 497,105 enrollment / 81,328 EL / 5,731,260
+  statewide; no address, phone or personal name reproduced.
+- I-03 — Caltrans Traffic Census Program — <https://dot.ca.gov/programs/traffic-operations/census> —
+  2021–2024 AADT dataset links and the state-highway-only limitation (R-16).
+- I-07 — SEC EDGAR: FY2025 10-K and Q1/Q2/Q3 FY2025 earnings exhibits —
+  <https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm>,
+  <https://www.sec.gov/Archives/edgar/data/807882/000080788225000013/ex991-q125earningsrelease.htm>,
+  <https://www.sec.gov/Archives/edgar/data/807882/000080788225000029/ex991-q225earningsrelease.htm>,
+  <https://www.sec.gov/Archives/edgar/data/807882/000080788225000042/ex991-q325earningsrelease.htm> —
+  same-store sales series, units, closures, franchise rental revenues and AUV read verbatim (R-12).
+- I-03/I-09 — IRS Topic 409, Topic 559, Pub. 946, Rev. Proc. 2025-32 §4.03, §1031 real-estate tips —
+  <https://www.irs.gov/taxtopics/tc409>, <https://www.irs.gov/taxtopics/tc559>,
+  <https://www.irs.gov/pub/irs-pdf/p946.pdf>, <https://www.irs.gov/pub/irs-drop/rp-25-32.pdf>,
+  <https://www.irs.gov/businesses/small-businesses-self-employed/like-kind-exchanges-real-estate-tax-tips> —
+  2025 and 2026 capital-gain thresholds, 25% §1250 ceiling, 3.8% NIIT, basis/depreciation rules,
+  post-2017 real-property-only §1031.
+- I-09 — CA FTB capital gains page; BOE Publication 29; LA County TTC property tax page —
+  <https://www.ftb.ca.gov/file/personal/income-types/capital-gains-and-losses.html>,
+  <https://www.boe.ca.gov/proptaxes/pdf/pub29.pdf>, <https://ttc.lacounty.gov/property-tax/> —
+  CA capital gains as ordinary income, Prop 13 1%/2%, secured bill components/dates.
+- I-08 — CAL FIRE OSFM FHSZ, FEMA Flood Maps / NFHL / NFIP, CGS Seismic Hazards Program,
+  USGS UCERF3 FAQ, CDI Sustainable Insurance Strategy + May 2026 alert —
+  <https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones>,
+  <https://www.fema.gov/flood-maps>, <https://www.fema.gov/flood-maps/national-flood-hazard-layer>,
+  <https://www.fema.gov/flood-insurance>, <https://www.conservation.ca.gov/cgs/sh/program>,
+  <https://www.usgs.gov/faqs/what-probability-earthquake-will-occur-los-angeles-area-san-francisco-bay-area>,
+  <https://www.insurance.ca.gov/01-consumers/180-climate-change/sustainable-insurance-strategy.Cfm>,
+  <https://www.insurance.ca.gov/0400-news/0102-alerts/2026/Momentum-continues-to-build-under-Insura.cfm> —
+  classifications, probabilities, portals, statewide counts; parcel status left blank (R-01, R-10, R-13).
+- I-13 — CA Attorney General CCPA FAQ — <https://oag.ca.gov/privacy/ccpa> — personal/sensitive
+  information definitions and rights; public-record exclusion noted (R-17).
+- I-06/I-03 — LA City Planning radius-map guidelines (ZIMAS) and Census API key page —
+  <https://planning.lacity.gov/odocument/21c2f80a-a107-424f-9a6d-fb9a88019d8e/Radius_Map_Guidelines.pdf>,
+  <https://api.census.gov/data/key_signup.html> — ZIMAS authoritative for parcel zoning/Census Tract,
+  API key required for tract ACS pulls (R-11).
+- I-01/I-15 — Repository, generator, verifier and link checker reviewed line by line; see `SITE_REVIEW.md`.
+
+
 
 ---
 
@@ -138,3 +205,19 @@ Format: `task — claim — source URL — retrieved — result`. Only claims ac
 ## 9. Completion records / merge log
 
 (appended per task: sources, verification performed, irregularities, PR link, merge result, Pages deployment)
+
+### I-01 … I-15 completion record (2026-11-25, S-1552e5d5)
+
+- **Sources:** 39 entries in `web/data/sources.json`; 31 fetched and read, 7 official portals for
+  manual review only, 1 repository row. All published values trace to fetched pages only.
+- **Verification performed:** `web/tools/build.py` (281 table rows, 0 source/value errors),
+  `web/tools/verify.py` (official links in every published `<tr>`, blank/verified consistency,
+  privacy pattern scan, no storage/network calls), `web/tools/check_links.py` (386 internal links,
+  0 broken), and an HTTP 200 check of the landing page, 16 web pages, CSS and data files.
+- **Irregularities:** G-01…G-07 plus R-08…R-18 published on `web/flagged.html`; also listed in
+  `SITE_REVIEW.md` §4. All `needs review`; none blocks the build or merge.
+- **Build result:** 16 static pages under `web/`, root `index.html` landing page, `.nojekyll`,
+  one self-contained CSS file. No external scripts, fonts, analytics, cookies or form actions.
+- **Decision status:** unchanged — no sell/renew/hold winner selected.
+
+
