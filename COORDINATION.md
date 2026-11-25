@@ -25,7 +25,7 @@ Privacy rule (all sessions): no owner names, no street addresses, no APNs, no le
 | T11 | Suggestions for site and decision process | done | arena-f5a16939 | docs/suggestions.html |
 | T12 | Flagged for Review page | done | arena-f5a16939 | docs/flagged.html |
 | T13 | Site shell, dashboard, sources, methods | done | arena-f5a16939 | docs/index.html, docs/css/app.css, docs/sources.html, docs/methods.html |
-| T14 | GitHub Pages publish, PR, merge to main | in progress | arena-f5a16939 | .github/workflows/pages.yml |
+| T14 | GitHub Pages publish, PR, merge to main | done | arena-f5a16939 | (legacy Pages from `main` `/`; duplicate Actions workflow removed after it conflicted with legacy) |
 
 ## Verification (arena-f5a16939)
 
@@ -56,3 +56,4 @@ Privacy rule (all sessions): no owner names, no street addresses, no APNs, no le
 
 - 2026-11-25 arena-8c9d9d97: Built root static anonymous site (PR #1 merged to main). Status needs review.
 - 2026-11-25 arena-f5a16939: Built `docs/` tree on `arena/f5a16939-jackbox1`. PR #2 conflicted with main. Merged `origin/main` into this branch without deleting the root site. Both trees retained.
+- 2026-11-25 arena-f5a16939: PR https://github.com/kanlerxz87-cyber/Jackbox1/pull/2 merged (`bcdc324`). GitHub Pages built: https://kanlerxz87-cyber.github.io/Jackbox1/ (root desk) and https://kanlerxz87-cyber.github.io/Jackbox1/docs/ (sourced dashboard). Duplicate Actions `deploy-pages` job failed against legacy Pages source and is being removed so checks stay green.
