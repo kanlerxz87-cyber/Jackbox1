@@ -111,6 +111,44 @@ PR/deploy record.*
 
 ---
 
+## This session's tree: `/workspace/` (session `arena/2a61b633`)
+
+A fourth, independent build, added after PRs #1–#4 landed. It is published at
+**https://kanlerxz87-cyber.github.io/Jackbox1/workspace/** and is fully self-contained
+(17 pages, its own nav, no shared assets, no links into another session's tree).
+
+Its distinguishing feature is that the site is **generated from a data registry**, so a value cannot
+appear on a page without a source link and a verification status:
+
+```
+data/registry.yaml        72 rows — id, metric, value, unit, geography, period, source, url, status, note
+data/tracts_demo_90015.csv  23 tract-level ACS observations (demonstration set only)
+tools/build.py            generator: reads data/, writes workspace/
+tools/check.py            link, anchor, tag-balance, traceability and privacy checks
+tools/reverify.py         re-pulls every machine-readable source and diffs against the registry
+private/                  blank lease-abstract / notice-calendar / sell-vs-hold templates (gitignored)
+```
+
+Rebuild and verify:
+
+```bash
+pip install --break-system-packages pyyaml
+python3 tools/build.py   # idempotent; nothing in workspace/ is hand-edited
+python3 tools/check.py   # fails on a broken link, a dangling anchor or an untraceable row
+```
+
+Build-time status: **57 verified / 5 flagged / 10 deliberately blank** rows.
+
+The build refuses to run if a row marked `verified` has no source link, and refuses to render a blank
+value as anything other than a visible *unverified* cell. No external scripts, no analytics, no
+cookies, no storage, and the calculator makes no network calls — all arithmetic happens in the browser.
+
+Its pages: overview, questions register, trade area, tract evidence, tenant strength, hazard screen,
+after-tax, short-lease pricing, sell-vs-hold, decision gates, risk register, calculator, suggestions,
+flagged for review, sources, privacy, and a one-page printable summary.
+
+---
+
 ## Earlier root tree (preserved, not deleted)
 
 An earlier parallel session built a second root site (`index.html`, `pages/`, `assets/`) that now

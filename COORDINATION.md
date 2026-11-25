@@ -250,3 +250,12 @@ existing `/` and `/docs/` trees are untouched. No file owned by another session 
 **Build/check result at merge:** `python3 tools/build.py` → 17 pages from 72 rows (57 verified / 5 flagged / 10 blank);
 `python3 tools/check.py` → all internal links and anchors resolve, every data row carries a badge, no external scripts, no storage calls.
 
+### 2026-11-25 · `arena/2a61b633-jackbox1` — final integration record
+
+- Merged `origin/main` (PRs #1–#4) into this branch; **no other session's file was deleted or overwritten**.
+- Resolved the two pre-existing conflict-marker files (`README.md`, `COORDINATION.md`) — recorded as **M-01/M-02**.
+- Corrected four stale external links (OSFM ×2, CGS EQ Zapp, FEMA portal) — recorded as **F-11** on `workspace/review.html`.
+- Re-verified the combined tree: **772 internal links across all four trees, 0 broken**; HTML nesting checked on
+  every page (0 structural errors); `tools/check.py` green.
+- Build: 17 pages, 72 registry rows — 57 verified / 5 flagged / 10 blank.
+- Publishing target for this session: `/workspace/` (repo root remains the Pages source; additive only).

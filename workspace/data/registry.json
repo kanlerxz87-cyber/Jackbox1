@@ -798,7 +798,7 @@
       "geo": "Los Angeles County (Local Responsibility Area)",
       "period": "Published 2011; 2025 LRA rollout referenced by OSFM",
       "source": "CAL FIRE Office of the State Fire Marshal",
-      "url": "https://osfm.fire.ca.gov/what-to-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones/fire-hazard-severity-zones-maps",
+      "url": "https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones",
       "status": "flagged",
       "note": "The 2011 LRA recommendation is the vintage described on the page; OSFM also references a 2025 LRA rollout, and local ordinances (Gov. Code 51179) control what applies to a given parcel. Verify against the current viewer."
     },
@@ -837,7 +837,7 @@
       "geo": "Subject parcel (unidentified)",
       "period": "n/a",
       "source": "FEMA Flood Map Service Center / NFHL",
-      "url": "https://hazards.fema.gov/femaportal/wps/portal",
+      "url": "https://hazards.fema.gov/femaportal/wps/portal/portal/miphome",
       "status": "unverified",
       "note": "BLANK BY DESIGN. Requires parcel geometry. Lenders will price flood insurance off this line, so it is a financing gate as well as a physical-risk gate."
     },
@@ -850,7 +850,7 @@
       "geo": "Subject parcel (unidentified)",
       "period": "n/a",
       "source": "California Geological Survey Seismic Hazard Zones (EQ Zapp)",
-      "url": "https://maps.conservation.ca.gov/cgs/EQZApp/app",
+      "url": "https://maps.conservation.ca.gov/cgs/informationwarehouse/eqzapp/",
       "status": "unverified",
       "note": "BLANK BY DESIGN. Central LA has mapped liquefaction zones; whether THIS parcel is in one is unknowable without the APN."
     },
@@ -863,7 +863,7 @@
       "geo": "California",
       "period": "As stated by OSFM",
       "source": "CAL FIRE Office of the State Fire Marshal (LRA FHSZ map page)",
-      "url": "https://osfm.fire.ca.gov/what-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones/fire-hazard-severity-zones-maps",
+      "url": "https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones",
       "status": "verified",
       "note": "A transaction-timeline item if the parcel turns out to be in a High/Very High zone."
     },
