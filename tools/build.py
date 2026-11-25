@@ -549,6 +549,7 @@ def build_tracts(rows):
     median_of_tracts = incs[len(incs) // 2]
     pop_total = sum(int(t["population"]) for t in tracts)
     ratio = round(incs[-1] / incs[0], 1)
+    median_gap = round(100 * (1 - median_of_tracts / 81939))
     biggest_moe = max(
         ((t["tract_short"], int(t["median_household_income"]), int(t["income_moe"]))
          for t in tracts if t["income_moe"]),
@@ -581,8 +582,9 @@ did not publish a value for that tract — it is not zero and it has not been in
     sorted(tracts, key=lambda t: int(t["median_household_income"]))[0]["tract_short"]}) to
     <strong>${incs[-1]:,}</strong> (tract {
     sorted(tracts, key=lambda t: int(t["median_household_income"]))[-1]["tract_short"]}) —
-    a <strong>{ratio}× range inside a single ZIP code</strong>. The median tract value is ${median_of_tracts:,}, which is
-    precisely why a city-level average tells you almost nothing about a specific corner.</p>
+    a <strong>{ratio}× range inside a single ZIP code</strong>. The median tract value (${median_of_tracts:,}) sits
+    {median_gap}% below the city median of $81,939 (INC-01) — which is precisely why a city-level average tells you almost
+    nothing about a specific corner.</p>
   </div>
   <div class="card">
     <h3>The uncertainty is large</h3>
