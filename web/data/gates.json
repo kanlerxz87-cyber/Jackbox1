@@ -1,0 +1,13 @@
+{
+  "columns": ["id", "gate", "status", "blocking_items", "sources", "next_action"],
+  "rows": [
+    ["G-1", "Privacy & identity", "open", "No APN/address; no fixed tract set", "SRC-OAG-CCPA|SRC-DOF-E1-METHOD|PORTAL-ZIMAS", "Create the access-controlled internal workspace; version the tract set. Nothing identifying is published."],
+    ["G-2", "Lease abstract & notice calendar", "open", "No lease document; exact expiration within 2030-2035 unknown; no notice calendar", "PORTAL-LACO-RRCC", "Abstract the lease, reconcile to a notice calendar, then lock option and notice dates."],
+    ["G-3", "Trade area & parcel geography", "open", "City/county proxies only; no tract trend, zoning, AADT, school or competitor evidence", "SRC-CENSUS-QF|SRC-CALTRANS-CENSUS|SRC-LACITY-ZIMAS|PORTAL-CENSUS-DATA", "Fix tracts, pull multi-vintage ACS, ZIMAS, AADT, school and competitor data."],
+    ["G-4", "Economy & operator direction", "partial", "Regional figures verified; tract-level and unit-level inputs absent", "SRC-BLS-EAG|SRC-EDD-LMI|SRC-SCAG-2024|SRC-SEC-10K-2025", "Keep the multi-period evidence; add trade-area and unit-level series."],
+    ["G-5", "Hazards, engineering & insurance", "open", "Regional hazard context only; no parcel zone status, engineering report or quotes", "SRC-CALFIRE-FHSZ|SRC-FEMA-NFHL|SRC-CGS-SEISMIC|SRC-USGS-UCERF3|SRC-CDI-SIS", "Run four parcel lookups plus engineering and insurance quotes; stress rent loss, repairs and exit liquidity together."],
+    ["G-6", "After-tax mechanics", "partial", "Verified federal/state rules; no owner basis, depreciation, loan, filing status or tax rate area", "SRC-IRS-409|SRC-IRS-RP25-32|SRC-IRS-559|SRC-FTB-CG|SRC-BOE-PUB29|SRC-IRS-P946", "Populate private inputs in the browser-only calculator; do not store them."],
+    ["G-7", "Market pricing & renewal case", "open", "No verified short-lease quote set, comps or negotiated renewal proposal", "PORTAL-LACO-ASSESSOR|PORTAL-LACO-RRCC", "Collect arm's-length quotes/comp pairs and a written renewal proposal; price the discount from real quotes only."],
+    ["G-8", "Model, decision & approvals", "open", "No versioned back-tested cash-flow model; no winner selected", "SRC-SCAG-2024|SRC-SEC-10K-2025|SRC-BLS-EAG", "Back-test only with sufficient verified comparable history; compare after-tax sale with negotiated renewal; select privately."]
+  ]
+}
