@@ -1,0 +1,24 @@
+tract_geoid,tract_short,population,population_moe,median_household_income,income_moe,median_home_value,home_value_moe,vintage,source_url
+06037207303,2073.03,2688,450,31969,7818,988600,275797,ACS 2020-2024 5-year,https://api.censusreporter.org/1.0/data/show/latest?table_ids=B01003,B19013,B25077&geo_ids=140|86000US90015
+06037207711,2077.11,3495,518,145357,45636,686500,75845,ACS 2020-2024 5-year,https://api.censusreporter.org/1.0/data/show/latest?table_ids=B01003,B19013,B25077&geo_ids=140|86000US90015
+06037207712,2077.12,4967,699,63484,31771,722900,232683,ACS 2020-2024 5-year,https://api.censusreporter.org/1.0/data/show/latest?table_ids=B01003,B19013,B25077&geo_ids=140|86000US90015
+06037207901,2079.01,4049,469,71563,44043,,,ACS 2020-2024 5-year,https://api.censusreporter.org/1.0/data/show/latest?table_ids=B01003,B19013,B25077&geo_ids=140|86000US90015
+06037207902,2079.02,7082,982,104090,14286,1077000,97477,ACS 2020-2024 5-year,https://api.censusreporter.org/1.0/data/show/latest?table_ids=B01003,B19013,B25077&geo_ids=140|86000US90015
+06037209300,2093,4917,728,31642,8945,,,ACS 2020-2024 5-year,https://api.censusreporter.org/1.0/data/show/latest?table_ids=B01003,B19013,B25077&geo_ids=140|86000US90015
+06037209403,2094.03,4136,900,26650,11876,,,ACS 2020-2024 5-year,https://api.censusreporter.org/1.0/data/show/latest?table_ids=B01003,B19013,B25077&geo_ids=140|86000US90015
+06037209520,2095.20,2228,376,44099,3907,,,ACS 2020-2024 5-year,https://api.censusreporter.org/1.0/data/show/latest?table_ids=B01003,B19013,B25077&geo_ids=140|86000US90015
+06037209820,2098.20,2548,433,59091,20808,875000,82499,ACS 2020-2024 5-year,https://api.censusreporter.org/1.0/data/show/latest?table_ids=B01003,B19013,B25077&geo_ids=140|86000US90015
+06037210010,2100.10,3012,821,27320,6943,567000,101574,ACS 2020-2024 5-year,https://api.censusreporter.org/1.0/data/show/latest?table_ids=B01003,B19013,B25077&geo_ids=140|86000US90015
+06037221120,2211.20,2924,393,47431,8353,1013900,153337,ACS 2020-2024 5-year,https://api.censusreporter.org/1.0/data/show/latest?table_ids=B01003,B19013,B25077&geo_ids=140|86000US90015
+06037221602,2216.02,2355,500,58715,15699,650000,266023,ACS 2020-2024 5-year,https://api.censusreporter.org/1.0/data/show/latest?table_ids=B01003,B19013,B25077&geo_ids=140|86000US90015
+06037221710,2217.10,2469,452,46563,7653,755000,171445,ACS 2020-2024 5-year,https://api.censusreporter.org/1.0/data/show/latest?table_ids=B01003,B19013,B25077&geo_ids=140|86000US90015
+06037224010,2240.10,2964,445,39219,14548,,,ACS 2020-2024 5-year,https://api.censusreporter.org/1.0/data/show/latest?table_ids=B01003,B19013,B25077&geo_ids=140|86000US90015
+06037224020,2240.20,2989,614,38871,11782,,,ACS 2020-2024 5-year,https://api.censusreporter.org/1.0/data/show/latest?table_ids=B01003,B19013,B25077&geo_ids=140|86000US90015
+06037224200,2242,2171,528,57743,11523,890600,118039,ACS 2020-2024 5-year,https://api.censusreporter.org/1.0/data/show/latest?table_ids=B01003,B19013,B25077&geo_ids=140|86000US90015
+06037224310,2243.10,1870,210,59250,27387,1133300,974266,ACS 2020-2024 5-year,https://api.censusreporter.org/1.0/data/show/latest?table_ids=B01003,B19013,B25077&geo_ids=140|86000US90015
+06037224320,2243.20,3872,735,38750,36155,,,ACS 2020-2024 5-year,https://api.censusreporter.org/1.0/data/show/latest?table_ids=B01003,B19013,B25077&geo_ids=140|86000US90015
+06037224410,2244.10,2731,481,41010,15484,847700,68124,ACS 2020-2024 5-year,https://api.censusreporter.org/1.0/data/show/latest?table_ids=B01003,B19013,B25077&geo_ids=140|86000US90015
+06037224420,2244.20,2051,338,26648,4829,1116700,120268,ACS 2020-2024 5-year,https://api.censusreporter.org/1.0/data/show/latest?table_ids=B01003,B19013,B25077&geo_ids=140|86000US90015
+06037226001,2260.01,2011,388,34515,8525,922600,232835,ACS 2020-2024 5-year,https://api.censusreporter.org/1.0/data/show/latest?table_ids=B01003,B19013,B25077&geo_ids=140|86000US90015
+06037226002,2260.02,1900,436,52412,21476,559800,82834,ACS 2020-2024 5-year,https://api.censusreporter.org/1.0/data/show/latest?table_ids=B01003,B19013,B25077&geo_ids=140|86000US90015
+06037226410,2264.10,3334,409,47019,11068,791700,460853,ACS 2020-2024 5-year,https://api.censusreporter.org/1.0/data/show/latest?table_ids=B01003,B19013,B25077&geo_ids=140|86000US90015
