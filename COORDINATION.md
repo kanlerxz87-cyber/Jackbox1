@@ -364,3 +364,42 @@ is run, because each session's data is validated by the tool its session wrote.
 not a feature, but collapsing them would mean deleting other sessions' published work — which
 the standing instruction forbids. It is logged as a decision for the owner, not silently
 "fixed".
+
+### 2026-11-25 · final deploy record (T-17 complete)
+
+| PR | Scope | Result |
+|---|---|---|
+| #4 | primary verified workspace + integration | **MERGED** `4fc62d6` |
+| #6 | remove hardcoded counts; derive from data | **MERGED** `99e9521` |
+| #8 | merge `/workspace/` tree + fix published-ZIP defect + link-check all trees | **MERGED** `8f890ba` |
+
+**Final Pages build: `status=built` on `main@276834c`.** https enforced, legacy root build.
+
+**Live verification performed after the final deploy** (fetched, not assumed):
+- `pages/index.html` — 22 sources · 15 open gates · **0/15 closed** · **71 verified rows
+  (+4 labelled assumptions)** · **211 tracked rows across 10 datasets** · 29 flagged items ·
+  model `v0.1-unbacktested-core`.
+- `workspace/index.html` — 57 verified rows · 5 flagged · 10 blank · 30 open questions.
+- `pages/flagged.html` — *Irregularities — 13*, IR-01…IR-13 with source links.
+- All five trees serve from the same Pages build.
+
+**Repo-wide integrity at the final commit**
+- `node scripts/validate.mjs` → green. 211 tracked rows, 71 verified-like (all sourced),
+  48 blank. **1,044 internal links across five trees, all resolving.** Privacy scan clean.
+- `python3 tools/check.py` → green. 18 pages, 72 registry rows (57 verified / 5 flagged / 10 blank).
+- Both checkers are now permanent: neither a stale count nor a broken link can ship silently.
+
+**Two defects found and fixed by this session during verification, both real**
+1. Live dashboard showed 210 rows / 12 irregularities while the data held 211 / 13 — hardcoded
+   counts. Derivation from `data/` removed the possibility (PR #6).
+2. `/workspace/` published a real Los Angeles ZIP as a demonstration tract set. Relabelled
+   `DEMO-TRACTS-A` and rebuilt (PR #8). The privacy gate also had a false positive on
+   `§11911(b)` which was fixed and regression-tested.
+
+**Open decision for the owner (not resolved here).** The repo carries five parallel static
+trees from five sessions. They are retained, cross-referenced and individually validated, but
+five near-duplicate sites is a coordination failure. Collapsing them would delete other
+sessions' published work, which the standing instruction forbids, so consolidation is logged as
+an owner decision rather than performed unilaterally. The recommended consolidation is:
+`/pages/` as the single primary, `/workspace/` retained for its 72-row registry, and the other
+three archived under `/desk/`.
