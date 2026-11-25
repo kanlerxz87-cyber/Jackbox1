@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>W-07 · Pricing the Short-Lease Discount — Hold or Sell Workspace</title>
+<meta name="description" content="How to price a short-lease discount from real comparable quotes rather than a model, using the tenant's disclosed lease economics as the anchor.">
+<link rel="stylesheet" href="../assets/css/style.css">
+<script src="../assets/js/nav.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="brandmark">Hold or Sell <span class="tag">Decision Workspace</span></div>
+    <div class="env"><span>W-07</span><span><strong>Evidence cut-off 2026-11-25</strong></span></div>
+  </div>
+</header>
+
+<nav class="nav" aria-label="Sections">
+  <div class="nav-inner">
+    <a href="../index.html">Overview</a>
+    <a href="economics.html">Trade Area</a>
+    <a href="worksheet.html">Sell v Hold</a>
+    <a href="decision-gates.html">Decision Gates</a>
+    <a href="hazards.html">Hazards</a>
+    <a href="tract-trends.html">Tract Trends</a>
+    <a href="rental-evidence.html">Rental Evidence</a>
+    <a href="lease-abstract.html">Lease Abstract</a>
+    <a href="risks.html">Risks</a>
+    <a href="open-questions.html">Open Questions</a>
+    <a href="suggestions.html">Suggestions</a>
+    <a href="flagged.html">Flagged</a>
+    <a href="sources.html">Sources</a>
+    <a href="advisory-summary.html">Summary</a>
+    <a href="privacy.html">Privacy</a>
+  </div>
+</nav>
+
+<main id="main" class="wrap">
+
+  <div class="page-head">
+    <p class="eyebrow">W-07</p>
+    <h1>Pricing the short-lease discount from real quotes</h1>
+    <p class="lede">
+      This is the number the whole decision turns on. A buyer of a single-tenant NNN asset is buying a
+      lease, not a building — and a lease with four years left is worth materially less than the same
+      lease with twelve. That discount is not theoretical and it is not a modelling choice: it is
+      observable in closed trades. This page sets out how to measure it properly, what is already in
+      hand, and what must be bought.
+    </p>
+  </div>
+
+  <div class="notice notice--warn">
+    <strong>No cap rate on this page.</strong> The brief asked to price the discount from real quotes.
+    No official statistical series publishes submarket NNN retail capitalisation rates, and commercial
+    data providers are proprietary. Publishing a plausible-looking number here would be the single
+    most damaging thing this workspace could do, because a wrong cap rate silently corrupts every
+    downstream calculation. <a href="flagged.html">FLAG-U04 →</a>
+  </div>
+
+  <h2>1 · What is verified, and how far it goes</h2>
+
+  <div class="table-scroll">
+<table>
+  <caption><strong>Verified anchor rates and the tenant's disclosed lease economics</strong>
+  These are inputs to a valuation argument, not a valuation. Each is a benchmark from a different source and none of them is a capitalisation rate.</caption>
+  <thead><tr>
+    <th>ID</th><th>Metric</th><th class="num">Value</th><th>Period</th>
+    <th>Level</th><th>Status</th><th>Evidence quoted from source</th><th>Official source</th>
+  </tr></thead>
+  <tbody>
+<tr>
+        <td><code>M-043</code></td>
+        <td>10-year U.S. Treasury constant maturity yield, 2026-11-23</td>
+        <td class="num">4.92%</td>
+        <td class="nowrap">2026-11-23</td>
+        <td><span class="pill pill--ok">National</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Series DGS10, observation 2026-11-23 = 4.92.</td>
+        <td><a class="src" href="https://fred.stlouisfed.org/data/DGS10" target="_blank" rel="noopener" title="10-Year Treasury Constant Maturity — series DGS10">Federal Reserve Bank of St. Louis (source: Federal Reserve Board, H.15) ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-061</code></td>
+        <td>JACK operating lease weighted-average discount rate</td>
+        <td class="num">6.1%</td>
+        <td class="nowrap">2025-09-28</td>
+        <td><span class="pill pill--ok">Portfolio</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Supplemental lease information: weighted-average discount rate, Operating leases 6.1% (2024: 5.9%).</td>
+        <td><a class="src" href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/R16.htm" target="_blank" rel="noopener" title="JACK 10-K FY2025 — Note: Leases (XBRL R16)">Securities and Exchange Commission ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-062</code></td>
+        <td>JACK weighted-average remaining operating lease term</td>
+        <td class="num">11.2 years</td>
+        <td class="nowrap">2025-09-28</td>
+        <td><span class="pill pill--ok">Portfolio</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Supplemental lease information: weighted-average remaining lease term, Operating leases 11.2 years (2024: 11.1).</td>
+        <td><a class="src" href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/R16.htm" target="_blank" rel="noopener" title="JACK 10-K FY2025 — Note: Leases (XBRL R16)">Securities and Exchange Commission ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-063</code></td>
+        <td>JACK operating lease cost, FY2025</td>
+        <td class="num">$244.644 million</td>
+        <td class="nowrap">FY2025</td>
+        <td><span class="pill pill--ok">Portfolio</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Lease cost table: Operating lease cost $244,644 thousand (FY2024: $243,488; FY2023: $240,153).</td>
+        <td><a class="src" href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/R16.htm" target="_blank" rel="noopener" title="JACK 10-K FY2025 — Note: Leases (XBRL R16)">Securities and Exchange Commission ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-051</code></td>
+        <td>Jack in the Box franchise rental revenues, FY2025</td>
+        <td class="num">$332.735 million (Jack in the Box segment)</td>
+        <td class="nowrap">FY2025</td>
+        <td><span class="pill pill--ok">Tenant</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Disaggregation of revenue: Franchise rental revenues — Jack in the Box $332,735 thousand; Del Taco $35,908 thousand; total $368,643 thousand.</td>
+        <td><a class="src" href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/R10.htm" target="_blank" rel="noopener" title="JACK 10-K FY2025 — Note: Revenue, disaggregation by segment and source (XBRL R10)">Securities and Exchange Commission ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-060</code></td>
+        <td>JACK initial real estate lease term (portfolio practice)</td>
+        <td class="num">generally 20 years</td>
+        <td class="nowrap">FY2025</td>
+        <td><span class="pill pill--ok">Portfolio</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">&quot;Initial terms of our real estate leases are generally 20 years, exclusive of options to renew, which are generally exercisable at our sole discretion for 1 to 20 years.&quot;</td>
+        <td><a class="src" href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/R16.htm" target="_blank" rel="noopener" title="JACK 10-K FY2025 — Note: Leases (XBRL R16)">Securities and Exchange Commission ↗</a></td>
+      </tr>
+  </tbody>
+</table>
+</div>
+
+  <div class="card">
+    <h3 style="margin-top:0">Reading the two anchors honestly</h3>
+    <div class="grid grid--2" style="margin-top:.4rem">
+      <div>
+        <p class="small"><strong>The 10-year Treasury at 4.92%.</strong> This is the risk-free rate a
+        buyer compares against. It tells you the <em>floor</em> under any required return — nobody buys
+        an illiquid single-tenant asset to earn less than a Treasury. It says nothing about the spread
+        a buyer will demand.</p>
+        <p class="small"><strong>The tenant's own 6.1% lease discount rate.</strong> This is Jack in
+        the Box's weighted-average rate for its operating lease liabilities — its own cost of lease
+        capital. A landlord negotiating a renewal is negotiating against a counterparty who books the
+        obligation at roughly 6.1%.</p>
+      </div>
+      <div>
+        <p class="small"><strong>Why they don't give you a cap rate.</strong> A cap rate is
+        NOI ÷ price. Both anchors are rates, not prices, and neither reflects the specific property's
+        location, condition, tenant credit at the store level, or remaining term.</p>
+        <p class="small"><strong>What they do give you.</strong> A defensible <em>bracket</em> for
+        the renewal negotiation: a rent that implies a landlord yield far above the tenant's own 6.1%
+        book rate is a rent the tenant has a strong incentive to resist, and vice versa. That is a real
+        negotiating insight derived from a primary filing.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>2 · Why the discount exists — the mechanism, not a rule of thumb</h2>
+
+  <div class="table-scroll">
+    <table>
+      <caption><strong>Four separate reasons a short lease trades at a wider cap rate</strong>
+      Each is a distinct mechanism with a different mitigant. Lumping them into one "short lease = X basis points" rule is how sellers get underpaid.</caption>
+      <thead><tr><th>Mechanism</th><th>What the buyer is actually pricing</th><th>Mitigant that narrows it</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>Re-leasing risk</strong></td>
+          <td>The probability the space goes vacant, plus the downtime and tenant-improvement cost if it does. For a purpose-built drive-through this can be a long, expensive void.</td>
+          <td>A renewal option at a known rent, or a demonstrated multi-tenant demand for the site.</td>
+        </tr>
+        <tr>
+          <td><strong>Financing duration mismatch</strong></td>
+          <td>A lender will not write a 10-year loan against a 4-year lease. The buyer's debt is shorter and more expensive, which lowers the price they can pay.</td>
+          <td>Term extension before marketing. This is usually the single largest lever.</td>
+        </tr>
+        <tr>
+          <td><strong>Rollover capital</strong></td>
+          <td>The buyer reserves for leasing commissions and TI at expiry, and deducts that reserve from the price today.</td>
+          <td>A tenant renewal that waives commissions, or a lease that puts renewal costs on the tenant.</td>
+        </tr>
+        <tr>
+          <td><strong>Marketability to the buyer pool</strong></td>
+          <td>Buyers seeking long-income product — 1031 exchange buyers, conservative private capital, some funds — simply do not bid. Fewer bidders means a lower clearing price.</td>
+          <td>Nothing except term. This one cannot be argued away.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="notice notice--info">
+    <strong>The implication for timing.</strong> Three of the four mechanisms are functions of
+    remaining term, and one is a function of the buyer pool. All four get worse as expiry approaches —
+    and they get worse <em>non-linearly</em>, because buyers start excluding the asset from their
+    search entirely once term drops below what their lender will finance. There is a cliff, not a
+    gentle slope. Identifying where that cliff sits for this property is the most valuable single
+    piece of research available.
+  </div>
+
+  <h2>3 · The comparable-evidence protocol</h2>
+  <p>This is the work that replaces a guess. It is deliberately specific, because "get some comps" is
+  not an instruction anyone can execute.</p>
+
+  <div class="card">
+    <h3 style="margin-top:0">Required fields for each comparable trade</h3>
+    <ol class="tight">
+      <li><strong>Closing date</strong> and <strong>sale price</strong> — from the recorded deed or a paid transaction database, not a listing.</li>
+      <li><strong>Capitalisation rate on in-place NOI at closing</strong> — not a broker's pro-forma cap. If the actual NOI is not disclosed, the comp is of limited use and must be marked as such.</li>
+      <li><strong>Remaining lease term at closing</strong>, in years and months. This is the variable being measured, and it must come from the lease, not an estimate.</li>
+      <li><strong>Tenant identity and credit</strong> — corporate, franchisee, or guarantor. A franchisee-guaranteed lease and a corporate lease are different products.</li>
+      <li><strong>Rent per square foot</strong> and <strong>escalator structure</strong> — a flat lease and a CPI-linked lease at the same cap rate are not the same asset.</li>
+      <li><strong>Building size, land size, and drive-through presence</strong> — the physical features that determine re-leasability.</li>
+      <li><strong>Renewal options</strong> remaining and their rent structure.</li>
+      <li><strong>Financing</strong> — all-cash or leveraged, and at what loan-to-value. A leveraged comp at a short term tells you more than an all-cash one.</li>
+    </ol>
+    <p class="small muted" style="margin-bottom:0">A comp missing items 2 or 3 cannot be used to price
+    the term discount. Recording it anyway and averaging it in is how a discount gets measured wrong.</p>
+  </div>
+
+  <div class="card">
+    <h3 style="margin-top:0">The regression that answers the question</h3>
+    <p>With eight to twelve clean observations, regress <strong>capitalisation rate</strong> on
+    <strong>remaining lease term</strong> and the physical controls. The coefficient on remaining term
+    is the market's price of a year of lease — which is exactly the number needed to decide whether to
+    sell now or extend first.</p>
+    <pre style="font-family:var(--mono);font-size:.78rem;overflow-x:auto;white-space:pre-wrap;margin:.4rem 0 .6rem"><code>cap_rate = a + b · remaining_term_years
+             + c · rent_psf
+             + d · drive_through (0/1)
+             + e · corporate_lease (0/1)
+             + ε</code></pre>
+    <p class="small"><strong>What <em>b</em> buys you:</strong> if <em>b</em> = −0.15 percentage points
+    per year, then extending from 4 to 10 years of term tightens the cap by roughly 90bp — on a
+    $2,000,000 asset at a 6.0% cap, that is a value change of roughly $330,000 from a lease amendment
+    alone. That is the calculation that decides whether to renew before selling.</p>
+    <p class="small muted" style="margin-bottom:0"><strong>Honest limit:</strong> with eight to twelve
+    observations the standard errors will be wide, and the result should be treated as a range, not a
+    point. The value is in the sign and rough magnitude, not in a precise coefficient. Anyone quoting a
+    precise number from a sample that small is overfitting.</p>
+  </div>
+
+  <h2>4 · What the tenant's own filings imply about the renewal ask</h2>
+
+  <div class="card">
+    <h3 style="margin-top:0">The tenant has both the ability and the incentive to renew at a moderate rent</h3>
+    <p>Three verified facts from the FY2025 10-K frame the negotiation:</p>
+    <ul class="tight">
+      <li><strong>Lease capital costs the tenant about 6.1%</strong> on a weighted-average basis — its disclosed operating lease discount rate.</li>
+      <li><strong>Its average remaining term is 11.2 years</strong> — so the tenant is accustomed to long commitments and has a revealed preference for them.</li>
+      <li><strong>Its franchise rental revenue line is stable</strong> — $368.6m in FY2025 against $375.4m and $364.6m in the two prior years, inside a company whose total revenue fell from $1.69bn to $1.47bn over the same period.</li>
+    </ul>
+    <p><strong>Read together:</strong> the real-estate side of this tenant's business is its most stable
+    segment while the operating side contracts. That is an argument that a renewal is achievable — the
+    tenant values lease stability — and also that the landlord should not expect an above-market rent,
+    because total revenue is shrinking and impairment charges have been large
+    (<strong>$209.6m in FY2025</strong>, <strong>$162.6m in FY2024</strong>).</p>
+    <p class="src-list">
+      <a class="src" href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/R16.htm" target="_blank" rel="noopener">10-K lease note ↗</a>
+      <a class="src" href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/R10.htm" target="_blank" rel="noopener">10-K revenue disaggregation ↗</a>
+      <a class="src" href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/R5.htm" target="_blank" rel="noopener">10-K statements of earnings ↗</a>
+    </p>
+  </div>
+
+  <h2>5 · The three-quote minimum for the discount itself</h2>
+
+  <div class="table-scroll">
+    <table>
+      <caption><strong>Minimum evidence set for a defensible discount estimate</strong>
+      Nothing in this table is collected yet. It is the specification for the work.</caption>
+      <thead><tr><th>Evidence</th><th>Minimum count</th><th>Where it comes from</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td>Closed single-tenant NNN QSR / retail trades in the submarket, with cap rate and remaining term</td><td>3–5</td><td>Recorded deeds plus a paid transaction database, or a broker with a closed-deal record</td><td><span class="pill pill--stop">Not collected</span></td></tr>
+        <tr><td>Closed trades of comparable assets with a materially longer term, for the term-differential</td><td>3–5</td><td>Same</td><td><span class="pill pill--stop">Not collected</span></td></tr>
+        <tr><td>Active listings with quoted cap rates, as a directional check on the closed data</td><td>3+</td><td>Listing services — directional only, never used as a comp</td><td><span class="pill pill--stop">Not collected</span></td></tr>
+        <tr><td>Lender quotes for single-tenant retail debt at 4 versus 10 years of remaining term</td><td>2 lenders</td><td>Commercial mortgage broker</td><td><span class="pill pill--stop">Not collected</span></td></tr>
+        <tr><td>Market rent evidence for the site if it went vacant — re-leasing cost and downtime</td><td>1 study</td><td>Local retail leasing broker</td><td><span class="pill pill--stop">Not collected</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="notice notice--warn">
+    <strong>Why active listings cannot substitute for closed sales.</strong> A listing cap rate is
+    what a seller hopes to achieve. A closed cap rate is what a buyer actually paid, after negotiation
+    and due diligence. The gap between them is systematically in one direction, and it widens exactly
+    when the market is soft — which is the state in which a seller most needs an accurate number.
+  </div>
+
+  <h2>6 · Using the discount to choose the path</h2>
+
+  <div class="card">
+    <h3 style="margin-top:0">A decision table that does not require a cap rate to be assumed</h3>
+    <p>Once the term coefficient <em>b</em> is estimated, the sell-versus-renew question becomes an
+    arithmetic comparison rather than a judgement call:</p>
+    <div class="table-scroll" style="margin:.6rem 0 0">
+      <table>
+        <caption><strong>Compare the cost of waiting against the value of the extension</strong></caption>
+        <thead><tr><th>Path</th><th>Value today</th><th>Value after extension</th><th>Choose it when</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Sell now, at current term</td>
+            <td>NOI ÷ cap(term<sub>now</sub>)</td>
+            <td>—</td>
+            <td>When the extension value is smaller than the cost, risk and time of negotiating it.</td>
+          </tr>
+          <tr>
+            <td>Renew first, then sell</td>
+            <td>—</td>
+            <td>NOI ÷ cap(term<sub>extended</sub>) − renewal costs − rent concession</td>
+            <td>When <em>b</em> is large enough that the cap-rate tightening exceeds the concession plus the delay.</td>
+          </tr>
+          <tr>
+            <td>Hold to expiry, then re-let</td>
+            <td>—</td>
+            <td>Market rent ÷ cap(market) − downtime − TI − commissions</td>
+            <td>Only when the site's land value or re-leasing prospects clearly exceed the leased-fee value.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small muted" style="margin:.6rem 0 0">Every input in the middle column is currently
+    unknown. The table is published as the structure of the decision, not as its answer.</p>
+  </div>
+
+  <p style="margin-top:1.6rem"><a href="lease-abstract.html">Next: the lease abstract that supplies the term variable →</a></p>
+
+</main>
+
+<footer class="site">
+  <div class="inner">
+    <p><strong>Privacy.</strong> No parcel identifier, address, owner name, personal figure or
+    proprietary comparable appears on this page. <a href="privacy.html">Privacy policy →</a></p>
+    <p><a href="sources.html">Full source register</a> · <a href="flagged.html">Flagged for review</a> · <a href="../index.html">Back to overview</a></p>
+  </div>
+</footer>
+</body>
+</html>

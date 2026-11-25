@@ -1,0 +1,12 @@
+{
+  "name": "jackbox1-decision-workspace",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Static, private-input-free decision workspace for a single NNN-leased Jack in the Box parcel in central Los Angeles.",
+  "scripts": {
+    "verify": "node scripts/verify.mjs",
+    "build": "node scripts/verify.mjs",
+    "dev": "node scripts/serve.mjs"
+  }
+}

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>W-03 · Decision-Gate Progress Board — Hold or Sell Workspace</title>
+<meta name="description" content="Six gates that must clear before any sale or renewal commitment, each with its status, the evidence that clears it, and the owner of that evidence.">
+<link rel="stylesheet" href="../assets/css/style.css">
+<script src="../assets/js/nav.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="brandmark">Hold or Sell <span class="tag">Decision Workspace</span></div>
+    <div class="env"><span>W-03</span><span><strong>Evidence cut-off 2026-11-25</strong></span></div>
+  </div>
+</header>
+
+<nav class="nav" aria-label="Sections">
+  <div class="nav-inner">
+    <a href="../index.html">Overview</a>
+    <a href="economics.html">Trade Area</a>
+    <a href="worksheet.html">Sell v Hold</a>
+    <a href="decision-gates.html">Decision Gates</a>
+    <a href="hazards.html">Hazards</a>
+    <a href="tract-trends.html">Tract Trends</a>
+    <a href="rental-evidence.html">Rental Evidence</a>
+    <a href="lease-abstract.html">Lease Abstract</a>
+    <a href="risks.html">Risks</a>
+    <a href="open-questions.html">Open Questions</a>
+    <a href="suggestions.html">Suggestions</a>
+    <a href="flagged.html">Flagged</a>
+    <a href="sources.html">Sources</a>
+    <a href="advisory-summary.html">Summary</a>
+    <a href="privacy.html">Privacy</a>
+  </div>
+</nav>
+
+<main id="main" class="wrap">
+
+  <div class="page-head">
+    <p class="eyebrow">W-03</p>
+    <h1>Decision-gate progress board</h1>
+    <p class="lede">
+      A gate is a binary test, not a score. It is <strong>clear</strong> only when the named evidence
+      is in hand, <strong>partial</strong> when some of it is, and <strong>blocked</strong> when the
+      evidence does not exist yet. Gates are ordered: later gates inherit the outputs of earlier ones,
+      so working out of order wastes money.
+    </p>
+  </div>
+
+  <div class="progress">
+    <div class="bar"><span style="width:17%"></span></div>
+    <div class="caption">1 of 6 gates clear · 2 partial · 3 blocked — as of the evidence cut-off</div>
+  </div>
+
+  <div class="notice notice--stop">
+    <strong>The sale-versus-renewal commitment sits behind G3 and G4.</strong>
+    Neither can be cleared with the information provided. That is not a research failure — it is the
+    finding. G3 needs a lease document and G4 needs the owner's tax file, and neither exists in the
+    public record.
+  </div>
+
+  <h2>Gate board</h2>
+
+  <div class="gate gate--ready">
+    <div class="rail">G1</div>
+    <div class="body">
+      <h4>Regional demand direction <span class="pill pill--ok" style="margin-left:.4rem">Clear</span></h4>
+      <p>Is the county-level demand base growing, flat, or shrinking over the most recent published year?</p>
+      <div class="crit"><strong>Evidence held:</strong> DOF E-1 reports Los Angeles County −64,000 persons in 2025; BLS reports county unemployment 4.5% in September 2026, down from a 6.2% mid-2025 peak. &nbsp;<strong>Cleared by:</strong> <a href="economics.html">W-01 trade area</a>.</div>
+    </div>
+  </div>
+
+  <div class="gate gate--blocked">
+    <div class="rail">G2</div>
+    <div class="body">
+      <h4>Parcel hazard posture <span class="pill pill--stop" style="margin-left:.4rem">Blocked</span></h4>
+      <p>Is the parcel inside a FEMA flood zone, a CGS seismic hazard zone, or a CAL FIRE Fire Hazard Severity Zone?</p>
+      <div class="crit"><strong>Blocked by:</strong> no parcel address or AIN. All three lookups are address-driven and all three were reachable — the missing input is the address, not the data.
+      <strong>Owner of the evidence:</strong> the owner, or a title report. <a href="hazards.html">W-04 →</a> · <a href="flagged.html">FLAG-U02</a></div>
+    </div>
+  </div>
+
+  <div class="gate gate--blocked">
+    <div class="rail">G3</div>
+    <div class="body">
+      <h4>Lease economics and expiry certainty <span class="pill pill--stop" style="margin-left:.4rem">Blocked</span></h4>
+      <p>What is the exact expiry date, base rent, escalator, renewal option structure, and expense pass-through?</p>
+      <div class="crit"><strong>Blocked by:</strong> the brief gives a <em>range</em> (2030–2035), which cannot be modelled as a trigger, and no rent schedule was provided.
+      <strong>Owner of the evidence:</strong> a private lease abstract commissioned from counsel or a lease-administration firm — not a public source. <a href="lease-abstract.html">W-08 →</a> · <a href="flagged.html">FLAG-U01</a></div>
+    </div>
+  </div>
+
+  <div class="gate gate--blocked">
+    <div class="rail">G4</div>
+    <div class="body">
+      <h4>After-tax proceeds are computable <span class="pill pill--stop" style="margin-left:.4rem">Blocked</span></h4>
+      <p>Can net-after-tax cash from a sale be computed on filed-position inputs rather than assumptions?</p>
+      <div class="crit"><strong>Blocked by:</strong> adjusted basis, acquisition date, accumulated depreciation, entity structure and material participation are all unknown. The statutory rates are verified; the owner's facts are not.
+      <strong>Owner of the evidence:</strong> the owner's CPA. <a href="worksheet.html#tax">W-02 / W-09 →</a> · <a href="flagged.html">FLAG-U01</a>, <a href="flagged.html">FLAG-U05</a></div>
+    </div>
+  </div>
+
+  <div class="gate gate--warn gate--partial">
+    <div class="rail">G5</div>
+    <div class="body">
+      <h4>Market pricing evidence <span class="pill pill--warn" style="margin-left:.4rem">Partial</span></h4>
+      <p>Is there enough transaction evidence to price the short-lease discount from quotes rather than a model?</p>
+      <div class="crit"><strong>Held:</strong> a verified risk-free reference rate (10-year Treasury 4.92% on 2026-11-23) and the tenant's own disclosed lease discount rate (6.1%) — both useful anchors, neither a cap rate.
+      <strong>Still missing:</strong> three to five closed NNN QSR or single-tenant retail trades with known remaining term. No official statistical series publishes submarket NNN cap rates. <a href="rental-evidence.html">W-07 →</a> · <a href="flagged.html">FLAG-U04</a></div>
+    </div>
+  </div>
+
+  <div class="gate gate--warn gate--partial">
+    <div class="rail">G6</div>
+    <div class="body">
+      <h4>Trade-area specificity <span class="pill pill--warn" style="margin-left:.4rem">Partial</span></h4>
+      <p>Is the demand evidence specific to the parcel's own trade area rather than to the county?</p>
+      <div class="crit"><strong>Held:</strong> county and metro series, verified and current. <strong>Still missing:</strong> the Census tract cannot be selected without the address, and the Census API requires a key. The exact query is published ready to run.
+      <a href="tract-trends.html">W-05 →</a> · <a href="flagged.html">FLAG-U03</a></div>
+    </div>
+  </div>
+
+  <h2>What each gate unlocks</h2>
+
+  <div class="table-scroll">
+    <table>
+      <caption><strong>Which decisions are permitted at each level of gate clearance</strong></caption>
+      <thead><tr><th>Gates clear</th><th>Decisions you may safely take</th><th>Decisions still not permitted</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>G1 only</strong><br><span class="small muted">current state</span></td>
+          <td>Commission the lease abstract. Order hazard screening. Open the CPA file. Begin comparable-sales research. All of these are information purchases, not commitments.</td>
+          <td>Any price expectation communicated to a broker or buyer. Any renewal rent discussed with the tenant. Anything that creates a record the other side can rely on.</td>
+        </tr>
+        <tr>
+          <td><strong>G1 + G2</strong></td>
+          <td>Rule out the deal entirely if a hazard zone is disqualifying for the intended exit buyer. Adjust insurance budgeting. Narrow the buyer pool.</td>
+          <td>Pricing. A hazard zone reduces the buyer pool but does not by itself set value.</td>
+        </tr>
+        <tr>
+          <td><strong>G1 + G2 + G3</strong></td>
+          <td>Model the hold case with a real horizon. Set a defensible renewal ask. Decide whether to market the property with the current lease or after a renewal.</td>
+          <td>A final sell-versus-hold choice, because the after-tax number is still missing.</td>
+        </tr>
+        <tr>
+          <td><strong>G1–G4</strong></td>
+          <td>Compare after-tax sale proceeds against the discounted hold case on filed-position inputs. This is the first point at which the comparison is decision-grade.</td>
+          <td>A commitment, until G5 prices the exit.</td>
+        </tr>
+        <tr>
+          <td><strong>G1–G6</strong></td>
+          <td>The full decision: sell now, renew-then-sell, or hold to expiry, with the exit assumption supported by comparable quotes and the trade area specific to the parcel.</td>
+          <td>—</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Gate inputs, row by row</h2>
+
+  <div class="table-scroll">
+<table>
+  <caption><strong>Every input currently blocking a gate</strong>
+  These are the specific blanks. Each names the authority that holds the answer.</caption>
+  <thead><tr>
+    <th>ID</th><th>Metric</th><th class="num">Value</th><th>Period</th>
+    <th>Level</th><th>Status</th><th>Evidence quoted from source</th><th>Official source</th>
+  </tr></thead>
+  <tbody>
+<tr>
+        <td><code>M-100</code></td>
+        <td>Assessor parcel number (AIN)</td>
+        <td class="num"><span class="blank">—</span></td>
+        <td class="nowrap">current</td>
+        <td><span class="pill pill--warn">Parcel</span></td>
+        <td><span class="pill pill--stop">Unverified</span></td>
+        <td class="small"><span class="muted">No AIN or address was supplied with this brief. Lookup tool cited so the reader can pull the record.</span></td>
+        <td><a class="src" href="https://portal.assessor.lacounty.gov/" target="_blank" rel="noopener" title="Assessor Portal (search by AIN or address)">County of Los Angeles ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-101</code></td>
+        <td>Assessed land value / improvement value</td>
+        <td class="num"><span class="blank">—</span></td>
+        <td class="nowrap">current roll</td>
+        <td><span class="pill pill--warn">Parcel</span></td>
+        <td><span class="pill pill--stop">Unverified</span></td>
+        <td class="small"><span class="muted">Requires the AIN (M-100). Base-year assessed value drives property tax and the sale-versus-hold carry cost; it is not published here.</span></td>
+        <td><a class="src" href="https://portal.assessor.lacounty.gov/" target="_blank" rel="noopener" title="Assessor Portal (search by AIN or address)">County of Los Angeles ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-102</code></td>
+        <td>Parcel area</td>
+        <td class="num"><span class="blank">—</span></td>
+        <td class="nowrap">current</td>
+        <td><span class="pill pill--warn">Parcel</span></td>
+        <td><span class="pill pill--stop">Unverified</span></td>
+        <td class="small"><span class="muted">Not supplied. Needed for land-value-per-square-foot comparison against closed sales.</span></td>
+        <td><a class="src" href="https://portal.assessor.lacounty.gov/" target="_blank" rel="noopener" title="Assessor Portal (search by AIN or address)">County of Los Angeles ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-103</code></td>
+        <td>FEMA flood zone for the parcel</td>
+        <td class="num"><span class="blank">—</span></td>
+        <td class="nowrap">current effective FIRM</td>
+        <td><span class="pill pill--warn">Parcel</span></td>
+        <td><span class="pill pill--stop">Unverified</span></td>
+        <td class="small"><span class="muted">Requires an address or coordinates in the Flood Map Service Center. Not supplied.</span></td>
+        <td><a class="src" href="https://msc.fema.gov/portal/home" target="_blank" rel="noopener" title="FEMA Flood Map Service Center">Federal Emergency Management Agency ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-104</code></td>
+        <td>CGS seismic hazard zone status (fault rupture / liquefaction / landslide)</td>
+        <td class="num"><span class="blank">—</span></td>
+        <td class="nowrap">current</td>
+        <td><span class="pill pill--warn">Parcel</span></td>
+        <td><span class="pill pill--stop">Unverified</span></td>
+        <td class="small"><span class="muted">EQ Zapp is address-driven. Not supplied.</span></td>
+        <td><a class="src" href="https://www.conservation.ca.gov/cgs/geohazards/eq-zapp" target="_blank" rel="noopener" title="EQ Zapp: California Earthquake Hazards Zone Application">California Department of Conservation ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-105</code></td>
+        <td>CAL FIRE Fire Hazard Severity Zone for the parcel</td>
+        <td class="num"><span class="blank">—</span></td>
+        <td class="nowrap">current</td>
+        <td><span class="pill pill--warn">Parcel</span></td>
+        <td><span class="pill pill--stop">Unverified</span></td>
+        <td class="small"><span class="muted">FHSZ is a mapped zone lookup. Note the state page itself distinguishes &quot;hazard&quot; (physical conditions over 30–50 years) from &quot;risk&quot;.</span></td>
+        <td><a class="src" href="https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones" target="_blank" rel="noopener" title="Fire Hazard Severity Zones (SRA and LRA)">CAL FIRE ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-106</code></td>
+        <td>Census tract population, median household income, and renter share</td>
+        <td class="num"><span class="blank">—</span></td>
+        <td class="nowrap">ACS 5-year</td>
+        <td><span class="pill pill--info">Tract</span></td>
+        <td><span class="pill pill--stop">Unverified</span></td>
+        <td class="small"><span class="muted">Tract cannot be selected without the parcel address. The Census data API also requires a key (it returned &quot;Missing Key&quot; during this session). See FLAG-U03.</span></td>
+        <td><a class="src" href="https://data.census.gov/all?g=140XX00US06037207200" target="_blank" rel="noopener" title="data.census.gov — tract profile query (ACS 5-year)">Census Bureau ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-107</code></td>
+        <td>Lease commencement, expiry date, and renewal options</td>
+        <td class="num"><span class="blank">—</span></td>
+        <td class="nowrap">current lease</td>
+        <td><span class="pill pill--neutral">Lease</span></td>
+        <td><span class="pill pill--stop">Unverified</span></td>
+        <td class="small"><span class="muted">Brief states only &quot;set to expire on 2030-2035&quot;, which is a range, not a date. Lease document not supplied.</span></td>
+        <td><a class="src" href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/R16.htm" target="_blank" rel="noopener" title="JACK 10-K FY2025 — Note: Leases (XBRL R16)">Securities and Exchange Commission ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-108</code></td>
+        <td>Current base rent, escalation schedule, and expense pass-throughs</td>
+        <td class="num"><span class="blank">—</span></td>
+        <td class="nowrap">current lease</td>
+        <td><span class="pill pill--neutral">Lease</span></td>
+        <td><span class="pill pill--stop">Unverified</span></td>
+        <td class="small"><span class="muted">Not supplied. Without base rent no NOI, cap rate, or after-tax comparison can be computed — only the framework can be published.</span></td>
+        <td><a class="src" href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/R16.htm" target="_blank" rel="noopener" title="JACK 10-K FY2025 — Note: Leases (XBRL R16)">Securities and Exchange Commission ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-109</code></td>
+        <td>Owner's adjusted basis, acquisition date, and accumulated depreciation</td>
+        <td class="num"><span class="blank">—</span></td>
+        <td class="nowrap">current</td>
+        <td><span class="pill pill--neutral">Owner</span></td>
+        <td><span class="pill pill--stop">Unverified</span></td>
+        <td class="small"><span class="muted">Not supplied. These four inputs determine the entire after-tax comparison; the calculator therefore requires the reader to enter them.</span></td>
+        <td><a class="src" href="https://www.irs.gov/taxtopics/tc409" target="_blank" rel="noopener" title="Topic no. 409, Capital gains and losses">Internal Revenue Service ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-110</code></td>
+        <td>Verified NNN retail cap rates for the subject submarket</td>
+        <td class="num"><span class="blank">—</span></td>
+        <td class="nowrap">current</td>
+        <td><span class="pill pill--info">Submarket</span></td>
+        <td><span class="pill pill--stop">Unverified</span></td>
+        <td class="small"><span class="muted">No official statistical series publishes submarket NNN retail cap rates. Commercial data providers are proprietary. Not estimated — see FLAG-U04.</span></td>
+        <td><a class="src" href="https://fred.stlouisfed.org/data/DGS10" target="_blank" rel="noopener" title="10-Year Treasury Constant Maturity — series DGS10">Federal Reserve Bank of St. Louis (source: Federal Reserve Board, H.15) ↗</a></td>
+      </tr>
+  </tbody>
+</table>
+</div>
+
+  <h2>Sequencing rule</h2>
+
+  <div class="card">
+    <h3 style="margin-top:0">Cheapest irreversible step last</h3>
+    <p>The gates are ordered by the ratio of <em>information gained</em> to <em>cost and irreversibility</em>.
+    G1 cost nothing and is done. G2 costs a few lookups. G3 costs an adviser's time but produces the
+    single largest information gain. G4 costs a CPA hour. G5 costs a broker's comps. G6 costs a data pull.</p>
+    <p>Every one of those is reversible — you can walk away from all six having spent only fees.
+    The first irreversible step is <strong>signing a renewal</strong> or <strong>accepting a purchase
+    and sale agreement</strong>. Putting that behind G1–G6 is the whole point of the board.</p>
+    <p class="small muted" style="margin-bottom:0">A gate that stays blocked for more than one review
+    cycle should be escalated as a decision, not left open: either the evidence is obtainable and
+    someone must be engaged to get it, or the decision has to be taken under uncertainty with the
+    uncertainty priced in. Leaving it open is the worst of the three, because it costs optionality
+    without buying information.</p>
+  </div>
+
+  <p style="margin-top:1.6rem"><a href="risks.html">Next: the risk register behind these gates →</a></p>
+
+</main>
+
+<footer class="site">
+  <div class="inner">
+    <p><strong>Privacy.</strong> No parcel identifier, address, owner name or personal figure appears
+    on this page. <a href="privacy.html">Privacy policy →</a></p>
+    <p><a href="sources.html">Full source register</a> · <a href="flagged.html">Flagged for review</a> · <a href="../index.html">Back to overview</a></p>
+  </div>
+</footer>
+</body>
+</html>
