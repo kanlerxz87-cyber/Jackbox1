@@ -1,0 +1,158 @@
+{
+  "meta": {
+    "title": "Verified tax rules relevant to a sale-versus-renewal comparison",
+    "compiled": "2026-11-25",
+    "scope": "Only rules that were read verbatim on an official IRS or California Franchise Tax Board page during this session. Every rule below is a rule, not a computation about the owner. No owner figures (basis, gain, income, state of residence) are present or guessed.",
+    "warning": "These rules are inputs to a calculator, not advice. Two of them (depreciation method and state of residence) are determinative and are currently unknown."
+  },
+  "federal": [
+    {
+      "id": "FED-CG",
+      "rule": "Long-term capital gain rate brackets",
+      "detail": "For taxable years beginning in 2025 the tax rate on most net capital gain is no higher than 15% for most individuals. 0% applies if taxable income is at or below $48,350 single / $96,700 married filing jointly / $64,750 head of household. 15% applies above those up to $533,400 single / $600,050 MFJ / $566,700 HoH. 20% applies to the extent taxable income exceeds the 15% thresholds.",
+      "source_name": "IRS Topic no. 409, Capital gains and losses",
+      "source_url": "https://www.irs.gov/taxtopics/tc409",
+      "verified": true,
+      "used_by": "after-tax module (federal long-term rate)"
+    },
+    {
+      "id": "FED-1250",
+      "rule": "Unrecaptured section 1250 gain is taxed at a maximum 25%",
+      "detail": "IRS Topic 409 lists 'the portion of any unrecaptured section 1250 gain from selling section 1250 real property is taxed at a maximum 25% rate.' This is the depreciation that was taken (or allowable) on the building and is recaptured on sale at up to 25% rather than at the 20% capital-gain maximum.",
+      "source_name": "IRS Topic no. 409, Capital gains and losses",
+      "source_url": "https://www.irs.gov/taxtopics/tc409",
+      "verified": true,
+      "used_by": "after-tax module (depreciation recapture)"
+    },
+    {
+      "id": "FED-NIIT",
+      "rule": "Net Investment Income Tax at 3.8% above modified AGI thresholds",
+      "detail": "The NIIT applies at 3.8% to certain net investment income of individuals with income above statutory thresholds: $250,000 MFJ, $125,000 MFS, $200,000 single, $200,000 head of household, $250,000 qualifying widow(er). The thresholds are not indexed for inflation. Gains from the sale of investment real estate (including a second home that is not a primary residence) are included in net investment income.",
+      "source_name": "IRS, Questions and Answers on the Net Investment Income Tax",
+      "source_url": "https://www.irs.gov/newsroom/questions-and-answers-on-the-net-investment-income-tax",
+      "verified": true,
+      "used_by": "after-tax module (3.8% surtax toggle)"
+    },
+    {
+      "id": "FED-1031",
+      "rule": "Section 1031 like-kind exchange defers gain; real property only",
+      "detail": "Under the Tax Cuts and Jobs Act, section 1031 applies only to exchanges of real property. Real properties are generally like-kind regardless of whether improved or unimproved. Real property in the United States is not like-kind to real property outside the United States. Reported on Form 8824.",
+      "source_name": "IRS, Like-kind exchanges — Real estate tax tips",
+      "source_url": "https://www.irs.gov/businesses/small-businesses-self-employed/like-kind-exchanges-real-estate-tax-tips",
+      "verified": true,
+      "used_by": "after-tax module (deferral branch); the 1031 path requires an identified replacement and a qualified intermediary, neither of which exists yet"
+    },
+    {
+      "id": "FED-DEP",
+      "rule": "Land is never depreciable; buildings are",
+      "detail": "IRS: 'Land is never depreciable, although buildings and certain land improvements may be.' Property placed in service after 1986 generally must use MACRS. A restaurant building is nonresidential real property; the allocation between the nondepreciable land and the depreciable building determines the recapture exposure on sale.",
+      "source_name": "IRS Topic no. 704, Depreciation",
+      "source_url": "https://www.irs.gov/taxtopics/tc704",
+      "verified": true,
+      "used_by": "after-tax module (land/building split input)"
+    },
+    {
+      "id": "FED-DEP2",
+      "rule": "MACRS recovery period for nonresidential real property",
+      "detail": "Not read during this session. IRS Publication 946 is the controlling source; the specific 39-year versus 31.5-year distinction by placed-in-service date was not transcribed here.",
+      "source_name": "IRS Publication 946, How To Depreciate Property",
+      "source_url": "https://www.irs.gov/publications/p946",
+      "verified": false,
+      "used_by": "flagged as unverified; the calculator therefore asks for accumulated depreciation directly instead of deriving it"
+    }
+  ],
+  "california": [
+    {
+      "id": "CA-NOLOWER",
+      "rule": "California has no lower rate for capital gains",
+      "detail": "Franchise Tax Board: 'California does not have a lower rate for capital gains. All capital gains are taxed as ordinary income.' Reported on California Schedule D (540).",
+      "source_name": "California Franchise Tax Board, Capital gains and losses (last updated 2026-01-28)",
+      "source_url": "https://www.ftb.ca.gov/file/personal/income-types/capital-gains-and-losses.html",
+      "verified": true,
+      "used_by": "after-tax module (state rate applied to the full gain)"
+    },
+    {
+      "id": "CA-RATES2025",
+      "rule": "California 2025 rate schedules (used for the top marginal rate)",
+      "detail": "Schedule X single: 9.30% from $72,724 to $371,479; 10.30% to $445,771; 11.30% to $742,953; 12.30% at $742,953 and over. Schedule Y married filing jointly: 9.30% from $145,448 to $742,958; 10.30% to $891,542; 11.30% to $1,485,906; 12.30% at $1,485,906 and over.",
+      "source_name": "California Franchise Tax Board, 2025 California Tax Rate Schedules",
+      "source_url": "https://www.ftb.ca.gov/forms/2025/2025-540-tax-rate-schedules.pdf",
+      "verified": true,
+      "used_by": "after-tax module (marginal-rate selector)"
+    },
+    {
+      "id": "CA-RATES2024",
+      "rule": "California 2024 rate schedules",
+      "detail": "Schedule X single: 9.30% from $70,606 to $360,659; 10.30% to $432,787; 11.30% to $721,314; 12.30% at $721,314 and over. Schedule Y MFJ: 9.30% from $141,212 to $721,318; 10.30% to $865,574; 11.30% to $1,442,628; 12.30% at $1,442,628 and over.",
+      "source_name": "California Franchise Tax Board, 2024 California Tax Rate Schedules",
+      "source_url": "https://www.ftb.ca.gov/forms/2024/2024-540-tax-rate-schedules.pdf",
+      "verified": true,
+      "used_by": "comparison of bracket drift; 2026 schedules were not published at the time of reading"
+    },
+    {
+      "id": "CA-1031",
+      "rule": "California requires FTB 3840 when California property is exchanged for out-of-state property",
+      "detail": "For taxable years beginning on or after 1 January 2014, R&TC sections 18032 and 24953 require California resident and nonresident taxpayers who defer gain on the sale or exchange of California property for out-of-state replacement property under IRC 1031 to file an annual information return. All taxpayers, regardless of residence, who exchange California real property for like-kind property outside California must file form FTB 3840.",
+      "source_name": "FTB Publication 1100, 2025 Taxation of Nonresidents and Individuals Who Change Residency",
+      "source_url": "https://www.ftb.ca.gov/forms/2025/2025-1100-publication.pdf",
+      "verified": true,
+      "used_by": "after-tax module (California-source gain retention on a 1031 out of state)"
+    },
+    {
+      "id": "CA-SOURCE",
+      "rule": "California sources real-property gain to where the property is located",
+      "detail": "FTB: 'California taxes real property based upon where the property is located.' Example 16 in Publication 1100: a Texas resident exchanges a California condominium for Texas property, defers a $15,000 gain, later sells the Texas property recognising $20,000; the $15,000 deferred gain 'has a source in California and is taxable by California.'",
+      "source_name": "FTB Publication 1100 (2025)",
+      "source_url": "https://www.ftb.ca.gov/forms/2025/2025-1100-publication.pdf",
+      "verified": true,
+      "used_by": "important if OWNER-1 is not a California resident: moving out of state does not remove California tax on this property's gain"
+    },
+    {
+      "id": "CA-PROP13",
+      "rule": "Proposition 13 assessment and the 2% annual cap; reassessment on change of ownership",
+      "detail": "Los Angeles County Assessor: Proposition 13 'limits a property owner's general levy tax to 1 percent of the assessed value' and 'mandated that a property's assessed value could not increase by more than 2 percent from one year to the next except in the event of a change in ownership, new construction, the property receives a temporary decline in assessed value (Proposition 8), or the property is designated a restricted historical property (Mills Act).'",
+      "source_name": "Los Angeles County Assessor, Proposition 13",
+      "source_url": "https://assessor.lacounty.gov/real-estate-toolkit/proposition-13",
+      "verified": true,
+      "used_by": "hold-case carrying cost; a sale resets the buyer's basis and therefore the buyer's tax, which affects the price a buyer can pay"
+    },
+    {
+      "id": "CA-PROP8",
+      "rule": "Decline-in-value (Proposition 8) temporary assessment relief",
+      "detail": "The Assessor states that it will begin accepting Decline-in-Value applications for the 2026-2027 tax year on 2 July 2026 and that the deadline to file is 30 November 2026.",
+      "source_name": "Los Angeles County Assessor, Decline-in-Value",
+      "source_url": "https://assessor.lacounty.gov/decline-in-value",
+      "verified": true,
+      "used_by": "a downside hedge on the hold case; not modelled in the calculator because no assessed value is known"
+    }
+  ],
+  "labour_cost": [
+    {
+      "id": "CA-MW",
+      "rule": "California minimum wage, effective 1 January 2026",
+      "detail": "Division of Labor Standards Enforcement: 'Effective January 1, 2026, the minimum wage is $16.90 per hour for all employers, not otherwise covered by a higher minimum wage specific to an industry or a locality.' After reaching $15 the rate is adjusted annually by CPI-W, cannot be lowered, and is capped at a 3.5% annual increase.",
+      "source_name": "California Department of Industrial Relations, Minimum Wage FAQ",
+      "source_url": "https://www.dir.ca.gov/dlse/faq_minimumwage.htm",
+      "verified": true,
+      "used_by": "tenant cost pressure; the single largest operating input at a quick-service restaurant"
+    },
+    {
+      "id": "CA-FFMW",
+      "rule": "Fast-food minimum wage (AB 1228)",
+      "detail": "The Industrial Relations FAQ confirms a higher minimum wage for fast-food workers effective 1 April 2024 and links to a dedicated FAQ. The specific current dollar rate was not read from an official page during this session.",
+      "source_name": "California Department of Industrial Relations, Minimum Wage FAQ (fast-food link)",
+      "source_url": "https://www.dir.ca.gov/dlse/Fast-Food-Minimum-Wage-FAQ.htm",
+      "verified": false,
+      "used_by": "flagged: the widely reported $20.00 rate was NOT confirmed on an official page here, so it is not used as a value"
+    }
+  ],
+  "local_tax_note": {
+    "id": "LOC-01",
+    "rule": "City of Los Angeles business tax and any local transfer tax",
+    "detail": "Not read during this session. Los Angeles imposes a real property transfer tax by documentary stamp, and a city business tax on gross receipts; neither rate was confirmed on an official page here.",
+    "source_name": "City of Los Angeles Office of Finance (not read)",
+    "source_url": "https://finance.lacity.gov/",
+    "verified": false,
+    "used_by": "left out of the calculator entirely rather than guessed"
+  }
+}

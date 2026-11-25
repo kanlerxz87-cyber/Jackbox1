@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flagged for Review — Parcel Decision Workspace</title>
+<meta name="description" content="An anonymised, source-linked decision workspace for a single-tenant quick-service parcel in central Los Angeles. Contains no personal or parcel-identifying information.">
+<meta name="robots" content="index, follow">
+<link rel="stylesheet" href="assets/css/app.css">
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">PDW</span>
+      <span class="brand-text">
+        <strong>Parcel Decision Workspace</strong>
+        <span>Anonymised &middot; source-linked &middot; no personal data</span>
+      </span>
+    </a>
+    <div class="header-meta">
+      <b>PARCEL-A &middot; OWNER-1 &middot; TENANT-A</b><br>
+      Central Los Angeles &middot; NNN &middot; expiry window 2030&ndash;2035<br>
+      Evidence compiled 2026-11-25
+    </div>
+  </div>
+</header>
+
+<nav class="site-nav" aria-label="Sections">
+  <div class="nav-inner">
+      <a href="index.html">Dashboard</a>
+      <a href="gates.html">Decision Gates</a>
+      <a href="sell-vs-renew.html">Sell vs Renew</a>
+      <a href="market.html">Market &amp; Economy</a>
+      <a href="location.html">Trade Area</a>
+      <a href="hazards.html">Hazards &amp; Risk</a>
+      <a href="questions.html">Questions</a>
+      <a href="suggestions.html">Suggestions</a>
+      <a href="sources.html">Sources</a>
+      <a href="flagged.html" aria-current="page">Flagged for Review</a>
+  </div>
+</nav>
+
+<main id="main">
+
+
+<p class="lede">Everything that could not be confirmed, published rather than suppressed. Each item records what was
+attempted, why it failed, what it affects, and what would close it. Nothing on this page is used as a value anywhere
+on the site.</p>
+
+<div class="notice warn">
+  <p><strong>This page exists so the site can be trusted.</strong> A dashboard that shows only what worked is more
+  dangerous than one that shows the gaps. These 14 items do not block publication and they do not block
+  the merge. They block <em>reliance</em> on the specific figure or conclusion named in each row.</p>
+</div>
+
+<div class="grid two">
+  <div class="card">
+    <h3>Flag categories</h3>
+    <ul class="clean small">
+      <li><b>source unavailable</b> &mdash; The official page existed but did not return usable content to this reader.</li><li><b>not published officially</b> &mdash; The figure exists in practice but no official published page carries it.</li><li><b>identifies parcel</b> &mdash; The official source can answer the question, but only by keying off the private address, so the answer is deliberately withheld from the public product.</li><li><b>data gap official</b> &mdash; The statistical agency itself has a gap in its series.</li><li><b>repo irregularity</b> &mdash; Something about the repository or the environment that a reviewer should know.</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>What this means for a reader</h3>
+    <p class="small">If a row here names a figure you were about to rely on, do not rely on it. Open the attempted URL
+    in a browser: several of these failures are reader-specific, and the page may work for you. If it does, record the
+    value with the date you read it and update the data file.</p>
+    <p class="small">If a row here names a conclusion, treat that conclusion as withheld rather than as negative. For
+    example, the absence of a parcel hazard designation on this site does not mean the parcel is free of hazard; it means
+    the designation is private.</p>
+  </div>
+</div>
+
+<h2>All flagged items</h2>
+<div class="table-wrap">
+  <table>
+    <caption>14 items flagged for review
+      <span class="cap-sub">Ordered as recorded. Each carries the URL that was attempted so a reviewer can retry it rather than take the flag on trust.</span></caption>
+    <thead><tr><th>ID</th><th>Category</th><th>Item, detail and impact</th><th>URLs attempted</th></tr></thead>
+    <tbody>
+<tr>
+  <td><code>FR-01</code></td>
+  <td><span class="badge warn">source unavailable</span></td>
+  <td><b>Los Angeles County QuickFacts benchmark</b><br><span class="tiny muted">The county QuickFacts page failed to render content on four separate attempts with different URL forms, returning an HTTP fetch error each time. The city page loaded normally, so the failure is specific to the county page at the time of reading.</span>
+      <br><span class="tiny muted"><b>Impact:</b> No county comparator for income, population or housing. The city figures are unaffected and remain verified.</span>
+      <br><span class="tiny muted"><b>To close:</b> Open the county QuickFacts page in a browser and record the figure with the date read. Or use the Census API with a free key.</span></td>
+  <td class="src"><div class="tiny"><a href="https://www.census.gov/quickfacts/fact/table/losangelescountycalifornia/PST045224" rel="noopener noreferrer">https://www.census.gov/quickfacts/fact/table/losangelescountycalifornia/PST045224</a></div><div class="tiny"><a href="https://www.census.gov/quickfacts/fact/table/losangelescountycalifornia/PST045225" rel="noopener noreferrer">https://www.census.gov/quickfacts/fact/table/losangelescountycalifornia/PST045225</a></div><div class="tiny"><a href="https://www.census.gov/quickfacts/fact/table/losangelescountycalifornia/PST045223" rel="noopener noreferrer">https://www.census.gov/quickfacts/fact/table/losangelescountycalifornia/PST045223</a></div></td>
+</tr>
+<tr>
+  <td><code>FR-02</code></td>
+  <td><span class="badge warn">data gap official</span></td>
+  <td><b>CPI-U 12-month change for October 2026, Los Angeles area</b><br><span class="tiny muted">BLS states that it did not collect survey data for October 2025 because of the 2025 lapse in appropriations, so for most series it could not publish October 2025 indexes and therefore cannot publish an October 2026 over-the-year change. BLS also reports the October 2025 unemployment value as &#x27;-&#x27; for the same reason.</span>
+      <br><span class="tiny muted"><b>Impact:</b> The 12-month inflation figure on the Market page is September 2026 (3.7%), not October. The October 1-month change (0.6%) is published and is shown as a one-month change, not as an annual rate.</span>
+      <br><span class="tiny muted"><b>To close:</b> Nothing to close — this is an official gap. Use the September 12-month figure until BLS publishes November.</span></td>
+  <td class="src"><div class="tiny"><a href="https://www.bls.gov/regions/west/news-release/consumerpriceindex_losangeles.htm" rel="noopener noreferrer">https://www.bls.gov/regions/west/news-release/consumerpriceindex_losangeles.htm</a></div><div class="tiny"><a href="https://api.bls.gov/publicAPI/v2/timeseries/data/LAUMT063108000000003" rel="noopener noreferrer">https://api.bls.gov/publicAPI/v2/timeseries/data/LAUMT063108000000003</a></div></td>
+</tr>
+<tr>
+  <td><code>FR-03</code></td>
+  <td><span class="badge warn">identifies parcel</span></td>
+  <td><b>All parcel-level hazard designations</b><br><span class="tiny muted">Flood zone, fire hazard severity zone, seismic ground motion, fault-rupture zone and the composite National Risk Index score are all keyed to the parcel&#x27;s coordinates or address. Publishing any of them would identify the site.</span>
+      <br><span class="tiny muted"><b>Impact:</b> Five rows on the Hazard Screening page are intentionally blank. This is a privacy control, not a research failure.</span>
+      <br><span class="tiny muted"><b>To close:</b> Run each lookup in the private workspace with the real address, record the designation and the date, and keep it offline. Do not publish.</span></td>
+  <td class="src"><div class="tiny"><a href="https://msc.fema.gov/portal/search" rel="noopener noreferrer">https://msc.fema.gov/portal/search</a></div><div class="tiny"><a href="https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones" rel="noopener noreferrer">https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones</a></div><div class="tiny"><a href="https://earthquake.usgs.gov/nshmp/" rel="noopener noreferrer">https://earthquake.usgs.gov/nshmp/</a></div></td>
+</tr>
+<tr>
+  <td><code>FR-04</code></td>
+  <td><span class="badge warn">identifies parcel</span></td>
+  <td><b>Zoning, General Plan, school assignment and traffic counts</b><br><span class="tiny muted">ZIMAS is address-keyed, school assignment is address-keyed, and Caltrans publishes AADT only for the State Highway System. City street counts are held by the city traffic engineering department.</span>
+      <br><span class="tiny muted"><b>Impact:</b> Blank rows on the Trade Area page. The official tools are linked so the owner can complete them privately.</span>
+      <br><span class="tiny muted"><b>To close:</b> Private workspace steps, listed on the Trade Area page.</span></td>
+  <td class="src"><div class="tiny"><a href="https://planning.lacity.gov/" rel="noopener noreferrer">https://planning.lacity.gov/</a></div><div class="tiny"><a href="https://caaspp-elpac.ets.org/caaspp/SearchSB.aspx" rel="noopener noreferrer">https://caaspp-elpac.ets.org/caaspp/SearchSB.aspx</a></div><div class="tiny"><a href="https://dot.ca.gov/programs/traffic-operations/census" rel="noopener noreferrer">https://dot.ca.gov/programs/traffic-operations/census</a></div></td>
+</tr>
+<tr>
+  <td><code>FR-05</code></td>
+  <td><span class="badge warn">source unavailable</span></td>
+  <td><b>CAL FIRE fire hazard severity zone page at its previous URL</b><br><span class="tiny muted">The URL fire.ca.gov/programs/communications/fire-hazard-severity-zones returned a 404. The programme was then confirmed at the Office of the State Fire Marshal domain instead.</span>
+      <br><span class="tiny muted"><b>Impact:</b> None on conclusions — the correct OSFM page was read and is linked. Recorded because the old URL is widely cited.</span>
+      <br><span class="tiny muted"><b>To close:</b> Closed. Use https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones</span></td>
+  <td class="src"><div class="tiny"><a href="https://www.fire.ca.gov/programs/communications/fire-hazard-severity-zones/" rel="noopener noreferrer">https://www.fire.ca.gov/programs/communications/fire-hazard-severity-zones/</a></div></td>
+</tr>
+<tr>
+  <td><code>FR-06</code></td>
+  <td><span class="badge warn">source unavailable</span></td>
+  <td><b>California Geological Survey Alquist-Priolo page</b><br><span class="tiny muted">Three CGS deep links returned the Department of Conservation &#x27;Page Not Found&#x27; page. The CGS site root resolves. Because the specific programme page could not be confirmed, the Alquist-Priolo row is marked programme-unverified.</span>
+      <br><span class="tiny muted"><b>Impact:</b> The fault-rupture row is marked unverified at the programme level, which is stricter than the other hazard rows.</span>
+      <br><span class="tiny muted"><b>To close:</b> Navigate the CGS site in a browser, record the current URL, and update the row.</span></td>
+  <td class="src"><div class="tiny"><a href="https://www.conservation.ca.gov/cgs/geologic-hazards/alquist-priolo" rel="noopener noreferrer">https://www.conservation.ca.gov/cgs/geologic-hazards/alquist-priolo</a></div><div class="tiny"><a href="https://www.conservation.ca.gov/cgs/geologic-hazards/earthquake-zoning" rel="noopener noreferrer">https://www.conservation.ca.gov/cgs/geologic-hazards/earthquake-zoning</a></div><div class="tiny"><a href="https://www.conservation.ca.gov/cgs/geologic-hazards" rel="noopener noreferrer">https://www.conservation.ca.gov/cgs/geologic-hazards</a></div></td>
+</tr>
+<tr>
+  <td><code>FR-07</code></td>
+  <td><span class="badge warn">source unavailable</span></td>
+  <td><b>California FAIR Plan consumer page and DIR fast-food wage page</b><br><span class="tiny muted">The CA Department of Insurance FAIR Plan URL returned a document-not-found page, and the DIR Fast Food Minimum Wage URL returned a fetch error. The DIR general minimum wage FAQ did load and is verified at $16.90/hour from 1 January 2026.</span>
+      <br><span class="tiny muted"><b>Impact:</b> The fast-food wage rate is NOT asserted anywhere on this site. The widely reported $20.00 figure was seen only on non-official pages and was therefore excluded under the brief&#x27;s own rule.</span>
+      <br><span class="tiny muted"><b>To close:</b> Read the live DIR fast-food FAQ page and record the rate, the effective date and the authority.</span></td>
+  <td class="src"><div class="tiny"><a href="https://www.insurance.ca.gov/01-consumers/105-type/95-guides/03-res/FAIR-plan.cfm" rel="noopener noreferrer">https://www.insurance.ca.gov/01-consumers/105-type/95-guides/03-res/FAIR-plan.cfm</a></div><div class="tiny"><a href="https://www.dir.ca.gov/dlse/FastFoodMinimumWage.html" rel="noopener noreferrer">https://www.dir.ca.gov/dlse/FastFoodMinimumWage.html</a></div><div class="tiny"><a href="https://www.dir.ca.gov/dlse/California-Fast-Food-Minimum-Wage.html" rel="noopener noreferrer">https://www.dir.ca.gov/dlse/California-Fast-Food-Minimum-Wage.html</a></div></td>
+</tr>
+<tr>
+  <td><code>FR-08</code></td>
+  <td><span class="badge warn">source unavailable</span></td>
+  <td><b>HUD FY2026 Fair Market Rent values</b><br><span class="tiny muted">The HUD FY2026 FMR documentation page loaded its methodology but the rent value cells rendered empty to this reader.</span>
+      <br><span class="tiny muted"><b>Impact:</b> The FMR row on the Market page is blank. Residential FMR would in any case be context, not a commercial rent.</span>
+      <br><span class="tiny muted"><b>To close:</b> Read the value from the HUD page in a browser.</span></td>
+  <td class="src"><div class="tiny"><a href="https://www.huduser.gov/portal/datasets/fmr/fmrs/FY2026_code/2026summary.odn?selected_metro_code=31080&amp;year=2026&amp;fmrtype=Final" rel="noopener noreferrer">https://www.huduser.gov/portal/datasets/fmr/fmrs/FY2026_code/2026summary.odn?selected_metro_code=31080&amp;year=2026&amp;fmrtype=Final</a></div></td>
+</tr>
+<tr>
+  <td><code>FR-09</code></td>
+  <td><span class="badge warn">not published officially</span></td>
+  <td><b>Market rent, cap rate and closed comparables for the parcel</b><br><span class="tiny muted">No official agency publishes cap rates or commercial lease comparables. CoStar and similar products are commercial databases, not official sources, and were therefore not used to assert any value.</span>
+      <br><span class="tiny muted"><b>Impact:</b> Every valuation row in this product is blank or explicitly an input the user supplies. The calculator is built to make the assumption visible rather than to hide it in a value field.</span>
+      <br><span class="tiny muted"><b>To close:</b> A broker&#x27;s documented comparable file with source documents, kept private, referenced (not published) here.</span></td>
+  <td class="src"><span class="tiny muted">no URL attempted &mdash; nothing official publishes this</span></td>
+</tr>
+<tr>
+  <td><code>FR-10</code></td>
+  <td><span class="badge warn">not published officially</span></td>
+  <td><b>FHFA house price change for the Los Angeles MSA</b><br><span class="tiny muted">The FHFA 2026Q3 report was read through the press release and summary tables. The 100-largest-MSA table sits on a later page than the portion retrieved, so the Los Angeles MSA figure is blank. The California state figure (0.6%) is verified from the state map table.</span>
+      <br><span class="tiny muted"><b>Impact:</b> The property price trend panel shows the state figure and labels it as such. Single-family HPI is not a restaurant valuation series in any case.</span>
+      <br><span class="tiny muted"><b>To close:</b> Read the MSA table on page 18-20 of the same report.</span></td>
+  <td class="src"><div class="tiny"><a href="https://www.fhfa.gov/document/d/hpi/fhfa-house-price-index-report-2026q3" rel="noopener noreferrer">https://www.fhfa.gov/document/d/hpi/fhfa-house-price-index-report-2026q3</a></div></td>
+</tr>
+<tr>
+  <td><code>FR-11</code></td>
+  <td><span class="badge warn">repo irregularity</span></td>
+  <td><b>Repository contained only a README at the start of this session</b><br><span class="tiny muted">The repository at commit 4aa9dad contained one file: README.md with the single word &#x27;Jackbox1&#x27;. No COORDINATION.md existed, no data, no site, and no pull requests. Since GitHub Pages was already enabled on main with a legacy build from the repository root, the site had to be built from scratch in one session.</span>
+      <br><span class="tiny muted"><b>Impact:</b> There was no prior work to verify line by line. The verification burden fell entirely on this session&#x27;s own sources, all of which are linked.</span>
+      <br><span class="tiny muted"><b>To close:</b> Not applicable. Recorded for the audit trail.</span></td>
+  <td class="src"><span class="tiny muted">no URL attempted &mdash; nothing official publishes this</span></td>
+</tr>
+<tr>
+  <td><code>FR-12</code></td>
+  <td><span class="badge warn">repo irregularity</span></td>
+  <td><b>The property address is not in the repository, and must not be added</b><br><span class="tiny muted">The brief describes the property only as a Jack in the Box on a triple-net lease in central Los Angeles expiring between 2030 and 2035. No address, parcel number or APN was supplied, and none is inferred here. Even the neighbourhood is not stated, so every geographic figure on this site is a city or metro figure.</span>
+      <br><span class="tiny muted"><b>Impact:</b> This is the single largest limitation of the product. Every parcel-level row is blank for this reason as much as for privacy.</span>
+      <br><span class="tiny muted"><b>To close:</b> The owner records the address in the private workspace only. Nothing about it should be committed to this public repository.</span></td>
+  <td class="src"><span class="tiny muted">no URL attempted &mdash; nothing official publishes this</span></td>
+</tr>
+<tr>
+  <td><code>FR-13</code></td>
+  <td><span class="badge warn">data gap official</span></td>
+  <td><b>City of Los Angeles business tax and real property transfer tax rates</b><br><span class="tiny muted">Neither rate was read from an official City of Los Angeles page during this session, so neither is used. The calculator excludes local transaction taxes entirely and says so.</span>
+      <br><span class="tiny muted"><b>Impact:</b> Net sale proceeds shown by the after-tax module are therefore an upper bound until local transfer tax is added by the CPA.</span>
+      <br><span class="tiny muted"><b>To close:</b> Read the current rates from the City of Los Angeles Office of Finance and add them to the calculator as a verified input.</span></td>
+  <td class="src"><div class="tiny"><a href="https://finance.lacity.gov/" rel="noopener noreferrer">https://finance.lacity.gov/</a></div></td>
+</tr>
+<tr>
+  <td><code>FR-14</code></td>
+  <td><span class="badge warn">not published officially</span></td>
+  <td><b>Whether this specific unit is affected by the franchisor&#x27;s closure programme</b><br><span class="tiny muted">The FY2025 10-K discloses a restaurant closure programme under &#x27;Jack on Track&#x27; but does not identify units. Inferring that this unit is or is not affected would be speculation.</span>
+      <br><span class="tiny muted"><b>Impact:</b> The tenant-credit panel presents the disclosed programme as a system-level fact with that label attached, and does not apply it to this parcel.</span>
+      <br><span class="tiny muted"><b>To close:</b> A written answer from the tenant, kept private (see suggestion S-08).</span></td>
+  <td class="src"><div class="tiny"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm" rel="noopener noreferrer">https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm</a></div></td>
+</tr></tbody>
+    <tfoot><tr><td colspan="4">Flagged items are published, not suppressed. None of them blocks the site from being live, and none of them is used as a number anywhere in the analysis. Each carries the URL that was attempted so a reviewer can retry it.</td></tr></tfoot>
+  </table>
+</div>
+
+<h2>How to request a change</h2>
+<div class="card">
+  <ol class="steps">
+    <li>Open the attempted URL and confirm the value with its period and vintage.</li>
+    <li>Edit the matching entry in <code>data/market.json</code>, <code>data/hazards.json</code> or <code>data/flagged.json</code>.</li>
+    <li>Set <code>verified</code> to <code>true</code> and paste the exact URL you read it from.</li>
+    <li>Remove the item from <code>flagged.json</code> only if it is fully resolved, and note the resolution in the commit message.</li>
+    <li>Rebuild with <code>python3 tools/build_site.py</code> and confirm the row now shows a source and no warning badge.</li>
+  </ol>
+</div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <strong>Parcel Decision Workspace</strong> &mdash; built 2026-11-25.<br>
+      Public product. Contains no address, parcel number, owner name, lease text or financial figure belonging to any person or entity.
+      Private material is held offline with authorised advisers.
+    </div>
+    <nav aria-label="Footer">
+      <a href="sources.html">Sources</a>
+      <a href="flagged.html">Flagged for Review</a>
+      <a href="questions.html">Open Questions</a>
+      <a href="advisor-summary.html">One-Page Summary</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

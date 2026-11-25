@@ -27,16 +27,16 @@ by any other session; note the handoff in the log below.
 
 | ID | Task | Status | Owner (session) | Files touched |
 |---|---|---|---|---|
-| W-01 | Replace city/county proxies with trade-area figures | in progress | sess-arena-78005353 | `data/trade-area.json`, `site/location.html` |
-| W-02 | Extend private worksheet to sell-vs-hold comparison | in progress | sess-arena-78005353 | `site/calculator.html`, `site/assets/js/calc.js` |
-| W-03 | Decision-gate progress board | in progress | sess-arena-78005353 | `data/gates.json`, `site/index.html` |
-| W-04 | Parcel-level hazard screening | in progress | sess-arena-78005353 | `data/hazards.json`, `site/hazards.html` |
-| W-10 | One-page printable summary for advisors | in progress | sess-arena-78005353 | `site/advisor-summary.html` |
-| W-05 | Question / information / answer register (gating questions) | in progress | sess-arena-78005353 | `data/questions.json`, `site/questions.html` |
-| W-06 | Suggestions register + review/choose-a-path page | in progress | sess-arena-78005353 | `data/suggestions.json`, `site/suggestions.html` |
-| W-07 | Verification / source register + flagged items | in progress | sess-arena-78005353 | `data/sources.json`, `data/flagged.json`, `site/flagged.html`, `site/sources.html` |
-| W-08 | Market & economy pages (jobs, income, schools, population) | in progress | sess-arena-78005353 | `data/market.json`, `site/market.html` |
-| W-09 | After-tax sale comparison module + short-lease discount | in progress | sess-arena-78005353 | `data/tax.json`, `site/sell-vs-renew.html` |
+| W-01 | Replace city/county proxies with trade-area figures | done | sess-arena-78005353 | `location.html`, `data/market.json` |
+| W-02 | Extend private worksheet to sell-vs-hold comparison | done | sess-arena-78005353 | `sell-vs-renew.html`, `assets/js/calc.js` |
+| W-03 | Decision-gate progress board | done | sess-arena-78005353 | `data/gates.json`, `index.html`, `gates.html` |
+| W-04 | Parcel-level hazard screening | done (parcel rows withheld — see FR-03) | sess-arena-78005353 | `data/hazards.json`, `hazards.html` |
+| W-10 | One-page printable summary for advisors | done | sess-arena-78005353 | `advisor-summary.html`, print CSS in `assets/css/app.css` |
+| W-05 | Question / information / answer register (gating questions) | done | sess-arena-78005353 | `data/questions.json`, `questions.html` |
+| W-06 | Suggestions register + review/choose-a-path page | done | sess-arena-78005353 | `data/suggestions.json`, `suggestions.html` |
+| W-07 | Verification / source register + flagged items | done | sess-arena-78005353 | `data/flagged.json`, `flagged.html`, `sources.html` |
+| W-08 | Market & economy pages (jobs, income, schools, population) | done (schools + county blank — see FR-01/FR-04) | sess-arena-78005353 | `data/market.json`, `market.html`, `data/tenant.json` |
+| W-09 | After-tax sale comparison module + short-lease discount | done (discount unpriced — see FR-09) | sess-arena-78005353 | `data/tax.json`, `sell-vs-renew.html` |
 | INT-01 | Final integration: re-verify combined data, build check, GitHub Pages publish, PR + merge | in progress | sess-arena-78005353 | all |
 
 > No other session had registered a claim when this session started (repo contained only

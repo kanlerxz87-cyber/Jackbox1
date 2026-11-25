@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Market &amp; Economy — Parcel Decision Workspace</title>
+<meta name="description" content="An anonymised, source-linked decision workspace for a single-tenant quick-service parcel in central Los Angeles. Contains no personal or parcel-identifying information.">
+<meta name="robots" content="index, follow">
+<link rel="stylesheet" href="assets/css/app.css">
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">PDW</span>
+      <span class="brand-text">
+        <strong>Parcel Decision Workspace</strong>
+        <span>Anonymised &middot; source-linked &middot; no personal data</span>
+      </span>
+    </a>
+    <div class="header-meta">
+      <b>PARCEL-A &middot; OWNER-1 &middot; TENANT-A</b><br>
+      Central Los Angeles &middot; NNN &middot; expiry window 2030&ndash;2035<br>
+      Evidence compiled 2026-11-25
+    </div>
+  </div>
+</header>
+
+<nav class="site-nav" aria-label="Sections">
+  <div class="nav-inner">
+      <a href="index.html">Dashboard</a>
+      <a href="gates.html">Decision Gates</a>
+      <a href="sell-vs-renew.html">Sell vs Renew</a>
+      <a href="market.html" aria-current="page">Market &amp; Economy</a>
+      <a href="location.html">Trade Area</a>
+      <a href="hazards.html">Hazards &amp; Risk</a>
+      <a href="questions.html">Questions</a>
+      <a href="suggestions.html">Suggestions</a>
+      <a href="sources.html">Sources</a>
+      <a href="flagged.html">Flagged for Review</a>
+  </div>
+</nav>
+
+<main id="main">
+
+
+<p class="lede">Two questions are answered here and one is not. <b>Answered:</b> how the Los Angeles economy and the
+tenant's corporate parent are actually performing, from official statistics and audited filings. <b>Not answered:</b>
+what this specific corner is worth, because that requires the private lease and the private address.</p>
+
+<div class="notice">
+  <p><strong>Read the geography column before using any number.</strong> The brief asks for trade-area figures around
+  the parcel. No official agency publishes a drive-time trade area, and building one requires the address. So every
+  figure here is a <em>city</em> or <em>metro</em> figure, labelled as such. It establishes direction, not magnitude at
+  the corner. <a href="location.html">The Trade Area page explains the exact substitution and the private steps that
+  replace it &rarr;</a></p>
+</div>
+
+<div class="toc" aria-label="Jump to group">
+<a href="#population">Population</a><a href="#income-poverty">Income &amp; poverty</a><a href="#housing">Housing</a><a href="#education">Education</a><a href="#labour-market">Labour market</a><a href="#business-activity">Business activity</a><a href="#prices">Prices</a><a href="#property-price-trend">Property price trend</a><a href="#traffic-access">Traffic &amp; access</a><a href="#planning-zoning">Planning &amp; zoning</a>
+<a href="#tenant">Tenant &amp; franchisor</a>
+</div>
+
+
+<h2 id="population">Population</h2>
+<div class="table-wrap">
+  <table>
+    <caption>Population &mdash; 9 rows
+      <span class="cap-sub">Values reproduce the official page as read. Blank cells could not be confirmed and are flagged rather than estimated.</span>
+    </caption>
+    <thead><tr><th>ID</th><th>Measure</th><th>Geography</th><th>Period</th><th class="num">Value</th><th>Official source</th></tr></thead>
+    <tbody>
+<tr><td><code>POP-01</code></td><td>Population, July 1, 2025 (V2025 estimate)<br><span class="tiny muted">City-level. Serves as an upper-bound proxy only; it is not a trade-area figure.</span></td><td class="small">Los Angeles city, CA</td><td class="small">2025-07-01</td><td class="num">3,869,089<br><span class="tiny muted">persons</span></td><td class="src"><a href="https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045224" rel="noopener noreferrer" title="U.S. Census Bureau, QuickFacts (V2025 population estimates)">U.S. Census Bureau, QuickFacts (V2025 population estimates)</a></td></tr>
+<tr><td><code>POP-02</code></td><td>Population change, April 1 2020 base to July 1 2025<br><span class="tiny muted">Published as a percent change by Census; reproduced as published.</span></td><td class="small">Los Angeles city, CA</td><td class="small">2020-04-01 to 2025-07-01</td><td class="num">-0.8%<br><span class="tiny muted"></span></td><td class="src"><a href="https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045224" rel="noopener noreferrer" title="U.S. Census Bureau, QuickFacts (V2025)">U.S. Census Bureau, QuickFacts (V2025)</a></td></tr>
+<tr><td><code>POP-03</code></td><td>Population, decennial Census 2020<br><span class="tiny muted"></span></td><td class="small">Los Angeles city, CA</td><td class="small">2020-04-01</td><td class="num">3,898,747<br><span class="tiny muted">persons</span></td><td class="src"><a href="https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045224" rel="noopener noreferrer" title="U.S. Census Bureau, QuickFacts">U.S. Census Bureau, QuickFacts</a></td></tr>
+<tr><td><code>POP-04</code></td><td>Population, decennial Census 2010<br><span class="tiny muted"></span></td><td class="small">Los Angeles city, CA</td><td class="small">2010-04-01</td><td class="num">3,792,621<br><span class="tiny muted">persons</span></td><td class="src"><a href="https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045224" rel="noopener noreferrer" title="U.S. Census Bureau, QuickFacts">U.S. Census Bureau, QuickFacts</a></td></tr>
+<tr><td><code>POP-05</code></td><td>Persons under 18 years<br><span class="tiny muted">Relevant to school-driven household demand, not to quick-service trade area by itself.</span></td><td class="small">Los Angeles city, CA</td><td class="small">V2025</td><td class="num">19.2%<br><span class="tiny muted"></span></td><td class="src"><a href="https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045224" rel="noopener noreferrer" title="U.S. Census Bureau, QuickFacts">U.S. Census Bureau, QuickFacts</a></td></tr>
+<tr><td><code>POP-06</code></td><td>Persons 65 years and over<br><span class="tiny muted"></span></td><td class="small">Los Angeles city, CA</td><td class="small">V2025</td><td class="num">14.2%<br><span class="tiny muted"></span></td><td class="src"><a href="https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045224" rel="noopener noreferrer" title="U.S. Census Bureau, QuickFacts">U.S. Census Bureau, QuickFacts</a></td></tr>
+<tr><td><code>POP-07</code></td><td>Foreign-born persons<br><span class="tiny muted"></span></td><td class="small">Los Angeles city, CA</td><td class="small">2020-2024 ACS 5-year</td><td class="num">35.7%<br><span class="tiny muted"></span></td><td class="src"><a href="https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045224" rel="noopener noreferrer" title="U.S. Census Bureau, QuickFacts">U.S. Census Bureau, QuickFacts</a></td></tr>
+<tr><td><code>POP-08</code></td><td>Population per square mile<br><span class="tiny muted">Land area 469.49 sq mi (2020, same source).</span></td><td class="small">Los Angeles city, CA</td><td class="small">2020</td><td class="num">8,304.2<br><span class="tiny muted">persons / sq mi</span></td><td class="src"><a href="https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045224" rel="noopener noreferrer" title="U.S. Census Bureau, QuickFacts">U.S. Census Bureau, QuickFacts</a></td></tr>
+<tr><td><code>POP-09</code></td><td>Persons living in same house 1 year ago (age 1+)<br><span class="tiny muted">Residential stability indicator.</span></td><td class="small">Los Angeles city, CA</td><td class="small">2020-2024 ACS 5-year</td><td class="num">89.3%<br><span class="tiny muted"></span></td><td class="src"><a href="https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045224" rel="noopener noreferrer" title="U.S. Census Bureau, QuickFacts">U.S. Census Bureau, QuickFacts</a></td></tr>
+    </tbody>
+  </table>
+</div>
+<h2 id="income-poverty">Income &amp; poverty</h2>
+<div class="table-wrap">
+  <table>
+    <caption>Income &amp; poverty &mdash; 4 rows
+      <span class="cap-sub">Values reproduce the official page as read. Blank cells could not be confirmed and are flagged rather than estimated.</span>
+    </caption>
+    <thead><tr><th>ID</th><th>Measure</th><th>Geography</th><th>Period</th><th class="num">Value</th><th>Official source</th></tr></thead>
+    <tbody>
+<tr><td><code>INC-01</code></td><td>Median household income (2024 dollars)<br><span class="tiny muted">City-level proxy. Trade-area median household income inside a 3-minute drive time was not obtainable from an official published page without disclosing the parcel location.</span></td><td class="small">Los Angeles city, CA</td><td class="small">2020-2024 ACS 5-year</td><td class="num">81,939<br><span class="tiny muted">USD / year</span></td><td class="src"><a href="https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045224" rel="noopener noreferrer" title="U.S. Census Bureau, QuickFacts">U.S. Census Bureau, QuickFacts</a></td></tr>
+<tr><td><code>INC-02</code></td><td>Per capita income (past 12 months, 2024 dollars)<br><span class="tiny muted"></span></td><td class="small">Los Angeles city, CA</td><td class="small">2020-2024 ACS 5-year</td><td class="num">47,685<br><span class="tiny muted">USD / year</span></td><td class="src"><a href="https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045224" rel="noopener noreferrer" title="U.S. Census Bureau, QuickFacts">U.S. Census Bureau, QuickFacts</a></td></tr>
+<tr><td><code>INC-03</code></td><td>Persons in poverty<br><span class="tiny muted">QuickFacts labels this series by estimate vintage; the page shows 16.5% at the time of reading.</span></td><td class="small">Los Angeles city, CA</td><td class="small">V2025-flagged series (QuickFacts: Persons in poverty, percent)</td><td class="num">16.5%<br><span class="tiny muted"></span></td><td class="src"><a href="https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045224" rel="noopener noreferrer" title="U.S. Census Bureau, QuickFacts">U.S. Census Bureau, QuickFacts</a></td></tr>
+<tr><td><code>INC-04</code></td><td>Median household income, County (contrast) <span class="badge warn">flagged</span><br><span class="tiny muted">County QuickFacts page failed to return content on repeated attempts (HTTP fetch error). Value deliberately left blank rather than taken from a secondary site.</span></td><td class="small">Los Angeles County, CA</td><td class="small">2020-2024 ACS 5-year</td><td class="num blank">&mdash;</td><td class="src"><a href="https://www.census.gov/quickfacts/fact/table/losangelescountycalifornia/PST045224" rel="noopener noreferrer" title="U.S. Census Bureau, QuickFacts (county page)">U.S. Census Bureau, QuickFacts (county page)</a><br><span class="badge warn">flagged</span></td></tr>
+    </tbody>
+  </table>
+</div>
+<h2 id="housing">Housing</h2>
+<div class="table-wrap">
+  <table>
+    <caption>Housing &mdash; 6 rows
+      <span class="cap-sub">Values reproduce the official page as read. Blank cells could not be confirmed and are flagged rather than estimated.</span>
+    </caption>
+    <thead><tr><th>ID</th><th>Measure</th><th>Geography</th><th>Period</th><th class="num">Value</th><th>Official source</th></tr></thead>
+    <tbody>
+<tr><td><code>HOU-01</code></td><td>Median value of owner-occupied housing units<br><span class="tiny muted">Residential, not commercial. Useful only as a direction-of-wealth indicator for the trade area.</span></td><td class="small">Los Angeles city, CA</td><td class="small">2020-2024 ACS 5-year</td><td class="num">921,200<br><span class="tiny muted">USD</span></td><td class="src"><a href="https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045224" rel="noopener noreferrer" title="U.S. Census Bureau, QuickFacts">U.S. Census Bureau, QuickFacts</a></td></tr>
+<tr><td><code>HOU-02</code></td><td>Median gross rent<br><span class="tiny muted">Residential rent. Not a substitute for a commercial ground-lease comp.</span></td><td class="small">Los Angeles city, CA</td><td class="small">2020-2024 ACS 5-year</td><td class="num">1,933<br><span class="tiny muted">USD / month</span></td><td class="src"><a href="https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045224" rel="noopener noreferrer" title="U.S. Census Bureau, QuickFacts">U.S. Census Bureau, QuickFacts</a></td></tr>
+<tr><td><code>HOU-03</code></td><td>Owner-occupied housing unit rate<br><span class="tiny muted"></span></td><td class="small">Los Angeles city, CA</td><td class="small">2020-2024 ACS 5-year</td><td class="num">36%<br><span class="tiny muted"></span></td><td class="src"><a href="https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045224" rel="noopener noreferrer" title="U.S. Census Bureau, QuickFacts">U.S. Census Bureau, QuickFacts</a></td></tr>
+<tr><td><code>HOU-04</code></td><td>Households<br><span class="tiny muted">Persons per household 2.61 (same source).</span></td><td class="small">Los Angeles city, CA</td><td class="small">2020-2024 ACS 5-year</td><td class="num">1,439,097<br><span class="tiny muted">households</span></td><td class="src"><a href="https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045224" rel="noopener noreferrer" title="U.S. Census Bureau, QuickFacts">U.S. Census Bureau, QuickFacts</a></td></tr>
+<tr><td><code>HOU-05</code></td><td>Median selected monthly owner costs, with a mortgage<br><span class="tiny muted"></span></td><td class="small">Los Angeles city, CA</td><td class="small">2020-2024 ACS 5-year</td><td class="num">3,497<br><span class="tiny muted">USD / month</span></td><td class="src"><a href="https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045224" rel="noopener noreferrer" title="U.S. Census Bureau, QuickFacts">U.S. Census Bureau, QuickFacts</a></td></tr>
+<tr><td><code>HOU-06</code></td><td>HUD Fair Market Rent, 2-bedroom, FY2026 <span class="badge warn">flagged</span><br><span class="tiny muted">The HUD calculation page rendered its methodology but the FMR value cells came back empty to this reader. Left blank; the page is linked so the figure can be read directly in a browser.</span></td><td class="small">Los Angeles-Long Beach-Glendale HUD Metro FMR Area (31080)</td><td class="small">FY2026 final</td><td class="num blank">&mdash;</td><td class="src"><a href="https://www.huduser.gov/portal/datasets/fmr/fmrs/FY2026_code/2026summary.odn?selected_metro_code=31080&amp;year=2026&amp;fmrtype=Final" rel="noopener noreferrer" title="HUD User, FY2026 Fair Market Rent Documentation System">HUD User, FY2026 Fair Market Rent Documentation System</a><br><span class="badge warn">flagged</span></td></tr>
+    </tbody>
+  </table>
+</div>
+<h2 id="education">Education</h2>
+<div class="table-wrap">
+  <table>
+    <caption>Education &mdash; 3 rows
+      <span class="cap-sub">Values reproduce the official page as read. Blank cells could not be confirmed and are flagged rather than estimated.</span>
+    </caption>
+    <thead><tr><th>ID</th><th>Measure</th><th>Geography</th><th>Period</th><th class="num">Value</th><th>Official source</th></tr></thead>
+    <tbody>
+<tr><td><code>EDU-01</code></td><td>High school graduate or higher (age 25+)<br><span class="tiny muted"></span></td><td class="small">Los Angeles city, CA</td><td class="small">2020-2024 ACS 5-year</td><td class="num">79.6%<br><span class="tiny muted"></span></td><td class="src"><a href="https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045224" rel="noopener noreferrer" title="U.S. Census Bureau, QuickFacts">U.S. Census Bureau, QuickFacts</a></td></tr>
+<tr><td><code>EDU-02</code></td><td>Bachelor&#x27;s degree or higher (age 25+)<br><span class="tiny muted"></span></td><td class="small">Los Angeles city, CA</td><td class="small">2020-2024 ACS 5-year</td><td class="num">38.5%<br><span class="tiny muted"></span></td><td class="src"><a href="https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045224" rel="noopener noreferrer" title="U.S. Census Bureau, QuickFacts">U.S. Census Bureau, QuickFacts</a></td></tr>
+<tr><td><code>EDU-03</code></td><td>Smarter Balanced ELA / math proficiency, serving district of the parcel <span class="badge warn">flagged</span><br><span class="tiny muted">School-quality evidence requires the district/school code, which is derivable only from the private address. Deliberately not guessed. Use the linked official search once the address is available in the private workspace.</span></td><td class="small">Parcel PARCEL-A school district (withheld)</td><td class="small">2025-26 administration</td><td class="num blank">&mdash;</td><td class="src"><a href="https://caaspp-elpac.ets.org/caaspp/SearchSB.aspx" rel="noopener noreferrer" title="California Department of Education, CAASPP Reporting">California Department of Education, CAASPP Reporting</a><br><span class="badge warn">flagged</span></td></tr>
+    </tbody>
+  </table>
+</div>
+<h2 id="labour-market">Labour market</h2>
+<div class="table-wrap">
+  <table>
+    <caption>Labour market &mdash; 11 rows
+      <span class="cap-sub">Values reproduce the official page as read. Blank cells could not be confirmed and are flagged rather than estimated.</span>
+    </caption>
+    <thead><tr><th>ID</th><th>Measure</th><th>Geography</th><th>Period</th><th class="num">Value</th><th>Official source</th></tr></thead>
+    <tbody>
+<tr><td><code>LAB-01</code></td><td>Unemployment rate, September 2026<br><span class="tiny muted">Comparative: Los Angeles County 4.5%, California 5.1%, United States 4.0% (same source, same month).</span></td><td class="small">Los Angeles metro area</td><td class="small">2026-09</td><td class="num">4.4%<br><span class="tiny muted">(not seasonally adjusted)</span></td><td class="src"><a href="https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf" rel="noopener noreferrer" title="U.S. Bureau of Labor Statistics, LA Area Economic Summary (updated 2026-11-04), Local Area Unemployment Statistics">U.S. Bureau of Labor Statistics, LA Area Economic Summary (updated 2026-11-04), Local Area Unemployment Statistics</a></td></tr>
+<tr><td><code>LAB-02</code></td><td>Unemployment rate, September 2025<br><span class="tiny muted">Year-over-year improvement of 1.1 percentage points in the metro rate.</span></td><td class="small">Los Angeles metro area</td><td class="small">2025-09</td><td class="num">5.5%<br><span class="tiny muted">(not seasonally adjusted)</span></td><td class="src"><a href="https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf" rel="noopener noreferrer" title="U.S. Bureau of Labor Statistics, LA Area Economic Summary">U.S. Bureau of Labor Statistics, LA Area Economic Summary</a></td></tr>
+<tr><td><code>LAB-03</code></td><td>Unemployment rate, latest month available (series query)<br><span class="tiny muted">Machine-read series confirms 4.4% for Sep-2026; Aug-2026 4.8%, Jul-2026 5.0%. Oct-2025 shows &#x27;-&#x27; (data unavailable due to the 2025 lapse in appropriations).</span></td><td class="small">Los Angeles-Long Beach-Glendale, CA Metropolitan Division</td><td class="small">2026-09</td><td class="num">4.4%<br><span class="tiny muted">(not seasonally adjusted, preliminary)</span></td><td class="src"><a href="https://api.bls.gov/publicAPI/v2/timeseries/data/LAUMT063108000000003" rel="noopener noreferrer" title="U.S. Bureau of Labor Statistics Public Data API, series LAUMT063108000000003">U.S. Bureau of Labor Statistics Public Data API, series LAUMT063108000000003</a></td></tr>
+<tr><td><code>LAB-04</code></td><td>Total nonfarm employment, September 2026<br><span class="tiny muted">+30.2 thousand (+0.5%) over the year.</span></td><td class="small">Los Angeles metro area</td><td class="small">2026-09</td><td class="num">6,282.1<br><span class="tiny muted">thousand jobs</span></td><td class="src"><a href="https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf" rel="noopener noreferrer" title="U.S. Bureau of Labor Statistics, Current Employment Statistics via LA Area Economic Summary">U.S. Bureau of Labor Statistics, Current Employment Statistics via LA Area Economic Summary</a></td></tr>
+<tr><td><code>LAB-05</code></td><td>Total nonfarm employment, latest month (series query)<br><span class="tiny muted">Preliminary and subject to revision. Sep-2026 6,282.7; Sep-2025 6,251.9.</span></td><td class="small">Los Angeles-Long Beach-Glendale, CA Metropolitan Division</td><td class="small">2026-10</td><td class="num">6,371.5<br><span class="tiny muted">thousand jobs (preliminary)</span></td><td class="src"><a href="https://api.bls.gov/publicAPI/v2/timeseries/data/SMU06310800000000001" rel="noopener noreferrer" title="U.S. Bureau of Labor Statistics Public Data API, series SMU06310800000000001">U.S. Bureau of Labor Statistics Public Data API, series SMU06310800000000001</a></td></tr>
+<tr><td><code>LAB-06</code></td><td>12-month change in employment, Information sector<br><span class="tiny muted">Information lost 11.4 thousand jobs over the year; the steepest sectoral decline in the metro.</span></td><td class="small">Los Angeles metro area</td><td class="small">2025-09 to 2026-09</td><td class="num">-5.7%<br><span class="tiny muted"></span></td><td class="src"><a href="https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf" rel="noopener noreferrer" title="U.S. Bureau of Labor Statistics, Current Employment Statistics">U.S. Bureau of Labor Statistics, Current Employment Statistics</a></td></tr>
+<tr><td><code>LAB-07</code></td><td>12-month change in employment, Education and health services<br><span class="tiny muted">+49.1 thousand jobs, the largest sectoral gain; a stabiliser for lunch/near-hospital trade.</span></td><td class="small">Los Angeles metro area</td><td class="small">2025-09 to 2026-09</td><td class="num">3.8%<br><span class="tiny muted"></span></td><td class="src"><a href="https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf" rel="noopener noreferrer" title="U.S. Bureau of Labor Statistics, Current Employment Statistics">U.S. Bureau of Labor Statistics, Current Employment Statistics</a></td></tr>
+<tr><td><code>LAB-08</code></td><td>12-month change in employment, Leisure and hospitality<br><span class="tiny muted">+11.5 thousand jobs.</span></td><td class="small">Los Angeles metro area</td><td class="small">2025-09 to 2026-09</td><td class="num">1.5%<br><span class="tiny muted"></span></td><td class="src"><a href="https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf" rel="noopener noreferrer" title="U.S. Bureau of Labor Statistics, Current Employment Statistics">U.S. Bureau of Labor Statistics, Current Employment Statistics</a></td></tr>
+<tr><td><code>LAB-09</code></td><td>Authorised employees, all industries, Q1 2026 (average weekly wage)<br><span class="tiny muted">Orange County comparator on the same page: $1,766.</span></td><td class="small">Los Angeles County, CA</td><td class="small">2026 Q1</td><td class="num">1,704<br><span class="tiny muted">USD / week</span></td><td class="src"><a href="https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf" rel="noopener noreferrer" title="U.S. Bureau of Labor Statistics, QCEW via LA Area Economic Summary">U.S. Bureau of Labor Statistics, QCEW via LA Area Economic Summary</a></td></tr>
+<tr><td><code>LAB-10</code></td><td>Civilian labour force participation (age 16+)<br><span class="tiny muted"></span></td><td class="small">Los Angeles city, CA</td><td class="small">2020-2024 ACS 5-year</td><td class="num">66.4%<br><span class="tiny muted"></span></td><td class="src"><a href="https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045224" rel="noopener noreferrer" title="U.S. Census Bureau, QuickFacts">U.S. Census Bureau, QuickFacts</a></td></tr>
+<tr><td><code>LAB-11</code></td><td>Mean travel time to work (workers 16+)<br><span class="tiny muted">Commute length supports drive-thru demand in the aggregate, but not at any specific corner.</span></td><td class="small">Los Angeles city, CA</td><td class="small">2020-2024 ACS 5-year</td><td class="num">30.7<br><span class="tiny muted">minutes</span></td><td class="src"><a href="https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045224" rel="noopener noreferrer" title="U.S. Census Bureau, QuickFacts">U.S. Census Bureau, QuickFacts</a></td></tr>
+    </tbody>
+  </table>
+</div>
+<h2 id="business-activity">Business activity</h2>
+<div class="table-wrap">
+  <table>
+    <caption>Business activity &mdash; 3 rows
+      <span class="cap-sub">Values reproduce the official page as read. Blank cells could not be confirmed and are flagged rather than estimated.</span>
+    </caption>
+    <thead><tr><th>ID</th><th>Measure</th><th>Geography</th><th>Period</th><th class="num">Value</th><th>Official source</th></tr></thead>
+    <tbody>
+<tr><td><code>ECO-01</code></td><td>Total retail sales<br><span class="tiny muted">Retail sales per capita $21,281 (same source, same year).</span></td><td class="small">Los Angeles city, CA</td><td class="small">2022 (Economic Census)</td><td class="num">81,351,523<br><span class="tiny muted">USD thousands</span></td><td class="src"><a href="https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045224" rel="noopener noreferrer" title="U.S. Census Bureau, QuickFacts (Economic Census)">U.S. Census Bureau, QuickFacts (Economic Census)</a></td></tr>
+<tr><td><code>ECO-02</code></td><td>Total accommodation and food services sales<br><span class="tiny muted">The closest official measure to food-away-from-home demand available at city level.</span></td><td class="small">Los Angeles city, CA</td><td class="small">2022 (Economic Census)</td><td class="num">17,366,966<br><span class="tiny muted">USD thousands</span></td><td class="src"><a href="https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045224" rel="noopener noreferrer" title="U.S. Census Bureau, QuickFacts (Economic Census)">U.S. Census Bureau, QuickFacts (Economic Census)</a></td></tr>
+<tr><td><code>ECO-03</code></td><td>Total health care and social assistance receipts<br><span class="tiny muted"></span></td><td class="small">Los Angeles city, CA</td><td class="small">2022 (Economic Census)</td><td class="num">46,297,839<br><span class="tiny muted">USD thousands</span></td><td class="src"><a href="https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045224" rel="noopener noreferrer" title="U.S. Census Bureau, QuickFacts (Economic Census)">U.S. Census Bureau, QuickFacts (Economic Census)</a></td></tr>
+    </tbody>
+  </table>
+</div>
+<h2 id="prices">Prices</h2>
+<div class="table-wrap">
+  <table>
+    <caption>Prices &mdash; 5 rows
+      <span class="cap-sub">Values reproduce the official page as read. Blank cells could not be confirmed and are flagged rather than estimated.</span>
+    </caption>
+    <thead><tr><th>ID</th><th>Measure</th><th>Geography</th><th>Period</th><th class="num">Value</th><th>Official source</th></tr></thead>
+    <tbody>
+<tr><td><code>PRI-01</code></td><td>CPI-U, all items, 12-month change<br><span class="tiny muted">United States all items the same month: 3.7% (BLS LA Area Economic Summary).</span></td><td class="small">Los Angeles-Long Beach-Anaheim, CA (CPI area)</td><td class="small">2026-09</td><td class="num">3.7%<br><span class="tiny muted"></span></td><td class="src"><a href="https://www.bls.gov/regions/west/news-release/consumerpriceindex_losangeles.htm" rel="noopener noreferrer" title="U.S. Bureau of Labor Statistics, Consumer Price Index news release (2026-11-10)">U.S. Bureau of Labor Statistics, Consumer Price Index news release (2026-11-10)</a></td></tr>
+<tr><td><code>PRI-02</code></td><td>CPI-U, all items, 1-month change<br><span class="tiny muted">The 12-month change for October 2026 is not published: BLS did not collect October 2025 data because of the 2025 lapse in appropriations, so it cannot compute an October 2026 over-the-year change. This is an official data gap, not an error in this register.</span></td><td class="small">Los Angeles-Long Beach-Anaheim, CA (CPI area)</td><td class="small">2026-10</td><td class="num">0.6%<br><span class="tiny muted"></span></td><td class="src"><a href="https://www.bls.gov/regions/west/news-release/consumerpriceindex_losangeles.htm" rel="noopener noreferrer" title="U.S. Bureau of Labor Statistics, Consumer Price Index news release (2026-11-10)">U.S. Bureau of Labor Statistics, Consumer Price Index news release (2026-11-10)</a></td></tr>
+<tr><td><code>PRI-03</code></td><td>Shelter, 1-month change<br><span class="tiny muted"></span></td><td class="small">Los Angeles-Long Beach-Anaheim, CA (CPI area)</td><td class="small">2026-10</td><td class="num">0.4%<br><span class="tiny muted"></span></td><td class="src"><a href="https://www.bls.gov/regions/west/news-release/consumerpriceindex_losangeles.htm" rel="noopener noreferrer" title="U.S. Bureau of Labor Statistics, Consumer Price Index news release">U.S. Bureau of Labor Statistics, Consumer Price Index news release</a></td></tr>
+<tr><td><code>PRI-04</code></td><td>Employment Cost Index, 12-month change in wages and salaries<br><span class="tiny muted">United States 3.1% (same source). Relevant to the tenant&#x27;s largest controllable cost.</span></td><td class="small">Los Angeles-Long Beach, CA Combined Statistical Area</td><td class="small">2026-09</td><td class="num">3.9%<br><span class="tiny muted"></span></td><td class="src"><a href="https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf" rel="noopener noreferrer" title="U.S. Bureau of Labor Statistics, Employment Cost Index via LA Area Economic Summary">U.S. Bureau of Labor Statistics, Employment Cost Index via LA Area Economic Summary</a></td></tr>
+<tr><td><code>PRI-05</code></td><td>Average hourly wage, all occupations<br><span class="tiny muted"></span></td><td class="small">Los Angeles metro area</td><td class="small">May 2025 (OEWS)</td><td class="num">37.15<br><span class="tiny muted">USD / hour</span></td><td class="src"><a href="https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf" rel="noopener noreferrer" title="U.S. Bureau of Labor Statistics, OEWS via LA Area Economic Summary">U.S. Bureau of Labor Statistics, OEWS via LA Area Economic Summary</a></td></tr>
+    </tbody>
+  </table>
+</div>
+<h2 id="property-price-trend">Property price trend</h2>
+<div class="table-wrap">
+  <table>
+    <caption>Property price trend &mdash; 3 rows
+      <span class="cap-sub">Values reproduce the official page as read. Blank cells could not be confirmed and are flagged rather than estimated.</span>
+    </caption>
+    <thead><tr><th>ID</th><th>Measure</th><th>Geography</th><th>Period</th><th class="num">Value</th><th>Official source</th></tr></thead>
+    <tbody>
+<tr><td><code>HPI-01</code></td><td>House price appreciation, 4 quarters (single-family, purchase-only)<br><span class="tiny muted">Pacific census division +0.5%; United States +2.5% over the same four quarters.</span></td><td class="small">California</td><td class="small">2025Q3 to 2026Q3</td><td class="num">0.6%<br><span class="tiny muted"></span></td><td class="src"><a href="https://www.fhfa.gov/document/d/hpi/fhfa-house-price-index-report-2026q3" rel="noopener noreferrer" title="Federal Housing Finance Agency, HPI Quarterly Report 2026Q3 (released 2026-11-24)">Federal Housing Finance Agency, HPI Quarterly Report 2026Q3 (released 2026-11-24)</a></td></tr>
+<tr><td><code>HPI-02</code></td><td>House price appreciation, 4 quarters, United States<br><span class="tiny muted">Prior four-quarter readings on the same table: 2024Q3 4.4%, 2023Q3 5.1%, 2022Q3 11.4%.</span></td><td class="small">United States</td><td class="small">2025Q3 to 2026Q3</td><td class="num">2.5%<br><span class="tiny muted"></span></td><td class="src"><a href="https://www.fhfa.gov/document/d/hpi/fhfa-house-price-index-report-2026q3" rel="noopener noreferrer" title="Federal Housing Finance Agency, HPI Quarterly Report 2026Q3">Federal Housing Finance Agency, HPI Quarterly Report 2026Q3</a></td></tr>
+<tr><td><code>HPI-03</code></td><td>House price appreciation, 4 quarters, Los Angeles MSA <span class="badge warn">flagged</span><br><span class="tiny muted">The MSA table sits on a later page of the report than the portion retrieved. Left blank rather than inferred from the state figure. A single-family index in any case is not a restaurant-cap-rate series.</span></td><td class="small">Los Angeles-Long Beach-Anaheim MSA</td><td class="small">2025Q3 to 2026Q3</td><td class="num blank">&mdash;</td><td class="src"><a href="https://www.fhfa.gov/document/d/hpi/fhfa-house-price-index-report-2026q3" rel="noopener noreferrer" title="Federal Housing Finance Agency, HPI Quarterly Report 2026Q3, tables of 100 largest MSAs">Federal Housing Finance Agency, HPI Quarterly Report 2026Q3, tables of 100 largest MSAs</a><br><span class="badge warn">flagged</span></td></tr>
+    </tbody>
+  </table>
+</div>
+<h2 id="traffic-access">Traffic &amp; access</h2>
+<div class="table-wrap">
+  <table>
+    <caption>Traffic &amp; access &mdash; 2 rows
+      <span class="cap-sub">Values reproduce the official page as read. Blank cells could not be confirmed and are flagged rather than estimated.</span>
+    </caption>
+    <thead><tr><th>ID</th><th>Measure</th><th>Geography</th><th>Period</th><th class="num">Value</th><th>Official source</th></tr></thead>
+    <tbody>
+<tr><td><code>TRF-01</code></td><td>Annual Average Daily Traffic at the nearest state-highway count station <span class="badge warn">flagged</span><br><span class="tiny muted">Caltrans publishes AADT only for the State Highway System, in spreadsheet form keyed by route and post-mile. Selecting the correct station requires the private location. No value is asserted here.</span></td><td class="small">Parcel PARCEL-A frontage (withheld)</td><td class="small">2024 AADT file</td><td class="num blank">&mdash;</td><td class="src"><a href="https://dot.ca.gov/programs/traffic-operations/census" rel="noopener noreferrer" title="Caltrans, Traffic Census Program">Caltrans, Traffic Census Program</a><br><span class="badge warn">flagged</span></td></tr>
+<tr><td><code>TRF-02</code></td><td>City-street traffic count at the parcel frontage <span class="badge warn">flagged</span><br><span class="tiny muted">Caltrans states that counts for city and county streets are held by the city traffic engineering or public works department. No official city count for this frontage has been read, so the row is blank.</span></td><td class="small">City of Los Angeles street (withheld)</td><td class="small">latest available</td><td class="num blank">&mdash;</td><td class="src"><a href="https://dot.ca.gov/programs/traffic-operations/census" rel="noopener noreferrer" title="Caltrans, Traffic Census Program (scope note) and City of Los Angeles Public Works / LADOT">Caltrans, Traffic Census Program (scope note) and City of Los Angeles Public Works / LADOT</a><br><span class="badge warn">flagged</span></td></tr>
+    </tbody>
+  </table>
+</div>
+<h2 id="planning-zoning">Planning &amp; zoning</h2>
+<div class="table-wrap">
+  <table>
+    <caption>Planning &amp; zoning &mdash; 1 row
+      <span class="cap-sub">Values reproduce the official page as read. Blank cells could not be confirmed and are flagged rather than estimated.</span>
+    </caption>
+    <thead><tr><th>ID</th><th>Measure</th><th>Geography</th><th>Period</th><th class="num">Value</th><th>Official source</th></tr></thead>
+    <tbody>
+<tr><td><code>ZON-01</code></td><td>Zoning, General Plan land-use designation and specific-plan overlay for the parcel <span class="badge warn">flagged</span><br><span class="tiny muted">ZIMAS is address-keyed. The lookup is specified as an offline workspace step (see Trade Area page, step 3) and is not published here because the result would identify the parcel.</span></td><td class="small">Parcel PARCEL-A (withheld)</td><td class="small">current</td><td class="num blank">&mdash;</td><td class="src"><a href="https://planning.lacity.gov/" rel="noopener noreferrer" title="City of Los Angeles Department of City Planning, ZIMAS / Case Search">City of Los Angeles Department of City Planning, ZIMAS / Case Search</a><br><span class="badge warn">flagged</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2 id="tenant">Tenant &amp; franchisor evidence <span class="badge info">audited filings only</span></h2>
+<p class="small">A net lease is only as strong as the obligor. Below is what Jack in the Box Inc. discloses about itself
+in its most recent annual report, quoted with the accession number linked. These are <b>system-level</b> facts. They say
+nothing about the restaurant at PARCEL-A and are not used as if they did.</p>
+<div class="table-wrap">
+  <table>
+    <caption>Jack in the Box Inc. &mdash; Form 10-K for the fiscal year ended 28 September 2025, filed 19 November 2025
+      <span class="cap-sub">CIK 0000807882. The 10-K index page is the canonical source for the whole filing.</span>
+    </caption>
+    <thead><tr><th>ID</th><th>Disclosure</th><th>As filed</th><th>Official source</th></tr></thead>
+    <tbody>
+<tr><td><code>JIB-01</code></td><td>Jack in the Box restaurants at FY2025 year-end</td><td class="small">2,136<br><span class="tiny muted">Primarily in the western and southern United States, including two in Guam and three in Mexico.</span></td><td class="src"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm" rel="noopener noreferrer" title="Jack in the Box Inc. Form 10-K, FY ended 2025-09-28, Item 1 Business">Jack in the Box Inc. Form 10-K, FY ended 2025-09-28, Item 1 Business</a></td></tr>
+<tr><td><code>JIB-02</code></td><td>Jack in the Box franchised share</td><td class="small">93<br><span class="tiny muted">The system is overwhelmingly franchised, so the obligor on a lease is most likely a franchisee rather than the parent. That has to be confirmed from the lease, not assumed.</span></td><td class="src"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm" rel="noopener noreferrer" title="Jack in the Box Inc. Form 10-K FY2025, Item 1 Business">Jack in the Box Inc. Form 10-K FY2025, Item 1 Business</a></td></tr>
+<tr><td><code>JIB-03</code></td><td>Standard Jack in the Box franchise term and royalty</td><td class="small">20-year term; initial franchise fee generally $50,000; royalty and marketing generally 5.0% of gross sales<br><span class="tiny muted">Some legacy agreements carry higher royalties. This matters for the renewal case: an older agreement may sit above current terms, which changes what the tenant will accept.</span></td><td class="src"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm" rel="noopener noreferrer" title="Jack in the Box Inc. Form 10-K FY2025, Item 1 Business — Franchising Program">Jack in the Box Inc. Form 10-K FY2025, Item 1 Business — Franchising Program</a></td></tr>
+<tr><td><code>JIB-04</code></td><td>Del Taco restaurants at FY2025 year-end</td><td class="small">576<br><span class="tiny muted">Context for the 2025 strategic review, below.</span></td><td class="src"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm" rel="noopener noreferrer" title="Jack in the Box Inc. Form 10-K FY2025, Item 1 Business">Jack in the Box Inc. Form 10-K FY2025, Item 1 Business</a></td></tr>
+<tr><td><code>JIB-05</code></td><td>Disclosed restaurant closure programme</td><td class="small">A &#x27;restaurant closure program&#x27; is one of three key initiatives in the 2025 &#x27;Jack on Track&#x27; plan, described as improving system health and encouraging franchisees to reinvest<br><span class="tiny muted">This is the most decision-relevant disclosure found. It is system-level. It does not name units. Do not read it as applying to PARCEL-A.</span></td><td class="src"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm" rel="noopener noreferrer" title="Jack in the Box Inc. Form 10-K FY2025, Item 1 Business — Business Strategy">Jack in the Box Inc. Form 10-K FY2025, Item 1 Business — Business Strategy</a></td></tr>
+<tr><td><code>JIB-06</code></td><td>Del Taco strategic alternatives</td><td class="small">Management determined that a sale of Del Taco was the optimal path forward<br><span class="tiny muted">A corporate transaction of this kind can change franchisee support and the parent&#x27;s appetite for lease guaranties.</span></td><td class="src"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm" rel="noopener noreferrer" title="Jack in the Box Inc. Form 10-K FY2025, Item 1 Business — Business Strategy">Jack in the Box Inc. Form 10-K FY2025, Item 1 Business — Business Strategy</a></td></tr>
+<tr><td><code>JIB-07</code></td><td>Activist proxy contest disclosed</td><td class="small">The company disclosed it was engaged in a proxy contest with an activist stockholder intending to nominate two board candidates<br><span class="tiny muted">Disclosed as a risk factor; irrelevant to rent but relevant to volatility in the franchisor&#x27;s plans.</span></td><td class="src"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm" rel="noopener noreferrer" title="Jack in the Box Inc. Form 10-K FY2025, Risk Factors">Jack in the Box Inc. Form 10-K FY2025, Risk Factors</a></td></tr>
+<tr><td><code>JIB-08</code></td><td>Prototype size and format</td><td class="small">Approximately 1,372 sq ft; supports a Y-lane drive-thru, walk-up window, dual assembly kitchens and a dedicated pickup window; the prototype portfolio includes an off-premise-only design<br><span class="tiny muted">A small footprint on a drive-thru pad is a relatively replaceable building, which affects both rebuild cost and the landlord&#x27;s renewal leverage.</span></td><td class="src"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm" rel="noopener noreferrer" title="Jack in the Box Inc. Form 10-K FY2025, Item 1 — Site Selection and Design">Jack in the Box Inc. Form 10-K FY2025, Item 1 — Site Selection and Design</a></td></tr>
+<tr><td><code>JIB-09</code></td><td>Site selection criteria used by the franchisor</td><td class="small">Population density, traffic, competition, visibility and access, parking, surrounding businesses, and market penetration<br><span class="tiny muted">Useful because it tells the owner what a renewal negotiation will actually be about. Each of these is a question in the register.</span></td><td class="src"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm" rel="noopener noreferrer" title="Jack in the Box Inc. Form 10-K FY2025, Item 1 — Site Selection and Design">Jack in the Box Inc. Form 10-K FY2025, Item 1 — Site Selection and Design</a></td></tr>
+<tr><td><code>JIB-10</code></td><td>Disclosed dependence on a single distributor</td><td class="small">A single primary food service distributor supplies substantially all food, packaging and supplies, under contracts running through August 2027<br><span class="tiny muted">A supply-chain single point of failure inside the lease term. Relevant to business-as-usual disruption, not to a black swan.</span></td><td class="src"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm" rel="noopener noreferrer" title="Jack in the Box Inc. Form 10-K FY2025, Item 1 — Supply Chain">Jack in the Box Inc. Form 10-K FY2025, Item 1 — Supply Chain</a></td></tr>
+<tr><td><code>JIB-11</code></td><td>California labour exposure acknowledged in the filing</td><td class="small">Pay ranges for California restaurants reflect &#x27;pay requirements under AB 1228 regulation&#x27;<br><span class="tiny muted">The franchisor itself names the California fast-food wage statute as a driver of restaurant-level pay. The specific rate is not asserted here (see Flagged FR-07).</span></td><td class="src"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm" rel="noopener noreferrer" title="Jack in the Box Inc. Form 10-K FY2025, Item 1 — Human Capital Management">Jack in the Box Inc. Form 10-K FY2025, Item 1 — Human Capital Management</a></td></tr>
+    </tbody>
+    <tfoot><tr><td colspan="4">Filed document:
+      <a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/0000807882-25-000072-index.htm" rel="noopener noreferrer">Form 10-K index, accession 0000807882-25-000072</a>
+      &middot; <a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getCompany&CIK=0000807882&type=10-K" rel="noopener noreferrer">All 10-K filings</a></td></tr></tfoot>
+  </table>
+</div>
+
+<div class="grid two"><div class="card"><h3>What the filings support</h3><ul class="clean small"><li>The system is large and almost entirely franchised, so the brand&#x27;s balance sheet is not the same thing as the tenant&#x27;s balance sheet. The lease, not the ticker, tells you who pays.</li><li>The franchisor has publicly disclosed both a closure programme and a strategic review of its second brand. Neither names this unit, but together they indicate a system being actively pruned rather than expanded without constraint.</li><li>The disclosed site-selection criteria are the agenda for a renewal negotiation. Traffic, access, competition and parking are the four the owner can actually influence or evidence.</li></ul></div><div class="card"><h3>What the filings cannot support</h3><ul class="clean small"><li>They cannot tell you this unit&#x27;s sales, rent, term or renewal intent.</li><li>They cannot tell you whether this unit is inside the closure programme.</li><li>They cannot be used to forecast this trade area. A national filing is not a local economic model.</li></ul></div></div>
+
+<h2>What the evidence actually says</h2>
+<div class="grid two">
+  <div class="card">
+    <h3>The local economy is improving, unevenly</h3>
+    <p class="small">Metro unemployment fell from 5.5% to 4.4% in twelve months and total nonfarm employment is up 0.5%.
+    That is a gently improving picture, not a boom. Underneath it, the sectors are moving in opposite directions:
+    information lost 5.7% of its jobs while education and health added 3.8%. For a drive-thru, the second number matters
+    more than the first, because hospital and school employment feeds weekday lunch traffic and a stable day-shift
+    population.</p>
+    <p class="small"><b>What this supports:</b> a hold case that does not assume deterioration.
+    <b>What it does not support:</b> a specific sales forecast for this unit.</p>
+  </div>
+  <div class="card">
+    <h3>Prices are rising slower than the nation, and wages faster</h3>
+    <p class="small">California house prices rose 0.6% over four quarters against 2.5% nationally. Local CPI is running
+    at 3.7% year over year. Meanwhile the Employment Cost Index for wages and salaries in the Los Angeles CSA rose 3.9%,
+    faster than the 3.1% national figure. For a restaurant, that combination is the hard part: revenue indexed to local
+    price growth, labour indexed to something steeper.</p>
+    <p class="small"><b>What this supports:</b> expecting the tenant to negotiate hard on rent at renewal.
+    <b>What it does not support:</b> concluding the tenant cannot pay.</p>
+  </div>
+</div>
+
+<div class="notice warn">
+  <p><strong>Two official data gaps affect this page.</strong> BLS did not collect October 2025 data during the 2025
+  lapse in appropriations, so it cannot publish an October 2026 over-the-year change; the 12-month figure shown is
+  September 2026. And the Census county QuickFacts page would not load, so the county benchmark is blank rather than
+  borrowed from a secondary site. Both are on the <a href="flagged.html">Flagged for Review</a> page.</p>
+</div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <strong>Parcel Decision Workspace</strong> &mdash; built 2026-11-25.<br>
+      Public product. Contains no address, parcel number, owner name, lease text or financial figure belonging to any person or entity.
+      Private material is held offline with authorised advisers.
+    </div>
+    <nav aria-label="Footer">
+      <a href="sources.html">Sources</a>
+      <a href="flagged.html">Flagged for Review</a>
+      <a href="questions.html">Open Questions</a>
+      <a href="advisor-summary.html">One-Page Summary</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

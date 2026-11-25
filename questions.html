@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Questions Register — Parcel Decision Workspace</title>
+<meta name="description" content="An anonymised, source-linked decision workspace for a single-tenant quick-service parcel in central Los Angeles. Contains no personal or parcel-identifying information.">
+<meta name="robots" content="index, follow">
+<link rel="stylesheet" href="assets/css/app.css">
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">PDW</span>
+      <span class="brand-text">
+        <strong>Parcel Decision Workspace</strong>
+        <span>Anonymised &middot; source-linked &middot; no personal data</span>
+      </span>
+    </a>
+    <div class="header-meta">
+      <b>PARCEL-A &middot; OWNER-1 &middot; TENANT-A</b><br>
+      Central Los Angeles &middot; NNN &middot; expiry window 2030&ndash;2035<br>
+      Evidence compiled 2026-11-25
+    </div>
+  </div>
+</header>
+
+<nav class="site-nav" aria-label="Sections">
+  <div class="nav-inner">
+      <a href="index.html">Dashboard</a>
+      <a href="gates.html">Decision Gates</a>
+      <a href="sell-vs-renew.html">Sell vs Renew</a>
+      <a href="market.html">Market &amp; Economy</a>
+      <a href="location.html">Trade Area</a>
+      <a href="hazards.html">Hazards &amp; Risk</a>
+      <a href="questions.html" aria-current="page">Questions</a>
+      <a href="suggestions.html">Suggestions</a>
+      <a href="sources.html">Sources</a>
+      <a href="flagged.html">Flagged for Review</a>
+  </div>
+</nav>
+
+<main id="main">
+
+
+<p class="lede">23 questions stand between this file and a decision. 3 are answered from an official source,
+2 are partly answered, and 18 are missing. 8 of them are blocking: no defensible sell-or-renew
+recommendation can be issued until those are closed.</p>
+
+<div class="grid four">
+  <div class="card kpi"><span class="label">Total</span><span class="value">23</span><span class="sub">gating questions</span></div>
+  <div class="card kpi"><span class="label">Answered</span><span class="value">3</span><span class="sub">with an official source</span></div>
+  <div class="card kpi"><span class="label">Partly answered</span><span class="value">2</span><span class="sub">programme known, parcel value not</span></div>
+  <div class="card kpi"><span class="label">Blocking</span><span class="value" style="color:var(--stop)">8</span><span class="sub">no verdict possible while these are open</span></div>
+</div>
+
+<div class="notice">
+  <p><strong>How to use this page.</strong> Each row is a question with three parts: why it gates the decision, what is
+  already established, and how to close it. 'Missing' does not mean 'hard'. Several are one phone call to an adviser.
+  What makes them gating is that the answer does not exist in this workspace yet, so any recommendation issued today
+  would be resting on something unstated.</p>
+</div>
+
+<div class="toc" aria-label="Jump to group">
+<a href="#title-lease">Title &amp; lease</a><a href="#tenant-credit">Tenant credit</a><a href="#valuation">Valuation</a><a href="#tax">Tax</a><a href="#physical">Physical</a><a href="#site-planning">Site &amp; planning</a><a href="#market">Market</a><a href="#process">Process</a>
+</div>
+
+
+<h2 id="title-lease">Title &amp; lease</h2>
+<div class="table-wrap">
+  <table>
+    <caption>Title &amp; lease &mdash; 6 questions</caption>
+    <thead><tr><th>ID</th><th>Question and why it gates the decision</th><th>What we have</th><th>How to close it</th><th>Owner</th></tr></thead>
+    <tbody>
+<tr>
+  <td><code>Q-01</code><br><span class="badge stop">blocking</span></td>
+  <td><b>Who is the legal owner of record, and what is the exact form of title?</b><br><span class="tiny muted">Sell-versus-hold, entity-level tax and who must sign a renewal all depend on the vesting. A trust, an LLC and an individual produce different tax and probate consequences on the same asset.</span></td>
+  <td class="small"><span class="badge stop">missing</span><br>An owner exists and is referred to here as OWNER-1. No name, entity, address or parcel number is stored in this product.</td>
+  <td class="small">Recorded grant deed from the Los Angeles County Registrar-Recorder, plus the current Assessor parcel record. Both are pulled with the private APN in the offline workspace, not in this repository.
+      <br><span class="tiny"><a href="https://assessor.lacounty.gov/homeowners/property-search" rel="noopener noreferrer">official source &rarr;</a></span></td>
+  <td class="small muted">OWNER-1 with ADVISER-1 (counsel)</td>
+</tr>
+<tr>
+  <td><code>Q-02</code><br><span class="badge stop">blocking</span></td>
+  <td><b>What exactly does the lease say: commencement, expiration, renewal options, rent schedule, bumps, and who pays taxes, insurance and roof/structure?</b><br><span class="tiny muted">The whole comparison is denominated in the lease. &#x27;NNN&#x27; is a label, not a document: a lease can be triple-net on paper and still leave the landlord the roof, the parking lot and the structure. The brief states the lease expires between 2030 and 2035, which is a five-year window, not a date.</span></td>
+  <td class="small"><span class="badge stop">missing</span><br>Described in the brief as a triple-net lease with an expiry somewhere in 2030-2035. Nothing has been abstracted or verified.</td>
+  <td class="small">Commission a private lease abstract (ADVISER-1) covering: parties, premises, term, options and notice windows, minimum rent by year, percentage rent, CAM and tax stops, landlord obligations, assignment and change-of-control, demolition or relocation clauses, holdover, estoppel and SNDA duties, and the guarantor.
+      <br><span class="tiny muted">no published source — private document</span></td>
+  <td class="small muted">ADVISER-1 (counsel) — deliverable: lease abstract v1</td>
+</tr>
+<tr>
+  <td><code>Q-03</code><br><span class="badge stop">blocking</span></td>
+  <td><b>Does the tenant hold a unilateral renewal option, a right of first refusal, or a purchase option?</b><br><span class="tiny muted">If TENANT-A can renew unilaterally at a fixed rent, the owner&#x27;s &#x27;renew&#x27; case is not a negotiation, it is an entitlement, and the value of waiting changes completely. A purchase option caps the upside of holding.</span></td>
+  <td class="small"><span class="badge stop">missing</span><br>Unknown.</td>
+  <td class="small">Answer from the lease abstract (Q-02). Then calendar every notice window against the notice calendar.
+      <br><span class="tiny muted">no published source — private document</span></td>
+  <td class="small muted">ADVISER-1</td>
+</tr>
+<tr>
+  <td><code>Q-04</code><br><span class="badge stop">blocking</span></td>
+  <td><b>What is the notice calendar — the last date on which each option or termination right must be exercised?</b><br><span class="tiny muted">Missing a renewal notice window can forfeit the option or auto-extend the lease. This is the single most time-critical unknown in the file.</span></td>
+  <td class="small"><span class="badge stop">missing</span><br>No dates are recorded anywhere in this workspace.</td>
+  <td class="small">From Q-02, build a dated calendar with lead times of 90, 60 and 30 days before each window. Reconcile the abstract against the calendar line by line before any commitment is made.
+      <br><span class="tiny muted">no published source — private document</span></td>
+  <td class="small muted">ADVISER-1 + OWNER-1</td>
+</tr>
+<tr>
+  <td><code>Q-05</code><br><span class="badge stop">blocking</span></td>
+  <td><b>What rent is actually being paid now, and what is market rent for a comparable drive-thru in this trade area?</b><br><span class="tiny muted">Renewal economics are the spread between contract rent and market rent. Without both numbers, &#x27;renew&#x27; and &#x27;sell&#x27; cannot be priced. Current rent is private; market rent must come from dated comparable leases, not asking rents.</span></td>
+  <td class="small"><span class="badge stop">missing</span><br>Neither figure exists here. No rent is published in this product by design.</td>
+  <td class="small">Rent from the lease abstract. Market rent from at least three closed, dated comparable ground or building leases within the trade area, obtained by a broker (ADVISER-3) with source documents kept in the private workspace.
+      <br><span class="tiny muted">no published source — private document</span></td>
+  <td class="small muted">ADVISER-3 (broker) + ADVISER-1</td>
+</tr>
+<tr>
+  <td><code>Q-06</code><br><span class="badge warn">high</span></td>
+  <td><b>Is the tenant&#x27;s obligation guaranteed, and by whom, and for how long?</b><br><span class="tiny muted">A franchisee guaranty is the difference between a credit lease and an operating-business lease. It drives the cap rate a buyer will pay, which drives the sale price.</span></td>
+  <td class="small"><span class="badge stop">missing</span><br>The property is described as a Jack in the Box. Whether the obligor is the franchisor, a franchisee, or both, is unknown.</td>
+  <td class="small">Lease abstract plus the guaranty instrument. Cross-check the obligor&#x27;s public financial standing through SEC EDGAR if the obligor is a public company.
+      <br><span class="tiny"><a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0000807882" rel="noopener noreferrer">official source &rarr;</a></span></td>
+  <td class="small muted">ADVISER-1</td>
+</tr></tbody>
+  </table>
+</div>
+<h2 id="tenant-credit">Tenant credit</h2>
+<div class="table-wrap">
+  <table>
+    <caption>Tenant credit &mdash; 2 questions</caption>
+    <thead><tr><th>ID</th><th>Question and why it gates the decision</th><th>What we have</th><th>How to close it</th><th>Owner</th></tr></thead>
+    <tbody>
+<tr>
+  <td><code>Q-07</code><br><span class="badge warn">high</span></td>
+  <td><b>How healthy is the brand system that sits behind this lease?</b><br><span class="tiny muted">A lease is only as good as the operator&#x27;s ability to keep paying. Public filings give audited facts about the franchisor, which is the best official evidence available about system direction.</span></td>
+  <td class="small"><span class="badge ok">answered</span><br>Jack in the Box Inc. (CIK 0000807882) filed its FY2025 Form 10-K on 19 November 2025 for the fiscal year ended 28 September 2025. It reported 2,136 Jack in the Box restaurants, of which 1,986 (93%) were franchised, and 576 Del Taco restaurants of which 444 (77%) were franchised. It disclosed a &#x27;restaurant closure program&#x27; under its 2025 &#x27;Jack on Track&#x27; plan and stated it was exploring strategic alternatives for Del Taco, having determined a sale was the optimal path. A proxy contest with an activist stockholder was disclosed.</td>
+  <td class="small">Already sourced: SEC EDGAR 10-K accession 0000807882-25-000072.
+      <br><span class="tiny"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/0000807882-25-000072-index.htm" rel="noopener noreferrer">official source &rarr;</a></span></td>
+  <td class="small muted">done — see Market &amp; Tenant page</td>
+</tr>
+<tr>
+  <td><code>Q-08</code><br><span class="badge warn">high</span></td>
+  <td><b>Is there any public disclosure that the specific restaurant at this parcel is scheduled to close or is under review?</b><br><span class="tiny muted">A block-closure programme announced at system level is the kind of fact that changes a renewal decision. It is also the kind of fact that cannot be confirmed for one unit from public filings.</span></td>
+  <td class="small"><span class="badge stop">missing</span><br>The FY2025 10-K discloses a restaurant closure programme in general terms but does not identify individual units.</td>
+  <td class="small">Ask the tenant&#x27;s real estate or asset-management contact directly, in writing, in the private workspace. Do not infer from the programme&#x27;s existence.
+      <br><span class="tiny"><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm" rel="noopener noreferrer">official source &rarr;</a></span></td>
+  <td class="small muted">OWNER-1 / ADVISER-3</td>
+</tr></tbody>
+  </table>
+</div>
+<h2 id="valuation">Valuation</h2>
+<div class="table-wrap">
+  <table>
+    <caption>Valuation &mdash; 2 questions</caption>
+    <thead><tr><th>ID</th><th>Question and why it gates the decision</th><th>What we have</th><th>How to close it</th><th>Owner</th></tr></thead>
+    <tbody>
+<tr>
+  <td><code>Q-09</code><br><span class="badge stop">blocking</span></td>
+  <td><b>What is the property worth today, on what basis, and with what evidence?</b><br><span class="tiny muted">Everything else is a percentage of a number that does not yet exist. An asking price is not a value; a closed comparable sale is evidence.</span></td>
+  <td class="small"><span class="badge stop">missing</span><br>No appraisal, no broker opinion of value, no closed comparable.</td>
+  <td class="small">A dated appraisal or broker opinion of value that states the income approach explicitly: net operating income, the cap rate applied, and the source of that cap rate. Keep the full report private; publish only the method.
+      <br><span class="tiny muted">no published source — private document</span></td>
+  <td class="small muted">ADVISER-3 + ADVISER-4 (appraiser)</td>
+</tr>
+<tr>
+  <td><code>Q-10</code><br><span class="badge warn">high</span></td>
+  <td><b>What did comparable single-tenant drive-thru properties actually trade at in this submarket, and at what cap rate?</b><br><span class="tiny muted">Cap-rate evidence for a short-lease quick-service asset is different from a long-lease one. The short-lease discount must come from real quotes, not from a rule of thumb.</span></td>
+  <td class="small"><span class="badge stop">missing</span><br>Nothing. The FHFA house-price series read for this product is single-family only and is not a cap-rate series.</td>
+  <td class="small">Closed sales of quick-service or single-tenant net-lease assets within a defined radius, last 24 months, with price, cap rate, lease term remaining at sale, and the source document. Record each with a link or a document reference in the private workspace.
+      <br><span class="tiny muted">no published source — private document</span></td>
+  <td class="small muted">ADVISER-3</td>
+</tr></tbody>
+  </table>
+</div>
+<h2 id="tax">Tax</h2>
+<div class="table-wrap">
+  <table>
+    <caption>Tax &mdash; 3 questions</caption>
+    <thead><tr><th>ID</th><th>Question and why it gates the decision</th><th>What we have</th><th>How to close it</th><th>Owner</th></tr></thead>
+    <tbody>
+<tr>
+  <td><code>Q-11</code><br><span class="badge stop">blocking</span></td>
+  <td><b>What is the owner&#x27;s adjusted basis, split between land and building, and how much depreciation has been taken or allowed?</b><br><span class="tiny muted">Tax on a sale is computed from the gain, and the gain depends on basis. Unrecaptured section 1250 gain is taxed at up to 25% federally, so the depreciation history matters as much as the purchase price.</span></td>
+  <td class="small"><span class="badge stop">missing</span><br>Nothing. The calculator deliberately asks for these figures instead of deriving them, because deriving them would mean guessing.</td>
+  <td class="small">Closing statement from the original acquisition, all capitalised improvements, and the depreciation schedules from the owner&#x27;s filed returns (ADVISER-5, CPA). Feeds the after-tax module directly.
+      <br><span class="tiny"><a href="https://www.irs.gov/taxtopics/tc704" rel="noopener noreferrer">official source &rarr;</a></span></td>
+  <td class="small muted">ADVISER-5 (CPA)</td>
+</tr>
+<tr>
+  <td><code>Q-12</code><br><span class="badge stop">blocking</span></td>
+  <td><b>In which state is the owner resident for tax purposes, and does the owner have capital losses or other gains to offset?</b><br><span class="tiny muted">California taxes real property gain based on where the property is located, so a California-source gain follows the owner even after a move out of state. Whether a 1031 exchange is available and whether the owner is above the NIIT thresholds both change the answer materially.</span></td>
+  <td class="small"><span class="badge stop">missing</span><br>Unknown. The calculator lets the owner select the state marginal rate and whether the 3.8% NIIT applies, rather than assuming.</td>
+  <td class="small">Directly from OWNER-1 to ADVISER-5. Then confirm against FTB Publication 1100 (California sourcing) and IRS NIIT Q&amp;A (thresholds).
+      <br><span class="tiny"><a href="https://www.ftb.ca.gov/forms/2025/2025-1100-publication.pdf" rel="noopener noreferrer">official source &rarr;</a></span></td>
+  <td class="small muted">ADVISER-5</td>
+</tr>
+<tr>
+  <td><code>Q-13</code><br><span class="badge warn">high</span></td>
+  <td><b>Is a 1031 replacement property realistically identifiable, and is a qualified intermediary engaged?</b><br><span class="tiny muted">Deferral is only real if a replacement can be identified inside the statutory window. A 1031 that fails is worse than no 1031 because of transaction cost and timing pressure. California also requires FTB 3840 when California property is exchanged for out-of-state property.</span></td>
+  <td class="small"><span class="badge stop">missing</span><br>No replacement property identified, no intermediary engaged.</td>
+  <td class="small">ADVISER-5 and ADVISER-1 to set up a qualified intermediary before any sale contract is signed, and to write down the identification deadline.
+      <br><span class="tiny"><a href="https://www.irs.gov/businesses/small-businesses-self-employed/like-kind-exchanges-real-estate-tax-tips" rel="noopener noreferrer">official source &rarr;</a></span></td>
+  <td class="small muted">ADVISER-5</td>
+</tr></tbody>
+  </table>
+</div>
+<h2 id="physical">Physical</h2>
+<div class="table-wrap">
+  <table>
+    <caption>Physical &mdash; 2 questions</caption>
+    <thead><tr><th>ID</th><th>Question and why it gates the decision</th><th>What we have</th><th>How to close it</th><th>Owner</th></tr></thead>
+    <tbody>
+<tr>
+  <td><code>Q-14</code><br><span class="badge warn">high</span></td>
+  <td><b>What condition is the building, roof, parking lot, grease interceptor, HVAC and signage in, and when is each next due for capital spend?</b><br><span class="tiny muted">In a net lease the landlord usually keeps structure and roof. A roof due in 2029 is a real cost inside the decision horizon and belongs in the hold case.</span></td>
+  <td class="small"><span class="badge stop">missing</span><br>Unknown. No property-condition report exists in this workspace.</td>
+  <td class="small">A property condition assessment, plus service records for the roof and HVAC. Feed the annualised capex into the private worksheet.
+      <br><span class="tiny muted">no published source — private document</span></td>
+  <td class="small muted">ADVISER-2 (engineer)</td>
+</tr>
+<tr>
+  <td><code>Q-15</code><br><span class="badge warn">high</span></td>
+  <td><b>What is the parcel&#x27;s actual earthquake, flood and fire designation, and what does insurance cost and cover?</b><br><span class="tiny muted">Regional hazard context is not underwriting. The three national programmes all key off the private address, and the resulting zone changes insurance cost, rebuild rules and exit liquidity.</span></td>
+  <td class="small"><span class="badge warn">partly</span><br>The official programmes and lookup tools are confirmed (USGS NSHM, FEMA Flood Map Service Center, CAL FIRE FHSZ, FEMA National Risk Index). The parcel&#x27;s own designations are not read and are left blank.</td>
+  <td class="small">Run each lookup privately and record the designation, the map or panel identifier and the date read. Then obtain the insurance declarations page. See the Hazard Screening page for the exact tool links.
+      <br><span class="tiny"><a href="https://msc.fema.gov/portal/search" rel="noopener noreferrer">official source &rarr;</a></span></td>
+  <td class="small muted">OWNER-1 + ADVISER-3</td>
+</tr></tbody>
+  </table>
+</div>
+<h2 id="site-planning">Site &amp; planning</h2>
+<div class="table-wrap">
+  <table>
+    <caption>Site &amp; planning &mdash; 2 questions</caption>
+    <thead><tr><th>ID</th><th>Question and why it gates the decision</th><th>What we have</th><th>How to close it</th><th>Owner</th></tr></thead>
+    <tbody>
+<tr>
+  <td><code>Q-16</code><br><span class="badge warn">high</span></td>
+  <td><b>What is the zoning, General Plan designation and specific plan for the parcel, and could the site be redeveloped at higher intensity?</b><br><span class="tiny muted">Land value, not lease value, often drives a sale. If the site can support a taller use, the buyer is a developer and the price is a land price. If it cannot, the buyer is an investor and the price is a cap-rate price.</span></td>
+  <td class="small"><span class="badge stop">missing</span><br>City of Los Angeles Planning Department&#x27;s ZIMAS and Case Search are confirmed as the official lookups. The parcel&#x27;s designation was not read.</td>
+  <td class="small">ZIMAS by address in the private workspace; record FAR, height, use and any overlay, then a planning consultant&#x27;s read on realistic entitlement.
+      <br><span class="tiny"><a href="https://planning.lacity.gov/" rel="noopener noreferrer">official source &rarr;</a></span></td>
+  <td class="small muted">ADVISER-6 (land-use consultant)</td>
+</tr>
+<tr>
+  <td><code>Q-17</code><br><span class="badge gray">medium</span></td>
+  <td><b>What traffic actually passes the site, measured rather than assumed?</b><br><span class="tiny muted">A drive-thru&#x27;s sales are a function of passing vehicles and access. The landlord cannot move the curb cut, but the tenant&#x27;s rent and renewal appetite depend on it.</span></td>
+  <td class="small"><span class="badge stop">missing</span><br>Caltrans publishes Annual Average Daily Traffic for the State Highway System only; counts for city streets are held by the city traffic engineering department. The parcel&#x27;s frontage figure was not read.</td>
+  <td class="small">Request the city count for the adjacent street from LADOT or Public Works; record the count year and station.
+      <br><span class="tiny"><a href="https://dot.ca.gov/programs/traffic-operations/census" rel="noopener noreferrer">official source &rarr;</a></span></td>
+  <td class="small muted">ADVISER-6</td>
+</tr></tbody>
+  </table>
+</div>
+<h2 id="market">Market</h2>
+<div class="table-wrap">
+  <table>
+    <caption>Market &mdash; 3 questions</caption>
+    <thead><tr><th>ID</th><th>Question and why it gates the decision</th><th>What we have</th><th>How to close it</th><th>Owner</th></tr></thead>
+    <tbody>
+<tr>
+  <td><code>Q-18</code><br><span class="badge gray">medium</span></td>
+  <td><b>How do trade-area income, population and household growth compare with the city and county, on a consistent geography?</b><br><span class="tiny muted">City-level figures are a proxy, not a trade area. A drive-thru draws from roughly a 1-3 mile ring, and the ring can move in the opposite direction from the city.</span></td>
+  <td class="small"><span class="badge warn">partly</span><br>City-level figures are verified (population 3,869,089 at July 2025; -0.8% since the 2020 base; median household income $81,939 in 2020-2024 dollars; 16.5% in poverty; bachelor&#x27;s or higher 38.5%). County-level QuickFacts did not load, so the county comparator is blank.</td>
+  <td class="small">ACS 5-year tables B19013, B01003 and B25064 pulled by tract or ZCTA in the private workspace, using the tract list that the address resolves to. One consistent vintage.
+      <br><span class="tiny"><a href="https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045224" rel="noopener noreferrer">official source &rarr;</a></span></td>
+  <td class="small muted">sess-arena-78005353 (city)/ OWNER-1 (trade area)</td>
+</tr>
+<tr>
+  <td><code>Q-19</code><br><span class="badge gray">medium</span></td>
+  <td><b>Is the local labour market improving or deteriorating, and in which sectors?</b><br><span class="tiny muted">Quick-service lunch traffic tracks local employment. A metro where health services is growing and information is shrinking is a different trade area than one where both are growing.</span></td>
+  <td class="small"><span class="badge ok">answered</span><br>Los Angeles metro unemployment was 4.4% in September 2026, down from 5.5% a year earlier. Total nonfarm employment was 6,282.1 thousand, +0.5% year over year. Information fell 5.7% (-11.4k jobs); education and health services rose 3.8% (+49.1k); leisure and hospitality rose 1.5%.</td>
+  <td class="small">Already sourced from BLS.
+      <br><span class="tiny"><a href="https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf" rel="noopener noreferrer">official source &rarr;</a></span></td>
+  <td class="small muted">done</td>
+</tr>
+<tr>
+  <td><code>Q-20</code><br><span class="badge gray">medium</span></td>
+  <td><b>Are there competing quick-service units or approved new ones within the trade area?</b><br><span class="tiny muted">Cannibalisation and new supply change the tenant&#x27;s sales, and the tenant&#x27;s sales change whether it renews at a higher rent.</span></td>
+  <td class="small"><span class="badge stop">missing</span><br>Nothing. The tenant&#x27;s own site-selection criteria are disclosed at system level (population density, traffic, competition, visibility and access, parking, surrounding businesses) but not applied here.</td>
+  <td class="small">A competitor count within the drive-time ring, with a note for each on whether it is open, under construction or approved. Open data from the city&#x27;s building permit system, cross-checked by a site visit.
+      <br><span class="tiny"><a href="https://planning.lacity.gov/" rel="noopener noreferrer">official source &rarr;</a></span></td>
+  <td class="small muted">ADVISER-3</td>
+</tr></tbody>
+  </table>
+</div>
+<h2 id="process">Process</h2>
+<div class="table-wrap">
+  <table>
+    <caption>Process &mdash; 3 questions</caption>
+    <thead><tr><th>ID</th><th>Question and why it gates the decision</th><th>What we have</th><th>How to close it</th><th>Owner</th></tr></thead>
+    <tbody>
+<tr>
+  <td><code>Q-21</code><br><span class="badge warn">high</span></td>
+  <td><b>What is the owner&#x27;s actual objective and constraint: income, growth, liquidity, estate timing, or concentration?</b><br><span class="tiny muted">There is no single best decision in the abstract. A tax-deferred swap into two properties is best for one owner and worst for another. This question is not answerable from data.</span></td>
+  <td class="small"><span class="badge stop">missing</span><br>The brief asks for the preservation of wealth with opportunity for growth at a manageable level of risk. That is a direction, not a constraint set.</td>
+  <td class="small">A written investment policy of one page: required income, minimum liquidity, maximum single-asset concentration, estate plan, and the earliest date the owner would want cash.
+      <br><span class="tiny muted">no published source — private document</span></td>
+  <td class="small muted">OWNER-1 + ADVISER-5</td>
+</tr>
+<tr>
+  <td><code>Q-22</code><br><span class="badge gray">medium</span></td>
+  <td><b>Who is authorised to act, and who reviews each deliverable before it is relied on?</b><br><span class="tiny muted">The brief requires that private material stay with authorised advisers. That is only enforceable if the list exists, is dated and is kept with the file.</span></td>
+  <td class="small"><span class="badge stop">missing</span><br>Placeholders ADVISER-1 through ADVISER-6 are used throughout this product. No real adviser is named in it.</td>
+  <td class="small">An access list held by OWNER-1, outside this repository, naming counsel, CPA, broker, engineer, appraiser and land-use consultant, with the scope each is authorised to see.
+      <br><span class="tiny muted">no published source — private document</span></td>
+  <td class="small muted">OWNER-1</td>
+</tr>
+<tr>
+  <td><code>Q-23</code><br><span class="badge gray">medium</span></td>
+  <td><b>What would make this decision wrong, and what early signal would show it?</b><br><span class="tiny muted">A decision without a falsifier cannot be reviewed. Each branch of the recommendation needs a stated disconfirming observation.</span></td>
+  <td class="small"><span class="badge ok">answered</span><br>The sell branch is wrong if the tenant renews at or above market and the cap rate compresses. The renew branch is wrong if the tenant gives notice, if a closure programme reaches this unit, or if insurance is non-renewed. Each is testable with a specific document.</td>
+  <td class="small">Already written on the Decision Risks page, with the document that would settle each one.
+      <br><span class="tiny muted">no published source — private document</span></td>
+  <td class="small muted">done</td>
+</tr></tbody>
+  </table>
+</div>
+
+<h2>The 8 blocking questions, in the order to close them</h2>
+<div class="table-wrap">
+  <table>
+    <caption>Sequence matters as much as content</caption>
+    <thead><tr><th>Order</th><th>Question</th><th>Why now</th></tr></thead>
+    <tbody>
+      <tr><td class="num">1</td><td>Q-02, Q-03, Q-04 &mdash; lease, options, notice calendar</td><td class="small">Cheapest to close and the only one where delay is irreversible. A missed notice window cannot be recovered by analysis.</td></tr>
+      <tr><td class="num">2</td><td>Q-21 &mdash; the owner's objective in writing</td><td class="small">Without it, every subsequent comparison is ranked against an unstated benchmark, and the ranking is unfalsifiable.</td></tr>
+      <tr><td class="num">3</td><td>Q-11, Q-12 &mdash; basis and residence</td><td class="small">Determines whether the after-tax module can produce a number at all. Unrecaptured section 1250 gain is taxed at up to 25% federally, so the depreciation history is not a rounding detail.</td></tr>
+      <tr><td class="num">4</td><td>Q-09, Q-10 &mdash; value and comparables</td><td class="small">Gives the sale case a numerator. Note that Q-05 (market rent) is equally blocking and sits with the lease work.</td></tr>
+      <tr><td class="num">5</td><td>Q-01 &mdash; title and vesting</td><td class="small">Needed before anyone can sign, and it changes the tax analysis.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Questions this product cannot answer, by definition</h2>
+<div class="card">
+  <p class="small">Three questions in the register are not research problems and should not be treated as gaps in the
+  analysis. Q-21 (the owner's objective) is a decision, not a fact. Q-22 (the access list) is an administrative act.
+  Q-08 (whether this unit is in the closure programme) requires the counterparty to speak, and no amount of public
+  research substitutes for asking. Everything else is obtainable.</p>
+</div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <strong>Parcel Decision Workspace</strong> &mdash; built 2026-11-25.<br>
+      Public product. Contains no address, parcel number, owner name, lease text or financial figure belonging to any person or entity.
+      Private material is held offline with authorised advisers.
+    </div>
+    <nav aria-label="Footer">
+      <a href="sources.html">Sources</a>
+      <a href="flagged.html">Flagged for Review</a>
+      <a href="questions.html">Open Questions</a>
+      <a href="advisor-summary.html">One-Page Summary</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

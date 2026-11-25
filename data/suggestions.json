@@ -1,0 +1,179 @@
+{
+  "meta": {
+    "title": "Suggestions register — how to close each gap, and how to review a suggestion before adopting it",
+    "compiled": "2026-11-25",
+    "purpose": "This is the section the brief asked for: a place someone can review suggestions and choose the best path before anything is implemented. Each suggestion states what it buys, what it costs, how long it takes, and what would show it is the wrong call.",
+    "decision_rule": "Adopt a suggestion only when its 'unblocks' list contains the gating questions that are currently stopping the decision. Suggestions that improve presentation but close no gap are marked as such and should not be funded first."
+  },
+  "suggestions": [
+    {
+      "id": "S-01", "band": "Do first", "title": "Commission the private lease abstract, then reconcile it against a dated notice calendar",
+      "problem": "The brief gives the expiry as a window (2030-2035) rather than a date, and no option windows are recorded anywhere. A missed window can forfeit an option.",
+      "action": "Have counsel abstract the lease into a fixed template, then build a calendar with 90/60/30-day alerts for every option and notice date, and reconcile the two documents line by line.",
+      "unblocks": ["Q-02", "Q-03", "Q-04", "Q-05"],
+      "effort": "1-2 weeks, counsel fees",
+      "cost_band": "low", "risk": "low",
+      "falsifier": "If the abstract shows a fixed expiration well outside 2030 and no options, urgency drops sharply and the calendar is a one-line entry.",
+      "stays_private": "Yes — the abstract, the dates and the rent stay in the offline workspace. Only the method is published."
+    },
+    {
+      "id": "S-02", "band": "Do first", "title": "Write a one-page owner investment policy before any valuation work",
+      "problem": "Every comparison is undefined without an objective. 'Best' is not a property attribute.",
+      "action": "One page: required annual income, minimum liquidity, maximum share of net worth in one asset, estate timing, earliest date cash could be needed.",
+      "unblocks": ["Q-21", "Q-12"],
+      "effort": "One session with the CPA",
+      "cost_band": "low", "risk": "low",
+      "falsifier": "If the owner cannot state a constraint, that itself is the finding, and the intermediate answer is to do nothing that is irreversible.",
+      "stays_private": "Yes — entirely private."
+    },
+    {
+      "id": "S-03", "band": "Do first", "title": "Set up the access-control list and the private workspace before collecting anything else",
+      "problem": "The brief makes privacy the highest priority. Documents collected without an access list will leak into email and chat.",
+      "action": "Create the workspace folder structure, name the authorised advisers, and record who may see which folder. Publish only aggregate output from this repository.",
+      "unblocks": ["Q-22"],
+      "effort": "Half a day",
+      "cost_band": "none", "risk": "low",
+      "falsifier": "Not applicable — this is a precondition, not a hypothesis.",
+      "stays_private": "The list is private; the existence of the control is what gets published."
+    },
+    {
+      "id": "S-04", "band": "Do second", "title": "Obtain basis, land/building split and depreciation history from the CPA",
+      "problem": "The after-tax module is built and verified, but it has nothing to compute with. Unrecaptured section 1250 gain is taxed at up to 25% federally, so the depreciation history changes the answer.",
+      "action": "Pull the original closing statement, all capitalised improvements, and the depreciation schedules from the filed returns. Enter them into the private worksheet. Do not estimate.",
+      "unblocks": ["Q-11", "Q-12", "Q-13"],
+      "effort": "1 week, CPA time",
+      "cost_band": "low", "risk": "low",
+      "falsifier": "If basis is close to value, the tax drag is small and the sell-versus-renew comparison collapses to a rent-versus-cap-rate question.",
+      "stays_private": "Yes — no figure from this step appears on the site."
+    },
+    {
+      "id": "S-05", "band": "Do second", "title": "Get three dated closed comparable leases and sales, then price the short-lease discount from them",
+      "problem": "The short-lease discount is the crux of a 2030-2035 expiry. A discount taken from a rule of thumb is an assumption dressed as a finding.",
+      "action": "Broker pulls closed, dated comparables in the trade area: price, cap rate, term remaining at sale, rent at sale, and source document. Then fit the discount to the observed pairs only.",
+      "unblocks": ["Q-09", "Q-10"],
+      "effort": "2-4 weeks",
+      "cost_band": "medium", "risk": "low",
+      "falsifier": "If comparable short-lease trades do not exist in the submarket, the discount cannot be priced, and the honest output is a range with the word 'unpriced' attached.",
+      "stays_private": "Comparable identities stay private; the observed relationship may be published in aggregate."
+    },
+    {
+      "id": "S-06", "band": "Do second", "title": "Run the four hazard lookups privately and attach the panel or zone identifier, not just a letter",
+      "problem": "The official programmes are confirmed but the parcel's designations are blank. Insurance cost and rebuild rules follow the zone, not the region.",
+      "action": "FEMA Flood Map Service Center, USGS NSHM, CAL FIRE FHSZ viewer, FEMA National Risk Index. For each, record the designation, the identifier and the date read. Then get the insurance declarations page.",
+      "unblocks": ["Q-15"],
+      "effort": "One afternoon plus one broker call",
+      "cost_band": "none", "risk": "low",
+      "falsifier": "A clean flood and fire result with earthquake retrofit already done would remove most of the physical downside and raise the hold case.",
+      "stays_private": "The designations are private because they identify the address. Publish only the method and the programme links, which is what this product already does."
+    },
+    {
+      "id": "S-07", "band": "Do second", "title": "Pull zoning and General Plan designation to test whether the site is worth more as land than as a leased building",
+      "problem": "In central Los Angeles the redevelopment option can dominate the lease comparison, and it is invisible without the zoning lookup.",
+      "action": "ZIMAS by address, then a land-use consultant's read on realistic FAR and use, then a land-value sanity check against the leased-fee value.",
+      "unblocks": ["Q-16"],
+      "effort": "1-2 weeks",
+      "cost_band": "medium", "risk": "low",
+      "falsifier": "A single-family or low-density designation with no overlay removes the redevelopment branch entirely.",
+      "stays_private": "Yes — the designation identifies the parcel."
+    },
+    {
+      "id": "S-08", "band": "Consider", "title": "Ask the tenant, in writing, whether this unit is in scope of the closure programme",
+      "problem": "The FY2025 10-K discloses a system-level restaurant closure programme but does not identify units. That is a real signal and it is not evidence about this parcel.",
+      "action": "A written question to the tenant's real estate contact, kept in the private workspace. Record the answer or the non-answer.",
+      "unblocks": ["Q-08"],
+      "effort": "One letter",
+      "cost_band": "none", "risk": "medium",
+      "falsifier": "A direct written confirmation that the unit is not in scope, with a renewal indication, moves weight to the hold case.",
+      "risk_note": "Approaching the tenant reveals that the owner is considering a sale. Do this only after the lease abstract and notice calendar exist, so the owner is not negotiating from an information deficit.",
+      "stays_private": "Yes."
+    },
+    {
+      "id": "S-09", "band": "Consider", "title": "Add a written comparable-sales evidence file rather than a single appraised number",
+      "problem": "One appraisal is an opinion. A file of dated evidence with sources is reviewable and survives a dispute with a buyer or a lender.",
+      "action": "Keep every comparable with its date, source document and adjustment. Re-run the valuation when a comparable arrives.",
+      "unblocks": ["Q-09", "Q-10"],
+      "effort": "Ongoing",
+      "cost_band": "low", "risk": "low",
+      "falsifier": "If comparables cluster tightly, a full appraisal adds little.",
+      "stays_private": "Yes."
+    },
+    {
+      "id": "S-10", "band": "Consider", "title": "Model the hold case with a capital reserve schedule instead of a single annual capex figure",
+      "problem": "The hold case's real risk is a cluster of capital events inside the remaining term: roof, parking, HVAC, sign, grease interceptor. A flat annual average hides the timing.",
+      "action": "A dated list of expected capital events with cost ranges from a property condition assessment, then feed the shock into the calculator's repair input.",
+      "unblocks": ["Q-14"],
+      "effort": "2-3 weeks",
+      "cost_band": "medium", "risk": "low",
+      "falsifier": "A recently replaced roof and lot with documented warranties reduces the reserve to near zero.",
+      "stays_private": "Yes."
+    },
+    {
+      "id": "S-11", "band": "Consider", "title": "Test the 1031 path for feasibility before assuming deferral",
+      "problem": "The after-tax module offers a deferral branch, but deferral is only available if a replacement can be identified inside the statutory window and an intermediary is engaged before closing.",
+      "action": "Engage a qualified intermediary early, write the identification deadline down, and list candidate replacements. Note that California requires FTB 3840 when California property is exchanged for out-of-state property, and the California-source gain follows the owner.",
+      "unblocks": ["Q-13"],
+      "effort": "2-4 weeks",
+      "cost_band": "medium", "risk": "medium",
+      "falsifier": "If no credible replacement can be identified in the window, the deferral branch should be removed from the recommendation and the sale valued on a taxable basis.",
+      "stays_private": "Yes."
+    },
+    {
+      "id": "S-12", "band": "Consider", "title": "Rebuild the trade-area numbers on a consistent tract or ZCTA basis before relying on city figures",
+      "problem": "City-level income and population are a proxy. The trade area can move against the city. The county comparator could not be loaded, so the benchmark is currently one-sided.",
+      "action": "Pull ACS 5-year tables B19013, B01003 and B25064 for the tracts or ZCTA that the address resolves to, same vintage, and compare against the city figure already verified here.",
+      "unblocks": ["Q-18"],
+      "effort": "2-3 days",
+      "cost_band": "none", "risk": "low",
+      "falsifier": "If the trade area tracks the city within a few points, the city figure is adequate and the extra work is unnecessary.",
+      "stays_private": "Aggregate tract figures can be published; the tract list cannot, because it locates the parcel."
+    },
+    {
+      "id": "S-13", "band": "Presentation", "title": "Put a single 'what is still unknown' counter on the landing page",
+      "problem": "A dashboard full of verified figures reads as readiness. It is not readiness.",
+      "action": "Show the count of blocking questions still open, computed from the question register, at the top of the dashboard. It is already implemented.",
+      "unblocks": [],
+      "effort": "Done",
+      "cost_band": "none", "risk": "low",
+      "falsifier": "Not applicable.",
+      "stays_private": "No."
+    },
+    {
+      "id": "S-14", "band": "Presentation", "title": "Keep a visible 'Flagged for review' page with source links instead of silently dropping weak data",
+      "problem": "Deleting an unverifiable figure hides that the question is open. Publishing it without a flag overstates confidence.",
+      "action": "Every row that could not be confirmed from an official page goes to the Flagged for Review page, blank, with the link that was attempted and the reason it failed. Implemented.",
+      "unblocks": [],
+      "effort": "Done",
+      "cost_band": "none", "risk": "low",
+      "falsifier": "Not applicable.",
+      "stays_private": "No."
+    },
+    {
+      "id": "S-15", "band": "Presentation", "title": "Add a print stylesheet so advisors receive one page, not a screenshot",
+      "problem": "Advisors work from paper in meetings. A dashboard that prints badly does not get used.",
+      "action": "A dedicated one-page summary that strips navigation and expands source URLs in print. Implemented on the Advisor One-Pager page.",
+      "unblocks": [],
+      "effort": "Done",
+      "cost_band": "none", "risk": "low",
+      "falsifier": "Not applicable.",
+      "stays_private": "No — it is built to contain no private data."
+    },
+    {
+      "id": "S-16", "band": "Presentation", "title": "Do not adopt a versioned cash-flow model yet",
+      "problem": "The brief asks for a versioned, back-tested cash-flow model. Back-testing requires sufficient comparable history, which the repository does not have.",
+      "action": "Defer. Build it only when verified rent, verified comparables and at least a few years of comparable history exist. Until then, the four-scenario calculator is the honest tool.",
+      "unblocks": [],
+      "effort": "Deferred",
+      "cost_band": "n/a", "risk": "low",
+      "falsifier": "When S-05 yields a comparable set with enough history, this becomes adoptable.",
+      "stays_private": "n/a",
+      "why_deferred": "A model fitted to no data is a spreadsheet with a version number. Publishing one would violate the brief's own rule to distinguish observations from assumptions."
+    }
+  ],
+  "review_protocol": [
+    "Read the suggestion's 'unblocks' list. If none of those questions is blocking, the suggestion is not urgent.",
+    "Read the 'falsifier'. If it is likely to be true, the suggestion buys little.",
+    "Check 'stays_private'. Any suggestion that would put an identifier on the public site is rejected outright, regardless of benefit.",
+    "Choose at most three to start. Record the choice, the date and the owner in COORDINATION.md so parallel sessions do not duplicate the work.",
+    "Revisit the register when a blocker closes, because the ranking changes when the facts change."
+  ]
+}

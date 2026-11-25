@@ -1,0 +1,154 @@
+{
+  "meta": {
+    "title": "Flagged for review — irregularities and unverified items",
+    "compiled": "2026-11-25",
+    "rule": "Nothing on this page is used as a value anywhere on the site. Each item records what was attempted, why it failed, and what would close it. Flagged items do not block publication; they block reliance.",
+    "categories": {
+      "source_unavailable": "The official page existed but did not return usable content to this reader.",
+      "not_published_officially": "The figure exists in practice but no official published page carries it.",
+      "identifies_parcel": "The official source can answer the question, but only by keying off the private address, so the answer is deliberately withheld from the public product.",
+      "data_gap_official": "The statistical agency itself has a gap in its series.",
+      "repo_irregularity": "Something about the repository or the environment that a reviewer should know."
+    }
+  },
+  "items": [
+    {
+      "id": "FR-01", "category": "source_unavailable",
+      "item": "Los Angeles County QuickFacts benchmark",
+      "detail": "The county QuickFacts page failed to render content on four separate attempts with different URL forms, returning an HTTP fetch error each time. The city page loaded normally, so the failure is specific to the county page at the time of reading.",
+      "attempted_urls": [
+        "https://www.census.gov/quickfacts/fact/table/losangelescountycalifornia/PST045224",
+        "https://www.census.gov/quickfacts/fact/table/losangelescountycalifornia/PST045225",
+        "https://www.census.gov/quickfacts/fact/table/losangelescountycalifornia/PST045223"
+      ],
+      "impact": "No county comparator for income, population or housing. The city figures are unaffected and remain verified.",
+      "to_close": "Open the county QuickFacts page in a browser and record the figure with the date read. Or use the Census API with a free key."
+    },
+    {
+      "id": "FR-02", "category": "data_gap_official",
+      "item": "CPI-U 12-month change for October 2026, Los Angeles area",
+      "detail": "BLS states that it did not collect survey data for October 2025 because of the 2025 lapse in appropriations, so for most series it could not publish October 2025 indexes and therefore cannot publish an October 2026 over-the-year change. BLS also reports the October 2025 unemployment value as '-' for the same reason.",
+      "attempted_urls": [
+        "https://www.bls.gov/regions/west/news-release/consumerpriceindex_losangeles.htm",
+        "https://api.bls.gov/publicAPI/v2/timeseries/data/LAUMT063108000000003"
+      ],
+      "impact": "The 12-month inflation figure on the Market page is September 2026 (3.7%), not October. The October 1-month change (0.6%) is published and is shown as a one-month change, not as an annual rate.",
+      "to_close": "Nothing to close — this is an official gap. Use the September 12-month figure until BLS publishes November."
+    },
+    {
+      "id": "FR-03", "category": "identifies_parcel",
+      "item": "All parcel-level hazard designations",
+      "detail": "Flood zone, fire hazard severity zone, seismic ground motion, fault-rupture zone and the composite National Risk Index score are all keyed to the parcel's coordinates or address. Publishing any of them would identify the site.",
+      "attempted_urls": [
+        "https://msc.fema.gov/portal/search",
+        "https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones",
+        "https://earthquake.usgs.gov/nshmp/"
+      ],
+      "impact": "Five rows on the Hazard Screening page are intentionally blank. This is a privacy control, not a research failure.",
+      "to_close": "Run each lookup in the private workspace with the real address, record the designation and the date, and keep it offline. Do not publish."
+    },
+    {
+      "id": "FR-04", "category": "identifies_parcel",
+      "item": "Zoning, General Plan, school assignment and traffic counts",
+      "detail": "ZIMAS is address-keyed, school assignment is address-keyed, and Caltrans publishes AADT only for the State Highway System. City street counts are held by the city traffic engineering department.",
+      "attempted_urls": [
+        "https://planning.lacity.gov/",
+        "https://caaspp-elpac.ets.org/caaspp/SearchSB.aspx",
+        "https://dot.ca.gov/programs/traffic-operations/census"
+      ],
+      "impact": "Blank rows on the Trade Area page. The official tools are linked so the owner can complete them privately.",
+      "to_close": "Private workspace steps, listed on the Trade Area page."
+    },
+    {
+      "id": "FR-05", "category": "source_unavailable",
+      "item": "CAL FIRE fire hazard severity zone page at its previous URL",
+      "detail": "The URL fire.ca.gov/programs/communications/fire-hazard-severity-zones returned a 404. The programme was then confirmed at the Office of the State Fire Marshal domain instead.",
+      "attempted_urls": ["https://www.fire.ca.gov/programs/communications/fire-hazard-severity-zones/"],
+      "impact": "None on conclusions — the correct OSFM page was read and is linked. Recorded because the old URL is widely cited.",
+      "to_close": "Closed. Use https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones"
+    },
+    {
+      "id": "FR-06", "category": "source_unavailable",
+      "item": "California Geological Survey Alquist-Priolo page",
+      "detail": "Three CGS deep links returned the Department of Conservation 'Page Not Found' page. The CGS site root resolves. Because the specific programme page could not be confirmed, the Alquist-Priolo row is marked programme-unverified.",
+      "attempted_urls": [
+        "https://www.conservation.ca.gov/cgs/geologic-hazards/alquist-priolo",
+        "https://www.conservation.ca.gov/cgs/geologic-hazards/earthquake-zoning",
+        "https://www.conservation.ca.gov/cgs/geologic-hazards"
+      ],
+      "impact": "The fault-rupture row is marked unverified at the programme level, which is stricter than the other hazard rows.",
+      "to_close": "Navigate the CGS site in a browser, record the current URL, and update the row."
+    },
+    {
+      "id": "FR-07", "category": "source_unavailable",
+      "item": "California FAIR Plan consumer page and DIR fast-food wage page",
+      "detail": "The CA Department of Insurance FAIR Plan URL returned a document-not-found page, and the DIR Fast Food Minimum Wage URL returned a fetch error. The DIR general minimum wage FAQ did load and is verified at $16.90/hour from 1 January 2026.",
+      "attempted_urls": [
+        "https://www.insurance.ca.gov/01-consumers/105-type/95-guides/03-res/FAIR-plan.cfm",
+        "https://www.dir.ca.gov/dlse/FastFoodMinimumWage.html",
+        "https://www.dir.ca.gov/dlse/California-Fast-Food-Minimum-Wage.html"
+      ],
+      "impact": "The fast-food wage rate is NOT asserted anywhere on this site. The widely reported $20.00 figure was seen only on non-official pages and was therefore excluded under the brief's own rule.",
+      "to_close": "Read the live DIR fast-food FAQ page and record the rate, the effective date and the authority."
+    },
+    {
+      "id": "FR-08", "category": "source_unavailable",
+      "item": "HUD FY2026 Fair Market Rent values",
+      "detail": "The HUD FY2026 FMR documentation page loaded its methodology but the rent value cells rendered empty to this reader.",
+      "attempted_urls": [
+        "https://www.huduser.gov/portal/datasets/fmr/fmrs/FY2026_code/2026summary.odn?selected_metro_code=31080&year=2026&fmrtype=Final"
+      ],
+      "impact": "The FMR row on the Market page is blank. Residential FMR would in any case be context, not a commercial rent.",
+      "to_close": "Read the value from the HUD page in a browser."
+    },
+    {
+      "id": "FR-09", "category": "not_published_officially",
+      "item": "Market rent, cap rate and closed comparables for the parcel",
+      "detail": "No official agency publishes cap rates or commercial lease comparables. CoStar and similar products are commercial databases, not official sources, and were therefore not used to assert any value.",
+      "attempted_urls": [],
+      "impact": "Every valuation row in this product is blank or explicitly an input the user supplies. The calculator is built to make the assumption visible rather than to hide it in a value field.",
+      "to_close": "A broker's documented comparable file with source documents, kept private, referenced (not published) here."
+    },
+    {
+      "id": "FR-10", "category": "not_published_officially",
+      "item": "FHFA house price change for the Los Angeles MSA",
+      "detail": "The FHFA 2026Q3 report was read through the press release and summary tables. The 100-largest-MSA table sits on a later page than the portion retrieved, so the Los Angeles MSA figure is blank. The California state figure (0.6%) is verified from the state map table.",
+      "attempted_urls": ["https://www.fhfa.gov/document/d/hpi/fhfa-house-price-index-report-2026q3"],
+      "impact": "The property price trend panel shows the state figure and labels it as such. Single-family HPI is not a restaurant valuation series in any case.",
+      "to_close": "Read the MSA table on page 18-20 of the same report."
+    },
+    {
+      "id": "FR-11", "category": "repo_irregularity",
+      "item": "Repository contained only a README at the start of this session",
+      "detail": "The repository at commit 4aa9dad contained one file: README.md with the single word 'Jackbox1'. No COORDINATION.md existed, no data, no site, and no pull requests. Since GitHub Pages was already enabled on main with a legacy build from the repository root, the site had to be built from scratch in one session.",
+      "attempted_urls": [],
+      "impact": "There was no prior work to verify line by line. The verification burden fell entirely on this session's own sources, all of which are linked.",
+      "to_close": "Not applicable. Recorded for the audit trail."
+    },
+    {
+      "id": "FR-12", "category": "repo_irregularity",
+      "item": "The property address is not in the repository, and must not be added",
+      "detail": "The brief describes the property only as a Jack in the Box on a triple-net lease in central Los Angeles expiring between 2030 and 2035. No address, parcel number or APN was supplied, and none is inferred here. Even the neighbourhood is not stated, so every geographic figure on this site is a city or metro figure.",
+      "attempted_urls": [],
+      "impact": "This is the single largest limitation of the product. Every parcel-level row is blank for this reason as much as for privacy.",
+      "to_close": "The owner records the address in the private workspace only. Nothing about it should be committed to this public repository."
+    },
+    {
+      "id": "FR-13", "category": "data_gap_official",
+      "item": "City of Los Angeles business tax and real property transfer tax rates",
+      "detail": "Neither rate was read from an official City of Los Angeles page during this session, so neither is used. The calculator excludes local transaction taxes entirely and says so.",
+      "attempted_urls": ["https://finance.lacity.gov/"],
+      "impact": "Net sale proceeds shown by the after-tax module are therefore an upper bound until local transfer tax is added by the CPA.",
+      "to_close": "Read the current rates from the City of Los Angeles Office of Finance and add them to the calculator as a verified input."
+    },
+    {
+      "id": "FR-14", "category": "not_published_officially",
+      "item": "Whether this specific unit is affected by the franchisor's closure programme",
+      "detail": "The FY2025 10-K discloses a restaurant closure programme under 'Jack on Track' but does not identify units. Inferring that this unit is or is not affected would be speculation.",
+      "attempted_urls": ["https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm"],
+      "impact": "The tenant-credit panel presents the disclosed programme as a system-level fact with that label attached, and does not apply it to this parcel.",
+      "to_close": "A written answer from the tenant, kept private (see suggestion S-08)."
+    }
+  ],
+  "note_on_flagged_items": "Flagged items are published, not suppressed. None of them blocks the site from being live, and none of them is used as a number anywhere in the analysis. Each carries the URL that was attempted so a reviewer can retry it."
+}

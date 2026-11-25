@@ -1,0 +1,402 @@
+{
+  "meta": {
+    "title": "Trade-area and market evidence register",
+    "compiled": "2026-11-25",
+    "rule": "A value is only shown when it was read from the linked official page during this session. Where the official source could not supply a parcel- or trade-area-level figure, the value is left null and the row is flagged. Nothing is interpolated, averaged or estimated into a value field.",
+    "geography_note": "The subject property's address, parcel number and coordinates are private workspace material and are deliberately absent from this file. Geography labels below name the published statistical areas that were actually queried, not the parcel."
+  },
+  "metrics": [
+    {
+      "id": "POP-01", "group": "Population", "label": "Population, July 1, 2025 (V2025 estimate)",
+      "value": 3869089, "unit": "persons", "period": "2025-07-01",
+      "geo": "Los Angeles city, CA",
+      "source_name": "U.S. Census Bureau, QuickFacts (V2025 population estimates)",
+      "source_url": "https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045224",
+      "verified": true, "note": "City-level. Serves as an upper-bound proxy only; it is not a trade-area figure."
+    },
+    {
+      "id": "POP-02", "group": "Population", "label": "Population change, April 1 2020 base to July 1 2025",
+      "value": -0.8, "unit": "%", "period": "2020-04-01 to 2025-07-01",
+      "geo": "Los Angeles city, CA",
+      "source_name": "U.S. Census Bureau, QuickFacts (V2025)",
+      "source_url": "https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045224",
+      "verified": true, "note": "Published as a percent change by Census; reproduced as published."
+    },
+    {
+      "id": "POP-03", "group": "Population", "label": "Population, decennial Census 2020",
+      "value": 3898747, "unit": "persons", "period": "2020-04-01",
+      "geo": "Los Angeles city, CA",
+      "source_name": "U.S. Census Bureau, QuickFacts",
+      "source_url": "https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045224",
+      "verified": true, "note": ""
+    },
+    {
+      "id": "POP-04", "group": "Population", "label": "Population, decennial Census 2010",
+      "value": 3792621, "unit": "persons", "period": "2010-04-01",
+      "geo": "Los Angeles city, CA",
+      "source_name": "U.S. Census Bureau, QuickFacts",
+      "source_url": "https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045224",
+      "verified": true, "note": ""
+    },
+    {
+      "id": "POP-05", "group": "Population", "label": "Persons under 18 years",
+      "value": 19.2, "unit": "%", "period": "V2025",
+      "geo": "Los Angeles city, CA",
+      "source_name": "U.S. Census Bureau, QuickFacts",
+      "source_url": "https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045224",
+      "verified": true, "note": "Relevant to school-driven household demand, not to quick-service trade area by itself."
+    },
+    {
+      "id": "POP-06", "group": "Population", "label": "Persons 65 years and over",
+      "value": 14.2, "unit": "%", "period": "V2025",
+      "geo": "Los Angeles city, CA",
+      "source_name": "U.S. Census Bureau, QuickFacts",
+      "source_url": "https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045224",
+      "verified": true, "note": ""
+    },
+    {
+      "id": "POP-07", "group": "Population", "label": "Foreign-born persons",
+      "value": 35.7, "unit": "%", "period": "2020-2024 ACS 5-year",
+      "geo": "Los Angeles city, CA",
+      "source_name": "U.S. Census Bureau, QuickFacts",
+      "source_url": "https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045224",
+      "verified": true, "note": ""
+    },
+    {
+      "id": "POP-08", "group": "Population", "label": "Population per square mile",
+      "value": 8304.2, "unit": "persons / sq mi", "period": "2020",
+      "geo": "Los Angeles city, CA",
+      "source_name": "U.S. Census Bureau, QuickFacts",
+      "source_url": "https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045224",
+      "verified": true, "note": "Land area 469.49 sq mi (2020, same source)."
+    },
+    {
+      "id": "POP-09", "group": "Population", "label": "Persons living in same house 1 year ago (age 1+)",
+      "value": 89.3, "unit": "%", "period": "2020-2024 ACS 5-year",
+      "geo": "Los Angeles city, CA",
+      "source_name": "U.S. Census Bureau, QuickFacts",
+      "source_url": "https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045224",
+      "verified": true, "note": "Residential stability indicator."
+    },
+
+    {
+      "id": "INC-01", "group": "Income & poverty", "label": "Median household income (2024 dollars)",
+      "value": 81939, "unit": "USD / year", "period": "2020-2024 ACS 5-year",
+      "geo": "Los Angeles city, CA",
+      "source_name": "U.S. Census Bureau, QuickFacts",
+      "source_url": "https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045224",
+      "verified": true, "note": "City-level proxy. Trade-area median household income inside a 3-minute drive time was not obtainable from an official published page without disclosing the parcel location."
+    },
+    {
+      "id": "INC-02", "group": "Income & poverty", "label": "Per capita income (past 12 months, 2024 dollars)",
+      "value": 47685, "unit": "USD / year", "period": "2020-2024 ACS 5-year",
+      "geo": "Los Angeles city, CA",
+      "source_name": "U.S. Census Bureau, QuickFacts",
+      "source_url": "https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045224",
+      "verified": true, "note": ""
+    },
+    {
+      "id": "INC-03", "group": "Income & poverty", "label": "Persons in poverty",
+      "value": 16.5, "unit": "%", "period": "V2025-flagged series (QuickFacts: Persons in poverty, percent)",
+      "geo": "Los Angeles city, CA",
+      "source_name": "U.S. Census Bureau, QuickFacts",
+      "source_url": "https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045224",
+      "verified": true, "note": "QuickFacts labels this series by estimate vintage; the page shows 16.5% at the time of reading."
+    },
+    {
+      "id": "INC-04", "group": "Income & poverty", "label": "Median household income, County (contrast)",
+      "value": null, "unit": "USD / year", "period": "2020-2024 ACS 5-year",
+      "geo": "Los Angeles County, CA",
+      "source_name": "U.S. Census Bureau, QuickFacts (county page)",
+      "source_url": "https://www.census.gov/quickfacts/fact/table/losangelescountycalifornia/PST045224",
+      "verified": false,
+      "note": "County QuickFacts page failed to return content on repeated attempts (HTTP fetch error). Value deliberately left blank rather than taken from a secondary site."
+    },
+
+    {
+      "id": "HOU-01", "group": "Housing", "label": "Median value of owner-occupied housing units",
+      "value": 921200, "unit": "USD", "period": "2020-2024 ACS 5-year",
+      "geo": "Los Angeles city, CA",
+      "source_name": "U.S. Census Bureau, QuickFacts",
+      "source_url": "https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045224",
+      "verified": true, "note": "Residential, not commercial. Useful only as a direction-of-wealth indicator for the trade area."
+    },
+    {
+      "id": "HOU-02", "group": "Housing", "label": "Median gross rent",
+      "value": 1933, "unit": "USD / month", "period": "2020-2024 ACS 5-year",
+      "geo": "Los Angeles city, CA",
+      "source_name": "U.S. Census Bureau, QuickFacts",
+      "source_url": "https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045224",
+      "verified": true, "note": "Residential rent. Not a substitute for a commercial ground-lease comp."
+    },
+    {
+      "id": "HOU-03", "group": "Housing", "label": "Owner-occupied housing unit rate",
+      "value": 36.0, "unit": "%", "period": "2020-2024 ACS 5-year",
+      "geo": "Los Angeles city, CA",
+      "source_name": "U.S. Census Bureau, QuickFacts",
+      "source_url": "https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045224",
+      "verified": true, "note": ""
+    },
+    {
+      "id": "HOU-04", "group": "Housing", "label": "Households",
+      "value": 1439097, "unit": "households", "period": "2020-2024 ACS 5-year",
+      "geo": "Los Angeles city, CA",
+      "source_name": "U.S. Census Bureau, QuickFacts",
+      "source_url": "https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045224",
+      "verified": true, "note": "Persons per household 2.61 (same source)."
+    },
+    {
+      "id": "HOU-05", "group": "Housing", "label": "Median selected monthly owner costs, with a mortgage",
+      "value": 3497, "unit": "USD / month", "period": "2020-2024 ACS 5-year",
+      "geo": "Los Angeles city, CA",
+      "source_name": "U.S. Census Bureau, QuickFacts",
+      "source_url": "https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045224",
+      "verified": true, "note": ""
+    },
+    {
+      "id": "HOU-06", "group": "Housing", "label": "HUD Fair Market Rent, 2-bedroom, FY2026",
+      "value": null, "unit": "USD / month", "period": "FY2026 final",
+      "geo": "Los Angeles-Long Beach-Glendale HUD Metro FMR Area (31080)",
+      "source_name": "HUD User, FY2026 Fair Market Rent Documentation System",
+      "source_url": "https://www.huduser.gov/portal/datasets/fmr/fmrs/FY2026_code/2026summary.odn?selected_metro_code=31080&year=2026&fmrtype=Final",
+      "verified": false,
+      "note": "The HUD calculation page rendered its methodology but the FMR value cells came back empty to this reader. Left blank; the page is linked so the figure can be read directly in a browser."
+    },
+
+    {
+      "id": "EDU-01", "group": "Education", "label": "High school graduate or higher (age 25+)",
+      "value": 79.6, "unit": "%", "period": "2020-2024 ACS 5-year",
+      "geo": "Los Angeles city, CA",
+      "source_name": "U.S. Census Bureau, QuickFacts",
+      "source_url": "https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045224",
+      "verified": true, "note": ""
+    },
+    {
+      "id": "EDU-02", "group": "Education", "label": "Bachelor's degree or higher (age 25+)",
+      "value": 38.5, "unit": "%", "period": "2020-2024 ACS 5-year",
+      "geo": "Los Angeles city, CA",
+      "source_name": "U.S. Census Bureau, QuickFacts",
+      "source_url": "https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045224",
+      "verified": true, "note": ""
+    },
+    {
+      "id": "EDU-03", "group": "Education", "label": "Smarter Balanced ELA / math proficiency, serving district of the parcel",
+      "value": null, "unit": "% met or exceeded", "period": "2025-26 administration",
+      "geo": "Parcel PARCEL-A school district (withheld)",
+      "source_name": "California Department of Education, CAASPP Reporting",
+      "source_url": "https://caaspp-elpac.ets.org/caaspp/SearchSB.aspx",
+      "verified": false,
+      "note": "School-quality evidence requires the district/school code, which is derivable only from the private address. Deliberately not guessed. Use the linked official search once the address is available in the private workspace."
+    },
+
+    {
+      "id": "LAB-01", "group": "Labour market", "label": "Unemployment rate, September 2026",
+      "value": 4.4, "unit": "% (not seasonally adjusted)", "period": "2026-09",
+      "geo": "Los Angeles metro area",
+      "source_name": "U.S. Bureau of Labor Statistics, LA Area Economic Summary (updated 2026-11-04), Local Area Unemployment Statistics",
+      "source_url": "https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf",
+      "verified": true, "note": "Comparative: Los Angeles County 4.5%, California 5.1%, United States 4.0% (same source, same month)."
+    },
+    {
+      "id": "LAB-02", "group": "Labour market", "label": "Unemployment rate, September 2025",
+      "value": 5.5, "unit": "% (not seasonally adjusted)", "period": "2025-09",
+      "geo": "Los Angeles metro area",
+      "source_name": "U.S. Bureau of Labor Statistics, LA Area Economic Summary",
+      "source_url": "https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf",
+      "verified": true, "note": "Year-over-year improvement of 1.1 percentage points in the metro rate."
+    },
+    {
+      "id": "LAB-03", "group": "Labour market", "label": "Unemployment rate, latest month available (series query)",
+      "value": 4.4, "unit": "% (not seasonally adjusted, preliminary)", "period": "2026-09",
+      "geo": "Los Angeles-Long Beach-Glendale, CA Metropolitan Division",
+      "source_name": "U.S. Bureau of Labor Statistics Public Data API, series LAUMT063108000000003",
+      "source_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/LAUMT063108000000003",
+      "verified": true, "note": "Machine-read series confirms 4.4% for Sep-2026; Aug-2026 4.8%, Jul-2026 5.0%. Oct-2025 shows '-' (data unavailable due to the 2025 lapse in appropriations)."
+    },
+    {
+      "id": "LAB-04", "group": "Labour market", "label": "Total nonfarm employment, September 2026",
+      "value": 6282.1, "unit": "thousand jobs", "period": "2026-09",
+      "geo": "Los Angeles metro area",
+      "source_name": "U.S. Bureau of Labor Statistics, Current Employment Statistics via LA Area Economic Summary",
+      "source_url": "https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf",
+      "verified": true, "note": "+30.2 thousand (+0.5%) over the year."
+    },
+    {
+      "id": "LAB-05", "group": "Labour market", "label": "Total nonfarm employment, latest month (series query)",
+      "value": 6371.5, "unit": "thousand jobs (preliminary)", "period": "2026-10",
+      "geo": "Los Angeles-Long Beach-Glendale, CA Metropolitan Division",
+      "source_name": "U.S. Bureau of Labor Statistics Public Data API, series SMU06310800000000001",
+      "source_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/SMU06310800000000001",
+      "verified": true, "note": "Preliminary and subject to revision. Sep-2026 6,282.7; Sep-2025 6,251.9."
+    },
+    {
+      "id": "LAB-06", "group": "Labour market", "label": "12-month change in employment, Information sector",
+      "value": -5.7, "unit": "%", "period": "2025-09 to 2026-09",
+      "geo": "Los Angeles metro area",
+      "source_name": "U.S. Bureau of Labor Statistics, Current Employment Statistics",
+      "source_url": "https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf",
+      "verified": true, "note": "Information lost 11.4 thousand jobs over the year; the steepest sectoral decline in the metro."
+    },
+    {
+      "id": "LAB-07", "group": "Labour market", "label": "12-month change in employment, Education and health services",
+      "value": 3.8, "unit": "%", "period": "2025-09 to 2026-09",
+      "geo": "Los Angeles metro area",
+      "source_name": "U.S. Bureau of Labor Statistics, Current Employment Statistics",
+      "source_url": "https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf",
+      "verified": true, "note": "+49.1 thousand jobs, the largest sectoral gain; a stabiliser for lunch/near-hospital trade."
+    },
+    {
+      "id": "LAB-08", "group": "Labour market", "label": "12-month change in employment, Leisure and hospitality",
+      "value": 1.5, "unit": "%", "period": "2025-09 to 2026-09",
+      "geo": "Los Angeles metro area",
+      "source_name": "U.S. Bureau of Labor Statistics, Current Employment Statistics",
+      "source_url": "https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf",
+      "verified": true, "note": "+11.5 thousand jobs."
+    },
+    {
+      "id": "LAB-09", "group": "Labour market", "label": "Authorised employees, all industries, Q1 2026 (average weekly wage)",
+      "value": 1704, "unit": "USD / week", "period": "2026 Q1",
+      "geo": "Los Angeles County, CA",
+      "source_name": "U.S. Bureau of Labor Statistics, QCEW via LA Area Economic Summary",
+      "source_url": "https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf",
+      "verified": true, "note": "Orange County comparator on the same page: $1,766."
+    },
+    {
+      "id": "LAB-10", "group": "Labour market", "label": "Civilian labour force participation (age 16+)",
+      "value": 66.4, "unit": "%", "period": "2020-2024 ACS 5-year",
+      "geo": "Los Angeles city, CA",
+      "source_name": "U.S. Census Bureau, QuickFacts",
+      "source_url": "https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045224",
+      "verified": true, "note": ""
+    },
+    {
+      "id": "LAB-11", "group": "Labour market", "label": "Mean travel time to work (workers 16+)",
+      "value": 30.7, "unit": "minutes", "period": "2020-2024 ACS 5-year",
+      "geo": "Los Angeles city, CA",
+      "source_name": "U.S. Census Bureau, QuickFacts",
+      "source_url": "https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045224",
+      "verified": true, "note": "Commute length supports drive-thru demand in the aggregate, but not at any specific corner."
+    },
+
+    {
+      "id": "ECO-01", "group": "Business activity", "label": "Total retail sales",
+      "value": 81351523, "unit": "USD thousands", "period": "2022 (Economic Census)",
+      "geo": "Los Angeles city, CA",
+      "source_name": "U.S. Census Bureau, QuickFacts (Economic Census)",
+      "source_url": "https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045224",
+      "verified": true, "note": "Retail sales per capita $21,281 (same source, same year)."
+    },
+    {
+      "id": "ECO-02", "group": "Business activity", "label": "Total accommodation and food services sales",
+      "value": 17366966, "unit": "USD thousands", "period": "2022 (Economic Census)",
+      "geo": "Los Angeles city, CA",
+      "source_name": "U.S. Census Bureau, QuickFacts (Economic Census)",
+      "source_url": "https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045224",
+      "verified": true, "note": "The closest official measure to food-away-from-home demand available at city level."
+    },
+    {
+      "id": "ECO-03", "group": "Business activity", "label": "Total health care and social assistance receipts",
+      "value": 46297839, "unit": "USD thousands", "period": "2022 (Economic Census)",
+      "geo": "Los Angeles city, CA",
+      "source_name": "U.S. Census Bureau, QuickFacts (Economic Census)",
+      "source_url": "https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045224",
+      "verified": true, "note": ""
+    },
+
+    {
+      "id": "PRI-01", "group": "Prices", "label": "CPI-U, all items, 12-month change",
+      "value": 3.7, "unit": "%", "period": "2026-09",
+      "geo": "Los Angeles-Long Beach-Anaheim, CA (CPI area)",
+      "source_name": "U.S. Bureau of Labor Statistics, Consumer Price Index news release (2026-11-10)",
+      "source_url": "https://www.bls.gov/regions/west/news-release/consumerpriceindex_losangeles.htm",
+      "verified": true, "note": "United States all items the same month: 3.7% (BLS LA Area Economic Summary)."
+    },
+    {
+      "id": "PRI-02", "group": "Prices", "label": "CPI-U, all items, 1-month change",
+      "value": 0.6, "unit": "%", "period": "2026-10",
+      "geo": "Los Angeles-Long Beach-Anaheim, CA (CPI area)",
+      "source_name": "U.S. Bureau of Labor Statistics, Consumer Price Index news release (2026-11-10)",
+      "source_url": "https://www.bls.gov/regions/west/news-release/consumerpriceindex_losangeles.htm",
+      "verified": true, "note": "The 12-month change for October 2026 is not published: BLS did not collect October 2025 data because of the 2025 lapse in appropriations, so it cannot compute an October 2026 over-the-year change. This is an official data gap, not an error in this register."
+    },
+    {
+      "id": "PRI-03", "group": "Prices", "label": "Shelter, 1-month change",
+      "value": 0.4, "unit": "%", "period": "2026-10",
+      "geo": "Los Angeles-Long Beach-Anaheim, CA (CPI area)",
+      "source_name": "U.S. Bureau of Labor Statistics, Consumer Price Index news release",
+      "source_url": "https://www.bls.gov/regions/west/news-release/consumerpriceindex_losangeles.htm",
+      "verified": true, "note": ""
+    },
+    {
+      "id": "PRI-04", "group": "Prices", "label": "Employment Cost Index, 12-month change in wages and salaries",
+      "value": 3.9, "unit": "%", "period": "2026-09",
+      "geo": "Los Angeles-Long Beach, CA Combined Statistical Area",
+      "source_name": "U.S. Bureau of Labor Statistics, Employment Cost Index via LA Area Economic Summary",
+      "source_url": "https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf",
+      "verified": true, "note": "United States 3.1% (same source). Relevant to the tenant's largest controllable cost."
+    },
+    {
+      "id": "PRI-05", "group": "Prices", "label": "Average hourly wage, all occupations",
+      "value": 37.15, "unit": "USD / hour", "period": "May 2025 (OEWS)",
+      "geo": "Los Angeles metro area",
+      "source_name": "U.S. Bureau of Labor Statistics, OEWS via LA Area Economic Summary",
+      "source_url": "https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf",
+      "verified": true, "note": ""
+    },
+
+    {
+      "id": "HPI-01", "group": "Property price trend", "label": "House price appreciation, 4 quarters (single-family, purchase-only)",
+      "value": 0.6, "unit": "%", "period": "2025Q3 to 2026Q3",
+      "geo": "California",
+      "source_name": "Federal Housing Finance Agency, HPI Quarterly Report 2026Q3 (released 2026-11-24)",
+      "source_url": "https://www.fhfa.gov/document/d/hpi/fhfa-house-price-index-report-2026q3",
+      "verified": true, "note": "Pacific census division +0.5%; United States +2.5% over the same four quarters."
+    },
+    {
+      "id": "HPI-02", "group": "Property price trend", "label": "House price appreciation, 4 quarters, United States",
+      "value": 2.5, "unit": "%", "period": "2025Q3 to 2026Q3",
+      "geo": "United States",
+      "source_name": "Federal Housing Finance Agency, HPI Quarterly Report 2026Q3",
+      "source_url": "https://www.fhfa.gov/document/d/hpi/fhfa-house-price-index-report-2026q3",
+      "verified": true, "note": "Prior four-quarter readings on the same table: 2024Q3 4.4%, 2023Q3 5.1%, 2022Q3 11.4%."
+    },
+    {
+      "id": "HPI-03", "group": "Property price trend", "label": "House price appreciation, 4 quarters, Los Angeles MSA",
+      "value": null, "unit": "%", "period": "2025Q3 to 2026Q3",
+      "geo": "Los Angeles-Long Beach-Anaheim MSA",
+      "source_name": "Federal Housing Finance Agency, HPI Quarterly Report 2026Q3, tables of 100 largest MSAs",
+      "source_url": "https://www.fhfa.gov/document/d/hpi/fhfa-house-price-index-report-2026q3",
+      "verified": false,
+      "note": "The MSA table sits on a later page of the report than the portion retrieved. Left blank rather than inferred from the state figure. A single-family index in any case is not a restaurant-cap-rate series."
+    },
+
+    {
+      "id": "TRF-01", "group": "Traffic & access", "label": "Annual Average Daily Traffic at the nearest state-highway count station",
+      "value": null, "unit": "vehicles / day", "period": "2024 AADT file",
+      "geo": "Parcel PARCEL-A frontage (withheld)",
+      "source_name": "Caltrans, Traffic Census Program",
+      "source_url": "https://dot.ca.gov/programs/traffic-operations/census",
+      "verified": false,
+      "note": "Caltrans publishes AADT only for the State Highway System, in spreadsheet form keyed by route and post-mile. Selecting the correct station requires the private location. No value is asserted here."
+    },
+    {
+      "id": "TRF-02", "group": "Traffic & access", "label": "City-street traffic count at the parcel frontage",
+      "value": null, "unit": "vehicles / day", "period": "latest available",
+      "geo": "City of Los Angeles street (withheld)",
+      "source_name": "Caltrans, Traffic Census Program (scope note) and City of Los Angeles Public Works / LADOT",
+      "source_url": "https://dot.ca.gov/programs/traffic-operations/census",
+      "verified": false,
+      "note": "Caltrans states that counts for city and county streets are held by the city traffic engineering or public works department. No official city count for this frontage has been read, so the row is blank."
+    },
+
+    {
+      "id": "ZON-01", "group": "Planning & zoning", "label": "Zoning, General Plan land-use designation and specific-plan overlay for the parcel",
+      "value": null, "unit": "text", "period": "current",
+      "geo": "Parcel PARCEL-A (withheld)",
+      "source_name": "City of Los Angeles Department of City Planning, ZIMAS / Case Search",
+      "source_url": "https://planning.lacity.gov/",
+      "verified": false,
+      "note": "ZIMAS is address-keyed. The lookup is specified as an offline workspace step (see Trade Area page, step 3) and is not published here because the result would identify the parcel."
+    }
+  ]
+}
