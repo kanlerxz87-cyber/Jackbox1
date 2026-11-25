@@ -16,6 +16,8 @@ import { fileURLToPath } from 'node:url';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const J = (n) => JSON.parse(readFileSync(join(ROOT, 'data', n + '.json'), 'utf8'));
+/* Sibling sessions namespace their data under data/<session>/ and validate it with their own
+   tooling. This validator owns only the top-level data/*.json files. */
 const fail = [];
 const warn = [];
 const ok = [];
@@ -110,6 +112,17 @@ let broken = 0, linkChecked = 0;
 const linkTargets = pages.map(f => 'pages/' + f).concat(['index.html'])
   .concat(readdirSync(join(ROOT, 'desk')).filter(f => f.endsWith('.html')).map(f => 'desk/' + f))
   .concat(readdirSync(join(ROOT, 'desk', 'pages')).filter(f => f.endsWith('.html')).map(f => 'desk/pages/' + f));
+
+/* Every other session's tree is also link-checked, so no published page anywhere in the repo
+   can carry a dead link. Discovery is dynamic: a new sibling tree is covered automatically. */
+const TREE_DIRS = ['docs', 'workspace', 'audit-78005353', 'audit-78005353/site'];
+TREE_DIRS.forEach(d => {
+  const abs = join(ROOT, d);
+  if (!existsSync(abs)) return;
+  readdirSync(abs, { withFileTypes: true })
+    .filter(e => e.isFile() && e.name.endsWith('.html'))
+    .forEach(e => linkTargets.push(d + '/' + e.name));
+});
 linkTargets.forEach(rel => {
   const path = join(ROOT, rel);
   if (!existsSync(path)) return;
@@ -144,7 +157,8 @@ const scanTargets = [
   ...pages.map(f => join(ROOT, 'pages', f)),
   join(ROOT, 'index.html'),
   join(ROOT, 'assets/js/calc.js'),
-  ...readdirSync(join(ROOT, 'data')).map(f => join(ROOT, 'data', f)),
+  ...readdirSync(join(ROOT, 'data'), { withFileTypes: true })
+    .filter(e => e.isFile()).map(e => join(ROOT, 'data', e.name)),
 ];
 let privacyHits = 0;
 scanTargets.forEach(p => {

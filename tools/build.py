@@ -969,7 +969,7 @@ def build_gates(rows):
     pct = round(100 * verified / total)
     body = f"""
 <div class="notice warn">
-  <strong>W-03 · Seven of ten gates are shut</strong>
+  <strong>W-03 · None of the ten gates is satisfied yet</strong>
   The gates are ordered so that each one unlocks work behind it. Nothing on this board is a judgement call about the
   asset; each is a factual precondition. A decision made with G-02, G-03 or G-05 shut would be based on the owner's
   memory of the lease and a guess at the market.
@@ -1481,6 +1481,7 @@ def build_review(rows):
          "FY2023 consolidated Del Taco; FY2025 does not. A 209,556 impairment charge sits inside the FY2025 segment table. Direction is unambiguous; ratios across years are not.",
          "Recompute any ratio directly from the filings rather than from any summary, including this site's."),
     ]
+    flags.sort(key=lambda f: int(f[0].split("-")[1]))
     fr = "".join(
         f"""<tr><td class="metric">{esc(i)}</td><td><strong>{esc(t)}</strong></td>
 <td class="note">{esc(w)}</td><td class="note">{esc(a)}</td></tr>"""
@@ -1490,7 +1491,7 @@ def build_review(rows):
 <div class="notice warn">
   <strong>Everything questionable, in one place, with the source links intact</strong>
   Nothing on this page blocks the site from being used. Each item is published so it can be reviewed and closed, rather
-  than quietly dropped. Ten irregularities and {len(un) + len(fl)} affected data rows.
+  than quietly dropped. {len(flags)} irregularities and {len(un) + len(fl)} affected data rows.
 </div>
 
 <h2>Irregularities and anomalies</h2>
@@ -1511,7 +1512,7 @@ def build_review(rows):
 endpoint that displays the value. They are listed in full on the <a href="sources.html">Sources</a> page, grouped by publisher.</p>
 """
     write("review.html", page("review.html", "Flagged for Review", body,
-                              "Ten irregularities and every affected row, published rather than hidden.",
+                              f"{len(flags)} irregularities and every affected row, published rather than hidden.",
                               "Integrity register"))
 
 

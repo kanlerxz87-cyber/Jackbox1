@@ -15,6 +15,7 @@ Usage: python3 tools/build.py && python3 tools/check.py
 """
 from __future__ import annotations
 
+import json
 import re
 import sys
 from pathlib import Path
@@ -102,6 +103,26 @@ def main() -> int:
             if n < 1:
                 err(f"{p.name}: blank-row count is {n}")
 
+
+    # 8: guard against stale spelled-out counts drifting from computed ones
+    import re as _re
+    numwords = {"Two":2,"Three":3,"Four":4,"Five":5,"Six":6,"Seven":7,"Eight":8,"Nine":9,
+                "Ten":10,"Eleven":11,"Twelve":12,"Thirteen":13,"Fourteen":14,"Fifteen":15,
+                "Sixteen":16,"Seventeen":17,"Eighteen":18,"Nineteen":19,"Twenty":20}
+    reg_counts = json.loads((DOCS / "data/registry.json").read_text(encoding="utf-8"))["counts"]
+    f_item_re = _re.compile(r">F-\d\d</td>")
+    for pth in pages:
+        html = pth.read_text(encoding="utf-8")
+        n_flags = len(f_item_re.findall(html))
+        for word, n in numwords.items():
+            if _re.search(r"\b" + word + r"\s+irregularities\b", html) and n != n_flags:
+                err("%s: says '%s irregularities' but the table lists %d" % (pth.name, word, n_flags))
+            if _re.search(r"\b" + word + r"\s+rows\s+are\s+blank\b", html) and n != reg_counts["unverified"]:
+                err("%s: says '%s rows are blank' but the registry has %d"
+                    % (pth.name, word, reg_counts["unverified"]))
+        if _re.search(r"\b(Seven|Ten|Fifteen) of (?:the )?ten gates\b", html):
+            err("%s: stale gate-count phrase" % pth.name)
+
     # crude tag balance for the main containers
     for p in pages:
         html = p.read_text(encoding="utf-8")
@@ -121,7 +142,6 @@ def main() -> int:
             err(f"{js}: contains a network or storage call")
 
     # registry export consistency
-    import json
     reg = json.loads((DOCS / "data/registry.json").read_text(encoding="utf-8"))
     c = reg["counts"]
     if sum(c.values()) != reg["rows"]:

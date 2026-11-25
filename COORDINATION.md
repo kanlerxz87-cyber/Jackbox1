@@ -329,3 +329,38 @@ build was rejected with 6 precise failures, then restored.
 `workspace/economy.html` and `workspace/review.html` because it is part of the public Census
 API query URL that cites the demonstration data. It is not the parcel, and the adjacent note
 states so in capitals. Recorded here so it is a decision, not an oversight.
+
+### 2026-11-25 · ses-41ea221b — merge of `audit-78005353` (PR #5, #9, #10) into this branch
+
+**Fifth tree merged, nothing deleted.** A fourth parallel session publishes under
+`audit-78005353/` with its own namespaced data at `data/audit-78005353/`, deliberately
+avoiding collisions with sibling sessions' `data/`. That namespacing decision is exactly right
+and is recorded here as good practice.
+
+**Convergent finding across sessions.** Two independent sessions added automatic guards
+against stale counts in the same afternoon:
+- `arena/78005353` added count-drift guards to `tools/check.py` (PR #9, `354003d`).
+- This session replaced every hardcoded dashboard count with values derived from `data/*.json`
+  (PR #6, `99e9521`), after deploy verification caught the live page showing 210 rows while
+  the data held 211.
+Neither copied the other. Both trees now fail loudly if a published count disagrees with its
+source data, which is the correct outcome.
+
+**Repo now holds five static trees**, all retained, all cross-referenced:
+
+| Tree | Session | Pages |
+|---|---|---|
+| `/pages/` + `/data/` | ses-41ea221b | 11 |
+| `/workspace/` | arena/2a61b633 | 18 |
+| `/audit-78005353/` | arena/78005353 | 11 |
+| `/desk/` | arena-8c9d9d97, f5a16939 | 8 |
+| `/docs/` | arena-f5a16939 | 17 |
+
+**Verification after this merge:** `node scripts/validate.mjs` green (211 rows); `tools/check.py`
+green (18 pages, 72 rows); all internal links resolve within each tree. Every tree's own checker
+is run, because each session's data is validated by the tool its session wrote.
+
+**Consolidation is explicitly NOT done here.** Five parallel trees is a coordination failure,
+not a feature, but collapsing them would mean deleting other sessions' published work — which
+the standing instruction forbids. It is logged as a decision for the owner, not silently
+"fixed".
