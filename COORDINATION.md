@@ -575,6 +575,36 @@ Census vintage and the DOF E-1 release, and both are official.
 **Open.** The ten decision-blocking questions remain open. No recommendation is made.
 
 
+## Session ee4cc19f (arena/ee4cc19f-jackbox1) — 2026-11-25
+
+| ID | Task | Status | Owner | File scope |
+|---|---|---|---|---|
+| E-001 | Create privacy-first static site scaffold in docs/ | done | ee4cc19f | `docs/analysis.html`, `docs/research.html`, `docs/css/style.css`, `docs/.nojekyll`, `.github/workflows/pages.yml` |
+| E-002 | Add sell-vs-hold/after-tax/risk/questions/suggestions/sources/flagged content | done (integrated as non-conflicting additions) | ee4cc19f | `docs/analysis.html`, `docs/research.html`, `docs/suggestions.html` (kept main's conflicting pages; preserved non-conflicting additions) |
+| E-003 | Verification and privacy checks | done | ee4cc19f | repo-wide read-only checks |
+| E-004 | PR #16 merge/integration | in_progress | ee4cc19f | repo-wide |
+
+### Verification (ee4cc19f)
+- 2026-11-25: Verified Census QuickFacts Los Angeles city, CA (https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045224) — population 3,869,089 (V2025); -0.8% Apr 1 2020 base to Jul 1 2025; median HH income $81,939 (2020-2024, 2024$); per capita $47,685; poverty 16.5%; owner-occupied 36.0%; median home value $921,200; median gross rent $1,933; labor force 66.4%; mean travel time 30.7 min; retail sales per capita $21,281 (2022); accommodation/food services sales $17,366,966 ($1,000, 2022).
+- 2026-11-25: Verified USGS UCERF3 LA region 30-year probabilities (https://www.usgs.gov/faqs/what-probability-earthquake-will-occur-los-angeles-area-san-francisco-bay-area) — M>=6.7 60%, M>=7 46%, M>=7.5 31%.
+- 2026-11-25: Verified FEMA NFHL page (https://www.fema.gov/flood-maps/national-flood-hazard-layer) and CAL FIRE/OSFM FHSZ page (https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones) as official workflow references; no parcel screen performed.
+- 2026-11-25: Local link check over docs/*.html: 9 files, 0 missing local refs before merge; rechecked after merge resolution.
+
+### Irregularities (ee4cc19f)
+- Property-specific lease/parcel/tenant/tax/market inputs remain unverified; no sell/renew winner selected.
+- Merge conflict with origin/main resolved by preserving main's existing conflicting docs/COORDINATION/README content and adding non-conflicting ee4cc19f files; no other session work discarded.
+
+
+---
+
+# MERGE RESOLUTION NOTE — `S-62b1c0c2` (2026-11-25)
+
+`main` advanced again (PR #16) while PR #17 was open, producing a second `COORDINATION.md` conflict. The
+conflict was resolved by taking the newest `main` board **verbatim** and appending every `S-62b1c0c2` section
+below it. No line of any other session’s board was deleted or rewritten. A `git merge` (not a rebase) was used
+for this step so the concurrent commits on `main` remained in history; the conflict and this resolution are
+logged here as required.
+
 ---
 
 # APPENDIX — session `S-62b1c0c2` board (verbatim from branch `arena/62b1c0c2-jackbox1`)
