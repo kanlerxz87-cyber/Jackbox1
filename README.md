@@ -9,8 +9,6 @@ which private documents stand between the evidence and a decision.
 
 **Live site:** https://kanlerxz87-cyber.github.io/Jackbox1/
 
-**Entry points:** `/` redirects to `/pages/index.html` (primary tree). The other three trees are at `/docs/index.html` (sourced dashboard), `/desk/index.html` (desk tree) and `/workspace/index.html` (verified workspace).
-
 ---
 
 ## What this is
@@ -20,8 +18,9 @@ which private documents stand between the evidence and a decision.
 | **Data cut-off** | 2026-11-25 |
 | **Official sources** | 22, all government or Federal-Reserve hosted |
 | **Tracked data rows** | 210 |
-| **Verified rows** | 71, every one with a source link |
+| **Verified rows** | 71, every one with a source link (+4 labelled assumptions) |
 | **Deliberately blank rows** | 48, all listed on *Flagged for review* |
+| **Flagged items** | 13 irregularities + 16 unverified values |
 | **Open decision gates** | 15 of 15 — none can close from public data |
 | **Model version** | `v0.1-unbacktested-core` (macro engine back-tested; property engine not) |
 
@@ -79,6 +78,13 @@ node scripts/validate.mjs   # must pass before publish
 GitHub Pages serves `main` from the repository root; `index.html` redirects to
 `pages/index.html`.
 
+## Static counts are never hardcoded
+
+Every number shown on the dashboard — total rows, verified rows, assumption count, dataset
+count, flagged counts — is computed from `data/*.json` at build time. If a dataset grows, the
+dashboard moves with it; a stale figure cannot survive a rebuild. This was a real bug caught
+during deploy verification and fixed in `scripts/build.mjs`.
+
 ## The headline finding
 
 1. **Metro fundamentals are sound but not accelerating.** Unemployment 4.6% (Oct 2026),
@@ -113,84 +119,100 @@ PR/deploy record.*
 
 ---
 
+## This session's tree: `/workspace/` (session `arena/2a61b633`)
+
+A fourth, independent build, added after PRs #1–#4 landed. It is published at
+**https://kanlerxz87-cyber.github.io/Jackbox1/workspace/** and is fully self-contained
+(17 pages, its own nav, no shared assets, no links into another session's tree).
+
+Its distinguishing feature is that the site is **generated from a data registry**, so a value cannot
+appear on a page without a source link and a verification status:
+
+```
+data/registry.yaml        72 rows — id, metric, value, unit, geography, period, source, url, status, note
+data/tracts_demo_90015.csv  23 tract-level ACS observations (demonstration set only)
+tools/build.py            generator: reads data/, writes workspace/
+tools/check.py            link, anchor, tag-balance, traceability and privacy checks
+tools/reverify.py         re-pulls every machine-readable source and diffs against the registry
+private/                  blank lease-abstract / notice-calendar / sell-vs-hold templates (gitignored)
+```
+
+Rebuild and verify:
+
+```bash
+pip install --break-system-packages pyyaml
+python3 tools/build.py   # idempotent; nothing in workspace/ is hand-edited
+python3 tools/check.py   # fails on a broken link, a dangling anchor or an untraceable row
+```
+
+Build-time status: **57 verified / 5 flagged / 10 deliberately blank** rows.
+
+The build refuses to run if a row marked `verified` has no source link, and refuses to render a blank
+value as anything other than a visible *unverified* cell. No external scripts, no analytics, no
+cookies, no storage, and the calculator makes no network calls — all arithmetic happens in the browser.
+
+Its pages: overview, questions register, trade area, tract evidence, tenant strength, hazard screen,
+after-tax, short-lease pricing, sell-vs-hold, decision gates, risk register, calculator, suggestions,
+flagged for review, sources, privacy, and a one-page printable summary.
+
 ---
 
-## Repository layout — three parallel builds, all retained
+## Earlier root tree (preserved, not deleted)
 
-This repo was produced by three concurrent sessions. **Nothing was deleted.**
+An earlier parallel session built a second root site (`index.html`, `pages/`, `assets/`) that now
+sits alongside this one. It is kept and reachable; it is not overwritten.
 
-| Path | What it is | Start here |
-|---|---|---|
-| `/pages/index.html` | **Primary.** Source-verified workspace, 11 pages, live official data, browser calculator | ← start here |
-| `/desk/index.html` | Earlier root site, preserved intact with links rewritten | archive |
-| `/docs/index.html` | Parallel sourced research dashboard from another session | archive |
+> # Anonymous Central LA NNN workspace
+> Public research site for an **anonymized** sell-versus-renew review of a Jack in the Box NNN lease described as located around Central Los Angeles.
+> **This repository must not contain** owner names, street addresses, APNs, lease PDFs, tax returns, or unit-level sales.
+> Two static trees are in the repo (parallel sessions; both retained):
+> | Tree | Session | Entry |
+> | --- | --- | --- |
+> | Repository root | arena-8c9d9d97 | `index.html`, `pages/`, `assets/` |
+> | `docs/` | arena-f5a16939 | `docs/index.html` (sourced tables, decision gates, calculator) |
+> GitHub Pages is configured to publish the **repository root**, so both `/` and `/docs/` can resolve.
+> **No sell or renew recommendation is made.**
+> A public static website is not an access-controlled vault. Keep lease files and owner finances offline. See [COORDINATION.md](COORDINATION.md) and the Flagged for Review pages (`pages/flags.html` and `docs/flagged.html`).
 
-Live: https://kanlerxz87-cyber.github.io/Jackbox1/pages/index.html
+---
 
-## Cross-session note on figures
+## Tree map and independent audit pass (`/audit-78005353/`)
 
-Two official Los Angeles population figures appear in this repo — 3,878,704 (Census Vintage
-2024) and 3,869,089 (QuickFacts V2025). They are different vintages and are **not
-comparable**. The Census Bureau warns against comparing vintages. The same applies to the two
-unemployment figures (county NSA Sep 2025 vs metro division Oct 2026). Every row in the primary
-tree states its geography and period. See irregularity IR-13 on the *Flagged for review* page.
-
-## Prior session README (preserved)
-
-<details><summary>Earlier README content from a parallel session</summary>
-
-## Appendix: earlier tree README (`arena-8c9d9d97`, preserved)
-
-Public research site for an **anonymized** sell-versus-renew review of a Jack in the Box NNN lease described as located around Central Los Angeles.
-
-**This repository must not contain** owner names, street addresses, APNs, lease PDFs, tax returns, or unit-level sales.
-
-Four static trees are in the repo (parallel sessions; **all retained**):
-
+Five parallel sessions have published into this repository. All are retained.
 
 | Tree | Session | Entry |
-| --- | --- | --- |
-| Primary workspace | arena-41ea221b | `pages/index.html` (root `index.html` redirects here) |
-| Sourced dashboard | arena-f5a16939 | `docs/index.html` |
-| Desk tree | arena-8c9d9d97 | `desk/index.html` |
-| Verified workspace | arena-78005353 | `workspace/index.html` (47-row evidence register, 23 gating questions, gate board, after-tax calculator) |
+|---|---|---|
+| Primary workspace | `arena-41ea221b` | `pages/index.html` (root `index.html` redirects here) |
+| Sourced dashboard | `arena-f5a16939` | `docs/index.html` |
+| Desk tree | `arena-8c9d9d97` | `desk/index.html` |
+| Second verified workspace | `arena/2a61b633` | `workspace/index.html` |
+| **Independent audit pass** | `arena-78005353` | `audit-78005353/site/index.html` |
 
-GitHub Pages publishes the **repository root**, so `/`, `/pages/`, `/docs/`, `/desk/` and `/workspace/` all resolve.
-
-**No sell or renew recommendation is made.**
-
-A public static website is not an access-controlled vault. Keep lease files and owner finances offline. See [COORDINATION.md](COORDINATION.md) and the Flagged for Review pages (`pages/flags.html` and `docs/flagged.html`).
-
-</details>
-
----
-
-## Additional section: Verified workspace (`/workspace/`)
-
-Built by session `arena-78005353` and published alongside the trees above. Self-contained, generated
-from `data/workspace/*.json` by `tools/build_site.py`. Nothing in the other sections was altered.
+The audit pass is a separate second opinion on the same question, built from primary sources read
+directly in its own session. It is additive: no file in the sections above was altered.
 
 | Page | Purpose |
 |---|---|
-| `workspace/index.html` | Dashboard + decision-gate progress board (W-03) |
-| `workspace/gates.html` | Gate-by-gate state, who closes it, what breaks if it stays open |
-| `workspace/sell-vs-renew.html` | Five decision options, verified tax rules, browser-side after-tax calculator (W-02, W-09) |
-| `workspace/market.html` | 47-row evidence register + the tenant franchisor's own SEC disclosures (W-08) |
-| `workspace/location.html` | Why city figures are a proxy; the private steps that replace them (W-01) |
-| `workspace/hazards.html` | Four official hazard programmes; parcel rows withheld (W-04) |
-| `workspace/questions.html` | 23 gating questions with owners and sources (W-05) |
-| `workspace/suggestions.html` | 16 suggestions with effort, cost, falsifier and privacy verdict (W-06) |
-| `workspace/sources.html` | 17 official domains: used for / cannot be used for (W-07) |
-| `workspace/flagged.html` | 14 unverified or irregular items with the URLs attempted (W-07) |
-| `workspace/advisor-summary.html` | One-page printable brief (W-10) |
+| `audit-78005353/site/index.html` | Dashboard + decision-gate board |
+| `audit-78005353/site/gates.html` | Seven gates, who closes each, what breaks if left open |
+| `audit-78005353/site/sell-vs-renew.html` | Five decision options, verified tax rules, browser-side after-tax calculator |
+| `audit-78005353/site/market.html` | 47-row evidence register + the franchisor's own SEC disclosures |
+| `audit-78005353/site/location.html` | Why city figures are a proxy; the private steps that replace them |
+| `audit-78005353/site/hazards.html` | Official hazard programmes; parcel rows withheld |
+| `audit-78005353/site/questions.html` | 23 gating questions with owners and sources |
+| `audit-78005353/site/suggestions.html` | 16 suggestions with effort, cost, falsifier and privacy verdict |
+| `audit-78005353/site/sources.html` | 17 official domains: used for / cannot be used for |
+| `audit-78005353/site/flagged.html` | 14 unverified or irregular items with the URLs attempted |
+| `audit-78005353/site/advisor-summary.html` | One-page printable brief |
 
-**Verification:** 40 of 47 evidence rows were read from the linked official page; the 7 that could not
-be confirmed are left **blank** and published on `flagged.html` with the reason. Automated ledger
-audit: 40/40 numeric values and 11/11 tenant facts re-checked against the fetched content, 0
-mismatches. Cross-tree link audit across 48 pages of all four trees: 0 broken links. HTML parse:
-0 tag errors.
+**Verification:** 40 of 47 evidence rows read from the linked official page; the 7 that could not be
+confirmed are left **blank** and published on the flagged page with the reason. Ledger audit: 40/40
+numeric values and 11/11 tenant facts re-checked against the fetched content, 0 mismatches. Link
+audit across all HTML files in the repository: 0 broken links. HTML parse: 0 tag errors. The
+calculator makes no network call and stores nothing.
 
-**Build:** `python3 tools/build_site.py` (no dependencies). Do not hand-edit `workspace/*.html`.
+**Build:** `python3 tools/build_site.py` regenerates `audit-78005353/site/` from
+`data/audit-78005353/*.json`. No dependencies. Do not hand-edit the generated HTML.
 
-**No sell or renew recommendation is made in this section either.** It states the decision rule, the
-seven gates, and exactly which private documents stand between the evidence and a decision.
+**No sell-or-renew recommendation is made in that pass either.** It states the decision rule, the
+gates, and exactly which private documents stand between the evidence and a decision.

@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Private Calculator · Jack in the Box — NNN Leasehold Decision Workspace</title>
+<meta name="description" content="Verified-source decision workspace for a single-tenant Jack in the Box under a triple-net lease in central Los Angeles.">
+<meta name="robots" content="index,follow">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="site">
+  <div class="wrap bar">
+    <div class="brand">Jack in the Box · NNN leasehold decision workspace
+      <span>Aggregate findings only — no owner, parcel or lease identifiers</span></div>
+    <div class="privacy">Privacy-first: anonymised by design</div>
+  </div>
+</header>
+<nav class="site" aria-label="Sections">
+  <div class="wrap">
+    <ul>
+      <li><a href="index.html">Overview</a></li>
+      <li><a href="questions.html">Questions &amp; Gaps</a></li>
+      <li><a href="economy.html">Trade Area</a></li>
+      <li><a href="tracts.html">Tract Evidence</a></li>
+      <li><a href="operator.html">Tenant Strength</a></li>
+      <li><a href="hazards.html">Hazard Screen</a></li>
+      <li><a href="tax.html">After-Tax</a></li>
+      <li><a href="market.html">Short-Lease Pricing</a></li>
+      <li><a href="model.html">Sell vs Hold</a></li>
+      <li><a href="gates.html">Decision Gates</a></li>
+      <li><a href="risks.html">Risk Register</a></li>
+      <li><a href="calculator.html">Calculator</a></li>
+      <li><a href="suggestions.html">Suggestions</a></li>
+      <li><a href="review.html">Flagged for Review</a></li>
+      <li><a href="sources.html">Sources</a></li>
+      <li><a href="summary.html">One-Page Summary</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+    </ul>
+  </div>
+</nav>
+<main>
+  <div class="wrap">
+    <div class="pagehead">
+      <p class="eyebrow">W-11 · Browser calculator</p>
+      <h1>Private Calculator</h1>
+      <p class="lede">Runs in your browser. No network calls, no storage, no tracking — and the rates come from primary law.</p>
+    </div>
+
+<div class="notice info">
+  <strong>W-11 · Private, local, and disposable</strong>
+  This calculator runs entirely in your browser. It makes no network requests, sets no cookies, and stores nothing.
+  Close the tab and everything you typed is gone. All arithmetic happens on your machine with the rates verified on the
+  <a href="tax.html">after-tax page</a>. It is a calculator, not advice.
+</div>
+
+<div class="calc">
+  <div class="grid g2" style="align-items:start">
+    <div>
+      <fieldset>
+        <legend>Sale inputs</legend>
+        <div class="f"><label for="sale">Contract sale price</label><input id="sale" type="number" value="6000000" step="50000"></div>
+        <div class="f"><label for="basis">Adjusted basis (land + building, net of depreciation)</label><input id="basis" type="number" value="3400000" step="50000"></div>
+        <div class="f"><label for="depr">Depreciation taken to date</label><input id="depr" type="number" value="1100000" step="50000"></div>
+        <div class="f"><label for="mortgage">Mortgage balance to repay</label><input id="mortgage" type="number" value="0" step="50000"></div>
+        <div class="f"><label for="ula">Measure ULA applies (City of L.A., sale ≥ $5m)</label>
+          <select id="ula"><option value="1">yes</option><option value="0">no</option></select></div>
+        <div class="f"><label for="citytx">City transfer tax layer (RTC 11911(b))</label>
+          <select id="citytx"><option value="0">no</option><option value="1">yes</option></select></div>
+        <div class="f"><label for="broker">Brokerage + legal + escrow (% of price)</label><input id="broker" type="number" value="4" step="0.25"></div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Owner's tax position</legend>
+        <div class="f"><label for="fedlt">Federal long-term capital gain rate</label>
+          <select id="fedlt"><option value="0">0%</option><option value="15">15%</option><option value="20" selected>20%</option></select></div>
+        <div class="f"><label for="niit">Net investment income tax applies (MAGI over threshold)</label>
+          <select id="niit"><option value="1">yes — 3.8%</option><option value="0">no</option></select></div>
+        <div class="f"><label for="cainc">California taxable income (drives the marginal rate)</label>
+          <select id="cainc">
+            <option value="0.093">up to $72,724 / $145,448 (9.3%)</option>
+            <option value="0.103">to $371,479 / $742,958 (10.3%)</option>
+            <option value="0.113">to $445,771 / $891,542 (11.3%)</option>
+            <option value="0.123" selected>to $742,953 / $1,485,906 (12.3%)</option>
+            <option value="0.133">above $1m taxable income (13.3%)</option>
+          </select></div>
+        <div class="f"><label for="exch">Section 1031 exchange intended (deferral)</label>
+          <select id="exch"><option value="0">no — pay the tax</option><option value="1">yes — defer (estimate shows tax deferred)</option></select></div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Hold case</legend>
+        <div class="f"><label for="rent">Current annual base rent</label><input id="rent" type="number" value="330000" step="5000"></div>
+        <div class="f"><label for="esc">Annual escalation</label><input id="esc" type="number" value="2" step="0.25"> </div>
+        <div class="f"><label for="term">Years to lease expiry</label><input id="term" type="number" value="6" step="1"></div>
+        <div class="f"><label for="renew">Renewal probability (judgement, not sourced)</label><input id="renew" type="number" value="50" step="5"></div>
+        <div class="f"><label for="hold">Holding period for the comparison (years)</label><input id="hold" type="number" value="10" step="1"></div>
+        <div class="f"><label for="cap">Exit capitalisation rate (%)</label><input id="cap" type="number" value="6" step="0.25"></div>
+        <div class="f"><label for="disc">Discount rate (%) — 10-yr Treasury 4.92% + spread</label><input id="disc" type="number" value="6.5" step="0.25"></div>
+        <div class="f"><label for="vac">Months vacant if the tenant leaves</label><input id="vac" type="number" value="12" step="1"></div>
+      </fieldset>
+    </div>
+
+    <div>
+      <div class="out" id="out" aria-live="polite">
+        <div class="row"><span>Total gain</span><b id="o-gain">—</b></div>
+        <div class="row"><span>Recapture portion (max 25%)</span><b id="o-recap">—</b></div>
+        <div class="row"><span>Federal tax (recapture + capital gain)</span><b id="o-fed">—</b></div>
+        <div class="row"><span>Net investment income tax (3.8%)</span><b id="o-niit">—</b></div>
+        <div class="row"><span>California income tax on the gain</span><b id="o-ca">—</b></div>
+        <div class="row"><span>Transfer taxes</span><b id="o-xfer">—</b></div>
+        <div class="row"><span>Brokerage, legal and escrow</span><b id="o-cost">—</b></div>
+        <div class="row big"><span>Net proceeds after tax and cost</span><b id="o-net">—</b></div>
+        <div class="row"><span>Effective total leakage</span><b id="o-leak">—</b></div>
+        <hr style="border:none;border-top:1px solid #1e344b;margin:12px 0">
+        <div class="row"><span>Hold: after-tax cash flow over the period</span><b id="o-holdcf">—</b></div>
+        <div class="row"><span>Hold: value at exit (before tax)</span><b id="o-exit">—</b></div>
+        <div class="row"><span>Hold: expected value given renewal probability</span><b id="o-exp">—</b></div>
+        <div class="row big"><span>Hold: NPV at the discount rate</span><b id="o-npv">—</b></div>
+        <div class="row"><span>Break-even: short-lease discount the sale must beat</span><b id="o-be">—</b></div>
+      </div>
+      <p class="note" style="margin-top:10px">Negative or zero values show as 0. Every rate above is taken from the verified
+      tax page; every dollar figure is yours. Nothing is transmitted.</p>
+      <div class="notice warn" style="margin-top:14px">
+        <strong>Read the output as an ordering device, not a valuation</strong>
+        The point of the two blocks is to see whether the sell case clears the hold case after tax. If the two are within
+        ten per cent of each other, the decision turns on factors this calculator does not model — insurability, the
+        owner's liquidity needs, concentration risk and the black-swan exposure in the <a href="risks.html">risk register</a>.
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+</main>
+<footer class="site">
+  <div class="wrap">
+    <div>Built 2026-11-25 from <code>data/registry.yaml</code>. 17 pages, no external scripts, no tracking.</div>
+    <div><a href="privacy.html">Privacy &amp; anonymisation</a> · <a href="review.html">Flagged for review</a> · <a href="sources.html">Sources</a></div>
+  </div>
+</footer>
+<script src="assets/js/app.js" defer></script>
+</body>
+</html>

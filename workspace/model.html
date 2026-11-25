@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sell vs Hold · Jack in the Box — NNN Leasehold Decision Workspace</title>
+<meta name="description" content="Verified-source decision workspace for a single-tenant Jack in the Box under a triple-net lease in central Los Angeles.">
+<meta name="robots" content="index,follow">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="site">
+  <div class="wrap bar">
+    <div class="brand">Jack in the Box · NNN leasehold decision workspace
+      <span>Aggregate findings only — no owner, parcel or lease identifiers</span></div>
+    <div class="privacy">Privacy-first: anonymised by design</div>
+  </div>
+</header>
+<nav class="site" aria-label="Sections">
+  <div class="wrap">
+    <ul>
+      <li><a href="index.html">Overview</a></li>
+      <li><a href="questions.html">Questions &amp; Gaps</a></li>
+      <li><a href="economy.html">Trade Area</a></li>
+      <li><a href="tracts.html">Tract Evidence</a></li>
+      <li><a href="operator.html">Tenant Strength</a></li>
+      <li><a href="hazards.html">Hazard Screen</a></li>
+      <li><a href="tax.html">After-Tax</a></li>
+      <li><a href="market.html">Short-Lease Pricing</a></li>
+      <li><a href="model.html">Sell vs Hold</a></li>
+      <li><a href="gates.html">Decision Gates</a></li>
+      <li><a href="risks.html">Risk Register</a></li>
+      <li><a href="calculator.html">Calculator</a></li>
+      <li><a href="suggestions.html">Suggestions</a></li>
+      <li><a href="review.html">Flagged for Review</a></li>
+      <li><a href="sources.html">Sources</a></li>
+      <li><a href="summary.html">One-Page Summary</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+    </ul>
+  </div>
+</nav>
+<main>
+  <div class="wrap">
+    <div class="pagehead">
+      <p class="eyebrow">W-02 · Sell-versus-hold</p>
+      <h1>Sell vs Hold</h1>
+      <p class="lede">A complete comparison framework that refuses to name a winner while its inputs are missing.</p>
+    </div>
+
+<div class="notice warn">
+  <strong>W-02 · A comparison with no winner declared</strong>
+  The framework below is complete and the calculator implements it. What it will not do is produce a recommendation from
+  missing inputs. Gate G-03 stays closed until the lease abstract exists and the short-lease discount is priced.
+</div>
+
+<h2>The two cases, side by side</h2>
+<div class="table-scroll">
+<table>
+<caption>Structure of the comparison. “Status” says whether the input exists today. Nine of the twelve inputs do not.</caption>
+<thead><tr><th>Input</th><th>Hold case</th><th>Sell case</th><th>Status</th></tr></thead>
+<tbody>
+<tr><td>Starting rent</td><td>Contract rent today</td><td>Contract rent today (capitalised)</td><td><span class="badge b-unverified">blank</span></td></tr>
+<tr><td>Escalations</td><td>Fixed bumps or CPI (metro CPI is 3.7%, PRI-02)</td><td>Irrelevant to the buyer except as yield growth</td><td><span class="badge b-unverified">blank</span></td></tr>
+<tr><td>Remaining term</td><td>Years to expiry (2030–2035 band)</td><td>Same, but priced through the discount</td><td><span class="badge b-unverified">blank</span></td></tr>
+<tr><td>Renewal probability</td><td>Tenant's unit economics and system trend</td><td>What the buyer underwrites</td><td><span class="badge b-flagged">judgement</span></td></tr>
+<tr><td>Property tax</td><td>1% base + voter debt, capped 2%/yr (TAX-01, TAX-02)</td><td>Reassessed to price on sale</td><td><span class="badge b-verified">rule verified</span></td></tr>
+<tr><td>Insurance</td><td>Current premium, NNN-reimbursed</td><td>Buyer's cost, not yours</td><td><span class="badge b-unverified">blank</span></td></tr>
+<tr><td>Capital reserve</td><td>Roof, HVAC, parking, seismic</td><td>Priced into the buyer's yield</td><td><span class="badge b-unverified">blank</span></td></tr>
+<tr><td>Discount rate</td><td>10-yr Treasury 4.92% + net-lease spread (RAT-01)</td><td>Same rate, for comparability</td><td><span class="badge b-verified">reference verified</span></td></tr>
+<tr><td>Exit value</td><td>Capitalised rent at exit, minus discount</td><td>Sale price</td><td><span class="badge b-unverified">blank</span></td></tr>
+<tr><td>Tax on exit</td><td>Deferred — and reset at death under current basis rules</td><td>Paid now: recapture + capital gain + NIIT (TAX-06…TAX-11)</td><td><span class="badge b-verified">rule verified</span></td></tr>
+<tr><td>Transfer cost</td><td>None</td><td>County + Measure ULA (TAX-03, TAX-04)</td><td><span class="badge b-verified">rule verified</span></td></tr>
+<tr><td>Reinvestment return</td><td>n/a</td><td>The return on after-tax proceeds</td><td><span class="badge b-unverified">blank</span></td></tr>
+</tbody></table></div>
+
+<h2>How the comparison is run</h2>
+<ol class="tight">
+  <li><strong>Normalise the horizon.</strong> Pick one holding period (Q-25) and apply it to both cases. Comparing a
+    ten-year hold to a sale today is the most common error in this analysis.</li>
+  <li><strong>Build after-tax cash flows for both.</strong> Hold: rent minus unreimbursed costs minus tax on income,
+    plus terminal value net of tax. Sell: net proceeds after tax and transfer cost, invested at a stated rate.</li>
+  <li><strong>Discount both at the same rate.</strong> Use the Treasury plus a disclosed spread, and show the sensitivity
+    to ±100 bps. A hold case that wins only at a 6% discount rate has not won.</li>
+  <li><strong>Stress the renewal.</strong> Run 100% renewal, 50% renewal, and vacancy-then-re-tenant. The spread between
+    those three is the real risk in the hold case.</li>
+  <li><strong>Stress the black swans together.</strong> Wildfire, earthquake and flood do not arrive independently of
+    each other's consequences — see the <a href="risks.html">risk register</a>.</li>
+  <li><strong>Declare a winner only when every gate is green.</strong> Until then, the output is a range, and the range is
+    printed as a range.</li>
+</ol>
+
+<h2>What the comparison looks like once the inputs exist</h2>
+<div class="table-scroll">
+<table>
+<caption>Output template. The calculator produces exactly these lines from your inputs, in your browser. Columns are blank
+here on purpose — filling them from the current data would require inventing rent, term and price.</caption>
+<thead><tr><th>Line</th><th>Hold (10 yr)</th><th>Sell now</th><th>Difference</th></tr></thead>
+<tbody>
+<tr><td>Cumulative after-tax cash flow</td><td class="blank">—</td><td class="blank">—</td><td class="blank">—</td></tr>
+<tr><td>Terminal / sale proceeds, after tax</td><td class="blank">—</td><td class="blank">—</td><td class="blank">—</td></tr>
+<tr><td>Net present value at the stated discount rate</td><td class="blank">—</td><td class="blank">—</td><td class="blank">—</td></tr>
+<tr><td>NPV at discount rate +100 bps</td><td class="blank">—</td><td class="blank">—</td><td class="blank">—</td></tr>
+<tr><td>NPV at discount rate −100 bps</td><td class="blank">—</td><td class="blank">—</td><td class="blank">—</td></tr>
+<tr><td>NPV with a 12-month vacancy before re-tenanting</td><td class="blank">—</td><td class="blank">—</td><td class="blank">—</td></tr>
+<tr><td>Break-even short-lease discount</td><td class="blank">—</td><td class="blank">—</td><td class="blank">—</td></tr>
+</tbody></table></div>
+
+<h2>The one structural point that survives missing data</h2>
+<div class="notice info">
+  <strong>Selling converts a deferred tax into a paid tax; holding keeps it deferred.</strong>
+  Under the verified rules on the <a href="tax.html">after-tax page</a>, a sale at these rates can consume roughly a fifth
+  of the price in tax and transfer cost in the illustration, and more where the basis is lower. That does not mean “never sell” — it means the sell case has to
+  clear a higher bar than the raw price suggests, and that a 1031 exchange or a hold-until-basis-reset strategy belongs in
+  the conversation before any listing. Conversely, holding keeps capital concentrated in one asset in one seismic region.
+  Both of those statements are true at once, which is why the answer is a balance, not a verdict.
+</div>
+  </div>
+</main>
+<footer class="site">
+  <div class="wrap">
+    <div>Built 2026-11-25 from <code>data/registry.yaml</code>. 17 pages, no external scripts, no tracking.</div>
+    <div><a href="privacy.html">Privacy &amp; anonymisation</a> · <a href="review.html">Flagged for review</a> · <a href="sources.html">Sources</a></div>
+  </div>
+</footer>
+<script src="assets/js/app.js" defer></script>
+</body>
+</html>
