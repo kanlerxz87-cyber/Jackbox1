@@ -19,8 +19,9 @@ which private documents stand between the evidence and a decision.
 | **Data cut-off** | 2026-11-25 |
 | **Official sources** | 22, all government or Federal-Reserve hosted |
 | **Tracked data rows** | 210 |
-| **Verified rows** | 71, every one with a source link |
+| **Verified rows** | 71, every one with a source link (+4 labelled assumptions) |
 | **Deliberately blank rows** | 48, all listed on *Flagged for review* |
+| **Flagged items** | 13 irregularities + 16 unverified values |
 | **Open decision gates** | 15 of 15 — none can close from public data |
 | **Model version** | `v0.1-unbacktested-core` (macro engine back-tested; property engine not) |
 
@@ -77,6 +78,13 @@ node scripts/validate.mjs   # must pass before publish
 
 GitHub Pages serves `main` from the repository root; `index.html` redirects to
 `pages/index.html`.
+
+## Static counts are never hardcoded
+
+Every number shown on the dashboard — total rows, verified rows, assumption count, dataset
+count, flagged counts — is computed from `data/*.json` at build time. If a dataset grows, the
+dashboard moves with it; a stale figure cannot survive a rebuild. This was a real bug caught
+during deploy verification and fixed in `scripts/build.mjs`.
 
 ## The headline finding
 

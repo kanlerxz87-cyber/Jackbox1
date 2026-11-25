@@ -143,16 +143,24 @@ const ta = D('tradearea'), hz = D('hazards'), lz = D('lease'), va = D('valuation
   sg = D('suggestions'), fl = D('flagged');
 
 const countBy = (arr, f) => arr.reduce((m, x) => (m[f(x)] = (m[f(x)] || 0) + 1, m), {});
-const totalRows = ta.rows.length + hz.rows.length + lz.abstract_fields.length + lz.notice_calendar.length +
-  va.market_anchors.length + va.sell_side_inputs.length + va.hold_side_inputs.length + va.tax_rules.length +
-  qt.quote_log.length + qt.what_the_public_record_does_show.length + md.observations.length +
-  md.assumptions.length + st.probability_context_verified.length + st.scenarios.length + qs.have.length +
-  qs.do_not_have.length + sg.proposals.length + fl.irregularities.length + fl.unverified_values.length;
-const verifiedRows = [...ta.rows, ...hz.rows, ...va.market_anchors, ...va.tax_rules,
-  ...qt.what_the_public_record_does_show, ...md.observations, ...md.assumptions, ...st.probability_context_verified,
-  ...qs.have].filter(r => (r.status || '').startsWith('verified') || r.status === 'observation' ||
-  r.status === 'computed-from-observation' || r.status === 'assumption' ||
-  r.status === 'assumption-anchored-to-observation' || r.status === 'assumption-slot').length;
+const ALL = [{ d: ta, k: ['rows'] }, { d: hz, k: ['rows'] }, { d: lz, k: ['abstract_fields', 'notice_calendar'] },
+  { d: va, k: ['market_anchors', 'sell_side_inputs', 'hold_side_inputs', 'tax_rules'] },
+  { d: qt, k: ['quote_log', 'what_the_public_record_does_show'] },
+  { d: md, k: ['observations', 'assumptions'] },
+  { d: st, k: ['probability_context_verified', 'scenarios', 'mitigations'] },
+  { d: qs, k: ['have', 'do_not_have', 'answered_by_design'] },
+  { d: sg, k: ['proposals'] },
+  { d: fl, k: ['irregularities', 'unverified_values'] }];
+const totalRows = ALL.reduce((n, x) => n + x.k.reduce((m, k) => m + (Array.isArray(x.d[k]) ? x.d[k].length : 0), 0), 0);
+const datasetCount = ALL.length;
+/* Same definition the validator enforces: an observation or a verified row,
+   which must carry a resolving source_id. Assumptions are deliberately excluded. */
+const VERIFIED_LIKE = new Set(['verified', 'verified-context', 'verified-programme', 'verified-rule',
+  'verified-reference-only', 'observation', 'computed-from-observation']);
+const allRowsFlat = ALL.reduce((a, x) => a.concat(...x.k.map(k => Array.isArray(x.d[k]) ? x.d[k] : [])), []);
+const verifiedRows = allRowsFlat.filter(r => VERIFIED_LIKE.has(r.status)).length;
+const assumptionRows = allRowsFlat.filter(r => (r.status || '').startsWith('assumption')).length;
+const unverifiedRows = allRowsFlat.filter(r => r.status === 'unverified').length;
 
 /* ======================================================================= */
 /*  DASHBOARD (W-03 decision-gate progress board + executive summary)      */
@@ -188,8 +196,8 @@ const doneCount = DONE.length, gateCount = GATES.length, closed = 0;
 const gateBoard = `
 <div class="grid g4">
   <div class="kpi"><div class="k-label">Gates closed</div><div class="k-value" style="color:var(--bad)">${closed} / ${gateCount}</div><div class="k-note">Decision inputs still open</div></div>
-  <div class="kpi"><div class="k-label">Verified data rows</div><div class="k-value" style="color:var(--ok)">${verifiedRows}</div><div class="k-note">each with an official source link</div></div>
-  <div class="kpi"><div class="k-label">Tracked rows</div><div class="k-value">${totalRows}</div><div class="k-note">across 8 datasets</div></div>
+  <div class="kpi"><div class="k-label">Verified data rows</div><div class="k-value" style="color:var(--ok)">${verifiedRows}</div><div class="k-note">+ ${assumptionRows} labelled assumptions</div></div>
+  <div class="kpi"><div class="k-label">Tracked rows</div><div class="k-value">${totalRows}</div><div class="k-note">across ${datasetCount} datasets</div></div>
   <div class="kpi"><div class="k-label">Official sources</div><div class="k-value">${sources.sources.length}</div><div class="k-note">all government or Fed-hosted</div></div>
 </div>
 
@@ -269,7 +277,7 @@ ${executiveSummary}
   <a class="card" href="scenarios.html" style="display:block;color:inherit"><div class="eyebrow">Model</div><h3 style="margin:0 0 6px">Model &amp; stress</h3><p class="sub" style="margin:0">A versioned cash-flow model with a completed back-test, plus the compound black-swan case nobody models.</p></a>
   <a class="card" href="questions.html" style="display:block;color:inherit"><div class="eyebrow">Gaps</div><h3 style="margin:0 0 6px">Open questions</h3><p class="sub" style="margin:0">Fifteen blocking questions, each with the holder, the discovery path, and a recommended order.</p></a>
   <a class="card" href="suggestions.html" style="display:block;color:inherit"><div class="eyebrow">Review</div><h3 style="margin:0 0 6px">Suggestions</h3><p class="sub" style="margin:0">Four paths and twelve proposals. You choose the path before anything is implemented.</p></a>
-  <a class="card" href="flagged.html" style="display:block;color:inherit"><div class="eyebrow">Integrity</div><h3 style="margin:0 0 6px">Flagged for review</h3><p class="sub" style="margin:0">Twelve irregularities and sixteen unverified values, each with its source and what would close it.</p></a>
+  <a class="card" href="flagged.html" style="display:block;color:inherit"><div class="eyebrow">Integrity</div><h3 style="margin:0 0 6px">Flagged for review</h3><p class="sub" style="margin:0">${fl.irregularities.length} irregularities and ${fl.unverified_values.length} unverified values, each with its source and what would close it.</p></a>
   <a class="card" href="print.html" style="display:block;color:inherit"><div class="eyebrow">W-10</div><h3 style="margin:0 0 6px">Printable brief</h3><p class="sub" style="margin:0">One page for your advisers. No private figures, safe to hand over.</p></a>
 </div>
 
