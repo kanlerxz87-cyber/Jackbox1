@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Private calculator · Anonymous NNN workspace</title>
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="privacy-bar">Runs only in this browser. Nothing is uploaded. <a href="privacy.html">Privacy rules</a></div>
+  <div class="layout">
+    <nav class="side" id="nav"></nav>
+    <main id="main">
+      <h1>Private sell-versus-hold calculator</h1>
+      <p class="lede">Type verified private numbers here. Defaults are empty except filing-status menus. Published IRS/FTB rates are applied as rules. Outputs are labeled. This is not a recommendation and not a back-tested model (G7 still open).</p>
+
+      <form class="calc" id="calc-form" autocomplete="off">
+        <h2>Sale case (leave blank if unknown)</h2>
+        <div class="row">
+          <div><label for="salePrice">Written sale price (USD)</label><input id="salePrice" type="number" min="0" step="1"></div>
+          <div><label for="sellingCostsPct">Selling costs (%)</label><input id="sellingCostsPct" type="number" min="0" step="0.01"></div>
+          <div><label for="costBasis">Cost basis before subtracting accum. dep. (USD)</label><input id="costBasis" type="number" step="1"></div>
+          <div><label for="accumDep">Accumulated depreciation (USD)</label><input id="accumDep" type="number" min="0" step="1"></div>
+        </div>
+        <div class="row">
+          <div>
+            <label for="filing">Filing status (for IRS 2025 LTCG bands)</label>
+            <select id="filing">
+              <option value="mfj">Married filing jointly</option>
+              <option value="single">Single</option>
+              <option value="mfs">Married filing separately</option>
+            </select>
+          </div>
+          <div><label for="taxableIncome">Taxable income used only to pick 0/15/20% (USD)</label><input id="taxableIncome" type="number" min="0" step="1"></div>
+          <div>
+            <label for="niitApplies">NIIT 3.8% applies (MAGI over IRS threshold)?</label>
+            <select id="niitApplies">
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+          <div><label for="caRatePct">California marginal rate on the gain (%)</label><input id="caRatePct" type="number" min="0" max="14" step="0.01" placeholder="e.g. 12.3 or 13.3"></div>
+        </div>
+        <div class="row">
+          <div>
+            <label for="do1031">Treat as §1031 (recognize boot only)?</label>
+            <select id="do1031">
+              <option value="no">No — taxable sale</option>
+              <option value="yes">Yes — simplified 1031</option>
+            </select>
+          </div>
+          <div><label for="boot">Boot recognized if 1031 (USD)</label><input id="boot" type="number" min="0" step="1"></div>
+          <div><label for="quoteCapPct">Written quote cap rate (%)</label><input id="quoteCapPct" type="number" min="0" step="0.01"></div>
+        </div>
+
+        <h2>Hold / renewal case</h2>
+        <div class="row">
+          <div><label for="noi">Current in-place NOI (USD / year)</label><input id="noi" type="number" step="1"></div>
+          <div><label for="renewalRent">Negotiated renewal NOI (USD / year)</label><input id="renewalRent" type="number" step="1"></div>
+          <div><label for="holdYears">Hold years in the worksheet</label><input id="holdYears" type="number" min="1" max="40" step="1"></div>
+          <div><label for="rentGrowthPct">Assumed rent growth (% / year)</label><input id="rentGrowthPct" type="number" step="0.01"></div>
+        </div>
+        <div class="row">
+          <div><label for="discountPct">Discount rate (% / year) — assumption</label><input id="discountPct" type="number" step="0.01"></div>
+          <div><label for="capexAnnual">Annual capex reserve (USD)</label><input id="capexAnnual" type="number" min="0" step="1"></div>
+          <div><label for="vacancyMonths">Extra year-1 vacancy months (stress / black swan proxy)</label><input id="vacancyMonths" type="number" min="0" max="12" step="1"></div>
+        </div>
+        <div class="actions">
+          <button type="button" class="btn danger" id="wipe">Clear this browser</button>
+        </div>
+      </form>
+
+      <h2>Output</h2>
+      <div id="calc-out"></div>
+      <p class="lede">Rent growth, discount rate, vacancy months, and capex are assumptions unless you have documents. Sale price and cap rate are observations only if they come from written quotes.</p>
+      <footer class="site">G7: this is not a back-tested cash-flow model.</footer>
+    </main>
+  </div>
+  <script src="js/nav.js"></script>
+  <script src="js/calculator.js"></script>
+</body>
+</html>

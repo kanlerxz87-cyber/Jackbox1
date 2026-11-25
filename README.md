@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Jackbox property decision workspace
 
 An **anonymised, source-verified decision workspace** for a single-tenant Jack in the Box
@@ -108,3 +109,71 @@ Fifteen gates, sequenced on the *Open questions* page. Three cost nothing and on
 *Not investment, legal or tax advice. Engage a licensed appraiser, attorney and CPA before
 acting. See `COORDINATION.md` for the task board, sources, verification performed and the
 PR/deploy record.*
+=======
+# Anonymous Central LA NNN workspace
+
+Public research site for an **anonymized** sell-versus-renew review of a Jack in the Box NNN lease described as located around Central Los Angeles.
+
+**This repository must not contain** owner names, street addresses, APNs, lease PDFs, tax returns, or unit-level sales.
+
+Two static trees are in the repo (parallel sessions; both retained):
+
+| Tree | Session | Entry |
+| --- | --- | --- |
+| Repository root | arena-8c9d9d97 | `index.html`, `pages/`, `assets/` |
+| `docs/` | arena-f5a16939 | `docs/index.html` (sourced tables, decision gates, calculator) |
+
+GitHub Pages is configured to publish the **repository root**, so both `/` and `/docs/` can resolve.
+
+**No sell or renew recommendation is made.**
+
+A public static website is not an access-controlled vault. Keep lease files and owner finances offline. See [COORDINATION.md](COORDINATION.md) and the Flagged for Review pages (`pages/flags.html` and `docs/flagged.html`).
+>>>>>>> origin/main
+
+
+---
+
+## Repository layout — three parallel builds, all retained
+
+This repo was produced by three concurrent sessions. **Nothing was deleted.**
+
+| Path | What it is | Start here |
+|---|---|---|
+| `/pages/index.html` | **Primary.** Source-verified workspace, 11 pages, live official data, browser calculator | ← start here |
+| `/desk/index.html` | Earlier root site, preserved intact with links rewritten | archive |
+| `/docs/index.html` | Parallel sourced research dashboard from another session | archive |
+
+Live: https://kanlerxz87-cyber.github.io/Jackbox1/pages/index.html
+
+## Cross-session note on figures
+
+Two official Los Angeles population figures appear in this repo — 3,878,704 (Census Vintage
+2024) and 3,869,089 (QuickFacts V2025). They are different vintages and are **not
+comparable**. The Census Bureau warns against comparing vintages. The same applies to the two
+unemployment figures (county NSA Sep 2025 vs metro division Oct 2026). Every row in the primary
+tree states its geography and period. See irregularity IR-13 on the *Flagged for review* page.
+
+## Prior session README (preserved)
+
+<details><summary>Earlier README content from a parallel session</summary>
+
+# Anonymous Central LA NNN workspace
+
+Public research site for an **anonymized** sell-versus-renew review of a Jack in the Box NNN lease described as located around Central Los Angeles.
+
+**This repository must not contain** owner names, street addresses, APNs, lease PDFs, tax returns, or unit-level sales.
+
+Two static trees are in the repo (parallel sessions; both retained):
+
+| Tree | Session | Entry |
+| --- | --- | --- |
+| Repository root | arena-8c9d9d97 | `index.html`, `pages/`, `assets/` |
+| `docs/` | arena-f5a16939 | `docs/index.html` (sourced tables, decision gates, calculator) |
+
+GitHub Pages is configured to publish the **repository root**, so both `/` and `/docs/` can resolve.
+
+**No sell or renew recommendation is made.**
+
+A public static website is not an access-controlled vault. Keep lease files and owner finances offline. See [COORDINATION.md](COORDINATION.md) and the Flagged for Review pages (`pages/flags.html` and `docs/flagged.html`).
+
+</details>

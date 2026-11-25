@@ -37,7 +37,7 @@
 
 <div class="callout c-info"><strong>Counting rule</strong>An item is &#39;unverified&#39; if a value is required for the decision but no official source could confirm it in this session. It is left blank in the data, never filled with an estimate.</div>
 
-<h2>Irregularities — 12</h2>
+<h2>Irregularities — 13</h2>
 
 <div class="card">
   <div style="display:flex;justify-content:space-between;gap:12px;align-items:flex-start;flex-wrap:wrap">
@@ -194,6 +194,19 @@
   <p class="sub"><b>Impact.</b> Confirms the privacy model held: the site names a public corporate brand and nothing else.</p>
   <p class="sub" style="margin-bottom:6px"><b>Action requested.</b> None.</p>
   <p class="faint" style="margin:0">Sources: <a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm" target="_blank" rel="noopener noreferrer">S-011</a> · <a href="https://data.sec.gov/api/xbrl/companyconcept/CIK0000807882/us-gaap/Revenues.json" target="_blank" rel="noopener noreferrer">S-012</a></p>
+</div>
+<div class="card">
+  <div style="display:flex;justify-content:space-between;gap:12px;align-items:flex-start;flex-wrap:wrap">
+    <div style="flex:1;min-width:240px">
+      <div class="eyebrow">IR-13 · severity: medium</div>
+      <h3 style="margin:0 0 8px">Two different official Los Angeles population figures appear across the repo&#39;s parallel trees</h3>
+    </div>
+    <span class="b b-warn">medium</span>
+  </div>
+  <p class="sub">A parallel session recorded LA city population as 3,878,704 from Census Vintage 2024 release CB25-77. This tree records 3,869,089 from QuickFacts V2025 (a July 1, 2025 estimate). Both are official; they are different vintages and are not comparable. The same pattern applies to unemployment: 5.9% is LA County not-seasonally-adjusted for September 2025 (EDD), while 4.6% is the LA-Long Beach-Glendale metropolitan division for October 2026 (BLS).</p>
+  <p class="sub"><b>Impact.</b> A reader comparing the two trees could conclude one is wrong. Neither is. Every figure in this tree states its geography and period, and the Census Bureau itself warns that different vintage years are not comparable.</p>
+  <p class="sub" style="margin-bottom:6px"><b>Action requested.</b> When a single figure is chosen for any external use, cite the vintage with it. Do not average or blend vintages.</p>
+  <p class="faint" style="margin:0">Sources: <a href="https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045224" target="_blank" rel="noopener noreferrer">S-001</a> · <a href="https://www.bls.gov/eag/eag.ca_losangeles_md.htm" target="_blank" rel="noopener noreferrer">S-002</a> · <a href="https://www.census.gov/quickfacts/fact/faq/losangelescitycalifornia/PST045225" target="_blank" rel="noopener noreferrer">S-021</a></p>
 </div>
 
 <h2>Unverified values — 16</h2>

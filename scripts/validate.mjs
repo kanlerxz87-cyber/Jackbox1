@@ -107,8 +107,10 @@ P(`rendered pages: ${pages.length} pages, ${srcLinks} outbound source links`);
 
 /* ---------- 4. internal links ---------- */
 let broken = 0, linkChecked = 0;
-pages.concat(['../index.html']).forEach(f => {
-  const rel = f === '../index.html' ? 'index.html' : 'pages/' + f;
+const linkTargets = pages.map(f => 'pages/' + f).concat(['index.html'])
+  .concat(readdirSync(join(ROOT, 'desk')).filter(f => f.endsWith('.html')).map(f => 'desk/' + f))
+  .concat(readdirSync(join(ROOT, 'desk', 'pages')).filter(f => f.endsWith('.html')).map(f => 'desk/pages/' + f));
+linkTargets.forEach(rel => {
   const path = join(ROOT, rel);
   if (!existsSync(path)) return;
   const baseDir = posix.dirname(rel);
