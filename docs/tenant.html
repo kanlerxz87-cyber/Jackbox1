@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tenant system · Anonymous NNN workspace</title>
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="privacy-bar">System figures only. Subject-unit sales are never published. <a href="privacy.html">Privacy rules</a></div>
+  <div class="layout">
+    <nav class="side" id="nav"></nav>
+    <main id="main">
+      <h1>Tenant system evidence (not this store)</h1>
+      <p class="lede">A series of same-store sales, unit counts, and closures shows direction, not one quarter. These rows are Jack in the Box Inc. brand-level disclosures. They are not the subject restaurant’s sales or rent.</p>
+      <div class="callout">FY 2025 system same-store sales −4.2% and 86 closures are observations about the brand. They do not prove the subject unit will close or will be renewed.</div>
+      <div id="t-ten"></div>
+      <h2>How to read this</h2>
+      <ul>
+        <li>Two fiscal years of SSS (FY 2024 −1.3%, FY 2025 −4.2%) are a short series, not a back-test.</li>
+        <li>Q4 FY 2025 system SSS −7.4% is worse than the year; it is still one quarter.</li>
+        <li>FY 2026 guidance (−1% to +1% SSS; 50–100 closures) is a company outlook, not an observation.</li>
+        <li>Franchise rental revenue on the Form 10-K is left blank here because the iXBRL filing was not converted into confirmed dollar amounts in this session. Confirm on SEC.gov.</li>
+      </ul>
+      <p>Primary filing index: <a href="https://www.sec.gov/edgar/browse/?CIK=807882" target="_blank" rel="noopener">SEC EDGAR CIK 0000807882</a>. Form 10-K for the fiscal year ended 28 Sep 2025: <a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm" target="_blank" rel="noopener">jack-20250928.htm</a>.</p>
+      <footer class="site">Direction ≠ destiny for one NNN lease.</footer>
+    </main>
+  </div>
+  <script src="js/nav.js"></script>
+  <script src="js/tables.js"></script>
+  <script>
+    fetch("data/findings.json").then(function (r) { return r.json(); }).then(function (d) {
+      renderTable(document.getElementById("t-ten"), d.tenant, COLS);
+    });
+  </script>
+</body>
+</html>

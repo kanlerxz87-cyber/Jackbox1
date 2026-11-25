@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>W-01 Trade-area proxies · Anonymous NNN workspace</title>
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="privacy-bar">Tract IDs that would locate the parcel are not published. <a href="privacy.html">Privacy rules</a></div>
+  <div class="layout">
+    <nav class="side" id="nav"></nav>
+    <main id="main">
+      <h1>W-01 · City and county proxies — not yet trade-area figures</h1>
+      <p class="lede">Requirement: replace city and county proxies with trade-area figures, and put tract-level trend evidence alongside regional figures. Status: incomplete. Tables below are labeled proxies. Trade-area rows are blank.</p>
+      <div class="callout warn">Central Los Angeles is not a Census geography. Until tracts are chosen in the private workflow, using the City of Los Angeles or Los Angeles County as a stand-in would overstate precision. Those rows stay marked “proxy.”</div>
+
+      <h2>Population</h2>
+      <div id="t-pop"></div>
+      <h2>Income and poverty</h2>
+      <div id="t-inc"></div>
+      <h2>Housing and commute (not NNN pricing)</h2>
+      <div id="t-hou"></div>
+      <h2>Labor</h2>
+      <div id="t-lab"></div>
+      <h2>Schools</h2>
+      <div id="t-sch"></div>
+
+      <h2>How to finish W-01 without publishing the site</h2>
+      <ol>
+        <li>Geocode the withheld address offline.</li>
+        <li>Select 2020 census tracts that match a pre-stated drive-time (for example 3-, 5-, 10-minute) and keep the list in the adviser vault.</li>
+        <li>Pull ACS 5-year S0101, S1901, S1701, DP04 for those tracts from <a href="https://data.census.gov/" target="_blank" rel="noopener">data.census.gov</a>.</li>
+        <li>Pull LODES / QCEW for jobs. Pull CDE DataQuest for schools. Pull LADOT counts for the intersection.</li>
+        <li>Publish only blended, non-identifying totals if you publish at all.</li>
+      </ol>
+      <footer class="site">PEP and ACS are different Census programs; they will not match exactly. Both are official. Neither is a trade area.</footer>
+    </main>
+  </div>
+  <script src="js/nav.js"></script>
+  <script src="js/tables.js"></script>
+  <script>
+    fetch("data/findings.json").then(function (r) { return r.json(); }).then(function (d) {
+      renderTable(document.getElementById("t-pop"), d.population, COLS);
+      renderTable(document.getElementById("t-inc"), d.income, COLS);
+      renderTable(document.getElementById("t-hou"), d.housing_commute, COLS);
+      renderTable(document.getElementById("t-lab"), d.labor, COLS);
+      renderTable(document.getElementById("t-sch"), d.schools, COLS);
+    });
+  </script>
+</body>
+</html>

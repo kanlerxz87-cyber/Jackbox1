@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Flagged for review · Anonymous NNN workspace</title>
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="privacy-bar">Irregularities and unverified items do not block the site. They block a sell/renew choice. <a href="privacy.html">Privacy rules</a></div>
+  <div class="layout">
+    <nav class="side" id="nav"></nav>
+    <main id="main">
+      <h1>Flagged for review</h1>
+      <p class="lede">Every row that is blank, client-stated, proxied, or only regionally sourced is listed here so it can be checked after the site is live. No cell on other pages was filled by inference.</p>
+
+      <h2>Client-stated — not independently verified</h2>
+      <div class="table-wrap">
+        <table class="data">
+          <thead><tr><th>Item</th><th>Published as</th><th>Why flagged</th><th>Official place to confirm</th></tr></thead>
+          <tbody>
+            <tr><td>Asset is a Jack in the Box on NNN</td><td>Client description</td><td>No lease or assessor print in this repo</td><td>LA County Assessor (private)</td></tr>
+            <tr><td>Location “around central Los Angeles”</td><td>Regional proxy geography</td><td>Not a Census unit; not a parcel</td><td>Private geocode</td></tr>
+            <tr><td>Lease expiration 2030–2035</td><td>Window, not a date</td><td>Range, not an abstract</td><td>Lease PDF (offline)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Intentionally blank</h2>
+      <div class="table-wrap">
+        <table class="data">
+          <thead><tr><th>Item</th><th>Reason</th><th>Lookup</th></tr></thead>
+          <tbody>
+            <tr><td>Tract population, income, jobs, schools, AADT</td><td>W-01; publishing tracts may identify the site</td><td><a href="https://data.census.gov/">data.census.gov</a>, CDE, LADOT</td></tr>
+            <tr><td>FEMA zone, FHSZ, CGS seismic zones</td><td>W-04 parcel identity</td><td><a href="https://msc.fema.gov/portal/home">FEMA MSC</a>, <a href="https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones/fire-hazard-severity-zones-maps">CAL FIRE</a>, <a href="https://maps.conservation.ca.gov/cgs/EQZApp/app/">CGS EQ Zapp</a></td></tr>
+            <tr><td>NOI, rent, basis, quotes, after-tax bill</td><td>Owner private</td><td>Calculator + CPA</td></tr>
+            <tr><td>10-K franchise rental revenue dollars</td><td>iXBRL not parsed to a confirmed figure in this session</td><td><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm">SEC 10-K</a></td></tr>
+            <tr><td>Subject-unit sales</td><td>Never publish</td><td>Tenant reports (vault)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Secondary republishers / dual-source notes</h2>
+      <div class="table-wrap">
+        <table class="data">
+          <thead><tr><th>Item</th><th>Used because</th><th>Confirm on</th></tr></thead>
+          <tbody>
+            <tr><td>ACS 2024 1-year income, poverty, housing via Census Reporter</td><td>data.census.gov profile fetch failed in this session; Census Reporter cites Census Bureau ACS 2024 1-year</td><td><a href="https://data.census.gov/">data.census.gov</a> tables S1901, S1701, B25077</td></tr>
+            <tr><td>census.gov QuickFacts (including any V2025 city population)</td><td>Page fetch failed; not used as a number in tables</td><td><a href="https://www.census.gov/quickfacts/losangelescitycalifornia">Census QuickFacts Los Angeles city</a></td></tr>
+            <tr><td>Brand SSS and unit counts</td><td>Company earnings release on Business Wire (also typically 8-K exhibits)</td><td><a href="https://www.sec.gov/edgar/browse/?CIK=807882">SEC EDGAR CIK 0000807882</a></td></tr>
+            <tr><td>FTB top rate 12.30% and 1% BHST</td><td>Booklet fetched; full bracket schedule not copied</td><td><a href="https://www.ftb.ca.gov/forms/2025/2025-540-booklet.html">2025 540 booklet tax rate schedules</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Irregularities in the repo</h2>
+      <ul>
+        <li>The GitHub remote is <strong>public</strong>. Identifiers must never be committed.</li>
+        <li>Starting commit was README-only. This site is the first content.</li>
+        <li>Census PEP (3,878,704 on 1 Jul 2024) and ACS 1-year population (3,878,718) differ by 14 people — expected across programs, not an error to “fix.”</li>
+        <li>No cash-flow model was back-tested; comparable NNN sale history for this remaining term was not found in official sources.</li>
+      </ul>
+      <footer class="site">Flagged items do not block merge. They block a property decision.</footer>
+    </main>
+  </div>
+  <script src="js/nav.js"></script>
+</body>
+</html>
