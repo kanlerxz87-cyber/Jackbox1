@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trade Area (W-01) — Parcel Decision Workspace</title>
+<meta name="description" content="An anonymised, source-linked decision workspace for a single-tenant quick-service parcel in central Los Angeles. Contains no personal or parcel-identifying information.">
+<meta name="robots" content="index, follow">
+<link rel="stylesheet" href="assets/css/app.css">
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">PDW</span>
+      <span class="brand-text">
+        <strong>Parcel Decision Workspace</strong>
+        <span>Anonymised &middot; source-linked &middot; no personal data</span>
+      </span>
+    </a>
+    <div class="header-meta">
+      <b>PARCEL-A &middot; OWNER-1 &middot; TENANT-A</b><br>
+      Central Los Angeles &middot; NNN &middot; expiry window 2030&ndash;2035<br>
+      Evidence compiled 2026-11-25
+    </div>
+  </div>
+</header>
+
+<nav class="site-nav" aria-label="Sections">
+  <div class="nav-inner">
+      <a href="index.html">Dashboard</a>
+      <a href="gates.html">Decision Gates</a>
+      <a href="sell-vs-renew.html">Sell vs Renew</a>
+      <a href="market.html">Market &amp; Economy</a>
+      <a href="location.html" aria-current="page">Trade Area</a>
+      <a href="hazards.html">Hazards &amp; Risk</a>
+      <a href="questions.html">Questions</a>
+      <a href="suggestions.html">Suggestions</a>
+      <a href="sources.html">Sources</a>
+      <a href="flagged.html">Flagged for Review</a>
+  </div>
+</nav>
+
+<main id="main">
+<div class="no-print" style="border:1px solid var(--line);background:#f7f9fc;border-radius:10px;padding:.7rem 1rem;margin-bottom:1.2rem;font-size:.84rem;color:var(--ink-soft)">
+<strong style="display:block;font-size:.68rem;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:.3rem">Workspace sections &mdash; three independent research trees, all published</strong>
+<a href="../../index.html">Root</a> &nbsp;&middot;&nbsp; <a href="../../workspace/index.html">Main workspace</a> &nbsp;&middot;&nbsp; <a href="../../docs/index.html">Sourced dashboard</a> &nbsp;&middot;&nbsp; <b>Independent audit pass (this section)</b>
+</div>
+
+
+<p class="lede">The brief asks to replace city and county proxies with trade-area figures. This page does the honest
+version of that: it says exactly which proxy is being used, what the correct replacement is, which official dataset
+holds it, and the two-step private procedure that produces it without publishing the address.</p>
+
+<div class="notice warn">
+  <p><strong>Why there is no trade-area table on this page.</strong> A trade area is defined by a drive-time ring drawn
+  around a point. The point is the parcel. Publishing the ring publishes the parcel. There is no official agency that
+  publishes a pre-computed three-minute drive-time ring for an anonymous location, so the replacement must be computed
+  privately and only the aggregate published.</p>
+</div>
+
+<h2>Step 1 &mdash; the proxy, stated plainly</h2>
+<div class="table-wrap">
+  <table>
+    <caption>What is being used, and what it substitutes for
+      <span class="cap-sub">Every substitute below is a verified city or metro figure. None of them is presented as a trade-area figure.</span>
+    </caption>
+    <thead><tr><th>Decision-relevant quantity</th><th>Substitute currently used</th><th>Correct geography</th><th>Why the substitute is weak</th></tr></thead>
+    <tbody>
+      <tr><td>Household income around the site</td><td class="small">City median household income $81,939 (ACS 2020&ndash;2024)</td><td class="small">1&ndash;3 mile ring, median household income</td><td class="small">A city of 3.87 million people averages beachfront and South LA. The ring can move opposite to the city.</td></tr>
+      <tr><td>Resident population and growth</td><td class="small">City population 3,869,089 at July 2025, &minus;0.8% from the 2020 base</td><td class="small">Ring population, current and projected</td><td class="small">City growth is dominated by districts far from the parcel.</td></tr>
+      <tr><td>Daytime population (lunch traffic)</td><td class="small">City civilian labour force participation 66.4%</td><td class="small">Workplace-area employment within the ring</td><td class="small">Labour-force participation is a residence measure. A drive-thru lunch is a workplace measure.</td></tr>
+      <tr><td>School quality</td><td class="small">City bachelor's degree or higher 38.5%</td><td class="small">Assigned schools' CAASPP results</td><td class="small">Educational attainment of adults is not school performance. They are different datasets.</td></tr>
+      <tr><td>Traffic past the door</td><td class="small">Mean travel time to work 30.7 minutes</td><td class="small">AADT at the adjacent street</td><td class="small">A commute average says nothing about the curb cut.</td></tr>
+      <tr><td>Competitive supply</td><td class="small">City accommodation and food services sales $17.37bn (2022)</td><td class="small">Unit count and approved permits within the ring</td><td class="small">Aggregate sales do not reveal whether a competitor opened across the street last quarter.</td></tr>
+    </tbody>
+    <tfoot><tr><td colspan="4">All substitute values are verified on the <a href="market.html">Market &amp; Economy</a> page with their official source links.</td></tr></tfoot>
+  </table>
+</div>
+
+<h2 id="private-steps">Step 2 &mdash; the private procedure that produces the real figures</h2>
+<p class="small">Do these in the offline workspace with the real address. Record the date and the source for each.
+Publish only the aggregate, and only if the aggregate cannot be reverse-engineered to a location.</p>
+<ol class="steps">
+  <li><b>Resolve the address to Census geography.</b> Use the Census Geocoder to obtain the 2020 census tract, block group and ZCTA.
+    <span class="tiny muted">Official tool: <a href="https://geocoding.geo.census.gov/geocoder/" rel="noopener noreferrer">Census Geocoder</a>.
+    The county FIPS for Los Angeles is 06037. Treat the resulting tract list as private, because it locates the parcel.</span></li>
+  <li><b>Pull the same-vintage ACS tables for those tracts.</b> Keep one vintage across every table so the comparison is internally consistent.
+    <span class="tiny muted">Tables: B19013 (median household income), B01003 (total population), B25064 (median gross rent), B15003 (educational attainment), S0101 (age and sex).
+    Reference: <a href="https://www.census.gov/programs-surveys/acs/" rel="noopener noreferrer">American Community Survey</a>.</span></li>
+  <li><b>Pull workplace employment for the ring, not residential labour force.</b> Residence-based participation is the wrong denominator for lunch traffic.
+    <span class="tiny muted">Reference: <a href="https://lehd.ces.census.gov/data/" rel="noopener noreferrer">LEHD / LODES</a>, and the Census Bureau's OnTheMap for workplace-area characteristics.</span></li>
+  <li><b>Pull school performance for the assigned schools only.</b> Use the district and school codes that the address resolves to.
+    <span class="tiny muted">Official source: <a href="https://caaspp-elpac.ets.org/caaspp/SearchSB.aspx" rel="noopener noreferrer">CAASPP Reporting, California Department of Education</a>.
+    The report must name the administration year.</span></li>
+  <li><b>Pull planning and zoning.</b> ZIMAS by address for zoning, General Plan designation, specific plan and overlays.
+    <span class="tiny muted">Official source: <a href="https://planning.lacity.gov/" rel="noopener noreferrer">City of Los Angeles Department of City Planning</a>.</span></li>
+  <li><b>Pull traffic counts.</b> Caltrans AADT covers the State Highway System only. City street counts must be requested from the city traffic engineering or public works department.
+    <span class="tiny muted">Official source: <a href="https://dot.ca.gov/programs/traffic-operations/census" rel="noopener noreferrer">Caltrans Traffic Census Program</a>.</span></li>
+  <li><b>Pull competitor supply.</b> Count quick-service units and approved new ones inside the ring, and mark each open, under construction or approved.
+    <span class="tiny muted">Cross-check against the city's building permit records and a site visit.</span></li>
+</ol>
+
+<h2>What can be published once this is done</h2>
+<div class="grid two">
+  <div class="card">
+    <h3>Publishable</h3>
+    <ul class="clean small">
+      <li>Index values and percentage changes for the ring, as long as the ring is not described precisely enough to locate it.</li>
+      <li>The count of competing units, as a number.</li>
+      <li>The direction of travel: improving, flat or deteriorating, with the period.</li>
+      <li>Any statutory designation that applies across a whole district rather than one parcel.</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>Not publishable, ever</h3>
+    <ul class="clean small">
+      <li>The address, the parcel number, the coordinates, or a map with a marker on it.</li>
+      <li>A ring small enough that it contains only a handful of blocks.</li>
+      <li>Exact tract identifiers, because a tract list in the right place is a location.</li>
+      <li>Anything that pairs a figure with a photograph of the storefront.</li>
+    </ul>
+  </div>
+</div>
+
+<h2>Why this is the right trade-off</h2>
+<div class="card">
+  <p class="small">The brief sets privacy as the highest priority and asks for trade-area precision at the same time.
+  Those two goals conflict only if the precise answer is published. They do not conflict if the precise answer is
+  computed privately and the conclusion is published in aggregate. That is what this page does: it publishes the method
+  in full, so the work is reproducible by an authorised adviser, and it withholds the output, so the public site cannot
+  be used to find the property.</p>
+  <p class="small">The economic direction from verified city and metro data is genuinely useful and is on the
+  <a href="market.html">Market &amp; Economy</a> page. What is missing is magnitude at the corner, and this page is
+  honest about the fact that magnitude requires work that cannot be published.</p>
+</div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <strong>Parcel Decision Workspace</strong> &mdash; built 2026-11-25.<br>
+      An independent audit pass. Main workspace: <a href="../../workspace/index.html">/workspace/</a>. Root: <a href="../../index.html">/</a>.<br>
+      Public product. Contains no address, parcel number, owner name, lease text or financial figure belonging to any person or entity.
+      Private material is held offline with authorised advisers.
+    </div>
+    <nav aria-label="Footer">
+      <a href="sources.html">Sources</a>
+      <a href="flagged.html">Flagged for Review</a>
+      <a href="questions.html">Open Questions</a>
+      <a href="advisor-summary.html">One-Page Summary</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

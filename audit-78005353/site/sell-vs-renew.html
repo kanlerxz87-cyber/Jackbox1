@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sell vs Renew — Parcel Decision Workspace</title>
+<meta name="description" content="An anonymised, source-linked decision workspace for a single-tenant quick-service parcel in central Los Angeles. Contains no personal or parcel-identifying information.">
+<meta name="robots" content="index, follow">
+<link rel="stylesheet" href="assets/css/app.css">
+  <script src="assets/js/calc.js" defer></script>
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">PDW</span>
+      <span class="brand-text">
+        <strong>Parcel Decision Workspace</strong>
+        <span>Anonymised &middot; source-linked &middot; no personal data</span>
+      </span>
+    </a>
+    <div class="header-meta">
+      <b>PARCEL-A &middot; OWNER-1 &middot; TENANT-A</b><br>
+      Central Los Angeles &middot; NNN &middot; expiry window 2030&ndash;2035<br>
+      Evidence compiled 2026-11-25
+    </div>
+  </div>
+</header>
+
+<nav class="site-nav" aria-label="Sections">
+  <div class="nav-inner">
+      <a href="index.html">Dashboard</a>
+      <a href="gates.html">Decision Gates</a>
+      <a href="sell-vs-renew.html" aria-current="page">Sell vs Renew</a>
+      <a href="market.html">Market &amp; Economy</a>
+      <a href="location.html">Trade Area</a>
+      <a href="hazards.html">Hazards &amp; Risk</a>
+      <a href="questions.html">Questions</a>
+      <a href="suggestions.html">Suggestions</a>
+      <a href="sources.html">Sources</a>
+      <a href="flagged.html">Flagged for Review</a>
+  </div>
+</nav>
+
+<main id="main">
+<div class="no-print" style="border:1px solid var(--line);background:#f7f9fc;border-radius:10px;padding:.7rem 1rem;margin-bottom:1.2rem;font-size:.84rem;color:var(--ink-soft)">
+<strong style="display:block;font-size:.68rem;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:.3rem">Workspace sections &mdash; three independent research trees, all published</strong>
+<a href="../../index.html">Root</a> &nbsp;&middot;&nbsp; <a href="../../workspace/index.html">Main workspace</a> &nbsp;&middot;&nbsp; <a href="../../docs/index.html">Sourced dashboard</a> &nbsp;&middot;&nbsp; <b>Independent audit pass (this section)</b>
+</div>
+
+
+<p class="lede">Five decision options, their risks, and a calculator that runs entirely in your browser. The
+calculator computes; it does not advise, and it will not produce a verdict while the inputs it needs are blank.</p>
+
+<div class="notice stop">
+  <p><strong>No winner is selected on this page, by instruction and by evidence.</strong> The brief asks for an
+  after-tax sale comparison alongside a negotiated renewal case without picking a winner until verified inputs exist.
+  They do not exist. What exists is the machinery to compare them the moment the inputs do.</p>
+</div>
+
+<h2>The five options, and what each one is actually betting on</h2>
+<div class="table-wrap">
+  <table>
+    <caption>Option register
+      <span class="cap-sub">Every option is a bet on something specific. The right-hand column names the document that would settle whether the bet pays.</span>
+    </caption>
+    <thead><tr><th>Option</th><th>What it bets on</th><th>Main risk</th><th>Ruled out if</th><th>Needs</th></tr></thead>
+    <tbody>
+      <tr><td><b>A. Sell now, before the lease shortens further</b></td>
+        <td class="small">That the short-lease discount widens as expiry approaches, so waiting past today costs value.</td>
+        <td class="small">Selling into a soft bid and paying tax on the gain when a renewal was available at better rent.</td>
+        <td class="small">The tenant renews at or above market before marketing begins.</td>
+        <td class="small">Value, basis, cap-rate evidence</td></tr>
+      <tr><td><b>B. Renew first, then sell a longer-lease asset</b></td>
+        <td class="small">That a renewed term compresses the cap rate by more than the cost and delay of negotiating it.</td>
+        <td class="small">The tenant extracts a below-market rent as the price of the extension, capitalising a poor rent into the sale price.</td>
+        <td class="small">The tenant will not discuss renewal before the option window, or holds a unilateral option at a fixed rent.</td>
+        <td class="small">Lease, options, notice calendar, market rent</td></tr>
+      <tr><td><b>C. Hold to expiry with no action</b></td>
+        <td class="small">That the rent continues and the site's land value holds or rises, with no transaction cost paid.</td>
+        <td class="small">Carrying capital events (roof, lot, HVAC) inside the term, and losing the chance to market a longer lease.</td>
+        <td class="small">Insurance is non-renewed, or a capital event is due before expiry that the rent will not cover.</td>
+        <td class="small">Condition report, insurance file, capital schedule</td></tr>
+      <tr><td><b>D. Sell and defer via section 1031</b></td>
+        <td class="small">That a replacement property can be identified inside the statutory window and produces better risk-adjusted income.</td>
+        <td class="small">Failing to identify in time, which converts a deferred gain into a taxable one under time pressure; California also requires FTB 3840 when California property is exchanged for out-of-state property.</td>
+        <td class="small">No credible replacement can be identified, or the owner needs liquidity rather than income.</td>
+        <td class="small">Qualified intermediary, candidate list, CPA sign-off</td></tr>
+      <tr><td><b>E. Redevelop the site</b></td>
+        <td class="small">That the land is worth more at a higher intensity than the leased building produces.</td>
+        <td class="small">Entitlement risk, construction cost, and the loss of rent during redevelopment.</td>
+        <td class="small">Zoning and General Plan designation do not support a higher-intensity use.</td>
+        <td class="small">ZIMAS designation, land-use consultant, land comps</td></tr>
+    </tbody>
+    <tfoot><tr><td colspan="5">No option is recommended. Each row's 'Ruled out if' condition is a specific, checkable document, which is what makes the register reviewable rather than rhetorical.</td></tr></tfoot>
+  </table>
+</div>
+
+<h2 id="calculator">The after-tax sell-versus-renew calculator <span class="badge info">runs in your browser</span></h2>
+<p class="small">Nothing you type leaves the page. There is no network call, no analytics and no storage. The
+arithmetic is plain and visible in <code>assets/js/calc.js</code>, and every rate it applies is listed with its official
+source underneath the calculator. Default numbers are only there so the mechanism is visible: they are marked
+<em>illustrative</em> and are not used anywhere else on this site.</p>
+
+<div class="calc-grid">
+  <div>
+    <form id="calc-form" autocomplete="off" onsubmit="return false;">
+      <fieldset>
+        <legend>Sale case &mdash; inputs</legend>
+        <label class="field">Sale price
+          <span class="hint">illustrative default &mdash; replace with your own</span>
+          <input type="number" id="sale_price" value="3200000" min="0" step="1000">
+        </label>
+        <label class="field">Selling costs (% of price)
+          <span class="hint">commission and closing costs; assumption</span>
+          <input type="number" id="sell_costs_pct" value="4" min="0" max="20" step="0.25">
+        </label>
+        <label class="field">Adjusted basis, total
+          <span class="hint">original cost plus capitalised improvements, less depreciation taken</span>
+          <input type="number" id="basis" value="1500000" min="0" step="1000">
+        </label>
+        <label class="field">Accumulated depreciation
+          <span class="hint">used for section 1250 recapture at up to 25%; from your filed returns</span>
+          <input type="number" id="accum_dep" value="600000" min="0" step="1000">
+        </label>
+        <div class="inline-2">
+          <label class="field">Federal long-term rate (%)
+            <select id="fed_rate">
+              <option value="0">0</option>
+              <option value="15">15</option>
+              <option value="20" selected>20</option>
+            </select>
+          </label>
+          <label class="field">State marginal rate (%)
+            <select id="state_rate">
+              <option value="0">0 &mdash; no state income tax</option>
+              <option value="9.3">9.3</option>
+              <option value="10.3">10.3</option>
+              <option value="11.3">11.3</option>
+              <option value="12.3" selected>12.3</option>
+            </select>
+          </label>
+        </div>
+        <label class="field">Apply the 3.8% net investment income tax?
+          <select id="niit">
+            <option value="0">No / not applicable</option>
+            <option value="1" selected>Yes</option>
+          </select>
+        </label>
+        <label class="field">Defer the gain with a section 1031 exchange?
+          <select id="use_1031">
+            <option value="0" selected>No &mdash; taxable sale</option>
+            <option value="1">Yes &mdash; deferred</option>
+          </select>
+        </label>
+        <label class="field">Exit cap-rate shock (basis points)
+          <span class="hint">positive widens the buyer's cap rate and reduces value</span>
+          <input type="number" id="cap_shock_bp" value="0" min="-200" max="400" step="25">
+        </label>
+        <label class="field">Repair shock (% of value)
+          <span class="hint">net of insurance; hazard stress input</span>
+          <input type="number" id="repair_pct" value="0" min="0" max="50" step="0.5">
+        </label>
+        <label class="field">Rent lost before sale (months)
+          <span class="hint">closure or vacancy stress input</span>
+          <input type="number" id="rent_lost_months" value="0" min="0" max="36" step="1">
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Renewal / hold case &mdash; inputs</legend>
+        <label class="field">Current annual base rent
+          <span class="hint">illustrative default &mdash; from the private lease abstract</span>
+          <input type="number" id="rent" value="150000" min="0" step="1000">
+        </label>
+        <label class="field">Annual operating costs borne by the owner
+          <span class="hint">what the net lease actually leaves with the landlord</span>
+          <input type="number" id="opex" value="12000" min="0" step="500">
+        </label>
+        <label class="field">Renewal term being considered (years)
+          <input type="number" id="term" value="10" min="1" max="30" step="1">
+        </label>
+        <label class="field">Contract rent growth per year (%)
+          <input type="number" id="rent_growth" value="2" min="0" max="10" step="0.25">
+        </label>
+        <label class="field">Market rent at renewal (annual)
+          <span class="hint">from dated comparable leases, not asking rents</span>
+          <input type="number" id="market_rent" value="180000" min="0" step="1000">
+        </label>
+        <label class="field">Discount rate for present value (%)
+          <span class="hint">the return you require; this is your assumption, not a market fact</span>
+          <input type="number" id="disc" value="7" min="0" max="20" step="0.25">
+        </label>
+        <label class="field">Cap rate on renewal value (%)
+          <span class="hint">from comparable trades</span>
+          <input type="number" id="cap" value="5.75" min="2" max="15" step="0.05">
+        </label>
+      </fieldset>
+    </form>
+  </div>
+
+  <div>
+    <div class="card" id="results-card">
+      <h3 style="margin-top:0">Results</h3>
+      <table class="result-table" id="results">
+        <tbody><tr><td class="muted">Computing&hellip;</td><td></td></tr></tbody>
+      </table>
+      <div id="verdict" class="verdict neutral" aria-live="polite"></div>
+    </div>
+
+    <div class="card" style="margin-top:1rem">
+      <h3 style="margin-top:0">Rates applied, and where each comes from</h3>
+      <div class="table-wrap" style="margin:0">
+        <table>
+          <thead><tr><th>Rate</th><th class="num">Value used</th><th>Official source</th></tr></thead>
+          <tbody>
+            <tr><td>Federal long-term capital gain</td><td class="num">selected</td>
+              <td class="src"><a href="https://www.irs.gov/taxtopics/tc409" rel="noopener noreferrer">IRS Topic 409</a></td></tr>
+            <tr><td>Unrecaptured section 1250 gain</td><td class="num">25% max</td>
+              <td class="src"><a href="https://www.irs.gov/taxtopics/tc409" rel="noopener noreferrer">IRS Topic 409</a></td></tr>
+            <tr><td>Net investment income tax</td><td class="num">3.8%</td>
+              <td class="src"><a href="https://www.irs.gov/newsroom/questions-and-answers-on-the-net-investment-income-tax" rel="noopener noreferrer">IRS NIIT Q&amp;A</a></td></tr>
+            <tr><td>California has no preferential capital gains rate</td><td class="num">ordinary rates</td>
+              <td class="src"><a href="https://www.ftb.ca.gov/file/personal/income-types/capital-gains-and-losses.html" rel="noopener noreferrer">FTB, Capital gains</a></td></tr>
+            <tr><td>California 2025 top marginal rate</td><td class="num">12.3%</td>
+              <td class="src"><a href="https://www.ftb.ca.gov/forms/2025/2025-540-tax-rate-schedules.pdf" rel="noopener noreferrer">FTB 2025 rate schedules</a></td></tr>
+            <tr><td>Section 1031 real property only</td><td class="num">deferral</td>
+              <td class="src"><a href="https://www.irs.gov/businesses/small-businesses-self-employed/like-kind-exchanges-real-estate-tax-tips" rel="noopener noreferrer">IRS, like-kind exchanges</a></td></tr>
+            <tr><td>California sourcing and FTB 3840</td><td class="num">note</td>
+              <td class="src"><a href="https://www.ftb.ca.gov/forms/2025/2025-1100-publication.pdf" rel="noopener noreferrer">FTB Pub. 1100</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="tiny muted" style="margin-top:.6rem">Local City of Los Angeles transfer and business taxes are
+      <b>not</b> included. Their current rates were not read from an official city page during this session, so they are
+      on the <a href="flagged.html">Flagged for Review</a> page rather than guessed. Net proceeds shown here are therefore
+      an upper bound.</p>
+    </div>
+
+    <div class="card" style="margin-top:1rem">
+      <h3 style="margin-top:0">How to read the output honestly</h3>
+      <ul class="clean small">
+        <li>The comparison is <b>net after-tax sale proceeds today</b> versus the <b>present value of the renewal case</b>. Those are not the same kind of number, and the page says so rather than subtracting one from the other.</li>
+        <li>The calculator will still run with blank or zero inputs. That is deliberate: it shows you a number built on nothing, which is what a rule-of-thumb valuation often is.</li>
+        <li>The single most sensitive input is the cap rate. A 50 basis point move on a 5.75% cap is roughly a 9% change in value before any income change.</li>
+        <li>If the sale price is unknown, the correct output is 'unknown', not a guess. The calculator cannot enforce that; you have to.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<h2>Price the short-lease discount from real quotes</h2>
+<div class="card">
+  <p class="small">The brief asks to price the short-lease discount from real quotes. That is the single most
+  important number in the sale case, because the lease expires inside a five-year window and a buyer prices the reversion
+  as a re-leasing risk rather than as income. It cannot be derived from a rule of thumb without becoming an assumption.</p>
+  <p class="small"><b>What it takes.</b> Pairs of otherwise-similar single-tenant quick-service trades in the same
+  submarket, one with a long remaining term and one short, sold close in time, each with the cap rate and the term
+  remaining at sale. The discount is then the observed cap-rate spread between the two groups, expressed in basis points,
+  and it should be re-read every time a new pair trades.</p>
+  <p class="small"><b>What is shown here.</b> Nothing, because no such pairs have been documented in this workspace.
+  The row is on the <a href="flagged.html">Flagged for Review</a> page as FR-09, with the reason: no official agency
+  publishes commercial cap rates or lease comparables, so this must come from a broker's documented file with source
+  documents attached.</p>
+</div>
+
+<h2>The verified tax rules the calculator applies</h2>
+<h3>Federal</h3>
+<div class="table-wrap">
+  <table>
+    <caption>Federal rules, read verbatim from IRS pages
+      <span class="cap-sub">A row marked flagged could not be confirmed and is not used as a value.</span></caption>
+    <thead><tr><th>ID</th><th>Rule</th><th>Used for</th><th>Official source</th></tr></thead>
+    <tbody><tr><td><code>FED-CG</code></td><td><b>Long-term capital gain rate brackets</b><br><span class="tiny muted">For taxable years beginning in 2025 the tax rate on most net capital gain is no higher than 15% for most individuals. 0% applies if taxable income is at or below $48,350 single / $96,700 married filing jointly / $64,750 head of household. 15% applies above those up to $533,400 single / $600,050 MFJ / $566,700 HoH. 20% applies to the extent taxable income exceeds the 15% thresholds.</span></td><td class="small">after-tax module (federal long-term rate)</td><td class="src"><a href="https://www.irs.gov/taxtopics/tc409" rel="noopener noreferrer" title="IRS Topic no. 409, Capital gains and losses">IRS Topic no. 409, Capital gains and losses</a></td></tr><tr><td><code>FED-1250</code></td><td><b>Unrecaptured section 1250 gain is taxed at a maximum 25%</b><br><span class="tiny muted">IRS Topic 409 lists &#x27;the portion of any unrecaptured section 1250 gain from selling section 1250 real property is taxed at a maximum 25% rate.&#x27; This is the depreciation that was taken (or allowable) on the building and is recaptured on sale at up to 25% rather than at the 20% capital-gain maximum.</span></td><td class="small">after-tax module (depreciation recapture)</td><td class="src"><a href="https://www.irs.gov/taxtopics/tc409" rel="noopener noreferrer" title="IRS Topic no. 409, Capital gains and losses">IRS Topic no. 409, Capital gains and losses</a></td></tr><tr><td><code>FED-NIIT</code></td><td><b>Net Investment Income Tax at 3.8% above modified AGI thresholds</b><br><span class="tiny muted">The NIIT applies at 3.8% to certain net investment income of individuals with income above statutory thresholds: $250,000 MFJ, $125,000 MFS, $200,000 single, $200,000 head of household, $250,000 qualifying widow(er). The thresholds are not indexed for inflation. Gains from the sale of investment real estate (including a second home that is not a primary residence) are included in net investment income.</span></td><td class="small">after-tax module (3.8% surtax toggle)</td><td class="src"><a href="https://www.irs.gov/newsroom/questions-and-answers-on-the-net-investment-income-tax" rel="noopener noreferrer" title="IRS, Questions and Answers on the Net Investment Income Tax">IRS, Questions and Answers on the Net Investment Income Tax</a></td></tr><tr><td><code>FED-1031</code></td><td><b>Section 1031 like-kind exchange defers gain; real property only</b><br><span class="tiny muted">Under the Tax Cuts and Jobs Act, section 1031 applies only to exchanges of real property. Real properties are generally like-kind regardless of whether improved or unimproved. Real property in the United States is not like-kind to real property outside the United States. Reported on Form 8824.</span></td><td class="small">after-tax module (deferral branch); the 1031 path requires an identified replacement and a qualified intermediary, neither of which exists yet</td><td class="src"><a href="https://www.irs.gov/businesses/small-businesses-self-employed/like-kind-exchanges-real-estate-tax-tips" rel="noopener noreferrer" title="IRS, Like-kind exchanges — Real estate tax tips">IRS, Like-kind exchanges — Real estate tax tips</a></td></tr><tr><td><code>FED-DEP</code></td><td><b>Land is never depreciable; buildings are</b><br><span class="tiny muted">IRS: &#x27;Land is never depreciable, although buildings and certain land improvements may be.&#x27; Property placed in service after 1986 generally must use MACRS. A restaurant building is nonresidential real property; the allocation between the nondepreciable land and the depreciable building determines the recapture exposure on sale.</span></td><td class="small">after-tax module (land/building split input)</td><td class="src"><a href="https://www.irs.gov/taxtopics/tc704" rel="noopener noreferrer" title="IRS Topic no. 704, Depreciation">IRS Topic no. 704, Depreciation</a></td></tr><tr><td><code>FED-DEP2</code></td><td><b>MACRS recovery period for nonresidential real property</b><br><span class="tiny muted">Not read during this session. IRS Publication 946 is the controlling source; the specific 39-year versus 31.5-year distinction by placed-in-service date was not transcribed here.</span></td><td class="small">flagged as unverified; the calculator therefore asks for accumulated depreciation directly instead of deriving it</td><td class="src"><a href="https://www.irs.gov/publications/p946" rel="noopener noreferrer" title="IRS Publication 946, How To Depreciate Property">IRS Publication 946, How To Depreciate Property</a><br><span class="badge warn">flagged</span></td></tr></tbody>
+  </table>
+</div>
+<h3>California</h3>
+<div class="table-wrap">
+  <table>
+    <caption>California rules, read verbatim from Franchise Tax Board pages</caption>
+    <thead><tr><th>ID</th><th>Rule</th><th>Used for</th><th>Official source</th></tr></thead>
+    <tbody><tr><td><code>CA-NOLOWER</code></td><td><b>California has no lower rate for capital gains</b><br><span class="tiny muted">Franchise Tax Board: &#x27;California does not have a lower rate for capital gains. All capital gains are taxed as ordinary income.&#x27; Reported on California Schedule D (540).</span></td><td class="small">after-tax module (state rate applied to the full gain)</td><td class="src"><a href="https://www.ftb.ca.gov/file/personal/income-types/capital-gains-and-losses.html" rel="noopener noreferrer" title="California Franchise Tax Board, Capital gains and losses (last updated 2026-01-28)">California Franchise Tax Board, Capital gains and losses (last updated 2026-01-28)</a></td></tr><tr><td><code>CA-RATES2025</code></td><td><b>California 2025 rate schedules (used for the top marginal rate)</b><br><span class="tiny muted">Schedule X single: 9.30% from $72,724 to $371,479; 10.30% to $445,771; 11.30% to $742,953; 12.30% at $742,953 and over. Schedule Y married filing jointly: 9.30% from $145,448 to $742,958; 10.30% to $891,542; 11.30% to $1,485,906; 12.30% at $1,485,906 and over.</span></td><td class="small">after-tax module (marginal-rate selector)</td><td class="src"><a href="https://www.ftb.ca.gov/forms/2025/2025-540-tax-rate-schedules.pdf" rel="noopener noreferrer" title="California Franchise Tax Board, 2025 California Tax Rate Schedules">California Franchise Tax Board, 2025 California Tax Rate Schedules</a></td></tr><tr><td><code>CA-RATES2024</code></td><td><b>California 2024 rate schedules</b><br><span class="tiny muted">Schedule X single: 9.30% from $70,606 to $360,659; 10.30% to $432,787; 11.30% to $721,314; 12.30% at $721,314 and over. Schedule Y MFJ: 9.30% from $141,212 to $721,318; 10.30% to $865,574; 11.30% to $1,442,628; 12.30% at $1,442,628 and over.</span></td><td class="small">comparison of bracket drift; 2026 schedules were not published at the time of reading</td><td class="src"><a href="https://www.ftb.ca.gov/forms/2024/2024-540-tax-rate-schedules.pdf" rel="noopener noreferrer" title="California Franchise Tax Board, 2024 California Tax Rate Schedules">California Franchise Tax Board, 2024 California Tax Rate Schedules</a></td></tr><tr><td><code>CA-1031</code></td><td><b>California requires FTB 3840 when California property is exchanged for out-of-state property</b><br><span class="tiny muted">For taxable years beginning on or after 1 January 2014, R&amp;TC sections 18032 and 24953 require California resident and nonresident taxpayers who defer gain on the sale or exchange of California property for out-of-state replacement property under IRC 1031 to file an annual information return. All taxpayers, regardless of residence, who exchange California real property for like-kind property outside California must file form FTB 3840.</span></td><td class="small">after-tax module (California-source gain retention on a 1031 out of state)</td><td class="src"><a href="https://www.ftb.ca.gov/forms/2025/2025-1100-publication.pdf" rel="noopener noreferrer" title="FTB Publication 1100, 2025 Taxation of Nonresidents and Individuals Who Change Residency">FTB Publication 1100, 2025 Taxation of Nonresidents and Individuals Who Change Residency</a></td></tr><tr><td><code>CA-SOURCE</code></td><td><b>California sources real-property gain to where the property is located</b><br><span class="tiny muted">FTB: &#x27;California taxes real property based upon where the property is located.&#x27; Example 16 in Publication 1100: a Texas resident exchanges a California condominium for Texas property, defers a $15,000 gain, later sells the Texas property recognising $20,000; the $15,000 deferred gain &#x27;has a source in California and is taxable by California.&#x27;</span></td><td class="small">important if OWNER-1 is not a California resident: moving out of state does not remove California tax on this property&#x27;s gain</td><td class="src"><a href="https://www.ftb.ca.gov/forms/2025/2025-1100-publication.pdf" rel="noopener noreferrer" title="FTB Publication 1100 (2025)">FTB Publication 1100 (2025)</a></td></tr><tr><td><code>CA-PROP13</code></td><td><b>Proposition 13 assessment and the 2% annual cap; reassessment on change of ownership</b><br><span class="tiny muted">Los Angeles County Assessor: Proposition 13 &#x27;limits a property owner&#x27;s general levy tax to 1 percent of the assessed value&#x27; and &#x27;mandated that a property&#x27;s assessed value could not increase by more than 2 percent from one year to the next except in the event of a change in ownership, new construction, the property receives a temporary decline in assessed value (Proposition 8), or the property is designated a restricted historical property (Mills Act).&#x27;</span></td><td class="small">hold-case carrying cost; a sale resets the buyer&#x27;s basis and therefore the buyer&#x27;s tax, which affects the price a buyer can pay</td><td class="src"><a href="https://assessor.lacounty.gov/real-estate-toolkit/proposition-13" rel="noopener noreferrer" title="Los Angeles County Assessor, Proposition 13">Los Angeles County Assessor, Proposition 13</a></td></tr><tr><td><code>CA-PROP8</code></td><td><b>Decline-in-value (Proposition 8) temporary assessment relief</b><br><span class="tiny muted">The Assessor states that it will begin accepting Decline-in-Value applications for the 2026-2027 tax year on 2 July 2026 and that the deadline to file is 30 November 2026.</span></td><td class="small">a downside hedge on the hold case; not modelled in the calculator because no assessed value is known</td><td class="src"><a href="https://assessor.lacounty.gov/decline-in-value" rel="noopener noreferrer" title="Los Angeles County Assessor, Decline-in-Value">Los Angeles County Assessor, Decline-in-Value</a></td></tr></tbody>
+  </table>
+</div>
+<h3>Labour cost pressure on the tenant</h3>
+<div class="table-wrap">
+  <table>
+    <caption>Why the tenant's cost base matters to a renewal
+      <span class="cap-sub">A tenant whose labour cost is rising faster than its sales has less room to absorb a rent increase.</span></caption>
+    <thead><tr><th>ID</th><th>Rule</th><th>Used for</th><th>Official source</th></tr></thead>
+    <tbody><tr><td><code>CA-MW</code></td><td><b>California minimum wage, effective 1 January 2026</b><br><span class="tiny muted">Division of Labor Standards Enforcement: &#x27;Effective January 1, 2026, the minimum wage is $16.90 per hour for all employers, not otherwise covered by a higher minimum wage specific to an industry or a locality.&#x27; After reaching $15 the rate is adjusted annually by CPI-W, cannot be lowered, and is capped at a 3.5% annual increase.</span></td><td class="small">tenant cost pressure; the single largest operating input at a quick-service restaurant</td><td class="src"><a href="https://www.dir.ca.gov/dlse/faq_minimumwage.htm" rel="noopener noreferrer" title="California Department of Industrial Relations, Minimum Wage FAQ">California Department of Industrial Relations, Minimum Wage FAQ</a></td></tr><tr><td><code>CA-FFMW</code></td><td><b>Fast-food minimum wage (AB 1228)</b><br><span class="tiny muted">The Industrial Relations FAQ confirms a higher minimum wage for fast-food workers effective 1 April 2024 and links to a dedicated FAQ. The specific current dollar rate was not read from an official page during this session.</span></td><td class="small">flagged: the widely reported $20.00 rate was NOT confirmed on an official page here, so it is not used as a value</td><td class="src"><a href="https://www.dir.ca.gov/dlse/Fast-Food-Minimum-Wage-FAQ.htm" rel="noopener noreferrer" title="California Department of Industrial Relations, Minimum Wage FAQ (fast-food link)">California Department of Industrial Relations, Minimum Wage FAQ (fast-food link)</a><br><span class="badge warn">flagged</span></td></tr></tbody>
+  </table>
+</div>
+
+<h2>Scenarios &mdash; explicitly labelled as assumptions</h2>
+<div class="notice warn">
+  <p>The brief asks to distinguish observations from assumptions. <b>Everything below is an assumption.</b> None of it
+  is used as a value on any other page. It exists to name the branches a decision has to survive, not to forecast.</p>
+</div>
+<div class="grid two"><div class="card"><h3>Business as usual <span class="badge gray">SC-1</span></h3><p class="small"><b>Premise.</b> Tenant performs through expiry, renews or is replaced at or near market, cap rates hold, no capital event larger than routine maintenance.</p><p class="small"><b>What changes.</b> Rent grows on the lease schedule; property tax grows no faster than the Proposition 13 cap of 2% absent a change of ownership.</p><p class="small" style="color:var(--stop)"><b>Assumption, not finding.</b> That the tenant renews. That is an assumption, not a fact, and it is the single most important one in the file.</p><p class="small"><b>What would disconfirm it.</b> A notice of non-renewal, or inclusion of the unit in a closure programme.</p></div><div class="card"><h3>Rate and cap-rate normalisation <span class="badge gray">SC-2</span></h3><p class="small"><b>Premise.</b> Cap rates move against the owner because long rates rise or because lenders price short-lease single-tenant risk wider.</p><p class="small"><b>What changes.</b> Value moves inversely with the cap rate. A 50 basis point move on a 5.50% cap is roughly an 8% value change before any income change.</p><p class="small" style="color:var(--stop)"><b>Assumption, not finding.</b> The direction and size of the cap-rate move. Nothing in this repository supports a specific number, which is why the calculator asks for it.</p><p class="small"><b>What would disconfirm it.</b> Closed comparable trades at stable cap rates.</p></div><div class="card"><h3>Tenant credit event <span class="badge gray">SC-3</span></h3><p class="small"><b>Premise.</b> The operator stops paying or vacates before expiry, inside a soft leasing market.</p><p class="small"><b>What changes.</b> Rent stops, the owner carries taxes, insurance and security, and the site may need re-tenanting capex.</p><p class="small" style="color:var(--stop)"><b>Assumption, not finding.</b> The vacancy duration and re-tenanting cost. Both are user inputs in the calculator.</p><p class="small"><b>What would disconfirm it.</b> A confirmed renewal, or a guaranty from a stronger obligor than assumed.</p></div><div class="card"><h3>Black swan: regional catastrophe <span class="badge gray">SC-4</span></h3><p class="small"><b>Premise.</b> A damaging earthquake, or a wildfire-driven regional insurance and power event, closes the unit for a period and reprices insurance across the region.</p><p class="small"><b>What changes.</b> Loss of rent for the closure period, repair cost net of insurance, a higher premium afterwards, and a thinner buyer pool at exit.</p><p class="small" style="color:var(--stop)"><b>Assumption, not finding.</b> The closure length, the uninsured share, and the premium shock. No official source supplies these for this parcel, and they are inputs, not findings.</p><p class="small"><b>What would disconfirm it.</b> A parcel-specific hazard screen showing no special-flood or high-fire designation plus confirmed earthquake cover with a serviceable deductible.</p></div><div class="card"><h3>Black swan: Los Angeles-specific shock outside the property <span class="badge gray">SC-5</span></h3><p class="small"><b>Premise.</b> A regional event that does not damage the building but damages demand: a prolonged entertainment or port disruption, a large employer exit, or a sustained out-migration.</p><p class="small"><b>What changes.</b> Trade-area sales fall, tenant renewal appetite falls, and the cap rate a buyer will pay widens even if the building is intact.</p><p class="small" style="color:var(--stop)"><b>Assumption, not finding.</b> That such an event occurs and its magnitude. Not modelled numerically; it is a qualitative branch on the Risk page.</p><p class="small"><b>What would disconfirm it.</b> Sustained employment growth with sector diversification. The verified BLS data currently show exactly that pattern in part: health and education +3.8% offsetting information -5.7%.</p></div></div>
+
+<h2>Decision risks, and what would falsify each one</h2>
+<div class="table-wrap">
+  <table>
+    <caption>Risk register for the decision itself
+      <span class="cap-sub">A decision without a falsifier cannot be reviewed. Each row names the observation that would show the branch was wrong.</span></caption>
+    <thead><tr><th>Branch</th><th>Risk if taken</th><th>Risk if not taken</th><th>Early signal that it was wrong</th></tr></thead>
+    <tbody>
+      <tr><td><b>Sell now</b></td><td class="small">Selling into a thin bid and capitalising a short lease at its worst point in the cycle.</td><td class="small">The cap rate widens and the short-lease discount compounds as expiry approaches.</td><td class="small">The tenant renews at or above market rent within the following year.</td></tr>
+      <tr><td><b>Renew then sell</b></td><td class="small">Granting a below-market rent for a decade in exchange for a term that buyers discount anyway.</td><td class="small">Losing the chance to market a longer-lease asset, and carrying capital events in the interim.</td><td class="small">Comparable renewed assets trade at cap rates no tighter than short-lease ones.</td></tr>
+      <tr><td><b>Hold to expiry</b></td><td class="small">An uninsured or underinsured event, or a roof or lot failure, landing inside the term.</td><td class="small">Doing nothing while the lease shortens is itself a decision to accept that discount.</td><td class="small">Insurance non-renewal, or a capital item due before expiry that the rent will not fund.</td></tr>
+      <tr><td><b>1031 exchange</b></td><td class="small">Rushing into a poor replacement to beat the identification deadline, and inheriting a worse asset.</td><td class="small">Paying tax now on a gain that could have been deferred.</td><td class="small">No credible replacement identified within the first 30 days of marketing.</td></tr>
+      <tr><td><b>Redevelop</b></td><td class="small">Entitlement delay, construction cost overrun, and lost rent during the build.</td><td class="small">Leaving land value unrealised if the district is up-zoned around the site.</td><td class="small">The zoning and General Plan designation do not support higher intensity.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Wealth preservation and growth: the balance the brief asks for</h2>
+<div class="grid two">
+  <div class="card">
+    <h3>The case for a lower-risk path</h3>
+    <p class="small">A single tenant, a single parcel and a lease ending inside five years is a concentrated position
+    with a dated cliff. If the owner's objective includes wealth preservation, concentration plus a known expiry is the
+    risk to reduce. A sale converts an illiquid, single-obligor position into cash or into a diversified replacement,
+    and it removes the option-window risk entirely.</p>
+    <p class="small"><b>But:</b> a sale now realises the gain and pays the tax, and the tax rate depends on facts
+    (basis, depreciation, state of residence) that are not yet in hand. Selling before those are known is itself a risk.</p>
+  </div>
+  <div class="card">
+    <h3>The case for keeping the income</h3>
+    <p class="small">The verified local evidence does not support a deteriorating market: metro unemployment fell to
+    4.4%, employment is growing, and the health and education sector that anchors weekday lunch traffic added 49,100
+    jobs in a year. Meanwhile California house prices grew only 0.6% over four quarters, so there is no evident
+    price bubble forcing a sale.</p>
+    <p class="small"><b>But:</b> wages in the Los Angeles CSA rose 3.9% against local CPI of 3.7%, and the tenant's
+    labour cost is set by statute. A tenant whose cost base grows faster than its sales is a tenant that negotiates rent
+    hard, which is the reason the renewal case needs a market rent before it can be argued.</p>
+  </div>
+</div>
+
+<div class="notice">
+  <p><strong>The balanced answer the evidence supports.</strong> Reduce the irreversible risks first, and do not make
+  an irreversible commitment until the three numbers exist. Concretely: close the lease and notice-calendar gate, get
+  the basis from the CPA, and get three dated comparables. Those three steps are inexpensive, they are mutually
+  independent, and each one removes a way the decision can go wrong. Everything on this page is built to be used the
+  moment they are done.</p>
+</div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <strong>Parcel Decision Workspace</strong> &mdash; built 2026-11-25.<br>
+      An independent audit pass. Main workspace: <a href="../../workspace/index.html">/workspace/</a>. Root: <a href="../../index.html">/</a>.<br>
+      Public product. Contains no address, parcel number, owner name, lease text or financial figure belonging to any person or entity.
+      Private material is held offline with authorised advisers.
+    </div>
+    <nav aria-label="Footer">
+      <a href="sources.html">Sources</a>
+      <a href="flagged.html">Flagged for Review</a>
+      <a href="questions.html">Open Questions</a>
+      <a href="advisor-summary.html">One-Page Summary</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

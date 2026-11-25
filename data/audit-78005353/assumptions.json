@@ -1,0 +1,58 @@
+{
+  "meta": {
+    "title": "Assumptions and scenarios — kept separate from observations",
+    "compiled": "2026-11-25",
+    "rule": "The brief asks for observations and assumptions to be distinguished. Everything in this file is an ASSUMPTION. It is not a finding, it is not sourced, and it is never presented as a value on any other page. The calculator requires the user to type these in."
+  },
+  "scenarios": [
+    {
+      "id": "SC-1",
+      "name": "Business as usual",
+      "premise": "Tenant performs through expiry, renews or is replaced at or near market, cap rates hold, no capital event larger than routine maintenance.",
+      "what_changes": "Rent grows on the lease schedule; property tax grows no faster than the Proposition 13 cap of 2% absent a change of ownership.",
+      "what_is_assumed": "That the tenant renews. That is an assumption, not a fact, and it is the single most important one in the file.",
+      "observable_that_would_disconfirm": "A notice of non-renewal, or inclusion of the unit in a closure programme."
+    },
+    {
+      "id": "SC-2",
+      "name": "Rate and cap-rate normalisation",
+      "premise": "Cap rates move against the owner because long rates rise or because lenders price short-lease single-tenant risk wider.",
+      "what_changes": "Value moves inversely with the cap rate. A 50 basis point move on a 5.50% cap is roughly an 8% value change before any income change.",
+      "what_is_assumed": "The direction and size of the cap-rate move. Nothing in this repository supports a specific number, which is why the calculator asks for it.",
+      "observable_that_would_disconfirm": "Closed comparable trades at stable cap rates.",
+      "verified_context_only": "The U.S. 10-year Treasury par yield was 4.19% on 2 January 2026 per the U.S. Treasury daily yield curve; that is a rate observation, not a cap-rate forecast.",
+      "source_url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026"
+    },
+    {
+      "id": "SC-3",
+      "name": "Tenant credit event",
+      "premise": "The operator stops paying or vacates before expiry, inside a soft leasing market.",
+      "what_changes": "Rent stops, the owner carries taxes, insurance and security, and the site may need re-tenanting capex.",
+      "what_is_assumed": "The vacancy duration and re-tenanting cost. Both are user inputs in the calculator.",
+      "observable_that_would_disconfirm": "A confirmed renewal, or a guaranty from a stronger obligor than assumed."
+    },
+    {
+      "id": "SC-4",
+      "name": "Black swan: regional catastrophe",
+      "premise": "A damaging earthquake, or a wildfire-driven regional insurance and power event, closes the unit for a period and reprices insurance across the region.",
+      "what_changes": "Loss of rent for the closure period, repair cost net of insurance, a higher premium afterwards, and a thinner buyer pool at exit.",
+      "what_is_assumed": "The closure length, the uninsured share, and the premium shock. No official source supplies these for this parcel, and they are inputs, not findings.",
+      "observable_that_would_disconfirm": "A parcel-specific hazard screen showing no special-flood or high-fire designation plus confirmed earthquake cover with a serviceable deductible.",
+      "official_programmes_to_run_privately": [
+        "https://msc.fema.gov/portal/search",
+        "https://earthquake.usgs.gov/nshmp/",
+        "https://experience.arcgis.com/experience/5065c998b4b0462f9ec3c6c226c610a9"
+      ]
+    },
+    {
+      "id": "SC-5",
+      "name": "Black swan: Los Angeles-specific shock outside the property",
+      "premise": "A regional event that does not damage the building but damages demand: a prolonged entertainment or port disruption, a large employer exit, or a sustained out-migration.",
+      "what_changes": "Trade-area sales fall, tenant renewal appetite falls, and the cap rate a buyer will pay widens even if the building is intact.",
+      "what_is_assumed": "That such an event occurs and its magnitude. Not modelled numerically; it is a qualitative branch on the Risk page.",
+      "observable_that_would_disconfirm": "Sustained employment growth with sector diversification. The verified BLS data currently show exactly that pattern in part: health and education +3.8% offsetting information -5.7%.",
+      "source_url": "https://www.bls.gov/regions/west/summary/blssummary_losangeles.pdf"
+    }
+  ],
+  "calculator_defaults_notice": "The calculator opens with illustrative numbers so that the mechanism is visible. Those numbers are labelled 'illustrative default — replace with your own' in the interface and are never used in any table, chart or sentence on this site."
+}

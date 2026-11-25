@@ -1,0 +1,147 @@
+{
+  "meta": {
+    "title": "Tenant and franchisor evidence (public, official filings only)",
+    "compiled": "2026-11-25",
+    "why": "A net lease is only as strong as the obligor. The only official evidence about the brand behind this lease is the franchisor's own SEC filings and the state's labour regulations. Everything below is quoted from those.",
+    "caveat": "These are system-level facts about Jack in the Box Inc. They say nothing about the specific restaurant at PARCEL-A, and must not be read as if they did."
+  },
+  "identity": {
+    "registrant": "Jack in the Box Inc.",
+    "cik": "0000807882",
+    "state_of_incorporation": "Delaware",
+    "sic": "5812 — Retail-Eating Places",
+    "fiscal_year_end": "September (FY2025 ended 28 September 2025)",
+    "latest_10k_filed": "2025-11-19",
+    "edgar_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000807882&type=10-K&dateb=&owner=include&count=10"
+  },
+  "facts": [
+    {
+      "id": "JIB-01",
+      "label": "Jack in the Box restaurants at FY2025 year-end",
+      "value": 2136,
+      "unit": "restaurants",
+      "note": "Primarily in the western and southern United States, including two in Guam and three in Mexico.",
+      "source_name": "Jack in the Box Inc. Form 10-K, FY ended 2025-09-28, Item 1 Business",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm",
+      "verified": true
+    },
+    {
+      "id": "JIB-02",
+      "label": "Jack in the Box franchised share",
+      "value": 93,
+      "unit": "% of units (1,986 of 2,136)",
+      "note": "The system is overwhelmingly franchised, so the obligor on a lease is most likely a franchisee rather than the parent. That has to be confirmed from the lease, not assumed.",
+      "source_name": "Jack in the Box Inc. Form 10-K FY2025, Item 1 Business",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm",
+      "verified": true
+    },
+    {
+      "id": "JIB-03",
+      "label": "Standard Jack in the Box franchise term and royalty",
+      "value": "20-year term; initial franchise fee generally $50,000; royalty and marketing generally 5.0% of gross sales",
+      "unit": "text",
+      "note": "Some legacy agreements carry higher royalties. This matters for the renewal case: an older agreement may sit above current terms, which changes what the tenant will accept.",
+      "source_name": "Jack in the Box Inc. Form 10-K FY2025, Item 1 Business — Franchising Program",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm",
+      "verified": true
+    },
+    {
+      "id": "JIB-04",
+      "label": "Del Taco restaurants at FY2025 year-end",
+      "value": 576,
+      "unit": "restaurants (444, or 77%, franchised)",
+      "note": "Context for the 2025 strategic review, below.",
+      "source_name": "Jack in the Box Inc. Form 10-K FY2025, Item 1 Business",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm",
+      "verified": true
+    },
+    {
+      "id": "JIB-05",
+      "label": "Disclosed restaurant closure programme",
+      "value": "A 'restaurant closure program' is one of three key initiatives in the 2025 'Jack on Track' plan, described as improving system health and encouraging franchisees to reinvest",
+      "unit": "text",
+      "note": "This is the most decision-relevant disclosure found. It is system-level. It does not name units. Do not read it as applying to PARCEL-A.",
+      "source_name": "Jack in the Box Inc. Form 10-K FY2025, Item 1 Business — Business Strategy",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm",
+      "verified": true
+    },
+    {
+      "id": "JIB-06",
+      "label": "Del Taco strategic alternatives",
+      "value": "Management determined that a sale of Del Taco was the optimal path forward",
+      "unit": "text",
+      "note": "A corporate transaction of this kind can change franchisee support and the parent's appetite for lease guaranties.",
+      "source_name": "Jack in the Box Inc. Form 10-K FY2025, Item 1 Business — Business Strategy",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm",
+      "verified": true
+    },
+    {
+      "id": "JIB-07",
+      "label": "Activist proxy contest disclosed",
+      "value": "The company disclosed it was engaged in a proxy contest with an activist stockholder intending to nominate two board candidates",
+      "unit": "text",
+      "note": "Disclosed as a risk factor; irrelevant to rent but relevant to volatility in the franchisor's plans.",
+      "source_name": "Jack in the Box Inc. Form 10-K FY2025, Risk Factors",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm",
+      "verified": true
+    },
+    {
+      "id": "JIB-08",
+      "label": "Prototype size and format",
+      "value": "Approximately 1,372 sq ft; supports a Y-lane drive-thru, walk-up window, dual assembly kitchens and a dedicated pickup window; the prototype portfolio includes an off-premise-only design",
+      "unit": "text",
+      "note": "A small footprint on a drive-thru pad is a relatively replaceable building, which affects both rebuild cost and the landlord's renewal leverage.",
+      "source_name": "Jack in the Box Inc. Form 10-K FY2025, Item 1 — Site Selection and Design",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm",
+      "verified": true
+    },
+    {
+      "id": "JIB-09",
+      "label": "Site selection criteria used by the franchisor",
+      "value": "Population density, traffic, competition, visibility and access, parking, surrounding businesses, and market penetration",
+      "unit": "text",
+      "note": "Useful because it tells the owner what a renewal negotiation will actually be about. Each of these is a question in the register.",
+      "source_name": "Jack in the Box Inc. Form 10-K FY2025, Item 1 — Site Selection and Design",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm",
+      "verified": true
+    },
+    {
+      "id": "JIB-10",
+      "label": "Disclosed dependence on a single distributor",
+      "value": "A single primary food service distributor supplies substantially all food, packaging and supplies, under contracts running through August 2027",
+      "unit": "text",
+      "note": "A supply-chain single point of failure inside the lease term. Relevant to business-as-usual disruption, not to a black swan.",
+      "source_name": "Jack in the Box Inc. Form 10-K FY2025, Item 1 — Supply Chain",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm",
+      "verified": true
+    },
+    {
+      "id": "JIB-11",
+      "label": "California labour exposure acknowledged in the filing",
+      "value": "Pay ranges for California restaurants reflect 'pay requirements under AB 1228 regulation'",
+      "unit": "text",
+      "note": "The franchisor itself names the California fast-food wage statute as a driver of restaurant-level pay. The specific rate is not asserted here (see Flagged FR-07).",
+      "source_name": "Jack in the Box Inc. Form 10-K FY2025, Item 1 — Human Capital Management",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm",
+      "verified": true
+    }
+  ],
+  "analysis": [
+    {
+      "heading": "What the filings support",
+      "points": [
+        "The system is large and almost entirely franchised, so the brand's balance sheet is not the same thing as the tenant's balance sheet. The lease, not the ticker, tells you who pays.",
+        "The franchisor has publicly disclosed both a closure programme and a strategic review of its second brand. Neither names this unit, but together they indicate a system being actively pruned rather than expanded without constraint.",
+        "The disclosed site-selection criteria are the agenda for a renewal negotiation. Traffic, access, competition and parking are the four the owner can actually influence or evidence."
+      ]
+    },
+    {
+      "heading": "What the filings cannot support",
+      "points": [
+        "They cannot tell you this unit's sales, rent, term or renewal intent.",
+        "They cannot tell you whether this unit is inside the closure programme.",
+        "They cannot be used to forecast this trade area. A national filing is not a local economic model."
+      ]
+    }
+  ]
+}
