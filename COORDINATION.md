@@ -1195,3 +1195,24 @@ docs-only artifact while the source is the repository root — it hides every ot
 
 **Verification after the fix:** recorded below by the integration step (live URL checks for
 `/audit/index.html`, `/audit/flagged.html`, `/verification/REPORT.md` and the root landing page).
+
+---
+
+## Post-fix verification — `S-62b1c0c2` (2026-11-25, 14:19 UTC)
+
+| Check | Result |
+|---|---|
+| PR #17 (site + audit tooling) | <https://github.com/kanlerxz87-cyber/Jackbox1/pull/17> — merged `01f783b` |
+| PR #19 (publish record) | <https://github.com/kanlerxz87-cyber/Jackbox1/pull/19> — merged `df9ed31` |
+| PR #22 (accuracy correction) | <https://github.com/kanlerxz87-cyber/Jackbox1/pull/22> — merged `a8b20fa` |
+| PR #23 (deploy incident + rebuild trigger) | <https://github.com/kanlerxz87-cyber/Jackbox1/pull/23> — merged `c1bf5c4` |
+| Workflow `430390450` (`Deploy GitHub Pages`, docs-only artifact) | `disabled_manually` via the Actions API; no file edited |
+| Final Pages build | commit `c1bf5c4`, status `built`, 2026-11-25T14:19:20Z; legacy `pages build and deployment` run **success** |
+| Live URL checks after the fix | `/`, `/audit/index.html`, `/audit/gates.html`, `/audit/risks.html`, `/audit/requirements.html`, `/verification/SOURCES.md`, `/verification/REVIEW.md`, `/SITE_REVIEW.md`, `/PRIVACY.md` all returned content; corrected flags (`F-11`, `F-13`, `F-20`) are present in the live `/verification/REVIEW.md`. |
+| Local validator | `python3 verification/check.py` → PASS 16/16; 432 table rows with official links; 22 pages; 25 published files privacy-scanned. |
+
+**Conclusion:** the site is live and serves the full repository root again. The docs-only deployment incident is
+resolved; F-18 remains on the Flagged for Review page as a change request to the workflow owner. Two
+`fetch_page` requests to `/audit/privacy.html` and `/verification/REPORT.md` returned tool-side errors after
+previously being cached as 404s during the incident; equivalent fresh URLs in the same directories resolved,
+and both files are confirmed present on `main`. No personal information is published.
