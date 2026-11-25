@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>After-tax module · Anonymous NNN workspace</title>
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="privacy-bar">Tax rules are public. Owner numbers are not. <a href="privacy.html">Privacy rules</a></div>
+  <div class="layout">
+    <nav class="side" id="nav"></nav>
+    <main id="main">
+      <h1>After-tax module — verified rules, blank owner facts</h1>
+      <p class="lede">Turns the verified tax rules into one number the owner can compare with the hold case — but only after private inputs are typed into the browser calculator. This page does not compute the owner’s tax.</p>
+      <div id="t-tax"></div>
+      <h2>Ordering used in the calculator</h2>
+      <ol>
+        <li>Amount realized ≈ sale price − selling costs (user entries).</li>
+        <li>Adjusted basis ≈ cost basis − accumulated depreciation (user entries).</li>
+        <li>Realized gain = amount realized − adjusted basis.</li>
+        <li>Unrecaptured §1250 layer = min(accumulated depreciation, realized gain), federal maximum 25% (<a href="https://www.irs.gov/taxtopics/tc409" target="_blank" rel="noopener">IRS Topic 409</a>).</li>
+        <li>Residual long-term gain uses the 0/15/20% band from Topic 409 and the user’s taxable-income input.</li>
+        <li>NIIT 3.8% if the user says MAGI is over the statutory threshold (<a href="https://www.irs.gov/newsroom/questions-and-answers-on-the-net-investment-income-tax" target="_blank" rel="noopener">IRS NIIT FAQ</a>).</li>
+        <li>California: user-entered marginal rate; booklet documents 12.30% top bracket and 1% Behavioral Health Services Tax over $1,000,000 (<a href="https://www.ftb.ca.gov/forms/2025/2025-540-booklet.html" target="_blank" rel="noopener">FTB 2025 540 booklet</a>). California generally taxes capital gain as ordinary income — confirm with the CPA; this site does not restate the entire rate schedule.</li>
+        <li>§1031: if elected, only boot is treated as recognized in this simplified model (<a href="https://www.irs.gov/businesses/small-businesses-self-employed/like-kind-exchanges-real-estate-tax-tips" target="_blank" rel="noopener">IRS like-kind tips</a>). Debt-relief boot is not auto-calculated.</li>
+      </ol>
+      <div class="callout warn">The calculator is not a substitute for Form 1040, Form 4797, Form 8824, or a California return. Cost-segregation §1245 recapture is not modeled.</div>
+      <p><a class="btn" href="calculator.html">Open the private calculator</a></p>
+      <footer class="site">Rules verified. Owner tax is blank.</footer>
+    </main>
+  </div>
+  <script src="js/nav.js"></script>
+  <script src="js/tables.js"></script>
+  <script>
+    fetch("data/findings.json").then(function (r) { return r.json(); }).then(function (d) {
+      renderTable(document.getElementById("t-tax"), d.tax_rules, COLS);
+    });
+  </script>
+</body>
+</html>

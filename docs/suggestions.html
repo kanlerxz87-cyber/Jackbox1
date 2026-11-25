@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Suggestions · Anonymous NNN workspace</title>
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="privacy-bar">Review suggestions here before changing the site or the decision process. <a href="privacy.html">Privacy rules</a></div>
+  <div class="layout">
+    <nav class="side" id="nav"></nav>
+    <main id="main">
+      <h1>Suggestions — review before implementing</h1>
+      <p class="lede">This page is the change-control queue. Nothing here is auto-implemented. Pick a path, then edit. Do not mix a site change with a sell/renew commitment.</p>
+
+      <h2>Decision-process suggestions</h2>
+      <div class="table-wrap">
+        <table class="data">
+          <thead><tr><th>ID</th><th>Suggestion</th><th>Why</th><th>Risk if skipped</th><th>Recommended path</th></tr></thead>
+          <tbody>
+            <tr><td>S1</td><td>Order a lease abstract and a notice calendar this week, offline</td><td>Expiration is only a 2030–2035 window</td><td>Missing an option-notice date</td><td>Counsel / abstractor; do not upload the PDF</td></tr>
+            <tr><td>S2</td><td>Run CGS / FEMA / CAL FIRE / MyHazards privately and store screenshots in the vault</td><td>W-04 is blank at parcel level</td><td>Uninsurable or unmodeled disaster</td><td>Adviser session, not this website</td></tr>
+            <tr><td>S3</td><td>Select census tracts once, freeze them, then pull ACS 5-year</td><td>W-01 still uses city/county proxies</td><td>Wrong income/population story</td><td>Private GIS; publish only aggregates</td></tr>
+            <tr><td>S4</td><td>Collect two written cap-rate/price quotes that state remaining term</td><td>Short-lease discount cannot be invented</td><td>Selling too cheap or holding too long</td><td>Fee appraisers or NNN desks; keep letters offline</td></tr>
+            <tr><td>S5</td><td>Have the CPA fill the calculator, then screenshot the output into the vault</td><td>After-tax number is the comparable the owner asked for</td><td>Comparing pre-tax sale to pre-tax hold</td><td>No tax returns on GitHub</td></tr>
+            <tr><td>S6</td><td>Ask the tenant, in writing, about renewal intent and any closure program</td><td>Brand closed 86 units in FY 2025</td><td>Learning of a closure after listing</td><td>Landlord notice under the lease</td></tr>
+            <tr><td>S7</td><td>Do not sign a listing or a renewal until G1–G6 are green</td><td>W-03</td><td>Irreversible tax or term mistake</td><td>Wait</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Site-improvement suggestions</h2>
+      <div class="table-wrap">
+        <table class="data">
+          <thead><tr><th>ID</th><th>Suggestion</th><th>Why it improves decisions</th><th>Do not do</th></tr></thead>
+          <tbody>
+            <tr><td>U1</td><td>After tracts are chosen, add a “trade-area ACS” table with no tract IDs</td><td>Closes W-01 without doxxing the corner</td><td>Do not publish a map pin</td></tr>
+            <tr><td>U2</td><td>Parse the official 10-K HTML for franchise rental revenue and add a verified row</td><td>The rental-revenue cell is blank on purpose today</td><td>Do not paste secondary-site scrapes</td></tr>
+            <tr><td>U3</td><td>Add FY 2023 SSS only from the 10-K if confirmed</td><td>Longer same-store series</td><td>Do not back-fill from blogs</td></tr>
+            <tr><td>U4</td><td>Add a printable “gate certificate” that stays red until localStorage flags are set</td><td>Stops accidental “we decided”</td><td>Do not auto-green gates</td></tr>
+            <tr><td>U5</td><td>Move this GitHub repo to private if not already intended public</td><td>The remote is public; more eyes on any slip</td><td>Do not put identifiers in issues</td></tr>
+            <tr><td>U6</td><td>Add Census Reporter + data.census.gov dual links on every ACS row after a data.census.gov fetch succeeds</td><td>Primary publisher preference</td><td>Do not delete Census Reporter until data.census.gov is captured</td></tr>
+            <tr><td>U7</td><td>Keep the calculator free of example dollar amounts</td><td>Example NOI would be mistaken for this property</td><td>Do not ship demo numbers</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Choose a path (human review)</h2>
+      <p>Suggested order if the goal is wealth preservation with manageable risk: <strong>S1 → S6 → S2 → S4 → S5 → S3 → S7</strong>. That sequence protects notice dates and insurance first, then price, then tax, then trade-area color. Site edits U5 and U7 can happen immediately; U1–U4 wait for data.</p>
+      <footer class="site">Implementing a suggestion requires a separate commit after someone checks this page.</footer>
+    </main>
+  </div>
+  <script src="js/nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,186 @@
+{
+  "meta": {
+    "dataset": "suggestions",
+    "version": "1.0",
+    "as_of": "2026-11-25",
+    "owner_session": "ses-41ea221b",
+    "purpose": "A dedicated review section. Each suggestion is a proposal with a stated benefit, cost, risk of adopting it, and a status. The owner reviews and chooses the path BEFORE anything is implemented. Nothing on this page has been auto-applied.",
+    "how_to_use": "Read the suggested path first, then the individual proposals. Each proposal carries a 'decision needed from you' line so a choice can be recorded. Statuses are: proposed, under review, rejected, adopted. None are adopted."
+  },
+  "suggested_path": {
+    "name": "Path A — Close the cheap gaps first, then decide",
+    "rationale": "Two of the fifteen gaps cost nothing and take days: the Census API key (G-02) and the decline-in-value filing whose window closes 2026-11-30. A third, the lease date (G-04), is already in the owner's filing cabinet. Those three move the project further than any additional research, because they turn an eight-year uncertainty into a date and turn city averages into tract figures.",
+    "steps": [
+      "Register a Census API key and re-run the documented tract query. (free, under an hour of work)",
+      "Pull the executed lease and write down four dates: option window opens, option deadline, tenant notice date, expiration. (free)",
+      "If assessed value exceeds market value, file the decline-in-value application before 2026-11-30. (free, dated)",
+      "Read the insurance binder and record premium, limits, deductibles, BI period and renewal date. (free)",
+      "Only then engage brokers for cap-rate opinions and order a property condition and seismic assessment. (paid, but now scoped to the right asset and term)"
+    ],
+    "why_not_alternative": "Path B (start with brokers and diligence) spends money before the term is even known. Pricing a 3-year asset and a 9-year asset are different exercises; doing the expensive work first risks having to redo it.",
+    "decision_needed_from_you": "Approve Path A, or choose Path B, or write your own order on the Flagged for Review page."
+  },
+  "paths": [
+    {
+      "id": "P-A",
+      "name": "Path A — cheap gaps first, then decide",
+      "cost": "Near zero for steps 1-4",
+      "speed_to_first_real_answer": "Under two weeks",
+      "main_risk": "The lease date turns out to be 2035, in which case there was less urgency than assumed — a good problem.",
+      "recommended": true
+    },
+    {
+      "id": "P-B",
+      "name": "Path B — engage brokers and diligence immediately",
+      "cost": "Property condition assessment plus appraisal plus broker opinions",
+      "speed_to_first_real_answer": "Four to six weeks, at higher cost",
+      "main_risk": "Diligence scoped before the remaining term is known may need redoing.",
+      "recommended": false
+    },
+    {
+      "id": "P-C",
+      "name": "Path C — sell now on the belief that rates and lease term are both against the owner",
+      "cost": "Transaction cost plus tax",
+      "speed_to_first_real_answer": "Immediate",
+      "main_risk": "Irreversible. The gain is taxed at California ordinary-income rates and 25% recapture, and the §1031 clock starts on closing. Selling before reading the renewal option can also forfeit a valuable right.",
+      "recommended": false
+    },
+    {
+      "id": "P-D",
+      "name": "Path D — hold and do nothing until 2030",
+      "cost": "Deferred maintenance and unpriced insurance repricing",
+      "speed_to_first_real_answer": "Never",
+      "main_risk": "Insurance and capex risk accrue silently, and the option window could be missed entirely.",
+      "recommended": false
+    }
+  ],
+  "proposals": [
+    {
+      "id": "SG-01",
+      "tier": "site",
+      "proposal": "Keep the site working without the address by making every 'unverified' state visible rather than hidden.",
+      "benefit": "A reader can never mistake a reference-point figure for the parcel's figure. The site stays usable while remaining honest.",
+      "cost": "Nothing",
+      "risk": "The dashboard looks emptier than a confident-looking competitor page. That is the point.",
+      "decision_needed": "Confirm you want visible blanks rather than plausible-looking estimates.",
+      "status": "proposed"
+    },
+    {
+      "id": "SG-02",
+      "tier": "site",
+      "proposal": "Ship the calculator as a browser-only tool that never transmits inputs.",
+      "benefit": "Rent, basis, tax brackets and financing can all be modelled without any private data leaving the owner's machine or entering this repository.",
+      "cost": "Nothing",
+      "risk": "Nothing persists between visits; the reader must re-enter inputs.",
+      "decision_needed": "Accept the no-persistence trade-off, or request an export-to-file option instead.",
+      "status": "proposed"
+    },
+    {
+      "id": "SG-03",
+      "tier": "site",
+      "proposal": "Add a printable one-page advisor brief that contains no private figures.",
+      "benefit": "An adviser can be briefed in a single page without exposing the owner's finances on a website.",
+      "cost": "Nothing",
+      "risk": "The one-pager must be regenerated whenever the underlying data changes.",
+      "decision_needed": "None — already built and printable.",
+      "status": "proposed"
+    },
+    {
+      "id": "SG-04",
+      "tier": "analysis",
+      "proposal": "Treat the metro back-test result — strong mean reversion in 5-year appreciation — as the reason to model zero real appreciation by default.",
+      "benefit": "Prevents the most common error in this asset class: underwriting the last five years' growth forever.",
+      "cost": "Nothing",
+      "risk": "If the regime has genuinely changed, the default is too conservative. The calculator lets the reader override it.",
+      "decision_needed": "Accept zero real appreciation as the default, or set your own growth assumption.",
+      "status": "proposed"
+    },
+    {
+      "id": "SG-05",
+      "tier": "analysis",
+      "proposal": "Model the compound hazard case (damage + rent loss + no buyers) as the primary stress, rather than three separate shocks.",
+      "benefit": "Reflects the actual mechanism that destroys an individual owner's wealth: forced sale into a dead market.",
+      "cost": "Nothing",
+      "risk": "Qualitative only until insurance and condition documents arrive.",
+      "decision_needed": "Confirm the compound framing matches how you think about your exposure.",
+      "status": "proposed"
+    },
+    {
+      "id": "SG-06",
+      "tier": "process",
+      "proposal": "Consider §1031 before listing, not after closing.",
+      "benefit": "It is the only structural lever that changes the after-tax result without changing the price, and it cannot be elected retroactively.",
+      "cost": "Qualified intermediary fee if used",
+      "risk": "The 45-day identification is tight and can force a rushed replacement purchase — the reason MT-06 says to pre-identify candidates.",
+      "decision_needed": "Decide whether a replacement property strategy exists, before any listing.",
+      "status": "proposed"
+    },
+    {
+      "id": "SG-07",
+      "tier": "process",
+      "proposal": "Pin the renewal-notice dates even if you intend to sell.",
+      "benefit": "A live, unexpired option is a saleable feature; a lapsed one is not. This is the only irreversible item in the whole project.",
+      "cost": "An hour with the lease",
+      "risk": "None identified.",
+      "decision_needed": "Confirm the dates are now recorded in the private calendar.",
+      "status": "proposed"
+    },
+    {
+      "id": "SG-08",
+      "tier": "data",
+      "proposal": "Buy or build a proper 1/3/5-mile ring analysis instead of relying on city averages.",
+      "benefit": "Directly closes the owner's W-01 requirement. City-level income and population genuinely cannot substitute.",
+      "cost": "Free if built from Census tract data with a documented weighting method; paid if bought from a vendor",
+      "risk": "Vendor data is not official and would have to be labelled as non-official on the site.",
+      "decision_needed": "Choose build-from-Census or buy-from-vendor.",
+      "status": "proposed"
+    },
+    {
+      "id": "SG-09",
+      "tier": "data",
+      "proposal": "Add a quarterly data-refresh calendar pinned to release schedules rather than arbitrary dates.",
+      "benefit": "The unverified flags clear predictably; stale figures get caught.",
+      "cost": "Half a day per quarter",
+      "risk": "None identified.",
+      "decision_needed": "Confirm you want a recurring refresh, or a one-time snapshot.",
+      "status": "proposed"
+    },
+    {
+      "id": "SG-10",
+      "tier": "governance",
+      "proposal": "Adopt the Flagged for Review page as the permanent change-request queue.",
+      "benefit": "Every unverified item and irregularity has a permalink and a source, so a decision can be recorded against it rather than lost in email.",
+      "cost": "Nothing",
+      "risk": "None identified.",
+      "decision_needed": "Confirm this becomes the canonical review queue.",
+      "status": "proposed"
+    },
+    {
+      "id": "SG-11",
+      "tier": "analysis",
+      "proposal": "Resist the temptation to add a 'recommended' badge to any scenario until G-04 and G-06 close.",
+      "benefit": "Protects against a confident-looking answer that is really an invented cap rate plus an eight-year date window.",
+      "cost": "The dashboard has no headline verdict.",
+      "risk": "Stakeholders often want a one-word answer. The honest one-word answer today is 'not yet'.",
+      "decision_needed": "Accept 'not yet' as the current deliverable, or tell me which input you can supply first so it can change.",
+      "status": "proposed"
+    },
+    {
+      "id": "SG-12",
+      "tier": "process",
+      "proposal": "File the decline-in-value application before 2026-11-30.",
+      "benefit": "Reduces the property tax line — the biggest fixed expense in a NNN hold — for the 2026-2027 tax year. Free to file.",
+      "cost": "Nothing",
+      "risk": "Requires assessed value to exceed market value; the county page publishes the window and deadline, but eligibility depends on the parcel's actual assessment.",
+      "decision_needed": "Check the assessed value and file if eligible. This is time-critical.",
+      "status": "proposed",
+      "source_id": "S-019"
+    }
+  ],
+  "review_workflow": [
+    { "step": 1, "action": "Owner reads Path A through D and marks one as chosen (or writes a custom order)." },
+    { "step": 2, "action": "Owner goes through SG-01 to SG-12 and sets each to under review, rejected or adopted." },
+    { "step": 3, "action": "Only adopted items get implemented, in a separate commit, with the decision recorded in COORDINATION.md." },
+    { "step": 4, "action": "Anything still unverified stays on the Flagged for Review page regardless of adoption." }
+  ]
+}
