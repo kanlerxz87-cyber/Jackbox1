@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Privacy &amp;amp; Anonymisation · Jack in the Box — NNN Leasehold Decision Workspace</title>
+<meta name="description" content="Verified-source decision workspace for a single-tenant Jack in the Box under a triple-net lease in central Los Angeles.">
+<meta name="robots" content="index,follow">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="site">
+  <div class="wrap bar">
+    <div class="brand">Jack in the Box · NNN leasehold decision workspace
+      <span>Aggregate findings only — no owner, parcel or lease identifiers</span></div>
+    <div class="privacy">Privacy-first: anonymised by design</div>
+  </div>
+</header>
+<nav class="site" aria-label="Sections">
+  <div class="wrap">
+    <ul>
+      <li><a href="index.html">Overview</a></li>
+      <li><a href="questions.html">Questions &amp; Gaps</a></li>
+      <li><a href="economy.html">Trade Area</a></li>
+      <li><a href="tracts.html">Tract Evidence</a></li>
+      <li><a href="operator.html">Tenant Strength</a></li>
+      <li><a href="hazards.html">Hazard Screen</a></li>
+      <li><a href="tax.html">After-Tax</a></li>
+      <li><a href="market.html">Short-Lease Pricing</a></li>
+      <li><a href="model.html">Sell vs Hold</a></li>
+      <li><a href="gates.html">Decision Gates</a></li>
+      <li><a href="risks.html">Risk Register</a></li>
+      <li><a href="calculator.html">Calculator</a></li>
+      <li><a href="suggestions.html">Suggestions</a></li>
+      <li><a href="review.html">Flagged for Review</a></li>
+      <li><a href="sources.html">Sources</a></li>
+      <li><a href="summary.html">One-Page Summary</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+    </ul>
+  </div>
+</nav>
+<main>
+  <div class="wrap">
+    <div class="pagehead">
+      <p class="eyebrow">Policy</p>
+      <h1>Privacy &amp;amp; Anonymisation</h1>
+      <p class="lede">What is published, what never leaves the private workspace, and how the split is enforced in code.</p>
+    </div>
+
+<div class="notice ok">
+  <strong>Nothing personal is on this site, and nothing personal can be</strong>
+  The subject property is described as “a single-tenant Jack in the Box under a triple-net lease in central Los Angeles”.
+  That is the entire level of specificity. No address, APN, owner name, tenant entity name, lease term, rent figure,
+  loan balance, tax return detail or adviser name appears anywhere in this repository's published output.
+</div>
+
+<h2>The rule that governs this project</h2>
+<p class="lede">Personal and asset-identifying information is the highest-priority constraint, above completeness. When the
+two conflict, the site stays incomplete. That is why fourteen rows are blank rather than filled: filling them would have
+required publishing, or inferring from, information that belongs in a private file.</p>
+
+<h2>What is published versus what is private</h2>
+<div class="table-scroll">
+<table>
+<caption>The split is structural, not discretionary. The private folder is excluded from the published site by the generator.</caption>
+<thead><tr><th>Category</th><th>Where it lives</th><th>Published?</th></tr></thead>
+<tbody>
+<tr><td>Parcel identity — address, APN, legal description</td><td>Private workspace only</td><td><span class="badge b-unverified">never</span></td></tr>
+<tr><td>Owner identity, entity structure, personal finances</td><td>Private workspace only</td><td><span class="badge b-unverified">never</span></td></tr>
+<tr><td>Lease document, rent, options, side letters</td><td>Private workspace only</td><td><span class="badge b-unverified">never</span></td></tr>
+<tr><td>Tenant's unit-level sales and margin</td><td>Private workspace only</td><td><span class="badge b-unverified">never</span></td></tr>
+<tr><td>Tax returns, depreciation schedules, basis</td><td>Private workspace only</td><td><span class="badge b-unverified">never</span></td></tr>
+<tr><td>Insurance quotes and lender terms</td><td>Private workspace only</td><td><span class="badge b-unverified">never</span></td></tr>
+<tr><td>Public law — tax rates, statutes, hazard classes</td><td>This site</td><td><span class="badge b-verified">yes</span></td></tr>
+<tr><td>Public filings — the tenant's units, royalties, segment profit</td><td>This site</td><td><span class="badge b-verified">yes</span></td></tr>
+<tr><td>Public statistics — ACS, BLS, CPI, Treasury yields</td><td>This site</td><td><span class="badge b-verified">yes</span></td></tr>
+<tr><td>Aggregate findings and the decision framework</td><td>This site</td><td><span class="badge b-verified">yes</span></td></tr>
+</tbody></table></div>
+
+<h2>How anonymisation is enforced technically</h2>
+<ol class="tight">
+  <li><strong>Generator-level separation.</strong> The build script reads only <code>data/</code> and writes only
+    <code>docs/</code>. The <code>private/</code> directory is in <code>.gitignore</code> and is never copied.</li>
+  <li><strong>Placeholders in the private templates.</strong> The lease abstract and notice calendar ship as empty
+    templates with <code>[[PLACEHOLDER]]</code> fields, so no real term can be committed by accident.</li>
+  <li><strong>Registry validation.</strong> The build fails if a row marked verified has no source link — which makes
+    “verified” mean “linked”, not “remembered”.</li>
+  <li><strong>No client-side collection at all.</strong> No analytics, no cookies, no localStorage, no network requests
+    from the calculator, no external fonts or scripts. The suggestion tool writes to a textarea you can copy and nothing else.</li>
+  <li><strong>Static hosting only.</strong> GitHub Pages serves files; there is no server to log a visitor, and no form to submit.</li>
+</ol>
+
+<h2>Handling rules for the private workspace</h2>
+<ul class="clean">
+  <li><strong>Access control.</strong> Single-tenant, encrypted at rest, with per-user accounts and an access log. No shared logins.</li>
+  <li><strong>Named advisers only.</strong> Share under NDA with a written list of who holds access and why.</li>
+  <li><strong>Minimisation.</strong> The private workspace holds only what the decision needs — not full personal financial statements if a summary will do.</li>
+  <li><strong>Retention.</strong> Set a review date and a deletion date for each sensitive document.</li>
+  <li><strong>No re-identification in aggregate outputs.</strong> Anything published must be unable to point at one parcel or one person. A single-asset site is inherently borderline; the mitigation is that no identifying facts are included at all.</li>
+  <li><strong>Breach readiness.</strong> Know who to notify and how, before it is needed. California's breach-notification statute applies to personal information held by a business.</li>
+</ul>
+
+<h2>What the reader of this site can and cannot learn</h2>
+<div class="grid g2">
+  <div class="card">
+    <h3>Can learn</h3>
+    <ul class="clean">
+      <li>How the tax machinery works at these rates, with primary-law links.</li>
+      <li>That the tenant's domestic system has been shrinking, from its own filings.</li>
+      <li>Which official databases answer which hazard question, and how to query them.</li>
+      <li>What the decision gates are and why they matter.</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>Cannot learn</h3>
+    <ul class="clean">
+      <li>Where the property is.</li>
+      <li>Who owns it, or what they paid.</li>
+      <li>What the rent is, or when the lease expires more precisely than 2030–2035.</li>
+      <li>What the owner's tax position is.</li>
+      <li>What the property is worth.</li>
+    </ul>
+  </div>
+</div>
+<div class="notice info">
+  <strong>This is not legal advice on privacy compliance</strong>
+  The handling rules above are operational practice for this workspace. California's CCPA/CPRA and the breach-notification
+  statute impose specific obligations on a business holding personal information; confirm the applicable duties with counsel
+  rather than relying on this page.
+</div>
+  </div>
+</main>
+<footer class="site">
+  <div class="wrap">
+    <div>Built 2026-11-25 from <code>data/registry.yaml</code>. 17 pages, no external scripts, no tracking.</div>
+    <div><a href="privacy.html">Privacy &amp; anonymisation</a> · <a href="review.html">Flagged for review</a> · <a href="sources.html">Sources</a></div>
+  </div>
+</footer>
+<script src="assets/js/app.js" defer></script>
+</body>
+</html>

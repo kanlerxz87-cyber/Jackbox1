@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Parcel-Level Hazard Screen · Jack in the Box — NNN Leasehold Decision Workspace</title>
+<meta name="description" content="Verified-source decision workspace for a single-tenant Jack in the Box under a triple-net lease in central Los Angeles.">
+<meta name="robots" content="index,follow">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="site">
+  <div class="wrap bar">
+    <div class="brand">Jack in the Box · NNN leasehold decision workspace
+      <span>Aggregate findings only — no owner, parcel or lease identifiers</span></div>
+    <div class="privacy">Privacy-first: anonymised by design</div>
+  </div>
+</header>
+<nav class="site" aria-label="Sections">
+  <div class="wrap">
+    <ul>
+      <li><a href="index.html">Overview</a></li>
+      <li><a href="questions.html">Questions &amp; Gaps</a></li>
+      <li><a href="economy.html">Trade Area</a></li>
+      <li><a href="tracts.html">Tract Evidence</a></li>
+      <li><a href="operator.html">Tenant Strength</a></li>
+      <li><a href="hazards.html">Hazard Screen</a></li>
+      <li><a href="tax.html">After-Tax</a></li>
+      <li><a href="market.html">Short-Lease Pricing</a></li>
+      <li><a href="model.html">Sell vs Hold</a></li>
+      <li><a href="gates.html">Decision Gates</a></li>
+      <li><a href="risks.html">Risk Register</a></li>
+      <li><a href="calculator.html">Calculator</a></li>
+      <li><a href="suggestions.html">Suggestions</a></li>
+      <li><a href="review.html">Flagged for Review</a></li>
+      <li><a href="sources.html">Sources</a></li>
+      <li><a href="summary.html">One-Page Summary</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+    </ul>
+  </div>
+</nav>
+<main>
+  <div class="wrap">
+    <div class="pagehead">
+      <p class="eyebrow">W-04 · Hazard screening</p>
+      <h1>Parcel-Level Hazard Screen</h1>
+      <p class="lede">Four parcel questions, four blanks, and the exact official lookup that fills each one.</p>
+    </div>
+
+<div class="notice bad">
+  <strong>W-04 · Parcel-level screening is blocked, not skipped</strong>
+  All four hazard questions can only be answered with parcel geometry. Every one of those rows is
+  <b>blank</b>. Nothing has been inferred from “it's central LA, it's probably fine” — that inference is exactly how
+  owners discover a liquefaction zone after closing.
+</div>
+
+<h2>Parcel-level status — the rows that matter</h2>
+<div class="table-scroll"><table>
+<caption>These are the four answers a buyer, lender and insurer will ask for first. All four are blank because no APN or address was supplied (F-01).</caption>
+<thead><tr><th>Metric</th><th>Value</th><th>Unit / basis</th><th>Period</th><th>Source</th><th>Status</th><th>Verification note</th></tr></thead><tbody>
+<tr data-status="unverified">
+<td class="metric">Parcel fire hazard severity zone<br><span class="unit">HAZ-05</span></td>
+<td class="blank">blank — unverified</td>
+<td class="unit">classification</td>
+<td>n/a</td>
+<td class="src"><a href="https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones" rel="noopener">CAL FIRE FHSZ viewer (requires parcel location)</a></td>
+<td><span class="badge b-unverified">unverified</span></td>
+<td class="note">BLANK BY DESIGN. No street address or APN supplied (F-01). A commercial parcel on flat urban ground is typically outside the LRA Very High zones, but &#x27;typically&#x27; is not a finding.</td>
+</tr>
+</tbody></table></div>
+
+<h2>Regional and regulatory context that <em>is</em> verified</h2>
+<div class="table-scroll"><table>
+<caption>County-level risk context and the statutory framework that governs parcel-level screening. Context only — never a substitute for the parcel's own zone status.</caption>
+<thead><tr><th>Metric</th><th>Value</th><th>Unit / basis</th><th>Geography</th><th>Period</th><th>Source</th><th>Status</th><th>Verification note</th></tr></thead><tbody>
+<tr data-status="verified">
+<td class="metric">FEMA National Risk Index — county risk rating<br><span class="unit">HAZ-01</span></td>
+<td class="num">Relatively High <span class="unit">rating (relative to all U.S. counties)</span></td>
+<td class="unit">rating (relative to all U.S. counties)</td>
+<td>Los Angeles County, CA</td>
+<td>NRI v1.20 (December 2025 update)</td>
+<td class="src"><a href="https://www.fema.gov/emergency-managers/practitioners/resilience-analysis-and-planning-tool" rel="noopener">FEMA National Risk Index / RAPT</a></td>
+<td><span class="badge b-verified">verified</span></td>
+<td class="note">County-level context only. FEMA&#x27;s own FAQ warns rating is relative to other counties; it cannot substitute for the parcel&#x27;s zone status (W-04).</td>
+</tr>
+<tr data-status="flagged">
+<td class="metric">Earthquake share of modelled expected annual loss, Los Angeles County<br><span class="unit">HAZ-02</span></td>
+<td class="num">60 <span class="unit">percent of total EAL (secondary reporting of NRI v1.20)</span></td>
+<td class="unit">percent of total EAL (secondary reporting of NRI v1.20)</td>
+<td>Los Angeles County, CA</td>
+<td>NRI v1.20</td>
+<td class="src"><a href="https://cove.inc/blog/wildfire-risk-by-market-fema-data-2026-part-1/" rel="noopener">Secondary analysis of FEMA NRI v1.20 (third-party publication, not FEMA)</a></td>
+<td><span class="badge b-flagged">flagged</span></td>
+<td class="note">NOT AN OFFICIAL SOURCE. Quote comes from a private blog interpreting FEMA data. Use only to prioritise which official dataset to pull; do not publish as a finding until checked against the FEMA NRI download itself.</td>
+</tr>
+<tr data-status="verified">
+<td class="metric">Fire Hazard Severity Zones — statutory classes<br><span class="unit">HAZ-03</span></td>
+<td class="num">Moderate / High / Very High <span class="unit">classification</span></td>
+<td class="unit">classification</td>
+<td>California State Responsibility Area</td>
+<td>Title 14 CCR §1280; PRC 4201–4204</td>
+<td class="src"><a href="https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones" rel="noopener">CAL FIRE Office of the State Fire Marshal</a></td>
+<td><span class="badge b-verified">verified</span></td>
+<td class="note">The subject parcel&#x27;s class is blank until the parcel is identified (HAZ-05).</td>
+</tr>
+<tr data-status="flagged">
+<td class="metric">Local Responsibility Area FHSZ map series for Los Angeles County<br><span class="unit">HAZ-04</span></td>
+<td class="num">Recommended 9/2011 (VHFHSZ, LRA) <span class="unit">map vintage</span></td>
+<td class="unit">map vintage</td>
+<td>Los Angeles County (Local Responsibility Area)</td>
+<td>Published 2011; 2025 LRA rollout referenced by OSFM</td>
+<td class="src"><a href="https://osfm.fire.ca.gov/what-to-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones/fire-hazard-severity-zones-maps" rel="noopener">CAL FIRE Office of the State Fire Marshal</a></td>
+<td><span class="badge b-flagged">flagged</span></td>
+<td class="note">The 2011 LRA recommendation is the vintage described on the page; OSFM also references a 2025 LRA rollout, and local ordinances (Gov. Code 51179) control what applies to a given parcel. Verify against the current viewer.</td>
+</tr>
+<tr data-status="unverified">
+<td class="metric">Alquist-Priolo Earthquake Fault Zone status<br><span class="unit">HAZ-06</span></td>
+<td class="blank">blank — unverified</td>
+<td class="unit">zone status</td>
+<td>Subject parcel (unidentified)</td>
+<td>n/a</td>
+<td class="src"><a href="https://gis.data.cnra.ca.gov/datasets/cadoc::cgs-alquist-priolo-fault-zones" rel="noopener">California Geological Survey — EQ Zapp / Official Alquist-Priolo maps</a></td>
+<td><span class="badge b-unverified">unverified</span></td>
+<td class="note">BLANK BY DESIGN. Requires parcel geometry. Los Angeles quadrangle maps were revised 2017-06-15 (CGS) — use the current official map, not a cached one.</td>
+</tr>
+<tr data-status="unverified">
+<td class="metric">FEMA flood zone (NFHL) at the parcel<br><span class="unit">HAZ-07</span></td>
+<td class="blank">blank — unverified</td>
+<td class="unit">flood zone designation</td>
+<td>Subject parcel (unidentified)</td>
+<td>n/a</td>
+<td class="src"><a href="https://hazards.fema.gov/femaportal/wps/portal" rel="noopener">FEMA Flood Map Service Center / NFHL</a></td>
+<td><span class="badge b-unverified">unverified</span></td>
+<td class="note">BLANK BY DESIGN. Requires parcel geometry. Lenders will price flood insurance off this line, so it is a financing gate as well as a physical-risk gate.</td>
+</tr>
+<tr data-status="unverified">
+<td class="metric">Seismic hazard zone (liquefaction / landslide) status<br><span class="unit">HAZ-08</span></td>
+<td class="blank">blank — unverified</td>
+<td class="unit">zone status</td>
+<td>Subject parcel (unidentified)</td>
+<td>n/a</td>
+<td class="src"><a href="https://maps.conservation.ca.gov/cgs/EQZApp/app" rel="noopener">California Geological Survey Seismic Hazard Zones (EQ Zapp)</a></td>
+<td><span class="badge b-unverified">unverified</span></td>
+<td class="note">BLANK BY DESIGN. Central LA has mapped liquefaction zones; whether THIS parcel is in one is unknowable without the APN.</td>
+</tr>
+<tr data-status="verified">
+<td class="metric">FHSZ disclosure obligation on sale (defensible space inspection)<br><span class="unit">HAZ-09</span></td>
+<td class="num">Required on/after 2021-07-01 in High/Very High FHSZ <span class="unit">obligation</span></td>
+<td class="unit">obligation</td>
+<td>California</td>
+<td>As stated by OSFM</td>
+<td class="src"><a href="https://osfm.fire.ca.gov/what-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones/fire-hazard-severity-zones-maps" rel="noopener">CAL FIRE Office of the State Fire Marshal (LRA FHSZ map page)</a></td>
+<td><span class="badge b-verified">verified</span></td>
+<td class="note">A transaction-timeline item if the parcel turns out to be in a High/Very High zone.</td>
+</tr>
+</tbody></table></div>
+
+<h2>How to close these four blanks</h2>
+<div class="grid g2">
+  <div class="card">
+    <h3>Fire — CAL FIRE FHSZ</h3>
+    <p>Look the APN up in the Office of the State Fire Marshal's Fire Hazard Severity Zone viewer, then confirm whether the
+    City of Los Angeles has adopted its own Very High zone ordinance, because local ordinance governs what applies
+    (Gov. Code §51179). Save a dated PDF or screenshot — the maps are being reissued, with a 2025 LRA rollout in progress.
+    If the parcel lands in High or Very High, a defensible-space inspection has been required on sale since 1 July 2021.</p>
+  </div>
+  <div class="card">
+    <h3>Earthquake — CGS</h3>
+    <p>Two separate checks, often confused with each other. First, Alquist-Priolo Earthquake Fault Zones (surface rupture) —
+    the Los Angeles quadrangle maps were revised on 15 June 2017. Second, Seismic Hazard Zones (liquefaction and
+    landslide) via EQ Zapp. A central-LA commercial parcel can be outside the first and inside the second.</p>
+  </div>
+  <div class="card">
+    <h3>Flood — FEMA NFHL</h3>
+    <p>Pull the effective Flood Insurance Rate Map panel for the parcel and confirm the zone and the base flood elevation.
+    This is a financing gate as much as a physical one: lenders require flood insurance in a Special Flood Hazard Area,
+    and the cost lands in the NNN reconciliation.</p>
+  </div>
+  <div class="card">
+    <h3>Insurance — the real constraint</h3>
+    <p>Zone status is only half the question. The other half is whether a replacement policy can be bound at all, and at
+    what deductible. Get three quotes using the actual address and construction type before treating any hazard finding
+    as priced (Q-12).</p>
+  </div>
+</div>
+
+<h2>Black-swan exposure, stated honestly</h2>
+<p class="lede">The three events that would matter most here — a regional earthquake, a wildfire at the urban interface, and
+a fluvial or coastal flood — damage value through the same three channels at once: rent stops, repairs are unbudgeted,
+and buyers disappear. The <a href="risks.html">risk register</a> models them together for that reason, and the
+<a href="model.html">sell-versus-hold</a> page refuses to publish a number until the zone status is known.</p>
+  </div>
+</main>
+<footer class="site">
+  <div class="wrap">
+    <div>Built 2026-11-25 from <code>data/registry.yaml</code>. 17 pages, no external scripts, no tracking.</div>
+    <div><a href="privacy.html">Privacy &amp; anonymisation</a> · <a href="review.html">Flagged for review</a> · <a href="sources.html">Sources</a></div>
+  </div>
+</footer>
+<script src="assets/js/app.js" defer></script>
+</body>
+</html>
