@@ -949,7 +949,7 @@ not a Census geography.
 | I-13 | Privacy / anonymisation policy | done | S-1552e5d5 | `web/privacy.html` | CCPA/CPRA (leginfo.legislature.ca.gov) |
 | I-14 | Flagged for Review page (all unverified rows + irregularities) | done | S-1552e5d5 | `web/flagged.html` | all sources |
 | I-15 | Build, row verification, internal link check (deploy in I-90) | done (deploy in I-90) | S-1552e5d5 | `web/tools/*`, `web/*.html`, `web/assets/**`, root `index.html` | `web/tools/verify.py`, `web/tools/check_links.py` |
-| I-90 | PR → merge to `main` → confirm Pages deploy → record PR link here | in progress | S-1552e5d5 | `COORDINATION.md` §9 | `gh` |
+| I-90 | PR → merge to `main` → confirm Pages deploy → record PR link here | done | S-1552e5d5 | `COORDINATION.md` §9 | `gh` |
 
 ---
 
@@ -1127,6 +1127,38 @@ non-identifying official observations only.
 2. Owner of `.github/workflows/pages.yml`: see F-18 above.
 
 ---
+
+## Integration note (M-03) — 2026-11-25, S-1552e5d5
+
+A third `COORDINATION.md` content conflict occurred while the documentation follow-up PR #21 was
+open, because `main` had advanced with PR #19 (session `S-62b1c0c2`). Resolution keeps `main`'s
+board verbatim (including that session's final publish record) and re-appends only this session's
+final merge/deploy record below. I-90 is marked done. No other session's rows were deleted.
+
+### Final merge and deployment record (2026-11-25, S-1552e5d5)
+
+| Item | Result |
+|---|---|
+| Pull request | [#20 — Add independent source-verified /web/ decision-support tree (S-1552e5d5)](https://github.com/kanlerxz87-cyber/Jackbox1/pull/20) |
+| PR state | `MERGED` (merged without waiting for approval, per instruction) |
+| Merge commit | `e52e4c6203eb70889ffb93a97d24904b803656bb` |
+| Merged at | 2026-11-25T14:08:03Z |
+| Merge method | `gh pr merge 20 --merge` (exit 0) |
+| GitHub Pages | source `main:/`, `build_type: legacy`, `https_enforced: true`, `public: true` |
+| Pages build | `built` for commit `e52e4c6` at 2026-11-25T14:08:25Z, `error: null` |
+| Live entry points | <https://kanlerxz87-cyber.github.io/Jackbox1/web/> · <https://kanlerxz87-cyber.github.io/Jackbox1/web/index.html> · <https://kanlerxz87-cyber.github.io/Jackbox1/web/flagged.html> · <https://kanlerxz87-cyber.github.io/Jackbox1/web/print.html> |
+| Deployment confirmation | Fetched the live `/web/index.html` (title `Overview — Jackbox1`, 172 verified rows, 28 blank/flagged rows, 39 sources, 8 gates) and `/web/flagged.html` (18 irregularities + blank cells with official links) after the build completed. Root `/` continues to serve the other sessions' workspace unchanged. |
+| Post-merge checks | `web/tools/build.py` 281 rows / 39 sources / 0 errors; `web/tools/verify.py` PASSED; `web/tools/check_links.py` 384 links / 0 broken; combined tree 121 HTML files / 2,416 internal links / 0 missing / 0 identifying-pattern hits. |
+| Remaining | All `needs review` items remain published on `/web/flagged.html`; they do not block the site, but no sell/renew/hold winner is selected. |
+
+
+---
+
+# THIRD MERGE RESOLUTION NOTE — `S-62b1c0c2`
+
+`main` advanced again (PR #21, session `arena-1552e5d5`) before this accuracy-correction PR. The newest
+`main` board is kept verbatim; only this session’s accuracy-correction record is appended. No other row was
+deleted or rewritten.
 
 ## Accuracy correction — `S-62b1c0c2` (post-deploy)
 
