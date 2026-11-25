@@ -1,37 +1,3 @@
-# Anonymous Central LA NNN workspace
-
-Public research site for an **anonymized** sell-versus-renew review of a Jack in the Box NNN lease described as located around Central Los Angeles.
-
-**This repository must not contain** owner names, street addresses, APNs, lease PDFs, tax returns, or unit-level sales.
-
-Four static trees are in the repo (parallel sessions; **all retained**):
-
-| Tree | Session | Entry |
-| --- | --- | --- |
-| Primary workspace | arena-41ea221b | `pages/index.html` (root `index.html` redirects here) |
-| Sourced dashboard | arena-f5a16939 | `docs/index.html` (sourced tables, decision gates, calculator) |
-| Desk tree | arena-8c9d9d97 | `desk/index.html` |
-| Verified workspace | arena-78005353 | `workspace/index.html` (47-row evidence register, 23 questions, gate board, after-tax calculator, printable one-pager) |
-
-GitHub Pages publishes the **repository root**, so `/`, `/pages/`, `/docs/`, `/desk/` and `/workspace/` all resolve.
-
-**No sell or renew recommendation is made.**
-
-A public static website is not an access-controlled vault. Keep lease files and owner finances offline. See [COORDINATION.md](COORDINATION.md) and the Flagged for Review pages (`pages/flags.html` and `docs/flagged.html`).
-
-
----
-
-## Also in this repository: the desk tree
-
-An earlier session (`arena-8c9d9d97`) published a narrative desk tree at `/desk/` with its own
-overview and page set. It is retained unmodified and reachable at `desk/index.html`.
-
-## Preserved: earlier README of this tree
-
-The text below is the README written for the `arena/f5a16939` tree, kept verbatim so its record of
-sources, flags and next steps is not lost.
-
 # Jackbox property decision workspace
 
 An **anonymised, source-verified decision workspace** for a single-tenant Jack in the Box
@@ -42,6 +8,8 @@ with a guess. It builds the evidence base, states the decision rule, and identif
 which private documents stand between the evidence and a decision.
 
 **Live site:** https://kanlerxz87-cyber.github.io/Jackbox1/
+
+**Entry points:** `/` redirects to `/pages/index.html` (primary tree). The other three trees are at `/docs/index.html` (sourced dashboard), `/desk/index.html` (desk tree) and `/workspace/index.html` (verified workspace).
 
 ---
 
@@ -142,6 +110,9 @@ Fifteen gates, sequenced on the *Open questions* page. Three cost nothing and on
 *Not investment, legal or tax advice. Engage a licensed appraiser, attorney and CPA before
 acting. See `COORDINATION.md` for the task board, sources, verification performed and the
 PR/deploy record.*
+
+---
+
 ---
 
 ## Repository layout — three parallel builds, all retained
@@ -168,7 +139,7 @@ tree states its geography and period. See irregularity IR-13 on the *Flagged for
 
 <details><summary>Earlier README content from a parallel session</summary>
 
-# Anonymous Central LA NNN workspace
+## Appendix: earlier tree README (`arena-8c9d9d97`, preserved)
 
 Public research site for an **anonymized** sell-versus-renew review of a Jack in the Box NNN lease described as located around Central Los Angeles.
 
@@ -176,12 +147,13 @@ Public research site for an **anonymized** sell-versus-renew review of a Jack in
 
 Four static trees are in the repo (parallel sessions; **all retained**):
 
+
 | Tree | Session | Entry |
 | --- | --- | --- |
 | Primary workspace | arena-41ea221b | `pages/index.html` (root `index.html` redirects here) |
-| Sourced dashboard | arena-f5a16939 | `docs/index.html` (sourced tables, decision gates, calculator) |
+| Sourced dashboard | arena-f5a16939 | `docs/index.html` |
 | Desk tree | arena-8c9d9d97 | `desk/index.html` |
-| Verified workspace | arena-78005353 | `workspace/index.html` (47-row evidence register, 23 questions, gate board, after-tax calculator, printable one-pager) |
+| Verified workspace | arena-78005353 | `workspace/index.html` (47-row evidence register, 23 gating questions, gate board, after-tax calculator) |
 
 GitHub Pages publishes the **repository root**, so `/`, `/pages/`, `/docs/`, `/desk/` and `/workspace/` all resolve.
 
@@ -203,7 +175,7 @@ from `data/workspace/*.json` by `tools/build_site.py`. Nothing in the other sect
 | `workspace/index.html` | Dashboard + decision-gate progress board (W-03) |
 | `workspace/gates.html` | Gate-by-gate state, who closes it, what breaks if it stays open |
 | `workspace/sell-vs-renew.html` | Five decision options, verified tax rules, browser-side after-tax calculator (W-02, W-09) |
-| `workspace/market.html` | 47-row evidence register + tenant franchisor's own SEC disclosures (W-08) |
+| `workspace/market.html` | 47-row evidence register + the tenant franchisor's own SEC disclosures (W-08) |
 | `workspace/location.html` | Why city figures are a proxy; the private steps that replace them (W-01) |
 | `workspace/hazards.html` | Four official hazard programmes; parcel rows withheld (W-04) |
 | `workspace/questions.html` | 23 gating questions with owners and sources (W-05) |
@@ -212,9 +184,13 @@ from `data/workspace/*.json` by `tools/build_site.py`. Nothing in the other sect
 | `workspace/flagged.html` | 14 unverified or irregular items with the URLs attempted (W-07) |
 | `workspace/advisor-summary.html` | One-page printable brief (W-10) |
 
-**Verification:** 40 of 47 evidence rows read from the linked official page; the 7 that could not be
-confirmed are left **blank** and published on `flagged.html` with the reason. Automated ledger audit:
-40/40 numeric values and 11/11 tenant facts re-checked against the fetched content, 0 mismatches.
-Cross-tree link audit across all 36 pages of all trees: 0 broken links. HTML parse: 0 tag errors.
+**Verification:** 40 of 47 evidence rows were read from the linked official page; the 7 that could not
+be confirmed are left **blank** and published on `flagged.html` with the reason. Automated ledger
+audit: 40/40 numeric values and 11/11 tenant facts re-checked against the fetched content, 0
+mismatches. Cross-tree link audit across 48 pages of all four trees: 0 broken links. HTML parse:
+0 tag errors.
 
 **Build:** `python3 tools/build_site.py` (no dependencies). Do not hand-edit `workspace/*.html`.
+
+**No sell or renew recommendation is made in this section either.** It states the decision rule, the
+seven gates, and exactly which private documents stand between the evidence and a decision.
