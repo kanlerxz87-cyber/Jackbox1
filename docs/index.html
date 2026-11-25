@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jackbox1 Property Decision Workspace</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <div>
+          <h1>Jackbox1 Property Decision Workspace</h1>
+          <p>Privacy-first, source-verified decision support for a NNN lease scenario. This site publishes only anonymized, aggregate, and public-source information. No personal identifiers, parcel identifiers, lease documents, or owner financials are published.</p>
+          <div class="badge-row">
+            <span class="badge warn">Scenario inputs unverified</span>
+            <span class="badge warn">No decision selected</span>
+            <span class="badge ok">Official sources linked per row</span>
+            <span class="badge">Static GitHub Pages</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav class="nav" aria-label="Primary">
+      <div class="nav-inner">
+        <a class="active" href="index.html">Dashboard</a>
+        <a href="research.html">Research</a>
+        <a href="hazards.html">Hazards</a>
+        <a href="analysis.html">Analysis</a>
+        <a href="questions.html">Questions &amp; Missing Info</a>
+        <a href="suggestions.html">Suggestions</a>
+        <a href="privacy.html">Privacy &amp; Handling</a>
+        <a href="sources.html">Sources</a>
+        <a href="flagged.html">Flagged for Review</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <h2 class="page-title">Dashboard</h2>
+    <p class="page-lead">This workspace organizes the requested sell-vs-renew decision for an anonymized NNN-leased quick-service restaurant scenario in the Central Los Angeles area. It separates <strong>user-provided scenario inputs</strong>, <strong>official public context</strong>, <strong>missing verified inputs</strong>, and <strong>flagged/unverified items</strong>. No final sell-or-renew decision is selected until verified property, lease, tax, market, and hazard inputs exist.</p>
+
+    <div class="notice danger">
+      <strong>Privacy &amp; scope notice:</strong> The scenario description provided by the user (NNN lease, quick-service restaurant use, Central Los Angeles area, lease expiration window 2030–2035) is treated as <strong>unverified user-provided context</strong>. It is not confirmed by lease documents, parcel records, or owner records in this repository. Any personal/parcel/lease/financial identifier discovered during work must remain offline/internal and must not appear on this site.
+    </div>
+
+    <div class="grid cards">
+      <div class="card">
+        <h3>Decision Status</h3>
+        <div class="metric">No Decision</div>
+        <p>A sell-vs-renew winner is intentionally not selected. Verified lease, rent, tax, market, and parcel hazard inputs are required before a decision can be reasonably made.</p>
+        <div class="meta"><a href="analysis.html">Open decision framework →</a></div>
+      </div>
+      <div class="card">
+        <h3>Verification Rule</h3>
+        <div class="metric">Source Per Row</div>
+        <p>Every table row includes an official source link where available. Values not confirmed from an official source are left blank and flagged as unverified.</p>
+        <div class="meta"><a href="sources.html">View source registry →</a></div>
+      </div>
+      <div class="card">
+        <h3>Missing Inputs</h3>
+        <div class="metric">Material</div>
+        <p>Property-specific lease economics, tenant credit/sales, parcel hazards, tax basis, debt, and market comps are missing and must be obtained through secure/private workflows.</p>
+        <div class="meta"><a href="questions.html">View questions &amp; missing info →</a></div>
+      </div>
+      <div class="card">
+        <h3>Flagged Items</h3>
+        <div class="metric">Published</div>
+        <p>Unverified, missing, and review-required items are published on a dedicated page so they do not block publication while remaining visible.</p>
+        <div class="meta"><a href="flagged.html">Review flagged items →</a></div>
+      </div>
+    </div>
+
+    <section class="section">
+      <h2>Scenario Snapshot (User-Provided, Unverified)</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Value</th>
+              <th>Status</th>
+              <th>Notes</th>
+              <th>Source</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Asset type</td>
+              <td>Quick-service restaurant (Jack in the Box) — user provided</td>
+              <td><span class="status unverified">Unverified</span></td>
+              <td>Brand/use has not been confirmed by lease, parcel, or business records in this workspace.</td>
+              <td><a href="flagged.html#F-001">Flagged F-001</a></td>
+            </tr>
+            <tr>
+              <td>Lease structure</td>
+              <td>NNN lease — user provided</td>
+              <td><span class="status unverified">Unverified</span></td>
+              <td>NNN terms, pass-throughs, caps, landlord obligations, and options require a private lease abstract.</td>
+              <td><a href="flagged.html#F-002">Flagged F-002</a></td>
+            </tr>
+            <tr>
+              <td>Lease expiration window</td>
+              <td>2030–2035 — user provided</td>
+              <td><span class="status unverified">Unverified</span></td>
+              <td>Exact expiration date, option windows, notice dates, and rent bumps are unknown.</td>
+              <td><a href="flagged.html#F-003">Flagged F-003</a></td>
+            </tr>
+            <tr>
+              <td>Location</td>
+              <td>Central Los Angeles area (broad, non-identifying) — user provided</td>
+              <td><span class="status unverified">Unverified</span></td>
+              <td>No parcel address or identifier is published. Parcel-specific analysis requires secure internal workflow.</td>
+              <td><a href="privacy.html">Privacy &amp; Handling</a></td>
+            </tr>
+            <tr>
+              <td>Owner objective</td>
+              <td>Preserve wealth, maintain growth opportunity, manage risk — user provided</td>
+              <td><span class="status unverified">Unverified</span></td>
+              <td>Owner tax profile, liquidity needs, debt, and risk tolerance are not available.</td>
+              <td><a href="questions.html">Questions &amp; Missing Info</a></td>
+            </tr>
+            <tr>
+              <td>Parcel address / APN / owner identity</td>
+              <td></td>
+              <td><span class="status unverified">Unverified / Withheld</span></td>
+              <td>Intentionally blank. Personal/parcel identifiers must not be published.</td>
+              <td><a href="privacy.html">Privacy &amp; Handling</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Workstream Progress Board (W-01 to W-10 / requested modules)</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Work Item</th>
+              <th>Requested Outcome</th>
+              <th>Status</th>
+              <th>What Is Published</th>
+              <th>What Is Still Missing</th>
+              <th>Source / Link</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>W-01</td>
+              <td>Replace city/county proxies with trade-area figures</td>
+              <td><span class="status pending">Pending private inputs</span></td>
+              <td>Method and official-source workflow; city/county proxies clearly labeled as proxies.</td>
+              <td>Secure parcel location, trade-area definition, ESRI/Placer/private data agreements or authorized internal GIS workflow.</td>
+              <td><a href="research.html#trade-area">Research: Trade Area</a></td>
+            </tr>
+            <tr>
+              <td>W-02</td>
+              <td>Extend private worksheet to sell-versus-hold comparison</td>
+              <td><span class="status pending">Template only</span></td>
+              <td>Decision framework and required input fields; no fabricated numbers.</td>
+              <td>Verified rent roll, lease abstract, expenses, debt, tax basis, cap rate/quotes, hold assumptions.</td>
+              <td><a href="analysis.html#sell-hold">Analysis: Sell vs Hold</a></td>
+            </tr>
+            <tr>
+              <td>W-03</td>
+              <td>Decision-gate progress board</td>
+              <td><span class="status verified">Published</span></td>
+              <td>This dashboard board and questions page define gates and blockers.</td>
+              <td>Evidence to close each gate.</td>
+              <td><a href="questions.html#decision-gates">Questions: Decision Gates</a></td>
+            </tr>
+            <tr>
+              <td>W-04</td>
+              <td>Parcel-level hazard screening</td>
+              <td><span class="status pending">Pending private location</span></td>
+              <td>Official hazard screening workflow and regional context; no parcel lookup performed.</td>
+              <td>Secure parcel address/APN, FEMA/CalFire/USGS parcel screens, insurance quotes, engineering reports.</td>
+              <td><a href="hazards.html">Hazards</a></td>
+            </tr>
+            <tr>
+              <td>W-10</td>
+              <td>One-page printable summary for advisors</td>
+              <td><span class="status verified">Published</span></td>
+              <td>Printable executive summary section on Analysis page; browser print styles included.</td>
+              <td>Verified property-specific inputs before advisor use as decision document.</td>
+              <td><a href="analysis.html#executive-summary">Analysis: Executive Summary</a></td>
+            </tr>
+            <tr>
+              <td>Module</td>
+              <td>Private browser calculator</td>
+              <td><span class="status pending">Spec only</span></td>
+              <td>Calculator requirements and privacy constraints documented; no public calculator collecting sensitive data.</td>
+              <td>Private implementation in secure environment; verified tax/lease inputs.</td>
+              <td><a href="suggestions.html#calculator">Suggestions: Calculator</a></td>
+            </tr>
+            <tr>
+              <td>Module</td>
+              <td>Neighbourhood-level data around parcel</td>
+              <td><span class="status pending">Pending private location</span></td>
+              <td>Public proxy sources and secure selection workflow.</td>
+              <td>Authorized parcel location and consistent tract/trade-area selection.</td>
+              <td><a href="research.html#neighborhood">Research: Neighbourhood</a></td>
+            </tr>
+            <tr>
+              <td>Module</td>
+              <td>After-tax module</td>
+              <td><span class="status pending">Template only</span></td>
+              <td>After-tax comparison framework and required verified tax inputs.</td>
+              <td>Tax basis, depreciation recapture, debt, installment/1031 eligibility, state/federal tax advice.</td>
+              <td><a href="analysis.html#after-tax">Analysis: After-Tax</a></td>
+            </tr>
+            <tr>
+              <td>Module</td>
+              <td>Price short-lease discount from real quotes</td>
+              <td><span class="status pending">Pending market quotes</span></td>
+              <td>Quote-collection workflow and required comp fields.</td>
+              <td>Broker opinions, actual comp quotes, lender terms, tenant renewal intent.</td>
+              <td><a href="questions.html#market-quotes">Questions: Market Quotes</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Key Public Context (Verified Official Sources)</h2>
+      <div class="kpi-grid">
+        <div class="kpi">
+          <div class="label">Los Angeles city population (V2025)</div>
+          <div class="value">3,869,089</div>
+          <div class="detail">Census QuickFacts; July 1, 2025 estimate. <a href="https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045224">Source</a></div>
+        </div>
+        <div class="kpi">
+          <div class="label">Median household income</div>
+          <div class="value">$81,939</div>
+          <div class="detail">Census QuickFacts; 2020–2024, in 2024 dollars. <a href="https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045224">Source</a></div>
+        </div>
+        <div class="kpi">
+          <div class="label">LA region M6.7 30-yr probability</div>
+          <div class="value">60%</div>
+          <div class="detail">USGS UCERF3 FAQ for Los Angeles region. <a href="https://www.usgs.gov/faqs/what-probability-earthquake-will-occur-los-angeles-area-san-francisco-bay-area">Source</a></div>
+        </div>
+        <div class="kpi">
+          <div class="label">Parcel-specific hazards</div>
+          <div class="value">Not screened</div>
+          <div class="detail">No parcel address/APN published; secure screening required. <a href="hazards.html">Workflow</a></div>
+        </div>
+      </div>
+      <p class="small">Public context is area-level only and must not be used as a substitute for parcel-level due diligence, lease abstract review, tax advice, or market quotes.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p><strong>Confidentiality:</strong> No personal identifiers, parcel identifiers, lease files, or owner financials are published. Public pages contain anonymized/aggregate context only.</p>
+    <p><strong>Verification:</strong> Every table row should include an official source link. Unverified values are blank and flagged. See <a href="flagged.html">Flagged for Review</a>.</p>
+  </footer>
+</body>
+</html>

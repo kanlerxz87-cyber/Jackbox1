@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sources | Jackbox1</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><div class="header-inner"><div class="brand"><div><h1>Jackbox1 Property Decision Workspace</h1><p>Official source registry. Every data row on this site should trace to an official source or be flagged as unverified.</p></div></div></div>
+    <nav class="nav" aria-label="Primary"><div class="nav-inner">
+      <a href="index.html">Dashboard</a><a href="research.html">Research</a><a href="hazards.html">Hazards</a><a href="analysis.html">Analysis</a><a href="questions.html">Questions &amp; Missing Info</a><a href="suggestions.html">Suggestions</a><a href="privacy.html">Privacy &amp; Handling</a><a class="active" href="sources.html">Sources</a><a href="flagged.html">Flagged for Review</a>
+    </div></nav>
+  </header>
+  <main id="main">
+    <h2 class="page-title">Source Registry</h2>
+    <p class="page-lead">Sources are listed with type, use, verification status, and access date. "Verified" means the URL was checked as an official/authoritative source during this session; it does not mean all property-specific facts are verified. Dynamic data sources should be rechecked at decision time.</p>
+
+    <div class="notice warning">
+      <strong>Verification note:</strong> Verification was performed on 2026-11-25 by session ee4cc19f using web fetch/search and manual review of page content. Some sources are process/tools references (not data values). Values not confirmed from an official source are left blank and flagged.
+    </div>
+
+    <section class="section">
+      <h2>Official Data &amp; Tool Sources</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>ID</th><th>Source</th><th>Type</th><th>Used For</th><th>Verification Status</th><th>Accessed</th><th>Link</th></tr></thead>
+          <tbody>
+            <tr><td>SRC-001</td><td>U.S. Census Bureau QuickFacts: Los Angeles city, California</td><td>Official federal data</td><td>City population, income, poverty, housing, commute, retail proxies.</td><td><span class="status verified">Verified</span></td><td>2026-11-25</td><td><a href="https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045224">census.gov</a></td></tr>
+            <tr><td>SRC-002</td><td>U.S. Census Bureau American Community Survey (ACS)</td><td>Official federal program</td><td>Required tract/trade-area demographic and income methodology.</td><td><span class="status verified">Verified</span></td><td>2026-11-25</td><td><a href="https://www.census.gov/programs-surveys/acs/">census.gov</a></td></tr>
+            <tr><td>SRC-003</td><td>data.census.gov</td><td>Official federal data portal</td><td>Future tract/trade-area data pulls in secure workflow.</td><td><span class="status verified">Verified</span></td><td>2026-11-25</td><td><a href="https://data.census.gov/">data.census.gov</a></td></tr>
+            <tr><td>SRC-004</td><td>BLS Economy at a Glance: Los Angeles-Long Beach-Anaheim, CA</td><td>Official federal data</td><td>MSA employment/unemployment/CPI/wage context.</td><td><span class="status partial">Source verified; live values not pinned</span></td><td>2026-11-25</td><td><a href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm">bls.gov</a></td></tr>
+            <tr><td>SRC-005</td><td>BLS Economy at a Glance: Los Angeles-Long Beach-Glendale, CA MD</td><td>Official federal data</td><td>Metropolitan division labor context.</td><td><span class="status partial">Source verified; live values not pinned</span></td><td>2026-11-25</td><td><a href="https://www.bls.gov/eag/eag.ca_losangeles_md.htm">bls.gov</a></td></tr>
+            <tr><td>SRC-006</td><td>California EDD Labor Market Information: Los Angeles County Profile</td><td>Official state data</td><td>County labor force and industry context.</td><td><span class="status partial">Source verified; live values not pinned</span></td><td>2026-11-25</td><td><a href="https://labormarketinfo.edd.ca.gov/cgi/databrowsing/localAreaProfileQSResults.asp?selectedarea=Los+Angeles+County&selectedindex=19&menuChoice=localAreaPro&state=true&geogArea=0604000037">edd.ca.gov</a></td></tr>
+            <tr><td>SRC-007</td><td>USGS: Earthquake probability FAQ (UCERF3, Los Angeles region)</td><td>Official federal science</td><td>Regional 30-year earthquake probabilities.</td><td><span class="status verified">Verified</span></td><td>2026-11-25</td><td><a href="https://www.usgs.gov/faqs/what-probability-earthquake-will-occur-los-angeles-area-san-francisco-bay-area">usgs.gov</a></td></tr>
+            <tr><td>SRC-008</td><td>USGS Earthquake Hazards Program</td><td>Official federal program</td><td>Parcel-level seismic screening workflow reference.</td><td><span class="status verified">Verified</span></td><td>2026-11-25</td><td><a href="https://www.usgs.gov/programs/earthquake-hazards">usgs.gov</a></td></tr>
+            <tr><td>SRC-009</td><td>FEMA Map Service Center</td><td>Official federal tool</td><td>Parcel flood map/FIRM/NFHL lookup workflow.</td><td><span class="status verified">Verified</span></td><td>2026-11-25</td><td><a href="https://msc.fema.gov/portal/home">msc.fema.gov</a></td></tr>
+            <tr><td>SRC-010</td><td>FEMA National Flood Hazard Layer</td><td>Official federal data/tool</td><td>Flood hazard data context and parcel screening.</td><td><span class="status verified">Verified</span></td><td>2026-11-25</td><td><a href="https://www.fema.gov/flood-maps/national-flood-hazard-layer">fema.gov</a></td></tr>
+            <tr><td>SRC-011</td><td>CAL FIRE / OSFM Fire Hazard Severity Zones</td><td>Official state program</td><td>Fire hazard severity zone screening.</td><td><span class="status verified">Verified</span></td><td>2026-11-25</td><td><a href="https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones">osfm.fire.ca.gov</a></td></tr>
+            <tr><td>SRC-012</td><td>Cal OES MyHazards</td><td>Official state tool</td><td>Multi-hazard parcel screening workflow.</td><td><span class="status verified">Verified</span></td><td>2026-11-25</td><td><a href="https://myhazards.caloes.ca.gov/">myhazards.caloes.ca.gov</a></td></tr>
+            <tr><td>SRC-013</td><td>LA City Planning</td><td>Official local agency</td><td>Zoning/planning/corridor evidence workflow.</td><td><span class="status verified">Verified</span></td><td>2026-11-25</td><td><a href="https://planning.lacity.gov/">planning.lacity.gov</a></td></tr>
+            <tr><td>SRC-014</td><td>ZIMAS (Zone Information and Map Access System)</td><td>Official local tool</td><td>Parcel zoning/planning lookup in secure workflow.</td><td><span class="status verified">Verified</span></td><td>2026-11-25</td><td><a href="https://zimas.lacity.org/">zimas.lacity.org</a></td></tr>
+            <tr><td>SRC-015</td><td>LADOT</td><td>Official local agency</td><td>Traffic/access evidence workflow.</td><td><span class="status verified">Verified</span></td><td>2026-11-25</td><td><a href="https://ladot.lacity.gov/">ladot.lacity.gov</a></td></tr>
+            <tr><td>SRC-016</td><td>LA Metro</td><td>Official regional agency</td><td>Transit/access context.</td><td><span class="status verified">Verified</span></td><td>2026-11-25</td><td><a href="https://www.metro.net/">metro.net</a></td></tr>
+            <tr><td>SRC-017</td><td>Los Angeles Unified School District (LAUSD)</td><td>Official local agency</td><td>School/institutional demand-anchor evidence workflow.</td><td><span class="status verified">Verified</span></td><td>2026-11-25</td><td><a href="https://www.lausd.org/">lausd.org</a></td></tr>
+            <tr><td>SRC-018</td><td>California Department of Insurance</td><td>Official state agency</td><td>Insurance market and consumer guidance context.</td><td><span class="status verified">Verified</span></td><td>2026-11-25</td><td><a href="https://www.insurance.ca.gov/">insurance.ca.gov</a></td></tr>
+            <tr><td>SRC-019</td><td>IRS Publication 544, Sales and Other Dispositions of Assets</td><td>Official federal tax guidance</td><td>After-tax sale/disposition framework reference.</td><td><span class="status verified">Verified</span></td><td>2026-11-25</td><td><a href="https://www.irs.gov/publications/p544">irs.gov</a></td></tr>
+            <tr><td>SRC-020</td><td>IRS Like-Kind Exchanges - Real Estate Tax Tips</td><td>Official federal tax guidance</td><td>1031/like-kind exchange eligibility context.</td><td><span class="status verified">Verified</span></td><td>2026-11-25</td><td><a href="https://www.irs.gov/businesses/small-businesses-self-employed/like-kind-exchanges-real-estate-tax-tips">irs.gov</a></td></tr>
+            <tr><td>SRC-021</td><td>California Franchise Tax Board</td><td>Official state tax agency</td><td>State tax consideration reference.</td><td><span class="status verified">Verified</span></td><td>2026-11-25</td><td><a href="https://www.ftb.ca.gov/">ftb.ca.gov</a></td></tr>
+            <tr><td>SRC-022</td><td>SEC EDGAR Company Search</td><td>Official federal filings tool</td><td>Corporate tenant context only; not unit-level sales proof.</td><td><span class="status verified">Verified</span></td><td>2026-11-25</td><td><a href="https://www.sec.gov/edgar/searchedgar/companysearch">sec.gov</a></td></tr>
+            <tr><td>SRC-023</td><td>Federal Reserve</td><td>Official federal agency</td><td>Interest-rate/cap-rate risk context reference.</td><td><span class="status verified">Verified</span></td><td>2026-11-25</td><td><a href="https://www.federalreserve.gov/">federalreserve.gov</a></td></tr>
+            <tr><td>SRC-024</td><td>Investor.gov (SEC)</td><td>Official investor education</td><td>Reinvestment/risk education reference.</td><td><span class="status verified">Verified</span></td><td>2026-11-25</td><td><a href="https://www.investor.gov/">investor.gov</a></td></tr>
+            <tr><td>SRC-025</td><td>FTC Data Security Guidance</td><td>Official federal guidance</td><td>Privacy/security handling baseline.</td><td><span class="status verified">Verified</span></td><td>2026-11-25</td><td><a href="https://www.ftc.gov/business-guidance/privacy-security/data-security">ftc.gov</a></td></tr>
+            <tr><td>SRC-026</td><td>NIST Privacy Framework</td><td>Official federal framework</td><td>Privacy-by-design handling reference.</td><td><span class="status verified">Verified</span></td><td>2026-11-25</td><td><a href="https://www.nist.gov/privacy-framework">nist.gov</a></td></tr>
+            <tr><td>SRC-027</td><td>IRS Privacy &amp; Disclosure</td><td>Official federal guidance</td><td>Tax record privacy reference.</td><td><span class="status verified">Verified</span></td><td>2026-11-25</td><td><a href="https://www.irs.gov/privacy-disclosure">irs.gov</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Non-Data / Process References</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>ID</th><th>Reference</th><th>Type</th><th>Use</th><th>Status</th><th>Link</th></tr></thead>
+          <tbody>
+            <tr><td>REF-001</td><td>OWASP Top 10</td><td>Security reference</td><td>Private calculator / web security design considerations.</td><td><span class="status verified">Verified</span></td><td><a href="https://owasp.org/www-project-top-ten/">owasp.org</a></td></tr>
+            <tr><td>REF-002</td><td>GitHub Actions Documentation</td><td>Platform documentation</td><td>Automated link-check suggestion and Pages deployment workflow.</td><td><span class="status verified">Verified</span></td><td><a href="https://docs.github.com/en/actions">docs.github.com</a></td></tr>
+            <tr><td>REF-003</td><td>GitHub Pages Documentation</td><td>Platform documentation</td><td>Static site deployment.</td><td><span class="status verified">Verified</span></td><td><a href="https://docs.github.com/en/pages">docs.github.com</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><p>Sources listed here are official/authoritative references used for context, workflow, or verification. No source listing implies property-specific verification.</p></footer>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy &amp; Handling | Jackbox1</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand"><div><h1>Jackbox1 Property Decision Workspace</h1><p>Privacy-first, source-verified decision support. No personal identifiers published.</p></div></div>
+    </div>
+    <nav class="nav" aria-label="Primary"><div class="nav-inner">
+      <a href="index.html">Dashboard</a><a href="research.html">Research</a><a href="hazards.html">Hazards</a><a href="analysis.html">Analysis</a><a href="questions.html">Questions &amp; Missing Info</a><a href="suggestions.html">Suggestions</a><a class="active" href="privacy.html">Privacy &amp; Handling</a><a href="sources.html">Sources</a><a href="flagged.html">Flagged for Review</a>
+    </div></nav>
+  </header>
+  <main id="main">
+    <h2 class="page-title">Privacy &amp; Data Handling</h2>
+    <p class="page-lead">Personal information privacy is the top priority. This site publishes only anonymized, aggregate, non-identifying public-source findings. Any personal information discovered during research is for internal/authorized use only and must not appear in the final website product.</p>
+
+    <div class="notice danger">
+      <strong>Hard rule:</strong> No parcel address, APN, owner name, tenant contact, lease document, rent roll, tax return, loan document, insurance policy, account number, or other personal/financial identifier may be published on this site or committed to public-facing content. Use placeholders such as <code>[PARCEL_ID_WITHHELD]</code>, <code>[OWNER_ENTITY_WITHHELD]</code>, <code>[LEASE_DOC_WITHHELD]</code>.
+    </div>
+
+    <section class="section">
+      <h2>Data Handling Controls</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Control</th><th>Requirement</th><th>Status</th><th>Implementation on this site</th><th>Source / Policy Basis</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>Public publication boundary</td>
+              <td>Publish only anonymous summaries and aggregate/non-identifying findings.</td>
+              <td><span class="status verified">Applied</span></td>
+              <td>Site contains area-level public context, decision framework, missing-input checklist, and flagged items. No parcel-level private records included.</td>
+              <td><a href="https://www.census.gov/privacy/">U.S. Census Bureau Privacy Program</a></td>
+            </tr>
+            <tr>
+              <td>Parcel/location handling</td>
+              <td>Use location only in secure workflow to select consistent Census tracts and local planning/traffic/school/competitor evidence.</td>
+              <td><span class="status pending">Pending secure workflow</span></td>
+              <td>No address/APN entered or stored in public files. Research page documents the secure workflow required before tract selection.</td>
+              <td><a href="https://www.census.gov/programs-surveys/geography/guidance/geo-identifiers.html">Census Geographic Identifiers</a></td>
+            </tr>
+            <tr>
+              <td>Lease/financial records</td>
+              <td>Keep lease files, owner finances, and identifiers offline with authorized advisers; reconcile privately.</td>
+              <td><span class="status pending">Pending private records</span></td>
+              <td>No lease or financial documents are in repo. Analysis uses blank templates and unverified flags.</td>
+              <td><a href="https://www.ftc.gov/business-guidance/privacy-security/data-security">FTC Data Security Guidance</a></td>
+            </tr>
+            <tr>
+              <td>Hazard screening</td>
+              <td>Privately check seismic, flood, fire maps, engineering and insurance; stress loss of rent, repairs, and exit liquidity together.</td>
+              <td><span class="status pending">Pending private location</span></td>
+              <td>Hazards page provides official public tools and a private screening checklist; no parcel lookup performed.</td>
+              <td><a href="https://msc.fema.gov/portal/home">FEMA Map Service Center</a>; <a href="https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones">CAL FIRE/OSFM FHSZ</a>; <a href="https://www.usgs.gov/programs/earthquake-hazards">USGS Earthquake Hazards</a></td>
+            </tr>
+            <tr>
+              <td>PII redaction rule</td>
+              <td>Any discovered personal information must be redacted/anonymized before internal notes are created; never published.</td>
+              <td><span class="status verified">Applied</span></td>
+              <td>No PII was collected. Any future discovered PII must be replaced by placeholders and logged as a flagged internal handling event without exposing the PII.</td>
+              <td><a href="https://www.nist.gov/privacy-framework">NIST Privacy Framework</a></td>
+            </tr>
+            <tr>
+              <td>Public calculator constraint</td>
+              <td>A private calculator that runs in the reader's browser must not transmit or store sensitive inputs on a public server.</td>
+              <td><span class="status pending">Not implemented</span></td>
+              <td>No calculator is published. Suggestions page specifies client-side-only, no-network, no-storage default design for a future private implementation.</td>
+              <td><a href="https://owasp.org/www-project-top-ten/">OWASP Top 10 (security design reference)</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Allowed vs. Prohibited Public Data</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Data Class</th><th>Public on this site?</th><th>Handling</th><th>Example Placeholder / Form</th><th>Source</th></tr></thead>
+          <tbody>
+            <tr><td>Parcel address / APN / legal owner name</td><td>No</td><td><span class="status unverified">Withheld</span></td><td><code>[PARCEL_ID_WITHHELD]</code>, <code>[OWNER_ENTITY_WITHHELD]</code></td><td><a href="https://www.ftc.gov/business-guidance/privacy-security/data-security">FTC Data Security</a></td></tr>
+            <tr><td>Lease, rent roll, option notices, tenant financials</td><td>No</td><td><span class="status unverified">Withheld</span></td><td><code>[LEASE_DOC_WITHHELD]</code>, <code>[RENT_ROLL_WITHHELD]</code></td><td><a href="https://www.ftc.gov/business-guidance/privacy-security/data-security">FTC Data Security</a></td></tr>
+            <tr><td>Owner tax basis, returns, debt, insurance policies</td><td>No</td><td><span class="status unverified">Withheld</span></td><td><code>[TAX_BASIS_WITHHELD]</code>, <code>[LOAN_DOC_WITHHELD]</code></td><td><a href="https://www.irs.gov/privacy-disclosure">IRS Privacy &amp; Disclosure</a></td></tr>
+            <tr><td>Public aggregate area statistics</td><td>Yes, if verified</td><td><span class="status verified">Allowed with source</span></td><td>City/county/MSA statistics with official source links.</td><td><a href="https://www.census.gov/about/policies/privacy.html">Census Privacy</a></td></tr>
+            <tr><td>Official hazard methodology/maps links</td><td>Yes</td><td><span class="status verified">Allowed</span></td><td>Links to FEMA/USGS/CalFire tools and methodology; no parcel lookup result published.</td><td><a href="https://msc.fema.gov/portal/home">FEMA MSC</a></td></tr>
+            <tr><td>Unverified user scenario description</td><td>Yes, labeled</td><td><span class="status partial">Allowed with warning</span></td><td>Clearly labeled as user-provided, unverified, non-identifying scenario context.</td><td><a href="flagged.html#F-001">Flagged F-001</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><p><strong>Privacy:</strong> This page is a publication control. It is not legal advice. Authorized advisers should review handling before any private records are processed.</p></footer>
+</body>
+</html>

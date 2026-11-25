@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Suggestions | Jackbox1</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><div class="header-inner"><div class="brand"><div><h1>Jackbox1 Property Decision Workspace</h1><p>Suggestions for improving the site and decision process. Review before implementing.</p></div></div></div>
+    <nav class="nav" aria-label="Primary"><div class="nav-inner">
+      <a href="index.html">Dashboard</a><a href="research.html">Research</a><a href="hazards.html">Hazards</a><a href="analysis.html">Analysis</a><a href="questions.html">Questions &amp; Missing Info</a><a class="active" href="suggestions.html">Suggestions</a><a href="privacy.html">Privacy &amp; Handling</a><a href="sources.html">Sources</a><a href="flagged.html">Flagged for Review</a>
+    </div></nav>
+  </header>
+  <main id="main">
+    <h2 class="page-title">Suggestions (Review Before Implementation)</h2>
+    <p class="page-lead">This section is dedicated to improvement suggestions. Each suggestion includes rationale, prerequisites, privacy impact, and status. No suggestion should be implemented if it introduces PII exposure, fabricates data, or bypasses source verification.</p>
+
+    <div class="notice info">
+      <strong>Review gate:</strong> Suggestions below are proposals, not implemented features. A human reviewer should select the path, confirm privacy controls, and approve before implementation.
+    </div>
+
+    <section class="section">
+      <h2>Suggestion Register</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>ID</th><th>Suggestion</th><th>Improves</th><th>Prerequisites / Missing Info</th><th>Privacy Impact</th><th>Priority</th><th>Status</th><th>Source / Rationale</th></tr></thead>
+          <tbody>
+            <tr id="S-001"><td>S-001</td><td>Create a private, client-side-only after-tax calculator (no network calls, no storage by default).</td><td>Decision speed and scenario comparison.</td><td>Verified tax basis, rent, debt, sale costs, reinvestment assumptions; CPA review.</td><td>High sensitivity if mishandled. Must run locally in browser; no telemetry; explicit "do not enter PII" warning.</td><td>High</td><td><span class="status pending">Proposed</span></td><td><a href="https://owasp.org/www-project-top-ten/">OWASP</a>; <a href="https://www.irs.gov/publications/p544">IRS Pub 544</a></td></tr>
+            <tr id="S-002"><td>S-002</td><td>Add a secure internal parcel-screen packet generator (FEMA/CalFire/USGS links prefilled after private location entry).</td><td>W-04 hazard screening completeness.</td><td>Authorized parcel location; access-controlled environment.</td><td>High. Parcel location must remain internal; public site should only show anonymized status.</td><td>High</td><td><span class="status pending">Proposed</span></td><td><a href="https://msc.fema.gov/portal/home">FEMA MSC</a>; <a href="https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones">CAL FIRE FHSZ</a></td></tr>
+            <tr id="S-003"><td>S-003</td><td>Build a private trade-area data pull (ACS + local planning/traffic/school layers) with anonymized public summary export.</td><td>W-01 and neighbourhood evidence quality.</td><td>Secure parcel location; GIS tooling; data governance.</td><td>Medium/High. Raw tract selection may be sensitive if too granular; publish aggregate only.</td><td>High</td><td><span class="status pending">Proposed</span></td><td><a href="https://www.census.gov/programs-surveys/acs/">ACS</a>; <a href="https://data.census.gov/">data.census.gov</a></td></tr>
+            <tr id="S-004"><td>S-004</td><td>Add a versioned decision log with assumption register, sensitivity ranges, and approval signatures (private).</td><td>Auditability and decision discipline.</td><td>Defined owner/advisor review process.</td><td>Medium. Keep signatures/identities internal; public log only shows anonymized status.</td><td>Medium</td><td><span class="status pending">Proposed</span></td><td><a href="https://www.nist.gov/privacy-framework">NIST Privacy Framework</a></td></tr>
+            <tr id="S-005"><td>S-005</td><td>Add broker quote intake template for short-lease discount pricing (W-02/W-market).</td><td>Real-market pricing instead of assumptions.</td><td>Broker engagement; comp confidentiality agreements as needed.</td><td>Medium. Comps may be confidential; publish only anonymized ranges if permitted.</td><td>High</td><td><span class="status pending">Proposed</span></td><td><a href="questions.html#market-quotes">Market Quote Questions</a></td></tr>
+            <tr id="S-006"><td>S-006</td><td>Add scenario stress-test module: earthquake, wildfire, insurance shock, vacancy, cap-rate expansion.</td><td>Tail-risk visibility and wealth preservation.</td><td>Insurance quotes, engineering estimates, lease clauses, market assumptions.</td><td>Low if synthetic; medium if using private financials.</td><td>High</td><td><span class="status pending">Proposed</span></td><td><a href="https://www.usgs.gov/programs/earthquake-hazards">USGS</a>; <a href="https://www.insurance.ca.gov/">CA DOI</a></td></tr>
+            <tr id="S-007"><td>S-007</td><td>Implement automated source-check script for all table URLs and capture fetch dates in a verification log.</td><td>Verification discipline and maintenance.</td><td>CI workflow permission; approved link-check policy.</td><td>Low. Only public URLs checked.</td><td>Medium</td><td><span class="status pending">Proposed</span></td><td><a href="https://github.com/features/actions">GitHub Actions</a></td></tr>
+            <tr id="S-008"><td>S-008</td><td>Add a printable advisor packet export that excludes all private fields by design.</td><td>W-10 usability.</td><td>Finalized template; PII redaction tests.</td><td>Medium. Export must pass redaction checklist before sharing.</td><td>Medium</td><td><span class="status pending">Proposed</span></td><td><a href="analysis.html#executive-summary">Executive Summary</a></td></tr>
+            <tr id="S-009"><td>S-009</td><td>Create a trigger-date calendar (lease notice, broker refresh, insurance renewal, tax planning checkpoints).</td><td>Prevents missed deadlines and forced decisions.</td><td>Verified lease dates and advisor schedule.</td><td>High if dates tied to identifiable property; keep calendar private.</td><td>High</td><td><span class="status pending">Proposed</span></td><td><a href="questions.html#lease-questions">Lease Questions</a></td></tr>
+            <tr id="S-010"><td>S-010</td><td>Add comparative reinvestment dashboard (private): muni bonds, diversified REITs, DST/1031 options, cash reserve.</td><td>Opportunity-cost comparison for sell case.</td><td>Owner risk profile, tax constraints, verified product documents.</td><td>Medium. Financial profile must remain private.</td><td>Medium</td><td><span class="status pending">Proposed</span></td><td><a href="https://www.investor.gov/">Investor.gov</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section" id="calculator">
+      <h2>Private Calculator Suggestion (Not Implemented)</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Requirement</th><th>Recommendation</th><th>Status</th><th>Rationale</th><th>Source</th></tr></thead>
+          <tbody>
+            <tr><td>Execution model</td><td>Client-side only; no form POST, no analytics on inputs, no third-party scripts.</td><td><span class="status pending">Proposed</span></td><td>Prevents leakage of owner financials.</td><td><a href="https://owasp.org/www-project-top-ten/">OWASP</a></td></tr>
+            <tr><td>Data persistence</td><td>Default no storage; optional encrypted local export only after explicit user action.</td><td><span class="status pending">Proposed</span></td><td>Minimizes retained sensitive data.</td><td><a href="https://www.nist.gov/privacy-framework">NIST Privacy Framework</a></td></tr>
+            <tr><td>Inputs</td><td>Rent, expenses, capex, debt, basis, tax rates, sale costs, reinvestment return, hazard/insurance stress.</td><td><span class="status pending">Proposed</span></td><td>Supports W-02 and after-tax comparison.</td><td><a href="analysis.html#sell-hold">Sell vs Hold</a></td></tr>
+            <tr><td>Outputs</td><td>After-tax sell proceeds, after-tax hold cash flow, sensitivity table, downside flags; no recommendation without verified inputs.</td><td><span class="status pending">Proposed</span></td><td>Avoids false precision and premature decision.</td><td><a href="analysis.html#decision-rule">Decision Rule</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Review Checklist Before Implementing Any Suggestion</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Check</th><th>Pass Criteria</th><th>Status</th><th>Reviewer</th><th>Source</th></tr></thead>
+          <tbody>
+            <tr><td>Privacy review</td><td>No PII/parcel/financial identifiers exposed in public artifacts.</td><td><span class="status pending">Required</span></td><td>Owner/privacy reviewer</td><td><a href="privacy.html">Privacy &amp; Handling</a></td></tr>
+            <tr><td>Source verification</td><td>Every new table row has official source link; unverified values blank/flagged.</td><td><span class="status pending">Required</span></td><td>Analyst/reviewer</td><td><a href="sources.html">Sources</a></td></tr>
+            <tr><td>Decision safety</td><td>No sell/renew winner shown unless all decision gates closed.</td><td><span class="status pending">Required</span></td><td>Owner/advisors</td><td><a href="analysis.html#decision-rule">Decision Rule</a></td></tr>
+            <tr><td>Security review</td><td>No secrets, no untrusted scripts, no sensitive data transmission.</td><td><span class="status pending">Required</span></td><td>Engineering/security reviewer</td><td><a href="https://owasp.org/www-project-top-ten/">OWASP</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><p>Suggestions are advisory. Human review and privacy verification are required before implementation.</p></footer>
+</body>
+</html>
