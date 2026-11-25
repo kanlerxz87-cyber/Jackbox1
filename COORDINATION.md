@@ -159,7 +159,7 @@ was branched from `main@4aa9dad` and is a strict fast-forward (`README.md` only 
 
 **Build checks (`node scripts/validate.mjs`) — all pass:**
 - 22 sources, every host on the official allowlist, all https, all dated.
-- 210 tracked rows; 71 verified-like rows all carry a resolving `source_id`;
+- 211 tracked rows; 71 verified-like rows all carry a resolving `source_id`;
   48 unverified rows all have blank values (the validator fails if either invariant breaks).
 - 173 internal links resolve to a file that exists. Zero broken links.
 - Privacy scan over all pages, datasets and scripts: no address, APN, ZIP, email, phone,
