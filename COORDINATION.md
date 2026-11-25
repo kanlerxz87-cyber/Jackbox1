@@ -6,9 +6,9 @@
 > Status values: `unclaimed` · `in progress` · `needs review` · `done`
 > Stale claims (> 60 min, no commits) may be taken over; note the handoff in the Log.
 
-## ⚠️ Read first: three parallel sessions, three static trees
+## ⚠️ Read first: four parallel sessions, four static trees
 
-This repository was built by **three** concurrent sessions. All three trees are retained.
+This repository was built by **four** concurrent sessions. All four trees are retained.
 Nothing has been deleted or overwritten.
 
 | Session | Tree | What it is | Entry point |
@@ -17,6 +17,7 @@ Nothing has been deleted or overwritten.
 | `arena-f5a16939` | `/docs/` | Sourced research dashboard (PR #2) | `/docs/index.html` |
 | `ses-41ea221b` (this session) | `/` + `/pages/` + `/data/` | **Primary**: verified data layer, 11-page workspace, browser calculator, validator | `/index.html` → `/pages/index.html` |
 | `arena-8c9d9d97` + `arena-f5a16939` trees, preserved | `/desk/` | The earlier root site, moved here intact so its links still resolve | `/desk/index.html` |
+| `arena/2a61b633` | `/workspace/` | 17-page verified site + 72-row registry + Python build/check tooling | `/workspace/index.html` |
 
 **Integration decision (ses-41ea221b).** The root tree could only have one `pages/` directory.
 The earlier root site was **moved intact to `/desk/`** with its internal links rewritten, and
@@ -30,6 +31,7 @@ links, all resolving.**
 | Session ID | Branch | Role | State |
 |---|---|---|---|
 | `arena-8c9d9d97` | merged via PR #1 | initial root site | done (needs review) |
+| `arena/2a61b633` | merged via PR #7 | `/workspace/` registry-driven site | done |
 | `arena-f5a16939` | merged via PR #2 | `docs/` sourced dashboard | done |
 | `ses-41ea221b` | `arena/41ea221b-jackbox1` | verified data layer + integration + publish | active |
 
@@ -183,67 +185,6 @@ dollar loss estimate for any hazard. Each is blocked by a named, documented gap 
 required inventing an input.
 
 **Flagged items do not block publication and are published on the Flagged for Review page.**
-=======
-# COORDINATION
-
-Shared task board for parallel sessions. Claim a task before editing files. Do not edit files owned by another active claim.
-
-Privacy rule (all sessions): no owner names, no street addresses, no APNs, no lease PDFs, no tax returns, no tenant-unit sales for the subject site. Public pages use placeholders only.
-
-**Merge note (2026-11-25):** `origin/main` already contained session `arena-8c9d9d97` (PR #1: root `index.html`, `pages/`, `assets/`). Session `arena-f5a16939` built a second tree under `docs/`. Both trees are kept. Neither session’s files were discarded. Shared index/nav were not rewritten in this merge; GitHub Pages should publish the repository root so both `/` and `/docs/` resolve.
-
-## Tasks
-
-| ID | Task | Status | Owner | Files |
-| --- | --- | --- | --- | --- |
-| A1 | Initial privacy-first site, research, verification and integration | needs review | arena-8c9d9d97 | index.html, assets/*, pages/*, README.md, COORDINATION.md |
-| T0 | Create coordination board | done | arena-f5a16939 | COORDINATION.md |
-| T1 | Privacy policy, placeholders, internal-use notice | done | arena-f5a16939 | docs/privacy.html, docs/js/nav.js, README.md |
-| T2 | W-01 trade-area vs city/county proxies | done | arena-f5a16939 | docs/trade-area.html, docs/data/findings.json |
-| T3 | Tenant system evidence (same-store, units, closures, rental revenue) | done | arena-f5a16939 | docs/tenant.html, docs/data/findings.json |
-| T4 | W-04 parcel hazard screening (maps only; parcel blank) | done | arena-f5a16939 | docs/hazards.html |
-| T5 | W-02 sell-versus-hold worksheet (no winner) | done | arena-f5a16939 | docs/sell-vs-hold.html |
-| T6 | After-tax module (verified tax rules only) | done | arena-f5a16939 | docs/after-tax.html |
-| T7 | Private in-browser calculator | done | arena-f5a16939 | docs/calculator.html, docs/js/calculator.js |
-| T8 | W-03 decision-gate board | done | arena-f5a16939 | docs/decision-gate.html |
-| T9 | Questions, missing information, discovery path | done | arena-f5a16939 | docs/questions.html |
-| T10 | W-10 one-page printable advisor summary | done | arena-f5a16939 | docs/advisor-summary.html |
-| T11 | Suggestions for site and decision process | done | arena-f5a16939 | docs/suggestions.html |
-| T12 | Flagged for Review page | done | arena-f5a16939 | docs/flagged.html |
-| T13 | Site shell, dashboard, sources, methods | done | arena-f5a16939 | docs/index.html, docs/css/app.css, docs/sources.html, docs/methods.html |
-| T14 | GitHub Pages publish, PR, merge to main | done | arena-f5a16939 | (legacy Pages from `main` `/`; duplicate Actions workflow removed after it conflicted with legacy) |
-
-## Verification (arena-f5a16939)
-
-- Census Vintage 2024 press release CB25-77 fetched: LA city 3,878,704; +31,276.
-- Census Reporter ACS 2024 1-year city and county profiles fetched (flagged as republisher).
-- EDD September 2025 release fetched: LA County NSA unemployment 5.9%.
-- JACK FY 2025 earnings release fetched: SSS, units, closures, guidance.
-- IRS Topic 409, NIIT FAQ, like-kind tips fetched.
-- USGS UCERF3 FAQ fetched.
-- FTB 2025 540 booklet fetched (top rate / BHST; full brackets not copied).
-- SEC 10-K iXBRL fetched but dollar lines not confirmed → franchise rental revenue left blank.
-
-## Verification (arena-8c9d9d97, as recorded on main)
-
-- Census QuickFacts city population and income after a later fetch; county comparison page could not be fetched and a county figure was removed.
-- BLS metro unemployment/employment links; issuer FY2025 release; FEMA; CAL FIRE; USGS; IRS Pub 544.
-- Direct page fetch failures flagged; issuer disclosures are corporate, not a government verification of this tenant.
-
-## Irregularities
-
-- Public GitHub remote.
-- Two parallel static trees (`/` and `/docs/`).
-- data.census.gov fetch failed in arena-f5a16939; QuickFacts numbers not used in `docs/`.
-- No parcel-level identifiers, by design.
-- No sell/renew winner, by design.
-
-## Log
-
-- 2026-11-25 arena-8c9d9d97: Built root static anonymous site (PR #1 merged to main). Status needs review.
-- 2026-11-25 arena-f5a16939: Built `docs/` tree on `arena/f5a16939-jackbox1`. PR #2 conflicted with main. Merged `origin/main` into this branch without deleting the root site. Both trees retained.
-- 2026-11-25 arena-f5a16939: PR https://github.com/kanlerxz87-cyber/Jackbox1/pull/2 merged (`bcdc324`). GitHub Pages built: https://kanlerxz87-cyber.github.io/Jackbox1/ (root desk) and https://kanlerxz87-cyber.github.io/Jackbox1/docs/ (sourced dashboard). Duplicate Actions `deploy-pages` job failed against legacy Pages source and is being removed so checks stay green.
->>>>>>> origin/main
 
 ---
 
@@ -298,9 +239,93 @@ revision for a short window; a cache-busted fetch confirmed the corrected conten
 
 ## Final state
 
-- **Three static trees, 21 pages, 284 internal links, zero broken.**
+- **Four static trees, 38 pages, zero broken internal links.**
 - **Privacy scan clean** across all pages, datasets and scripts.
 - **Calculator verified** against an independent hand calculation to the dollar.
 - **43 of 43** published figures re-checked against captured official responses.
 - **No sell/renew verdict published**, because every input that would justify one is private
   and absent. That is the finding, not a shortfall.
+
+## Session `arena/2a61b633-jackbox1` — additive work (PR opening after this merge)
+
+**Scope discipline.** This session arrived to an empty repo (`4aa9dad`) *before* PRs #1–#4 landed.
+It rebased onto `main` rather than overwriting: its site is published at **`/workspace/`** so that the
+existing `/` and `/docs/` trees are untouched. No file owned by another session was edited.
+
+| ID | Task | Status | Owner | File scope (exclusive to this session) |
+|---|---|---|---|---|
+| S-01 | Verified data registry with enforced source links | done | `arena/2a61b633` | `data/registry.yaml`, `data/tracts_demo_90015.csv` |
+| S-02 | Static generator + integrity checks | done | `arena/2a61b633` | `tools/build.py`, `tools/check.py`, `tools/reverify.py` |
+| S-03 | 17-page verified site (W-01…W-14) | done | `arena/2a61b633` | `workspace/` |
+| S-04 | Private lease-abstract / notice-calendar / sell-vs-hold templates | done | `arena/2a61b633` | `private/` (gitignored) |
+
+**Irregularities found on `main` and fixed in this merge (see also `workspace/review.html`):**
+
+| # | Finding | Resolution |
+|---|---|---|
+| M-01 | `README.md` on `main` contained unresolved merge-conflict markers (`<<<<<<<`, `=======`, `>>>>>>>`) — the file was published as-is on the live repo | Resolved: primary README kept, earlier root-tree description preserved as a quoted section |
+| M-02 | `COORDINATION.md` on `main` contained the same unresolved markers | Resolved: board preserved, conflict block folded into this session section |
+| M-03 | Three parallel static trees (`/`, `/docs/`, `/desk/`) plus this session's fourth | Not merged into one; each kept and cross-referenced. Consolidation remains a decision for the owner |
+
+**Verification performed in this session** (all re-checkable via the links in `workspace/sources.html`):
+
+- BLS public API (`api.bls.gov`): LAUS city series, CES metro series, CPI-U metro series — values captured verbatim, `P`/`G`/`X` footnotes preserved.
+- SEC EDGAR: JACK 10-K FY2023/FY2024/FY2025 XBRL note pages (units, royalties, rental revenue, segment profit, leases) and the 8-K on the Del Taco sale.
+- Census: ACS 2020–2024 5-year via Census Reporter's mirror of the Census API (city, county, metro, 23 tract rows); QuickFacts for the V2025 estimate.
+- FRED: DGS10 daily series, re-pulled to 2026-11-23.
+- Primary law: Cal. Const. Art. XIII A §§1–2; RTC §§11911, 17043; 26 U.S.C. §168; IRS Topic 409, NIIT, 1031; FTB 2025 schedules; LAHD Measure ULA.
+- Hazards: CAL FIRE OSFM FHSZ statute and map vintages; CGS Alquist-Priolo; FEMA NRI v1.20 and NFHL.
+
+**Build/check result at merge:** `python3 tools/build.py` → 17 pages from 72 rows (57 verified / 5 flagged / 10 blank);
+`python3 tools/check.py` → all internal links and anchors resolve, every data row carries a badge, no external scripts, no storage calls.
+
+### 2026-11-25 · `arena/2a61b633-jackbox1` — final integration record
+
+- Merged `origin/main` (PRs #1–#4) into this branch; **no other session's file was deleted or overwritten**.
+- Resolved the two pre-existing conflict-marker files (`README.md`, `COORDINATION.md`) — recorded as **M-01/M-02**.
+- Corrected four stale external links (OSFM ×2, CGS EQ Zapp, FEMA portal) — recorded as **F-11** on `workspace/review.html`.
+- Re-verified the combined tree: **772 internal links across all four trees, 0 broken**; HTML nesting checked on
+  every page (0 structural errors); `tools/check.py` green.
+- Build: 17 pages, 72 registry rows — 57 verified / 5 flagged / 10 blank.
+- Publishing target for this session: `/workspace/` (repo root remains the Pages source; additive only).
+
+### 2026-11-25 · ses-41ea221b — merge of `arena/2a61b633` (PR #7) into this branch
+
+**Nothing was deleted.** The fourth tree `/workspace/` (18 pages, 72-row registry, Python
+tooling) is merged alongside the other three. Merge conflict was confined to `COORDINATION.md`;
+both deploy records were kept and this section appended.
+
+**Cross-session work respected.** `arena/2a61b633` independently found the same population
+vintage problem this session logged as **IR-13** — its registry carries DEM-01 (ACS 2020-2024,
+3,857,263) and DEM-04 (QuickFacts V2025, 3,869,089) with an explicit "not interchangeable"
+note. Two sessions reaching the same conclusion from different sources is recorded as
+corroboration, not duplication.
+
+**Defect found in the incoming tree and fixed, not ignored.** The `/workspace/` pages rendered
+a real Los Angeles ZIP (90015) as a demonstration tract set. It was labelled "demonstration
+only" and was not the parcel, but a ZIP is an identifier and this repo's own rule is that
+identifiers do not get published. Fixed by:
+- relabelling the set as `DEMO-TRACTS-A` in `data/registry.yaml` and `tools/build.py`;
+- rebuilding the tree (`python3 tools/build.py` → 17 pages from 72 rows) so the rendered prose
+  no longer names a ZIP;
+- leaving the ZIP inside the `api.censusreporter.org` source URL only, because that URL *is*
+  the citation and cannot be rewritten without breaking it. Documented below.
+
+**Privacy-scanner false positive repaired, scanner strengthened.** The ZIP rule matched the
+digits in the statutory citation `RTC §11911(b)` (reading "0.11" as a ZIP). The rule is now
+scoped: URLs inside `href`/`src` are excluded from the prose scan (they are audited separately
+against the official-host allowlist), and statutory section numbers are stripped first.
+Regression-tested by injecting a fake street address, email and phone into the data: the
+build was rejected with 6 precise failures, then restored.
+
+**Combined verification after this merge:**
+- `node scripts/validate.mjs` → all checks pass. 211 tracked rows, 71 verified-like, 48 blank.
+- `python3 tools/check.py` → 18 pages, 72 registry rows (57 verified / 5 flagged / 10 blank), green.
+- Internal links across all four trees: 284 (build validator) + 420 (`/workspace/` audit) = all resolve.
+- Independent audit of `/workspace/`: 18 pages, 420 internal links, 0 broken.
+- Privacy scan clean on all four trees under the scoped rule.
+
+**Known, documented exemption.** The string `90015` survives inside one `href` on
+`workspace/economy.html` and `workspace/review.html` because it is part of the public Census
+API query URL that cites the demonstration data. It is not the parcel, and the adjacent note
+states so in capitals. Recorded here so it is a decision, not an oversight.

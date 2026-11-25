@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Flagged for Review · Jack in the Box — NNN Leasehold Decision Workspace</title>
+<meta name="description" content="Verified-source decision workspace for a single-tenant Jack in the Box under a triple-net lease in central Los Angeles.">
+<meta name="robots" content="index,follow">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="site">
+  <div class="wrap bar">
+    <div class="brand">Jack in the Box · NNN leasehold decision workspace
+      <span>Aggregate findings only — no owner, parcel or lease identifiers</span></div>
+    <div class="privacy">Privacy-first: anonymised by design</div>
+  </div>
+</header>
+<nav class="site" aria-label="Sections">
+  <div class="wrap">
+    <ul>
+      <li><a href="index.html">Overview</a></li>
+      <li><a href="questions.html">Questions &amp; Gaps</a></li>
+      <li><a href="economy.html">Trade Area</a></li>
+      <li><a href="tracts.html">Tract Evidence</a></li>
+      <li><a href="operator.html">Tenant Strength</a></li>
+      <li><a href="hazards.html">Hazard Screen</a></li>
+      <li><a href="tax.html">After-Tax</a></li>
+      <li><a href="market.html">Short-Lease Pricing</a></li>
+      <li><a href="model.html">Sell vs Hold</a></li>
+      <li><a href="gates.html">Decision Gates</a></li>
+      <li><a href="risks.html">Risk Register</a></li>
+      <li><a href="calculator.html">Calculator</a></li>
+      <li><a href="suggestions.html">Suggestions</a></li>
+      <li><a href="review.html">Flagged for Review</a></li>
+      <li><a href="sources.html">Sources</a></li>
+      <li><a href="summary.html">One-Page Summary</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+    </ul>
+  </div>
+</nav>
+<main>
+  <div class="wrap">
+    <div class="pagehead">
+      <p class="eyebrow">Integrity register</p>
+      <h1>Flagged for Review</h1>
+      <p class="lede">Ten irregularities and every affected row, published rather than hidden.</p>
+    </div>
+
+<div class="notice warn">
+  <strong>Everything questionable, in one place, with the source links intact</strong>
+  Nothing on this page blocks the site from being used. Each item is published so it can be reviewed and closed, rather
+  than quietly dropped. Ten irregularities and 15 affected data rows.
+</div>
+
+<h2>Irregularities and anomalies</h2>
+<div class="table-scroll">
+<table>
+<caption>F-items are process or sourcing anomalies. Each names what was found, what it prevents, and what would resolve it.</caption>
+<thead><tr><th>ID</th><th>Finding</th><th>What it affects</th><th>What would close it</th></tr></thead>
+<tbody><tr><td class="metric">F-01</td><td><strong>No street address, APN or parcel identifier was supplied</strong></td>
+<td class="note">Every parcel-specific row stays blank: hazard zone status, zoning, AADT, tax rate area and assessed value. Every parcel-level conclusion on this site is therefore unavailable.</td><td class="note">Supplying the APN from the deed closes G-01 and unblocks hazard screening, traffic counts, tax rate area and comparables in a single step.</td></tr><tr><td class="metric">F-02</td><td><strong>No lease document supplied</strong></td>
+<td class="note">Expiration is known only as a 2030–2035 range. Rent, escalators, options, co-tenancy, assignment, ROFR, holdover and cure periods are all unknown.</td><td class="note">The abstract and notice-calendar reconciliation close G-02. Until then the model has no timeline, and the option can be lost by default.</td></tr><tr><td class="metric">F-03</td><td><strong>No verified quote set for a short-lease QSR in central Los Angeles</strong></td>
+<td class="note">The short-lease discount (MKT-01), capitalisation rate (MKT-02) and comparable rent (MKT-03) are blank. No national average was substituted.</td><td class="note">Three recorded sales or written quotes with known term close G-03. This is the single largest value driver in the decision.</td></tr><tr><td class="metric">F-04</td><td><strong>No assessed value, basis, purchase date, depreciation history or loan terms supplied</strong></td>
+<td class="note">The after-tax module publishes the statutory machinery but no dollar result for this owner. The worked example on the tax page uses invented round numbers and says so.</td><td class="note">The adviser&#x27;s reconstruction of adjusted basis and recapture closes G-05.</td></tr><tr><td class="metric">F-05</td><td><strong>“Central Los Angeles” is not a Census geography</strong></td>
+<td class="note">The tract set on the tract page is DEMO-TRACTS-A, a public demonstration set and explicitly not the subject parcel. City, county and metro figures on the economy page are labelled substitutes.</td><td class="note">Geocoding the parcel and building a drive-time ring closes G-06 and replaces every substitute.</td></tr><tr><td class="metric">F-06</td><td><strong>One hazard figure comes from a third-party blog, not FEMA</strong></td>
+<td class="note">HAZ-02 (earthquake = ~60% of modelled expected annual loss) is quoted from a private analysis of FEMA&#x27;s National Risk Index, not from FEMA directly. It is flagged and must not be published as a finding.</td><td class="note">Pull the NRI tract and county downloads from FEMA directly and recompute before citing.</td></tr><tr><td class="metric">F-07</td><td><strong>Measure ULA tiering is confirmed by a Council press release, not the administering department</strong></td>
+<td class="note">TAX-05 (5.5% above $10m) traces to a .gov Council District 4 release. TAX-04 (4% above $5m) traces to LAHD. Both are official, but the administering office page for the tier table was not retrieved.</td><td class="note">Ask the Office of Finance in writing for the tier schedule and the exemption analysis before pricing a sale.</td></tr><tr><td class="metric">F-08</td><td><strong>BLS marks several published figures preliminary, and one annual figure is incomplete</strong></td>
+<td class="note">LAB-01, LAB-04 to LAB-10 are preliminary. LAB-03 is an 11-month 2025 average because October 2025 was not collected during the federal shutdown.</td><td class="note">Re-pull before relying on any of them; the API values will change.</td></tr><tr><td class="metric">F-09</td><td><strong>Two population vintages appear on the same site</strong></td>
+<td class="note">DEM-01 (3,857,263) is an ACS 2020–2024 5-year estimate; DEM-04 (3,869,089) is a 2025 Vintage estimate. They are not interchangeable and must not be mixed in one trend.</td><td class="note">Keep them in separate series or use one vintage consistently.</td></tr><tr><td class="metric">F-11</td><td><strong>Four external source links were stale and have been corrected</strong></td>
+<td class="note">The OSFM Fire Hazard Severity Zone map paths (two rows) and the CGS EQ Zapp path returned 404s, and the FEMA Map Service Center portal needed its full portal path. Corrected on 2026-11-25 and re-checked; the registry notes record the correction.</td><td class="note">Re-check every external link quarterly — link rot in government sites is routine, and a dead source link is indistinguishable from no source.</td></tr><tr><td class="metric">F-12</td><td><strong>The repository&#x27;s own README.md and COORDINATION.md were published with unresolved merge-conflict markers</strong></td>
+<td class="note">Both files on `main` contained `&lt;&lt;&lt;&lt;&lt;&lt;&lt;` / `=======` / `&gt;&gt;&gt;&gt;&gt;&gt;&gt;` blocks, so the live repository displayed raw conflict markers. Found during this session&#x27;s merge and resolved without discarding either version.</td><td class="note">Add a marker scan to any pre-merge check. `tools/check.py` in this session covers the published tree; the scan should be extended to the repository root.</td></tr><tr><td class="metric">F-10</td><td><strong>Franchise-unit and royalty comparisons span a corporate restructuring</strong></td>
+<td class="note">FY2023 consolidated Del Taco; FY2025 does not. A 209,556 impairment charge sits inside the FY2025 segment table. Direction is unambiguous; ratios across years are not.</td><td class="note">Recompute any ratio directly from the filings rather than from any summary, including this site&#x27;s.</td></tr></tbody></table></div>
+
+<h2>Rows that are blank by design (10)</h2>
+<div class="table-scroll"><table>
+<caption>Every one of these was left empty rather than estimated, inferred or borrowed from a national figure. A blank is a finding, not an omission.</caption>
+<thead><tr><th>Metric</th><th>Value</th><th>Unit / basis</th><th>Geography</th><th>Period</th><th>Source</th><th>Status</th><th>Verification note</th></tr></thead><tbody>
+<tr data-status="unverified">
+<td class="metric">Parcel fire hazard severity zone<br><span class="unit">HAZ-05</span></td>
+<td class="blank">blank — unverified</td>
+<td class="unit">classification</td>
+<td>Subject parcel (unidentified)</td>
+<td>n/a</td>
+<td class="src"><a href="https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones" rel="noopener">CAL FIRE FHSZ viewer (requires parcel location)</a></td>
+<td><span class="badge b-unverified">unverified</span></td>
+<td class="note">BLANK BY DESIGN. No street address or APN supplied (F-01). A commercial parcel on flat urban ground is typically outside the LRA Very High zones, but &#x27;typically&#x27; is not a finding.</td>
+</tr>
+<tr data-status="unverified">
+<td class="metric">Alquist-Priolo Earthquake Fault Zone status<br><span class="unit">HAZ-06</span></td>
+<td class="blank">blank — unverified</td>
+<td class="unit">zone status</td>
+<td>Subject parcel (unidentified)</td>
+<td>n/a</td>
+<td class="src"><a href="https://gis.data.cnra.ca.gov/datasets/cadoc::cgs-alquist-priolo-fault-zones" rel="noopener">California Geological Survey — EQ Zapp / Official Alquist-Priolo maps</a></td>
+<td><span class="badge b-unverified">unverified</span></td>
+<td class="note">BLANK BY DESIGN. Requires parcel geometry. Los Angeles quadrangle maps were revised 2017-06-15 (CGS) — use the current official map, not a cached one.</td>
+</tr>
+<tr data-status="unverified">
+<td class="metric">FEMA flood zone (NFHL) at the parcel<br><span class="unit">HAZ-07</span></td>
+<td class="blank">blank — unverified</td>
+<td class="unit">flood zone designation</td>
+<td>Subject parcel (unidentified)</td>
+<td>n/a</td>
+<td class="src"><a href="https://hazards.fema.gov/femaportal/wps/portal/portal/miphome" rel="noopener">FEMA Flood Map Service Center / NFHL</a></td>
+<td><span class="badge b-unverified">unverified</span></td>
+<td class="note">BLANK BY DESIGN. Requires parcel geometry. Lenders will price flood insurance off this line, so it is a financing gate as well as a physical-risk gate.</td>
+</tr>
+<tr data-status="unverified">
+<td class="metric">Seismic hazard zone (liquefaction / landslide) status<br><span class="unit">HAZ-08</span></td>
+<td class="blank">blank — unverified</td>
+<td class="unit">zone status</td>
+<td>Subject parcel (unidentified)</td>
+<td>n/a</td>
+<td class="src"><a href="https://maps.conservation.ca.gov/cgs/informationwarehouse/eqzapp/" rel="noopener">California Geological Survey Seismic Hazard Zones (EQ Zapp)</a></td>
+<td><span class="badge b-unverified">unverified</span></td>
+<td class="note">BLANK BY DESIGN. Central LA has mapped liquefaction zones; whether THIS parcel is in one is unknowable without the APN.</td>
+</tr>
+<tr data-status="unverified">
+<td class="metric">Short-lease discount (QSR, central Los Angeles)<br><span class="unit">MKT-01</span></td>
+<td class="blank">blank — unverified</td>
+<td class="unit">percent or basis points</td>
+<td>Central Los Angeles</td>
+<td>n/a</td>
+<td class="src">None obtained — requires verified arm&#x27;s-length quotes or recorded sales</td>
+<td><span class="badge b-unverified">unverified</span></td>
+<td class="note">BLANK BY DESIGN (F-03). No verifiable quote set was obtainable in this session. A short-lease discount is the single largest value driver in a 2030–2035 expiry decision and must not be guessed.</td>
+</tr>
+<tr data-status="unverified">
+<td class="metric">Capitalisation rate on comparable net-lease QSR assets<br><span class="unit">MKT-02</span></td>
+<td class="blank">blank — unverified</td>
+<td class="unit">percent</td>
+<td>Central Los Angeles</td>
+<td>n/a</td>
+<td class="src">None obtained — requires verified comparables</td>
+<td><span class="badge b-unverified">unverified</span></td>
+<td class="note">BLANK BY DESIGN (F-03). Broker surveys are not official sources and were not used.</td>
+</tr>
+<tr data-status="unverified">
+<td class="metric">Rent per square foot, comparable QSR space<br><span class="unit">MKT-03</span></td>
+<td class="blank">blank — unverified</td>
+<td class="unit">USD/square foot/year</td>
+<td>Central Los Angeles</td>
+<td>n/a</td>
+<td class="src">None obtained</td>
+<td><span class="badge b-unverified">unverified</span></td>
+<td class="note">BLANK BY DESIGN (F-03).</td>
+</tr>
+<tr data-status="unverified">
+<td class="metric">Lease expiration date<br><span class="unit">LSE-01</span></td>
+<td class="blank">blank — unverified</td>
+<td class="unit">date</td>
+<td>Subject parcel</td>
+<td>n/a</td>
+<td class="src">Owner reports a range of 2030–2035 only</td>
+<td><span class="badge b-unverified">unverified</span></td>
+<td class="note">BLANK BY DESIGN (F-02). Everything in the sale-versus-renewal case keys off this date and the notice windows.</td>
+</tr>
+<tr data-status="unverified">
+<td class="metric">Current base rent, escalations, and reimbursements<br><span class="unit">LSE-02</span></td>
+<td class="blank">blank — unverified</td>
+<td class="unit">USD</td>
+<td>Subject parcel</td>
+<td>n/a</td>
+<td class="src">Not supplied</td>
+<td><span class="badge b-unverified">unverified</span></td>
+<td class="note">BLANK BY DESIGN (F-02).</td>
+</tr>
+<tr data-status="unverified">
+<td class="metric">Renewal option terms (count, length, rent mechanism)<br><span class="unit">LSE-03</span></td>
+<td class="blank">blank — unverified</td>
+<td class="unit">text</td>
+<td>Subject parcel</td>
+<td>n/a</td>
+<td class="src">Not supplied</td>
+<td><span class="badge b-unverified">unverified</span></td>
+<td class="note">BLANK BY DESIGN (F-02). Operator-side evidence (OPE-14) says the company&#x27;s own leases run ~20 years initial term with 1–20 year options at its sole discretion — but that describes the company&#x27;s leases, not this one.</td>
+</tr>
+</tbody></table></div>
+
+<h2>Rows that are published but flagged (5)</h2>
+<div class="table-scroll"><table>
+<caption>These values are published with a caveat that materially affects how they may be used. Read the verification note before quoting any of them.</caption>
+<thead><tr><th>Metric</th><th>Value</th><th>Unit / basis</th><th>Geography</th><th>Period</th><th>Source</th><th>Status</th><th>Verification note</th></tr></thead><tbody>
+<tr data-status="flagged">
+<td class="metric">Population of the demonstration tract district DEMO-TRACTS-A (aggregate of its Census tracts, not the subject parcel)<br><span class="unit">DEM-05</span></td>
+<td class="num">72,763 <span class="unit">persons</span></td>
+<td class="unit">persons</td>
+<td>DEMO-TRACTS-A — a public demonstration tract set in Los Angeles, explicitly NOT the subject parcel</td>
+<td>ACS 2020–2024 5-year, sum of 23 tract-level B01003 estimates</td>
+<td class="src"><a href="https://api.censusreporter.org/1.0/data/show/latest?table_ids=B01003,B19013,B25077&amp;geo_ids=140|86000US90015" rel="noopener">U.S. Census Bureau, ACS 2020–2024 5-year (23 tracts, see data/tracts.csv)</a></td>
+<td><span class="badge b-flagged">flagged</span></td>
+<td class="note">DEMONSTRATION ONLY. 90015 was chosen because it is a central-LA ZIP, not because the subject parcel is there. This figure is the arithmetic sum of the 23 published tract estimates in data/tracts_demo_90015.csv — an aggregation of published values, not an estimate of the parcel&#x27;s trade area. Replace once the parcel&#x27;s OWN tract is known (F-01).</td>
+</tr>
+<tr data-status="flagged">
+<td class="metric">Unemployment rate, annual average 2025<br><span class="unit">LAB-03</span></td>
+<td class="num">5.8 <span class="unit">percent</span></td>
+<td class="unit">percent</td>
+<td>Los Angeles city, CA (LAUS area)</td>
+<td>2025 annual</td>
+<td class="src"><a href="https://api.bls.gov/publicAPI/v1/timeseries/data/LAUCT064400000000003" rel="noopener">U.S. Bureau of Labor Statistics, LAUS</a></td>
+<td><span class="badge b-flagged">flagged</span></td>
+<td class="note">BLS footnote G — 2025 annual value is an 11-month average excluding October, because October 2025 data were not collected during the federal shutdown. Not comparable to a full-year average.</td>
+</tr>
+<tr data-status="flagged">
+<td class="metric">Employment-to-population ratio (16+)<br><span class="unit">LAB-11</span></td>
+<td class="num">61.0 <span class="unit">percent</span></td>
+<td class="unit">percent</td>
+<td>Los Angeles city, CA</td>
+<td>ACS 2020–2024 5-year (B23025: 2,128,918 employed of 3,204,204 civilian non-institutional 16+)</td>
+<td class="src"><a href="https://api.censusreporter.org/1.0/data/show/latest?table_ids=B01003,B19013,B19301,B25077,B25064,B23025,B15003,B25003&amp;geo_ids=16000US0644000,05000US06037,31000US31080" rel="noopener">U.S. Census Bureau, ACS 2020–2024 5-year</a></td>
+<td><span class="badge b-flagged">flagged</span></td>
+<td class="note">Derived arithmetic from two published ACS cells (not an ACS-published ratio). Recompute before quoting.</td>
+</tr>
+<tr data-status="flagged">
+<td class="metric">Earthquake share of modelled expected annual loss, Los Angeles County<br><span class="unit">HAZ-02</span></td>
+<td class="num">60 <span class="unit">percent of total EAL (secondary reporting of NRI v1.20)</span></td>
+<td class="unit">percent of total EAL (secondary reporting of NRI v1.20)</td>
+<td>Los Angeles County, CA</td>
+<td>NRI v1.20</td>
+<td class="src"><a href="https://cove.inc/blog/wildfire-risk-by-market-fema-data-2026-part-1/" rel="noopener">Secondary analysis of FEMA NRI v1.20 (third-party publication, not FEMA)</a></td>
+<td><span class="badge b-flagged">flagged</span></td>
+<td class="note">NOT AN OFFICIAL SOURCE. Quote comes from a private blog interpreting FEMA data. Use only to prioritise which official dataset to pull; do not publish as a finding until checked against the FEMA NRI download itself.</td>
+</tr>
+<tr data-status="flagged">
+<td class="metric">Local Responsibility Area FHSZ map series for Los Angeles County<br><span class="unit">HAZ-04</span></td>
+<td class="num">Recommended 9/2011 (VHFHSZ, LRA) <span class="unit">map vintage</span></td>
+<td class="unit">map vintage</td>
+<td>Los Angeles County (Local Responsibility Area)</td>
+<td>Published 2011; 2025 LRA rollout referenced by OSFM</td>
+<td class="src"><a href="https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones" rel="noopener">CAL FIRE Office of the State Fire Marshal</a></td>
+<td><span class="badge b-flagged">flagged</span></td>
+<td class="note">The 2011 LRA recommendation is the vintage described on the page; OSFM also references a 2025 LRA rollout, and local ordinances (Gov. Code 51179) control what applies to a given parcel. Verify against the current viewer.</td>
+</tr>
+</tbody></table></div>
+
+<h2>Rows that passed verification</h2>
+<p class="lede">The remaining 57 rows each carry a direct link to the official page or
+endpoint that displays the value. They are listed in full on the <a href="sources.html">Sources</a> page, grouped by publisher.</p>
+  </div>
+</main>
+<footer class="site">
+  <div class="wrap">
+    <div>Built 2026-11-25 from <code>data/registry.yaml</code>. 17 pages, no external scripts, no tracking.</div>
+    <div><a href="privacy.html">Privacy &amp; anonymisation</a> · <a href="review.html">Flagged for review</a> · <a href="sources.html">Sources</a></div>
+  </div>
+</footer>
+<script src="assets/js/app.js" defer></script>
+</body>
+</html>

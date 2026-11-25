@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Jackbox property decision workspace
 
 An **anonymised, source-verified decision workspace** for a single-tenant Jack in the Box
@@ -117,71 +116,60 @@ Fifteen gates, sequenced on the *Open questions* page. Three cost nothing and on
 *Not investment, legal or tax advice. Engage a licensed appraiser, attorney and CPA before
 acting. See `COORDINATION.md` for the task board, sources, verification performed and the
 PR/deploy record.*
-=======
-# Anonymous Central LA NNN workspace
-
-Public research site for an **anonymized** sell-versus-renew review of a Jack in the Box NNN lease described as located around Central Los Angeles.
-
-**This repository must not contain** owner names, street addresses, APNs, lease PDFs, tax returns, or unit-level sales.
-
-Two static trees are in the repo (parallel sessions; both retained):
-
-| Tree | Session | Entry |
-| --- | --- | --- |
-| Repository root | arena-8c9d9d97 | `index.html`, `pages/`, `assets/` |
-| `docs/` | arena-f5a16939 | `docs/index.html` (sourced tables, decision gates, calculator) |
-
-GitHub Pages is configured to publish the **repository root**, so both `/` and `/docs/` can resolve.
-
-**No sell or renew recommendation is made.**
-
-A public static website is not an access-controlled vault. Keep lease files and owner finances offline. See [COORDINATION.md](COORDINATION.md) and the Flagged for Review pages (`pages/flags.html` and `docs/flagged.html`).
->>>>>>> origin/main
-
 
 ---
 
-## Repository layout — three parallel builds, all retained
+## This session's tree: `/workspace/` (session `arena/2a61b633`)
 
-This repo was produced by three concurrent sessions. **Nothing was deleted.**
+A fourth, independent build, added after PRs #1–#4 landed. It is published at
+**https://kanlerxz87-cyber.github.io/Jackbox1/workspace/** and is fully self-contained
+(17 pages, its own nav, no shared assets, no links into another session's tree).
 
-| Path | What it is | Start here |
-|---|---|---|
-| `/pages/index.html` | **Primary.** Source-verified workspace, 11 pages, live official data, browser calculator | ← start here |
-| `/desk/index.html` | Earlier root site, preserved intact with links rewritten | archive |
-| `/docs/index.html` | Parallel sourced research dashboard from another session | archive |
+Its distinguishing feature is that the site is **generated from a data registry**, so a value cannot
+appear on a page without a source link and a verification status:
 
-Live: https://kanlerxz87-cyber.github.io/Jackbox1/pages/index.html
+```
+data/registry.yaml        72 rows — id, metric, value, unit, geography, period, source, url, status, note
+data/tracts_demo_90015.csv  23 tract-level ACS observations (demonstration set only)
+tools/build.py            generator: reads data/, writes workspace/
+tools/check.py            link, anchor, tag-balance, traceability and privacy checks
+tools/reverify.py         re-pulls every machine-readable source and diffs against the registry
+private/                  blank lease-abstract / notice-calendar / sell-vs-hold templates (gitignored)
+```
 
-## Cross-session note on figures
+Rebuild and verify:
 
-Two official Los Angeles population figures appear in this repo — 3,878,704 (Census Vintage
-2024) and 3,869,089 (QuickFacts V2025). They are different vintages and are **not
-comparable**. The Census Bureau warns against comparing vintages. The same applies to the two
-unemployment figures (county NSA Sep 2025 vs metro division Oct 2026). Every row in the primary
-tree states its geography and period. See irregularity IR-13 on the *Flagged for review* page.
+```bash
+pip install --break-system-packages pyyaml
+python3 tools/build.py   # idempotent; nothing in workspace/ is hand-edited
+python3 tools/check.py   # fails on a broken link, a dangling anchor or an untraceable row
+```
 
-## Prior session README (preserved)
+Build-time status: **57 verified / 5 flagged / 10 deliberately blank** rows.
 
-<details><summary>Earlier README content from a parallel session</summary>
+The build refuses to run if a row marked `verified` has no source link, and refuses to render a blank
+value as anything other than a visible *unverified* cell. No external scripts, no analytics, no
+cookies, no storage, and the calculator makes no network calls — all arithmetic happens in the browser.
 
-# Anonymous Central LA NNN workspace
+Its pages: overview, questions register, trade area, tract evidence, tenant strength, hazard screen,
+after-tax, short-lease pricing, sell-vs-hold, decision gates, risk register, calculator, suggestions,
+flagged for review, sources, privacy, and a one-page printable summary.
 
-Public research site for an **anonymized** sell-versus-renew review of a Jack in the Box NNN lease described as located around Central Los Angeles.
+---
 
-**This repository must not contain** owner names, street addresses, APNs, lease PDFs, tax returns, or unit-level sales.
+## Earlier root tree (preserved, not deleted)
 
-Two static trees are in the repo (parallel sessions; both retained):
+An earlier parallel session built a second root site (`index.html`, `pages/`, `assets/`) that now
+sits alongside this one. It is kept and reachable; it is not overwritten.
 
-| Tree | Session | Entry |
-| --- | --- | --- |
-| Repository root | arena-8c9d9d97 | `index.html`, `pages/`, `assets/` |
-| `docs/` | arena-f5a16939 | `docs/index.html` (sourced tables, decision gates, calculator) |
-
-GitHub Pages is configured to publish the **repository root**, so both `/` and `/docs/` can resolve.
-
-**No sell or renew recommendation is made.**
-
-A public static website is not an access-controlled vault. Keep lease files and owner finances offline. See [COORDINATION.md](COORDINATION.md) and the Flagged for Review pages (`pages/flags.html` and `docs/flagged.html`).
-
-</details>
+> # Anonymous Central LA NNN workspace
+> Public research site for an **anonymized** sell-versus-renew review of a Jack in the Box NNN lease described as located around Central Los Angeles.
+> **This repository must not contain** owner names, street addresses, APNs, lease PDFs, tax returns, or unit-level sales.
+> Two static trees are in the repo (parallel sessions; both retained):
+> | Tree | Session | Entry |
+> | --- | --- | --- |
+> | Repository root | arena-8c9d9d97 | `index.html`, `pages/`, `assets/` |
+> | `docs/` | arena-f5a16939 | `docs/index.html` (sourced tables, decision gates, calculator) |
+> GitHub Pages is configured to publish the **repository root**, so both `/` and `/docs/` can resolve.
+> **No sell or renew recommendation is made.**
+> A public static website is not an access-controlled vault. Keep lease files and owner finances offline. See [COORDINATION.md](COORDINATION.md) and the Flagged for Review pages (`pages/flags.html` and `docs/flagged.html`).
