@@ -403,3 +403,58 @@ sessions' published work, which the standing instruction forbids, so consolidati
 an owner decision rather than performed unilaterally. The recommended consolidation is:
 `/pages/` as the single primary, `/workspace/` retained for its 72-row registry, and the other
 three archived under `/desk/`.
+
+## Merge and deploy results (final, this pass)
+
+| Item | Result |
+|---|---|
+| PR #5 — verified-source tree + reconciliation | **MERGED** at 2026-11-25T13:52:52Z, merge commit `a071b2d` |
+| PR #10 — section-strip correction (five trees) | **MERGED** at 2026-11-25T13:54:20Z, merge commit `caef9ef` |
+| Pages build after PR #10 | **built**, commit `caef9ef` |
+| Live audit pass | https://kanlerxz87-cyber.github.io/Jackbox1/audit-78005353/site/index.html |
+| Live primary workspace | https://kanlerxz87-cyber.github.io/Jackbox1/pages/index.html |
+| Live sourced dashboard | https://kanlerxz87-cyber.github.io/Jackbox1/docs/index.html |
+| Live main workspace tree | https://kanlerxz87-cyber.github.io/Jackbox1/workspace/index.html |
+
+**PR #5 required three reconciliations.** Main advanced seven times while this session worked. Each
+time, main was merged rather than force-pushed, and the tree was relocated to avoid overwriting another
+session's published files: root → `/workspace/` → finally `/audit-78005353/`. No session's work was
+deleted at any point.
+
+**Deployed-page verification.** The live `sell-vs-renew.html` was fetched after the build and its
+calculator output compared against an independent hand computation of the same arithmetic:
+tax $597,492, after-tax proceeds $2,474,508, renewal present value $2,641,539, differential $167,031 —
+identical in both. The live `calc.js` asset was also fetched and matches the repository.
+
+---
+
+## Authoritative final state (reconciled across all sessions)
+
+Two sessions independently recorded a final deploy for this repository, minutes apart, each
+accurate for its own merge. This block supersedes both for the reader's purposes; the detailed
+per-session records above are kept as evidence.
+
+| Item | Value |
+|---|---|
+| Convergence | five sessions, five trees, all merged, **nothing deleted at any point** |
+| Static trees | `/pages/` (primary) · `/workspace/` · `/audit-78005353/site/` · `/docs/` · `/desk/` |
+| Pages source | `main` root, legacy build, https enforced |
+| Primary site | https://kanlerxz87-cyber.github.io/Jackbox1/pages/index.html |
+| Secondary sites | `/workspace/` · `/audit-78005353/site/` · `/docs/` · `/desk/` |
+| Verified data | 211 rows in the primary tree (71 verified · 4 assumptions · 48 blank); 72 rows in `/workspace/`; 11 rows in `/audit-78005353/` |
+| Answer to "sell or renew?" | **not yet** — published as 15 open gates in the primary tree, 30 open questions in `/workspace/`, 8 gates in `/audit-78005353/` |
+
+**Independent arithmetic agreement between sessions.** Two sessions computed an after-tax sale and
+a renewal present value with their own calculators, built separately, and cross-checked each
+against a hand calculation to the dollar. `arena/78005353` reports tax $597,492 and after-tax
+proceeds $2,474,508 on its inputs — matching its own hand computation. This session's calculator
+reproduces gain / recapture / federal / California / NIIT / after-tax to the nearest dollar on a
+different input set. Two independent implementations agreeing with hand arithmetic is the
+strongest evidence available that the tax logic is sound; it is not evidence that any
+property-level input is correct, because none exist.
+
+**What no session could do, and did not fake.** The exact lease expiration, the parcel's hazard
+zones, contract rent, adjusted basis, an insurance premium and any real cap rate remain absent
+from every tree. Each tree publishes them as blanks with the private document that would close
+them. That is the answer to the brief's central question: the decision is not ready, and the
+work product is the map of what would make it ready.
