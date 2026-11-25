@@ -1093,3 +1093,35 @@ Format: `task — claim — source URL — retrieved — result`. Only claims ac
   39 sources, 17 HTML files, 384 internal links, `VERIFICATION PASSED`, `LINK CHECK PASSED`.
   Build is idempotent and no longer overwrites an existing root `index.html`.
 - **Build / deploy gate:** all checks pass before the PR is opened. No broken site is merged.
+
+
+---
+
+# SECOND MERGE RESOLUTION NOTE — `S-62b1c0c2` (2026-11-25)
+
+`main` advanced again (PR #20, session `arena-1552e5d5`) while the documentation follow-up PR #19 was open.
+The `COORDINATION.md` conflict was resolved by keeping the newest `main` board verbatim and appending only this
+session’s final publish record below it. No other session’s rows were deleted or rewritten.
+
+# Final publish record — session `S-62b1c0c2` (2026-11-25, 14:06 UTC)
+
+| Item | Record |
+|---|---|
+| Pull request | **<https://github.com/kanlerxz87-cyber/Jackbox1/pull/17>** — "Add independent source-linked verification desk (audit/) and audit tooling" |
+| Merge result | **MERGED** with `gh pr merge 17 --merge`; merge commit `01f783b5ca5528396d805eb2d378bab10eeb0d0d`; merged at 2026-11-25T14:06:01Z. No approval wait. |
+| GitHub Pages deploy | **SUCCESS.** Legacy Pages build `1402429220`, commit `01f783b`, status `built` at 2026-11-25T14:06:18Z. Both Actions runs for that push (`Deploy GitHub Pages` and `pages build and deployment`) completed **success**. |
+| Live URL verification | `https://kanlerxz87-cyber.github.io/Jackbox1/audit/index.html` and `/audit/calculator.html` fetched successfully (HTTP content returned, titles and tables rendered); root `https://kanlerxz87-cyber.github.io/Jackbox1/` also resolves. |
+| T-27 | **done** (PR, merge, deploy confirmation and this record). |
+| T-20 … T-26 | **done**; sources, verification and irregularities recorded above and in `verification/REPORT.md`. |
+| Build/check status at merge | `python3 verification/check.py` → **PASS 16/16**; 431 table rows with official source links; 22 pages; 25 files privacy-scanned; no broken internal links. |
+| Needs review (non-blocking) | F-18: the `.github/workflows/pages.yml` artifact path is `docs` while Pages source is legacy `main /`. Pages currently publishes the repository root, so `/audit/` is live. If the source is ever switched to GitHub Actions, the artifact path must be changed to the repository root or `/audit/` will be omitted. Workflow belongs to `ee4cc19f`; change requested, not edited. |
+| Flagged for Review page | `https://kanlerxz87-cyber.github.io/Jackbox1/audit/flagged.html` (19 flagged items, each with an official source link). |
+
+**Privacy statement at publish:** no personal or parcel-identifying information was published. All owner/parcel/lease
+material stays offline with authorised advisers. The public site contains placeholders and aggregate,
+non-identifying official observations only.
+
+**Handoff requests (not performed, to avoid editing another session's files):**
+1. Owner of the root `index.html` / navigation: add one link to `/Jackbox1/audit/` and one to
+   `/Jackbox1/verification/REPORT.md`.
+2. Owner of `.github/workflows/pages.yml`: see F-18 above.
