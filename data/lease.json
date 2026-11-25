@@ -1,0 +1,235 @@
+{
+  "meta": {
+    "dataset": "lease",
+    "version": "1.0",
+    "as_of": "2026-11-25",
+    "owner_session": "ses-41ea221b",
+    "task": "Private lease abstract + notice-calendar reconciliation",
+    "privacy": "No landlord name, tenant legal entity, guarantor, signatory, address, APN or rent figure appearing in a private document is reproduced here. Only term structure and notice windows, which are what a decision calendar needs.",
+    "status_statement": "This is a PLACEHOLDER abstract. The lease document has not been supplied in this session. Every field below is either (a) taken from the owner's own brief and therefore owner-asserted, or (b) blank and flagged. It is not, and must not be presented as, a completed lease abstract."
+  },
+  "abstract_fields": [
+    {
+      "field": "Tenant brand",
+      "value": "Jack in the Box (franchised quick-service restaurant)",
+      "provenance": "owner brief",
+      "status": "owner-asserted",
+      "source_id": null,
+      "note": "Public brand only. The franchisee legal entity is withheld and must stay in the private workspace."
+    },
+    {
+      "field": "Lease structure",
+      "value": "NNN (triple net)",
+      "provenance": "owner brief",
+      "status": "owner-asserted",
+      "source_id": null,
+      "note": "If genuinely NNN, the landlord's operating-cost exposure is limited to structural and roof items the lease assigns back. Verify which items are carved out."
+    },
+    {
+      "field": "Expiration window",
+      "value": "2030 to 2035",
+      "provenance": "owner brief",
+      "status": "owner-asserted; externally unverifiable",
+      "source_id": null,
+      "note": "An eight-year window is too wide to price. The exact expiration date and any options determine whether the asset has 3 or 9 years of contract rent left. This is the highest-value missing input in the whole project (G-04)."
+    },
+    {
+      "field": "Exact commencement date",
+      "value": null,
+      "provenance": null,
+      "status": "unverified",
+      "source_id": null
+    },
+    {
+      "field": "Exact expiration date",
+      "value": null,
+      "provenance": null,
+      "status": "unverified",
+      "source_id": null
+    },
+    {
+      "field": "Renewal option count and length",
+      "value": null,
+      "provenance": null,
+      "status": "unverified",
+      "source_id": null,
+      "note": "Options are frequently 5 x 5 years. Their existence changes the hold case more than any market forecast."
+    },
+    {
+      "field": "Renewal option exercise mechanism",
+      "value": null,
+      "provenance": null,
+      "status": "unverified",
+      "source_id": null,
+      "note": "Unilateral option vs. mutual agreement vs. landlord consent with conditions."
+    },
+    {
+      "field": "Rent schedule and escalations",
+      "value": null,
+      "provenance": null,
+      "status": "unverified",
+      "source_id": null,
+      "note": "Kept out of this repository by design. The calculator takes it as a local input that never leaves the reader's browser."
+    },
+    {
+      "field": "Base year / expense stop",
+      "value": null,
+      "provenance": null,
+      "status": "unverified",
+      "source_id": null
+    },
+    {
+      "field": "Landlord obligations (roof, structure, parking lot)",
+      "value": null,
+      "provenance": null,
+      "status": "unverified",
+      "source_id": null
+    },
+    {
+      "field": "Tenant exclusivity / radius restriction",
+      "value": null,
+      "provenance": null,
+      "status": "unverified",
+      "source_id": null,
+      "note": "A radius restriction can block re-leasing to a competing QSR after expiry, which materially caps the post-2030 rent."
+    },
+    {
+      "field": "Assignment and subletting",
+      "value": null,
+      "provenance": null,
+      "status": "unverified",
+      "source_id": null
+    },
+    {
+      "field": "Guaranty",
+      "value": null,
+      "provenance": null,
+      "status": "unverified",
+      "source_id": null,
+      "note": "Guarantor identity is private. Only the existence and strength of the guaranty matter to underwriting."
+    },
+    {
+      "field": "Co-tenancy or go-dark clause",
+      "value": null,
+      "provenance": null,
+      "status": "unverified",
+      "source_id": null
+    },
+    {
+      "field": "Condemnation / casualty allocation",
+      "value": null,
+      "provenance": null,
+      "status": "unverified",
+      "source_id": null,
+      "note": "Decisive for the seismic and fire tail cases: who bears rebuild cost, and whether the tenant can terminate on casualty."
+    },
+    {
+      "field": "Estoppel and SNDA status",
+      "value": null,
+      "provenance": null,
+      "status": "unverified",
+      "source_id": null,
+      "note": "An estoppel is normally required by a buyer at closing; its absence is a schedule risk on any sale."
+    }
+  ],
+  "notice_calendar": [
+    {
+      "id": "NC-01",
+      "event": "Renewal-option notice window opens",
+      "date": null,
+      "rule": "Typically 9-12 months before expiration, sometimes 6",
+      "status": "unverified",
+      "source": "lease",
+      "action": "Missing the window can forfeit the option entirely. This is the only calendar item that can permanently destroy value, so it must be pinned first."
+    },
+    {
+      "id": "NC-02",
+      "event": "Renewal-option notice deadline",
+      "date": null,
+      "rule": "Per lease",
+      "status": "unverified",
+      "source": "lease",
+      "action": "Set two internal reminders at 180 and 90 days before this date."
+    },
+    {
+      "id": "NC-03",
+      "event": "Tenant notice of intent (non-renewal)",
+      "date": null,
+      "rule": "Per lease",
+      "status": "unverified",
+      "source": "lease",
+      "action": "A tenant notice starts the clock on downtime and re-leasing cost."
+    },
+    {
+      "id": "NC-04",
+      "event": "Expiration",
+      "date": null,
+      "between": ["2030-01-01", "2035-12-31"],
+      "status": "owner-asserted",
+      "source": "owner brief",
+      "action": "The 2030-2035 window in the brief is the only date evidence available."
+    },
+    {
+      "id": "NC-05",
+      "event": "Property tax installment 1 due",
+      "date": "2026-11-01",
+      "status": "verified-programme",
+      "source_id": "S-019",
+      "action": "Los Angeles County assessor publishes the annual cycle. Delinquency triggers a 10% penalty plus a $10 cost, then a further 1.5% per month after 2027-04-10. Confirm exact amounts on the county tax collector bill."
+    },
+    {
+      "id": "NC-06",
+      "event": "Property tax installment 2 due",
+      "date": "2027-02-01",
+      "status": "verified-programme",
+      "source_id": "S-019",
+      "action": "Same penalty structure as NC-05."
+    },
+    {
+      "id": "NC-07",
+      "event": "Decline-in-value application deadline, 2026-2027 tax year",
+      "date": "2026-11-30",
+      "window_open": "2026-07-02",
+      "status": "verified",
+      "source_id": "S-019",
+      "action": "This deadline is six days after the data cut-off of this report. If the assessed value exceeds market value, this is a live, dated opportunity to cut the property tax bill. It is the one action item on the calendar that is both verified and imminent."
+    },
+    {
+      "id": "NC-08",
+      "event": "Insurance renewal",
+      "date": null,
+      "status": "unverified",
+      "source": "policy",
+      "action": "Unknown renewal date and unknown premium change. Both are required before any sell-versus-hold comparison can be called reliable."
+    },
+    {
+      "id": "NC-09",
+      "event": "1031 identification deadline after any sale",
+      "date": null,
+      "rule": "45 calendar days from closing",
+      "status": "verified-rule",
+      "source_id": "S-015",
+      "action": "Applies only if a like-kind exchange is elected. Cannot be extended except in a presidentially declared disaster."
+    },
+    {
+      "id": "NC-10",
+      "event": "1031 completion deadline after any sale",
+      "date": null,
+      "rule": "180 calendar days from closing, or the return due date, whichever is earlier",
+      "status": "verified-rule",
+      "source_id": "S-015",
+      "action": "Selling with the intention to exchange but failing the 180-day rule converts a deferred gain into a fully taxable one."
+    }
+  ],
+  "reconciliation": {
+    "conclusion": "CANNOT RECONCILE YET",
+    "reason": "Both sides of the reconciliation are incomplete. The lease side has no exact dates (NC-01 to NC-04 all null), and the calendar side is missing the insurance renewal (NC-08). A reconciliation over an eight-year date window would be false precision.",
+    "what_would_close_it": [
+      "Executed lease and all amendments, read by a qualified abstractor, producing exact dates for NC-01 to NC-04.",
+      "Insurance binder with renewal date and premium history.",
+      "Any estoppel certificate already issued to a lender or prior buyer.",
+      "Any City of Los Angeles retrofit order or notice affecting the building."
+    ],
+    "hard_stop": "No sale or renewal commitment should be signed until NC-01 and NC-02 are pinned to exact dates. An option missed is unrecoverable; everything else on this page is recoverable."
+  }
+}
