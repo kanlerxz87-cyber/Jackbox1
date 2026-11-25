@@ -3044,27 +3044,27 @@
     },
     {
       "id": "F-11",
-      "item": "Published root site uses mismatched generic 'Official reference' links",
+      "item": "Earlier published root tree (/desk/, PR #1) uses mismatched generic 'Official reference' links",
       "value": "",
-      "why": "Some rows cite an official page that does not support the specific claim (e.g. a tax publication for lease notice dates).",
+      "why": "Some rows cite an official page that does not support the specific claim (e.g. a tax publication for lease notice dates). The current root tree (/pages/) has since improved many rows; this flag applies to the preserved /desk/ tree.",
       "source": "LACITY-PLANNING",
-      "action": "Replace with row-specific official sources; see Repo Review."
+      "action": "Review the /desk/ tree's generic links and replace them with row-specific official sources."
     },
     {
       "id": "F-12",
-      "item": "Published root site has no row-level retrieval dates or per-value URLs",
+      "item": "Some published tables still lack row-level retrieval dates and per-value URLs",
       "value": "",
-      "why": "Values are not individually auditable.",
+      "why": "For example the open-gaps table on /pages/questions.html lists questions without per-row source links or vintages; values are not individually auditable there.",
       "source": "CENSUS-QF-CITY-INC",
-      "action": "Adopt a row-level source register."
+      "action": "Adopt a row-level source register and retrieval date on every published table."
     },
     {
       "id": "F-13",
-      "item": "No .nojekyll on main",
+      "item": "Two deployment mechanisms are active; .nojekyll is now present on main",
       "value": "",
-      "why": "Legacy Jekyll build processes a static site; files with leading underscores would be skipped.",
+      "why": "An earlier pass found no .nojekyll; another session has since added one, so static HTML is copied verbatim. A legacy Jekyll Pages build and an Actions deploy workflow now both run (see F-18).",
       "source": "GH-PAGES",
-      "action": "Add .nojekyll at the Pages root or switch to a workflow build."
+      "action": "Confirm both deployments publish the repository root and every published tree; keep F-18 under review."
     },
     {
       "id": "F-14",
@@ -3113,6 +3113,14 @@
       "why": "Multiple sessions edited the shared board concurrently; a naive merge could discard claims.",
       "source": "GH-PAGES",
       "action": "Both conflicts were resolved by appending this session's rows after the newest main board, preserving all other rows; see the merge resolution note in COORDINATION.md."
+    },
+    {
+      "id": "F-20",
+      "item": "Conflicting model back-test claims across published trees",
+      "value": "",
+      "why": "One published tree states a completed macro back-test with a -0.937 correlation, while this independent pass marks any cash-flow back-test BLOCKED because sufficient verified comparable property history is not present. The two statements are not reconciled.",
+      "source": "BEA-GDP-CTY",
+      "action": "Manual review: confirm which model was back-tested, on what verified history, and label issuer/macro series separately from parcel-level projections."
     }
   ]
 }

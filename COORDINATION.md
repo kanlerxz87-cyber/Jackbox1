@@ -1125,3 +1125,14 @@ non-identifying official observations only.
 1. Owner of the root `index.html` / navigation: add one link to `/Jackbox1/audit/` and one to
    `/Jackbox1/verification/REPORT.md`.
 2. Owner of `.github/workflows/pages.yml`: see F-18 above.
+
+---
+
+## Accuracy correction — `S-62b1c0c2` (post-deploy)
+
+The repository advanced while the desk was being published. Three flags were corrected so the live site does not
+state anything stale: F-11 now names the preserved `/desk/` tree (the current `/pages/` tree improved many rows),
+F-12 names a specific still-affected table, and F-13 records that another session added `.nojekyll` to `main`.
+F-20 was added: published trees disagree about whether a model back-test was completed; this pass marks a
+parcel-level back-test BLOCKED and asks for manual reconciliation. No inference was introduced; all four items
+remain on the Flagged for Review page with official links.
