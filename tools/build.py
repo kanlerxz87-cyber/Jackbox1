@@ -557,7 +557,7 @@ def build_tracts(rows):
     body = f"""
 <div class="notice bad">
   <strong>W-12 · Demonstration tract set, not the subject parcel's trade area</strong>
-  These {len(tracts)} Census tracts are the tracts of ZIP 90015 — chosen only because it is a central-Los Angeles ZIP and therefore
+  These {len(tracts)} Census tracts form the public demonstration set DEMO-TRACTS-A — chosen only because it sits in central Los Angeles and therefore
   the right <em>shape</em> of evidence. <b>They are not this restaurant's trade area.</b> The moment the parcel's APN is
   known, this set must be replaced with the tracts inside a 3/5/10-minute drive-time ring. Publishing these as “the
   trade area” would be exactly the kind of inference this project forbids.
@@ -1457,7 +1457,7 @@ def build_review(rows):
          "The after-tax module publishes the statutory machinery but no dollar result for this owner. The worked example on the tax page uses invented round numbers and says so.",
          "The adviser's reconstruction of adjusted basis and recapture closes G-05."),
         ("F-05", "“Central Los Angeles” is not a Census geography",
-         "The tract set on the tract page is ZIP 90015, labelled a demonstration only. City, county and metro figures on the economy page are explicitly labelled substitutes.",
+         "The tract set on the tract page is DEMO-TRACTS-A, a public demonstration set and explicitly not the subject parcel. City, county and metro figures on the economy page are labelled substitutes.",
          "Geocoding the parcel and building a drive-time ring closes G-06 and replaces every substitute."),
         ("F-06", "One hazard figure comes from a third-party blog, not FEMA",
          "HAZ-02 (earthquake = ~60% of modelled expected annual loss) is quoted from a private analysis of FEMA's National Risk Index, not from FEMA directly. It is flagged and must not be published as a finding.",
