@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>W-08 · Private Lease Abstract &amp; Notice Reconciliation — Hold or Sell Workspace</title>
+<meta name="description" content="The structure of a private lease abstract for a single NNN parcel, the notice-calendar reconciliation test, and the fields that remain unverified.">
+<link rel="stylesheet" href="../assets/css/style.css">
+<script src="../assets/js/nav.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="brandmark">Hold or Sell <span class="tag">Decision Workspace</span></div>
+    <div class="env"><span>W-08</span><span><strong>Evidence cut-off 2026-11-25</strong></span></div>
+  </div>
+</header>
+
+<nav class="nav" aria-label="Sections">
+  <div class="nav-inner">
+    <a href="../index.html">Overview</a>
+    <a href="economics.html">Trade Area</a>
+    <a href="worksheet.html">Sell v Hold</a>
+    <a href="decision-gates.html">Decision Gates</a>
+    <a href="hazards.html">Hazards</a>
+    <a href="tract-trends.html">Tract Trends</a>
+    <a href="rental-evidence.html">Rental Evidence</a>
+    <a href="lease-abstract.html">Lease Abstract</a>
+    <a href="risks.html">Risks</a>
+    <a href="open-questions.html">Open Questions</a>
+    <a href="suggestions.html">Suggestions</a>
+    <a href="flagged.html">Flagged</a>
+    <a href="sources.html">Sources</a>
+    <a href="advisory-summary.html">Summary</a>
+    <a href="privacy.html">Privacy</a>
+  </div>
+</nav>
+
+<main id="main" class="wrap">
+
+  <div class="page-head">
+    <p class="eyebrow">W-08</p>
+    <h1>Private lease abstract, and its reconciliation with the notice calendar</h1>
+    <p class="lede">
+      A commercial lease abstract belongs in an adviser's file, never on a public page. What can live
+      here is the <strong>structure</strong>: which fields the abstract must capture, why each one
+      changes the decision, and the reconciliation test that catches the most expensive category of
+      error — a deadline that passes unnoticed.
+    </p>
+  </div>
+
+  <div class="notice notice--stop">
+    <strong>No lease terms are published on this page, and none were supplied.</strong>
+    The only lease fact in the brief is "expires on 2030-2035", which is a five-year window rather than
+    a date. A window cannot be entered into a notice calendar, cannot be modelled as a cash-flow
+    trigger, and cannot be used to price remaining term. This is the largest single gap in the
+    workspace. <a href="flagged.html">FLAG-U01 →</a>
+  </div>
+
+  <h2>The abstract schema — what must be captured</h2>
+  <p>Twenty-two fields, grouped by the decision each one drives. An abstract missing any field in
+  groups A or B is not usable for this decision.</p>
+
+  <div class="table-scroll">
+    <table>
+      <caption><strong>Lease abstract schema — 22 fields, grouped by what they control</strong>
+      Status is "not supplied" for all 22, because no lease document was provided.</caption>
+      <thead><tr><th>#</th><th>Field</th><th>Why it changes the decision</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td colspan="4" style="background:var(--paper-sink);font-weight:700;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft)">Group A — dates and term (controls the timing answer)</td></tr>
+        <tr><td>A1</td><td><strong>Commencement date</strong></td><td>Anchors the entire schedule; needed to verify the expiry rather than accept it.</td><td><span class="pill pill--stop">Not supplied</span></td></tr>
+        <tr><td>A2</td><td><strong>Expiration date</strong></td><td>The single most important field. The brief gives a 5-year window.</td><td><span class="pill pill--stop">Not supplied</span></td></tr>
+        <tr><td>A3</td><td><strong>Renewal options</strong> — count, length, notice window</td><td>Determines whether the landlord has already granted away the extension value being counted on.</td><td><span class="pill pill--stop">Not supplied</span></td></tr>
+        <tr><td>A4</td><td><strong>Option rent mechanism</strong> — fixed, FMV, CPI, formula</td><td>A fixed low option rent caps the renewal upside entirely.</td><td><span class="pill pill--stop">Not supplied</span></td></tr>
+        <tr><td>A5</td><td><strong>Notice provisions</strong> — days, method, addresses</td><td>A missed window is the most common way a landlord loses an option.</td><td><span class="pill pill--stop">Not supplied</span></td></tr>
+        <tr><td>A6</td><td><strong>Early termination rights</strong></td><td>A tenant termination right can make "remaining term" far shorter than the stated expiry.</td><td><span class="pill pill--stop">Not supplied</span></td></tr>
+
+        <tr><td colspan="4" style="background:var(--paper-sink);font-weight:700;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft)">Group B — money (controls the valuation answer)</td></tr>
+        <tr><td>B1</td><td><strong>Current base rent</strong> and per-square-foot rate</td><td>The numerator of every valuation. Without it there is no NOI.</td><td><span class="pill pill--stop">Not supplied</span></td></tr>
+        <tr><td>B2</td><td><strong>Escalation schedule</strong> — fixed steps or index-linked</td><td>Index-linked means the rent moves with CPI-W at +4.1%; fixed means it does not.</td><td><span class="pill pill--stop">Not supplied</span></td></tr>
+        <tr><td>B3</td><td><strong>Percentage rent</strong> — breakpoint and rate</td><td>A percentage-rent clause means store sales, not just rent, drive landlord income.</td><td><span class="pill pill--stop">Not supplied</span></td></tr>
+        <tr><td>B4</td><td><strong>Expense pass-through structure</strong> — true NNN, modified, gross</td><td>Determines whether the landlord carries real cost. "NNN" in a listing is not a verification.</td><td><span class="pill pill--stop">Not supplied</span></td></tr>
+        <tr><td>B5</td><td><strong>CAM / tax / insurance caps</strong></td><td>A cap on recoverables shifts cost back to the landlord and lowers net cash flow.</td><td><span class="pill pill--stop">Not supplied</span></td></tr>
+        <tr><td>B6</td><td><strong>Security deposit / guaranty</strong></td><td>A franchisee-level lease with a personal guaranty is not the same credit as a corporate lease.</td><td><span class="pill pill--stop">Not supplied</span></td></tr>
+
+        <tr><td colspan="4" style="background:var(--paper-sink);font-weight:700;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft)">Group C — risk allocation (controls the stress answer)</td></tr>
+        <tr><td>C1</td><td><strong>Casualty clause</strong> — abatement and termination thresholds</td><td>Determines who bears rent loss after a fire or quake, and for how long.</td><td><span class="pill pill--stop">Not supplied</span></td></tr>
+        <tr><td>C2</td><td><strong>Insurance obligations</strong> — who insures what</td><td>Earthquake and flood coverage are frequently carved out; the gap is a landlord exposure.</td><td><span class="pill pill--stop">Not supplied</span></td></tr>
+        <tr><td>C3</td><td><strong>Restoration obligation</strong></td><td>Whether the landlord must rebuild to the same footprint or only to a shell changes the repair cost materially.</td><td><span class="pill pill--stop">Not supplied</span></td></tr>
+        <tr><td>C4</td><td><strong>Co-tenancy or operating covenant</strong></td><td>A tenant exit right if anchors leave would be a hidden short-lease trigger.</td><td><span class="pill pill--stop">Not supplied</span></td></tr>
+        <tr><td>C5</td><td><strong>Assignment and subletting</strong></td><td>Affects whether the tenant can exit by transferring rather than terminating.</td><td><span class="pill pill--stop">Not supplied</span></td></tr>
+        <tr><td>C6</td><td><strong>Use clause and exclusivity</strong></td><td>Restricts re-leasing options if the tenant leaves.</td><td><span class="pill pill--stop">Not supplied</span></td></tr>
+
+        <tr><td colspan="4" style="background:var(--paper-sink);font-weight:700;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft)">Group D — physical (controls re-leasing)</td></tr>
+        <tr><td>D1</td><td><strong>Premises area</strong> and configuration</td><td>Rent per square foot and re-leasability both depend on it.</td><td><span class="pill pill--stop">Not supplied</span></td></tr>
+        <tr><td>D2</td><td><strong>Drive-through rights</strong></td><td>The drive-through is often the highest-and-best-use driver, and it may be a leasehold right rather than a property right.</td><td><span class="pill pill--stop">Not supplied</span></td></tr>
+        <tr><td>D3</td><td><strong>Parking</strong> — ratio and control</td><td>Inadequate or uncontrolled parking can kill a re-let.</td><td><span class="pill pill--stop">Not supplied</span></td></tr>
+        <tr><td>D4</td><td><strong>Landlord work / TI obligations outstanding</strong></td><td>An unfunded landlord obligation is a liability a buyer will price.</td><td><span class="pill pill--stop">Not supplied</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>The notice-calendar reconciliation</h2>
+  <p>An abstract is a set of facts. A notice calendar is the set of <em>actions those facts require,
+  with dates</em>. Reconciling the two is a mechanical test, and it catches the errors that cost the
+  most money — because every one of them is a deadline that arrives whether or not anyone is watching.</p>
+
+  <div class="card">
+    <h3 style="margin-top:0">The reconciliation test, in five steps</h3>
+    <ol class="tight">
+      <li><strong>List every date-bearing obligation</strong> in the lease — renewal notice windows,
+      option exercise deadlines, expense-reconciliation delivery dates, insurance certificate
+      renewals, and any tenant reporting obligation tied to percentage rent.</li>
+      <li><strong>For each, compute the action date</strong> working backwards from the deadline by the
+      notice period plus a delivery buffer. If the lease requires 180 days' notice, the action date is
+      180 days plus a safe buffer before the deadline — not the deadline itself.</li>
+      <li><strong>Compare against the abstract.</strong> Every date in the calendar must trace to a
+      clause in the abstract, and every date-bearing clause must appear in the calendar. Anything on one
+      side but not the other is a discrepancy.</li>
+      <li><strong>Reconcile against the rent schedule.</strong> Escalation dates in the calendar must
+      match escalation dates in the abstract. A mismatch means either the abstract or the billing is
+      wrong — and if it is the billing, there may be an arrears issue that a buyer will find in due
+      diligence.</li>
+      <li><strong>Record the discrepancy, do not resolve it silently.</strong> Each mismatch gets an
+      owner, a question, and a date by which it will be answered.</li>
+    </ol>
+  </div>
+
+  <div class="table-scroll">
+    <table>
+      <caption><strong>Reconciliation worksheet — the dates this lease will require</strong>
+      Every cell is blank because every input is missing. The <em>offset</em> column shows how each action date would be derived once the lease is abstracted.</caption>
+      <thead><tr><th>Obligation</th><th>Trigger in lease</th><th>Action date formula</th><th>Derived date</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td>Renewal option notice</td><td>Days before expiration</td><td>Expiration − notice days − buffer</td><td class="blank">—</td><td><span class="pill pill--stop">Blocked (A3, A5)</span></td></tr>
+        <tr><td>Option rent determination</td><td>Per option clause</td><td>Option notice date − determination period</td><td class="blank">—</td><td><span class="pill pill--stop">Blocked (A4)</span></td></tr>
+        <tr><td>Rent escalation effective date</td><td>Escalation schedule</td><td>Per schedule</td><td class="blank">—</td><td><span class="pill pill--stop">Blocked (B2)</span></td></tr>
+        <tr><td>Expense reconciliation delivery</td><td>Annual statement clause</td><td>Fiscal year end + stated days</td><td class="blank">—</td><td><span class="pill pill--stop">Blocked (B4)</span></td></tr>
+        <tr><td>Insurance certificate renewal</td><td>Insurance clause</td><td>Policy anniversary − 30 days</td><td class="blank">—</td><td><span class="pill pill--stop">Blocked (C2)</span></td></tr>
+        <tr><td>Percentage rent reporting</td><td>Percentage rent clause</td><td>Per reporting period</td><td class="blank">—</td><td><span class="pill pill--stop">Blocked (B3)</span></td></tr>
+        <tr><td>Early-termination notice window</td><td>Termination clause</td><td>Termination date − notice days</td><td class="blank">—</td><td><span class="pill pill--stop">Blocked (A6)</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="notice notice--warn">
+    <strong>The specific danger in a 2030–2035 window.</strong> If a renewal option requires 12 months'
+    notice before expiry, the action date for an option on a 2030 expiry is in <strong>2029</strong>.
+    For a 2035 expiry it is <strong>2034</strong>. Those are six years apart. Treating the window as a
+    single date means either preparing years too late or committing to a negotiation years too early —
+    and both are expensive. The notice calendar is the only artefact that fixes this, and it cannot be
+    built until the lease is abstracted.
+  </div>
+
+  <h2>Verified portfolio benchmarks, for calibration only</h2>
+  <p>The tenant's public filings describe how it structures leases in general. These are useful for
+  framing the negotiation and for sanity-checking what the abstract eventually says. They are
+  <strong>not</strong> evidence about this lease.</p>
+
+  <div class="table-scroll">
+<table>
+  <caption><strong>Tenant's disclosed lease structure — portfolio benchmarks, not this lease</strong>
+  A benchmark that disagrees wildly with the abstract is a prompt to re-read the document, not proof that either is wrong.</caption>
+  <thead><tr>
+    <th>ID</th><th>Metric</th><th class="num">Value</th><th>Period</th>
+    <th>Level</th><th>Status</th><th>Evidence quoted from source</th><th>Official source</th>
+  </tr></thead>
+  <tbody>
+<tr>
+        <td><code>M-060</code></td>
+        <td>JACK initial real estate lease term (portfolio practice)</td>
+        <td class="num">generally 20 years</td>
+        <td class="nowrap">FY2025</td>
+        <td><span class="pill pill--ok">Portfolio</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">&quot;Initial terms of our real estate leases are generally 20 years, exclusive of options to renew, which are generally exercisable at our sole discretion for 1 to 20 years.&quot;</td>
+        <td><a class="src" href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/R16.htm" target="_blank" rel="noopener" title="JACK 10-K FY2025 — Note: Leases (XBRL R16)">Securities and Exchange Commission ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-061</code></td>
+        <td>JACK operating lease weighted-average discount rate</td>
+        <td class="num">6.1%</td>
+        <td class="nowrap">2025-09-28</td>
+        <td><span class="pill pill--ok">Portfolio</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Supplemental lease information: weighted-average discount rate, Operating leases 6.1% (2024: 5.9%).</td>
+        <td><a class="src" href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/R16.htm" target="_blank" rel="noopener" title="JACK 10-K FY2025 — Note: Leases (XBRL R16)">Securities and Exchange Commission ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-062</code></td>
+        <td>JACK weighted-average remaining operating lease term</td>
+        <td class="num">11.2 years</td>
+        <td class="nowrap">2025-09-28</td>
+        <td><span class="pill pill--ok">Portfolio</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Supplemental lease information: weighted-average remaining lease term, Operating leases 11.2 years (2024: 11.1).</td>
+        <td><a class="src" href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/R16.htm" target="_blank" rel="noopener" title="JACK 10-K FY2025 — Note: Leases (XBRL R16)">Securities and Exchange Commission ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-063</code></td>
+        <td>JACK operating lease cost, FY2025</td>
+        <td class="num">$244.644 million</td>
+        <td class="nowrap">FY2025</td>
+        <td><span class="pill pill--ok">Portfolio</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Lease cost table: Operating lease cost $244,644 thousand (FY2024: $243,488; FY2023: $240,153).</td>
+        <td><a class="src" href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/R16.htm" target="_blank" rel="noopener" title="JACK 10-K FY2025 — Note: Leases (XBRL R16)">Securities and Exchange Commission ↗</a></td>
+      </tr>
+  </tbody>
+</table>
+</div>
+
+  <div class="notice notice--info">
+    <strong>One benchmark worth acting on.</strong> The tenant discloses initial lease terms
+    "generally 20 years". If the subject lease has only a few years left and a single renewal option,
+    it may be an older or atypical lease — which raises a specific question: is there an original
+    option structure that has already been partly consumed? That belongs in the abstract as a
+    priority question, not a footnote.
+  </div>
+
+  <h2>Where the abstract lives, and where it does not</h2>
+  <div class="grid grid--2">
+    <div class="card" style="margin:0;border-left:4px solid var(--ok)">
+      <h3 style="margin-top:0">Belongs in the private file</h3>
+      <ul class="tight">
+        <li>The lease document and every amendment</li>
+        <li>Rent ledger and escalation history</li>
+        <li>CAM reconciliations and the tax bills</li>
+        <li>Insurance certificates and policies</li>
+        <li>The completed abstract and notice calendar</li>
+        <li>Tenant correspondence about renewal intent</li>
+      </ul>
+    </div>
+    <div class="card" style="margin:0;border-left:4px solid var(--stop)">
+      <h3 style="margin-top:0">Never belongs on a public page</h3>
+      <ul class="tight">
+        <li>Any rent figure from this specific lease</li>
+        <li>Tenant contact names, emails, or addresses</li>
+        <li>The parcel address or assessor's number</li>
+        <li>Owner identity, entity name, or guarantor details</li>
+        <li>Store-level sales, if obtained</li>
+        <li>Anything a competitor or a prospective buyer could use against you</li>
+      </ul>
+    </div>
+  </div>
+
+  <p style="margin-top:1.6rem"><a href="open-questions.html">Next: the full question register a decision requires →</a></p>
+
+</main>
+
+<footer class="site">
+  <div class="inner">
+    <p><strong>Privacy.</strong> This page contains no lease terms, no parcel identifier, no address
+    and no party names. The abstract itself belongs in an access-controlled adviser file, not on the
+    web. <a href="privacy.html">Privacy policy →</a></p>
+    <p><a href="sources.html">Full source register</a> · <a href="flagged.html">Flagged for review</a> · <a href="../index.html">Back to overview</a></p>
+  </div>
+</footer>
+</body>
+</html>

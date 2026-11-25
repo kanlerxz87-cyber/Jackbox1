@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Risk Register — Every Path, Every Failure Mode — Hold or Sell Workspace</title>
+<meta name="description" content="A full risk register for the sale, renewal and hold-to-expiry paths, including low-probability high-impact scenarios, each with likelihood, impact, mitigation and the decision it bears on.">
+<link rel="stylesheet" href="../assets/css/style.css">
+<script src="../assets/js/nav.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="brandmark">Hold or Sell <span class="tag">Decision Workspace</span></div>
+    <div class="env"><span>Risk register</span><span><strong>Evidence cut-off 2026-11-25</strong></span></div>
+  </div>
+</header>
+
+<nav class="nav" aria-label="Sections">
+  <div class="nav-inner">
+    <a href="../index.html">Overview</a>
+    <a href="economics.html">Trade Area</a>
+    <a href="worksheet.html">Sell v Hold</a>
+    <a href="decision-gates.html">Decision Gates</a>
+    <a href="hazards.html">Hazards</a>
+    <a href="tract-trends.html">Tract Trends</a>
+    <a href="rental-evidence.html">Rental Evidence</a>
+    <a href="lease-abstract.html">Lease Abstract</a>
+    <a href="risks.html">Risks</a>
+    <a href="open-questions.html">Open Questions</a>
+    <a href="suggestions.html">Suggestions</a>
+    <a href="flagged.html">Flagged</a>
+    <a href="sources.html">Sources</a>
+    <a href="advisory-summary.html">Summary</a>
+    <a href="privacy.html">Privacy</a>
+  </div>
+</nav>
+
+<main id="main" class="wrap">
+
+  <div class="page-head">
+    <p class="eyebrow">Risk</p>
+    <h1>Risk register — every path, every failure mode</h1>
+    <p class="lede">
+      The brief asked for the risks of every possible decision, business-as-usual and black swan,
+      weighed against the preservation of wealth and the opportunity for growth. This register does
+      that without inventing probabilities: it rates likelihood and impact qualitatively, names the
+      mitigation, and states which decision each risk actually changes.
+    </p>
+  </div>
+
+  <div class="notice notice--warn">
+    <strong>On the absence of numbers.</strong> A risk register with invented probabilities is worse
+    than one without any, because the numbers get quoted and then treated as measured. Nothing below
+    carries a percentage that is not sourced. Where an official observation exists — a peak
+    unemployment rate, a population change, a fire's housing loss — it is quoted and linked, because
+    that is evidence about the <em>scale</em> of a shock, not a forecast of its recurrence.
+  </div>
+
+  <h2>How to read the ratings</h2>
+  <div class="grid grid--3">
+    <div class="card" style="margin:0">
+      <h3 style="margin-top:0">Likelihood</h3>
+      <ul class="tight small">
+        <li><strong>Near-certain</strong> — already happening or scheduled</li>
+        <li><strong>Likely</strong> — expected within a normal hold period</li>
+        <li><strong>Possible</strong> — plausible, not expected</li>
+        <li><strong>Rare</strong> — requires an unusual event</li>
+        <li><strong>Tail</strong> — low frequency, severe consequence</li>
+      </ul>
+    </div>
+    <div class="card" style="margin:0">
+      <h3 style="margin-top:0">Impact</h3>
+      <ul class="tight small">
+        <li><strong>Severe</strong> — capital loss above a normal market cycle</li>
+        <li><strong>High</strong> — materially changes net proceeds or optionality</li>
+        <li><strong>Moderate</strong> — affects timing or a single year's cash flow</li>
+        <li><strong>Low</strong> — administrative or recoverable</li>
+      </ul>
+    </div>
+    <div class="card" style="margin:0">
+      <h3 style="margin-top:0">Scope</h3>
+      <ul class="tight small">
+        <li><strong>A</strong> — only if you sell</li>
+        <li><strong>B</strong> — only if you renew</li>
+        <li><strong>C</strong> — only if you hold to expiry</li>
+        <li><strong>All</strong> — affects every path</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>Risk matrix — position, before mitigation</h2>
+  <div class="table-scroll">
+    <table class="matrix">
+      <caption><strong>Where the top risks sit</strong> Likelihood across, impact down. Each cell names the risk IDs in it. This is a qualitative placement, not a probability estimate.</caption>
+      <thead>
+        <tr>
+          <th style="width:14%">Impact ↓ / Likelihood →</th>
+          <th>Rare</th><th>Possible</th><th>Likely</th><th>Near-certain</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>Severe</th>
+          <td class="cell h4">R-14 · R-16</td>
+          <td class="cell h5">R-11 · R-13</td>
+          <td class="cell h5">—</td>
+          <td class="cell h5">—</td>
+        </tr>
+        <tr>
+          <th>High</th>
+          <td class="cell h3">R-04 · R-15</td>
+          <td class="cell h4">R-03 · R-07 · R-12</td>
+          <td class="cell h4">R-02 · R-05 · R-09</td>
+          <td class="cell h3">R-01 · R-08</td>
+        </tr>
+        <tr>
+          <th>Moderate</th>
+          <td class="cell h2">R-17</td>
+          <td class="cell h3">R-06 · R-10</td>
+          <td class="cell h3">R-18</td>
+          <td class="cell h2">R-19 · R-20</td>
+        </tr>
+        <tr>
+          <th>Low</th>
+          <td class="cell h1">—</td>
+          <td class="cell h2">—</td>
+          <td class="cell h2">R-21</td>
+          <td class="cell h1">R-22</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Path A — risks of selling</h2>
+  <div class="table-scroll">
+    <table>
+      <caption><strong>Selling risks</strong></caption>
+      <thead><tr><th>ID</th><th>Risk</th><th>Likelihood</th><th>Impact</th><th>Why it bites</th><th>Mitigation</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><code>R-01</code></td>
+          <td><strong>Selling into the short-lease discount</strong></td>
+          <td>Near-certain</td><td>High</td>
+          <td>The buyer prices remaining term. As expiry approaches, the cap rate widens and the buyer pool shrinks. This is the default outcome of selling late.</td>
+          <td>Either renew before marketing, or accept and price the discount explicitly using W-07's comparable evidence.</td>
+        </tr>
+        <tr>
+          <td><code>R-02</code></td>
+          <td><strong>Tax friction exceeding expectation</strong></td>
+          <td>Likely</td><td>High</td>
+          <td>Stacked federal 20% + §1250 recapture 25% + NIIT 3.8% + California 12.30%, plus up to 5.5% ULA inside the City of LA. On a low-basis asset the blended effective rate can exceed 35%.</td>
+          <td>Get the CPA projection before listing. Evaluate a §1031 exchange, an instalment sale, or a charitable remainder structure. These are adviser conversations, not formulas.</td>
+        </tr>
+        <tr>
+          <td><code>R-03</code></td>
+          <td><strong>Measure ULA applied in error, or missed</strong></td>
+          <td>Possible</td><td>High</td>
+          <td>ULA is 4.0% of the entire price above $5m and 5.5% above $10m, inside the City of LA only. If the parcel is in an adjacent city it does not apply at all; if it does apply and is missed, the seller absorbs it at closing.</td>
+          <td>Confirm jurisdiction from the assessor record before pricing (FLAG-U02). Have escrow calculate ULA explicitly and show it on the settlement statement.</td>
+        </tr>
+        <tr>
+          <td><code>R-04</code></td>
+          <td><strong>Buyer financing failure after contract</strong></td>
+          <td>Rare</td><td>High</td>
+          <td>A short lease already limits lender appetite. If rates move against the buyer mid-escrow, the loan can fail — and time has been lost inside the window that matters most.</td>
+          <td>Weight all-cash and low-leverage bidders. Keep a backup offer. Price for a fast close.</td>
+        </tr>
+        <tr>
+          <td><code>R-05</code></td>
+          <td><strong>Due-diligence discovery</strong></td>
+          <td>Likely</td><td>High</td>
+          <td>A hazard-zone designation, an unreconciled CAM history, an unfunded landlord obligation, or a lease discrepancy found by the buyer's counsel becomes a price reduction or a walk-away.</td>
+          <td>Do the same diligence the buyer will do, first. That is what G2 and G3 are for. Discovering your own problem is cheap; being told about it is expensive.</td>
+        </tr>
+        <tr>
+          <td><code>R-06</code></td>
+          <td><strong>Capital gains rate change during the marketing period</strong></td>
+          <td>Possible</td><td>Moderate</td>
+          <td>Statutory rates are set by Congress and the Legislature. A rate change between listing and closing changes net proceeds without changing the asset.</td>
+          <td>Track the legislative calendar. Where a change is scheduled, closing before the effective date can be worth more than a small price concession.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Path B — risks of renewing</h2>
+  <div class="table-scroll">
+    <table>
+      <caption><strong>Renewal risks</strong></caption>
+      <thead><tr><th>ID</th><th>Risk</th><th>Likelihood</th><th>Impact</th><th>Why it bites</th><th>Mitigation</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><code>R-07</code></td>
+          <td><strong>Locking in below-market rent for a long term</strong></td>
+          <td>Possible</td><td>High</td>
+          <td>A long extension at a concessionary rent converts a temporary soft patch into a decade of underperformance, and the loss is crystallised at the next sale.</td>
+          <td>Shorter extension with a second option, or a rent reset at a stated year. Never trade a long term for a discount without a mid-term reset.</td>
+        </tr>
+        <tr>
+          <td><code>R-08</code></td>
+          <td><strong>Tenant credit deterioration during the new term</strong></td>
+          <td>Near-certain to be tested</td><td>High</td>
+          <td>The tenant reported a net loss of $80.7m in FY2025 and $36.7m in FY2024, with $209.6m and $162.6m of impairment. Revenue fell two years running. A lease is only as good as the payer.</td>
+          <td>Corporate guaranty rather than franchisee-only. Letter of credit or security deposit. Monitor the 10-K annually — it is public.</td>
+        </tr>
+        <tr>
+          <td><code>R-09</code></td>
+          <td><strong>Granting away future upside via cheap options</strong></td>
+          <td>Likely</td><td>High</td>
+          <td>If the existing option rent is fixed and low, the landlord has already lost the renewal upside and may not know it until the option is exercised.</td>
+          <td>Abstract the option rent mechanism first (A4). If it is below market, negotiate a reset as the price of any further concession.</td>
+        </tr>
+        <tr>
+          <td><code>R-10</code></td>
+          <td><strong>Sunk capital into a store that later closes</strong></td>
+          <td>Possible</td><td>Moderate</td>
+          <td>TI or a rent holiday given in exchange for term is lost if the tenant closes the store, unless the lease has recapture or clawback language.</td>
+          <td>Amortise any contribution over the term with clawback on early termination. Never fund TI unconditionally.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Path C — risks of holding to expiry</h2>
+  <div class="table-scroll">
+    <table>
+      <caption><strong>Hold-to-expiry risks</strong> The highest-variance path: it keeps the upside and keeps all the downside.</caption>
+      <thead><tr><th>ID</th><th>Risk</th><th>Likelihood</th><th>Impact</th><th>Why it bites</th><th>Mitigation</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><code>R-11</code></td>
+          <td><strong>Vacancy and prolonged downtime at expiry</strong></td>
+          <td>Possible</td><td>Severe</td>
+          <td>A purpose-built QSR box can sit empty for well over a year. Rent stops, property tax and insurance continue, and the asset is unsaleable while vacant.</td>
+          <td>Pre-marketing to replacement tenants during the final lease year. Model a zero-income year explicitly in the hold case.</td>
+        </tr>
+        <tr>
+          <td><code>R-12</code></td>
+          <td><strong>Re-leasing cost exceeding expectation</strong></td>
+          <td>Possible</td><td>High</td>
+          <td>TI, leasing commissions, and a rent-free period on a specialised building can consume years of rent.</td>
+          <td>Get a broker's re-leasing budget before choosing this path, not after.</td>
+        </tr>
+        <tr>
+          <td><code>R-13</code></td>
+          <td><strong>Zoning or use restriction limiting re-letting</strong></td>
+          <td>Possible</td><td>Severe</td>
+          <td>If the drive-through is a non-conforming use, a new tenant may not be able to operate one — which can cut the site's value to land value.</td>
+          <td>Confirm zoning and non-conforming-use status with the city planning department. This is a pre-condition to choosing path C.</td>
+        </tr>
+        <tr>
+          <td><code>R-14</code></td>
+          <td><strong>Redevelopment opportunity never materialises</strong></td>
+          <td>Rare</td><td>Severe</td>
+          <td>The hold case often rests on an implicit land-value option. If entitlement, financing or demand does not appear, the owner has held a depreciating building for nothing.</td>
+          <td>Test the land-value story against a specific entitlement path and a specific buyer, not a hope. If neither can be named, it is not an option.</td>
+        </tr>
+        <tr>
+          <td><code>R-15</code></td>
+          <td><strong>Capitalisation-rate expansion</strong></td>
+          <td>Rare</td><td>High</td>
+          <td>With the 10-year Treasury at 4.92%, a rise in the risk-free rate compresses values regardless of the lease. This is macro, not property-specific, and it cannot be mitigated by good management.</td>
+          <td>Stress the exit cap upward. Note that this risk is <em>reduced</em> by selling, which is the strongest argument for path A in a rising-rate environment.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Tail risks — shocks that can destroy local value</h2>
+  <p>These are the "black swan" scenarios the brief asked for. Each is rated on frequency and
+  consequence, and each is grounded in something that has actually happened in this county rather than
+  imagined.</p>
+
+  <div class="card">
+    <h3 style="margin-top:0">R-16 · Wildfire reaching an urban parcel</h3>
+    <p><strong>Observed basis:</strong> the Eaton and Palisades fires destroyed
+    <strong>11,160 housing units</strong> in Los Angeles County in 2025, and the state attributes part
+    of the county's <strong>64,000-person population loss</strong> to them. This is not a hypothetical
+    — it is the most recent year in the data.</p>
+    <p><strong>Why it matters even for an urban parcel:</strong> the direct burn risk to a central-LA
+    commercial site is low. The <em>indirect</em> risk is not: regional construction cost inflation,
+    insurance withdrawal and repricing, buyer-pool contraction, and the county-level demand shock all
+    follow a major fire regardless of where the flames were.</p>
+    <p class="small"><strong>Mitigation:</strong> parcel-level FHSZ lookup (W-04); insurance review for
+    non-renewal risk; and a hold-case stress that includes a demand decline and a cap-rate widening in
+    the same year.</p>
+    <p class="src-list"><a class="src" href="https://dof.ca.gov/media/docs/forecasting/Demographics/estimates/E-1_2026_Press_Release.pdf" target="_blank" rel="noopener">DOF E-1 press release ↗</a></p>
+  </div>
+
+  <div class="card">
+    <h3 style="margin-top:0">R-17 · Earthquake</h3>
+    <p><strong>Observed basis:</strong> Southern California is seismically active and the state
+    maintains official hazard-zone mapping for fault rupture, liquefaction and landslide precisely
+    because the ground-failure risk is real and non-uniform. The CGS notes that a single event "will not
+    uniformly affect the entire area zoned".</p>
+    <p><strong>Why it is a wealth risk specifically:</strong> earthquake coverage is typically excluded
+    from a standard commercial property policy and priced separately, so an uninsured or underinsured
+    owner faces an unbounded repair liability on an asset that may also be their largest single
+    holding. The loss-of-rent and exit-liquidity channels arrive at the same time.</p>
+    <p class="small"><strong>Mitigation:</strong> EQ Zapp lookup; a current replacement-cost appraisal;
+    a separate earthquake quote; and a geotechnical review of any mapped zone to determine whether the
+    hazard was already mitigated at construction.</p>
+    <p class="src-list"><a class="src" href="https://www.conservation.ca.gov/cgs/geohazards/eq-zapp" target="_blank" rel="noopener">CGS EQ Zapp ↗</a></p>
+  </div>
+
+  <div class="card">
+    <h3 style="margin-top:0">R-18 · Insurance market failure</h3>
+    <p><strong>Why it is on this list and usually is not on others:</strong> a hazard the owner can
+    insure is a managed risk. A hazard the owner <em>cannot insure</em> is a title problem — buyers
+    cannot finance an uninsurable asset, so the parcel becomes illiquid at any price. California's
+    property insurance market has been repricing, and non-renewal notices are the earliest observable
+    signal.</p>
+    <p class="small"><strong>Mitigation:</strong> ask the current carrier directly about renewal
+    appetite. Talk to a broker about alternatives before listing. Treat a non-renewal notice as a
+    decision trigger, not an administrative task.</p>
+  </div>
+
+  <div class="card">
+    <h3 style="margin-top:0">R-19 · Tenant insolvency or mass closure</h3>
+    <p><strong>Observed basis:</strong> the tenant's own FY2025 filing discloses a net loss, two
+    consecutive years of revenue decline, and substantial impairment charges. It also discloses
+    concentration risk: approximately <strong>70% of systemwide restaurants are in California and
+    Texas</strong>, so a California-specific shock hits the tenant and the landlord together.</p>
+    <p><strong>Why it is not "unlikely":</strong> a credit tenant's covenant is the foundation of a
+    single-tenant NNN value. Even a profitable-chain closure of one store is a full vacancy for the
+    landlord. In bankruptcy, lease rejection can extinguish the remaining term.</p>
+    <p class="small"><strong>Mitigation:</strong> read the 10-K annually — it is public and free.
+    Require a corporate guaranty. Maintain a reserve sized to one vacancy year. Do not treat "NNN" as a
+    substitute for credit analysis.</p>
+    <p class="src-list">
+      <a class="src" href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/R5.htm" target="_blank" rel="noopener">10-K statements of earnings ↗</a>
+      <a class="src" href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/0000807882-25-000072-index.htm" target="_blank" rel="noopener">Filing index ↗</a>
+    </p>
+  </div>
+
+  <div class="card">
+    <h3 style="margin-top:0">R-20 · Interest-rate regime change</h3>
+    <p><strong>Observed basis:</strong> the 10-year Treasury traded down to <strong>3.97%</strong> on
+    2026-02-27, then rose to <strong>4.92%</strong> on 2026-11-23, trading above
+    <strong>5.20%</strong> in late September and October 2026 (5.24% on 2026-09-28; 5.31% on
+    2026-10-05). A cap rate is, in part, a spread over that rate.</p>
+    <p><strong>Why it is near-certain to be tested:</strong> every hold case carries an exit
+    assumption. If rates are 100bp higher at exit, the exit value falls by a large fraction of the
+    asset's value, independent of anything the owner does. This is the risk that most cleanly favours
+    selling over holding — not because the property is weak, but because the discount rate is outside
+    the owner's control.</p>
+    <p class="small"><strong>Mitigation:</strong> none available to an unlevered owner other than
+    timing. A levered owner can fix the rate. Either way, the sensitivity table in the
+    <a href="worksheet.html">worksheet</a> shows the exposure directly.</p>
+    <p class="src-list"><a class="src" href="https://fred.stlouisfed.org/data/DGS10" target="_blank" rel="noopener">10-year Treasury series ↗</a></p>
+  </div>
+
+  <h2>Cross-cutting risks — every path</h2>
+  <div class="table-scroll">
+    <table>
+      <caption><strong>Risks that do not depend on the choice</strong></caption>
+      <thead><tr><th>ID</th><th>Risk</th><th>Likelihood</th><th>Impact</th><th>Why it bites</th><th>Mitigation</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><code>R-21</code></td>
+          <td><strong>Acting on an unverified input</strong></td>
+          <td>Likely</td><td>Low</td>
+          <td>Every blank cell on this site is an invitation to fill it with a plausible guess. A guessed cap rate or a guessed basis propagates into a decision that looks fully analysed.</td>
+          <td>This workspace's own rule: an unverified value stays blank and gets flagged. Extend that rule to every adviser deliverable you receive.</td>
+        </tr>
+        <tr>
+          <td><code>R-22</code></td>
+          <td><strong>Decision paralysis</strong></td>
+          <td>Near-certain</td><td>Low</td>
+          <td>Six blocked gates can become a reason to do nothing. Doing nothing <em>is</em> path C — holding to expiry — but without the preparation that path requires.</td>
+          <td>Set a decision date now. Sequence the work so every gate closes before it. If a gate cannot close, decide under uncertainty with the uncertainty priced in.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Weighing wealth preservation against growth</h2>
+
+  <div class="card">
+    <h3 style="margin-top:0">The trade-off, stated without a recommendation</h3>
+    <p>The brief asked for a balance between preserving wealth and keeping growth opportunity, at a
+    manageable level of risk. The evidence supports a specific framing of that trade-off, though not a
+    specific choice:</p>
+    <div class="grid grid--2" style="margin-top:.6rem">
+      <div>
+        <p class="small"><strong>What preserving wealth argues for</strong></p>
+        <ul class="tight small">
+          <li>Selling converts a concentrated, single-asset, single-tenant position into diversified capital.</li>
+          <li>Selling before term decays avoids the near-certain short-lease discount (R-01).</li>
+          <li>Selling removes the uninsured-hazard exposure (R-16, R-17, R-18) from the balance sheet.</li>
+          <li>At a 4.92% risk-free rate, the opportunity cost of holding a low-yield real asset is measurable and currently high.</li>
+        </ul>
+      </div>
+      <div>
+        <p class="small"><strong>What keeping growth opportunity argues for</strong></p>
+        <ul class="tight small">
+          <li>A sale is taxed at a combined rate that can exceed 35% on a low-basis asset — a permanent, not a deferrable, loss unless a 1031 is used.</li>
+          <li>Real estate is the only asset here that can be financed; selling converts financeable capital into taxed cash.</li>
+          <li>Land value in central Los Angeles has an option value that a leased-fee sale does not capture.</li>
+          <li>Renewing first and selling after captures both the term premium and the tax deferral.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="small" style="margin-top:.6rem"><strong>The synthesis the evidence supports:</strong> the
+    "renew first, then sell" path is the only one that appears on both lists — it preserves the tax
+    deferral and the financing capacity while removing the short-lease discount. It is also the path
+    that requires the most preparation, which is why it is not the default. Whether it dominates
+    depends entirely on the size of the term coefficient in W-07 and the renewal rent, both of which
+    are currently unknown.</p>
+    <p class="small muted" style="margin-bottom:0"><em>This is a description of the trade-off, not a
+    recommendation. The recommendation cannot be made until G3 and G4 clear.</em></p>
+  </div>
+
+  <div class="notice notice--info">
+    <strong>One asymmetry worth internalising.</strong> The downside of selling at a slightly low
+    price is a one-time, bounded loss. The downside of holding a single-tenant asset through a
+    tenant default, a hazard event, or an insurance withdrawal is unbounded and correlated with the
+    owner's other local exposure. For an owner whose wealth is concentrated in this asset, that
+    asymmetry argues for weighting the sale case more heavily than its expected-value arithmetic alone
+    would suggest.
+  </div>
+
+  <p style="margin-top:1.6rem"><a href="open-questions.html">Next: the question register that turns these risks into actions →</a></p>
+
+</main>
+
+<footer class="site">
+  <div class="inner">
+    <p><strong>Privacy.</strong> No parcel identifier, address, owner name or personal figure appears
+    on this page. <a href="privacy.html">Privacy policy →</a></p>
+    <p><a href="sources.html">Full source register</a> · <a href="flagged.html">Flagged for review</a> · <a href="../index.html">Back to overview</a></p>
+  </div>
+</footer>
+</body>
+</html>

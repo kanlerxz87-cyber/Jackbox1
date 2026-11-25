@@ -1,0 +1,1821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>W-01 · Trade-Area Economics — Hold or Sell Workspace</title>
+<meta name="description" content="Population, income, labour, sector mix and price evidence for the Los Angeles trade area that surrounds the parcel, every row transcribed from an official source.">
+<link rel="stylesheet" href="../assets/css/style.css">
+<script src="../assets/js/nav.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="brandmark">Hold or Sell <span class="tag">Decision Workspace</span></div>
+    <div class="env"><span>W-01</span><span><strong>Evidence cut-off 2026-11-25</strong></span></div>
+  </div>
+</header>
+
+<nav class="nav" aria-label="Sections">
+  <div class="nav-inner">
+    <a href="../index.html">Overview</a>
+    <a href="economics.html">Trade Area</a>
+    <a href="worksheet.html">Sell v Hold</a>
+    <a href="decision-gates.html">Decision Gates</a>
+    <a href="hazards.html">Hazards</a>
+    <a href="tract-trends.html">Tract Trends</a>
+    <a href="rental-evidence.html">Rental Evidence</a>
+    <a href="lease-abstract.html">Lease Abstract</a>
+    <a href="risks.html">Risks</a>
+    <a href="open-questions.html">Open Questions</a>
+    <a href="suggestions.html">Suggestions</a>
+    <a href="flagged.html">Flagged</a>
+    <a href="sources.html">Sources</a>
+    <a href="advisory-summary.html">Summary</a>
+    <a href="privacy.html">Privacy</a>
+  </div>
+</nav>
+
+<main id="main" class="wrap">
+
+  <div class="page-head">
+    <p class="eyebrow">W-01</p>
+    <h1>Trade-area economics — replacing the city/county proxy</h1>
+    <p class="lede">
+      A restaurant's trade area is a drive-time ring, not a county line. But a county line is what the
+      official statistical series measure, and this page refuses to invent a smaller number than the
+      one that actually exists. So it does the next honest thing: it publishes the tightest verified
+      geographies available, states exactly what each one can and cannot tell you, and hands over the
+      official query that produces the tract-level figure once the parcel address exists.
+    </p>
+  </div>
+
+  <div class="toc">
+    <h2>On this page</h2>
+    <ol>
+      <li><a href="#granularity">The granularity problem, stated plainly</a></li>
+      <li><a href="#demand">Demand: population and households</a></li>
+      <li><a href="#income">Income</a></li>
+      <li><a href="#labour">Labour market</a></li>
+      <li><a href="#sectors">Sector mix — the traffic driver</a></li>
+      <li><a href="#prices">Prices and rates</a></li>
+      <li><a href="#shock">The 2025 shock and why it changes the model</a></li>
+      <li><a href="#read">What these numbers do and do not support</a></li>
+    </ol>
+  </div>
+
+  <h2 id="granularity">1 · The granularity problem, stated plainly</h2>
+
+  <p>Three geographies are in play, and they are not interchangeable:</p>
+
+  <div class="table-scroll">
+    <table>
+      <caption><strong>What each geography can answer</strong></caption>
+      <thead><tr><th>Geography</th><th>What it tells you</th><th>What it cannot tell you</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>Los Angeles County</strong><br><span class="small muted">~9.8m people</span></td>
+          <td>Whether the demand base is growing or shrinking; the labour market the tenant recruits from; the price level that drives menu pricing.</td>
+          <td>Anything about the block. A county of 9.8 million contains both the strongest and weakest trade areas in the region.</td>
+          <td><span class="pill pill--ok">Available</span></td>
+        </tr>
+        <tr>
+          <td><strong>LA–Long Beach–Santa Ana MSA</strong></td>
+          <td>Sector-level job counts as a 12-month direction; the CPI area that governs any CPI-linked escalation clause.</td>
+          <td>Sub-metro variation. Note the CPI area is <em>LA–Long Beach–Anaheim</em>, a different geography again.</td>
+          <td><span class="pill pill--ok">Available</span></td>
+        </tr>
+        <tr>
+          <td><strong>Census tract (the real trade area)</strong></td>
+          <td>Tract population, median household income, renter share, commute mode, household size — the variables that actually predict lunch traffic.</td>
+          <td>Requires an address to select the tract. Could not be retrieved in this session.</td>
+          <td><span class="pill pill--stop">Blocked</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="notice notice--warn">
+    <strong>FLAG-U03 — the tract cannot be selected without the parcel address.</strong>
+    The Census data API requires a key; without one it returned <em>"A valid key must be included"</em>
+    during this session, and <code>data.census.gov</code> deep links did not resolve to a table.
+    Nothing has been substituted. The exact official query is published below so the figure can be
+    pulled in one step once the address exists.
+    <a href="tract-trends.html">See the tract-trends page →</a>
+  </div>
+
+  <p class="small"><strong>The official query, ready to run</strong> — this returns total population,
+  median household income and median gross rent for every tract in the county, so the subject tract
+  can be read in one pass:</p>
+  <pre class="card" style="font-family:var(--mono);font-size:.76rem;overflow-x:auto;white-space:pre-wrap"><code>https://api.census.gov/data/2023/acs/acs5
+  ?get=NAME,B01003_001E,B19013_001E,B25064_001E,B25003_002E,B25003_003E
+  &amp;for=tract:*&amp;in=state:06%20county:037
+  &amp;key=YOUR_KEY</code></pre>
+  <p class="small muted">Source: <a href="https://www.census.gov/programs-surveys/acs/data/data-via-api.html" target="_blank" rel="noopener">Census Bureau — ACS Data via API ↗</a>.
+  A free key is issued at <a href="https://api.census.gov/data/key_signup.html" target="_blank" rel="noopener">api.census.gov/data/key_signup.html ↗</a>.</p>
+
+  <h2 id="demand">2 · Demand: population and households</h2>
+  <p>The headline is not the level — it is the direction change. California recorded its
+  <strong>first year of population loss</strong> after three years of increase, and Los Angeles County
+  accounted for most of the ten largest counties' collective decline.</p>
+
+  <div class="table-scroll">
+<table>
+  <caption><strong>Demand — population and households</strong>
+  Values are transcribed from the California DOF E-1 release and the U.S. Census population series. The two agencies use different methods, so their levels are not directly comparable — see FLAG-U06 on the flagged page.</caption>
+  <thead><tr>
+    <th>ID</th><th>Metric</th><th class="num">Value</th><th>Period</th>
+    <th>Level</th><th>Status</th><th>Evidence quoted from source</th><th>Official source</th>
+  </tr></thead>
+  <tbody>
+<tr>
+        <td><code>M-001</code></td>
+        <td>Los Angeles County population, January 1, 2026</td>
+        <td class="num">9.8 million (approx.)</td>
+        <td class="nowrap">2026-01-01</td>
+        <td><span class="pill pill--ok">County</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">&quot;Los Angeles County with 9.8 million residents&quot; — 2026 E-1 press release.</td>
+        <td><a class="src" href="https://dof.ca.gov/media/docs/forecasting/Demographics/estimates/E-1_2026_Press_Release.pdf" target="_blank" rel="noopener" title="2026 E-1 Press Release (released May 1, 2026)">California Department of Finance ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-002</code></td>
+        <td>Los Angeles County population change, 2025</td>
+        <td class="num">−64,000 persons</td>
+        <td class="nowrap">2025 (Jan 2025 → Jan 2026)</td>
+        <td><span class="pill pill--ok">County</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">&quot;Los Angeles lost 64,000 persons, a combined effect of the Eaton and Palisades wildfires, normal flow to the Inland Empire, and deportations.&quot;</td>
+        <td><a class="src" href="https://dof.ca.gov/media/docs/forecasting/Demographics/estimates/E-1_2026_Press_Release.pdf" target="_blank" rel="noopener" title="2026 E-1 Press Release (released May 1, 2026)">California Department of Finance ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-003</code></td>
+        <td>California population, January 1, 2026</td>
+        <td class="num">39,593,000</td>
+        <td class="nowrap">2026-01-01</td>
+        <td><span class="pill pill--ok">State</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">&quot;The 0.14-percent decline to 39,593,000 marks the first year of population loss after three consecutive years of population increases.&quot;</td>
+        <td><a class="src" href="https://dof.ca.gov/media/docs/forecasting/Demographics/estimates/E-1_2026_Press_Release.pdf" target="_blank" rel="noopener" title="2026 E-1 Press Release (released May 1, 2026)">California Department of Finance ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-004</code></td>
+        <td>Net legal international migration into California, 2025</td>
+        <td class="num">126,400 (down from 248,400 in 2024)</td>
+        <td class="nowrap">2025</td>
+        <td><span class="pill pill--ok">State</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">&quot;net legal international immigration declining in 2025 by more than fifty percent from 248,400 persons during 2024 … to 126,400 during 2025.&quot;</td>
+        <td><a class="src" href="https://dof.ca.gov/media/docs/forecasting/Demographics/estimates/E-1_2026_Press_Release.pdf" target="_blank" rel="noopener" title="2026 E-1 Press Release (released May 1, 2026)">California Department of Finance ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-005</code></td>
+        <td>Net domestic out-migration from California, 2025</td>
+        <td class="num">−288,600 persons</td>
+        <td class="nowrap">2025</td>
+        <td><span class="pill pill--ok">State</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">&quot;Net domestic out-migration from California increased to 288,600 in 2025.&quot;</td>
+        <td><a class="src" href="https://dof.ca.gov/media/docs/forecasting/Demographics/estimates/E-1_2026_Press_Release.pdf" target="_blank" rel="noopener" title="2026 E-1 Press Release (released May 1, 2026)">California Department of Finance ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-006</code></td>
+        <td>Resident population, California, 2025</td>
+        <td class="num">39,355,309</td>
+        <td class="nowrap">2025</td>
+        <td><span class="pill pill--ok">State</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Series CAPOP, observation 2025-01-01 = 39355.309 (thousands). Census vintage 2025.</td>
+        <td><a class="src" href="https://fred.stlouisfed.org/data/CAPOP" target="_blank" rel="noopener" title="Resident Population in California — series CAPOP">Federal Reserve Bank of St. Louis (source: U.S. Census Bureau) ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-007</code></td>
+        <td>Net new housing units added, Los Angeles County, 2025</td>
+        <td class="num">11,260 units (highest in the state)</td>
+        <td class="nowrap">2025</td>
+        <td><span class="pill pill--ok">County</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">&quot;Within counties ranked by net housing gains, Los Angeles (11,260), San Diego (8,635) … added the most housing units in 2025.&quot;</td>
+        <td><a class="src" href="https://dof.ca.gov/media/docs/forecasting/Demographics/estimates/E-1_2026_Press_Release.pdf" target="_blank" rel="noopener" title="2026 E-1 Press Release (released May 1, 2026)">California Department of Finance ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-008</code></td>
+        <td>Housing units destroyed by the Eaton and Palisades fires</td>
+        <td class="num">11,160 units</td>
+        <td class="nowrap">2025</td>
+        <td><span class="pill pill--ok">County</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">&quot;the loss of 11,406 housing units due to fires, including 11,160 housing units lost to the Eaton and Palisades fires.&quot;</td>
+        <td><a class="src" href="https://dof.ca.gov/media/docs/forecasting/Demographics/estimates/E-1_2026_Press_Release.pdf" target="_blank" rel="noopener" title="2026 E-1 Press Release (released May 1, 2026)">California Department of Finance ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-010</code></td>
+        <td>Median household income, Los Angeles County, 2024</td>
+        <td class="num">$90,757</td>
+        <td class="nowrap">2024</td>
+        <td><span class="pill pill--ok">County</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Series MHICA06037A052NCEN, observation 2024 = 90,757 dollars.</td>
+        <td><a class="src" href="https://fred.stlouisfed.org/series/MHICA06037A052NCEN" target="_blank" rel="noopener" title="Estimate of Median Household Income for Los Angeles County, CA — series MHICA06037A052NCEN">Federal Reserve Bank of St. Louis (source: U.S. Census Bureau, SAIPE) ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-011</code></td>
+        <td>Median household income, Los Angeles County, 4-year change 2020→2024</td>
+        <td class="num">+$15,133 (+20.0%)</td>
+        <td class="nowrap">2020 → 2024</td>
+        <td><span class="pill pill--ok">County</span></td>
+        <td><span class="pill pill--warn">Derived</span></td>
+        <td class="small">Series observations: 2020 = 75,624; 2024 = 90,757. Arithmetic difference of two published values; both transcribed above.</td>
+        <td><a class="src" href="https://fred.stlouisfed.org/series/MHICA06037A052NCEN" target="_blank" rel="noopener" title="Estimate of Median Household Income for Los Angeles County, CA — series MHICA06037A052NCEN">Federal Reserve Bank of St. Louis (source: U.S. Census Bureau, SAIPE) ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-020</code></td>
+        <td>Unemployment rate, Los Angeles County, September 2026</td>
+        <td class="num">4.5%</td>
+        <td class="nowrap">2026-09</td>
+        <td><span class="pill pill--ok">County</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Series CALOSA7URN, observation 2026-09-01 = 4.5 (percent, not seasonally adjusted).</td>
+        <td><a class="src" href="https://fred.stlouisfed.org/data/CALOSA7URN" target="_blank" rel="noopener" title="Unemployment Rate in Los Angeles County, CA — series CALOSA7URN">Federal Reserve Bank of St. Louis (source: U.S. Bureau of Labor Statistics) ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-021</code></td>
+        <td>Unemployment rate, Los Angeles County, 2025 peak (July–August)</td>
+        <td class="num">6.2%</td>
+        <td class="nowrap">2025-07 and 2025-08</td>
+        <td><span class="pill pill--ok">County</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Series observations 2025-07-01 = 6.2 and 2025-08-01 = 6.2.</td>
+        <td><a class="src" href="https://fred.stlouisfed.org/data/CALOSA7URN" target="_blank" rel="noopener" title="Unemployment Rate in Los Angeles County, CA — series CALOSA7URN">Federal Reserve Bank of St. Louis (source: U.S. Bureau of Labor Statistics) ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-022</code></td>
+        <td>Unemployment rate, Los Angeles County, COVID peak</td>
+        <td class="num">18.9%</td>
+        <td class="nowrap">2020-05</td>
+        <td><span class="pill pill--ok">County</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Series observation 2020-05-01 = 18.9.</td>
+        <td><a class="src" href="https://fred.stlouisfed.org/data/CALOSA7URN" target="_blank" rel="noopener" title="Unemployment Rate in Los Angeles County, CA — series CALOSA7URN">Federal Reserve Bank of St. Louis (source: U.S. Bureau of Labor Statistics) ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-023</code></td>
+        <td>Unemployment rate, Los Angeles County, GFC peak</td>
+        <td class="num">13.1%</td>
+        <td class="nowrap">2010-07</td>
+        <td><span class="pill pill--ok">County</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Series observation 2010-07-01 = 13.1 (highest in the series from 1990).</td>
+        <td><a class="src" href="https://fred.stlouisfed.org/data/CALOSA7URN" target="_blank" rel="noopener" title="Unemployment Rate in Los Angeles County, CA — series CALOSA7URN">Federal Reserve Bank of St. Louis (source: U.S. Bureau of Labor Statistics) ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-024</code></td>
+        <td>Civilian labour force, Los Angeles-Long Beach-Santa Ana MSA, October 2026</td>
+        <td class="num">6,371.5 thousand</td>
+        <td class="nowrap">2026-10 (preliminary)</td>
+        <td><span class="pill pill--ok">Metro</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Economy at a Glance table, Civilian Labor Force, Oct 2026 column = 6,371.5 (thousands, not seasonally adjusted, preliminary).</td>
+        <td><a class="src" href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm" target="_blank" rel="noopener" title="Economy at a Glance — Los Angeles-Long Beach-Santa Ana, CA (MSA)">Bureau of Labor Statistics ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-025</code></td>
+        <td>Unemployment rate, Los Angeles-Long Beach-Santa Ana MSA, October 2026</td>
+        <td class="num">4.4% (preliminary)</td>
+        <td class="nowrap">2026-10 (preliminary)</td>
+        <td><span class="pill pill--ok">Metro</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Economy at a Glance table, Unemployment Rate, Oct 2026 = (p) 4.4.</td>
+        <td><a class="src" href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm" target="_blank" rel="noopener" title="Economy at a Glance — Los Angeles-Long Beach-Santa Ana, CA (MSA)">Bureau of Labor Statistics ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-026</code></td>
+        <td>Total nonfarm employment, LA-Long Beach-Santa Ana MSA, October 2026</td>
+        <td class="num">6,371.5 thousand</td>
+        <td class="nowrap">2026-10 (preliminary)</td>
+        <td><span class="pill pill--ok">Metro</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Economy at a Glance, Total Nonfarm, Oct 2026 = (p) 6,371.5.</td>
+        <td><a class="src" href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm" target="_blank" rel="noopener" title="Economy at a Glance — Los Angeles-Long Beach-Santa Ana, CA (MSA)">Bureau of Labor Statistics ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-030</code></td>
+        <td>Leisure and Hospitality jobs, LA MSA, October 2026</td>
+        <td class="num">787.5 thousand</td>
+        <td class="nowrap">2026-10 (preliminary)</td>
+        <td><span class="pill pill--ok">Metro</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Economy at a Glance, Leisure and Hospitality, Oct 2026 = (p) 787.5; 12-month change +1.5%.</td>
+        <td><a class="src" href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm" target="_blank" rel="noopener" title="Economy at a Glance — Los Angeles-Long Beach-Santa Ana, CA (MSA)">Bureau of Labor Statistics ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-031</code></td>
+        <td>Education and Health Services jobs, LA MSA, 12-month change to October 2026</td>
+        <td class="num">+3.3%</td>
+        <td class="nowrap">2026-10 (12-month % change)</td>
+        <td><span class="pill pill--ok">Metro</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Economy at a Glance, Education and Health Services, 12-month % change Oct 2026 = (p) 3.3.</td>
+        <td><a class="src" href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm" target="_blank" rel="noopener" title="Economy at a Glance — Los Angeles-Long Beach-Santa Ana, CA (MSA)">Bureau of Labor Statistics ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-032</code></td>
+        <td>Information sector jobs, LA MSA, 12-month change to October 2026</td>
+        <td class="num">−2.1%</td>
+        <td class="nowrap">2026-10 (12-month % change)</td>
+        <td><span class="pill pill--ok">Metro</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Economy at a Glance, Information, 12-month % change Oct 2026 = (p) -2.1.</td>
+        <td><a class="src" href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm" target="_blank" rel="noopener" title="Economy at a Glance — Los Angeles-Long Beach-Santa Ana, CA (MSA)">Bureau of Labor Statistics ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-033</code></td>
+        <td>Manufacturing jobs, LA MSA, 12-month change to October 2026</td>
+        <td class="num">−1.2%</td>
+        <td class="nowrap">2026-10 (12-month % change)</td>
+        <td><span class="pill pill--ok">Metro</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Economy at a Glance, Manufacturing, 12-month % change Oct 2026 = (p) -1.2.</td>
+        <td><a class="src" href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm" target="_blank" rel="noopener" title="Economy at a Glance — Los Angeles-Long Beach-Santa Ana, CA (MSA)">Bureau of Labor Statistics ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-034</code></td>
+        <td>Financial Activities jobs, LA MSA, 12-month change to October 2026</td>
+        <td class="num">−1.6%</td>
+        <td class="nowrap">2026-10 (12-month % change)</td>
+        <td><span class="pill pill--ok">Metro</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Economy at a Glance, Financial Activities, 12-month % change Oct 2026 = (p) -1.6.</td>
+        <td><a class="src" href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm" target="_blank" rel="noopener" title="Economy at a Glance — Los Angeles-Long Beach-Santa Ana, CA (MSA)">Bureau of Labor Statistics ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-040</code></td>
+        <td>CPI-U all items, Los Angeles-Long Beach-Anaheim, October 2026</td>
+        <td class="num">360.965 (index, 1982-84 = 100)</td>
+        <td class="nowrap">2026-10</td>
+        <td><span class="pill pill--neutral">cpi-area</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Economy at a Glance, CPI-U All items, Oct 2026 = 360.965.</td>
+        <td><a class="src" href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm#eag_ca_losangeles_msa.f.4" target="_blank" rel="noopener" title="CPI-U / CPI-W, Los Angeles-Long Beach-Anaheim, CA (via Economy at a Glance)">Bureau of Labor Statistics ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-041</code></td>
+        <td>CPI-U 12-month change, Los Angeles-Long Beach-Anaheim, September 2026</td>
+        <td class="num">+3.7%</td>
+        <td class="nowrap">2026-09 (12-month % change)</td>
+        <td><span class="pill pill--neutral">cpi-area</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Economy at a Glance, CPI-U All items 12-month % change, Sept 2026 = 3.7; Oct 2026 not shown in that row.</td>
+        <td><a class="src" href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm#eag_ca_losangeles_msa.f.4" target="_blank" rel="noopener" title="CPI-U / CPI-W, Los Angeles-Long Beach-Anaheim, CA (via Economy at a Glance)">Bureau of Labor Statistics ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-042</code></td>
+        <td>CPI-W 12-month change, Los Angeles-Long Beach-Anaheim, September 2026</td>
+        <td class="num">+4.1%</td>
+        <td class="nowrap">2026-09 (12-month % change)</td>
+        <td><span class="pill pill--neutral">cpi-area</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Economy at a Glance, CPI-W All items 12-month % change, Sept 2026 = 4.1.</td>
+        <td><a class="src" href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm#eag_ca_losangeles_msa.f.4" target="_blank" rel="noopener" title="CPI-U / CPI-W, Los Angeles-Long Beach-Anaheim, CA (via Economy at a Glance)">Bureau of Labor Statistics ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-106</code></td>
+        <td>Census tract population, median household income, and renter share</td>
+        <td class="num"><span class="blank">—</span></td>
+        <td class="nowrap">ACS 5-year</td>
+        <td><span class="pill pill--info">Tract</span></td>
+        <td><span class="pill pill--stop">Unverified</span></td>
+        <td class="small"><span class="muted">Tract cannot be selected without the parcel address. The Census data API also requires a key (it returned &quot;Missing Key&quot; during this session). See FLAG-U03.</span></td>
+        <td><a class="src" href="https://data.census.gov/all?g=140XX00US06037207200" target="_blank" rel="noopener" title="data.census.gov — tract profile query (ACS 5-year)">Census Bureau ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-110</code></td>
+        <td>Verified NNN retail cap rates for the subject submarket</td>
+        <td class="num"><span class="blank">—</span></td>
+        <td class="nowrap">current</td>
+        <td><span class="pill pill--info">Submarket</span></td>
+        <td><span class="pill pill--stop">Unverified</span></td>
+        <td class="small"><span class="muted">No official statistical series publishes submarket NNN retail cap rates. Commercial data providers are proprietary. Not estimated — see FLAG-U04.</span></td>
+        <td><a class="src" href="https://fred.stlouisfed.org/data/DGS10" target="_blank" rel="noopener" title="10-Year Treasury Constant Maturity — series DGS10">Federal Reserve Bank of St. Louis (source: Federal Reserve Board, H.15) ↗</a></td>
+      </tr>
+  </tbody>
+</table>
+</div>
+
+  <h2 id="income">3 · Income</h2>
+  <p>Median household income is the single best available proxy for the price a QSR can charge in a
+  trade area. It has risen every year in the series, but the series is nominal — the CPI figures
+  further down matter for the real reading.</p>
+
+  <div class="table-scroll">
+<table>
+  <caption><strong>Income</strong>
+  County-level SAIPE estimate. Real growth requires deflating by the CPI rows in section 6.</caption>
+  <thead><tr>
+    <th>ID</th><th>Metric</th><th class="num">Value</th><th>Period</th>
+    <th>Level</th><th>Status</th><th>Evidence quoted from source</th><th>Official source</th>
+  </tr></thead>
+  <tbody>
+<tr>
+        <td><code>M-001</code></td>
+        <td>Los Angeles County population, January 1, 2026</td>
+        <td class="num">9.8 million (approx.)</td>
+        <td class="nowrap">2026-01-01</td>
+        <td><span class="pill pill--ok">County</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">&quot;Los Angeles County with 9.8 million residents&quot; — 2026 E-1 press release.</td>
+        <td><a class="src" href="https://dof.ca.gov/media/docs/forecasting/Demographics/estimates/E-1_2026_Press_Release.pdf" target="_blank" rel="noopener" title="2026 E-1 Press Release (released May 1, 2026)">California Department of Finance ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-002</code></td>
+        <td>Los Angeles County population change, 2025</td>
+        <td class="num">−64,000 persons</td>
+        <td class="nowrap">2025 (Jan 2025 → Jan 2026)</td>
+        <td><span class="pill pill--ok">County</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">&quot;Los Angeles lost 64,000 persons, a combined effect of the Eaton and Palisades wildfires, normal flow to the Inland Empire, and deportations.&quot;</td>
+        <td><a class="src" href="https://dof.ca.gov/media/docs/forecasting/Demographics/estimates/E-1_2026_Press_Release.pdf" target="_blank" rel="noopener" title="2026 E-1 Press Release (released May 1, 2026)">California Department of Finance ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-003</code></td>
+        <td>California population, January 1, 2026</td>
+        <td class="num">39,593,000</td>
+        <td class="nowrap">2026-01-01</td>
+        <td><span class="pill pill--ok">State</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">&quot;The 0.14-percent decline to 39,593,000 marks the first year of population loss after three consecutive years of population increases.&quot;</td>
+        <td><a class="src" href="https://dof.ca.gov/media/docs/forecasting/Demographics/estimates/E-1_2026_Press_Release.pdf" target="_blank" rel="noopener" title="2026 E-1 Press Release (released May 1, 2026)">California Department of Finance ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-004</code></td>
+        <td>Net legal international migration into California, 2025</td>
+        <td class="num">126,400 (down from 248,400 in 2024)</td>
+        <td class="nowrap">2025</td>
+        <td><span class="pill pill--ok">State</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">&quot;net legal international immigration declining in 2025 by more than fifty percent from 248,400 persons during 2024 … to 126,400 during 2025.&quot;</td>
+        <td><a class="src" href="https://dof.ca.gov/media/docs/forecasting/Demographics/estimates/E-1_2026_Press_Release.pdf" target="_blank" rel="noopener" title="2026 E-1 Press Release (released May 1, 2026)">California Department of Finance ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-005</code></td>
+        <td>Net domestic out-migration from California, 2025</td>
+        <td class="num">−288,600 persons</td>
+        <td class="nowrap">2025</td>
+        <td><span class="pill pill--ok">State</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">&quot;Net domestic out-migration from California increased to 288,600 in 2025.&quot;</td>
+        <td><a class="src" href="https://dof.ca.gov/media/docs/forecasting/Demographics/estimates/E-1_2026_Press_Release.pdf" target="_blank" rel="noopener" title="2026 E-1 Press Release (released May 1, 2026)">California Department of Finance ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-006</code></td>
+        <td>Resident population, California, 2025</td>
+        <td class="num">39,355,309</td>
+        <td class="nowrap">2025</td>
+        <td><span class="pill pill--ok">State</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Series CAPOP, observation 2025-01-01 = 39355.309 (thousands). Census vintage 2025.</td>
+        <td><a class="src" href="https://fred.stlouisfed.org/data/CAPOP" target="_blank" rel="noopener" title="Resident Population in California — series CAPOP">Federal Reserve Bank of St. Louis (source: U.S. Census Bureau) ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-007</code></td>
+        <td>Net new housing units added, Los Angeles County, 2025</td>
+        <td class="num">11,260 units (highest in the state)</td>
+        <td class="nowrap">2025</td>
+        <td><span class="pill pill--ok">County</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">&quot;Within counties ranked by net housing gains, Los Angeles (11,260), San Diego (8,635) … added the most housing units in 2025.&quot;</td>
+        <td><a class="src" href="https://dof.ca.gov/media/docs/forecasting/Demographics/estimates/E-1_2026_Press_Release.pdf" target="_blank" rel="noopener" title="2026 E-1 Press Release (released May 1, 2026)">California Department of Finance ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-008</code></td>
+        <td>Housing units destroyed by the Eaton and Palisades fires</td>
+        <td class="num">11,160 units</td>
+        <td class="nowrap">2025</td>
+        <td><span class="pill pill--ok">County</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">&quot;the loss of 11,406 housing units due to fires, including 11,160 housing units lost to the Eaton and Palisades fires.&quot;</td>
+        <td><a class="src" href="https://dof.ca.gov/media/docs/forecasting/Demographics/estimates/E-1_2026_Press_Release.pdf" target="_blank" rel="noopener" title="2026 E-1 Press Release (released May 1, 2026)">California Department of Finance ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-010</code></td>
+        <td>Median household income, Los Angeles County, 2024</td>
+        <td class="num">$90,757</td>
+        <td class="nowrap">2024</td>
+        <td><span class="pill pill--ok">County</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Series MHICA06037A052NCEN, observation 2024 = 90,757 dollars.</td>
+        <td><a class="src" href="https://fred.stlouisfed.org/series/MHICA06037A052NCEN" target="_blank" rel="noopener" title="Estimate of Median Household Income for Los Angeles County, CA — series MHICA06037A052NCEN">Federal Reserve Bank of St. Louis (source: U.S. Census Bureau, SAIPE) ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-011</code></td>
+        <td>Median household income, Los Angeles County, 4-year change 2020→2024</td>
+        <td class="num">+$15,133 (+20.0%)</td>
+        <td class="nowrap">2020 → 2024</td>
+        <td><span class="pill pill--ok">County</span></td>
+        <td><span class="pill pill--warn">Derived</span></td>
+        <td class="small">Series observations: 2020 = 75,624; 2024 = 90,757. Arithmetic difference of two published values; both transcribed above.</td>
+        <td><a class="src" href="https://fred.stlouisfed.org/series/MHICA06037A052NCEN" target="_blank" rel="noopener" title="Estimate of Median Household Income for Los Angeles County, CA — series MHICA06037A052NCEN">Federal Reserve Bank of St. Louis (source: U.S. Census Bureau, SAIPE) ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-020</code></td>
+        <td>Unemployment rate, Los Angeles County, September 2026</td>
+        <td class="num">4.5%</td>
+        <td class="nowrap">2026-09</td>
+        <td><span class="pill pill--ok">County</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Series CALOSA7URN, observation 2026-09-01 = 4.5 (percent, not seasonally adjusted).</td>
+        <td><a class="src" href="https://fred.stlouisfed.org/data/CALOSA7URN" target="_blank" rel="noopener" title="Unemployment Rate in Los Angeles County, CA — series CALOSA7URN">Federal Reserve Bank of St. Louis (source: U.S. Bureau of Labor Statistics) ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-021</code></td>
+        <td>Unemployment rate, Los Angeles County, 2025 peak (July–August)</td>
+        <td class="num">6.2%</td>
+        <td class="nowrap">2025-07 and 2025-08</td>
+        <td><span class="pill pill--ok">County</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Series observations 2025-07-01 = 6.2 and 2025-08-01 = 6.2.</td>
+        <td><a class="src" href="https://fred.stlouisfed.org/data/CALOSA7URN" target="_blank" rel="noopener" title="Unemployment Rate in Los Angeles County, CA — series CALOSA7URN">Federal Reserve Bank of St. Louis (source: U.S. Bureau of Labor Statistics) ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-022</code></td>
+        <td>Unemployment rate, Los Angeles County, COVID peak</td>
+        <td class="num">18.9%</td>
+        <td class="nowrap">2020-05</td>
+        <td><span class="pill pill--ok">County</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Series observation 2020-05-01 = 18.9.</td>
+        <td><a class="src" href="https://fred.stlouisfed.org/data/CALOSA7URN" target="_blank" rel="noopener" title="Unemployment Rate in Los Angeles County, CA — series CALOSA7URN">Federal Reserve Bank of St. Louis (source: U.S. Bureau of Labor Statistics) ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-023</code></td>
+        <td>Unemployment rate, Los Angeles County, GFC peak</td>
+        <td class="num">13.1%</td>
+        <td class="nowrap">2010-07</td>
+        <td><span class="pill pill--ok">County</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Series observation 2010-07-01 = 13.1 (highest in the series from 1990).</td>
+        <td><a class="src" href="https://fred.stlouisfed.org/data/CALOSA7URN" target="_blank" rel="noopener" title="Unemployment Rate in Los Angeles County, CA — series CALOSA7URN">Federal Reserve Bank of St. Louis (source: U.S. Bureau of Labor Statistics) ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-024</code></td>
+        <td>Civilian labour force, Los Angeles-Long Beach-Santa Ana MSA, October 2026</td>
+        <td class="num">6,371.5 thousand</td>
+        <td class="nowrap">2026-10 (preliminary)</td>
+        <td><span class="pill pill--ok">Metro</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Economy at a Glance table, Civilian Labor Force, Oct 2026 column = 6,371.5 (thousands, not seasonally adjusted, preliminary).</td>
+        <td><a class="src" href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm" target="_blank" rel="noopener" title="Economy at a Glance — Los Angeles-Long Beach-Santa Ana, CA (MSA)">Bureau of Labor Statistics ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-025</code></td>
+        <td>Unemployment rate, Los Angeles-Long Beach-Santa Ana MSA, October 2026</td>
+        <td class="num">4.4% (preliminary)</td>
+        <td class="nowrap">2026-10 (preliminary)</td>
+        <td><span class="pill pill--ok">Metro</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Economy at a Glance table, Unemployment Rate, Oct 2026 = (p) 4.4.</td>
+        <td><a class="src" href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm" target="_blank" rel="noopener" title="Economy at a Glance — Los Angeles-Long Beach-Santa Ana, CA (MSA)">Bureau of Labor Statistics ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-026</code></td>
+        <td>Total nonfarm employment, LA-Long Beach-Santa Ana MSA, October 2026</td>
+        <td class="num">6,371.5 thousand</td>
+        <td class="nowrap">2026-10 (preliminary)</td>
+        <td><span class="pill pill--ok">Metro</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Economy at a Glance, Total Nonfarm, Oct 2026 = (p) 6,371.5.</td>
+        <td><a class="src" href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm" target="_blank" rel="noopener" title="Economy at a Glance — Los Angeles-Long Beach-Santa Ana, CA (MSA)">Bureau of Labor Statistics ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-030</code></td>
+        <td>Leisure and Hospitality jobs, LA MSA, October 2026</td>
+        <td class="num">787.5 thousand</td>
+        <td class="nowrap">2026-10 (preliminary)</td>
+        <td><span class="pill pill--ok">Metro</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Economy at a Glance, Leisure and Hospitality, Oct 2026 = (p) 787.5; 12-month change +1.5%.</td>
+        <td><a class="src" href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm" target="_blank" rel="noopener" title="Economy at a Glance — Los Angeles-Long Beach-Santa Ana, CA (MSA)">Bureau of Labor Statistics ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-031</code></td>
+        <td>Education and Health Services jobs, LA MSA, 12-month change to October 2026</td>
+        <td class="num">+3.3%</td>
+        <td class="nowrap">2026-10 (12-month % change)</td>
+        <td><span class="pill pill--ok">Metro</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Economy at a Glance, Education and Health Services, 12-month % change Oct 2026 = (p) 3.3.</td>
+        <td><a class="src" href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm" target="_blank" rel="noopener" title="Economy at a Glance — Los Angeles-Long Beach-Santa Ana, CA (MSA)">Bureau of Labor Statistics ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-032</code></td>
+        <td>Information sector jobs, LA MSA, 12-month change to October 2026</td>
+        <td class="num">−2.1%</td>
+        <td class="nowrap">2026-10 (12-month % change)</td>
+        <td><span class="pill pill--ok">Metro</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Economy at a Glance, Information, 12-month % change Oct 2026 = (p) -2.1.</td>
+        <td><a class="src" href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm" target="_blank" rel="noopener" title="Economy at a Glance — Los Angeles-Long Beach-Santa Ana, CA (MSA)">Bureau of Labor Statistics ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-033</code></td>
+        <td>Manufacturing jobs, LA MSA, 12-month change to October 2026</td>
+        <td class="num">−1.2%</td>
+        <td class="nowrap">2026-10 (12-month % change)</td>
+        <td><span class="pill pill--ok">Metro</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Economy at a Glance, Manufacturing, 12-month % change Oct 2026 = (p) -1.2.</td>
+        <td><a class="src" href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm" target="_blank" rel="noopener" title="Economy at a Glance — Los Angeles-Long Beach-Santa Ana, CA (MSA)">Bureau of Labor Statistics ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-034</code></td>
+        <td>Financial Activities jobs, LA MSA, 12-month change to October 2026</td>
+        <td class="num">−1.6%</td>
+        <td class="nowrap">2026-10 (12-month % change)</td>
+        <td><span class="pill pill--ok">Metro</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Economy at a Glance, Financial Activities, 12-month % change Oct 2026 = (p) -1.6.</td>
+        <td><a class="src" href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm" target="_blank" rel="noopener" title="Economy at a Glance — Los Angeles-Long Beach-Santa Ana, CA (MSA)">Bureau of Labor Statistics ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-040</code></td>
+        <td>CPI-U all items, Los Angeles-Long Beach-Anaheim, October 2026</td>
+        <td class="num">360.965 (index, 1982-84 = 100)</td>
+        <td class="nowrap">2026-10</td>
+        <td><span class="pill pill--neutral">cpi-area</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Economy at a Glance, CPI-U All items, Oct 2026 = 360.965.</td>
+        <td><a class="src" href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm#eag_ca_losangeles_msa.f.4" target="_blank" rel="noopener" title="CPI-U / CPI-W, Los Angeles-Long Beach-Anaheim, CA (via Economy at a Glance)">Bureau of Labor Statistics ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-041</code></td>
+        <td>CPI-U 12-month change, Los Angeles-Long Beach-Anaheim, September 2026</td>
+        <td class="num">+3.7%</td>
+        <td class="nowrap">2026-09 (12-month % change)</td>
+        <td><span class="pill pill--neutral">cpi-area</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Economy at a Glance, CPI-U All items 12-month % change, Sept 2026 = 3.7; Oct 2026 not shown in that row.</td>
+        <td><a class="src" href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm#eag_ca_losangeles_msa.f.4" target="_blank" rel="noopener" title="CPI-U / CPI-W, Los Angeles-Long Beach-Anaheim, CA (via Economy at a Glance)">Bureau of Labor Statistics ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-042</code></td>
+        <td>CPI-W 12-month change, Los Angeles-Long Beach-Anaheim, September 2026</td>
+        <td class="num">+4.1%</td>
+        <td class="nowrap">2026-09 (12-month % change)</td>
+        <td><span class="pill pill--neutral">cpi-area</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Economy at a Glance, CPI-W All items 12-month % change, Sept 2026 = 4.1.</td>
+        <td><a class="src" href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm#eag_ca_losangeles_msa.f.4" target="_blank" rel="noopener" title="CPI-U / CPI-W, Los Angeles-Long Beach-Anaheim, CA (via Economy at a Glance)">Bureau of Labor Statistics ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-106</code></td>
+        <td>Census tract population, median household income, and renter share</td>
+        <td class="num"><span class="blank">—</span></td>
+        <td class="nowrap">ACS 5-year</td>
+        <td><span class="pill pill--info">Tract</span></td>
+        <td><span class="pill pill--stop">Unverified</span></td>
+        <td class="small"><span class="muted">Tract cannot be selected without the parcel address. The Census data API also requires a key (it returned &quot;Missing Key&quot; during this session). See FLAG-U03.</span></td>
+        <td><a class="src" href="https://data.census.gov/all?g=140XX00US06037207200" target="_blank" rel="noopener" title="data.census.gov — tract profile query (ACS 5-year)">Census Bureau ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-110</code></td>
+        <td>Verified NNN retail cap rates for the subject submarket</td>
+        <td class="num"><span class="blank">—</span></td>
+        <td class="nowrap">current</td>
+        <td><span class="pill pill--info">Submarket</span></td>
+        <td><span class="pill pill--stop">Unverified</span></td>
+        <td class="small"><span class="muted">No official statistical series publishes submarket NNN retail cap rates. Commercial data providers are proprietary. Not estimated — see FLAG-U04.</span></td>
+        <td><a class="src" href="https://fred.stlouisfed.org/data/DGS10" target="_blank" rel="noopener" title="10-Year Treasury Constant Maturity — series DGS10">Federal Reserve Bank of St. Louis (source: Federal Reserve Board, H.15) ↗</a></td>
+      </tr>
+  </tbody>
+</table>
+</div>
+
+  <h2 id="labour">4 · Labour market</h2>
+  <p>Two things matter for a restaurant landlord: whether the tenant can staff the store, and whether
+  customers have jobs to come back to at lunch. Both point the same way right now — the county is
+  near full employment.</p>
+
+  <div class="table-scroll">
+<table>
+  <caption><strong>Labour market</strong>
+  Series CALOSA7URN is not seasonally adjusted; the July–August peak is a real seasonal pattern as well as a cyclical one. Read 12-month comparisons, not month-to-month.</caption>
+  <thead><tr>
+    <th>ID</th><th>Metric</th><th class="num">Value</th><th>Period</th>
+    <th>Level</th><th>Status</th><th>Evidence quoted from source</th><th>Official source</th>
+  </tr></thead>
+  <tbody>
+<tr>
+        <td><code>M-001</code></td>
+        <td>Los Angeles County population, January 1, 2026</td>
+        <td class="num">9.8 million (approx.)</td>
+        <td class="nowrap">2026-01-01</td>
+        <td><span class="pill pill--ok">County</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">&quot;Los Angeles County with 9.8 million residents&quot; — 2026 E-1 press release.</td>
+        <td><a class="src" href="https://dof.ca.gov/media/docs/forecasting/Demographics/estimates/E-1_2026_Press_Release.pdf" target="_blank" rel="noopener" title="2026 E-1 Press Release (released May 1, 2026)">California Department of Finance ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-002</code></td>
+        <td>Los Angeles County population change, 2025</td>
+        <td class="num">−64,000 persons</td>
+        <td class="nowrap">2025 (Jan 2025 → Jan 2026)</td>
+        <td><span class="pill pill--ok">County</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">&quot;Los Angeles lost 64,000 persons, a combined effect of the Eaton and Palisades wildfires, normal flow to the Inland Empire, and deportations.&quot;</td>
+        <td><a class="src" href="https://dof.ca.gov/media/docs/forecasting/Demographics/estimates/E-1_2026_Press_Release.pdf" target="_blank" rel="noopener" title="2026 E-1 Press Release (released May 1, 2026)">California Department of Finance ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-003</code></td>
+        <td>California population, January 1, 2026</td>
+        <td class="num">39,593,000</td>
+        <td class="nowrap">2026-01-01</td>
+        <td><span class="pill pill--ok">State</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">&quot;The 0.14-percent decline to 39,593,000 marks the first year of population loss after three consecutive years of population increases.&quot;</td>
+        <td><a class="src" href="https://dof.ca.gov/media/docs/forecasting/Demographics/estimates/E-1_2026_Press_Release.pdf" target="_blank" rel="noopener" title="2026 E-1 Press Release (released May 1, 2026)">California Department of Finance ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-004</code></td>
+        <td>Net legal international migration into California, 2025</td>
+        <td class="num">126,400 (down from 248,400 in 2024)</td>
+        <td class="nowrap">2025</td>
+        <td><span class="pill pill--ok">State</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">&quot;net legal international immigration declining in 2025 by more than fifty percent from 248,400 persons during 2024 … to 126,400 during 2025.&quot;</td>
+        <td><a class="src" href="https://dof.ca.gov/media/docs/forecasting/Demographics/estimates/E-1_2026_Press_Release.pdf" target="_blank" rel="noopener" title="2026 E-1 Press Release (released May 1, 2026)">California Department of Finance ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-005</code></td>
+        <td>Net domestic out-migration from California, 2025</td>
+        <td class="num">−288,600 persons</td>
+        <td class="nowrap">2025</td>
+        <td><span class="pill pill--ok">State</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">&quot;Net domestic out-migration from California increased to 288,600 in 2025.&quot;</td>
+        <td><a class="src" href="https://dof.ca.gov/media/docs/forecasting/Demographics/estimates/E-1_2026_Press_Release.pdf" target="_blank" rel="noopener" title="2026 E-1 Press Release (released May 1, 2026)">California Department of Finance ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-006</code></td>
+        <td>Resident population, California, 2025</td>
+        <td class="num">39,355,309</td>
+        <td class="nowrap">2025</td>
+        <td><span class="pill pill--ok">State</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Series CAPOP, observation 2025-01-01 = 39355.309 (thousands). Census vintage 2025.</td>
+        <td><a class="src" href="https://fred.stlouisfed.org/data/CAPOP" target="_blank" rel="noopener" title="Resident Population in California — series CAPOP">Federal Reserve Bank of St. Louis (source: U.S. Census Bureau) ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-007</code></td>
+        <td>Net new housing units added, Los Angeles County, 2025</td>
+        <td class="num">11,260 units (highest in the state)</td>
+        <td class="nowrap">2025</td>
+        <td><span class="pill pill--ok">County</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">&quot;Within counties ranked by net housing gains, Los Angeles (11,260), San Diego (8,635) … added the most housing units in 2025.&quot;</td>
+        <td><a class="src" href="https://dof.ca.gov/media/docs/forecasting/Demographics/estimates/E-1_2026_Press_Release.pdf" target="_blank" rel="noopener" title="2026 E-1 Press Release (released May 1, 2026)">California Department of Finance ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-008</code></td>
+        <td>Housing units destroyed by the Eaton and Palisades fires</td>
+        <td class="num">11,160 units</td>
+        <td class="nowrap">2025</td>
+        <td><span class="pill pill--ok">County</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">&quot;the loss of 11,406 housing units due to fires, including 11,160 housing units lost to the Eaton and Palisades fires.&quot;</td>
+        <td><a class="src" href="https://dof.ca.gov/media/docs/forecasting/Demographics/estimates/E-1_2026_Press_Release.pdf" target="_blank" rel="noopener" title="2026 E-1 Press Release (released May 1, 2026)">California Department of Finance ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-010</code></td>
+        <td>Median household income, Los Angeles County, 2024</td>
+        <td class="num">$90,757</td>
+        <td class="nowrap">2024</td>
+        <td><span class="pill pill--ok">County</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Series MHICA06037A052NCEN, observation 2024 = 90,757 dollars.</td>
+        <td><a class="src" href="https://fred.stlouisfed.org/series/MHICA06037A052NCEN" target="_blank" rel="noopener" title="Estimate of Median Household Income for Los Angeles County, CA — series MHICA06037A052NCEN">Federal Reserve Bank of St. Louis (source: U.S. Census Bureau, SAIPE) ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-011</code></td>
+        <td>Median household income, Los Angeles County, 4-year change 2020→2024</td>
+        <td class="num">+$15,133 (+20.0%)</td>
+        <td class="nowrap">2020 → 2024</td>
+        <td><span class="pill pill--ok">County</span></td>
+        <td><span class="pill pill--warn">Derived</span></td>
+        <td class="small">Series observations: 2020 = 75,624; 2024 = 90,757. Arithmetic difference of two published values; both transcribed above.</td>
+        <td><a class="src" href="https://fred.stlouisfed.org/series/MHICA06037A052NCEN" target="_blank" rel="noopener" title="Estimate of Median Household Income for Los Angeles County, CA — series MHICA06037A052NCEN">Federal Reserve Bank of St. Louis (source: U.S. Census Bureau, SAIPE) ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-020</code></td>
+        <td>Unemployment rate, Los Angeles County, September 2026</td>
+        <td class="num">4.5%</td>
+        <td class="nowrap">2026-09</td>
+        <td><span class="pill pill--ok">County</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Series CALOSA7URN, observation 2026-09-01 = 4.5 (percent, not seasonally adjusted).</td>
+        <td><a class="src" href="https://fred.stlouisfed.org/data/CALOSA7URN" target="_blank" rel="noopener" title="Unemployment Rate in Los Angeles County, CA — series CALOSA7URN">Federal Reserve Bank of St. Louis (source: U.S. Bureau of Labor Statistics) ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-021</code></td>
+        <td>Unemployment rate, Los Angeles County, 2025 peak (July–August)</td>
+        <td class="num">6.2%</td>
+        <td class="nowrap">2025-07 and 2025-08</td>
+        <td><span class="pill pill--ok">County</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Series observations 2025-07-01 = 6.2 and 2025-08-01 = 6.2.</td>
+        <td><a class="src" href="https://fred.stlouisfed.org/data/CALOSA7URN" target="_blank" rel="noopener" title="Unemployment Rate in Los Angeles County, CA — series CALOSA7URN">Federal Reserve Bank of St. Louis (source: U.S. Bureau of Labor Statistics) ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-022</code></td>
+        <td>Unemployment rate, Los Angeles County, COVID peak</td>
+        <td class="num">18.9%</td>
+        <td class="nowrap">2020-05</td>
+        <td><span class="pill pill--ok">County</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Series observation 2020-05-01 = 18.9.</td>
+        <td><a class="src" href="https://fred.stlouisfed.org/data/CALOSA7URN" target="_blank" rel="noopener" title="Unemployment Rate in Los Angeles County, CA — series CALOSA7URN">Federal Reserve Bank of St. Louis (source: U.S. Bureau of Labor Statistics) ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-023</code></td>
+        <td>Unemployment rate, Los Angeles County, GFC peak</td>
+        <td class="num">13.1%</td>
+        <td class="nowrap">2010-07</td>
+        <td><span class="pill pill--ok">County</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Series observation 2010-07-01 = 13.1 (highest in the series from 1990).</td>
+        <td><a class="src" href="https://fred.stlouisfed.org/data/CALOSA7URN" target="_blank" rel="noopener" title="Unemployment Rate in Los Angeles County, CA — series CALOSA7URN">Federal Reserve Bank of St. Louis (source: U.S. Bureau of Labor Statistics) ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-024</code></td>
+        <td>Civilian labour force, Los Angeles-Long Beach-Santa Ana MSA, October 2026</td>
+        <td class="num">6,371.5 thousand</td>
+        <td class="nowrap">2026-10 (preliminary)</td>
+        <td><span class="pill pill--ok">Metro</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Economy at a Glance table, Civilian Labor Force, Oct 2026 column = 6,371.5 (thousands, not seasonally adjusted, preliminary).</td>
+        <td><a class="src" href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm" target="_blank" rel="noopener" title="Economy at a Glance — Los Angeles-Long Beach-Santa Ana, CA (MSA)">Bureau of Labor Statistics ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-025</code></td>
+        <td>Unemployment rate, Los Angeles-Long Beach-Santa Ana MSA, October 2026</td>
+        <td class="num">4.4% (preliminary)</td>
+        <td class="nowrap">2026-10 (preliminary)</td>
+        <td><span class="pill pill--ok">Metro</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Economy at a Glance table, Unemployment Rate, Oct 2026 = (p) 4.4.</td>
+        <td><a class="src" href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm" target="_blank" rel="noopener" title="Economy at a Glance — Los Angeles-Long Beach-Santa Ana, CA (MSA)">Bureau of Labor Statistics ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-026</code></td>
+        <td>Total nonfarm employment, LA-Long Beach-Santa Ana MSA, October 2026</td>
+        <td class="num">6,371.5 thousand</td>
+        <td class="nowrap">2026-10 (preliminary)</td>
+        <td><span class="pill pill--ok">Metro</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Economy at a Glance, Total Nonfarm, Oct 2026 = (p) 6,371.5.</td>
+        <td><a class="src" href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm" target="_blank" rel="noopener" title="Economy at a Glance — Los Angeles-Long Beach-Santa Ana, CA (MSA)">Bureau of Labor Statistics ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-030</code></td>
+        <td>Leisure and Hospitality jobs, LA MSA, October 2026</td>
+        <td class="num">787.5 thousand</td>
+        <td class="nowrap">2026-10 (preliminary)</td>
+        <td><span class="pill pill--ok">Metro</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Economy at a Glance, Leisure and Hospitality, Oct 2026 = (p) 787.5; 12-month change +1.5%.</td>
+        <td><a class="src" href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm" target="_blank" rel="noopener" title="Economy at a Glance — Los Angeles-Long Beach-Santa Ana, CA (MSA)">Bureau of Labor Statistics ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-031</code></td>
+        <td>Education and Health Services jobs, LA MSA, 12-month change to October 2026</td>
+        <td class="num">+3.3%</td>
+        <td class="nowrap">2026-10 (12-month % change)</td>
+        <td><span class="pill pill--ok">Metro</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Economy at a Glance, Education and Health Services, 12-month % change Oct 2026 = (p) 3.3.</td>
+        <td><a class="src" href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm" target="_blank" rel="noopener" title="Economy at a Glance — Los Angeles-Long Beach-Santa Ana, CA (MSA)">Bureau of Labor Statistics ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-032</code></td>
+        <td>Information sector jobs, LA MSA, 12-month change to October 2026</td>
+        <td class="num">−2.1%</td>
+        <td class="nowrap">2026-10 (12-month % change)</td>
+        <td><span class="pill pill--ok">Metro</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Economy at a Glance, Information, 12-month % change Oct 2026 = (p) -2.1.</td>
+        <td><a class="src" href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm" target="_blank" rel="noopener" title="Economy at a Glance — Los Angeles-Long Beach-Santa Ana, CA (MSA)">Bureau of Labor Statistics ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-033</code></td>
+        <td>Manufacturing jobs, LA MSA, 12-month change to October 2026</td>
+        <td class="num">−1.2%</td>
+        <td class="nowrap">2026-10 (12-month % change)</td>
+        <td><span class="pill pill--ok">Metro</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Economy at a Glance, Manufacturing, 12-month % change Oct 2026 = (p) -1.2.</td>
+        <td><a class="src" href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm" target="_blank" rel="noopener" title="Economy at a Glance — Los Angeles-Long Beach-Santa Ana, CA (MSA)">Bureau of Labor Statistics ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-034</code></td>
+        <td>Financial Activities jobs, LA MSA, 12-month change to October 2026</td>
+        <td class="num">−1.6%</td>
+        <td class="nowrap">2026-10 (12-month % change)</td>
+        <td><span class="pill pill--ok">Metro</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Economy at a Glance, Financial Activities, 12-month % change Oct 2026 = (p) -1.6.</td>
+        <td><a class="src" href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm" target="_blank" rel="noopener" title="Economy at a Glance — Los Angeles-Long Beach-Santa Ana, CA (MSA)">Bureau of Labor Statistics ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-040</code></td>
+        <td>CPI-U all items, Los Angeles-Long Beach-Anaheim, October 2026</td>
+        <td class="num">360.965 (index, 1982-84 = 100)</td>
+        <td class="nowrap">2026-10</td>
+        <td><span class="pill pill--neutral">cpi-area</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Economy at a Glance, CPI-U All items, Oct 2026 = 360.965.</td>
+        <td><a class="src" href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm#eag_ca_losangeles_msa.f.4" target="_blank" rel="noopener" title="CPI-U / CPI-W, Los Angeles-Long Beach-Anaheim, CA (via Economy at a Glance)">Bureau of Labor Statistics ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-041</code></td>
+        <td>CPI-U 12-month change, Los Angeles-Long Beach-Anaheim, September 2026</td>
+        <td class="num">+3.7%</td>
+        <td class="nowrap">2026-09 (12-month % change)</td>
+        <td><span class="pill pill--neutral">cpi-area</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Economy at a Glance, CPI-U All items 12-month % change, Sept 2026 = 3.7; Oct 2026 not shown in that row.</td>
+        <td><a class="src" href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm#eag_ca_losangeles_msa.f.4" target="_blank" rel="noopener" title="CPI-U / CPI-W, Los Angeles-Long Beach-Anaheim, CA (via Economy at a Glance)">Bureau of Labor Statistics ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-042</code></td>
+        <td>CPI-W 12-month change, Los Angeles-Long Beach-Anaheim, September 2026</td>
+        <td class="num">+4.1%</td>
+        <td class="nowrap">2026-09 (12-month % change)</td>
+        <td><span class="pill pill--neutral">cpi-area</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Economy at a Glance, CPI-W All items 12-month % change, Sept 2026 = 4.1.</td>
+        <td><a class="src" href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm#eag_ca_losangeles_msa.f.4" target="_blank" rel="noopener" title="CPI-U / CPI-W, Los Angeles-Long Beach-Anaheim, CA (via Economy at a Glance)">Bureau of Labor Statistics ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-106</code></td>
+        <td>Census tract population, median household income, and renter share</td>
+        <td class="num"><span class="blank">—</span></td>
+        <td class="nowrap">ACS 5-year</td>
+        <td><span class="pill pill--info">Tract</span></td>
+        <td><span class="pill pill--stop">Unverified</span></td>
+        <td class="small"><span class="muted">Tract cannot be selected without the parcel address. The Census data API also requires a key (it returned &quot;Missing Key&quot; during this session). See FLAG-U03.</span></td>
+        <td><a class="src" href="https://data.census.gov/all?g=140XX00US06037207200" target="_blank" rel="noopener" title="data.census.gov — tract profile query (ACS 5-year)">Census Bureau ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-110</code></td>
+        <td>Verified NNN retail cap rates for the subject submarket</td>
+        <td class="num"><span class="blank">—</span></td>
+        <td class="nowrap">current</td>
+        <td><span class="pill pill--info">Submarket</span></td>
+        <td><span class="pill pill--stop">Unverified</span></td>
+        <td class="small"><span class="muted">No official statistical series publishes submarket NNN retail cap rates. Commercial data providers are proprietary. Not estimated — see FLAG-U04.</span></td>
+        <td><a class="src" href="https://fred.stlouisfed.org/data/DGS10" target="_blank" rel="noopener" title="10-Year Treasury Constant Maturity — series DGS10">Federal Reserve Bank of St. Louis (source: Federal Reserve Board, H.15) ↗</a></td>
+      </tr>
+  </tbody>
+</table>
+</div>
+
+  <div class="notice notice--info">
+    <strong>The 2025 → 2026 move is unusually large.</strong> County unemployment went from a
+    <strong>6.2%</strong> peak in mid-2025 to <strong>4.5%</strong> by September 2026. For context, the
+    same series peaked at <strong>18.9%</strong> in May 2020 and <strong>13.1%</strong> in July 2010.
+    The 2025 episode was therefore far milder than either — but it is the one that coincides with the
+    population loss, which is a combination with no clean precedent in this series.
+  </div>
+
+  <h2 id="sectors">5 · Sector mix — the traffic driver</h2>
+  <p>Headline employment hides a rotation. Education and health services are growing at more than
+  double the rate of leisure and hospitality, while information, manufacturing and financial
+  activities are shrinking in 12-month terms. Health and education generate campus and hospital
+  traffic with predictable shift patterns; information and finance generate office lunch traffic.
+  These are different trade areas even within one submarket.</p>
+
+  <div class="table-scroll">
+<table>
+  <caption><strong>Sector mix — 12-month change to October 2026, LA–Long Beach–Santa Ana MSA</strong>
+  The MSA includes Orange County, so these are directional for the LA portion only. Percentages are BLS 12-month changes, preliminary where flagged.</caption>
+  <thead><tr>
+    <th>ID</th><th>Metric</th><th class="num">Value</th><th>Period</th>
+    <th>Level</th><th>Status</th><th>Evidence quoted from source</th><th>Official source</th>
+  </tr></thead>
+  <tbody>
+<tr>
+        <td><code>M-001</code></td>
+        <td>Los Angeles County population, January 1, 2026</td>
+        <td class="num">9.8 million (approx.)</td>
+        <td class="nowrap">2026-01-01</td>
+        <td><span class="pill pill--ok">County</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">&quot;Los Angeles County with 9.8 million residents&quot; — 2026 E-1 press release.</td>
+        <td><a class="src" href="https://dof.ca.gov/media/docs/forecasting/Demographics/estimates/E-1_2026_Press_Release.pdf" target="_blank" rel="noopener" title="2026 E-1 Press Release (released May 1, 2026)">California Department of Finance ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-002</code></td>
+        <td>Los Angeles County population change, 2025</td>
+        <td class="num">−64,000 persons</td>
+        <td class="nowrap">2025 (Jan 2025 → Jan 2026)</td>
+        <td><span class="pill pill--ok">County</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">&quot;Los Angeles lost 64,000 persons, a combined effect of the Eaton and Palisades wildfires, normal flow to the Inland Empire, and deportations.&quot;</td>
+        <td><a class="src" href="https://dof.ca.gov/media/docs/forecasting/Demographics/estimates/E-1_2026_Press_Release.pdf" target="_blank" rel="noopener" title="2026 E-1 Press Release (released May 1, 2026)">California Department of Finance ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-003</code></td>
+        <td>California population, January 1, 2026</td>
+        <td class="num">39,593,000</td>
+        <td class="nowrap">2026-01-01</td>
+        <td><span class="pill pill--ok">State</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">&quot;The 0.14-percent decline to 39,593,000 marks the first year of population loss after three consecutive years of population increases.&quot;</td>
+        <td><a class="src" href="https://dof.ca.gov/media/docs/forecasting/Demographics/estimates/E-1_2026_Press_Release.pdf" target="_blank" rel="noopener" title="2026 E-1 Press Release (released May 1, 2026)">California Department of Finance ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-004</code></td>
+        <td>Net legal international migration into California, 2025</td>
+        <td class="num">126,400 (down from 248,400 in 2024)</td>
+        <td class="nowrap">2025</td>
+        <td><span class="pill pill--ok">State</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">&quot;net legal international immigration declining in 2025 by more than fifty percent from 248,400 persons during 2024 … to 126,400 during 2025.&quot;</td>
+        <td><a class="src" href="https://dof.ca.gov/media/docs/forecasting/Demographics/estimates/E-1_2026_Press_Release.pdf" target="_blank" rel="noopener" title="2026 E-1 Press Release (released May 1, 2026)">California Department of Finance ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-005</code></td>
+        <td>Net domestic out-migration from California, 2025</td>
+        <td class="num">−288,600 persons</td>
+        <td class="nowrap">2025</td>
+        <td><span class="pill pill--ok">State</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">&quot;Net domestic out-migration from California increased to 288,600 in 2025.&quot;</td>
+        <td><a class="src" href="https://dof.ca.gov/media/docs/forecasting/Demographics/estimates/E-1_2026_Press_Release.pdf" target="_blank" rel="noopener" title="2026 E-1 Press Release (released May 1, 2026)">California Department of Finance ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-006</code></td>
+        <td>Resident population, California, 2025</td>
+        <td class="num">39,355,309</td>
+        <td class="nowrap">2025</td>
+        <td><span class="pill pill--ok">State</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Series CAPOP, observation 2025-01-01 = 39355.309 (thousands). Census vintage 2025.</td>
+        <td><a class="src" href="https://fred.stlouisfed.org/data/CAPOP" target="_blank" rel="noopener" title="Resident Population in California — series CAPOP">Federal Reserve Bank of St. Louis (source: U.S. Census Bureau) ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-007</code></td>
+        <td>Net new housing units added, Los Angeles County, 2025</td>
+        <td class="num">11,260 units (highest in the state)</td>
+        <td class="nowrap">2025</td>
+        <td><span class="pill pill--ok">County</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">&quot;Within counties ranked by net housing gains, Los Angeles (11,260), San Diego (8,635) … added the most housing units in 2025.&quot;</td>
+        <td><a class="src" href="https://dof.ca.gov/media/docs/forecasting/Demographics/estimates/E-1_2026_Press_Release.pdf" target="_blank" rel="noopener" title="2026 E-1 Press Release (released May 1, 2026)">California Department of Finance ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-008</code></td>
+        <td>Housing units destroyed by the Eaton and Palisades fires</td>
+        <td class="num">11,160 units</td>
+        <td class="nowrap">2025</td>
+        <td><span class="pill pill--ok">County</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">&quot;the loss of 11,406 housing units due to fires, including 11,160 housing units lost to the Eaton and Palisades fires.&quot;</td>
+        <td><a class="src" href="https://dof.ca.gov/media/docs/forecasting/Demographics/estimates/E-1_2026_Press_Release.pdf" target="_blank" rel="noopener" title="2026 E-1 Press Release (released May 1, 2026)">California Department of Finance ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-010</code></td>
+        <td>Median household income, Los Angeles County, 2024</td>
+        <td class="num">$90,757</td>
+        <td class="nowrap">2024</td>
+        <td><span class="pill pill--ok">County</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Series MHICA06037A052NCEN, observation 2024 = 90,757 dollars.</td>
+        <td><a class="src" href="https://fred.stlouisfed.org/series/MHICA06037A052NCEN" target="_blank" rel="noopener" title="Estimate of Median Household Income for Los Angeles County, CA — series MHICA06037A052NCEN">Federal Reserve Bank of St. Louis (source: U.S. Census Bureau, SAIPE) ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-011</code></td>
+        <td>Median household income, Los Angeles County, 4-year change 2020→2024</td>
+        <td class="num">+$15,133 (+20.0%)</td>
+        <td class="nowrap">2020 → 2024</td>
+        <td><span class="pill pill--ok">County</span></td>
+        <td><span class="pill pill--warn">Derived</span></td>
+        <td class="small">Series observations: 2020 = 75,624; 2024 = 90,757. Arithmetic difference of two published values; both transcribed above.</td>
+        <td><a class="src" href="https://fred.stlouisfed.org/series/MHICA06037A052NCEN" target="_blank" rel="noopener" title="Estimate of Median Household Income for Los Angeles County, CA — series MHICA06037A052NCEN">Federal Reserve Bank of St. Louis (source: U.S. Census Bureau, SAIPE) ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-020</code></td>
+        <td>Unemployment rate, Los Angeles County, September 2026</td>
+        <td class="num">4.5%</td>
+        <td class="nowrap">2026-09</td>
+        <td><span class="pill pill--ok">County</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Series CALOSA7URN, observation 2026-09-01 = 4.5 (percent, not seasonally adjusted).</td>
+        <td><a class="src" href="https://fred.stlouisfed.org/data/CALOSA7URN" target="_blank" rel="noopener" title="Unemployment Rate in Los Angeles County, CA — series CALOSA7URN">Federal Reserve Bank of St. Louis (source: U.S. Bureau of Labor Statistics) ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-021</code></td>
+        <td>Unemployment rate, Los Angeles County, 2025 peak (July–August)</td>
+        <td class="num">6.2%</td>
+        <td class="nowrap">2025-07 and 2025-08</td>
+        <td><span class="pill pill--ok">County</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Series observations 2025-07-01 = 6.2 and 2025-08-01 = 6.2.</td>
+        <td><a class="src" href="https://fred.stlouisfed.org/data/CALOSA7URN" target="_blank" rel="noopener" title="Unemployment Rate in Los Angeles County, CA — series CALOSA7URN">Federal Reserve Bank of St. Louis (source: U.S. Bureau of Labor Statistics) ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-022</code></td>
+        <td>Unemployment rate, Los Angeles County, COVID peak</td>
+        <td class="num">18.9%</td>
+        <td class="nowrap">2020-05</td>
+        <td><span class="pill pill--ok">County</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Series observation 2020-05-01 = 18.9.</td>
+        <td><a class="src" href="https://fred.stlouisfed.org/data/CALOSA7URN" target="_blank" rel="noopener" title="Unemployment Rate in Los Angeles County, CA — series CALOSA7URN">Federal Reserve Bank of St. Louis (source: U.S. Bureau of Labor Statistics) ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-023</code></td>
+        <td>Unemployment rate, Los Angeles County, GFC peak</td>
+        <td class="num">13.1%</td>
+        <td class="nowrap">2010-07</td>
+        <td><span class="pill pill--ok">County</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Series observation 2010-07-01 = 13.1 (highest in the series from 1990).</td>
+        <td><a class="src" href="https://fred.stlouisfed.org/data/CALOSA7URN" target="_blank" rel="noopener" title="Unemployment Rate in Los Angeles County, CA — series CALOSA7URN">Federal Reserve Bank of St. Louis (source: U.S. Bureau of Labor Statistics) ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-024</code></td>
+        <td>Civilian labour force, Los Angeles-Long Beach-Santa Ana MSA, October 2026</td>
+        <td class="num">6,371.5 thousand</td>
+        <td class="nowrap">2026-10 (preliminary)</td>
+        <td><span class="pill pill--ok">Metro</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Economy at a Glance table, Civilian Labor Force, Oct 2026 column = 6,371.5 (thousands, not seasonally adjusted, preliminary).</td>
+        <td><a class="src" href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm" target="_blank" rel="noopener" title="Economy at a Glance — Los Angeles-Long Beach-Santa Ana, CA (MSA)">Bureau of Labor Statistics ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-025</code></td>
+        <td>Unemployment rate, Los Angeles-Long Beach-Santa Ana MSA, October 2026</td>
+        <td class="num">4.4% (preliminary)</td>
+        <td class="nowrap">2026-10 (preliminary)</td>
+        <td><span class="pill pill--ok">Metro</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Economy at a Glance table, Unemployment Rate, Oct 2026 = (p) 4.4.</td>
+        <td><a class="src" href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm" target="_blank" rel="noopener" title="Economy at a Glance — Los Angeles-Long Beach-Santa Ana, CA (MSA)">Bureau of Labor Statistics ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-026</code></td>
+        <td>Total nonfarm employment, LA-Long Beach-Santa Ana MSA, October 2026</td>
+        <td class="num">6,371.5 thousand</td>
+        <td class="nowrap">2026-10 (preliminary)</td>
+        <td><span class="pill pill--ok">Metro</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Economy at a Glance, Total Nonfarm, Oct 2026 = (p) 6,371.5.</td>
+        <td><a class="src" href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm" target="_blank" rel="noopener" title="Economy at a Glance — Los Angeles-Long Beach-Santa Ana, CA (MSA)">Bureau of Labor Statistics ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-030</code></td>
+        <td>Leisure and Hospitality jobs, LA MSA, October 2026</td>
+        <td class="num">787.5 thousand</td>
+        <td class="nowrap">2026-10 (preliminary)</td>
+        <td><span class="pill pill--ok">Metro</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Economy at a Glance, Leisure and Hospitality, Oct 2026 = (p) 787.5; 12-month change +1.5%.</td>
+        <td><a class="src" href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm" target="_blank" rel="noopener" title="Economy at a Glance — Los Angeles-Long Beach-Santa Ana, CA (MSA)">Bureau of Labor Statistics ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-031</code></td>
+        <td>Education and Health Services jobs, LA MSA, 12-month change to October 2026</td>
+        <td class="num">+3.3%</td>
+        <td class="nowrap">2026-10 (12-month % change)</td>
+        <td><span class="pill pill--ok">Metro</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Economy at a Glance, Education and Health Services, 12-month % change Oct 2026 = (p) 3.3.</td>
+        <td><a class="src" href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm" target="_blank" rel="noopener" title="Economy at a Glance — Los Angeles-Long Beach-Santa Ana, CA (MSA)">Bureau of Labor Statistics ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-032</code></td>
+        <td>Information sector jobs, LA MSA, 12-month change to October 2026</td>
+        <td class="num">−2.1%</td>
+        <td class="nowrap">2026-10 (12-month % change)</td>
+        <td><span class="pill pill--ok">Metro</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Economy at a Glance, Information, 12-month % change Oct 2026 = (p) -2.1.</td>
+        <td><a class="src" href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm" target="_blank" rel="noopener" title="Economy at a Glance — Los Angeles-Long Beach-Santa Ana, CA (MSA)">Bureau of Labor Statistics ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-033</code></td>
+        <td>Manufacturing jobs, LA MSA, 12-month change to October 2026</td>
+        <td class="num">−1.2%</td>
+        <td class="nowrap">2026-10 (12-month % change)</td>
+        <td><span class="pill pill--ok">Metro</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Economy at a Glance, Manufacturing, 12-month % change Oct 2026 = (p) -1.2.</td>
+        <td><a class="src" href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm" target="_blank" rel="noopener" title="Economy at a Glance — Los Angeles-Long Beach-Santa Ana, CA (MSA)">Bureau of Labor Statistics ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-034</code></td>
+        <td>Financial Activities jobs, LA MSA, 12-month change to October 2026</td>
+        <td class="num">−1.6%</td>
+        <td class="nowrap">2026-10 (12-month % change)</td>
+        <td><span class="pill pill--ok">Metro</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Economy at a Glance, Financial Activities, 12-month % change Oct 2026 = (p) -1.6.</td>
+        <td><a class="src" href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm" target="_blank" rel="noopener" title="Economy at a Glance — Los Angeles-Long Beach-Santa Ana, CA (MSA)">Bureau of Labor Statistics ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-040</code></td>
+        <td>CPI-U all items, Los Angeles-Long Beach-Anaheim, October 2026</td>
+        <td class="num">360.965 (index, 1982-84 = 100)</td>
+        <td class="nowrap">2026-10</td>
+        <td><span class="pill pill--neutral">cpi-area</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Economy at a Glance, CPI-U All items, Oct 2026 = 360.965.</td>
+        <td><a class="src" href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm#eag_ca_losangeles_msa.f.4" target="_blank" rel="noopener" title="CPI-U / CPI-W, Los Angeles-Long Beach-Anaheim, CA (via Economy at a Glance)">Bureau of Labor Statistics ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-041</code></td>
+        <td>CPI-U 12-month change, Los Angeles-Long Beach-Anaheim, September 2026</td>
+        <td class="num">+3.7%</td>
+        <td class="nowrap">2026-09 (12-month % change)</td>
+        <td><span class="pill pill--neutral">cpi-area</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Economy at a Glance, CPI-U All items 12-month % change, Sept 2026 = 3.7; Oct 2026 not shown in that row.</td>
+        <td><a class="src" href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm#eag_ca_losangeles_msa.f.4" target="_blank" rel="noopener" title="CPI-U / CPI-W, Los Angeles-Long Beach-Anaheim, CA (via Economy at a Glance)">Bureau of Labor Statistics ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-042</code></td>
+        <td>CPI-W 12-month change, Los Angeles-Long Beach-Anaheim, September 2026</td>
+        <td class="num">+4.1%</td>
+        <td class="nowrap">2026-09 (12-month % change)</td>
+        <td><span class="pill pill--neutral">cpi-area</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Economy at a Glance, CPI-W All items 12-month % change, Sept 2026 = 4.1.</td>
+        <td><a class="src" href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm#eag_ca_losangeles_msa.f.4" target="_blank" rel="noopener" title="CPI-U / CPI-W, Los Angeles-Long Beach-Anaheim, CA (via Economy at a Glance)">Bureau of Labor Statistics ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-106</code></td>
+        <td>Census tract population, median household income, and renter share</td>
+        <td class="num"><span class="blank">—</span></td>
+        <td class="nowrap">ACS 5-year</td>
+        <td><span class="pill pill--info">Tract</span></td>
+        <td><span class="pill pill--stop">Unverified</span></td>
+        <td class="small"><span class="muted">Tract cannot be selected without the parcel address. The Census data API also requires a key (it returned &quot;Missing Key&quot; during this session). See FLAG-U03.</span></td>
+        <td><a class="src" href="https://data.census.gov/all?g=140XX00US06037207200" target="_blank" rel="noopener" title="data.census.gov — tract profile query (ACS 5-year)">Census Bureau ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-110</code></td>
+        <td>Verified NNN retail cap rates for the subject submarket</td>
+        <td class="num"><span class="blank">—</span></td>
+        <td class="nowrap">current</td>
+        <td><span class="pill pill--info">Submarket</span></td>
+        <td><span class="pill pill--stop">Unverified</span></td>
+        <td class="small"><span class="muted">No official statistical series publishes submarket NNN retail cap rates. Commercial data providers are proprietary. Not estimated — see FLAG-U04.</span></td>
+        <td><a class="src" href="https://fred.stlouisfed.org/data/DGS10" target="_blank" rel="noopener" title="10-Year Treasury Constant Maturity — series DGS10">Federal Reserve Bank of St. Louis (source: Federal Reserve Board, H.15) ↗</a></td>
+      </tr>
+  </tbody>
+</table>
+</div>
+
+  <div class="notice notice--warn">
+    <strong>What this table cannot do.</strong> The MSA aggregates the downtown office core, the
+    ports, Disneyland and the Inland-adjacent industrial corridors. A +3.3% health-services reading
+    across the MSA does not mean health services grew near the parcel. Closing that gap is exactly
+    what W-05 (tract trends) and W-07 (competitor and traffic evidence) are for.
+  </div>
+
+  <h2 id="prices">6 · Prices and rates</h2>
+
+  <div class="table-scroll">
+<table>
+  <caption><strong>Prices, escalations and the discount rate</strong>
+  CPI-W is the series most commercial leases reference when they escalate on a wage index. The Treasury yield is a risk-free reference, not a capitalisation rate.</caption>
+  <thead><tr>
+    <th>ID</th><th>Metric</th><th class="num">Value</th><th>Period</th>
+    <th>Level</th><th>Status</th><th>Evidence quoted from source</th><th>Official source</th>
+  </tr></thead>
+  <tbody>
+<tr>
+        <td><code>M-001</code></td>
+        <td>Los Angeles County population, January 1, 2026</td>
+        <td class="num">9.8 million (approx.)</td>
+        <td class="nowrap">2026-01-01</td>
+        <td><span class="pill pill--ok">County</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">&quot;Los Angeles County with 9.8 million residents&quot; — 2026 E-1 press release.</td>
+        <td><a class="src" href="https://dof.ca.gov/media/docs/forecasting/Demographics/estimates/E-1_2026_Press_Release.pdf" target="_blank" rel="noopener" title="2026 E-1 Press Release (released May 1, 2026)">California Department of Finance ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-002</code></td>
+        <td>Los Angeles County population change, 2025</td>
+        <td class="num">−64,000 persons</td>
+        <td class="nowrap">2025 (Jan 2025 → Jan 2026)</td>
+        <td><span class="pill pill--ok">County</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">&quot;Los Angeles lost 64,000 persons, a combined effect of the Eaton and Palisades wildfires, normal flow to the Inland Empire, and deportations.&quot;</td>
+        <td><a class="src" href="https://dof.ca.gov/media/docs/forecasting/Demographics/estimates/E-1_2026_Press_Release.pdf" target="_blank" rel="noopener" title="2026 E-1 Press Release (released May 1, 2026)">California Department of Finance ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-003</code></td>
+        <td>California population, January 1, 2026</td>
+        <td class="num">39,593,000</td>
+        <td class="nowrap">2026-01-01</td>
+        <td><span class="pill pill--ok">State</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">&quot;The 0.14-percent decline to 39,593,000 marks the first year of population loss after three consecutive years of population increases.&quot;</td>
+        <td><a class="src" href="https://dof.ca.gov/media/docs/forecasting/Demographics/estimates/E-1_2026_Press_Release.pdf" target="_blank" rel="noopener" title="2026 E-1 Press Release (released May 1, 2026)">California Department of Finance ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-004</code></td>
+        <td>Net legal international migration into California, 2025</td>
+        <td class="num">126,400 (down from 248,400 in 2024)</td>
+        <td class="nowrap">2025</td>
+        <td><span class="pill pill--ok">State</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">&quot;net legal international immigration declining in 2025 by more than fifty percent from 248,400 persons during 2024 … to 126,400 during 2025.&quot;</td>
+        <td><a class="src" href="https://dof.ca.gov/media/docs/forecasting/Demographics/estimates/E-1_2026_Press_Release.pdf" target="_blank" rel="noopener" title="2026 E-1 Press Release (released May 1, 2026)">California Department of Finance ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-005</code></td>
+        <td>Net domestic out-migration from California, 2025</td>
+        <td class="num">−288,600 persons</td>
+        <td class="nowrap">2025</td>
+        <td><span class="pill pill--ok">State</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">&quot;Net domestic out-migration from California increased to 288,600 in 2025.&quot;</td>
+        <td><a class="src" href="https://dof.ca.gov/media/docs/forecasting/Demographics/estimates/E-1_2026_Press_Release.pdf" target="_blank" rel="noopener" title="2026 E-1 Press Release (released May 1, 2026)">California Department of Finance ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-006</code></td>
+        <td>Resident population, California, 2025</td>
+        <td class="num">39,355,309</td>
+        <td class="nowrap">2025</td>
+        <td><span class="pill pill--ok">State</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Series CAPOP, observation 2025-01-01 = 39355.309 (thousands). Census vintage 2025.</td>
+        <td><a class="src" href="https://fred.stlouisfed.org/data/CAPOP" target="_blank" rel="noopener" title="Resident Population in California — series CAPOP">Federal Reserve Bank of St. Louis (source: U.S. Census Bureau) ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-007</code></td>
+        <td>Net new housing units added, Los Angeles County, 2025</td>
+        <td class="num">11,260 units (highest in the state)</td>
+        <td class="nowrap">2025</td>
+        <td><span class="pill pill--ok">County</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">&quot;Within counties ranked by net housing gains, Los Angeles (11,260), San Diego (8,635) … added the most housing units in 2025.&quot;</td>
+        <td><a class="src" href="https://dof.ca.gov/media/docs/forecasting/Demographics/estimates/E-1_2026_Press_Release.pdf" target="_blank" rel="noopener" title="2026 E-1 Press Release (released May 1, 2026)">California Department of Finance ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-008</code></td>
+        <td>Housing units destroyed by the Eaton and Palisades fires</td>
+        <td class="num">11,160 units</td>
+        <td class="nowrap">2025</td>
+        <td><span class="pill pill--ok">County</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">&quot;the loss of 11,406 housing units due to fires, including 11,160 housing units lost to the Eaton and Palisades fires.&quot;</td>
+        <td><a class="src" href="https://dof.ca.gov/media/docs/forecasting/Demographics/estimates/E-1_2026_Press_Release.pdf" target="_blank" rel="noopener" title="2026 E-1 Press Release (released May 1, 2026)">California Department of Finance ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-010</code></td>
+        <td>Median household income, Los Angeles County, 2024</td>
+        <td class="num">$90,757</td>
+        <td class="nowrap">2024</td>
+        <td><span class="pill pill--ok">County</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Series MHICA06037A052NCEN, observation 2024 = 90,757 dollars.</td>
+        <td><a class="src" href="https://fred.stlouisfed.org/series/MHICA06037A052NCEN" target="_blank" rel="noopener" title="Estimate of Median Household Income for Los Angeles County, CA — series MHICA06037A052NCEN">Federal Reserve Bank of St. Louis (source: U.S. Census Bureau, SAIPE) ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-011</code></td>
+        <td>Median household income, Los Angeles County, 4-year change 2020→2024</td>
+        <td class="num">+$15,133 (+20.0%)</td>
+        <td class="nowrap">2020 → 2024</td>
+        <td><span class="pill pill--ok">County</span></td>
+        <td><span class="pill pill--warn">Derived</span></td>
+        <td class="small">Series observations: 2020 = 75,624; 2024 = 90,757. Arithmetic difference of two published values; both transcribed above.</td>
+        <td><a class="src" href="https://fred.stlouisfed.org/series/MHICA06037A052NCEN" target="_blank" rel="noopener" title="Estimate of Median Household Income for Los Angeles County, CA — series MHICA06037A052NCEN">Federal Reserve Bank of St. Louis (source: U.S. Census Bureau, SAIPE) ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-020</code></td>
+        <td>Unemployment rate, Los Angeles County, September 2026</td>
+        <td class="num">4.5%</td>
+        <td class="nowrap">2026-09</td>
+        <td><span class="pill pill--ok">County</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Series CALOSA7URN, observation 2026-09-01 = 4.5 (percent, not seasonally adjusted).</td>
+        <td><a class="src" href="https://fred.stlouisfed.org/data/CALOSA7URN" target="_blank" rel="noopener" title="Unemployment Rate in Los Angeles County, CA — series CALOSA7URN">Federal Reserve Bank of St. Louis (source: U.S. Bureau of Labor Statistics) ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-021</code></td>
+        <td>Unemployment rate, Los Angeles County, 2025 peak (July–August)</td>
+        <td class="num">6.2%</td>
+        <td class="nowrap">2025-07 and 2025-08</td>
+        <td><span class="pill pill--ok">County</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Series observations 2025-07-01 = 6.2 and 2025-08-01 = 6.2.</td>
+        <td><a class="src" href="https://fred.stlouisfed.org/data/CALOSA7URN" target="_blank" rel="noopener" title="Unemployment Rate in Los Angeles County, CA — series CALOSA7URN">Federal Reserve Bank of St. Louis (source: U.S. Bureau of Labor Statistics) ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-022</code></td>
+        <td>Unemployment rate, Los Angeles County, COVID peak</td>
+        <td class="num">18.9%</td>
+        <td class="nowrap">2020-05</td>
+        <td><span class="pill pill--ok">County</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Series observation 2020-05-01 = 18.9.</td>
+        <td><a class="src" href="https://fred.stlouisfed.org/data/CALOSA7URN" target="_blank" rel="noopener" title="Unemployment Rate in Los Angeles County, CA — series CALOSA7URN">Federal Reserve Bank of St. Louis (source: U.S. Bureau of Labor Statistics) ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-023</code></td>
+        <td>Unemployment rate, Los Angeles County, GFC peak</td>
+        <td class="num">13.1%</td>
+        <td class="nowrap">2010-07</td>
+        <td><span class="pill pill--ok">County</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Series observation 2010-07-01 = 13.1 (highest in the series from 1990).</td>
+        <td><a class="src" href="https://fred.stlouisfed.org/data/CALOSA7URN" target="_blank" rel="noopener" title="Unemployment Rate in Los Angeles County, CA — series CALOSA7URN">Federal Reserve Bank of St. Louis (source: U.S. Bureau of Labor Statistics) ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-024</code></td>
+        <td>Civilian labour force, Los Angeles-Long Beach-Santa Ana MSA, October 2026</td>
+        <td class="num">6,371.5 thousand</td>
+        <td class="nowrap">2026-10 (preliminary)</td>
+        <td><span class="pill pill--ok">Metro</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Economy at a Glance table, Civilian Labor Force, Oct 2026 column = 6,371.5 (thousands, not seasonally adjusted, preliminary).</td>
+        <td><a class="src" href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm" target="_blank" rel="noopener" title="Economy at a Glance — Los Angeles-Long Beach-Santa Ana, CA (MSA)">Bureau of Labor Statistics ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-025</code></td>
+        <td>Unemployment rate, Los Angeles-Long Beach-Santa Ana MSA, October 2026</td>
+        <td class="num">4.4% (preliminary)</td>
+        <td class="nowrap">2026-10 (preliminary)</td>
+        <td><span class="pill pill--ok">Metro</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Economy at a Glance table, Unemployment Rate, Oct 2026 = (p) 4.4.</td>
+        <td><a class="src" href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm" target="_blank" rel="noopener" title="Economy at a Glance — Los Angeles-Long Beach-Santa Ana, CA (MSA)">Bureau of Labor Statistics ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-026</code></td>
+        <td>Total nonfarm employment, LA-Long Beach-Santa Ana MSA, October 2026</td>
+        <td class="num">6,371.5 thousand</td>
+        <td class="nowrap">2026-10 (preliminary)</td>
+        <td><span class="pill pill--ok">Metro</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Economy at a Glance, Total Nonfarm, Oct 2026 = (p) 6,371.5.</td>
+        <td><a class="src" href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm" target="_blank" rel="noopener" title="Economy at a Glance — Los Angeles-Long Beach-Santa Ana, CA (MSA)">Bureau of Labor Statistics ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-030</code></td>
+        <td>Leisure and Hospitality jobs, LA MSA, October 2026</td>
+        <td class="num">787.5 thousand</td>
+        <td class="nowrap">2026-10 (preliminary)</td>
+        <td><span class="pill pill--ok">Metro</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Economy at a Glance, Leisure and Hospitality, Oct 2026 = (p) 787.5; 12-month change +1.5%.</td>
+        <td><a class="src" href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm" target="_blank" rel="noopener" title="Economy at a Glance — Los Angeles-Long Beach-Santa Ana, CA (MSA)">Bureau of Labor Statistics ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-031</code></td>
+        <td>Education and Health Services jobs, LA MSA, 12-month change to October 2026</td>
+        <td class="num">+3.3%</td>
+        <td class="nowrap">2026-10 (12-month % change)</td>
+        <td><span class="pill pill--ok">Metro</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Economy at a Glance, Education and Health Services, 12-month % change Oct 2026 = (p) 3.3.</td>
+        <td><a class="src" href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm" target="_blank" rel="noopener" title="Economy at a Glance — Los Angeles-Long Beach-Santa Ana, CA (MSA)">Bureau of Labor Statistics ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-032</code></td>
+        <td>Information sector jobs, LA MSA, 12-month change to October 2026</td>
+        <td class="num">−2.1%</td>
+        <td class="nowrap">2026-10 (12-month % change)</td>
+        <td><span class="pill pill--ok">Metro</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Economy at a Glance, Information, 12-month % change Oct 2026 = (p) -2.1.</td>
+        <td><a class="src" href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm" target="_blank" rel="noopener" title="Economy at a Glance — Los Angeles-Long Beach-Santa Ana, CA (MSA)">Bureau of Labor Statistics ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-033</code></td>
+        <td>Manufacturing jobs, LA MSA, 12-month change to October 2026</td>
+        <td class="num">−1.2%</td>
+        <td class="nowrap">2026-10 (12-month % change)</td>
+        <td><span class="pill pill--ok">Metro</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Economy at a Glance, Manufacturing, 12-month % change Oct 2026 = (p) -1.2.</td>
+        <td><a class="src" href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm" target="_blank" rel="noopener" title="Economy at a Glance — Los Angeles-Long Beach-Santa Ana, CA (MSA)">Bureau of Labor Statistics ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-034</code></td>
+        <td>Financial Activities jobs, LA MSA, 12-month change to October 2026</td>
+        <td class="num">−1.6%</td>
+        <td class="nowrap">2026-10 (12-month % change)</td>
+        <td><span class="pill pill--ok">Metro</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Economy at a Glance, Financial Activities, 12-month % change Oct 2026 = (p) -1.6.</td>
+        <td><a class="src" href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm" target="_blank" rel="noopener" title="Economy at a Glance — Los Angeles-Long Beach-Santa Ana, CA (MSA)">Bureau of Labor Statistics ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-040</code></td>
+        <td>CPI-U all items, Los Angeles-Long Beach-Anaheim, October 2026</td>
+        <td class="num">360.965 (index, 1982-84 = 100)</td>
+        <td class="nowrap">2026-10</td>
+        <td><span class="pill pill--neutral">cpi-area</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Economy at a Glance, CPI-U All items, Oct 2026 = 360.965.</td>
+        <td><a class="src" href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm#eag_ca_losangeles_msa.f.4" target="_blank" rel="noopener" title="CPI-U / CPI-W, Los Angeles-Long Beach-Anaheim, CA (via Economy at a Glance)">Bureau of Labor Statistics ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-041</code></td>
+        <td>CPI-U 12-month change, Los Angeles-Long Beach-Anaheim, September 2026</td>
+        <td class="num">+3.7%</td>
+        <td class="nowrap">2026-09 (12-month % change)</td>
+        <td><span class="pill pill--neutral">cpi-area</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Economy at a Glance, CPI-U All items 12-month % change, Sept 2026 = 3.7; Oct 2026 not shown in that row.</td>
+        <td><a class="src" href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm#eag_ca_losangeles_msa.f.4" target="_blank" rel="noopener" title="CPI-U / CPI-W, Los Angeles-Long Beach-Anaheim, CA (via Economy at a Glance)">Bureau of Labor Statistics ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-042</code></td>
+        <td>CPI-W 12-month change, Los Angeles-Long Beach-Anaheim, September 2026</td>
+        <td class="num">+4.1%</td>
+        <td class="nowrap">2026-09 (12-month % change)</td>
+        <td><span class="pill pill--neutral">cpi-area</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Economy at a Glance, CPI-W All items 12-month % change, Sept 2026 = 4.1.</td>
+        <td><a class="src" href="https://www.bls.gov/eag/eag.ca_losangeles_msa.htm#eag_ca_losangeles_msa.f.4" target="_blank" rel="noopener" title="CPI-U / CPI-W, Los Angeles-Long Beach-Anaheim, CA (via Economy at a Glance)">Bureau of Labor Statistics ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-043</code></td>
+        <td>10-year U.S. Treasury constant maturity yield, 2026-11-23</td>
+        <td class="num">4.92%</td>
+        <td class="nowrap">2026-11-23</td>
+        <td><span class="pill pill--ok">National</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Series DGS10, observation 2026-11-23 = 4.92.</td>
+        <td><a class="src" href="https://fred.stlouisfed.org/data/DGS10" target="_blank" rel="noopener" title="10-Year Treasury Constant Maturity — series DGS10">Federal Reserve Bank of St. Louis (source: Federal Reserve Board, H.15) ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-050</code></td>
+        <td>Jack in the Box total revenues, FY2025 (ended 2025-09-28)</td>
+        <td class="num">$1.465 billion</td>
+        <td class="nowrap">FY2025</td>
+        <td><span class="pill pill--ok">Tenant</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Consolidated Statements of Earnings: Revenues $1,465,314 thousand (FY2024: $1,571,306; FY2023: $1,692,306).</td>
+        <td><a class="src" href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/R5.htm" target="_blank" rel="noopener" title="JACK 10-K FY2025 — Consolidated Statements of Earnings (XBRL R5)">Securities and Exchange Commission ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-051</code></td>
+        <td>Jack in the Box franchise rental revenues, FY2025</td>
+        <td class="num">$332.735 million (Jack in the Box segment)</td>
+        <td class="nowrap">FY2025</td>
+        <td><span class="pill pill--ok">Tenant</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Disaggregation of revenue: Franchise rental revenues — Jack in the Box $332,735 thousand; Del Taco $35,908 thousand; total $368,643 thousand.</td>
+        <td><a class="src" href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/R10.htm" target="_blank" rel="noopener" title="JACK 10-K FY2025 — Note: Revenue, disaggregation by segment and source (XBRL R10)">Securities and Exchange Commission ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-052</code></td>
+        <td>Jack in the Box net loss, FY2025</td>
+        <td class="num">−$80.719 million</td>
+        <td class="nowrap">FY2025</td>
+        <td><span class="pill pill--ok">Tenant</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Consolidated Statements of Earnings: Net (loss) earnings $(80,719) thousand (FY2024: $(36,695); FY2023: $130,826).</td>
+        <td><a class="src" href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/R5.htm" target="_blank" rel="noopener" title="JACK 10-K FY2025 — Consolidated Statements of Earnings (XBRL R5)">Securities and Exchange Commission ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-053</code></td>
+        <td>Jack in the Box impairment of goodwill and intangible assets, FY2025</td>
+        <td class="num">−$209.556 million</td>
+        <td class="nowrap">FY2025</td>
+        <td><span class="pill pill--ok">Tenant</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Consolidated Statements of Earnings: Impairment of goodwill and intangible assets $209,556 thousand (FY2024: $162,624; FY2023: $0).</td>
+        <td><a class="src" href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/R5.htm" target="_blank" rel="noopener" title="JACK 10-K FY2025 — Consolidated Statements of Earnings (XBRL R5)">Securities and Exchange Commission ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-054</code></td>
+        <td>Jack in the Box restaurants in California, as of 2025-09-28</td>
+        <td class="num">941 (96 company-operated, 845 franchised)</td>
+        <td class="nowrap">2025-09-28</td>
+        <td><span class="pill pill--ok">State</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Item 2. Properties table: California — Jack in the Box Company-Operated 96, Franchise 845, Total 941.</td>
+        <td><a class="src" href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm" target="_blank" rel="noopener" title="JACK 10-K FY2025 — Item 2. Properties (restaurant counts by state)">Securities and Exchange Commission ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-055</code></td>
+        <td>Share of Jack in the Box systemwide restaurants located in California and Texas</td>
+        <td class="num">approximately 70%</td>
+        <td class="nowrap">FY2025</td>
+        <td><span class="pill pill--ok">Tenant</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Item 1A: &quot;approximately 70% of our systemwide restaurants are located in the states of California and Texas.&quot;</td>
+        <td><a class="src" href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm" target="_blank" rel="noopener" title="JACK 10-K FY2025 — Item 2. Properties (restaurant counts by state)">Securities and Exchange Commission ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-070</code></td>
+        <td>Federal long-term capital gain rate — 20% bracket floor (single filer, 2025)</td>
+        <td class="num">taxable income above $533,400 (single)</td>
+        <td class="nowrap">2025 tax year</td>
+        <td><span class="pill pill--ok">National</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">&quot;A capital gains rate of 20% applies to the extent that your taxable income exceeds the thresholds set for the 15% capital gain rate&quot; — single threshold $533,400.</td>
+        <td><a class="src" href="https://www.irs.gov/taxtopics/tc409" target="_blank" rel="noopener" title="Topic no. 409, Capital gains and losses">Internal Revenue Service ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-071</code></td>
+        <td>Maximum rate on unrecaptured section 1250 gain</td>
+        <td class="num">25%</td>
+        <td class="nowrap">2025 tax year</td>
+        <td><span class="pill pill--ok">National</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">&quot;The portion of any unrecaptured section 1250 gain from selling section 1250 real property is taxed at a maximum 25% rate.&quot;</td>
+        <td><a class="src" href="https://www.irs.gov/taxtopics/tc409" target="_blank" rel="noopener" title="Topic no. 409, Capital gains and losses">Internal Revenue Service ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-072</code></td>
+        <td>Net investment income tax rate</td>
+        <td class="num">3.8%</td>
+        <td class="nowrap">2025 tax year</td>
+        <td><span class="pill pill--ok">National</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">&quot;A 3.8 percent net investment income tax (NIIT) applies to individuals … on the lesser of the net investment income, or the excess of MAGI over the threshold&quot; — $200,000 single / $250,000 MFJ.</td>
+        <td><a class="src" href="https://www.irs.gov/taxtopics/tc559" target="_blank" rel="noopener" title="Topic no. 559, Net investment income tax">Internal Revenue Service ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-073</code></td>
+        <td>California top marginal personal income tax rate listed on the 2024 Form 540 schedules</td>
+        <td class="num">12.30%</td>
+        <td class="nowrap">2024 tax year</td>
+        <td><span class="pill pill--ok">State</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">Schedules X, Y and Z all end at &quot;12.30%&quot; — e.g. Schedule Y: $1,442,628 and over = $140,232.77 + 12.30% of the amount over $1,442,628.</td>
+        <td><a class="src" href="https://www.ftb.ca.gov/forms/2024/2024-540-tax-rate-schedules.pdf" target="_blank" rel="noopener" title="2024 California Tax Rate Schedules (Form 540)">California Franchise Tax Board ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-074</code></td>
+        <td>City of Los Angeles Measure ULA transfer tax — tier 1</td>
+        <td class="num">4% on value over $5,000,000 and under $10,000,000</td>
+        <td class="nowrap">Conveyances on/after 2023-04-01</td>
+        <td><span class="pill pill--ok">City</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">&quot;Impose a 4% tax on real property sales or transfers valued at over $5 million but less than $10 million.&quot;</td>
+        <td><a class="src" href="https://cityclerk.lacity.org/election/Initiative_Ordinance_ULA.pdf" target="_blank" rel="noopener" title="Initiative Ordinance ULA (November 2022 ballot text, Chief Legislative Analyst summary, CAO financial impact statement)">City of Los Angeles ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-075</code></td>
+        <td>City of Los Angeles Measure ULA transfer tax — tier 2</td>
+        <td class="num">5.5% on value of $10,000,000 or more</td>
+        <td class="nowrap">Conveyances on/after 2023-04-01</td>
+        <td><span class="pill pill--ok">City</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">&quot;Impose a 5.5% tax on real property sales or transfers valued at $10 million or more.&quot;</td>
+        <td><a class="src" href="https://cityclerk.lacity.org/election/Initiative_Ordinance_ULA.pdf" target="_blank" rel="noopener" title="Initiative Ordinance ULA (November 2022 ballot text, Chief Legislative Analyst summary, CAO financial impact statement)">City of Los Angeles ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-076</code></td>
+        <td>Existing combined City + County documentary transfer tax rate, City of Los Angeles</td>
+        <td class="num">0.56%</td>
+        <td class="nowrap">November 2022 CAO fiscal impact statement</td>
+        <td><span class="pill pill--ok">City</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">&quot;The special tax imposed is in addition to the existing 0.56 percent combined City and County tax rate on property sales and transfers.&quot;</td>
+        <td><a class="src" href="https://cityclerk.lacity.org/election/Initiative_Ordinance_ULA.pdf" target="_blank" rel="noopener" title="Initiative Ordinance ULA (November 2022 ballot text, Chief Legislative Analyst summary, CAO financial impact statement)">City of Los Angeles ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-077</code></td>
+        <td>ULA effective date for conveyances</td>
+        <td class="num">April 1, 2023</td>
+        <td class="nowrap">2023</td>
+        <td><span class="pill pill--ok">City</span></td>
+        <td><span class="pill pill--ok">Verified</span></td>
+        <td class="small">&quot;The tax is applicable to conveyances of real estate that occur on or after April 1, 2023.&quot;</td>
+        <td><a class="src" href="https://housing.lacity.gov/wp-content/uploads/2024/04/ULA-Exemptions-FAQ.pdf" target="_blank" rel="noopener" title="ULA Exemptions FAQ">City of Los Angeles Housing Department (LAHD) ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-106</code></td>
+        <td>Census tract population, median household income, and renter share</td>
+        <td class="num"><span class="blank">—</span></td>
+        <td class="nowrap">ACS 5-year</td>
+        <td><span class="pill pill--info">Tract</span></td>
+        <td><span class="pill pill--stop">Unverified</span></td>
+        <td class="small"><span class="muted">Tract cannot be selected without the parcel address. The Census data API also requires a key (it returned &quot;Missing Key&quot; during this session). See FLAG-U03.</span></td>
+        <td><a class="src" href="https://data.census.gov/all?g=140XX00US06037207200" target="_blank" rel="noopener" title="data.census.gov — tract profile query (ACS 5-year)">Census Bureau ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-109</code></td>
+        <td>Owner's adjusted basis, acquisition date, and accumulated depreciation</td>
+        <td class="num"><span class="blank">—</span></td>
+        <td class="nowrap">current</td>
+        <td><span class="pill pill--neutral">Owner</span></td>
+        <td><span class="pill pill--stop">Unverified</span></td>
+        <td class="small"><span class="muted">Not supplied. These four inputs determine the entire after-tax comparison; the calculator therefore requires the reader to enter them.</span></td>
+        <td><a class="src" href="https://www.irs.gov/taxtopics/tc409" target="_blank" rel="noopener" title="Topic no. 409, Capital gains and losses">Internal Revenue Service ↗</a></td>
+      </tr>
+<tr>
+        <td><code>M-110</code></td>
+        <td>Verified NNN retail cap rates for the subject submarket</td>
+        <td class="num"><span class="blank">—</span></td>
+        <td class="nowrap">current</td>
+        <td><span class="pill pill--info">Submarket</span></td>
+        <td><span class="pill pill--stop">Unverified</span></td>
+        <td class="small"><span class="muted">No official statistical series publishes submarket NNN retail cap rates. Commercial data providers are proprietary. Not estimated — see FLAG-U04.</span></td>
+        <td><a class="src" href="https://fred.stlouisfed.org/data/DGS10" target="_blank" rel="noopener" title="10-Year Treasury Constant Maturity — series DGS10">Federal Reserve Bank of St. Louis (source: Federal Reserve Board, H.15) ↗</a></td>
+      </tr>
+  </tbody>
+</table>
+</div>
+
+  <div class="notice notice--info">
+    <strong>One escalation consequence worth flagging now.</strong> If the lease escalates on CPI-W
+    (currently <strong>+4.1%</strong> 12-month) rather than a fixed step, then the landlord's rent is
+    currently growing faster than CPI-U (<strong>+3.7%</strong>) — favourable during the term. The
+    reverse is also true in a disinflation: a CPI-linked clause protects the landlord less than a fixed
+    escalator when prices fall. Which clause applies is unknown, which is why it is
+    <a href="lease-abstract.html">FLAG-U01</a>.
+  </div>
+
+  <h2 id="shock">7 · The 2025 shock, and why it changes the model</h2>
+
+  <div class="card">
+    <h3 style="margin-top:0">A county-level series moved because of a fire</h3>
+    <p>The California Department of Finance explicitly attributes part of Los Angeles County's
+    <strong>64,000-person loss</strong> to the Eaton and Palisades wildfires, alongside normal
+    Inland-Empire outflow and deportations. The same release records <strong>11,160 housing units</strong>
+    destroyed by those two fires and a statewide net housing change that nets out to
+    <strong>+115,165 units</strong> despite an 11,406-unit fire loss.</p>
+    <p><strong>Why this belongs on the economics page and not only the hazard page:</strong> it is
+    direct evidence that a physical shock in this county is large enough to change a demographic
+    series within one year. A hold case that models demand as a smooth trend line is mis-specified.
+    The model has to be able to produce a negative year, because the most recent year <em>was</em> one.</p>
+    <p class="src-list">
+      <a class="src" href="https://dof.ca.gov/media/docs/forecasting/Demographics/estimates/E-1_2026_Press_Release.pdf" target="_blank" rel="noopener">DOF E-1 press release ↗</a>
+      <a class="src" href="https://dof.ca.gov/forecasting/demographics/estimates-e1/" target="_blank" rel="noopener">DOF E-1 dataset & methodology ↗</a>
+    </p>
+  </div>
+
+  <div class="table-scroll">
+    <table>
+      <caption><strong>How the last three shocks actually landed in the county unemployment series</strong>
+      Source: <a href="https://fred.stlouisfed.org/data/CALOSA7URN" target="_blank" rel="noopener">BLS LAUS via FRED, series CALOSA7URN</a>. All values transcribed.</caption>
+      <thead><tr><th>Episode</th><th class="num">Peak rate</th><th>Month of peak</th><th class="num">Months to fall below 6%</th><th>Planning implication</th></tr></thead>
+      <tbody>
+        <tr><td>Global financial crisis</td><td class="num">13.1%</td><td>July 2010</td><td class="num">62 months (Aug 2015 = 6.7%; Sept 2015 = 6.1%)</td><td>Multi-year recovery. A short hold window cannot assume the recovery.</td></tr>
+        <tr><td>COVID-19</td><td class="num">18.9%</td><td>May 2020</td><td class="num">19 months (July 2021 = 9.5%; Sept 2021 = 7.7%; Nov 2021 = 6.4%; Dec 2021 = 6.0%)</td><td>Fast rebound, but only because of fiscal transfer. Not reproducible on demand.</td></tr>
+        <tr><td>2025 softening</td><td class="num">6.2%</td><td>July–Aug 2025</td><td class="num">14 months (Sept 2026 = 4.5%)</td><td>Shallow and quick — but coincident with net population loss.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="small muted">"Months to fall below 6%" is the count of calendar months from the peak month to the first month at or below 6.0%, using only the published monthly observations
+  in the same series; the observations used are quoted in the last column so the arithmetic is
+  checkable. No interpolation was used.</p>
+
+  <h2 id="read">8 · What these numbers do and do not support</h2>
+
+  <div class="grid grid--2">
+    <div class="card" style="margin:0;border-left:4px solid var(--ok)">
+      <h3 style="margin-top:0;color:var(--ok)">Supported</h3>
+      <ul class="tight">
+        <li>The regional demand base shrank in the most recent year, for the first time in four.</li>
+        <li>Household income is rising in nominal terms, faster than the 2020 baseline but only modestly ahead of local CPI.</li>
+        <li>The labour market is tight, so the tenant can staff the store and wage pressure on franchisee margins is real.</li>
+        <li>Job growth is rotating from office- and goods-based sectors toward health and education.</li>
+        <li>Long-term rates near <strong>4.92%</strong> set a high hurdle for any leveraged hold case.</li>
+      </ul>
+    </div>
+    <div class="card" style="margin:0;border-left:4px solid var(--stop)">
+      <h3 style="margin-top:0;color:var(--stop)">Not supported — do not cite this page for these</h3>
+      <ul class="tight">
+        <li>Any statement about the parcel's own trade area. County figures cannot be shrunk.</li>
+        <li>Any cap rate. No official series publishes submarket NNN retail cap rates (<a href="flagged.html">FLAG-U04</a>).</li>
+        <li>Any projection beyond the next observation. Nothing here is a forecast.</li>
+        <li>Any conclusion about school quality. This workspace contains no school-performance evidence, so the school factor is an open question rather than a finding (<a href="open-questions.html#q-school">see Q-11</a>).</li>
+        <li>Any comparison against a specific competitor. Competitor evidence was not collected.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="notice notice--info">
+    <strong>Deliberate omission, logged as a gap.</strong> The brief asked for school systems and
+    competitor evidence. Neither was collected, and inventing a ranking from memory would breach the
+    no-hallucination rule. Both are carried as open questions with a named source that would close
+    them, rather than as weak findings.
+  </div>
+
+  <p style="margin-top:1.6rem"><a href="worksheet.html">Next: take these inputs into the sell-versus-hold worksheet →</a></p>
+
+</main>
+
+<footer class="site">
+  <div class="inner">
+    <p><strong>Privacy.</strong> No parcel identifier, street address, owner name or personal figure
+    appears on this page. <a href="privacy.html">Privacy policy →</a></p>
+    <p><a href="sources.html">Full source register</a> · <a href="flagged.html">Flagged for review</a> · <a href="../index.html">Back to overview</a></p>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,178 @@
+/**
+ * Official source registry.
+ * Every entry was fetched and read during session arena/1ebd66da-jackbox1 on 2026-11-25.
+ * `url` must point at the official publisher. No aggregators, no secondary summaries.
+ */
+
+export const ACCESSED = '2026-11-25';
+
+export const SOURCES = {
+  'BLS-EAG': {
+    org: 'U.S. Bureau of Labor Statistics',
+    title: 'Economy at a Glance — Los Angeles-Long Beach-Santa Ana, CA (MSA)',
+    url: 'https://www.bls.gov/eag/eag.ca_losangeles_msa.htm',
+    note: 'LAUS + CES + CPI series for the metro area. Page states data extracted 2026-11-20.',
+    official: true,
+  },
+  'BLS-CPI-LA': {
+    org: 'U.S. Bureau of Labor Statistics',
+    title: 'CPI-U / CPI-W, Los Angeles-Long Beach-Anaheim, CA (via Economy at a Glance)',
+    url: 'https://www.bls.gov/eag/eag.ca_losangeles_msa.htm#eag_ca_losangeles_msa.f.4',
+    note: 'Series CUURS49ASA0 and CWURS49ASA0.',
+    official: true,
+  },
+  'FRED-UNEMP': {
+    org: 'Federal Reserve Bank of St. Louis (source: U.S. Bureau of Labor Statistics)',
+    title: 'Unemployment Rate in Los Angeles County, CA — series CALOSA7URN',
+    url: 'https://fred.stlouisfed.org/data/CALOSA7URN',
+    note: 'Monthly, not seasonally adjusted. Last updated 2026-10-28.',
+    official: true,
+  },
+  'FRED-INCOME': {
+    org: 'Federal Reserve Bank of St. Louis (source: U.S. Census Bureau, SAIPE)',
+    title: 'Estimate of Median Household Income for Los Angeles County, CA — series MHICA06037A052NCEN',
+    url: 'https://fred.stlouisfed.org/series/MHICA06037A052NCEN',
+    note: 'Annual. 2024 value last updated 2026-02-09.',
+    official: true,
+  },
+  'FRED-CAPOP': {
+    org: 'Federal Reserve Bank of St. Louis (source: U.S. Census Bureau)',
+    title: 'Resident Population in California — series CAPOP',
+    url: 'https://fred.stlouisfed.org/data/CAPOP',
+    note: 'Thousands of persons, annual, Census vintage 2025. Last updated 2026-03-03.',
+    official: true,
+  },
+  'FRED-DGS10': {
+    org: 'Federal Reserve Bank of St. Louis (source: Federal Reserve Board, H.15)',
+    title: '10-Year Treasury Constant Maturity — series DGS10',
+    url: 'https://fred.stlouisfed.org/data/DGS10',
+    note: 'Daily. Last updated 2026-11-24; latest observation 2026-11-23.',
+    official: true,
+  },
+  'DOF-E1': {
+    org: 'California Department of Finance',
+    title: 'E-1 Population and Housing Estimates for Cities, Counties and the State — January 1, 2025 and 2026',
+    url: 'https://dof.ca.gov/forecasting/demographics/estimates-e1/',
+    note: 'Methodology and dataset landing page.',
+    official: true,
+  },
+  'DOF-E1-PR': {
+    org: 'California Department of Finance',
+    title: '2026 E-1 Press Release (released May 1, 2026)',
+    url: 'https://dof.ca.gov/media/docs/forecasting/Demographics/estimates/E-1_2026_Press_Release.pdf',
+    note: 'States county/city/state population and housing findings for January 1, 2026.',
+    official: true,
+  },
+  'SEC-10K': {
+    org: 'U.S. Securities and Exchange Commission — EDGAR',
+    title: 'Jack in the Box Inc. Form 10-K, fiscal year ended September 28, 2025 (filed 2025-11-19)',
+    url: 'https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/0000807882-25-000072-index.htm',
+    note: 'CIK 0000807882. Filing index; documents cited individually below.',
+    official: true,
+  },
+  'SEC-10K-R5': {
+    org: 'U.S. Securities and Exchange Commission — EDGAR',
+    title: 'JACK 10-K FY2025 — Consolidated Statements of Earnings (XBRL R5)',
+    url: 'https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/R5.htm',
+    note: 'Audited consolidated statement of earnings, FY2023-FY2025.',
+    official: true,
+  },
+  'SEC-10K-R10': {
+    org: 'U.S. Securities and Exchange Commission — EDGAR',
+    title: 'JACK 10-K FY2025 — Note: Revenue, disaggregation by segment and source (XBRL R10)',
+    url: 'https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/R10.htm',
+    note: 'Franchise rental revenues, royalties, marketing, technology/sourcing, fees by segment.',
+    official: true,
+  },
+  'SEC-10K-R16': {
+    org: 'U.S. Securities and Exchange Commission — EDGAR',
+    title: 'JACK 10-K FY2025 — Note: Leases (XBRL R16)',
+    url: 'https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/R16.htm',
+    note: 'Lease terms, costs, weighted-average term and discount rate, maturity schedule.',
+    official: true,
+  },
+  'SEC-10K-PROPS': {
+    org: 'U.S. Securities and Exchange Commission — EDGAR',
+    title: 'JACK 10-K FY2025 — Item 2. Properties (restaurant counts by state)',
+    url: 'https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm',
+    note: 'Counts as of 2025-09-28. Item 1A risk factors on the same document anchor the risk register.',
+    official: true,
+  },
+  'IRS-409': {
+    org: 'Internal Revenue Service',
+    title: 'Topic no. 409, Capital gains and losses',
+    url: 'https://www.irs.gov/taxtopics/tc409',
+    note: '2025 long-term capital gain brackets and the 25% maximum on unrecaptured section 1250 gain.',
+    official: true,
+  },
+  'IRS-559': {
+    org: 'Internal Revenue Service',
+    title: 'Topic no. 559, Net investment income tax',
+    url: 'https://www.irs.gov/taxtopics/tc559',
+    note: '3.8% NIIT and MAGI thresholds.',
+    official: true,
+  },
+  'FTB-RATES': {
+    org: 'California Franchise Tax Board',
+    title: '2024 California Tax Rate Schedules (Form 540)',
+    url: 'https://www.ftb.ca.gov/forms/2024/2024-540-tax-rate-schedules.pdf',
+    note: 'Schedules X / Y / Z; top listed marginal bracket 12.30%.',
+    official: true,
+  },
+  'LACITY-ULA': {
+    org: 'City of Los Angeles — Office of the City Clerk',
+    title: 'Initiative Ordinance ULA (November 2022 ballot text, Chief Legislative Analyst summary, CAO financial impact statement)',
+    url: 'https://cityclerk.lacity.org/election/Initiative_Ordinance_ULA.pdf',
+    note: 'Primary text for the 4% / 5.5% transfer tax and the existing 0.56% combined City+County rate.',
+    official: true,
+  },
+  'LACITY-ULA-FAQ': {
+    org: 'City of Los Angeles Housing Department (LAHD)',
+    title: 'ULA Exemptions FAQ',
+    url: 'https://housing.lacity.gov/wp-content/uploads/2024/04/ULA-Exemptions-FAQ.pdf',
+    note: 'States the tax applies to conveyances occurring on or after April 1, 2023; exemption categories.',
+    official: true,
+  },
+  'CALFIRE-FHSZ': {
+    org: 'CAL FIRE — Office of the State Fire Marshal',
+    title: 'Fire Hazard Severity Zones (SRA and LRA)',
+    url: 'https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones',
+    note: 'Zone lookup viewer plus 2025 LRA rollout and 2026 SRA comment period.',
+    official: true,
+  },
+  'CGS-EQZAPP': {
+    org: 'California Department of Conservation — California Geological Survey',
+    title: 'EQ Zapp: California Earthquake Hazards Zone Application',
+    url: 'https://www.conservation.ca.gov/cgs/geohazards/eq-zapp',
+    note: 'Official parcel lookup for fault rupture, liquefaction and earthquake-induced landslide zones.',
+    official: true,
+  },
+  'FEMA-MSC': {
+    org: 'Federal Emergency Management Agency',
+    title: 'FEMA Flood Map Service Center',
+    url: 'https://msc.fema.gov/portal/home',
+    note: 'Official public source for NFIP flood hazard mapping.',
+    official: true,
+  },
+  'CENSUS-API': {
+    org: 'U.S. Census Bureau',
+    title: 'American Community Survey Data via API (query construction)',
+    url: 'https://www.census.gov/programs-surveys/acs/data/data-via-api.html',
+    note: 'Official query format used to build tract-level request URLs. A key is required for API calls.',
+    official: true,
+  },
+  'CENSUS-TRACT': {
+    org: 'U.S. Census Bureau',
+    title: 'data.census.gov — tract profile query (ACS 5-year)',
+    url: 'https://data.census.gov/all?g=140XX00US06037207200',
+    note: 'Official tract-level lookup. Values were NOT retrievable in this session; see FLAG-U03.',
+    official: true,
+  },
+  'CALASSESSOR': {
+    org: 'County of Los Angeles — Office of the Assessor',
+    title: 'Assessor Portal (search by AIN or address)',
+    url: 'https://portal.assessor.lacounty.gov/',
+    note: 'Official parcel record: assessed value, land/improvement split, parcel area, use code.',
+    official: true,
+  },
+};
