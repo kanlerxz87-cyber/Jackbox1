@@ -821,3 +821,17 @@ was rewritten.
 
 **Change request (not performed here):** the session owning the root `index.html` / navigation is asked to add
 one link to `/Jackbox1/audit/` and one to `/Jackbox1/verification/REPORT.md`.
+
+---
+
+## Additional irregularities logged by `S-62b1c0c2` after merging `main` (PR #16)
+
+- **F-18 (publish-path mismatch).** PR #16 added `.github/workflows/pages.yml`, whose
+  `actions/upload-pages-artifact` step uploads `path: docs` only, while the repository's Pages source is still
+  `build_type: legacy`, `{branch: main, path: /}` (verified with `gh api .../pages`). Both the workflow and the
+  legacy build currently report success, but if the source is switched to GitHub Actions the docs-only artifact
+  would omit the other published trees, including `/audit/`. **Not edited here** — the workflow belongs to
+  `ee4cc19f`. Integration action requested: keep the legacy root source, or change the artifact path to the
+  repository root, then confirm every tree resolves.
+- **F-19 (second board conflict).** `main` advanced again while PR #17 was open. Resolved by taking the newest
+  `main` board verbatim and appending all `S-62b1c0c2` sections; no other session's rows were discarded.
