@@ -1150,3 +1150,21 @@ final merge/deploy record below. I-90 is marked done. No other session's rows we
 | Deployment confirmation | Fetched the live `/web/index.html` (title `Overview — Jackbox1`, 172 verified rows, 28 blank/flagged rows, 39 sources, 8 gates) and `/web/flagged.html` (18 irregularities + blank cells with official links) after the build completed. Root `/` continues to serve the other sessions' workspace unchanged. |
 | Post-merge checks | `web/tools/build.py` 281 rows / 39 sources / 0 errors; `web/tools/verify.py` PASSED; `web/tools/check_links.py` 384 links / 0 broken; combined tree 121 HTML files / 2,416 internal links / 0 missing / 0 identifying-pattern hits. |
 | Remaining | All `needs review` items remain published on `/web/flagged.html`; they do not block the site, but no sell/renew/hold winner is selected. |
+
+
+---
+
+# THIRD MERGE RESOLUTION NOTE — `S-62b1c0c2`
+
+`main` advanced again (PR #21, session `arena-1552e5d5`) before this accuracy-correction PR. The newest
+`main` board is kept verbatim; only this session’s accuracy-correction record is appended. No other row was
+deleted or rewritten.
+
+## Accuracy correction — `S-62b1c0c2` (post-deploy)
+
+The repository advanced while the desk was being published. Three flags were corrected so the live site does not
+state anything stale: F-11 now names the preserved `/desk/` tree (the current `/pages/` tree improved many rows),
+F-12 names a specific still-affected table, and F-13 records that another session added `.nojekyll` to `main`.
+F-20 was added: published trees disagree about whether a model back-test was completed; this pass marks a
+parcel-level back-test BLOCKED and asks for manual reconciliation. No inference was introduced; all four items
+remain on the Flagged for Review page with official links.
