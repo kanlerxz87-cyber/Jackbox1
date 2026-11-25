@@ -741,7 +741,9 @@ PAGES = {
 for fn, text in PAGES.items():
     (PUBLIC / fn).write_text(text, encoding="utf-8")
 
-# Root landing page: small, self-contained, points at web/index.html.
+# Root landing page: only created when the repository has no root index.html.
+# On an integrated tree, main's existing index.html belongs to other sessions and is
+# deliberately left untouched; this site's entry point is web/index.html.
 root_landing = """<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow"><title>Jackbox1 — Decision support</title>
@@ -757,8 +759,15 @@ small{display:block;color:#6b7794;margin-top:22px}</style></head>
 <small><a href="web/flagged.html">Flagged for Review</a> · <a href="web/sources.html">Sources</a> · <a href="web/print.html">Printable advisor summary</a></small>
 </main></body></html>
 """
-(OUT / "index.html").write_text(root_landing, encoding="utf-8")
-(OUT / ".nojekyll").write_text("", encoding="utf-8")
+root_index = OUT / "index.html"
+if root_index.exists():
+    print("Root index.html already exists (another session's tree) — left untouched; entry point is web/index.html.")
+else:
+    root_index.write_text(root_landing, encoding="utf-8")
+    print("Created root landing page.")
+nojekyll = OUT / ".nojekyll"
+if not nojekyll.exists():
+    nojekyll.write_text("", encoding="utf-8")
 
-print(f"Built {len(PAGES)} pages under {PUBLIC} + root landing page.")
+print(f"Built {len(PAGES)} pages under {PUBLIC}.")
 print(f"Verified {checked_rows} table rows against {len(SOURCES)} sources. Errors: {len(errors)}")

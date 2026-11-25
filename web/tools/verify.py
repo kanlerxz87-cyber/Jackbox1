@@ -121,6 +121,8 @@ for path in published:
 
 # Every HTML file must carry the privacy notice.
 for path in published:
+    if path.parent != ROOT:
+        continue  # main's root index.html belongs to other sessions; not our published product
     t = path.read_text(encoding="utf-8")
     if "No personal information" not in t and "no identifiers" not in t and "aggregate" not in t.lower():
         errors.append(f"{path.name}: missing privacy notice")

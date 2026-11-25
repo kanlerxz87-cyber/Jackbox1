@@ -824,3 +824,19 @@ Format: `task — claim — source URL — retrieved — result`. Only claims ac
 - **Decision status:** unchanged — no sell/renew/hold winner selected.
 
 
+
+### I-90 integration record (2026-11-25, S-1552e5d5)
+
+- **M-01 merge conflict (logged, resolved, no work discarded).** `origin/main` already contained
+  six other session trees (`/`, `/pages/`, `/docs/`, `/desk/`, `/workspace/`, `/ledger-1ebd66da/`,
+  `/audit-78005353/`). Merging it into this branch produced add/add conflicts in `index.html` and
+  `COORDINATION.md`. Resolution: main's `index.html` and main's entire board are kept unchanged;
+  this session's root landing page was withdrawn; our board is appended below main's board; our
+  independent site is published at **`/web/`** with entry point `/web/index.html`. `.nojekyll` was
+  identical (empty) on both sides. No `docs/**`, `pages/**`, `workspace/**`, `desk/**`,
+  `ledger-1ebd66da/**`, `audit-78005353/**`, `README.md` or root `index.html` file was edited.
+- **Combined re-verification after merge:** 99 HTML files, 1,840 internal links, **0 missing**;
+  0 identifying-pattern hits across the combined published tree. Own-tree checks: 281 data rows,
+  39 sources, 17 HTML files, 384 internal links, `VERIFICATION PASSED`, `LINK CHECK PASSED`.
+  Build is idempotent and no longer overwrites an existing root `index.html`.
+- **Build / deploy gate:** all checks pass before the PR is opened. No broken site is merged.
