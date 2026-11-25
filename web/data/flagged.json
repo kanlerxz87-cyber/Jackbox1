@@ -1,0 +1,23 @@
+{
+  "columns": ["id", "item", "why_it_matters", "official_source", "status"],
+  "rows": [
+    ["R-01", "No street address, APN or parcel identifier supplied", "Every parcel-specific value (hazard zone, zoning, AADT, tax rate area, comps, tract trend) must remain blank and unverified.", "PORTAL-LACO-ASSESSOR|PORTAL-ZIMAS", "needs review"],
+    ["R-02", "No lease document; expiry supplied only as the range 2030-2035", "Rent, escalations, options, notice deadlines, co-tenancy, assignment, ROFR and holdover cannot be verified.", "PORTAL-LACO-RRCC", "needs review"],
+    ["R-03", "No owner financials, basis, purchase date, depreciation schedule or loan terms", "No after-tax dollar result can be published; only verified mechanics and a browser-only calculator are offered.", "SRC-IRS-P946|SRC-FTB-CG", "needs review"],
+    ["R-04", "No verified arm's-length short-lease QSR quote set", "The short-lease discount cannot be priced; no number is published or inferred.", "PORTAL-LACO-ASSESSOR|PORTAL-LACO-RRCC", "needs review"],
+    ["R-05", "\"Central Los Angeles\" is not a Census geography", "City/county figures are proxies; a fixed tract set is required before W-01 / W-12 values can attach to this parcel.", "SRC-CENSUS-QF|SRC-LACITY-ZIMAS|PORTAL-CENSUS-DATA", "needs review"],
+    ["R-06", "Repository initially contained only a 10-byte project-title placeholder", "No source register, privacy notice, licence or dataset existed for a line-by-line review.", "PORTAL-GITHUB-REPO", "needs review"],
+    ["R-07", "Five other Arena session branches claimed overlapping site scopes", "All this session's content is isolated under `web/**` so no other session's files are overwritten; Pages source settings are left unchanged.", "PORTAL-GITHUB-REPO", "needs review"],
+    ["R-08", "Census QuickFacts mixes vintages (V2025 estimates, 2020-2024 ACS, 2022 Economic Census)", "Census warns that different vintage years of estimates are not comparable; each row pins its own vintage and unit.", "SRC-CENSUS-QF", "needs review"],
+    ["R-09", "BLS and EDD October 2026 figures are preliminary", "Values are published with the preliminary flag and must be re-checked before a sale or renewal commitment.", "SRC-BLS-EAG|SRC-EDD-LMI", "needs review"],
+    ["R-10", "2026 SRA Fire Hazard Severity Zone public comment period is open (Nov 9, 2026 - Jan 8, 2027)", "A future zone designation may differ from the current effective map; no parcel status is asserted.", "SRC-CALFIRE-FHSZ", "needs review"],
+    ["R-11", "Census API key required for tract-level ACS pulls", "Tract-level trend evidence cannot be fetched anonymously in this public workflow; no tract value is published.", "SRC-CENSUS-API-KEY|PORTAL-CENSUS-DATA", "needs review"],
+    ["R-12", "SEC operator data are systemwide, not the subject unit", "National same-store sales, closures and franchise rental revenues are direction only; unit-level rent coverage remains unverified.", "SRC-SEC-10K-2025|SRC-SEC-Q3-2025", "needs review"],
+    ["R-13", "CDI insurance figures are statewide homeowner averages/counts", "They are context, not quotes for a commercial NNN property; no property premium is asserted.", "SRC-CDI-SIS|SRC-CDI-FAIRPLAN-2026", "needs review"],
+    ["R-14", "SCAG projections are assumptions-based and subregional uncertainty is higher", "Forecast values are labelled projections, never observations; 2030-2035 parcel employment is blank.", "SRC-SCAG-2024", "needs review"],
+    ["R-15", "No sufficient verified comparable history for a back-test", "A versioned, back-tested cash-flow model is not published and no sell/hold winner is selected.", "SRC-SCAG-2024|SRC-SEC-10K-2025|SRC-BLS-EAG", "needs review"],
+    ["R-16", "Caltrans AADT data cover the State Highway System only", "City/county street counts come from the local agency; frontage AADT is blank until the road is identified.", "SRC-CALTRANS-CENSUS|PORTAL-ZIMAS", "needs review"],
+    ["R-17", "CCPA excludes publicly available property records from 'personal information'", "This site nevertheless publishes no APN, address, lease file or owner financials, regardless of that exclusion.", "SRC-OAG-CCPA", "needs review"],
+    ["R-18", "California and federal capital-gain thresholds differ by year and filing status", "2025 and 2026 thresholds are published separately; the calculator requires the correct tax year and private taxable income.", "SRC-IRS-409|SRC-IRS-RP25-32|SRC-FTB-CG", "needs review"]
+  ]
+}

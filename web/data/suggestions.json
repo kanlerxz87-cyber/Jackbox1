@@ -1,0 +1,12 @@
+{
+  "columns": ["id", "path", "action", "best_for", "priority", "sources", "status"],
+  "rows": [
+    ["S-01", "A — Evidence first", "Complete the private identity, lease, tract, hazard, market and tax gates before any modelling.", "Reviewer who wants the lowest risk of a wrong answer", "highest", "SRC-OAG-CCPA|PORTAL-ZIMAS|SRC-CENSUS-QF", "recommended"],
+    ["S-02", "B — Renewal negotiation first", "Request a written negotiated renewal proposal while evidence is gathered; do not commit until the notice calendar is reconciled.", "Reviewer who wants to preserve optionality with the current tenant", "high", "PORTAL-LACO-RRCC|SRC-SEC-10K-2025", "choose"],
+    ["S-03", "C — Quote / comp discovery first", "Collect arm's-length short-lease QSR quotes and recorded comparable sale pairs; price the discount only from those quotes.", "Reviewer who wants a market-priced short-lease discount", "high", "PORTAL-LACO-ASSESSOR|PORTAL-LACO-RRCC", "choose"],
+    ["S-04", "D — Hazard / insurance triage first", "Run parcel FHSZ, flood, seismic and insurance lookups, then commission engineering and joint stress on rent loss, repairs and exit liquidity.", "Reviewer who ranks catastrophic and black-swan risk highest", "high", "SRC-CALFIRE-FHSZ|SRC-FEMA-NFHL|SRC-CGS-SEISMIC|SRC-CDI-SIS", "choose"],
+    ["S-05", "E — Tax-structure workstream", "Verify basis, depreciation and filing status privately; compute the after-tax sale case with the browser-only calculator and test a section 1031 alternative.", "Reviewer who wants the tax number comparable with the hold case", "medium", "SRC-IRS-409|SRC-IRS-RP25-32|SRC-FTB-CG|SRC-BOE-PUB29|SRC-IRS-1031", "choose"],
+    ["S-06", "F — Site/data improvement", "Fix a versioned tract set, obtain a Census API key, and publish multi-vintage tract trends alongside regional figures.", "Reviewer improving the decision-support product", "medium", "SRC-CENSUS-API-KEY|PORTAL-CENSUS-DATA|SRC-SCAG-2024", "choose"],
+    ["S-07", "G — Model only when ready", "Build a versioned, back-tested cash-flow model only after verified inputs and sufficient comparable history exist; separate observations from assumptions.", "Final decision stage", "gated", "SRC-SCAG-2024|SRC-BLS-EAG|SRC-SEC-10K-2025", "choose"]
+  ]
+}
