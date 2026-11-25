@@ -2,7 +2,7 @@
 """
 Post-build checks. Fails (exit 1) on anything that would make the published site wrong or broken:
 
-  1. every internal href/src resolves to a file that exists in docs/
+  1. every internal href/src resolves to a file that exists in workspace/
   2. every in-page anchor (#id) resolves to an element with that id
   3. no page links to a private path or an absolute localhost URL
   4. every data table row carries either a source link or a status badge
@@ -20,7 +20,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-DOCS = ROOT / "docs"
+DOCS = ROOT / "workspace"
 
 REQUIRED = [
     "index.html", "questions.html", "economy.html", "tracts.html", "operator.html",

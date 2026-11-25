@@ -23,7 +23,7 @@ import yaml
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
-DOCS = ROOT / "docs"
+DOCS = ROOT / "workspace"   # own namespace: never collides with another session's docs/ tree
 TODAY = date(2026, 11, 25)
 SITE = "Jack in the Box — NNN Leasehold Decision Workspace"
 REPO = "kanlerxz87-cyber/Jackbox1"
@@ -1785,14 +1785,15 @@ def build_data_exports(rows):
 
 
 def build_jekyll():
-    (DOCS / "_config.yml").write_text(
-        "title: Jack in the Box — NNN Leasehold Decision Workspace\n"
-        "description: Verified-source decision workspace. Anonymised; no personal data.\n"
-        "theme: null\n"
-        "plugins: []\n"
-        "exclude:\n  - data/\n", encoding="utf-8")
-    (DOCS / ".nojekyll").write_text("", encoding="utf-8")
-    (DOCS / "robots.txt").write_text("User-agent: *\nAllow: /\n", encoding="utf-8")
+    """No _config.yml is emitted on purpose.
+
+    The repository root is the GitHub Pages source, and a `_config.yml` inside a
+    subdirectory changes how Jekyll processes the whole site. Only robots.txt is
+    written here; the dotted .nojekyll lives at the repository root.
+    """
+    (DOCS / "robots.txt").write_text("User-agent: *\nAllow: /workspace/\n", encoding="utf-8")
+    if (DOCS / ".nojekyll").exists():
+        (DOCS / ".nojekyll").unlink()
 
 
 def main():
