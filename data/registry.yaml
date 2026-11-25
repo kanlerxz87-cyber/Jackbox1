@@ -67,7 +67,7 @@ rows:
     unit: persons
     geo: "ZIP Code Tabulation Area / ZCTA 90015, Los Angeles, CA (demonstration tract set only)"
     period: "ACS 2020–2024 5-year, sum of 23 tract-level B01003 estimates"
-    source: U.S. Census Bureau, ACS 2020–2024 5-year (23 tracts, see data/tracts.csv)
+    source: U.S. Census Bureau, ACS 2020–2024 5-year (23 tracts, see data/tracts_demo_90015.csv)
     url: https://api.censusreporter.org/1.0/data/show/latest?table_ids=B01003,B19013,B25077&geo_ids=140|86000US90015
     status: flagged
     note: "DEMONSTRATION ONLY. 90015 was chosen because it is a central-LA ZIP, not because the subject parcel is there. This figure is the arithmetic sum of the 23 published tract estimates in data/tracts_demo_90015.csv — an aggregation of published values, not an estimate of the parcel's trade area. Replace once the parcel's OWN tract is known (F-01)."

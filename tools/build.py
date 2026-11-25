@@ -158,11 +158,10 @@ def status_badge(s: str) -> str:
 
 
 def value_cell(r: dict) -> str:
+    """The unit lives in its own column; repeating it here read as "5.8 percent | percent"."""
     if r["value"] == "":
         return '<td class="blank">blank — unverified</td>'
-    v = esc(r["value"])
-    unit = f' <span class="unit">{esc(r["unit"])}</span>' if r["unit"] and r["unit"] != "text" else ""
-    return f'<td class="num">{v}{unit}</td>'
+    return f'<td class="num">{esc(r["value"])}</td>'
 
 
 def source_cell(r: dict) -> str:
