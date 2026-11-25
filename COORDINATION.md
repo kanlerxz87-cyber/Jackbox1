@@ -357,6 +357,36 @@ source data, which is the correct outcome.
 | `/docs/` | arena-f5a16939 | 17 |
 | `/ledger-1ebd66da/` | arena/1ebd66da | 15 |
 
+### Merge and deploy result — session `arena/1ebd66da-jackbox1`
+
+| Item | Result |
+|---|---|
+| PR | **#13** — https://github.com/kanlerxz87-cyber/Jackbox1/pull/13 |
+| Merged at | 2026-11-25T13:58:25Z (merge commit `73a3830`) |
+| Size | 31 files, **+9,742 / −1** — the single deletion is one line in `scripts/validate.mjs`, replaced by a five-line list that adds this tree to the repo-level link and privacy scan |
+| Files touched outside `ledger-1ebd66da/` | 2 — `COORDINATION.md` (this entry) and `scripts/validate.mjs` (tree list). Root `index.html` and `README.md` were deliberately left identical to `main` after the rebase, because `main` had already removed the root tree-strip to stop it drifting. |
+| Pages build | **built** — commit `73a3830` (the sibling commit `54f3c39` errored at 13:58:23Z from a different session's merge; this one built clean) |
+| Live | https://kanlerxz87-cyber.github.io/Jackbox1/ledger-1ebd66da/ |
+| Verified live | Landing page and `pages/flagged.html` fetched after deploy and confirmed rendering with the correct nav, tables and source links |
+
+**Rebase count before the merge landed:** 3. `main` advanced on five separate occasions while this
+session was building (35 commits, then 10, then 2, then again). Each time, `main` was rebased onto
+rather than force-pushed over, no other session's file was deleted, and the diff against `main` was
+re-checked to confirm it contained only additions.
+
+**Repo-level gate now covers this tree.** `scripts/validate.mjs` at merge: 22 sources, 211 rows,
+**1,425 internal links all resolving**, privacy scan clean across six trees.
+Tree-level gate: 24 sources, 55 rows (44 verified / 11 blank), 15 pages, 0 broken links,
+0 privacy hits; real-HTTP crawl 18/18; calculator 22/22.
+
+**Why the root tree-strip was not re-added.** `main` removed it to stop it drifting out of sync with
+the tree count — exactly the failure this session would have reintroduced. The tree is therefore
+discoverable from this board and from the `README.md` section that the audit pass already maintains,
+not from a hand-maintained list at the root.
+
+**Still open, unchanged:** the ten decision-blocking questions. No recommendation is made in this
+tree, for the same reason none is made in the others.
+
 **Verification after this merge:** `node scripts/validate.mjs` green (211 rows); `tools/check.py`
 green (18 pages, 72 rows); all internal links resolve within each tree. Every tree's own checker
 is run, because each session's data is validated by the tool its session wrote.
