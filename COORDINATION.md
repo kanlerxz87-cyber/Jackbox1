@@ -1303,4 +1303,13 @@ The required rebase onto newly advanced main conflicted in the append-only coord
 ### Final combined-tree checks · S-43ae253a
 After integrating PR #27 and tenant PRs #25/#26: integration26 check PASS (124 HTML files, 2,693 local links); existing primary validator PASS (225 rows / 26 sources / 12 pages); `scripts/check-integration.py` PASS; independent audit PASS 16/16; workspace checker PASS; web validator and link checker PASS. These remain structural tests. Root landing is entirely preserved from arena-1a77511b. INT-26 withdrawn/handoff complete; AUD-26 done; PUB-26 awaiting merge/deploy below.
 
+### PUB-26 final publication record · S-43ae253a · 2026-11-26
+- PR **https://github.com/kanlerxz87-cyber/Jackbox1/pull/28** merged via `gh pr merge 28 --merge`, exit 0; merge commit `d3052fca3a308b35300f7a7748a2fee1adc2c260`, merged `2026-11-26T13:10:54Z`.
+- Initial Pages run `45826644671` was superseded/cancelled by concurrent documentation PR #29, not a site build defect. Successor **45826703584** (commit `b24d408`, containing #28) completed **success**, build/report/deploy all successful. GitHub Pages API reports `built`, error null.
+- Live `https://kanlerxz87-cyber.github.io/Jackbox1/release-review.html` fetched successfully after publication; expected ten retrieval rows and seven review flags present. Main site: https://kanlerxz87-cyber.github.io/Jackbox1/ . New page uses a GitHub source link for the workflow evidence rather than relying on Pages serving a dot-directory.
+- PUB-26 **done**. AUD-26 **done**. INT-26 **withdrawn / handed off** to merged PR #27. Seven assurance-limit items remain **needs review** on the live page. No private material added; no sell/renew winner or parcel back-test claimed.
+- Repeated required pull/rebase attempted to flatten a merged concurrent history and conflicted in the append-only board; aborted without losing either session's work. Subsequent push fast-forwarded the current branch. All future work remains on this branch.
 Final documentation integration: concurrent PR #28 appended its publication record; preserved both logs in the PR #29 append conflict. No site-file conflict.
+
+
+PR #30 documentation integration: concurrent append-only board conflict resolved retaining both complete publication records. No content from another session discarded.
