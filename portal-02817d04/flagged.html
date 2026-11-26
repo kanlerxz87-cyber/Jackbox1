@@ -159,8 +159,8 @@
         <tr>
           <td><code>FLG-15</code></td>
           <td><span class="badge badge-open">Repo / Deploy Governance</span></td>
-          <td><strong>Public GitHub repo is NOT an access-controlled workspace + multiple parallel trees &amp; disabled docs-only workflow</strong></td>
-          <td>Keep all private files offline. Also note .github/workflows/pages.yml uploads path: docs only (currently disabled_manually so legacy main:/ serves all trees); if Actions Pages is ever re-enabled, path must be '.' (root).</td>
+          <td><strong>Public GitHub repo is NOT an access-controlled workspace + multiple parallel session trees</strong></td>
+          <td>Keep all private files offline. Legacy GitHub Pages serves repository root (main:/); .github/workflows/pages.yml was patched to path: . on 2026-11-26 and remains disabled_manually so legacy root builds serve every session tree.</td>
           <td><a href="https://github.com/kanlerxz87-cyber/Jackbox1" target="_blank" rel="noopener noreferrer">SRC-37 · GitHub Repository — kanlerxz87-cyber/Jackbox1</a></td>
         </tr>
       </tbody>
@@ -531,6 +531,7 @@
         <span>Companion repository views:</span>
         <a href="../index.html">Repository Root Overview</a>
         <a href="../pages/index.html">Primary /pages/ Suite</a>
+        <a href="../hub/index.html">Hub /hub/</a>
         <a href="../audit/index.html">Audit /audit/</a>
         <a href="../web/index.html">Web /web/</a>
         <a href="../docs/index.html">Docs /docs/</a>

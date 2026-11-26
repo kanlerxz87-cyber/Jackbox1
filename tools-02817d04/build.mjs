@@ -147,6 +147,7 @@ function layout({ file, title, subtitle, bodyHtml, includeCalcScript = false, ex
         <span>Companion repository views:</span>
         <a href="../index.html">Repository Root Overview</a>
         <a href="../pages/index.html">Primary /pages/ Suite</a>
+        <a href="../hub/index.html">Hub /hub/</a>
         <a href="../audit/index.html">Audit /audit/</a>
         <a href="../web/index.html">Web /web/</a>
         <a href="../docs/index.html">Docs /docs/</a>

@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Flagged for Review — Central LA NNN QSR Decision Hub</title>
+  <link rel="stylesheet" href="assets/css/hub.css">
+</head>
+<body>
+  <div class="privacy-bar">
+    <div><strong>PRIVACY FIREWALL ACTIVE (PARCEL-001):</strong> Zero street address, APN, owner identity, lease rent, store sales, or tax basis appear in this public repository.</div>
+    <div>As of <strong>2026-11-26</strong> · <a href="../index.html">Repository Portal</a> · <a href="sources.html">34 Official Sources</a></div>
+  </div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand-row">
+        <div class="brand-title"><a href="index.html">Central LA NNN QSR — Independent Decision Hub</a></div>
+        <div class="brand-meta">
+          <span class="badge badge-low">OPEN — NO WINNER DECLARED</span>
+          <span class="badge badge-low">Model v0.1-audit</span>
+          <span>Verified 2026-11-26</span>
+        </div>
+      </div>
+      <nav class="main-nav" aria-label="Primary sections">
+        <a href="index.html">Overview</a><a href="gates.html">W-03 Gates</a><a href="lease.html">Lease &amp; Notice</a><a href="trade-area.html">W-01 Trade Area</a><a href="tenant.html">Operator (JACK)</a><a href="valuation.html">W-02 Tax &amp; Quotes</a><a href="calculator.html">Calculator</a><a href="hazards.html">W-04 Hazards</a><a href="risks.html">BAU &amp; Tail Risks</a><a href="model.html">Model &amp; Back-Test</a><a href="questions.html">Questions</a><a href="suggestions.html">Suggestions</a><a href="flagged.html" class="active">Flagged</a><a href="summary.html">W-10 One-Pager</a><a href="sources.html">Sources</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="page-hero">
+      <h1>Flagged for Review — Repository Audit Irregularities &amp; Unverified Ledger</h1>
+      <p class="lead">Complete transparency register surfacing all 14 concrete arithmetic, statutory, SEC-staleness, privacy-leak, and back-test defects discovered in existing repo files alongside every intentionally blank private field.</p>
+      <div class="hero-tags"><span class="badge badge-low">14 Repo Defects Logged</span><span class="badge badge-unverified">33 Private Rows Blank by Design</span></div>
+    </section>
+
+    
+    <section class="section">
+      <h2>Part 1 — Line-by-Line Repository Audit: 14 Verified Irregularities &amp; Defects (2026-11-26)</h2>
+      <p class="section-intro">Every item below was verified directly against official primary sources on 2026-11-26 during our full audit of all 8 existing repository trees. All corrections are live inside <code>hub/**</code>; legacy sibling directories remain untouched per multi-session scope ownership rules in <code>COORDINATION.md</code> (see PROP-02 to authorize repo-wide remediation).</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>ID</th><th>Severity</th><th>Verified File Locations</th><th>Defect / Irregularity Found</th><th>Official Primary-Source Correction</th><th>Status in hub/**</th><th>Official Source</th></tr>
+          </thead>
+          <tbody>
+        <tr>
+          <td class="mono"><strong>FLAG-01</strong></td>
+          <td><span class="badge badge-urgent">CRITICAL</span></td>
+          <td class="mono" style="font-size:0.78rem;">workspace/tax.html:219 · data/registry.yaml:556,567 · workspace/assets/js/calc.js:39 · ledger-1ebd66da/src/data/tax.json</td>
+          <td>Still open on main (df8e4e0): workspace/tax.html:219 states &#x27;city 0.055%&#x27; instead of actual 0.45% ($2.25/$500 — nearly 10x understated!) AND sibling trees carry stale Measure ULA tiers ($5.0M/$10.0M or $5.3M/$10.6M instead of effective July 1, 2026 $5.4M/$10.9M).</td>
+          <td><strong>Effective July 1, 2026: City of LA Base = $2.25/$500 (0.45%) + County DTT = $0.55/$500 (0.11%) = 0.56% base; ULA = 4.0% (&gt;$5,400,000 to &lt;$10,900,000) and 5.5% (&gt;=$10,900,000) -&gt; 4.56% / 6.06% combined.</strong></td>
+          <td>Corrected in hub/valuation.html &amp; hub/calculator.html; legacy sibling trees untouched per disjoint-scope protocol.</td>
+          <td><a class="src-link" href="https://finance.lacity.gov/faq/measure-ula" target="_blank" rel="noopener noreferrer" title="City of Los Angeles Office of Finance &amp; LA County Registrar-Recorder (lavote.gov) — Real Property Transfer Tax &amp; Measure ULA FAQ — Thresholds Effective July 1, 2026 (Verified 2026-11-26)">SRC-30</a></td>
+        </tr>
+        <tr>
+          <td class="mono"><strong>FLAG-02</strong></td>
+          <td><span class="badge badge-high">HIGH</span></td>
+          <td class="mono" style="font-size:0.78rem;">data/lease.json · data/questions.json · data/suggestions.json · scripts/build.mjs · pages/index.html · pages/lease.html · pages/questions.html · pages/suggestions.html</td>
+          <td>Still open on main (df8e4e0): residual &#x27;eight-year&#x27; arithmetic error remains live in 8 repository files for the 2030–2035 expiration window (2035 - 2030 = 5-year calendar window; 4–9 years from 2026).</td>
+          <td><strong>2030–2035 is a 5-year calendar expiration window (4 to 9 years remaining as of 2026-11-26).</strong></td>
+          <td>Corrected everywhere in hub/**.</td>
+          <td><a class="src-link" href="https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm" target="_blank" rel="noopener noreferrer" title="U.S. Securities and Exchange Commission (SEC EDGAR) — Jack in the Box Inc. Form 8-K Exhibit 99.1 — Q3 FY2026 Earnings Release (12 &amp; 40 weeks ended 2026-07-05, filed 2026-08-12) (Verified 2026-11-26)">SRC-18</a></td>
+        </tr>
+        <tr>
+          <td class="mono"><strong>FLAG-03</strong></td>
+          <td><span class="badge badge-low">LOW</span></td>
+          <td class="mono" style="font-size:0.78rem;">data/valuation.json (VA-02) — Fixed on main in PR #33</td>
+          <td>Previously misstated the November 2026 DGS10 swing (4.84% to 5.15%) as a &#x27;23 basis point move&#x27; instead of 31 bp. Independently verified fixed to &#x27;31 basis point spread&#x27; on main in PR #33.</td>
+          <td><strong>Exact November 2026 DGS10 range is 4.84% (11-05) to 5.15% (11-13) = 31 basis points (2026 YTD 3.97%–5.31% = 134 bp).</strong></td>
+          <td>Confirmed fixed in PR #33 &amp; verified in hub/index.html.</td>
+          <td><a class="src-link" href="https://fred.stlouisfed.org/data/DGS10.txt" target="_blank" rel="noopener noreferrer" title="Board of Governors of the Federal Reserve System (via FRED) — H.15 Market Yield on U.S. Treasury Securities at 10-Year Constant Maturity (Series DGS10) (Verified 2026-11-26)">SRC-04</a></td>
+        </tr>
+        <tr>
+          <td class="mono"><strong>FLAG-04</strong></td>
+          <td><span class="badge badge-low">LOW</span></td>
+          <td class="mono" style="font-size:0.78rem;">data/valuation.json (TX-08) — Verified on main in PR #33</td>
+          <td>Previously tagged status=&#x27;unverified&#x27; with source_id=null while embedding an imprecise string (&#x27;above the top threshold&#x27;) for CA&#x27;s 1% surtax. PR #33 verified TX-08 against FTB Tax News Oct 2026.</td>
+          <td><strong>Verified from CA FTB 2026 Form 540-ES &amp; Tax News Oct 2026: 1.00% Behavioral Health Services Tax applies strictly to CA taxable income &gt; $1,000,000 (on top of 12.30% top bracket over $768,213 Single / $1,536,426 MFJ).</strong></td>
+          <td>Verified &amp; strictly enforced in hub/scripts/verify.py (unverified rows MUST have value=null).</td>
+          <td><a class="src-link" href="https://www.ftb.ca.gov/forms/2026/2026-540-es-instructions.html" target="_blank" rel="noopener noreferrer" title="California Franchise Tax Board (FTB) — 2026 Instructions for Form 540-ES — Behavioral Health Services Tax (1% &gt; $1,000,000) &amp; Pub 1016 / Form 3840 (Verified 2026-11-26)">SRC-28</a></td>
+        </tr>
+        <tr>
+          <td class="mono"><strong>FLAG-05</strong></td>
+          <td><span class="badge badge-urgent">CRITICAL</span></td>
+          <td class="mono" style="font-size:0.78rem;">data/tenant.json · pages/tenant.html · workspace/ · web/ · docs/</td>
+          <td>Still partially stale on main (df8e4e0): although PR #33 added 9M FY2026 franchise rental revenue ($242.5M) to data/tenant.json, it still omits Q3 ending unit count (2,115), the $500M 2026-1 Class A-2 Notes (May 2031 ARD overlapping 2030–2035 expiry), May 2026 CEO replacement (Mark King), Sep 2026 GreenWood extension through 2028, and the Nov 17, 2026 simultaneous CFO/CLO/CTO departures; sibling trees remain pre-Q3.</td>
+          <td><strong>Updated through 2026-11-17 SEC EDGAR filings: Q3 FY26 2,115 units (-76 vs FY24), SSS -1.1%, 40W franchise net rental spread -15.4%, $500M May 2031 ARD notes, revised FY26 guide ~2,100 units / low-single-digit SSS decline / $225–230M Adj. EBITDA, plus Nov 17 C-suite exits.</strong></td>
+          <td>Fully updated through 2026-11-17 in hub/tenant.html.</td>
+          <td><a class="src-link" href="https://www.sec.gov/Archives/edgar/data/807882/000080788226000100/jack-20261113.htm" target="_blank" rel="noopener noreferrer" title="U.S. Securities and Exchange Commission (SEC EDGAR) — Jack in the Box Inc. Form 8-K &amp; Exhibit 99.1 — Executive Departures (CFO, CLO, CTO) Ahead of CEO Transition (filed 2026-11-17) (Verified 2026-11-26)">SRC-20</a></td>
+        </tr>
+        <tr>
+          <td class="mono"><strong>FLAG-06</strong></td>
+          <td><span class="badge badge-medium">MEDIUM</span></td>
+          <td class="mono" style="font-size:0.78rem;">data/hazards.json (HZ-06) · data/model.json (OB-09)</td>
+          <td>Still open on main (df8e4e0): cites USGS ASCE 7-22 Design Maps (S-006) as primary source_id on the M4.5+ earthquake count row (and restricts the window to 2000–2026 = 4 events, excluding 1990s Northridge-sequence seismicity).</td>
+          <td><strong>Directly queried USGS FDSN Event API: 2000–2026 box = 4 events (confirmed), while 1990-01-01 to 2026-11-26 within 50 km of Central LA (34.0522, -118.2437) = 28 verified M&gt;=4.5 events.</strong></td>
+          <td>Properly linked directly to USGS FDSN Event API in hub/hazards.html.</td>
+          <td><a class="src-link" href="https://earthquake.usgs.gov/fdsnws/event/1/count?format=geojson&amp;starttime=1990-01-01&amp;endtime=2026-11-26&amp;latitude=34.0522&amp;longitude=-118.2437&amp;maxradiuskm=50&amp;minmagnitude=4.5" target="_blank" rel="noopener noreferrer" title="U.S. Geological Survey (USGS) — FDSN Earthquake Event Count API (M&gt;=4.5 within 50 km of Central LA, 1990-01-01 to 2026-11-26) &amp; ASCE 7-22 Design Maps (Verified 2026-11-26)">SRC-31</a></td>
+        </tr>
+        <tr>
+          <td class="mono"><strong>FLAG-07</strong></td>
+          <td><span class="badge badge-high">HIGH</span></td>
+          <td class="mono" style="font-size:0.78rem;">assets/js/calc.js</td>
+          <td>Still partially open on main (df8e4e0): PR #33 upgraded assets/js/calc.js to 2026 IRS/FTB brackets, but it STILL completely omits LA County DTT (0.11%), City of LA Base Transfer Tax (0.45%), and Measure ULA (4.0% &gt;$5.4M / 5.5% &gt;=$10.9M), potentially understating LA City sale friction by $240k–$600k+.</td>
+          <td><strong>hub/assets/js/calculator.js implements exact 2026 IRS Rev. Proc. 2025-32 LTCG, 25% §1250, 3.8% NIIT, progressive 2026 CA FTB (all 9 brackets) + 1% BHSA &gt;$1M, City Base 0.45%, County DTT 0.11%, and July 1, 2026 Measure ULA ($5.4M/$10.9M).</strong></td>
+          <td>Fully built &amp; unit-tested in hub/calculator.html.</td>
+          <td><a class="src-link" href="https://finance.lacity.gov/faq/measure-ula" target="_blank" rel="noopener noreferrer" title="City of Los Angeles Office of Finance &amp; LA County Registrar-Recorder (lavote.gov) — Real Property Transfer Tax &amp; Measure ULA FAQ — Thresholds Effective July 1, 2026 (Verified 2026-11-26)">SRC-30</a></td>
+        </tr>
+        <tr>
+          <td class="mono"><strong>FLAG-08</strong></td>
+          <td><span class="badge badge-low">LOW</span></td>
+          <td class="mono" style="font-size:0.78rem;">verification/data/dataset.json · web/data/findings.json (data/valuation.json updated to 4.91% in PR #33)</td>
+          <td>Sibling verification/ and web/ trees still display prior-day 10-Year Treasury DGS10 = 4.92% (2026-11-23).</td>
+          <td><strong>Latest official FRED H.15 observation (2026-11-24) is 4.91%.</strong></td>
+          <td>Updated to 4.91% across hub/**.</td>
+          <td><a class="src-link" href="https://fred.stlouisfed.org/data/DGS10.txt" target="_blank" rel="noopener noreferrer" title="Board of Governors of the Federal Reserve System (via FRED) — H.15 Market Yield on U.S. Treasury Securities at 10-Year Constant Maturity (Series DGS10) (Verified 2026-11-26)">SRC-04</a></td>
+        </tr>
+        <tr>
+          <td class="mono"><strong>FLAG-09</strong></td>
+          <td><span class="badge badge-high">HIGH</span></td>
+          <td class="mono" style="font-size:0.78rem;">data/model.json (back_test)</td>
+          <td>Still open on main (df8e4e0): highlights r = -0.937 (2015–2026) computed on only n = 7 heavily overlapping quarterly pairs across a single post-COVID wave.</td>
+          <td><strong>Independent Python verification of full 207-quarter FHFA series (1975 Q1–2026 Q3) finds full overlapping r = -0.418 (n=167) and non-overlapping 5-yr blocks r = -0.409 (n=9) — moderate real mean reversion, plus -21.4% (1990–96) and -35.8% (2006–12) decade-long drawdowns.</strong></td>
+          <td>Full 51.5-year back-test audit published in hub/model.html.</td>
+          <td><a class="src-link" href="https://fred.stlouisfed.org/graph/fredgraph.csv?id=ATNHPIUS31084Q" target="_blank" rel="noopener noreferrer" title="Federal Housing Finance Agency (FHFA, via FRED) — All-Transactions House Price Index for Los Angeles-Long Beach-Glendale MD (Series ATNHPIUS31084Q, 1995 Q1=100) (Verified 2026-11-26)">SRC-05</a></td>
+        </tr>
+        <tr>
+          <td class="mono"><strong>FLAG-10</strong></td>
+          <td><span class="badge badge-medium">MEDIUM</span></td>
+          <td class="mono" style="font-size:0.78rem;">README.md:133 · data/registry.yaml · tools/build.py:533 · data/tracts_demo_a.csv · workspace/*.html</td>
+          <td>README.md cites a stale renamed demo-tract CSV filename (plus stale counts); Census Reporter demo URLs inside registry.yaml, tools/build.py, and workspace HTML still embed the legacy downtown proxy ZCTA that PR #25 explicitly purged as a proxy-ZIP leak.</td>
+          <td><strong>Zero proxy ZIPs or ZCTA codes appear anywhere in hub/**; enforced automatically by hub/scripts/verify.py.</strong></td>
+          <td>Clean in hub/**; logged for sibling cleanup under PROP-02.</td>
+          <td><a class="src-link" href="https://fred.stlouisfed.org/graph/fredgraph.csv?id=MHICA06037A052NCEN" target="_blank" rel="noopener noreferrer" title="U.S. Census Bureau — SAIPE (via FRED) — Estimate of Median Household Income for Los Angeles County, CA (Series MHICA06037A052NCEN, 1989–2024) (Verified 2026-11-26)">SRC-07</a></td>
+        </tr>
+        <tr>
+          <td class="mono"><strong>FLAG-11</strong></td>
+          <td><span class="badge badge-medium">MEDIUM</span></td>
+          <td class="mono" style="font-size:0.78rem;">scripts/validate.mjs</td>
+          <td>Still open on main (df8e4e0): root validator omits sibling trees (audit/, web/, hub/) from TREE_DIRS link checks.</td>
+          <td><strong>hub/scripts/verify.py checks 100% of hub/** links, enforces value===null on unverified rows, allowlists official domains on every table row, and audits calculator zero-telemetry compliance.</strong></td>
+          <td>Enforced in hub/scripts/verify.py.</td>
+          <td><a class="src-link" href="https://data.sec.gov/submissions/CIK0000807882.json" target="_blank" rel="noopener noreferrer" title="U.S. Securities and Exchange Commission (SEC EDGAR) — Jack in the Box Inc. (CIK 0000807882) Official Submissions Index (through 2026-11-17) (Verified 2026-11-26)">SRC-13</a></td>
+        </tr>
+        <tr>
+          <td class="mono"><strong>FLAG-12</strong></td>
+          <td><span class="badge badge-low">LOW</span></td>
+          <td class="mono" style="font-size:0.78rem;">audit/flagged.html (IR-A3)</td>
+          <td>Previous audit tree left California AB 1228 fast-food minimum wage as unverified/blocked.</td>
+          <td><strong>Directly verified via CA DIR DLSE FAQ ($20.00/hr AB 1228), IWC Wage Order 7 ($16.90/hr CA general eff. 2026-01-01), and City of LA Office of Wage Standards ($18.42/hr eff. 2026-07-01).</strong></td>
+          <td>Resolved &amp; sourced in hub/trade-area.html.</td>
+          <td><a class="src-link" href="https://www.dir.ca.gov/dlse/Fast-Food-Minimum-Wage-FAQ.htm" target="_blank" rel="noopener noreferrer" title="California Department of Industrial Relations (DIR / DLSE) — Fast Food Minimum Wage FAQ (AB 1228, Labor Code §1474–1476) &amp; IWC Wage Order 7 (Rev. 11/2025) (Verified 2026-11-26)">SRC-21</a></td>
+        </tr>
+        <tr>
+          <td class="mono"><strong>FLAG-13</strong></td>
+          <td><span class="badge badge-low">LOW</span></td>
+          <td class="mono" style="font-size:0.78rem;">.github/workflows/pages.yml (Workflow 430390450) — Fixed on main in PR #32</td>
+          <td>Previously set path=&#x27;docs&#x27; which would have broken root /, /hub/, /pages/, /workspace/, and /audit/ if re-enabled. PR #32 (2c151ac) updated path to &#x27;.&#x27; while keeping the workflow manually disabled and preserving legacy main:/ Pages.</td>
+          <td><strong>Confirmed path=&#x27;.&#x27; on main (df8e4e0); live site remains served cleanly from legacy main:/ (https://kanlerxz87-cyber.github.io/Jackbox1/).</strong></td>
+          <td>Confirmed fixed in PR #32; documented for audit continuity.</td>
+          <td><a class="src-link" href="https://data.sec.gov/submissions/CIK0000807882.json" target="_blank" rel="noopener noreferrer" title="U.S. Securities and Exchange Commission (SEC EDGAR) — Jack in the Box Inc. (CIK 0000807882) Official Submissions Index (through 2026-11-17) (Verified 2026-11-26)">SRC-13</a></td>
+        </tr>
+        <tr>
+          <td class="mono"><strong>FLAG-14</strong></td>
+          <td><span class="badge badge-low">INFO (BY DESIGN)</span></td>
+          <td class="mono" style="font-size:0.78rem;">All 12 Private Parcel, Lease, Basis &amp; Quote Rows Across hub/**</td>
+          <td>Parcel address, APN, executed lease dates/rent/guarantor, store sales, tax basis, debt terms, parcel hazard maps, and 3 broker short-lease quotes remain blank/unverified in public Git.</td>
+          <td><strong>Intentional privacy firewall — decision stays OPEN (&#x27;No Winner Declared&#x27;) until owner enters these private figures locally in hub/calculator.html or an offline advisor workbook.</strong></td>
+          <td>Enforced across all 15 hub pages.</td>
+          <td><a class="src-link" href="https://www.irs.gov/pub/irs-prior/i8824--2026.pdf" target="_blank" rel="noopener noreferrer" title="Internal Revenue Service (IRS) — 2026 Instructions for Form 8824 — Like-Kind Exchanges (IRC §1031) (Verified 2026-11-26)">SRC-26</a></td>
+        </tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Part 2 — Complete Ledger of All Blank / Unverified Private Rows Across hub/** (33 Rows)</h2>
+      <p class="section-intro">Auto-aggregated from <code>hub/data/dataset.json</code> so zero hidden gaps exist anywhere in the workspace. Every row below carries <code>value = null</code> by privacy design.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>ID</th><th>Page</th><th>Blank Private Field</th><th>Status</th><th>Resolution Protocol</th><th>Reference Source</th></tr>
+          </thead>
+          <tbody>
+        <tr>
+          <td class="mono"><strong>EX-PRIV</strong></td>
+          <td><a href="index.html">Overview</a></td>
+          <td><strong>Parcel-Specific Rent, Lease Expiry, Basis &amp; Quotes</strong></td>
+          <td><span class="badge badge-unverified">unverified</span></td>
+          <td>BLANK BY PRIVACY DESIGN — enter privately in hub/calculator.html (100% browser memory).</td>
+          <td><a class="src-link" href="https://www.irs.gov/pub/irs-prior/i8824--2026.pdf" target="_blank" rel="noopener noreferrer" title="Internal Revenue Service (IRS) — 2026 Instructions for Form 8824 — Like-Kind Exchanges (IRC §1031) (Verified 2026-11-26)">SRC-26</a></td>
+        </tr>
+        <tr>
+          <td class="mono"><strong>LS-01</strong></td>
+          <td><a href="lease.html">Lease &amp; Notice</a></td>
+          <td><strong>Exact Lease Commencement &amp; Primary Expiration Date</strong></td>
+          <td><span class="badge badge-unverified">unverified</span></td>
+          <td>Read original lease + all recorded memoranda/amendments + latest signed tenant estoppel.</td>
+          <td><a class="src-link" href="https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm" target="_blank" rel="noopener noreferrer" title="U.S. Securities and Exchange Commission (SEC EDGAR) — Jack in the Box Inc. Form 8-K Exhibit 99.1 — Q3 FY2026 Earnings Release (12 &amp; 40 weeks ended 2026-07-05, filed 2026-08-12) (Verified 2026-11-26)">SRC-18</a></td>
+        </tr>
+        <tr>
+          <td class="mono"><strong>LS-02</strong></td>
+          <td><a href="lease.html">Lease &amp; Notice</a></td>
+          <td><strong>Renewal Options Count, Term Length &amp; Exact Exercise Notice Window</strong></td>
+          <td><span class="badge badge-unverified">unverified</span></td>
+          <td>Extract earliest/latest notice dates, delivery method (certified mail/overnight), and notice addresses.</td>
+          <td><a class="src-link" href="https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm" target="_blank" rel="noopener noreferrer" title="U.S. Securities and Exchange Commission (SEC EDGAR) — Jack in the Box Inc. Form 8-K Exhibit 99.1 — Q3 FY2026 Earnings Release (12 &amp; 40 weeks ended 2026-07-05, filed 2026-08-12) (Verified 2026-11-26)">SRC-18</a></td>
+        </tr>
+        <tr>
+          <td class="mono"><strong>LS-03</strong></td>
+          <td><a href="lease.html">Lease &amp; Notice</a></td>
+          <td><strong>Tenant Entity &amp; Lease Guarantor (JACK Corporate vs. Franchisee LLC)</strong></td>
+          <td><span class="badge badge-unverified">unverified</span></td>
+          <td>Verify named tenant, corporate guaranty/master lease status, assignment release language, and franchisee store count.</td>
+          <td><a class="src-link" href="https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm" target="_blank" rel="noopener noreferrer" title="U.S. Securities and Exchange Commission (SEC EDGAR) — Jack in the Box Inc. Form 8-K Exhibit 99.1 — Q3 FY2026 Earnings Release (12 &amp; 40 weeks ended 2026-07-05, filed 2026-08-12) (Verified 2026-11-26)">SRC-18</a></td>
+        </tr>
+        <tr>
+          <td class="mono"><strong>LS-04</strong></td>
+          <td><a href="lease.html">Lease &amp; Notice</a></td>
+          <td><strong>Current Base Rent, Percentage Rent &amp; Escalation Schedule</strong></td>
+          <td><span class="badge badge-unverified">unverified</span></td>
+          <td>Reconcile rent ledger against lease schedule, CPI caps/floors, and any historical COVID/deferral amendments.</td>
+          <td><a class="src-link" href="https://www.bls.gov/eag/eag.ca_losangeles_md.htm" target="_blank" rel="noopener noreferrer" title="U.S. Bureau of Labor Statistics (BLS) — Los Angeles-Long Beach-Glendale, CA — Economy at a Glance (Oct 2026 prelim; extracted 2026-11-20) (Verified 2026-11-26)">SRC-01</a></td>
+        </tr>
+        <tr>
+          <td class="mono"><strong>LS-05</strong></td>
+          <td><a href="lease.html">Lease &amp; Notice</a></td>
+          <td><strong>Option Period Rent Reset Formula (Fixed Bump vs. Fair Market Value)</strong></td>
+          <td><span class="badge badge-unverified">unverified</span></td>
+          <td>Check whether FMV has a floor (&#x27;not less than prior rent&#x27;) and whether baseball arbitration applies.</td>
+          <td><a class="src-link" href="https://fred.stlouisfed.org/data/DGS10.txt" target="_blank" rel="noopener noreferrer" title="Board of Governors of the Federal Reserve System (via FRED) — H.15 Market Yield on U.S. Treasury Securities at 10-Year Constant Maturity (Series DGS10) (Verified 2026-11-26)">SRC-04</a></td>
+        </tr>
+        <tr>
+          <td class="mono"><strong>LS-06</strong></td>
+          <td><a href="lease.html">Lease &amp; Notice</a></td>
+          <td><strong>NNN Expense Recovery &amp; Landlord Capex Carve-Outs (Roof, Structure, Parking)</strong></td>
+          <td><span class="badge badge-unverified">unverified</span></td>
+          <td>Verify who repairs/replaces roof, HVAC, parking lot, grease trap, ADA upgrades, and seismic retrofits.</td>
+          <td><a class="src-link" href="https://www.conservation.ca.gov/cgs/geohazards/eq-zapp" target="_blank" rel="noopener noreferrer" title="California Geological Survey (CGS) — EQ Zapp — California Earthquake Hazards Zone Application (Alquist-Priolo Fault, Liquefaction &amp; Landslide Zones) (Verified 2026-11-26)">SRC-32</a></td>
+        </tr>
+        <tr>
+          <td class="mono"><strong>LS-07</strong></td>
+          <td><a href="lease.html">Lease &amp; Notice</a></td>
+          <td><strong>Prop 13 Reassessment Pass-Through &amp; Tax Appeal Cooperation</strong></td>
+          <td><span class="badge badge-unverified">unverified</span></td>
+          <td>Confirm whether tenant pays 100% of reassessed real property taxes upon sale or has a Prop 13 protection cap.</td>
+          <td><a class="src-link" href="https://assessor.lacounty.gov/decline-in-value-application/" target="_blank" rel="noopener noreferrer" title="California State Board of Equalization (BOE) &amp; LA County Assessor — Publication 29 (Prop 13 Property Tax Overview) &amp; LA County Assessor Decline-in-Value (Prop 8) 2026 Filing Window (Verified 2026-11-26)">SRC-29</a></td>
+        </tr>
+        <tr>
+          <td class="mono"><strong>LS-08</strong></td>
+          <td><a href="lease.html">Lease &amp; Notice</a></td>
+          <td><strong>Store Sales Reporting &amp; Co-Tenancy / Go-Dark Rights</strong></td>
+          <td><span class="badge badge-unverified">unverified</span></td>
+          <td>Check whether tenant must submit annual certified gross sales; inspect continuous-operation and recapture clauses.</td>
+          <td><a class="src-link" href="https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm" target="_blank" rel="noopener noreferrer" title="U.S. Securities and Exchange Commission (SEC EDGAR) — Jack in the Box Inc. Form 8-K Exhibit 99.1 — Q3 FY2026 Earnings Release (12 &amp; 40 weeks ended 2026-07-05, filed 2026-08-12) (Verified 2026-11-26)">SRC-18</a></td>
+        </tr>
+        <tr>
+          <td class="mono"><strong>LS-09</strong></td>
+          <td><a href="lease.html">Lease &amp; Notice</a></td>
+          <td><strong>Tenant ROFR / ROFO (Right of First Refusal / Offer)</strong></td>
+          <td><span class="badge badge-unverified">unverified</span></td>
+          <td>Review purchase-option, ROFR, and ROFO provisions and notice timelines verbatim.</td>
+          <td><a class="src-link" href="https://www.irs.gov/pub/irs-prior/i8824--2026.pdf" target="_blank" rel="noopener noreferrer" title="Internal Revenue Service (IRS) — 2026 Instructions for Form 8824 — Like-Kind Exchanges (IRC §1031) (Verified 2026-11-26)">SRC-26</a></td>
+        </tr>
+        <tr>
+          <td class="mono"><strong>LS-10</strong></td>
+          <td><a href="lease.html">Lease &amp; Notice</a></td>
+          <td><strong>Casualty, Earthquake Insurance &amp; Condemnation Termination Clauses</strong></td>
+          <td><span class="badge badge-unverified">unverified</span></td>
+          <td>Cross-check lease insurance requirements against actual tenant COI and CDI commercial market limits.</td>
+          <td><a class="src-link" href="https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones" target="_blank" rel="noopener noreferrer" title="CAL FIRE (OSFM) &amp; California Department of Insurance (CDI) — Fire Hazard Severity Zones (2025 LRA / 2026 SRA Update) &amp; CDI Sustainable Insurance Strategy / FAIR Plan Order 2026-2 (Verified 2026-11-26)">SRC-34</a></td>
+        </tr>
+        <tr>
+          <td class="mono"><strong>LS-11</strong></td>
+          <td><a href="lease.html">Lease &amp; Notice</a></td>
+          <td><strong>Environmental Indemnity &amp; Drive-Thru / Signage Use Restrictions</strong></td>
+          <td><span class="badge badge-unverified">unverified</span></td>
+          <td>Audit environmental indemnity + City of LA zoning/CUP conditions for drive-thru abandonment periods.</td>
+          <td><a class="src-link" href="https://ladot.lacity.gov/residents/traffic-counts" target="_blank" rel="noopener noreferrer" title="Los Angeles Department of Transportation (LADOT) — LADOT Traffic Counts Program &amp; NavigateLA Data Repository (Verified 2026-11-26)">SRC-10</a></td>
+        </tr>
+        <tr>
+          <td class="mono"><strong>LS-12</strong></td>
+          <td><a href="lease.html">Lease &amp; Notice</a></td>
+          <td><strong>Existing Debt Maturity, Prepayment Penalty &amp; Assumability</strong></td>
+          <td><span class="badge badge-unverified">unverified</span></td>
+          <td>Pull promissory note, payoff quote, and maturity/prepayment schedule offline.</td>
+          <td><a class="src-link" href="https://fred.stlouisfed.org/data/DGS10.txt" target="_blank" rel="noopener noreferrer" title="Board of Governors of the Federal Reserve System (via FRED) — H.15 Market Yield on U.S. Treasury Securities at 10-Year Constant Maturity (Series DGS10) (Verified 2026-11-26)">SRC-04</a></td>
+        </tr>
+        <tr>
+          <td class="mono"><strong>TP-01</strong></td>
+          <td><a href="trade-area.html">W-01 Trade Area</a></td>
+          <td><strong>1-Mile / 3-Mile / 5-Mile Ring Population, Households &amp; Median Income (ACS 5-Yr Tracts)</strong></td>
+          <td><span class="badge badge-unverified">unverified</span></td>
+          <td>Run offline on exact parcel lat/lon via Census ACS API or TIGERweb; do NOT substitute any legacy downtown proxy ZIP.</td>
+          <td><a class="src-link" href="https://fred.stlouisfed.org/graph/fredgraph.csv?id=MHICA06037A052NCEN" target="_blank" rel="noopener noreferrer" title="U.S. Census Bureau — SAIPE (via FRED) — Estimate of Median Household Income for Los Angeles County, CA (Series MHICA06037A052NCEN, 1989–2024) (Verified 2026-11-26)">SRC-07</a></td>
+        </tr>
+        <tr>
+          <td class="mono"><strong>TP-02</strong></td>
+          <td><a href="trade-area.html">W-01 Trade Area</a></td>
+          <td><strong>Frontage Arterial Average Daily Traffic (ADT) &amp; Ingress/Egress Turn Movements</strong></td>
+          <td><span class="badge badge-unverified">unverified</span></td>
+          <td>Query LADOT NavigateLA for frontage intersection; order new count if data is &gt;2 years old.</td>
+          <td><a class="src-link" href="https://ladot.lacity.gov/residents/traffic-counts" target="_blank" rel="noopener noreferrer" title="Los Angeles Department of Transportation (LADOT) — LADOT Traffic Counts Program &amp; NavigateLA Data Repository (Verified 2026-11-26)">SRC-10</a></td>
+        </tr>
+        <tr>
+          <td class="mono"><strong>TP-03</strong></td>
+          <td><a href="trade-area.html">W-01 Trade Area</a></td>
+          <td><strong>Underlying Zoning, TOC Tier, Lot Size &amp; Drive-Thru Entitlement Grandfathered Status</strong></td>
+          <td><span class="badge badge-unverified">unverified</span></td>
+          <td>Check City of LA ZIMAS privately — existing grandfathered drive-thru permits are scarce and raise residual land value.</td>
+          <td><a class="src-link" href="https://dot.ca.gov/programs/traffic-operations/census" target="_blank" rel="noopener noreferrer" title="California Department of Transportation (Caltrans) — Traffic Census Program — State Highway AADT &amp; Truck Volumes (through 2024) (Verified 2026-11-26)">SRC-09</a></td>
+        </tr>
+        <tr>
+          <td class="mono"><strong>TP-04</strong></td>
+          <td><a href="trade-area.html">W-01 Trade Area</a></td>
+          <td><strong>Direct QSR Competitor Map &amp; Adjacent Development Pipeline (1-Mile Radius)</strong></td>
+          <td><span class="badge badge-unverified">unverified</span></td>
+          <td>Map competing burger/taco/chicken drive-thrus and planned multifamily infill near parcel offline.</td>
+          <td><a class="src-link" href="https://dof.ca.gov/media/docs/forecasting/demographics/estimates/e-1_2026_press_release.Pdf" target="_blank" rel="noopener noreferrer" title="California Department of Finance (DOF) — E-1 Cities, Counties, and the State Population and Housing Estimates (Jan 1, 2026 Press Release, May 1, 2026) (Verified 2026-11-26)">SRC-03</a></td>
+        </tr>
+        <tr>
+          <td class="mono"><strong>TN-01</strong></td>
+          <td><a href="tenant.html">Operator (JACK)</a></td>
+          <td><strong>PARCEL-001 Actual Trailing 3-Year Store Gross Sales &amp; Rent-to-Sales Ratio</strong></td>
+          <td><span class="badge badge-unverified">unverified</span></td>
+          <td>A strong Central LA urban drive-thru can dramatically outperform system averages—or sit on JACK&#x27;s closure list if occupancy cost exceeds 10–12%.</td>
+          <td><a class="src-link" href="https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm" target="_blank" rel="noopener noreferrer" title="U.S. Securities and Exchange Commission (SEC EDGAR) — Jack in the Box Inc. Form 8-K Exhibit 99.1 — Q3 FY2026 Earnings Release (12 &amp; 40 weeks ended 2026-07-05, filed 2026-08-12) (Verified 2026-11-26)">SRC-18</a></td>
+        </tr>
+        <tr>
+          <td class="mono"><strong>TN-02</strong></td>
+          <td><a href="tenant.html">Operator (JACK)</a></td>
+          <td><strong>Entity on Lease (Corporate Master Lease vs. Franchisee SPE) &amp; Franchisee Unit Count</strong></td>
+          <td><span class="badge badge-unverified">unverified</span></td>
+          <td>JACK&#x27;s 40-week franchise rental revenue drop (-6.8%) and higher franchisee bad-debt expense underscore counterparty separation risk.</td>
+          <td><a class="src-link" href="https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm" target="_blank" rel="noopener noreferrer" title="U.S. Securities and Exchange Commission (SEC EDGAR) — Jack in the Box Inc. Form 8-K Exhibit 99.1 — Q3 FY2026 Earnings Release (12 &amp; 40 weeks ended 2026-07-05, filed 2026-08-12) (Verified 2026-11-26)">SRC-18</a></td>
+        </tr>
+        <tr>
+          <td class="mono"><strong>TN-03</strong></td>
+          <td><a href="tenant.html">Operator (JACK)</a></td>
+          <td><strong>Remodel / Image-Upgrade Obligation Status (CRAVE / Modernized Drive-Thru)</strong></td>
+          <td><span class="badge badge-unverified">unverified</span></td>
+          <td>Tenant willingness to invest capital in a remodel is a strong revealed preference signal for renewal intent.</td>
+          <td><a class="src-link" href="https://www.sec.gov/Archives/edgar/data/807882/000080788226000066/ex991-q226earningsrelease.htm" target="_blank" rel="noopener noreferrer" title="U.S. Securities and Exchange Commission (SEC EDGAR) — Jack in the Box Inc. Form 8-K Exhibit 99.1 — Q2 FY2026 Earnings Release (12 weeks ended 2026-04-12, filed 2026-05-13) (Verified 2026-11-26)">SRC-16</a></td>
+        </tr>
+        <tr>
+          <td class="mono"><strong>QT-01</strong></td>
+          <td><a href="valuation.html">W-02 Tax &amp; Quotes</a></td>
+          <td><strong>Short Term: 3 Years Remaining (Unrenewed)</strong></td>
+          <td><span class="badge badge-unverified">unverified</span></td>
+          <td>Blank until 3 dated Central LA QSR broker BOVs &amp; lender quotes are logged. Typical institutional NNN lenders balk under 5 yrs WALT.</td>
+          <td><a class="src-link" href="https://fred.stlouisfed.org/data/DGS10.txt" target="_blank" rel="noopener noreferrer" title="Board of Governors of the Federal Reserve System (via FRED) — H.15 Market Yield on U.S. Treasury Securities at 10-Year Constant Maturity (Series DGS10) (Verified 2026-11-26)">SRC-04</a></td>
+        </tr>
+        <tr>
+          <td class="mono"><strong>QT-02</strong></td>
+          <td><a href="valuation.html">W-02 Tax &amp; Quotes</a></td>
+          <td><strong>Short-Mid Term: 5 Years Remaining</strong></td>
+          <td><span class="badge badge-unverified">unverified</span></td>
+          <td>Key inflection bucket relative to 2030–2035 expiry window and 4.91% 10-Yr Treasury anchor.</td>
+          <td><a class="src-link" href="https://fred.stlouisfed.org/data/DGS10.txt" target="_blank" rel="noopener noreferrer" title="Board of Governors of the Federal Reserve System (via FRED) — H.15 Market Yield on U.S. Treasury Securities at 10-Year Constant Maturity (Series DGS10) (Verified 2026-11-26)">SRC-04</a></td>
+        </tr>
+        <tr>
+          <td class="mono"><strong>QT-03</strong></td>
+          <td><a href="valuation.html">W-02 Tax &amp; Quotes</a></td>
+          <td><strong>Mid Term: 7 Years Remaining</strong></td>
+          <td><span class="badge badge-unverified">unverified</span></td>
+          <td>Tests whether selling slightly earlier preserves a wider 1031 exchange buyer pool before the 5-year cliff.</td>
+          <td><a class="src-link" href="https://www.irs.gov/pub/irs-prior/i8824--2026.pdf" target="_blank" rel="noopener noreferrer" title="Internal Revenue Service (IRS) — 2026 Instructions for Form 8824 — Like-Kind Exchanges (IRC §1031) (Verified 2026-11-26)">SRC-26</a></td>
+        </tr>
+        <tr>
+          <td class="mono"><strong>QT-04</strong></td>
+          <td><a href="valuation.html">W-02 Tax &amp; Quotes</a></td>
+          <td><strong>Renewed / Blend-and-Extend: 10–15 Years Remaining</strong></td>
+          <td><span class="badge badge-unverified">unverified</span></td>
+          <td>Quantifies cap-rate compression upside if owner negotiates a 10–15 yr extension before marketing the asset.</td>
+          <td><a class="src-link" href="https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm" target="_blank" rel="noopener noreferrer" title="U.S. Securities and Exchange Commission (SEC EDGAR) — Jack in the Box Inc. Form 8-K Exhibit 99.1 — Q3 FY2026 Earnings Release (12 &amp; 40 weeks ended 2026-07-05, filed 2026-08-12) (Verified 2026-11-26)">SRC-18</a></td>
+        </tr>
+        <tr>
+          <td class="mono"><strong>QT-05</strong></td>
+          <td><a href="valuation.html">W-02 Tax &amp; Quotes</a></td>
+          <td><strong>Vacant / Residual Land &amp; Grandfathered Drive-Thru Value</strong></td>
+          <td><span class="badge badge-unverified">unverified</span></td>
+          <td>Sets downside floor value if JACK does not renew (compares re-tenanting to rival QSR vs. infill multifamily land value).</td>
+          <td><a class="src-link" href="https://dof.ca.gov/media/docs/forecasting/demographics/estimates/e-1_2026_press_release.Pdf" target="_blank" rel="noopener noreferrer" title="California Department of Finance (DOF) — E-1 Cities, Counties, and the State Population and Housing Estimates (Jan 1, 2026 Press Release, May 1, 2026) (Verified 2026-11-26)">SRC-03</a></td>
+        </tr>
+        <tr>
+          <td class="mono"><strong>HP-01</strong></td>
+          <td><a href="hazards.html">W-04 Hazards</a></td>
+          <td><strong>USGS ASCE 7-22 Site-Specific Spectral Values (Ss, S1, Site Class) &amp; Seismic PML</strong></td>
+          <td><span class="badge badge-unverified">unverified</span></td>
+          <td>Run offline on parcel lat/lon + structural engineer seismic PML screening if building is pre-1994 or URM/non-ductile concrete.</td>
+          <td><a class="src-link" href="https://earthquake.usgs.gov/fdsnws/event/1/count?format=geojson&amp;starttime=1990-01-01&amp;endtime=2026-11-26&amp;latitude=34.0522&amp;longitude=-118.2437&amp;maxradiuskm=50&amp;minmagnitude=4.5" target="_blank" rel="noopener noreferrer" title="U.S. Geological Survey (USGS) — FDSN Earthquake Event Count API (M&gt;=4.5 within 50 km of Central LA, 1990-01-01 to 2026-11-26) &amp; ASCE 7-22 Design Maps (Verified 2026-11-26)">SRC-31</a></td>
+        </tr>
+        <tr>
+          <td class="mono"><strong>HP-02</strong></td>
+          <td><a href="hazards.html">W-04 Hazards</a></td>
+          <td><strong>CGS EQ Zapp — Alquist-Priolo Fault, Liquefaction &amp; Landslide Zone Status</strong></td>
+          <td><span class="badge badge-unverified">unverified</span></td>
+          <td>Query CGS EQ Zapp offline using parcel address/APN and save PDF map to private diligence folder.</td>
+          <td><a class="src-link" href="https://www.conservation.ca.gov/cgs/geohazards/eq-zapp" target="_blank" rel="noopener noreferrer" title="California Geological Survey (CGS) — EQ Zapp — California Earthquake Hazards Zone Application (Alquist-Priolo Fault, Liquefaction &amp; Landslide Zones) (Verified 2026-11-26)">SRC-32</a></td>
+        </tr>
+        <tr>
+          <td class="mono"><strong>HP-03</strong></td>
+          <td><a href="hazards.html">W-04 Hazards</a></td>
+          <td><strong>FEMA National Flood Hazard Layer (NFHL / FIRM Panel &amp; Flood Zone)</strong></td>
+          <td><span class="badge badge-unverified">unverified</span></td>
+          <td>Pull official FIRMette from FEMA Map Service Center (msc.fema.gov); confirm urban stormwater/drainage history.</td>
+          <td><a class="src-link" href="https://www.fema.gov/api/open/v2/DisasterDeclarationsSummaries?$filter=state%20eq%20%27CA%27%20and%20fipsCountyCode%20eq%20%27037%27&amp;$inlinecount=allpages&amp;$top=1" target="_blank" rel="noopener noreferrer" title="Federal Emergency Management Agency (FEMA — OpenFEMA v2 &amp; NFHL) — OpenFEMA Disaster Declarations Summaries — Los Angeles County (FIPS 06037) &amp; National Flood Hazard Layer (Verified 2026-11-26)">SRC-33</a></td>
+        </tr>
+        <tr>
+          <td class="mono"><strong>HP-04</strong></td>
+          <td><a href="hazards.html">W-04 Hazards</a></td>
+          <td><strong>CAL FIRE 2025 LRA FHSZ Status &amp; Smoke / Utility PSPS Exposure</strong></td>
+          <td><span class="badge badge-unverified">unverified</span></td>
+          <td>Check CAL FIRE LRA FHSZ viewer privately; verify tenant business-interruption / civil-authority coverage wording.</td>
+          <td><a class="src-link" href="https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones" target="_blank" rel="noopener noreferrer" title="CAL FIRE (OSFM) &amp; California Department of Insurance (CDI) — Fire Hazard Severity Zones (2025 LRA / 2026 SRA Update) &amp; CDI Sustainable Insurance Strategy / FAIR Plan Order 2026-2 (Verified 2026-11-26)">SRC-34</a></td>
+        </tr>
+        <tr>
+          <td class="mono"><strong>HP-05</strong></td>
+          <td><a href="hazards.html">W-04 Hazards</a></td>
+          <td><strong>Actual Commercial Property, Earthquake &amp; Loss-of-Rent Insurance Quotes + Deductibles</strong></td>
+          <td><span class="badge badge-unverified">unverified</span></td>
+          <td>Verify tenant&#x27;s current COI vs. lease obligations; quote standalone DIC/Earthquake (typical 5%–15% deductible) &amp; carrier non-renewal exposure.</td>
+          <td><a class="src-link" href="https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones" target="_blank" rel="noopener noreferrer" title="CAL FIRE (OSFM) &amp; California Department of Insurance (CDI) — Fire Hazard Severity Zones (2025 LRA / 2026 SRA Update) &amp; CDI Sustainable Insurance Strategy / FAIR Plan Order 2026-2 (Verified 2026-11-26)">SRC-34</a></td>
+        </tr>
+        <tr>
+          <td class="mono"><strong>HP-06</strong></td>
+          <td><a href="hazards.html">W-04 Hazards</a></td>
+          <td><strong>Phase I Environmental (ESA) &amp; Property Condition Assessment (PCA)</strong></td>
+          <td><span class="badge badge-unverified">unverified</span></td>
+          <td>Check historical gas-station/dry-cleaner adjacency, grease-trap integrity, roof remaining useful life, HVAC age, and ADA compliance.</td>
+          <td><a class="src-link" href="https://www.conservation.ca.gov/cgs/geohazards/eq-zapp" target="_blank" rel="noopener noreferrer" title="California Geological Survey (CGS) — EQ Zapp — California Earthquake Hazards Zone Application (Alquist-Priolo Fault, Liquefaction &amp; Landslide Zones) (Verified 2026-11-26)">SRC-32</a></td>
+        </tr>
+        <tr>
+          <td class="mono"><strong>OA-05</strong></td>
+          <td><a href="model.html">Model &amp; Back-Test</a></td>
+          <td><strong>Current Annual NOI, Remaining Lease Term, Adjusted Tax Basis &amp; Debt Payoff</strong></td>
+          <td><span class="badge badge-unverified">unverified</span></td>
+          <td>Must be entered by owner in hub/calculator.html; never guessed or pre-filled with fake numbers.</td>
+          <td><a class="src-link" href="https://www.irs.gov/pub/irs-prior/i8824--2026.pdf" target="_blank" rel="noopener noreferrer" title="Internal Revenue Service (IRS) — 2026 Instructions for Form 8824 — Like-Kind Exchanges (IRC §1031) (Verified 2026-11-26)">SRC-26</a></td>
+        </tr>
+        <tr>
+          <td class="mono"><strong>OA-06</strong></td>
+          <td><a href="model.html">Model &amp; Back-Test</a></td>
+          <td><strong>Sale Cap Rate Today, Renewal Rent Reset %, Exit Cap Rate at Horizon, Discount Rate &amp; Vacancy Months</strong></td>
+          <td><span class="badge badge-unverified">unverified</span></td>
+          <td>User-supplied sensitivity inputs; must be bracketed by 3 written broker BOVs (Gate G-08) before decision.</td>
+          <td><a class="src-link" href="https://fred.stlouisfed.org/data/DGS10.txt" target="_blank" rel="noopener noreferrer" title="Board of Governors of the Federal Reserve System (via FRED) — H.15 Market Yield on U.S. Treasury Securities at 10-Year Constant Maturity (Series DGS10) (Verified 2026-11-26)">SRC-04</a></td>
+        </tr></tbody>
+        </table>
+      </div>
+    </section>
+    
+  </main>
+
+  <footer class="site-footer">
+    <div>Independent Advisory Verification Workspace (S-a293043a) · Static HTML/CSS/JS · Zero Analytics, Zero Cookies, Zero Telemetry.</div>
+    <div><a href="summary.html">Printable One-Page Summary</a> · <a href="flagged.html">Flagged Repo Audit</a> · <a href="../index.html">Back to Root Portal</a></div>
+  </footer>
+  
+</body>
+</html>

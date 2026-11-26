@@ -2,7 +2,7 @@
   "meta": {
     "dataset": "model",
     "version": "v0.1-unbacktested-core",
-    "as_of": "2026-11-25",
+    "as_of": "2026-11-26",
     "owner_session": "ses-41ea221b",
     "task": "Create a versioned, cash-flow model and back-test it when verified inputs and comparable history exist; distinguish observations from assumptions",
     "version_policy": "Any change to an assumption changes the version string. Observations do not bump the version unless the source vintage changes. This model is v0.1 because no property-level input exists yet; only the macro engine is built and tested.",
@@ -55,8 +55,8 @@
     },
     {
       "id": "OB-06",
-      "statement": "The 10-year Treasury yielded 4.92% on 2026-11-23, after ranging 4.84% to 5.15% during November 2026.",
-      "value": 4.92,
+      "statement": "The 10-year Treasury yielded 4.91% on 2026-11-24 (4.92% on 2026-11-23), after ranging 4.84% to 5.15% during November 2026.",
+      "value": 4.91,
       "unit": "percent",
       "status": "observation",
       "source_id": "S-004"
@@ -100,7 +100,7 @@
       "Seven pairs is a very small sample. A 100% direction hit rate on seven observations is suggestive, not proof.",
       "The index is metro-wide and weighted toward residential transactions. It cannot price a QSR pad and must not be used as the property's appreciation rate.",
       "Overlapping windows are not independent, which overstates the apparent statistical strength.",
-      "The sample covers one interest-rate regime ending at 4.92% on the 10-year. A different rate regime could break the pattern."
+      "The sample covers one interest-rate regime ending at 4.91% on the 10-year. A different rate regime could break the pattern."
     ],
     "conclusion": "The macro engine passes its back-test for the purpose it is actually used for: refusing to extrapolate. It does not, and cannot, produce a property-level forecast."
   },
@@ -120,7 +120,7 @@
       "value": null,
       "unit": "percent",
       "status": "assumption-slot",
-      "justification": "4.92% is verified. The premium is not, so it has no default and the calculator will not run until the reader supplies one."
+      "justification": "4.91% (2026-11-24) is verified. The premium is not, so it has no default and the calculator will not run until the reader supplies one."
     },
     {
       "id": "AS-03",

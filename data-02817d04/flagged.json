@@ -18,9 +18,9 @@
     {
       "id": "RA-02",
       "tree": "/docs/ dashboard + .github/workflows/pages.yml",
-      "owner_sessions": "arena-f5a16939 + ee4cc19f",
+      "owner_sessions": "arena-f5a16939 + ee4cc19f + arena-d325275f",
       "validator_run": "Included in repo-wide internal link & privacy check",
-      "audit_finding": "Cites Census Vintage 2024 LA City population (3,878,704) and Sept 2025 EDD unemployment (5.9% NSA) — official for those earlier vintages, but non-comparable to DOF Jan 1, 2026 (3,806,201) and BLS Oct 2026 MD (4.6%p). Also .github/workflows/pages.yml uploads path: docs only (currently disabled_manually so legacy main:/ root build serves all trees).",
+      "audit_finding": "Cites Census Vintage 2024 LA City population (3,878,704) and Sept 2025 EDD unemployment (5.9% NSA) — official for those earlier vintages, but non-comparable to DOF Jan 1, 2026 (3,806,201) and BLS Oct 2026 MD (4.6%p). Note: .github/workflows/pages.yml was updated on 2026-11-26 (arena-d325275f) from path: docs to path: . while remaining disabled_manually under legacy main:/ Pages.",
       "status": "verified",
       "source_id": "SRC-37"
     },
@@ -75,6 +75,15 @@
       "owner_sessions": "arena-8c9d9d97",
       "validator_run": "Preserved archive (8 pages, bannered)",
       "audit_finding": "Historical initial build retained per non-deletion rule; contains generic 'Official reference' links on some process rows (previously flagged as F-11) and carries a banner directing readers to newer verified workspaces.",
+      "status": "verified",
+      "source_id": "SRC-37"
+    },
+    {
+      "id": "RA-09",
+      "tree": "/hub/ + hub/scripts/verify.py",
+      "owner_sessions": "S-a293043a",
+      "validator_run": "python3 hub/scripts/verify.py → PASS (15 pages, 34 sources, 243 table rows, 382 relative links)",
+      "audit_finding": "Merged on 2026-11-26; includes 15 static pages, calculator, and full 207-quarter FHFA HPI series analysis alongside 34 official sources.",
       "status": "verified",
       "source_id": "SRC-37"
     }
@@ -181,8 +190,8 @@
     {
       "id": "FLG-15",
       "severity": "Repo / Deploy Governance",
-      "title": "Public GitHub repo is NOT an access-controlled workspace + multiple parallel trees & disabled docs-only workflow",
-      "detail": "Keep all private files offline. Also note .github/workflows/pages.yml uploads path: docs only (currently disabled_manually so legacy main:/ serves all trees); if Actions Pages is ever re-enabled, path must be '.' (root).",
+      "title": "Public GitHub repo is NOT an access-controlled workspace + multiple parallel session trees",
+      "detail": "Keep all private files offline. Legacy GitHub Pages serves repository root (main:/); .github/workflows/pages.yml was patched to path: . on 2026-11-26 and remains disabled_manually so legacy root builds serve every session tree.",
       "source_id": "SRC-37"
     }
   ]

@@ -1,8 +1,8 @@
 {
   "meta": {
     "dataset": "quotes",
-    "version": "1.0",
-    "as_of": "2026-11-25",
+    "version": "1.1",
+    "as_of": "2026-11-26",
     "owner_session": "ses-41ea221b",
     "task": "Price the short-lease discount from real quotes",
     "hard_rule": "This dataset contains NO cap rates. Not one. No official federal, state or county source publishes single-tenant QSR cap rates, and this session did not obtain broker quotes. Every quote row is therefore null and flagged. Inventing a cap rate here would silently drive the entire sell-versus-hold answer, which is exactly the failure mode the owner asked to avoid."
@@ -57,7 +57,7 @@
       "unit": "rate and LTV",
       "date": null,
       "status": "unverified",
-      "why_missing": "Needed to establish the spread over the 10-year Treasury anchor (VA-01 at 4.92%). Without it the hold-side refinancing assumption floats free."
+      "why_missing": "Needed to establish the spread over the 10-year Treasury anchor (VA-01 at 4.91%). Without it the hold-side refinancing assumption floats free."
     },
     {
       "id": "Q-06",
@@ -82,11 +82,11 @@
     {
       "id": "Q-07",
       "what": "Risk-free anchor available for spread construction",
-      "value": 4.92,
-      "unit": "percent, 10-year Treasury, 2026-11-23",
+      "value": 4.91,
+      "unit": "percent, 10-year Treasury, 2026-11-24 (4.92% on 2026-11-23)",
       "status": "verified",
       "source_id": "S-004",
-      "note": "This is the only verified input on this page. Every cap-rate quote has to be expressed as a spread over it so the assumption is visible."
+      "note": "This is the only verified rate anchor on this page. Every cap-rate quote has to be expressed as a spread over it so the assumption is visible."
     },
     {
       "id": "Q-08",

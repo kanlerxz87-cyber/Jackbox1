@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>W-04 Hazards &amp; Insurance — Central LA NNN QSR Decision Hub</title>
+  <link rel="stylesheet" href="assets/css/hub.css">
+</head>
+<body>
+  <div class="privacy-bar">
+    <div><strong>PRIVACY FIREWALL ACTIVE (PARCEL-001):</strong> Zero street address, APN, owner identity, lease rent, store sales, or tax basis appear in this public repository.</div>
+    <div>As of <strong>2026-11-26</strong> · <a href="../index.html">Repository Portal</a> · <a href="sources.html">34 Official Sources</a></div>
+  </div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand-row">
+        <div class="brand-title"><a href="index.html">Central LA NNN QSR — Independent Decision Hub</a></div>
+        <div class="brand-meta">
+          <span class="badge badge-low">OPEN — NO WINNER DECLARED</span>
+          <span class="badge badge-low">Model v0.1-audit</span>
+          <span>Verified 2026-11-26</span>
+        </div>
+      </div>
+      <nav class="main-nav" aria-label="Primary sections">
+        <a href="index.html">Overview</a><a href="gates.html">W-03 Gates</a><a href="lease.html">Lease &amp; Notice</a><a href="trade-area.html">W-01 Trade Area</a><a href="tenant.html">Operator (JACK)</a><a href="valuation.html">W-02 Tax &amp; Quotes</a><a href="calculator.html">Calculator</a><a href="hazards.html" class="active">W-04 Hazards</a><a href="risks.html">BAU &amp; Tail Risks</a><a href="model.html">Model &amp; Back-Test</a><a href="questions.html">Questions</a><a href="suggestions.html">Suggestions</a><a href="flagged.html">Flagged</a><a href="summary.html">W-10 One-Pager</a><a href="sources.html">Sources</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="page-hero">
+      <h1>W-04 Parcel Hazard Screening, California Insurance Regime &amp; Compound Stress</h1>
+      <p class="lead">Directly verified USGS seismic counts, CGS statutory zones, OpenFEMA LA disaster history (including Jan 2025 wildfires), CAL FIRE 2025 LRA / 2026 SRA updates, and CDI FAIR Plan limits (sunsetting Dec 31, 2028).</p>
+      <div class="hero-tags"><span class="badge badge-low">28 M4.5+ Quakes Since 1990</span><span class="badge badge-low">88 LA FEMA Declarations</span><span class="badge badge-unverified">Parcel Maps Blank — Gate G-05</span></div>
+    </section>
+
+    
+    <section class="section">
+      <h2>Verified Regional Hazard &amp; California Insurance Regime (2026-11-26)</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>ID</th><th>Hazard / Insurance Peril</th><th>Status</th><th>Verified Official Metric</th><th>Underwriting Context</th><th>Official Source</th></tr>
+          </thead>
+          <tbody>
+        <tr>
+          <td class="mono"><strong>HZ-01</strong></td>
+          <td><strong>Regional Seismicity (M &gt;= 4.5 within 50 km of Central LA)</strong></td>
+          <td><span class="badge badge-verified">verified</span></td>
+          <td class="mono"><strong>28 events (1990-01-01 to 2026-11-26)</strong></td>
+          <td>Queried directly from USGS FDSN Event API (34.0522, -118.2437). Site-specific spectral accelerations (ASCE 7-22 Ss/S1) require private coordinates.</td>
+          <td><a class="src-link" href="https://earthquake.usgs.gov/fdsnws/event/1/count?format=geojson&amp;starttime=1990-01-01&amp;endtime=2026-11-26&amp;latitude=34.0522&amp;longitude=-118.2437&amp;maxradiuskm=50&amp;minmagnitude=4.5" target="_blank" rel="noopener noreferrer" title="U.S. Geological Survey (USGS) — FDSN Earthquake Event Count API (M&gt;=4.5 within 50 km of Central LA, 1990-01-01 to 2026-11-26) &amp; ASCE 7-22 Design Maps (Verified 2026-11-26)">SRC-31</a></td>
+        </tr>
+        <tr>
+          <td class="mono"><strong>HZ-02</strong></td>
+          <td><strong>Statutory Seismic Zones (Alquist-Priolo Fault / Liquefaction / Landslide)</strong></td>
+          <td><span class="badge badge-verified">verified</span></td>
+          <td class="mono"><strong>CGS EQ Zapp statutory zones active across LA Basin</strong></td>
+          <td>Fault rupture &amp; liquefaction zones trigger mandatory geotechnical/structural disclosures and dramatically raise PML &amp; seismic retrofit costs.</td>
+          <td><a class="src-link" href="https://www.conservation.ca.gov/cgs/geohazards/eq-zapp" target="_blank" rel="noopener noreferrer" title="California Geological Survey (CGS) — EQ Zapp — California Earthquake Hazards Zone Application (Alquist-Priolo Fault, Liquefaction &amp; Landslide Zones) (Verified 2026-11-26)">SRC-32</a></td>
+        </tr>
+        <tr>
+          <td class="mono"><strong>HZ-03</strong></td>
+          <td><strong>LA County Federal Disaster Declarations (All Hazards)</strong></td>
+          <td><span class="badge badge-verified">verified</span></td>
+          <td class="mono"><strong>88 declarations on record (OpenFEMA v2 through 2026-11-26)</strong></td>
+          <td>Includes DR-4856-CA (Jan 2025 Eaton &amp; Palisades Wildfires destroying 11,160 units), FM-5605 (Aug 2025 Canyon Fire), and 2023–24 atmospheric-river storm disasters (DR-4683, DR-4699, DR-4769).</td>
+          <td><a class="src-link" href="https://www.fema.gov/api/open/v2/DisasterDeclarationsSummaries?$filter=state%20eq%20%27CA%27%20and%20fipsCountyCode%20eq%20%27037%27&amp;$inlinecount=allpages&amp;$top=1" target="_blank" rel="noopener noreferrer" title="Federal Emergency Management Agency (FEMA — OpenFEMA v2 &amp; NFHL) — OpenFEMA Disaster Declarations Summaries — Los Angeles County (FIPS 06037) &amp; National Flood Hazard Layer (Verified 2026-11-26)">SRC-33</a></td>
+        </tr>
+        <tr>
+          <td class="mono"><strong>HZ-04</strong></td>
+          <td><strong>Wildfire Hazard Severity Zones (CAL FIRE OSFM)</strong></td>
+          <td><span class="badge badge-verified">verified</span></td>
+          <td class="mono"><strong>2025 LRA maps rolled out Feb–Mar 2025; 2026 SRA comment open Nov 9, 2026–Jan 8, 2027</strong></td>
+          <td>Updated Local Responsibility Area (LRA) maps expand VHFHSZ/HFHSZ disclosures and affect commercial property underwriting even near urban-interface edges.</td>
+          <td><a class="src-link" href="https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones" target="_blank" rel="noopener noreferrer" title="CAL FIRE (OSFM) &amp; California Department of Insurance (CDI) — Fire Hazard Severity Zones (2025 LRA / 2026 SRA Update) &amp; CDI Sustainable Insurance Strategy / FAIR Plan Order 2026-2 (Verified 2026-11-26)">SRC-34</a></td>
+        </tr>
+        <tr>
+          <td class="mono"><strong>HZ-05</strong></td>
+          <td><strong>California Commercial Property &amp; FAIR Plan Insurance Regime</strong></td>
+          <td><span class="badge badge-verified">verified</span></td>
+          <td class="mono"><strong>FAIR Plan commercial limit $20M/bldg ($100M/loc) eff. Jul 26, 2025; sunsets Dec 31, 2028</strong></td>
+          <td>CDI Order 2026-2 &amp; Sustainable Insurance Strategy (85% voluntary-market write rule) stabilize capacity, but FAIR Plan excludes earthquake, carries high deductibles/co-insurance, and faces a 2028 sunset.</td>
+          <td><a class="src-link" href="https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones" target="_blank" rel="noopener noreferrer" title="CAL FIRE (OSFM) &amp; California Department of Insurance (CDI) — Fire Hazard Severity Zones (2025 LRA / 2026 SRA Update) &amp; CDI Sustainable Insurance Strategy / FAIR Plan Order 2026-2 (Verified 2026-11-26)">SRC-34</a></td>
+        </tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>PARCEL-001 Engineering, Hazard Zone &amp; Insurance Screen (Intentionally Blank — Gate G-05)</h2>
+      <p class="section-intro">Every parcel-specific zone determination requires exact address/coordinates and must be executed offline using the linked statutory tools.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>ID</th><th>Parcel Diligence Item</th><th>Status</th><th>Parcel Result</th><th>Required Offline Verification Action</th><th>Tool / Source</th></tr>
+          </thead>
+          <tbody>
+        <tr>
+          <td class="mono"><strong>HP-01</strong></td>
+          <td><strong>USGS ASCE 7-22 Site-Specific Spectral Values (Ss, S1, Site Class) &amp; Seismic PML</strong></td>
+          <td><span class="badge badge-unverified">unverified</span></td>
+          <td><span class="blank-cell">BLANK — RUN ON PARCEL</span></td>
+          <td>Run offline on parcel lat/lon + structural engineer seismic PML screening if building is pre-1994 or URM/non-ductile concrete.</td>
+          <td><a class="src-link" href="https://earthquake.usgs.gov/fdsnws/event/1/count?format=geojson&amp;starttime=1990-01-01&amp;endtime=2026-11-26&amp;latitude=34.0522&amp;longitude=-118.2437&amp;maxradiuskm=50&amp;minmagnitude=4.5" target="_blank" rel="noopener noreferrer" title="U.S. Geological Survey (USGS) — FDSN Earthquake Event Count API (M&gt;=4.5 within 50 km of Central LA, 1990-01-01 to 2026-11-26) &amp; ASCE 7-22 Design Maps (Verified 2026-11-26)">SRC-31</a></td>
+        </tr>
+        <tr>
+          <td class="mono"><strong>HP-02</strong></td>
+          <td><strong>CGS EQ Zapp — Alquist-Priolo Fault, Liquefaction &amp; Landslide Zone Status</strong></td>
+          <td><span class="badge badge-unverified">unverified</span></td>
+          <td><span class="blank-cell">BLANK — RUN ON PARCEL</span></td>
+          <td>Query CGS EQ Zapp offline using parcel address/APN and save PDF map to private diligence folder.</td>
+          <td><a class="src-link" href="https://www.conservation.ca.gov/cgs/geohazards/eq-zapp" target="_blank" rel="noopener noreferrer" title="California Geological Survey (CGS) — EQ Zapp — California Earthquake Hazards Zone Application (Alquist-Priolo Fault, Liquefaction &amp; Landslide Zones) (Verified 2026-11-26)">SRC-32</a></td>
+        </tr>
+        <tr>
+          <td class="mono"><strong>HP-03</strong></td>
+          <td><strong>FEMA National Flood Hazard Layer (NFHL / FIRM Panel &amp; Flood Zone)</strong></td>
+          <td><span class="badge badge-unverified">unverified</span></td>
+          <td><span class="blank-cell">BLANK — RUN ON PARCEL</span></td>
+          <td>Pull official FIRMette from FEMA Map Service Center (msc.fema.gov); confirm urban stormwater/drainage history.</td>
+          <td><a class="src-link" href="https://www.fema.gov/api/open/v2/DisasterDeclarationsSummaries?$filter=state%20eq%20%27CA%27%20and%20fipsCountyCode%20eq%20%27037%27&amp;$inlinecount=allpages&amp;$top=1" target="_blank" rel="noopener noreferrer" title="Federal Emergency Management Agency (FEMA — OpenFEMA v2 &amp; NFHL) — OpenFEMA Disaster Declarations Summaries — Los Angeles County (FIPS 06037) &amp; National Flood Hazard Layer (Verified 2026-11-26)">SRC-33</a></td>
+        </tr>
+        <tr>
+          <td class="mono"><strong>HP-04</strong></td>
+          <td><strong>CAL FIRE 2025 LRA FHSZ Status &amp; Smoke / Utility PSPS Exposure</strong></td>
+          <td><span class="badge badge-unverified">unverified</span></td>
+          <td><span class="blank-cell">BLANK — RUN ON PARCEL</span></td>
+          <td>Check CAL FIRE LRA FHSZ viewer privately; verify tenant business-interruption / civil-authority coverage wording.</td>
+          <td><a class="src-link" href="https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones" target="_blank" rel="noopener noreferrer" title="CAL FIRE (OSFM) &amp; California Department of Insurance (CDI) — Fire Hazard Severity Zones (2025 LRA / 2026 SRA Update) &amp; CDI Sustainable Insurance Strategy / FAIR Plan Order 2026-2 (Verified 2026-11-26)">SRC-34</a></td>
+        </tr>
+        <tr>
+          <td class="mono"><strong>HP-05</strong></td>
+          <td><strong>Actual Commercial Property, Earthquake &amp; Loss-of-Rent Insurance Quotes + Deductibles</strong></td>
+          <td><span class="badge badge-unverified">unverified</span></td>
+          <td><span class="blank-cell">BLANK — RUN ON PARCEL</span></td>
+          <td>Verify tenant&#x27;s current COI vs. lease obligations; quote standalone DIC/Earthquake (typical 5%–15% deductible) &amp; carrier non-renewal exposure.</td>
+          <td><a class="src-link" href="https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones" target="_blank" rel="noopener noreferrer" title="CAL FIRE (OSFM) &amp; California Department of Insurance (CDI) — Fire Hazard Severity Zones (2025 LRA / 2026 SRA Update) &amp; CDI Sustainable Insurance Strategy / FAIR Plan Order 2026-2 (Verified 2026-11-26)">SRC-34</a></td>
+        </tr>
+        <tr>
+          <td class="mono"><strong>HP-06</strong></td>
+          <td><strong>Phase I Environmental (ESA) &amp; Property Condition Assessment (PCA)</strong></td>
+          <td><span class="badge badge-unverified">unverified</span></td>
+          <td><span class="blank-cell">BLANK — RUN ON PARCEL</span></td>
+          <td>Check historical gas-station/dry-cleaner adjacency, grease-trap integrity, roof remaining useful life, HVAC age, and ADA compliance.</td>
+          <td><a class="src-link" href="https://www.conservation.ca.gov/cgs/geohazards/eq-zapp" target="_blank" rel="noopener noreferrer" title="California Geological Survey (CGS) — EQ Zapp — California Earthquake Hazards Zone Application (Alquist-Priolo Fault, Liquefaction &amp; Landslide Zones) (Verified 2026-11-26)">SRC-32</a></td>
+        </tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Compound Stress Scenarios (Feed Directly Into Calculator Stress Inputs)</h2>
+      <p class="section-intro">Real-world real-estate tail losses are compound: physical/insurance disruption coincides with rent loss and widened exit cap rates. Test each scenario in <a href="calculator.html">hub/calculator.html</a>.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>ID</th><th>Compound Scenario</th><th>Trigger Mechanism</th><th>Cash-Flow &amp; Capital Impact</th><th>Owner Mitigation</th><th>Source</th></tr>
+          </thead>
+          <tbody>
+        <tr>
+          <td class="mono"><strong>CS-01</strong></td>
+          <td><strong>BAU Rate &amp; Short-Lease Repricing</strong></td>
+          <td>10-Yr Treasury stays &gt;= 5.0% while WALT slips below 5 years without renewal</td>
+          <td>Zero immediate rent loss, but buyer debt coverage shrinks and exit cap rate widens (+75 to +150 bps illustrative input in calculator).</td>
+          <td>Test early blend-and-extend before WALT falls under 5 years; verify broker quotes (Gate G-08).</td>
+          <td><a class="src-link" href="https://fred.stlouisfed.org/data/DGS10.txt" target="_blank" rel="noopener noreferrer" title="Board of Governors of the Federal Reserve System (via FRED) — H.15 Market Yield on U.S. Treasury Securities at 10-Year Constant Maturity (Series DGS10) (Verified 2026-11-26)">SRC-04</a></td>
+        </tr>
+        <tr>
+          <td class="mono"><strong>CS-02</strong></td>
+          <td><strong>Operator Closure + Re-Tenanting Downtime</strong></td>
+          <td>JACK or franchisee declines renewal amid negative SSS &amp; store-closure program</td>
+          <td>6–18 months zero rent + owner absorbs taxes/insurance/security + $150k–$400k+ TI/LC/re-image capex (user-entered in calculator).</td>
+          <td>Audit store sales early; preserve grandfathered drive-thru CUP; pre-market to competing QSR chains.</td>
+          <td><a class="src-link" href="https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm" target="_blank" rel="noopener noreferrer" title="U.S. Securities and Exchange Commission (SEC EDGAR) — Jack in the Box Inc. Form 8-K Exhibit 99.1 — Q3 FY2026 Earnings Release (12 &amp; 40 weeks ended 2026-07-05, filed 2026-08-12) (Verified 2026-11-26)">SRC-18</a></td>
+        </tr>
+        <tr>
+          <td class="mono"><strong>CS-03</strong></td>
+          <td><strong>Black-Swan Compound Seismic Shock (Central LA M6.5+)</strong></td>
+          <td>Major fault rupture / shaking damages building, utilities, and nearby corridors simultaneously</td>
+          <td>Rent abatement/termination clause triggered + uninsured 5–15% earthquake deductible or full structural loss (FAIR Plan excludes EQ) + frozen transaction market.</td>
+          <td>Verify lease casualty clause, confirm seismic PML &amp; DIC earthquake coverage, avoid over-leverage.</td>
+          <td><a class="src-link" href="https://earthquake.usgs.gov/fdsnws/event/1/count?format=geojson&amp;starttime=1990-01-01&amp;endtime=2026-11-26&amp;latitude=34.0522&amp;longitude=-118.2437&amp;maxradiuskm=50&amp;minmagnitude=4.5" target="_blank" rel="noopener noreferrer" title="U.S. Geological Survey (USGS) — FDSN Earthquake Event Count API (M&gt;=4.5 within 50 km of Central LA, 1990-01-01 to 2026-11-26) &amp; ASCE 7-22 Design Maps (Verified 2026-11-26)">SRC-31</a></td>
+        </tr>
+        <tr>
+          <td class="mono"><strong>CS-04</strong></td>
+          <td><strong>Wildfire / Smoke / FAIR Plan Sunset &amp; Insurance Shock</strong></td>
+          <td>Regional conflagration triggers utility shutoffs/smoke closures + carrier retreat ahead of Dec 31, 2028 FAIR Plan commercial sunset</td>
+          <td>Insurance premiums surge (straining franchisee NNN occupancy ratio) or lender declares insurance default.</td>
+          <td>Verify tenant policy endorsements, wildfire defensible space, and lender insurance covenants before renewal.</td>
+          <td><a class="src-link" href="https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones" target="_blank" rel="noopener noreferrer" title="CAL FIRE (OSFM) &amp; California Department of Insurance (CDI) — Fire Hazard Severity Zones (2025 LRA / 2026 SRA Update) &amp; CDI Sustainable Insurance Strategy / FAIR Plan Order 2026-2 (Verified 2026-11-26)">SRC-34</a></td>
+        </tr></tbody>
+        </table>
+      </div>
+    </section>
+    
+  </main>
+
+  <footer class="site-footer">
+    <div>Independent Advisory Verification Workspace (S-a293043a) · Static HTML/CSS/JS · Zero Analytics, Zero Cookies, Zero Telemetry.</div>
+    <div><a href="summary.html">Printable One-Page Summary</a> · <a href="flagged.html">Flagged Repo Audit</a> · <a href="../index.html">Back to Root Portal</a></div>
+  </footer>
+  
+</body>
+</html>

@@ -1,8 +1,8 @@
 {
   "meta": {
     "dataset": "lease",
-    "version": "1.0",
-    "as_of": "2026-11-25",
+    "version": "1.1",
+    "as_of": "2026-11-26",
     "owner_session": "ses-41ea221b",
     "task": "Private lease abstract + notice-calendar reconciliation",
     "privacy": "No landlord name, tenant legal entity, guarantor, signatory, address, APN or rent figure appearing in a private document is reproduced here. Only term structure and notice windows, which are what a decision calendar needs.",
@@ -192,7 +192,7 @@
       "window_open": "2026-07-02",
       "status": "verified",
       "source_id": "S-019",
-      "action": "This deadline is six days after the data cut-off of this report. If the assessed value exceeds market value, this is a live, dated opportunity to cut the property tax bill. It is the one action item on the calendar that is both verified and imminent."
+      "action": "This deadline is four days after the 2026-11-26 cut-off of this report. If the assessed value exceeds market value, this is a live, dated opportunity to cut the property tax bill. It is the one action item on the calendar that is both verified and imminent."
     },
     {
       "id": "NC-08",
@@ -219,6 +219,15 @@
       "status": "verified-rule",
       "source_id": "S-015",
       "action": "Selling with the intention to exchange but failing the 180-day rule converts a deferred gain into a fully taxable one."
+    },
+    {
+      "id": "NC-11",
+      "event": "Proposition 13 base-year assessment & 2% annual cap",
+      "date": "annual roll / on transfer",
+      "rule": "1% base property tax + voter-approved debt; max 2% annual inflation cap until change of ownership or new construction",
+      "status": "verified-rule",
+      "source_id": "S-031",
+      "action": "A long-held parcel carries a below-market Prop 13 tax shield that disappears for a buyer on sale (and resets on any major rebuild). Check whether lease passes 100% of reassessment to tenant on transfer."
     }
   ],
   "reconciliation": {
