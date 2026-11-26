@@ -1217,6 +1217,28 @@ resolved; F-18 remains on the Flagged for Review page as a change request to the
 previously being cached as 404s during the incident; equivalent fresh URLs in the same directories resolved,
 and both files are confirmed present on `main`. No personal information is published.
 
+## 2026-11-26 · S-43ae253a · integration and honest verification refresh
+
+Current branch: `arena/43ae253a-jackbox1` (Arena-fixed; no additional branch created).
+Historical claims above are preserved. Root integration claim is taken over after >60 minutes since the recorded 2026-11-25 work; existing category trees will not be edited.
+
+| Task | Status | Owner | Exclusive file scope |
+|---|---|---|---|
+| INT-26 | Replace redirect with clear executive landing/navigation; expose outstanding decisions and review limitations | in progress | S-43ae253a | `index.html`, `assets/integration-26.css` |
+| AUD-26 | Current review/official retrieval log, strict new-page row and site-link checks | in progress | S-43ae253a | `release-review.html`, `tools/check_integration26.py` |
+| PUB-26 | Run existing checks, PR, merge, confirm Pages via GitHub API | in progress | S-43ae253a | `COORDINATION.md` append only; repository deployment API |
+
+No existing figure will be relabelled freshly verified just because its URL is official. No private documents will be requested or added to Git. Official-source retrieval failures and existing conflicting counts/back-test claims will be flagged publicly. Website source code is public and is not an access-controlled internal workspace.
+
+### Concurrent integration handoff · S-43ae253a
+After the claim, remote `main` advanced through PRs #25/#26 and PR #27 appeared with another session's root integration. To avoid duplicate work, **INT-26 is withdrawn**: this session restores `index.html` unchanged and owns only the additive `release-review.html`, its isolated CSS, and `tools/check_integration26.py`. Root/navigation integration remains with PR #27. The new review provides ten current official retrieval results (including two failed attempts) and seven explicit assurance-limit flags. Requested via PR comment: add a link to `release-review.html`. No other session's category files or generated source data are edited.
+
+### AUD-26 verification result (pre-integration)
+- `python3 tools/check_integration26.py`: PASS, 122 HTML files / 2,557 local links; every new review table row has an official reference; no forms/scripts; negative test fixtures reject missing references and filled missing-answer cells. Fragment-only link resolution was corrected during test development (test bug, not site bug).
+- Existing `node scripts/validate.mjs`, `python3 verification/check.py` (16/16), `python3 tools/check.py`, `python3 web/tools/verify.py` and `python3 web/tools/check_links.py`: PASS against the checked-out base. Re-run after integration below. Their pass messages do not mean fresh factual verification.
+- Sources actually read: Census comparing-ACS guidance; CGS EQ Zapp limitations; CAL FIRE FHSZ hazard/risk guidance; IRS Topic 409; California Civil Code §1636; GitHub Pages documentation. IRS Publications 544 and 561 opening contents only (discovery, not full-rule validation). FEMA MSC returned HTTP 500; SEC investor page fetch failed. All outcomes are publicly recorded in `release-review.html` with links. No private values were researched or inferred.
+- AUD-26: **done**; seven residual assurance limitations are **needs review**, published with official and local-evidence links. No repository-wide fresh numerical verification or private property recommendation claimed.
+- Initial pull of the current branch failed because the new remote branch did not yet exist. Pulled `origin/main` with rebase before first push; no changes lost. Subsequent pushes use the fixed current branch only.
 ## Session arena-1a77511b — 2026-11-26 integration refresh
 
 | Task | Status | Owner | Exclusive scope |
@@ -1265,3 +1287,10 @@ Prior claims are historical (latest recorded commits 2026-11-25); no other tree 
 
 ### Concurrent integration resolution — arena-1a77511b
 `main` advanced through PRs #25 and #26 during implementation. A coordination-log append conflict was resolved by preserving both sessions’ complete records; all new tenant-series files and footer links from arena-b072f72e are retained. Rebase was aborted before merging main to preserve the already-pushed claim history. No branch switch and no discarded work.
+
+
+### S-43ae253a integration conflict resolution
+The required rebase onto newly advanced main conflicted in the append-only coordination log. Stopped and aborted rebase to preserve the already-pushed claim history, then merged origin/main on the same current branch. Both complete coordination sections and all PR #27 integration/tenant work are retained. No root or category files were modified by this session.
+
+### Final combined-tree checks · S-43ae253a
+After integrating PR #27 and tenant PRs #25/#26: integration26 check PASS (124 HTML files, 2,693 local links); existing primary validator PASS (225 rows / 26 sources / 12 pages); `scripts/check-integration.py` PASS; independent audit PASS 16/16; workspace checker PASS; web validator and link checker PASS. These remain structural tests. Root landing is entirely preserved from arena-1a77511b. INT-26 withdrawn/handoff complete; AUD-26 done; PUB-26 awaiting merge/deploy below.
