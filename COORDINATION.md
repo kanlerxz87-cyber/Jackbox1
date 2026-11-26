@@ -1240,3 +1240,23 @@ and both files are confirmed present on `main`. No personal information is publi
 - `node scripts/validate.mjs`: **PASS** — 26 official sources (all allowlisted), 225 rows (83 verified-like all sourced, 50 unverified all blank), 12 pages, 123 outbound source links, 1,556 internal links resolving, 0 privacy leaks.
 - `python3 verification/check.py`: **PASS 16/16** — 432 table rows, 22 pages.
 
+---
+
+## Session `S-02817d04` (`arena/02817d04-jackbox1`) — 2026-11-26 Independent Line-by-Line Audit, Fresh Official Verification & Self-Contained Decision Dashboard
+
+**Platform branch note:** Arena fixes this session to branch `arena/02817d04-jackbox1` and forbids creating/switching/pushing other branches. Active sibling branches (`arena/1a77511b-jackbox1`, `arena/43ae253a-jackbox1`, `arena/b072f72e-jackbox1`) already claim `index.html`, `pages/**`, `data/**`, `scripts/**`, `integration-review.html`, and `release-review.html`. To keep scopes strictly non-overlapping, `S-02817d04` claims an exclusive disjoint scope under `portal-02817d04/**`, `data-02817d04/**`, and `tools-02817d04/**`, plus append-only updates to `COORDINATION.md`.
+
+| ID | Task | Status | Owner | Exclusive file scope |
+|---|---|---|---|---|
+| P02-01 | Claim task board & inspect existing repo line by line across all retained trees | in progress | `S-02817d04` | `COORDINATION.md` (append-only), `data-02817d04/repo-audit.json` |
+| P02-02 | Fresh 2026-11-26 live verification from official `.gov` / SEC EDGAR / Federal Reserve / state sources (demographics, tracts, labor, schools, traffic, tenant multi-period series, hazards, tax rules) | in progress | `S-02817d04` | `data-02817d04/sources.json`, `data-02817d04/findings.json` |
+| P02-03 | W-01..W-10 full requirements suite: trade-area vs proxies, tract trend evidence, lease abstract & notice calendar framework, parcel hazard screening, short-lease discount quote log, sell-vs-hold + after-tax module, versioned cash-flow model & back-test, executive summary, printable one-page advisor brief | in progress | `S-02817d04` | `data-02817d04/*.json`, `portal-02817d04/*.html` |
+| P02-04 | Browser-only private calculator (after-tax sale + negotiated renewal PV + sensitivity, zero network/storage calls) | in progress | `S-02817d04` | `portal-02817d04/calculator.html`, `portal-02817d04/assets/calc.js` |
+| P02-05 | Decision-blocking Q&A + missing-info discovery plan, risk & black-swan matrix, interactive reviewer suggestion & path-selection board, Flagged for Review page | in progress | `S-02817d04` | `data-02817d04/questions.json`, `data-02817d04/risks.json`, `data-02817d04/suggestions.json`, `data-02817d04/flagged.json`, `portal-02817d04/*.html` |
+| P02-06 | Automated build, row-by-row source/blank validator, privacy scanner, calculator hand-check suite, and cross-repo link/validator run | in progress | `S-02817d04` | `tools-02817d04/build.mjs`, `tools-02817d04/validate.mjs`, `tools-02817d04/test-calc.mjs` |
+| P02-07 | Pull request to `main`, merge, GitHub Pages live deployment confirmation, and completion record in `COORDINATION.md` | unclaimed | `S-02817d04` | `COORDINATION.md` (append-only) |
+
+### Change request logged (no edits made to other sessions' files)
+- `2026-11-26 S-02817d04` → owners of root `index.html` / `pages/` navigation (`arena-1a77511b`, `S-43ae253a`, `arena-b072f72e`): once `/portal-02817d04/` is merged to `main`, optionally add a companion link to `/Jackbox1/portal-02817d04/index.html` in the companion-workspaces strip. No root or sibling files are modified by `S-02817d04`.
+
+
