@@ -1235,12 +1235,12 @@ No data value is added, changed or inferred by this session.
 
 | ID | Task | Status | File scope |
 |---|---|---|---|
-| D-01 | Session claim (this section), commit + push before any other work | in progress → done on push | `COORDINATION.md` |
-| D-02 | Replace root `index.html` bare redirect with a privacy-first hub listing every published tree + flagged pages | in progress | `index.html` |
-| D-03 | F-18: fix `actions/upload-pages-artifact` `path: docs` → `path: .`; keep workflow `disabled_manually` and keep legacy `main:/` Pages source untouched (live site unchanged) | in progress | `.github/workflows/pages.yml` |
-| D-04 | Re-run full local verification suite (all trees) + 2026-11-26 spot re-fetch of headline official sources | in progress | read-only |
-| D-05 | Append session record (sources, verification, irregularities) | pending | `COORDINATION.md` |
-| D-06 | PR → merge → confirm Pages build → record PR link | pending | `COORDINATION.md` (follow-up record PR) |
+| D-01 | Session claim (this section), commit + push before any other work | done (pushed 2026-11-26) | `COORDINATION.md` |
+| D-02 | Root `index.html` is now a privacy-first hub listing all eight published trees, the flagged pages, the verification/governance documents and the site ground rules. No external assets; self-contained CSS; 2,417 internal refs repo-wide, 0 missing | done | `index.html` |
+| D-03 | F-18: `actions/upload-pages-artifact` now publishes repository root (`path: .`) with a comment. Workflow remains `disabled_manually`; Pages source remains legacy `main:/` (live site unchanged). If re-enabled with Actions source, it can no longer hide the other trees | done | `.github/workflows/pages.yml` |
+| D-04 | Done — see "Session record" below | done | read-only |
+| D-05 | Append session record (sources, verification, irregularities) | done | `COORDINATION.md` |
+| D-06 | PR → merge → confirm Pages build → record PR link | pending (this PR) | n/a |
 
 ## Irregularities carried forward (not fixed by this session; none block publish)
 
@@ -1249,3 +1249,49 @@ No data value is added, changed or inferred by this session.
 - 8 published trees disagree in places on details (documented as F-20). This session does not reconcile them; reconciliation is assigned to a future review pass and the discrepancy stays on the Flagged for Review pages.
 - `data/tracts_demo_a.csv` / `data/registry.yaml` contain demonstration Census tract identifiers for geography `140|86000US90015` (a ZIP-shaped Census geo_id). Documented as demo data by the owning sessions; not parcel-identifying; not used as any parcel-level claim.
 - No sell / renew / hold winner is selected anywhere on the site, by design, until verified private inputs (lease, basis, quotes, APN hazard zones) exist.
+
+
+## Session record — `arena-d325275f` (2026-11-26)
+
+### What this session changed
+
+| File | Change |
+|---|---|
+| `index.html` (root) | Bare redirect to `/pages/` replaced with a self-contained, privacy-first hub: what the site is, the honest "no gate can close yet" headline, links to all eight published trees (`/pages/`, `/workspace/`, `/web/`, `/docs/`, `/audit/`, `/desk/`, `/ledger-1ebd66da/`, `/audit-78005353/site/`), the four flagged-for-review pages, the verification/governance plain-text documents, and the site's ground rules. No external assets, scripts or requests. |
+| `.github/workflows/pages.yml` | Comment + `path: docs` → `path: .` (F-18 file-side fix). Workflow remains `disabled_manually`; legacy `main:/` Pages source unchanged. |
+| `COORDINATION.md` | This claim and record (append-only). |
+
+### Verification performed on 2026-11-26 (all local, current tree)
+
+- `python3 verification/check.py` → **PASS 16/16**; 432 table rows; 22 pages; no personal-information patterns; no external scripts.
+- `python3 web/tools/verify.py` → **VERIFICATION PASSED**; 281 rows; 17 HTML files; 39 sources.
+- `python3 web/tools/check_links.py` → **LINK CHECK PASSED**; 17 HTML files, no broken internal links.
+- `node scripts/validate.mjs` → **All checks passed**; 211 rows, 11 pages, calculator network/storage scan clean.
+- `python3 tools/check.py` (workspace) → **all checks passed**; 18 pages, 72 registry rows.
+- Combined tree scan (every `.html` in repo, 121 files): **2,417 internal refs, 0 missing**.
+- Privacy sweep for emails / phone numbers / SSN / APN-like patterns across all text files: **0 hits**. The remaining "ZIP-shaped" hits are (a) federal tax bracket thresholds in calculator code, (b) Census tract demonstration identifiers under geography `140|86000US90015` already documented as demo data by the owning sessions, (c) `90015` strings in `COORDINATION.md`/`README.md`/`tools/build.py` describing that same documented demo set. None is parcel- or owner-identifying; none is used as a parcel-level claim.
+- Note: the sandbox network only reaches package/GitHub hosts, so `kanlerxz87-cyber.github.io` cannot be fetched from here; deploy confirmation is done via the GitHub Pages API (latest builds for `eab14bb` were `built`) plus the post-merge build for this session's commit.
+
+### 2026-11-26 spot re-verification against official sources (not a full re-audit)
+
+| Claim on site | Official source | Result |
+|---|---|---|
+| LA city population V2024 = 3,878,704 (V2025 = 3,869,089) | U.S. Census Bureau, Vintage 2024 press release & QuickFacts — <https://www.census.gov/newsroom/press-releases/2025/vintage-2024-popest.html> · <https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia,losangelescountycalifornia,CA,US/PST045223> | Confirmed |
+| LA–Long Beach–Glendale MD unemployment, Feb–Jun 2026 prelim: 5.5 / 5.1 / 5.1 / 5.2 / 5.3 (p); LA County NSA July 2026 = 5.2% (BLS LAUS, via CA workforce report); county nonfarm ≈ 4.58M | BLS — <https://www.bls.gov/regions/west/ca_losangeles_md.htm> | Confirmed (newer preliminary months exist than the 2025-11-25 cut-off; no conflict) |
+| Federal long-term capital gains 2025: 0% up to $48,350 single / $96,700 MFJ / $64,750 HoH; 15% to $533,400 / $600,050 / $566,700; 20% above; unrecaptured §1250 max 25%; §1031 real-property-only; 3.8% NIIT | IRS Topic 409 (fetched verbatim 2026-11-26) — <https://www.irs.gov/taxtopics/tc409> | Confirmed verbatim, matches the calculators in `/assets/js/calc.js`, `/web/` and `/docs/js/calculator.js` |
+
+### Irregularities / notes for review (not fixed; none block publish)
+
+1. F-18 file-side fix is in this PR; the Pages **source** intentionally stays legacy `main:/` (the only confirmed-live configuration). Re-enabling the workflow without switching source would produce failing deploy runs but would not take the live site down. A future session may optionally switch Pages to GitHub Actions once the root artifact (`path: .`) has been validated in a run.
+2. The eight trees intentionally disagree in places (counts of verified rows, model back-test status — see F-20). This session did **not** reconcile them; the discrepancy remains on every Flagged for Review page.
+3. `data/tracts_demo_a.csv` demo geography `140|86000US90015` (ZIP-shaped) is retained as documented demonstration data; it is not a parcel claim.
+4. All sell/renew/hold recommendations remain deliberately unselected; 0 of 15 decision gates can close from public data.
+5. Public repository; GitHub Pages site is public. Everything proprietary remains offline with authorised advisers.
+
+### Sources used by this session
+
+- <https://www.census.gov/newsroom/press-releases/2025/vintage-2024-popest.html> (fetched 2026-11-26)
+- <https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia,losangelescountycalifornia,CA,US/PST045223> (fetched 2026-11-26)
+- <https://www.bls.gov/regions/west/ca_losangeles_md.htm> (search-result verification 2026-11-26)
+- <https://www.irs.gov/taxtopics/tc409> (fetched 2026-11-26)
+- GitHub API (Pages config/builds/workflows) for deploy confirmation.
