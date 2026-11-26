@@ -6,6 +6,74 @@
 > Status values: `unclaimed` · `in progress` · `needs review` · `done`
 > Stale claims (> 60 min, no commits) may be taken over; note the handoff in the Log.
 
+## 🟢 Current board — 2026-11-26 (newest first; read this before the historical sections below)
+
+> Everything below this block is **history**. This block sits at the **top** of the file on purpose: other sessions append at the end, so keeping it here avoids add/add conflicts.
+> Last refreshed by `S-f6ebb740` at 2026-11-26 ~13:55 UTC.
+
+### Live session registry (from `gh pr list`, `git ls-remote` and each branch's own claim)
+
+| Session | Branch | Scope (as claimed) | Status |
+|---|---|---|---|
+| `S-f6ebb740` (this block) | `arena/f6ebb740-jackbox1` | `outlook/**`, `private-workflow/**`, this block, plus one logged integration edit to `site-map.html` | **done, PR pending below** |
+| `arena-1a77511b` | `arena/1a77511b-jackbox1` | R-01 root `index.html`, `integration-review.html` | merged (PR #27, #29) |
+| `S-43ae253a` | `arena/43ae253a-jackbox1` | AUD-26 `release-review.html`, `tools/check_integration26.py` | merged (PR #28, #30) |
+| `arena-b072f72e` | `arena/b072f72e-jackbox1` | tenant series `data/tenant.json`, `pages/tenant.html` | merged (PR #25, #26) |
+| `arena/88722e2f` | `arena/88722e2f-jackbox1` | T-17/T-18 spot checks in `pages/`, `data/` | merged (PR #31) |
+| `arena-d325275f` | `arena/d325275f-jackbox1` | root hub `site-map.html`, F-18 workflow fix | merged (PR #32, #34) |
+| `arena/cc9c3feb` | `arena/cc9c3feb-jackbox1` | audit and verification of `pages/`, `workspace/` | merged (PR #33) |
+| `S-a293043a` | `arena/a293043a-jackbox1` | `hub/**` decision hub | merged (PR #35) |
+| `S-02817d04` | `arena/02817d04-jackbox1` | `portal-02817d04/**`, `data-02817d04/**`, `tools-02817d04/**` | **claim only, no commits since 13:08 UTC**; a takeover would be allowed only after 14:08 UTC. This session did **not** take it over. |
+
+### Re-scope history (D-F6-02)
+
+`S-f6ebb740` first claimed a full `dashboard/**` site (commit `c22b937`). Within minutes `S-a293043a` (`hub/**`) and `S-02817d04` claimed the same thing, so `dashboard/**` was withdrawn and never created. The session then claimed only what nobody else had: `outlook/**` and `private-workflow/**`.
+
+### S-f6ebb740 task board (final)
+
+| ID | Task | Status | Files |
+|---|---|---|---|
+| F6-01 | Official forward-looking evidence: DOF population projections (P-2A), EDD county industry projections, DOF K-12 enrollment projection; plus a vintage check of how far an earlier official county projection moved (labelled illustrative, **not** a validated back-test) | done | `outlook/data/projections.json`, `outlook/projections.html` |
+| F6-02 | Dated events and area drivers: Metro D Line, LA28, decline-in-value deadline, tenant-brand results date, wage-law sunset date | done | `outlook/data/drivers.json`, `outlook/drivers.html` |
+| F6-03 | Peer and tenant-brand series (McDonald's, Wendy's, Restaurant Brands, Jack in the Box Q2 and Q3 FY2026, leadership transition) | done | `outlook/data/peers.json`, `outlook/peers.html` |
+| F6-04 | Ten options with everyday and black-swan risks, twelve shock events, owner wealth levers, nine decision gates, conditional rules, blank side-by-side after-tax worksheet, 18 questions, 7 reviewer suggestions. **No sell-versus-renew winner.** | done | `outlook/data/options.json`, `outlook/data/workflow.json`, `outlook/{options,risks,wealth,rules,questions,suggestions}.html` |
+| F6-05 | Private workflow: pick census tracts from the public Gazetteer file offline, optional single geocoder confirmation, ACS aggregate with a ten-tract minimum and no tract IDs, blank hazard checklist; 28 offline tests | done | `private-workflow/**`, `outlook/workflow.html` |
+| F6-06 | Landing page and category pages with simple tables and charts; Flagged page (17 items plus 7 repository review links); Sources page (37 sources with retrieval method) | done | `outlook/*.html`, `outlook/assets/outlook.css`, `outlook/data/flags.json`, `outlook/data/sources.json` |
+| F6-07 | Build and check tooling | done | `outlook/tools/{common,build,check}.py` |
+| F6-08 | PR, merge, Pages confirmation, record | in progress | this block |
+
+### Integration edit made by this session (logged, minimal)
+
+`site-map.html` (owner `arena-d325275f`, merged and done): added cards for `hub/index.html` and `outlook/index.html`, two flagged-page cards (`hub/flagged.html`, `outlook/flagged.html`), and removed the count from the heading `eight entry points` (nine cards were already listed). No other root or sibling file was edited. `S-a293043a` had asked (CR-A01) for a link to `hub/`; this edit fulfils it. **Request to whoever merges `portal-02817d04/`:** add one card in the same place.
+
+### Sources, verification and irregularities (full detail on the module pages)
+
+- **Sources actually opened on 2026-11-26** (full pages or files): DOF projections page and P-2A workbook; EDD projections page and the Los Angeles County industry workbook; DOF K-12 page; SCAG-hosted LAUSD slides (2019); Metro D Line page; IRS estate and gift page, Publication 551 (inherited property, community property), IRS like-kind page; Business Wire release for Jack in the Box (2026-11-17); Census Geocoder (public landmark, response shape only), Census key notice, Census variable metadata, Census Gazetteer page. All 37 sources, with retrieval method (`opened`, `excerpt`, `failed`, `other-session`), are on `outlook/sources.html`.
+- **Excerpt-only rows** (official page not opened separately): Census QuickFacts, LA28, AB 1228 text, SEC exhibits for McDonald's, Wendy's, Jack in the Box, the Restaurant Brands release, IRS TaxMap, BOE FAQ, LA County Assessor. Flagged OL-F11: re-open before relying on them.
+- **Failed retrievals (nothing taken from them):** FEMA NFHL service (two URLs, HTTP 500), DIR Fast Food Council page, TIGERweb documentation page.
+- **Irregularities found** (all on `outlook/flagged.html` with source links): two official population series differ by about 1.6% for 2025 (OL-F01); EDD county and state windows differ (OL-F02); the county projection moved about 10% in five years (OL-F03, illustrative only); tenant-brand FY2026 results are due 2026-12-09 so the series ends at Q3 (OL-F04); Metro Sections 2 and 3 have no stated date (OL-F05); wage-law current rate unconfirmed (OL-F06); FEMA service failing (OL-F07); stale CAL FIRE service (OL-F08); Census key required (OL-F09); **README.md is stale: says 12 irregularities while `data/flagged.json` lists 15, and still lists the renamed `data/tracts_demo_90015.csv` (OL-F10; request to the README owner, not edited)**; decline-in-value window closes Monday 2026-11-30 (OL-F12); overlapping parallel trees (OL-F16).
+- **Irregularity found and then cleared:** the board's F-18 (workflow publishing only `docs/`) is fixed on main: `pages.yml` now uploads the repository root and is disabled; the live site is served from legacy `main:/` (GitHub API: built).
+- **Mistake caught before publishing:** while writing flag OL-F01 a Census 2020 base figure was first typed wrongly; it was re-read against the source excerpt (10,017,414) and corrected before any commit of that file was merged.
+- **Checks run on the combined tree at ~13:50 UTC, all exit status 0:** `node scripts/validate.mjs` (252 rows), `python3 verification/check.py` (16/16), `python3 tools/check.py`, `python3 web/tools/verify.py`, `python3 web/tools/check_links.py`, `python3 scripts/check-integration.py`, `python3 tools/check_integration26.py`, `python3 hub/scripts/verify.py`, `python3 outlook/tools/check.py` (13 pages, 186 rows, 37 sources, 17 flags), `python3 outlook/tools/check.py --selftest` (23 negative tests), `python3 private-workflow/selftest.py` (28 tests). These are structure, link, privacy-pattern and arithmetic checks; they do **not** certify that every cited figure is current.
+- **Privacy:** no address, parcel number, owner, lease, rent, basis, coordinate, email, phone or personal name appears in `outlook/` or `private-workflow/`. Names and contact details in the Jack in the Box release were deliberately not copied. The private workflow's outputs live only in the git-ignored `private/` folder.
+
+### Handoffs and requests (nothing below was done by this session)
+
+1. After 2026-12-09: extend the tenant and peer series with Jack in the Box Q4 and full-year FY2026 (suggestion SUG-1 on `outlook/suggestions.html`).
+2. README owner: correct counts and the renamed filename (OL-F10).
+3. Owner decision: one primary site and archive the rest (SUG-7, OL-F16).
+4. `S-02817d04`: stale claim; if it is taken over after 14:08 UTC, the portal needs a card in `site-map.html`.
+
+### Publication record (this session)
+
+- **PR:** _pending: filled in below after the merge_
+- **Merge result:** _pending_
+- **GitHub Pages:** _pending_
+
+**Platform constraint (D-F6-01):** the workspace fixes this session to branch `arena/f6ebb740-jackbox1`; the requested `session-<id>/<task>` branch names cannot be created. Non-overlap was enforced by disjoint file scopes and by pulling `main` before every push.
+
+---
+
 ## ⚠️ Read first: four parallel sessions, four static trees
 
 This repository was built by **four** concurrent sessions. All four trees are retained.

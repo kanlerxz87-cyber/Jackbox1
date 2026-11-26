@@ -1,0 +1,5 @@
+{
+  "_comment": "Copy to private/location.json (git-ignored) and replace the two nulls with the real latitude and longitude as plain numbers. Never commit the real file. The scripts refuse null, 0, 0 or any point outside California.",
+  "lat": null,
+  "lon": null
+}

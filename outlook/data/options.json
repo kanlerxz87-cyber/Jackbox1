@@ -1,0 +1,434 @@
+{
+ "meta": {
+  "no_winner": "No option below is recommended. Each row lists what must be verified first. A sell-versus-renew choice is withheld until the nine gates on the Decision rules page are closed.",
+  "framework_rule": "Rows marked framework are analyst reasoning for reviewers to challenge. They state what to test, not a fact about this property. Each cites an official page only as context for the subject."
+ },
+ "options": [
+  {
+   "id": "OPT-01",
+   "name": "Sell now, as-is with the existing lease",
+   "what": "Market the property with the current lease; a buyer prices the remaining term, tenant and guarantor strength, and rent coverage.",
+   "needs": "Lease abstract (remaining term, options, rent steps, guaranty); at least three independent broker opinions of value; accountant's after-tax figure (basis, depreciation taken, recapture); local transfer-tax check.",
+   "bau": "A shorter remaining term may reduce price or the buyer pool (to be tested with quotes at several terms, not assumed). Selling costs. Tax on realized gain unless exchanged.",
+   "swan": "Ends exposure to later casualty, tenant default and rule changes. A contract signed before a shock can fail in buyer diligence or financing.",
+   "owner": "Turns a single-tenant asset into cash that can be diversified. Realizes gain. Gives up the chance of a basis step-up on this asset.",
+   "src": [
+    "OL-S16",
+    "OL-S21"
+   ],
+   "kind": "framework"
+  },
+  {
+   "id": "OPT-02",
+   "name": "Hold now, sell later (closer to expiry)",
+   "what": "Keep collecting rent and sell at a later date.",
+   "needs": "Everything in OPT-01, plus broker values at several remaining terms (for example 3, 5 and 8 years) so the price path can be seen.",
+   "bau": "Tenant credit and sales can change. Interest-rate and pricing paths are unknown. A renewal may become a condition of any sale.",
+   "swan": "Keeps exposure to casualty, tenant default and regulatory change for the whole holding period; insurance and rebuild adequacy matter.",
+   "owner": "Defers tax and keeps flexibility; concentration remains.",
+   "src": [
+    "OL-S16",
+    "OL-S15"
+   ],
+   "kind": "framework"
+  },
+  {
+   "id": "OPT-03",
+   "name": "Negotiate a renewal or extension with the current tenant",
+   "what": "Extend the term, reset rent and steps, and possibly improve the guaranty or require a remodel.",
+   "needs": "Option notice windows and rent-reset mechanics; tenant (franchisee) and guarantor financial strength; the franchisor's remodel or closure expectations for this unit; the unit's sales against rent.",
+   "bau": "The tenant may ask for concessions. The brand's system same-store sales were negative in each of the last four reported periods (improving from -7.4% to -1.1%), and closures continue, so leverage may favor the tenant.",
+   "swan": "A longer term concentrates exposure on one operator. Casualty and insolvency clauses decide who bears a shock.",
+   "owner": "Protects income and may improve later saleability; extends concentration.",
+   "src": [
+    "OL-S16",
+    "OL-S18",
+    "OL-S15"
+   ],
+   "kind": "framework"
+  },
+  {
+   "id": "OPT-04",
+   "name": "Short extension (one to three years) to keep options open",
+   "what": "A brief extension or hold-over that defers the sell or re-tenant decision.",
+   "needs": "Buyer quotes for short remaining terms (the short-lease discount is blank until real quotes exist); the tenant's willingness; lease hold-over terms.",
+   "bau": "Buyers may price a short term more harshly. Repeated renegotiation. Vacancy risk at the next expiry.",
+   "swan": "A shock that coincides with the expiry is the worst case for this path.",
+   "owner": "Buys time and flexibility at the cost of income certainty.",
+   "src": [
+    "OL-S16"
+   ],
+   "kind": "framework"
+  },
+  {
+   "id": "OPT-05",
+   "name": "Let the lease expire and re-tenant",
+   "what": "Re-let to another restaurant or retail user after expiry.",
+   "needs": "Trade-area demand evidence (from the private tract workflow), market rent, leasing costs, downtime, use and drive-through conditions.",
+   "bau": "Months without rent while an NNN owner still carries property tax, insurance and upkeep. Leasing commissions and improvements. New lease terms may be shorter or lower.",
+   "swan": "A shock during vacancy hits an owner with no tenant cash flow; policy conditions for vacant buildings need checking.",
+   "owner": "Highest variance of the operating paths; needs active management.",
+   "src": [
+    "OL-S04",
+    "OL-S02"
+   ],
+   "kind": "framework"
+  },
+  {
+   "id": "OPT-06",
+   "name": "Redevelop or reposition the site",
+   "what": "Change the use or rebuild, if zoning allows.",
+   "needs": "Zoning and overlay review by parcel (private), entitlement path, cost estimate, financing, environmental review.",
+   "bau": "Time, capital, entitlement and cost-inflation risk.",
+   "swan": "Hazard exposure during construction; rebuilding cost and rule changes after a disaster.",
+   "owner": "Needs capital and expertise. May not fit a wealth-preservation aim at manageable risk; flagged for reviewer judgement.",
+   "src": [],
+   "kind": "framework",
+   "flag": "OL-F14"
+  },
+  {
+   "id": "OPT-07",
+   "name": "Sell and exchange into other real property (Section 1031)",
+   "what": "Sell and reinvest through a like-kind exchange to defer federal gain.",
+   "needs": "A qualified intermediary; replacement criteria; the statutory identification and closing timelines confirmed on IRS forms and instructions (not restated here); basis carry-over; reinvestment risk.",
+   "bau": "Deadline pressure can push an owner to overpay. Replacement asset quality. Fees. Deferral, not elimination.",
+   "swan": "Replacement assets carry their own hazard and tenant risks; concentration can recur.",
+   "owner": "Defers tax and can diversify. Held until death, deferred gain may be reset by the basis rule (confirm with advisers).",
+   "src": [
+    "OL-S22",
+    "OL-S21"
+   ],
+   "kind": "framework"
+  },
+  {
+   "id": "OPT-08",
+   "name": "Installment sale (seller financing)",
+   "what": "Sell and receive part of the price over several years.",
+   "needs": "Buyer credit, security, interest rate, related-party limits. IRS rule: depreciation recapture is reported in the year of sale.",
+   "bau": "Buyer default; delayed liquidity; interest is taxable.",
+   "swan": "Buyer default after a shock; collateral loss if the building is under-insured.",
+   "owner": "Spreads recognition of part of the gain; adds credit exposure to the buyer.",
+   "src": [
+    "OL-S23"
+   ],
+   "kind": "framework"
+  },
+  {
+   "id": "OPT-09",
+   "name": "Hold to expiry and take no action",
+   "what": "Collect rent and wait for the lease to run.",
+   "needs": "A reconciled notice calendar so no option or notice date is missed.",
+   "bau": "Missed notices can fix an outcome; maintenance and capital items; an end-of-term cliff.",
+   "swan": "Same exposures as any hold.",
+   "owner": "Passive income with no transaction cost, but passivity can let price decay and deadlines pass.",
+   "src": [
+    "OL-S02",
+    "OL-S04"
+   ],
+   "kind": "framework"
+  },
+  {
+   "id": "OPT-10",
+   "name": "Hold for estate planning (basis reset for heirs)",
+   "what": "Keep the property so heirs may receive a basis equal to value at death.",
+   "needs": "Estate plan and title (including whether community property), estate size against the exclusion, liquidity to meet any estate tax, and how California reassesses commercial property on transfer.",
+   "bau": "Long-run concentration. Commercial property is reassessed on transfer; who bears the higher tax under the lease must be read from the lease.",
+   "swan": "A loss before the plan matures erodes the asset the plan depends on.",
+   "owner": "May remove unrealized gain for heirs; ties up liquidity.",
+   "src": [
+    "OL-S21",
+    "OL-S20",
+    "OL-S24"
+   ],
+   "kind": "framework"
+  }
+ ],
+ "wealth": [
+  {
+   "id": "W-01",
+   "lever": "Basis of inherited property",
+   "fact": "Generally the basis of inherited property is its fair market value at the date of death (or the alternate valuation date).",
+   "why": "Can reset unrealized gain for heirs if the property is held until death. It is a reason to compare 'sell' against 'hold for estate' on an after-tax basis.",
+   "src": [
+    "OL-S21"
+   ],
+   "excerpt": "Generally, the basis of property inherited from a decedent is one of the following. 1. The FMV of the property at the date of the individual's death.",
+   "kind": "observation"
+  },
+  {
+   "id": "W-02",
+   "lever": "California community property",
+   "fact": "In community property states, including California, both halves of community property generally take the new basis when one spouse dies.",
+   "why": "Whether the property is community property is a title and marital fact, unknown here.",
+   "src": [
+    "OL-S21"
+   ],
+   "excerpt": "In community property states (Arizona, California, Idaho, Louisiana, Nevada, New Mexico, Texas, Washington, and Wisconsin) ... When either spouse dies, the total value of the community property, even the part belonging to the surviving spouse, generally becomes the basis of the entire property.",
+   "kind": "observation"
+  },
+  {
+   "id": "W-03",
+   "lever": "One-year gift-back exception",
+   "fact": "The basis rule does not apply to appreciated property given to a decedent within one year before death by the person who then receives it back.",
+   "why": "A planning trap to avoid, not a strategy.",
+   "src": [
+    "OL-S21"
+   ],
+   "excerpt": "The above rule doesn't apply to appreciated property you receive from a decedent if you or your spouse originally gave the property to the decedent within 1 year before the decedent's death.",
+   "kind": "observation"
+  },
+  {
+   "id": "W-04",
+   "lever": "Federal estate and gift basic exclusion, 2026",
+   "fact": "$15,000,000 for calendar year 2026.",
+   "why": "Whether the owner's estate approaches this level is unknown and private.",
+   "src": [
+    "OL-S20"
+   ],
+   "excerpt": "WFTC amends § 2010(c)(3) by increasing the basic exclusion amount to $15,000,000 for calendar year 2026.",
+   "kind": "observation",
+   "raw": 15000000
+  },
+  {
+   "id": "W-05",
+   "lever": "Proposition 19 and commercial property",
+   "fact": "The parent-child reassessment exclusion applies only to a family home or family farm; transfer of commercial property is reassessed.",
+   "why": "Heirs of a directly held commercial parcel should plan for a reset assessed value. Treatment of transfers through an entity is not verified here.",
+   "src": [
+    "OL-S24"
+   ],
+   "excerpt": "the transfer will be subject to reassessment because a commercial property does not qualify for the Proposition 19 intergenerational transfer exclusion, which applies only to the transfer of a family home or family farm.",
+   "kind": "observation"
+  },
+  {
+   "id": "W-06",
+   "lever": "Like-kind exchange (Section 1031)",
+   "fact": "Since 2018 Section 1031 applies only to real property. Cash or other non-like-kind property received is taxed to the extent of the gain.",
+   "why": "Allows deferral when selling and reinvesting into real property. Timelines and rules must be confirmed on IRS forms and instructions.",
+   "src": [
+    "OL-S22"
+   ],
+   "excerpt": "Section 1031 now applies only to exchanges of real property and not to exchanges of personal or intangible property.",
+   "kind": "observation"
+  },
+  {
+   "id": "W-07",
+   "lever": "Installment method and depreciation recapture",
+   "fact": "Depreciation recapture income is reported in the year of sale even when payments arrive later.",
+   "why": "An installment sale defers only the part of the gain above recapture, so cash taxes in the sale year can still be material.",
+   "src": [
+    "OL-S23"
+   ],
+   "excerpt": "you must report any depreciation recapture income in the year of sale, whether or not an installment payment was received that year.",
+   "kind": "observation"
+  },
+  {
+   "id": "W-08",
+   "lever": "Owner's tax basis, depreciation taken, holding period, title or entity",
+   "fact": "",
+   "why": "Decides the size of every tax figure above.",
+   "src": [
+    "OL-S21"
+   ],
+   "kind": "blank",
+   "flag": "OL-F14",
+   "how_to_fill": "Accountant's depreciation schedule and closing statement, kept offline. Never enter here."
+  },
+  {
+   "id": "W-09",
+   "lever": "Estate size, marital status and title, heirs",
+   "fact": "",
+   "why": "Decides whether the basis rule, the exclusion and Proposition 19 limits matter in practice.",
+   "src": [
+    "OL-S20"
+   ],
+   "kind": "blank",
+   "flag": "OL-F14",
+   "how_to_fill": "Estate attorney, offline."
+  },
+  {
+   "id": "W-10",
+   "lever": "Liquidity needs, time horizon and concentration limit",
+   "fact": "",
+   "why": "A written owner policy (for example, a maximum share of net worth in any single operator or parcel) turns a sell-versus-hold question into a rule. No such policy is known.",
+   "src": [
+    "OL-S21"
+   ],
+   "kind": "blank",
+   "flag": "OL-F14",
+   "how_to_fill": "Owner and adviser write the policy offline; only the rule itself, without amounts, may be summarized publicly."
+  },
+  {
+   "id": "W-11",
+   "lever": "Direct ownership versus entity ownership (reassessment on transfer)",
+   "fact": "",
+   "why": "California change-in-ownership rules differ for transfers of entity interests. Not verified in this session.",
+   "src": [
+    "OL-S24"
+   ],
+   "kind": "blank",
+   "flag": "OL-F11",
+   "how_to_fill": "California property-tax counsel; start from the BOE change-in-ownership guidance."
+  },
+  {
+   "id": "W-12",
+   "lever": "State income tax and local transfer taxes on a sale",
+   "fact": "",
+   "why": "Not researched in this module. Other tracks on this board cover tax mechanics; their figures must be re-confirmed on official pages before use.",
+   "src": [
+    "OL-S22"
+   ],
+   "kind": "blank",
+   "flag": "OL-F13",
+   "how_to_fill": "Confirm rates and thresholds on the California Franchise Tax Board and the city and county recorder pages; record vintage."
+  }
+ ],
+ "swan": [
+  {
+   "id": "SW-01",
+   "event": "Major earthquake in central Los Angeles",
+   "propagation": "Building damage or red-tag, tenant closure, rent abatement or termination under the casualty clause, rebuild cost above insurance.",
+   "verify": "Casualty and insurance clauses; whether earthquake is insured at all; parcel zone status for fault rupture, liquefaction and landslide (private lookup).",
+   "src": [
+    "OL-S31"
+   ],
+   "kind": "framework",
+   "evidence": "Zone status is blank by design."
+  },
+  {
+   "id": "SW-02",
+   "event": "Wildfire, smoke or evacuation",
+   "propagation": "Closure days, access limits, structure loss if the parcel is in or beside a high hazard zone.",
+   "verify": "Parcel fire hazard severity zone (private lookup); insurance availability.",
+   "src": [
+    "OL-S20",
+    "OL-S32"
+   ],
+   "kind": "observation",
+   "excerpt": "relief for individuals and businesses in Los Angeles County affected by wildfires that began on Jan. 7, 2025.",
+   "evidence": "The IRS record shows a recent large wildfire event in the county. It says nothing about this parcel."
+  },
+  {
+   "id": "SW-03",
+   "event": "Flood, atmospheric river or storm-drain failure",
+   "propagation": "Short closure, water damage, access loss.",
+   "verify": "Parcel flood zone from the FEMA Map Service Center (manual; automated service returned HTTP 500).",
+   "src": [
+    "OL-S33",
+    "OL-S30"
+   ],
+   "kind": "framework",
+   "flag": "OL-F07",
+   "evidence": "Zone status is blank by design."
+  },
+  {
+   "id": "SW-04",
+   "event": "Tenant or franchisee insolvency, or franchisor restructuring",
+   "propagation": "Missed rent, a lease rejected in bankruptcy, a dark store, re-tenanting cost, buyer pool narrows.",
+   "verify": "Tenant and guarantor financials; unit sales; whether the unit is on any closure list; estoppel certificate.",
+   "src": [
+    "OL-S16",
+    "OL-S15",
+    "OL-S18"
+   ],
+   "kind": "observation",
+   "excerpt": "Bad debt expense was also higher versus the prior year quarter.",
+   "evidence": "Brand-level facts only. System same-store sales were negative in all four periods from Q4 FY2025 to Q3 FY2026; FY2026 guidance includes about 50 to 60 closures."
+  },
+  {
+   "id": "SW-05",
+   "event": "Regulatory cost shock (wage rules, transfer taxes, property-tax changes)",
+   "propagation": "Lower franchisee margin, weaker rent coverage, pricing pressure on a sale.",
+   "verify": "Current wage floor on the DIR page; the lease's tax and expense pass-throughs.",
+   "src": [
+    "OL-S10",
+    "OL-S34"
+   ],
+   "kind": "observation",
+   "excerpt": "The hourly minimum wage for fast food restaurant employees shall be twenty dollars ($20) per hour, effective April 1, 2024.",
+   "flag": "OL-F06",
+   "evidence": "Statute text only; later changes unchecked."
+  },
+  {
+   "id": "SW-06",
+   "event": "Recession or demand shock",
+   "propagation": "Lower unit sales, rent coverage squeeze, closures.",
+   "verify": "Scenario inputs from the owner's model, not from baseline projections.",
+   "src": [
+    "OL-S04"
+   ],
+   "kind": "framework",
+   "evidence": "Official baseline projections are not recession scenarios."
+  },
+  {
+   "id": "SW-07",
+   "event": "Interest-rate or credit-market shock",
+   "propagation": "Buyers' required returns rise and financing narrows, lowering price or closing odds.",
+   "verify": "Current financing quotes from lenders and buyers.",
+   "src": [
+    "OL-S16"
+   ],
+   "kind": "framework",
+   "flag": "OL-F13",
+   "evidence": "No rate series was retrieved in this module."
+  },
+  {
+   "id": "SW-08",
+   "event": "Transit construction disruption on the corridor",
+   "propagation": "Lane reductions and detours cut access and sales for adjacent sites.",
+   "verify": "Whether the parcel is near the D Line Sections 2 and 3 work; the Metro fund's eligibility rules.",
+   "src": [
+    "OL-S09"
+   ],
+   "kind": "observation",
+   "excerpt": "Lane reductions and temporary pedestrian detours may occur during off-peak hours to support this work.",
+   "evidence": "Corridor facts only; parcel proximity unknown."
+  },
+  {
+   "id": "SW-09",
+   "event": "Mega-event disruption (2028 Games)",
+   "propagation": "Road closures and security zones can help or hurt a specific site.",
+   "verify": "City and organizer traffic plans once published.",
+   "src": [
+    "OL-S08"
+   ],
+   "kind": "framework",
+   "evidence": "Dates only."
+  },
+  {
+   "id": "SW-10",
+   "event": "Brand-level shock (food safety, cyber incident, supply disruption)",
+   "propagation": "Sudden sales loss for all units of a brand, including franchisees.",
+   "verify": "Franchisor disclosure documents and filings after any event.",
+   "src": [
+    "OL-S16"
+   ],
+   "kind": "framework",
+   "flag": "OL-F13",
+   "evidence": "No official source was retrieved for this category."
+  },
+  {
+   "id": "SW-11",
+   "event": "Insurance market stress (non-renewal, premium spikes)",
+   "propagation": "Higher pass-through costs or uninsurable building; buyers and lenders may decline.",
+   "verify": "Insurance certificates and quotes for the parcel.",
+   "src": [
+    "OL-S32"
+   ],
+   "kind": "framework",
+   "flag": "OL-F13",
+   "evidence": "No official insurance data was retrieved."
+  },
+  {
+   "id": "SW-12",
+   "event": "Compound stress: loss of rent, repair cost and an illiquid exit at the same time",
+   "propagation": "Months without rent, an uninsured or under-insured repair bill, and a forced sale at a discount, all together.",
+   "verify": "Define the three inputs (months of lost rent, repair cost net of insurance, exit discount) and run them together in the owner's model.",
+   "src": [
+    "OL-S21"
+   ],
+   "kind": "framework",
+   "evidence": "A test definition, not a measured figure. See the decision rules page."
+  }
+ ]
+}

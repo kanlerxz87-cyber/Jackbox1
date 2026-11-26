@@ -1,0 +1,252 @@
+{
+ "flags": [
+  {
+   "id": "OL-F01",
+   "title": "Two official population series disagree for the same year",
+   "severity": "medium",
+   "finding": "For 2025 the DOF P-2A series has Los Angeles County at 9,853,435 and the Census Bureau V2025 estimate is 9,694,934, a gap of 158,501 people (+1.6% of the Census figure). The 2020 base also differs by source: DOF P-2A 10,012,050; Census 2020 count 10,014,009; Census V2025 estimate base 10,017,414 (the last two as shown in the QuickFacts excerpt).",
+   "evidence": [
+    "OL-S02",
+    "OL-S07"
+   ],
+   "action": "Choose one series per analysis, state its vintage, and never splice DOF and Census values in one trend line.",
+   "status": "needs review"
+  },
+  {
+   "id": "OL-F02",
+   "title": "EDD county and state projection windows differ",
+   "severity": "low",
+   "finding": "The county file covers 2023-2033 (published April 2026); the California file listed on the same page covers 2024-2034. EDD also warns that projections for previous periods are not always comparable to the latest.",
+   "evidence": [
+    "OL-S03",
+    "OL-S04"
+   ],
+   "action": "Do not compare the county percentage with the state percentage. Compare only within one file.",
+   "status": "needs review"
+  },
+  {
+   "id": "OL-F03",
+   "title": "County projection moved about 10% in five years; the path check is illustrative, not a validated back-test",
+   "severity": "medium",
+   "finding": "An LAUSD analyst quoting DOF's May 2019 projection said Los Angeles County would reach about 10.8 million by 2030. DOF's current baseline has 9,727,305 for 2030. The 2019 path also projected small gains for 2021 to 2024 while DOF's current series shows a decline over 2020 to 2024. Limits: the 2019 figure is second-hand and rounded; the 'observed' series is DOF's own current estimate (revised), not an independent count; there are only five annual points.",
+   "evidence": [
+    "OL-S02",
+    "OL-S06"
+   ],
+   "action": "Use this only as a warning about forecast error. A true back-test needs the original 2019 DOF file and an independent observed series, and should not be claimed until both are in hand.",
+   "status": "needs review"
+  },
+  {
+   "id": "OL-F04",
+   "title": "Tenant-brand FY2026 results not yet published",
+   "severity": "high",
+   "finding": "Jack in the Box reports fourth-quarter and full-year fiscal 2026 results on 2026-12-09, so the series on the Peers page ends at Q3 FY2026 and the Q4 row is blank. This is a decision input that arrives in about two weeks.",
+   "evidence": [
+    "OL-S19"
+   ],
+   "action": "Do not commit to a sale or renewal before reading the 2026-12-09 release. Extend the series afterwards (suggestion SUG-1).",
+   "status": "needs review"
+  },
+  {
+   "id": "OL-F05",
+   "title": "Metro D Line Sections 2 and 3 opening dates are not stated",
+   "severity": "low",
+   "finding": "The official project page says Sections 2 and 3 are under construction and gives no opening date. A non-official encyclopedia page states a year; it is not used.",
+   "evidence": [
+    "OL-S09"
+   ],
+   "action": "Leave blank until Metro states a date.",
+   "status": "needs review"
+  },
+  {
+   "id": "OL-F06",
+   "title": "Fast food wage: only the statute text was seen; current rate and the Council's end date are unconfirmed",
+   "severity": "medium",
+   "finding": "The bill text excerpt states $20 per hour effective 2024-04-01 and describes the Council as lasting until 2029-01-01 'or as otherwise provided'. The DIR Fast Food Council page could not be fetched, and later amendments were not checked. Some non-official sites claim there is no later rate; they are not used.",
+   "evidence": [
+    "OL-S10",
+    "OL-S34"
+   ],
+   "action": "Confirm on the DIR page and in current Labor Code text before using any wage figure in a model.",
+   "status": "needs review"
+  },
+  {
+   "id": "OL-F07",
+   "title": "FEMA flood data services returned HTTP 500",
+   "severity": "medium",
+   "finding": "Two forms of the National Flood Hazard Layer service URL failed, and other sessions logged the same for the Map Service Center. Automated flood-zone lookup is therefore not enabled.",
+   "evidence": [
+    "OL-S30",
+    "OL-S33"
+   ],
+   "action": "Use the FEMA Map Service Center by hand for the real parcel, and keep the result private.",
+   "status": "needs review"
+  },
+  {
+   "id": "OL-F08",
+   "title": "An older CAL FIRE service is not safe to automate",
+   "severity": "medium",
+   "finding": "The services.gis.ca.gov fire severity service lists State Responsibility Area layers dated 2007 and DRAFT Local Responsibility Area layers. Using it could return a stale zone label.",
+   "evidence": [
+    "OL-S35",
+    "OL-S32"
+   ],
+   "action": "Use the official State Fire Marshal map viewer by hand and record the map date.",
+   "status": "needs review"
+  },
+  {
+   "id": "OL-F09",
+   "title": "Census data needs a key; one Census documentation page could not be opened",
+   "severity": "low",
+   "finding": "The Census Data API now returns a 'Missing Key' notice without a key. The TIGERweb REST documentation page could not be fetched. The private workflow therefore uses the public Gazetteer file for tract choice and takes the API key from an environment variable.",
+   "evidence": [
+    "OL-S27",
+    "OL-S29"
+   ],
+   "action": "Request a free key; never commit it or paste it into a pull request.",
+   "status": "needs review"
+  },
+  {
+   "id": "OL-F10",
+   "title": "Repository README is stale",
+   "severity": "medium",
+   "finding": "README.md line 63 still says '12 irregularities' while data/flagged.json currently lists 15 (IR-01 to IR-15), and line 133 still lists data/tracts_demo_90015.csv although the file in the repository is data/tracts_demo_a.csv. The stale name also places a real ZIP code in a public document. The README also says counts are never hardcoded.",
+   "evidence": [
+    "OL-S36"
+   ],
+   "action": "Request to the README owner (not edited by this session): correct the counts and the filename.",
+   "status": "needs review"
+  },
+  {
+   "id": "OL-F11",
+   "title": "Several rows rely on search-result excerpts of official pages",
+   "severity": "medium",
+   "finding": "For OL-S07, OL-S08, OL-S10, OL-S11, OL-S12, OL-S13, OL-S14, OL-S15, OL-S16, OL-S17, OL-S18, OL-S23, OL-S24 and OL-S25 only the search excerpt of the official page was seen, not the full page. The Sources page marks each as 'excerpt'.",
+   "evidence": [
+    "OL-S07",
+    "OL-S10",
+    "OL-S16",
+    "OL-S24"
+   ],
+   "action": "Open each linked page and confirm the quoted text before relying on a number in a decision.",
+   "status": "needs review"
+  },
+  {
+   "id": "OL-F12",
+   "title": "Property-tax decline-in-value window closes Monday 2026-11-30",
+   "severity": "high",
+   "finding": "The Assessor's annual window is July 2 to November 30. Whether any claim fits is unknown because assessed value and January 1 market value are not known here, and the lease decides who controls appeals.",
+   "evidence": [
+    "OL-S25"
+   ],
+   "action": "Ask the property-tax adviser this week whether a filing makes sense; otherwise let the date pass knowingly.",
+   "status": "needs review"
+  },
+  {
+   "id": "OL-F13",
+   "title": "Topics not retrieved in this module",
+   "severity": "low",
+   "finding": "Not retrieved: SCAG growth forecast, the Los Angeles County K-12 level table, EDD occupational projections, state income tax and local transfer tax rates, interest-rate series, insurance market data. Rows are blank rather than estimated.",
+   "evidence": [
+    "OL-S05",
+    "OL-S03"
+   ],
+   "action": "See suggestion SUG-2 and the tax tracks on the board.",
+   "status": "needs review"
+  },
+  {
+   "id": "OL-F14",
+   "title": "Private or market-quoted inputs have no official source",
+   "severity": "info",
+   "finding": "Lease terms, rent, tenant financials, buyer quotes, owner basis, estate facts and the parcel location are private or market-quoted. Rows that depend on them are blank or are process steps. Nothing is inferred or filled in. The owner's 2030-2035 expiry range is user-supplied and unverified.",
+   "evidence": [],
+   "action": "Fill only from private documents held offline by authorized advisers; publish only a 'gate closed' status.",
+   "status": "needs review"
+  },
+  {
+   "id": "OL-F15",
+   "title": "Two sources are company channels, not government sites; leadership change details not retrieved",
+   "severity": "low",
+   "finding": "The Business Wire release (Jack in the Box) and the Restaurant Brands IR file are the issuers' own channels; EDGAR copies were not retrieved for those two. The release reports an interim chief executive and a planned succession 'as previously announced'; when and why the chief executive changed was not retrieved. Personal names and contact details in the release are not reproduced.",
+   "evidence": [
+    "OL-S19",
+    "OL-S14"
+   ],
+   "action": "Confirm on EDGAR (Form 8-K) and add the date and reason of the chief-executive change.",
+   "status": "needs review"
+  },
+  {
+   "id": "OL-F16",
+   "title": "Overlapping parallel sessions and trees",
+   "severity": "medium",
+   "finding": "At least seven sessions started on 2026-11-26 and several claimed overlapping dashboards (hub/, portal-02817d04/, this module). Eight earlier trees also remain. Readers can meet conflicting counts and pages.",
+   "evidence": [
+    "OL-S37"
+   ],
+   "action": "Owner decision on one primary site (suggestion SUG-7). Until then this module stays self-contained.",
+   "status": "needs review"
+  },
+  {
+   "id": "OL-F17",
+   "title": "The site is public; this module holds no private data",
+   "severity": "medium",
+   "finding": "GitHub Pages is not an access-controlled workspace. This module contains no address, parcel number, owner, lease, rent, basis or coordinate. The private workflow runs on a local machine and writes only to the git-ignored private folder.",
+   "evidence": [
+    "OL-S36"
+   ],
+   "action": "Keep every parcel and owner record offline. Run the repository's privacy check before every merge.",
+   "status": "needs review"
+  }
+ ],
+ "repo_review": [
+  {
+   "id": "RR-01",
+   "file": "README.md",
+   "check": "Counts and filenames are stale (line 63 and line 133). Fix counts or generate them.",
+   "url": "https://github.com/kanlerxz87-cyber/Jackbox1/blob/main/README.md",
+   "flag": "OL-F10"
+  },
+  {
+   "id": "RR-02",
+   "file": "PRIVACY.md",
+   "check": "Privacy model and scanner patterns. The outlook checker reuses the address, parcel, email, phone and ZIP patterns and adds coordinate and county-parcel-number patterns.",
+   "url": "https://github.com/kanlerxz87-cyber/Jackbox1/blob/main/PRIVACY.md",
+   "flag": "OL-F17"
+  },
+  {
+   "id": "RR-03",
+   "file": "COORDINATION.md",
+   "check": "Very large shared board with several sessions stacked; this session's block is at the top and others append at the end. Consider archiving closed sections.",
+   "url": "https://github.com/kanlerxz87-cyber/Jackbox1/blob/main/COORDINATION.md",
+   "flag": "OL-F16"
+  },
+  {
+   "id": "RR-04",
+   "file": ".github/workflows/pages.yml",
+   "check": "Workflow is manually disabled; its artifact path is now the repository root after the F-18 fix, so re-enabling it would not hide other trees. The live site is served from the legacy main:/ Pages source (GitHub API shows status built).",
+   "url": "https://github.com/kanlerxz87-cyber/Jackbox1/blob/main/.github/workflows/pages.yml",
+   "flag": "OL-F16"
+  },
+  {
+   "id": "RR-05",
+   "file": ".gitignore",
+   "check": "Lists private/ (the private workflow refuses to run otherwise and its self-test checks this).",
+   "url": "https://github.com/kanlerxz87-cyber/Jackbox1/blob/main/.gitignore",
+   "flag": "OL-F17"
+  },
+  {
+   "id": "RR-06",
+   "file": "site-map.html",
+   "check": "This session added cards for hub/ and outlook/ and removed the count from the heading, which said 'eight entry points' while nine cards were listed.",
+   "url": "https://github.com/kanlerxz87-cyber/Jackbox1/blob/main/site-map.html",
+   "flag": "OL-F16"
+  },
+  {
+   "id": "RR-07",
+   "file": "hub/",
+   "check": "Merged in PR 35 by another session; listed for navigation only and not re-verified by this module.",
+   "url": "https://github.com/kanlerxz87-cyber/Jackbox1/tree/main/hub",
+   "flag": "OL-F16"
+  }
+ ]
+}
