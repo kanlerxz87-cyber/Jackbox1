@@ -197,5 +197,56 @@
    "action": "Keep every parcel and owner record offline. Run the repository's privacy check before every merge.",
    "status": "needs review"
   }
+ ],
+ "repo_review": [
+  {
+   "id": "RR-01",
+   "file": "README.md",
+   "check": "Counts and filenames are stale (line 63 and line 133). Fix counts or generate them.",
+   "url": "https://github.com/kanlerxz87-cyber/Jackbox1/blob/main/README.md",
+   "flag": "OL-F10"
+  },
+  {
+   "id": "RR-02",
+   "file": "PRIVACY.md",
+   "check": "Privacy model and scanner patterns. The outlook checker reuses the address, parcel, email, phone and ZIP patterns and adds coordinate and county-parcel-number patterns.",
+   "url": "https://github.com/kanlerxz87-cyber/Jackbox1/blob/main/PRIVACY.md",
+   "flag": "OL-F17"
+  },
+  {
+   "id": "RR-03",
+   "file": "COORDINATION.md",
+   "check": "Very large shared board with several sessions stacked; this session's block is at the top and others append at the end. Consider archiving closed sections.",
+   "url": "https://github.com/kanlerxz87-cyber/Jackbox1/blob/main/COORDINATION.md",
+   "flag": "OL-F16"
+  },
+  {
+   "id": "RR-04",
+   "file": ".github/workflows/pages.yml",
+   "check": "Workflow is manually disabled; its artifact path is now the repository root after the F-18 fix, so re-enabling it would not hide other trees. The live site is served from the legacy main:/ Pages source (GitHub API shows status built).",
+   "url": "https://github.com/kanlerxz87-cyber/Jackbox1/blob/main/.github/workflows/pages.yml",
+   "flag": "OL-F16"
+  },
+  {
+   "id": "RR-05",
+   "file": ".gitignore",
+   "check": "Lists private/ (the private workflow refuses to run otherwise and its self-test checks this).",
+   "url": "https://github.com/kanlerxz87-cyber/Jackbox1/blob/main/.gitignore",
+   "flag": "OL-F17"
+  },
+  {
+   "id": "RR-06",
+   "file": "site-map.html",
+   "check": "This session added cards for hub/ and outlook/ and removed the count from the heading, which said 'eight entry points' while nine cards were listed.",
+   "url": "https://github.com/kanlerxz87-cyber/Jackbox1/blob/main/site-map.html",
+   "flag": "OL-F16"
+  },
+  {
+   "id": "RR-07",
+   "file": "hub/",
+   "check": "Merged in PR 35 by another session; listed for navigation only and not re-verified by this module.",
+   "url": "https://github.com/kanlerxz87-cyber/Jackbox1/tree/main/hub",
+   "flag": "OL-F16"
+  }
  ]
 }

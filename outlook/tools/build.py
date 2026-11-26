@@ -489,9 +489,14 @@ def page_flagged(c):
         ev = "<br>".join(f'<a href="{E(c.src[i]["url"])}">{i}</a> <span class="m m-{c.src[i]["method"]}">{c.src[i]["method"]}</span>' for i in f["evidence"]) or '<span class="blank">none: private input</span>'
         rows.append(tr(f["id"], [td(f"<strong>{f['id']}</strong>"), td(f'<span class="sev sev-{f["severity"]}">{f["severity"]}</span>'),
                                  td(f'<strong>{E(f["title"])}</strong><br>{E(f["finding"])}'), td(ev), td(E(f["action"])), td(f["status"])]))
+    rr = []
+    for r in c.d["flags"]["repo_review"]:
+        rr.append(tr(r["id"], [td(r["id"]), td(f'<a href="{E(r["url"])}">{E(r["file"])}</a>'), td(E(r["check"])), td(c.flag(r["flag"]))]))
     return ("Flagged for review",
             "Irregularities and unverified items found in this module, each with source links. None blocks publication; each needs a human look.",
-            "".join([legend(), table("Flagged items", ["ID", "Severity", "Finding", "Source links", "Action", "Status"], rows, "wide")]))
+            "".join([legend(), table("Flagged items", ["ID", "Severity", "Finding", "Source links", "Action", "Status"], rows, "wide"),
+                     "<h2 id=\"repo\">Repository files to review by hand</h2>",
+                     table("Repository review links (GitHub, main branch)", ["ID", "File", "What to check", "Flag"], rr)]))
 
 
 def page_sources(c):
@@ -546,7 +551,7 @@ def page_index(c):
             + f'<h2 id="status">Evidence status</h2><p>Rows by kind across the module: {counts}. Flagged items: {len(c.d["flags"]["flags"])} (<a href="flagged.html">see list</a>).</p>'
             + legend()
             + "<h2 id=\"pages\">Pages</h2><ul>" + nav + "</ul>"
-            + "<h2 id=\"scope\">Scope and overlap</h2><p>This module adds forward-looking official evidence, peer series, an options and wealth framework, and a private location workflow. It does not replace the tenant series on <code>data/tenant.json</code>, the hazard, tax and calculator work of other sessions, or the root landing page. See flag OL-F16.</p>")
+            + "<h2 id=\"scope\">Scope and overlap</h2><p>This module adds forward-looking official evidence, peer series, an options and wealth framework, and a private location workflow. It does not replace the tenant series on <code>data/tenant.json</code>, the hazard, tax and calculator work of other sessions, or the root landing page. See also the <a href=\"../hub/index.html\">decision hub</a> (including its <a href=\"../hub/calculator.html\">calculator</a>), listed for navigation and not re-verified here. See flag OL-F16.</p>")
     return "Overview", "Forward-looking official evidence, tenant and peer trends, and a no-winner options framework for one single-tenant net-lease restaurant property in central Los Angeles.", body
 
 
