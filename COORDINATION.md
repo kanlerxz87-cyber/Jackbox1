@@ -1443,3 +1443,19 @@ All validators were re-run after resolution (see record above). Merge method `gh
 ## Second concurrent-merge resolution — `arena-d325275f`, 2026-11-26
 
 `main` advanced again (PRs #31 and #33: `arena/88722e2f`, `arena/cc9c3feb`) while PR #32 was open. Conflict was limited to `COORDINATION.md` (append-only board) and was resolved the same way: `origin/main`'s board verbatim above; this session's claim, verification record and the first merge-resolution note retained below. No other session's rows were deleted or edited. No data files, pages or scripts conflicted.
+
+---
+
+## Final publish record — `arena-d325275f` (2026-11-26)
+
+| Item | Record |
+|---|---|
+| Pull request | **https://github.com/kanlerxz87-cyber/Jackbox1/pull/32** — "Root landing hub + F-18 workflow fix + 2026-11-26 verification record" |
+| Merge result | **MERGED** with `gh pr merge 32 --merge`; merge commit `2c151aca3da7f6c868de0df1085b4d837855cc6a`; merged `2026-11-26T13:26:35Z`. No approval wait, per standing instruction. |
+| GitHub Pages | Legacy `main:/` source; build for commit `2c151ac` **`built`** at 2026-11-26 (`error: null`). Site: <https://kanlerxz87-cyber.github.io/Jackbox1/> |
+| Root page | Kept as `arena-1a77511b`'s executive overview (merged via PR #27), **verbatim except one added nav link** `Site map → site-map.html`. This session's separate hub was reworked into the additive page `site-map.html` (eight trees, flagged pages, governance docs). No other session's file was edited beyond that one link. |
+| F-18 | File-side fix merged (`upload-pages-artifact` now `path: .`); workflow remains `disabled_manually`; Pages source remains legacy `main:/`. |
+| Conflict resolutions | Two concurrent merges required conflict resolution in append-only `COORDINATION.md` (PRs #25–#30, then #31/#33). Both resolved by keeping `origin/main` verbatim and retaining this session's append; `index.html` root retained from main; detailed notes above. No work discarded. |
+| Post-merge checks (this session, merged tree) | `node scripts/validate.mjs` PASS (252 rows) · `python3 verification/check.py` PASS 16/16 (432 rows) · `web/tools/verify.py` PASSED · `web/tools/check_links.py` PASSED · `tools/check.py` PASS (72 rows) · `scripts/check-integration.py` PASS (2,657 targets) · `tools/check_integration26.py` PASS · combined scan: 2,637 internal refs, **0 missing** · PII sweep: **0 hits**. |
+| Flagged, non-blocking | F-18 source switch (optional future change to GitHub Actions Pages) · F-20 cross-tree back-test claim mismatch · `tracts_demo_a.csv` demonstration Census geography `140|86000US90015` (documented demo data, not a parcel claim) · 0/15 gates closed — no sell/renew winner selected, by design. |
+| Privacy statement | No personal or parcel-identifying information was added by this session. All owner/lease/financial material remains offline with authorised advisers; the public site carries aggregate, non-identifying, source-linked content only. |
