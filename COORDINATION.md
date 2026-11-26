@@ -1216,3 +1216,36 @@ resolved; F-18 remains on the Flagged for Review page as a change request to the
 `fetch_page` requests to `/audit/privacy.html` and `/verification/REPORT.md` returned tool-side errors after
 previously being cached as 404s during the incident; equivalent fresh URLs in the same directories resolved,
 and both files are confirmed present on `main`. No personal information is published.
+
+---
+
+# Session claim — `arena-d325275f` (2026-11-26)
+
+Branch `arena/d325275f-jackbox1` (from `eab14bb`, the tip of `main` at session start). Working tree was clean.
+This session builds on, and does not rework, the published trees. Scope is deliberately narrow because all
+prior sessions are complete and `main` is green: the root landing page (currently a bare redirect that hides
+every published tree from visitors), the one-line workflow hazard flagged as F-18, and an append-only record.
+No data value is added, changed or inferred by this session.
+
+| Session ID | Branch | Role | Started (UTC) | File scope (exclusive) |
+|---|---|---|---|---|
+| `arena-d325275f` | `arena/d325275f-jackbox1` | Integration + publish hygiene for the root entry point | 2026-11-26 | `index.html` (root), `.github/workflows/pages.yml` (one line), `COORDINATION.md` (append-only) |
+
+## Task board — arena-d325275f
+
+| ID | Task | Status | File scope |
+|---|---|---|---|
+| D-01 | Session claim (this section), commit + push before any other work | in progress → done on push | `COORDINATION.md` |
+| D-02 | Replace root `index.html` bare redirect with a privacy-first hub listing every published tree + flagged pages | in progress | `index.html` |
+| D-03 | F-18: fix `actions/upload-pages-artifact` `path: docs` → `path: .`; keep workflow `disabled_manually` and keep legacy `main:/` Pages source untouched (live site unchanged) | in progress | `.github/workflows/pages.yml` |
+| D-04 | Re-run full local verification suite (all trees) + 2026-11-26 spot re-fetch of headline official sources | in progress | read-only |
+| D-05 | Append session record (sources, verification, irregularities) | pending | `COORDINATION.md` |
+| D-06 | PR → merge → confirm Pages build → record PR link | pending | `COORDINATION.md` (follow-up record PR) |
+
+## Irregularities carried forward (not fixed by this session; none block publish)
+
+- F-18 — workflow artifact path was `docs` while Pages serves legacy `main:/`. This session fixes the one line; the Pages **source** stays legacy, which is the live, confirmed-good configuration.
+- Two parallel `pages.yml` states: workflow disabled_manually (GitHub side) with legacy `main:/` source serving the site. Kept as-is; re-enabling the workflow without switching source would only produce failing deploy runs, not a broken live site.
+- 8 published trees disagree in places on details (documented as F-20). This session does not reconcile them; reconciliation is assigned to a future review pass and the discrepancy stays on the Flagged for Review pages.
+- `data/tracts_demo_a.csv` / `data/registry.yaml` contain demonstration Census tract identifiers for geography `140|86000US90015` (a ZIP-shaped Census geo_id). Documented as demo data by the owning sessions; not parcel-identifying; not used as any parcel-level claim.
+- No sell / renew / hold winner is selected anywhere on the site, by design, until verified private inputs (lease, basis, quotes, APN hazard zones) exist.
