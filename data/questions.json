@@ -1,8 +1,8 @@
 {
   "meta": {
     "dataset": "questions",
-    "version": "1.0",
-    "as_of": "2026-11-25",
+    "version": "1.1",
+    "as_of": "2026-11-26",
     "owner_session": "ses-41ea221b",
     "purpose": "A clear list of the questions, information and answers that must be resolved before any decision about PARCEL-001 can reasonably be made — separated into what we HAVE, what we DO NOT HAVE, and how each gap gets closed.",
     "rule": "Every open question names (a) why it blocks the decision, (b) who holds it, (c) how to discover it, and (d) whether it can be obtained without revealing private data. A question with no discovery path is not a question, it is a wish."
@@ -10,13 +10,13 @@
   "have": [
     { "id": "HV-01", "item": "Metro labour market and unemployment", "evidence": "4.6% unemployment, October 2026, and a full sector breakdown", "source_id": "S-002" },
     { "id": "HV-02", "item": "Metro asset-price trend, 47 quarters", "evidence": "HPI 282.59 to 553.76, with a completed mean-reversion back-test", "source_id": "S-005" },
-    { "id": "HV-03", "item": "Current risk-free rate", "evidence": "10-year Treasury 4.92% on 2026-11-23", "source_id": "S-004" },
-    { "id": "HV-04", "item": "City demographic and income baseline", "evidence": "Population 3,869,089; median household income $81,939; poverty 16.5%", "source_id": "S-001" },
-    { "id": "HV-05", "item": "County disaster history", "evidence": "20 most recent declarations enumerated, including DR-4856 and DR-4482", "source_id": "S-008" },
+    { "id": "HV-03", "item": "Current risk-free rate", "evidence": "10-year Treasury 4.91% on 2026-11-24 (4.92% on 2026-11-23)", "source_id": "S-004" },
+    { "id": "HV-04", "item": "City & county demographic, school & projection baseline", "evidence": "City 3,869,089; County 9,694,934; LAUSD 497,105 students; SCAG 2050 jobs +8.5%", "source_id": "S-023" },
+    { "id": "HV-05", "item": "County disaster history & seismic probabilities", "evidence": "20 declarations incl. DR-4856; UCERF3 30-yr LA probabilities (60% M6.7 / 46% M7.0 / 31% M7.5)", "source_id": "S-029" },
     { "id": "HV-06", "item": "Hazard query method that works", "evidence": "FEMA NFHL, USGS ASCE 7-22 and CAL FIRE services all returned real responses", "source_id": "S-007" },
-    { "id": "HV-07", "item": "Federal and California tax treatment of a sale", "evidence": "Capital gain rates, 25% recapture, 3.8% NIIT, California ordinary-income treatment, §1031 timing", "source_id": "S-013" },
-    { "id": "HV-08", "item": "Tenant credit context", "evidence": "Jack in the Box is an SEC registrant; 10-K and XBRL revenue series are public", "source_id": "S-011" },
-    { "id": "HV-09", "item": "A dated, verified action item", "evidence": "Decline-in-value deadline 2026-11-30", "source_id": "S-019" }
+    { "id": "HV-07", "item": "Federal & 2026 California tax treatment of a sale", "evidence": "2026 IRS Rev. Proc. 2025-32 LTCG, 25% §1250, 3.8% NIIT, 2026 FTB PIT 1%-12.3% + 1% MHSA, §1031 timing", "source_id": "S-033" },
+    { "id": "HV-08", "item": "Tenant multi-period operating & debt series", "evidence": "Jack in the Box FY23-Q3'26 SEC filings: SSS -1.1% Q3'26, 2,115 units, $1.49B debt incl. 7.624% 2026 notes", "source_id": "S-039" },
+    { "id": "HV-09", "item": "A dated, verified action item", "evidence": "Decline-in-value deadline 2026-11-30 (four days after 2026-11-26 cut-off)", "source_id": "S-019" }
   ],
   "do_not_have": [
     {
@@ -76,9 +76,10 @@
       "question": "What cap rate will a buyer actually pay for this asset, and what discount applies to its remaining term?",
       "why_blocks": "There is no official source for single-tenant QSR cap rates. Every sell-side number depends on this.",
       "holder": "Licensed brokers and appraiser",
-      "discovery": "Engage two or three brokers for a written opinion under NDA; obtain one appraisal. Record quotes as spreads over the verified 4.92% Treasury.",
+      "discovery": "Engage two or three brokers for a written opinion under NDA; obtain one appraisal. Record quotes as spreads over the verified 4.91% Treasury.",
       "privacy_safe": "No — quotes are asset-specific and confidential.",
-      "status": "open"
+      "status": "open",
+      "source_id": "S-004"
     },
     {
       "id": "G-07",
@@ -164,12 +165,35 @@
     {
       "id": "G-15",
       "priority": 3,
-      "question": "What is the exact California marginal rate that will apply to the gain?",
-      "why_blocks": "The FTB bracket page could not be loaded during this session, so no bracket is baked into the calculator.",
-      "holder": "California FTB",
-      "discovery": "Download the current year 540 tax rate schedule PDF directly from ftb.ca.gov and verify the top bracket and mental-health surcharge.",
-      "privacy_safe": "Yes",
-      "status": "open"
+      "question": "What are the 2026 California PIT tax brackets and MHSA surcharge?",
+      "why_blocks": "Previously open (IR-06) because the 540 booklet failed to load. Now verified from FTB Tax News Oct 2026 (Schedules X/Y/Z 1.00%-12.30%) and FTB 5805F (+1% MHSA > $1M). Only the owner's personal taxable-income tier remains private.",
+      "holder": "California FTB (verified) / Owner for personal tier",
+      "discovery": "Verified 2026 brackets embedded in assets/js/calc.js from S-033 and S-034.",
+      "privacy_safe": "Yes — statutory brackets are public; personal income stays in browser.",
+      "status": "closed",
+      "source_id": "S-033"
+    },
+    {
+      "id": "G-16",
+      "priority": 2,
+      "question": "What is the parcel's zoning, Community Plan designation and Transit Oriented Communities (TOC) tier?",
+      "why_blocks": "Determines whether post-2030 redevelopment or higher-density land value exceeds the QSR pad hold value.",
+      "holder": "Los Angeles City Planning (ZIMAS)",
+      "discovery": "Query zimas.lacity.org by parcel APN/address in the secure workspace per CP-7826 guidelines (S-028).",
+      "privacy_safe": "Yes — zoning and TOC tier can be summarised without publishing the address.",
+      "status": "open",
+      "source_id": "S-028"
+    },
+    {
+      "id": "G-17",
+      "priority": 2,
+      "question": "Can the parcel-level cash-flow model be back-tested against local QSR sale/rent history?",
+      "why_blocks": "Currently only the macro HPI mean-reversion rule is back-tested (r = -0.937); parcel-level underwriting remains unbacktested (F-20).",
+      "holder": "Appraiser / broker comps + owner rent history",
+      "discovery": "Once G-04, G-05 and G-06 close, test model cap-rate and rent assumptions against at least 3 closed central-LA QSR comps.",
+      "privacy_safe": "Mixed — anonymised comp spreads can be published; lease rent stays private.",
+      "status": "open",
+      "source_id": "S-005"
     }
   ],
   "answered_by_design": [

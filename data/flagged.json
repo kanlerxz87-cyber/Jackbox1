@@ -1,8 +1,8 @@
 {
   "meta": {
     "dataset": "flagged",
-    "version": "1.1",
-    "as_of": "2026-11-25",
+    "version": "1.2",
+    "as_of": "2026-11-26",
     "owner_session": "ses-41ea221b",
     "purpose": "Everything that could not be confirmed against an official source, plus every irregularity found while verifying line by line. These items are published deliberately, with source links, so they can be reviewed after the site is live. They do not block publication.",
     "counting_rule": "An item is 'unverified' if a value is required for the decision but no official source could confirm it in this session. It is left blank in the data, never filled with an estimate."
@@ -66,25 +66,26 @@
     },
     {
       "id": "IR-06",
-      "severity": "medium",
-      "title": "The California FTB tax rate schedule page failed to load",
-      "detail": "The 2025 540 tax rate schedules page did not return content during this session. The 1% to 12.3% range and the mental health surcharge are widely cited but were not verified line by line here.",
-      "impact": "No California marginal rate is baked into the calculator. The reader supplies it. California's lack of a preferential capital-gain rate itself IS verified (S-017, S-018).",
-      "action_requested": "Download the current 540 rate schedule PDF from ftb.ca.gov and confirm the brackets.",
+      "severity": "low",
+      "title": "RESOLVED (2026-11-26): California FTB 2026 PIT rate schedules verified",
+      "detail": "Earlier session could not load the 2025 540 booklet. On 2026-11-26, FTB Tax News October 2026 (S-033) and FTB Form 5805F Instructions (S-034) verified the full 2026 Schedules X/Y/Z (1.00% to 12.30%) and the +1.00% Mental Health Services Act tax over $1,000,000. Only the owner's personal taxable-income tier remains private.",
+      "impact": "The browser calculator now offers both verified 2026 FTB progressive brackets and a custom marginal rate override.",
+      "action_requested": "Confirm personal filing status and other taxable income privately in the browser calculator.",
       "sources": [
-        "S-017",
-        "S-018"
+        "S-033",
+        "S-034"
       ]
     },
     {
       "id": "IR-07",
       "severity": "low",
-      "title": "The Los Angeles County QuickFacts page failed repeatedly",
-      "detail": "Two attempts to fetch the county-level QuickFacts table failed. City-level figures were used instead and labelled as city-level.",
-      "impact": "No county-level demographics are presented. This is disclosed rather than substituting city figures silently.",
-      "action_requested": "Retry, or pull county figures directly from the ACS API once the key exists.",
+      "title": "RESOLVED (2026-11-26) WITH GEOGRAPHIC CAVEAT: LA County QuickFacts V2025 verified",
+      "detail": "County QuickFacts now verified at 9,694,934 (July 1, 2025, -3.2% since 2020, S-023) alongside CA DOF E-1 (-64,000 YoY to Jan 1, 2026, S-024). Still fails as a trade-area proxy because the county is 4,059 sq mi.",
+      "impact": "County context is now verified alongside city figures, both clearly marked as non-trade-area benchmarks.",
+      "action_requested": "Pull census-tract figures via ACS API once G-01 and G-02 close.",
       "sources": [
-        "S-001"
+        "S-023",
+        "S-024"
       ]
     },
     {
@@ -158,6 +159,30 @@
         "S-002",
         "S-021"
       ]
+    },
+    {
+      "id": "IR-14",
+      "severity": "medium",
+      "title": "No Q4 / FY2026 Jack in the Box Form 10-K or earnings release found on SEC EDGAR as of 2026-11-26",
+      "detail": "EDGAR holds Q1, Q2 and Q3 FY2026 releases and Form 10-Q through July 5, 2026 (S-037 to S-041), but no Q4/FY2026 filing appeared on EDGAR as of 2026-11-26 (prior year Q4 FY2025 was filed 2025-11-19).",
+      "impact": "Tenant operating series stops at Q3 FY2026 (ended July 5, 2026). Full-year FY2026 unit count and franchise rental totals remain pending.",
+      "action_requested": "Check SEC EDGAR CIK 0000807882 for the FY2026 10-K before finalising renewal negotiations.",
+      "sources": [
+        "S-012",
+        "S-039",
+        "S-040"
+      ]
+    },
+    {
+      "id": "IR-15",
+      "severity": "medium",
+      "title": "Back-test scope boundary: macro HPI is back-tested; parcel-level cash-flow model is NOT back-tested",
+      "detail": "Across sibling trees (F-20), the FHFA MSA HPI mean-reversion rule has 7 overlapping back-test pairs (r = -0.937), whereas the parcel-level NNN cash-flow model has zero verified rent, cap-rate or historical comp inputs and therefore cannot be back-tested.",
+      "impact": "Readers must not mistake the macro HPI back-test for a validated parcel valuation model.",
+      "action_requested": "Keep model status as v0.1-unbacktested-core until G-04, G-05 and G-06 close.",
+      "sources": [
+        "S-005"
+      ]
     }
   ],
   "unverified_values": [
@@ -165,7 +190,8 @@
       "id": "UV-01",
       "item": "Parcel census tract and tract demographics",
       "why": "IR-01 plus IR-04",
-      "page": "market"
+      "page": "market",
+      "source_id": "S-020"
     },
     {
       "id": "UV-02",
@@ -177,19 +203,22 @@
       "id": "UV-03",
       "item": "Parcel FEMA flood zone",
       "why": "IR-01, IR-11",
-      "page": "hazards"
+      "page": "hazards",
+      "source_id": "S-007"
     },
     {
       "id": "UV-04",
       "item": "Parcel CAL FIRE severity zone",
       "why": "IR-01, IR-05",
-      "page": "hazards"
+      "page": "hazards",
+      "source_id": "S-009"
     },
     {
       "id": "UV-05",
       "item": "Parcel seismic design values",
       "why": "IR-01, IR-11",
-      "page": "hazards"
+      "page": "hazards",
+      "source_id": "S-006"
     },
     {
       "id": "UV-06",
@@ -206,8 +235,9 @@
     {
       "id": "UV-08",
       "item": "Insurance premium, limits, deductibles, BI period",
-      "why": "Private binder",
-      "page": "decision"
+      "why": "Private binder (CDI FAIR Plan context in S-030)",
+      "page": "decision",
+      "source_id": "S-030"
     },
     {
       "id": "UV-09",
@@ -224,14 +254,16 @@
     {
       "id": "UV-11",
       "item": "Adjusted basis and accumulated depreciation",
-      "why": "Private tax records",
-      "page": "decision"
+      "why": "Private tax records (IRS Pub 946 rules in S-016)",
+      "page": "decision",
+      "source_id": "S-016"
     },
     {
       "id": "UV-12",
-      "item": "California marginal bracket",
-      "why": "IR-06",
-      "page": "decision"
+      "item": "Owner's personal California marginal income tier",
+      "why": "2026 FTB Schedules X/Y/Z (1.00%-12.30%) + 1% MHSA >$1M are now verified (IR-06 resolved); personal taxable income stays private",
+      "page": "decision",
+      "source_id": "S-033"
     },
     {
       "id": "UV-13",
@@ -243,7 +275,8 @@
       "id": "UV-14",
       "item": "Traffic count on the adjacent street",
       "why": "IR-01; segment unknown",
-      "page": "market"
+      "page": "market",
+      "source_id": "S-010"
     },
     {
       "id": "UV-15",
@@ -255,20 +288,35 @@
       "id": "UV-16",
       "item": "Franchisee financials and guaranty",
       "why": "Private",
-      "page": "lease"
+      "page": "tenant"
+    },
+    {
+      "id": "UV-17",
+      "item": "Parcel zoning, Community Plan & TOC Tier (ZIMAS)",
+      "why": "IR-01; requires APN/address in secure workspace",
+      "page": "market",
+      "source_id": "S-028"
+    },
+    {
+      "id": "UV-18",
+      "item": "Parcel-level cash-flow back-test against closed comps",
+      "why": "IR-10 / IR-15; requires G-04, G-05 and G-06",
+      "page": "scenarios",
+      "source_id": "S-005"
     }
   ],
   "what_was_verified": [
-    "Los Angeles city population, income, poverty, education, housing, retail sales (Census QuickFacts)",
-    "Metro labour force, unemployment, sector employment, CPI (BLS)",
+    "Los Angeles city (3,869,089) & county (9,694,934) population, income, poverty, education, housing, retail sales (Census QuickFacts V2025 & CA DOF E-1 Jan 1, 2026)",
+    "Metro labour force, unemployment (4.6% Oct 2026), sector employment, CPI (3.7% Sep 2026) (BLS)",
+    "SCAG Connect SoCal 2024 LA County 2019-2050 employment & labor force forecasts and CDE SY 2025-26 LAUSD enrollment (497,105)",
     "47 quarters of metro HPI and the derived back-test statistics (FHFA via FRED)",
-    "10-year Treasury at 4.92% on 2026-11-23 and its November range (Federal Reserve H.15 via FRED)",
-    "Reference-point FEMA flood zone, USGS seismic parameters and SDC, and the central-LA earthquake count",
-    "Twenty county disaster declarations with numbers and dates (OpenFEMA)",
-    "Federal capital gain rates, 25% recapture, 3.8% NIIT thresholds, §1031 45/180-day limits, depreciation basis rules (IRS)",
-    "California has no preferential capital gain rate (FTB)",
-    "Decline-in-value window: opens 2026-07-02, deadline 2026-11-30 (LA County Assessor)",
-    "Caltrans is the official AADT source for state highways (Caltrans)",
-    "Jack in the Box is an SEC registrant with public 10-K and XBRL revenue (SEC)"
+    "10-year Treasury at 4.91% on 2026-11-24 (4.92% on 2026-11-23) and its November 2026 range (Federal Reserve H.15 via FRED)",
+    "Reference-point FEMA flood zone, USGS seismic parameters, UCERF3 30-yr LA earthquake probabilities (60%/46%/31%), and central-LA earthquake count",
+    "Twenty county disaster declarations with numbers and dates (OpenFEMA) + CDI Q1 2026 FAIR Plan commercial policy counts (21,464)",
+    "2026 Federal LTCG brackets (IRS Rev. Proc. 2025-32), 2025 Topic 409, 25% recapture, 3.8% NIIT thresholds, §1031 45/180-day limits, depreciation basis rules (IRS)",
+    "2026 California PIT Schedules X/Y/Z (1.00%-12.30%), +1% MHSA tax >$1M, no preferential capital gain rate (FTB Oct 2026 Tax News & Form 5805F)",
+    "Prop 13 1% base rate, 2% annual cap, change-of-ownership reset (BOE Pub 29) & 2026-27 DIV deadline 2026-11-30 (LA County Assessor)",
+    "Caltrans Traffic Census 2021-2024 AADT workbooks & LA City Planning ZIMAS/CP-7826 lookup procedure",
+    "Jack in the Box Inc. FY2023-Q3 FY2026 SEC series: SSS (-1.1% Q3'26), unit counts (2,115), franchise rental revenues ($332.7M FY25 / $242.5M 9M'26), $1.49B debt incl. 7.624% Series 2026-1 Notes (SEC EDGAR)"
   ]
 }

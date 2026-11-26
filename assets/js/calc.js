@@ -8,9 +8,11 @@
      • nothing leaves this tab; reloading the page discards everything
 
    Every tax rate and threshold below is sourced from an official page and is
-   cited in data/valuation.json (TX-01 .. TX-08). The California marginal rate
-   is NOT hard-coded because it could not be verified in this session; the
-   reader supplies it.
+   cited in data/valuation.json (TX-01 .. TX-10): 2026 Federal LTCG brackets
+   from IRS Rev. Proc. 2025-32 (S-032), 2025 Federal LTCG from IRS Topic 409
+   (S-013), and 2026 California PIT brackets + 1% MHSA surcharge from FTB
+   October 2026 Tax News (S-033) and FTB Form 5805F (S-034). The reader may
+   also override with a custom California marginal rate.
    ===================================================================== */
 (function () {
   'use strict';
@@ -28,12 +30,45 @@
   };
   var pct = function (n, d) { return isFinite(n) ? n.toFixed(d == null ? 2 : d) + '%' : '—'; };
 
-  /* --- Federal long-term capital gain brackets (IRS Topic 409, 2025) ----- */
-  var LTCG = {
-    single: { b1: 48350, b2: 533400 },
-    mfs: { b1: 48350, b2: 300000 },
-    mfj: { b1: 96700, b2: 600050 },
-    hoh: { b1: 64750, b2: 566700 }
+  /* --- Federal long-term capital gain brackets -------------------------- */
+  /* 2026: IRS Rev. Proc. 2025-32 (S-032); 2025: IRS Topic 409 (S-013)     */
+  var LTCG_BY_YEAR = {
+    '2026': {
+      single: { b1: 49450, b2: 545500 },
+      mfs: { b1: 49450, b2: 306850 },
+      mfj: { b1: 98900, b2: 613700 },
+      hoh: { b1: 66200, b2: 579600 }
+    },
+    '2025': {
+      single: { b1: 48350, b2: 533400 },
+      mfs: { b1: 48350, b2: 300000 },
+      mfj: { b1: 96700, b2: 600050 },
+      hoh: { b1: 64750, b2: 566700 }
+    }
+  };
+  /* --- 2026 California PIT brackets (FTB Oct 2026 Tax News, S-033) ----- */
+  /* Plus 1% Mental Health Services Act tax > $1,000,000 (FTB 5805F, S-034)*/
+  var CA_2026_SCHEDULES = {
+    single: [
+      [0, 11456, 0.01], [11456, 27157, 0.02], [27157, 42861, 0.04],
+      [42861, 59498, 0.06], [59498, 75197, 0.08], [75197, 384109, 0.093],
+      [384109, 460927, 0.103], [460927, 768213, 0.113], [768213, Infinity, 0.123]
+    ],
+    mfs: [
+      [0, 11456, 0.01], [11456, 27157, 0.02], [27157, 42861, 0.04],
+      [42861, 59498, 0.06], [59498, 75197, 0.08], [75197, 384109, 0.093],
+      [384109, 460927, 0.103], [460927, 768213, 0.113], [768213, Infinity, 0.123]
+    ],
+    mfj: [
+      [0, 22912, 0.01], [22912, 54314, 0.02], [54314, 85722, 0.04],
+      [85722, 118996, 0.06], [118996, 150394, 0.08], [150394, 768218, 0.093],
+      [768218, 921854, 0.103], [921854, 1536426, 0.113], [1536426, Infinity, 0.123]
+    ],
+    hoh: [
+      [0, 22927, 0.01], [22927, 54316, 0.02], [54316, 70018, 0.04],
+      [70018, 86654, 0.06], [86654, 102356, 0.08], [102356, 522385, 0.093],
+      [522385, 626864, 0.103], [626864, 1044771, 0.113], [1044771, Infinity, 0.123]
+    ]
   };
   /* --- NIIT thresholds (IRS Topic 559) ---------------------------------- */
   var NIIT_THRESHOLD = { single: 200000, hoh: 200000, mfj: 250000, mfs: 125000 };
@@ -44,9 +79,10 @@
      Simplified progressive application: the gain stacks on top of other
      income and is taxed in slices at 0/15/20%. Deliberately does not model
      deductions, credits or state apportionment. */
-  function federalLTCG(gain, otherIncome, filing) {
+  function federalLTCG(gain, otherIncome, filing, taxYear) {
     if (!(gain > 0)) return 0;
-    var b = LTCG[filing] || LTCG.mfj;
+    var table = LTCG_BY_YEAR[taxYear] || LTCG_BY_YEAR['2026'];
+    var b = table[filing] || table.mfj;
     var start = otherIncome;
     var end = otherIncome + gain;
     var tax = 0;
@@ -63,6 +99,22 @@
     return tax;
   }
 
+  function californiaProgressiveTax(gain, otherIncome, filing) {
+    if (!(gain > 0)) return 0;
+    var brackets = CA_2026_SCHEDULES[filing] || CA_2026_SCHEDULES.mfj;
+    var start = Math.max(0, otherIncome);
+    var end = start + gain;
+    var tax = 0;
+    for (var i = 0; i < brackets.length; i++) {
+      var lo = Math.max(start, brackets[i][0]);
+      var hi = Math.min(end, brackets[i][1]);
+      if (hi > lo) tax += (hi - lo) * brackets[i][2];
+    }
+    var mhsaStart = Math.max(start, 1000000);
+    if (end > mhsaStart) tax += (end - mhsaStart) * 0.01;
+    return tax;
+  }
+
   function calc() {
     var warnings = [];
 
@@ -72,7 +124,9 @@
     var deprec = num('c_deprec');
     var mortgage = num('c_mortgage');
     var filing = ($('c_filing') || {}).value || 'mfj';
+    var taxYear = ($('c_taxyear') || {}).value || '2026';
     var otherIncome = num('c_income'); if (!isFinite(otherIncome)) otherIncome = 0;
+    var caMode = ($('c_camode') || {}).value || 'brackets_2026';
     var caRate = num('c_ca'); if (!isFinite(caRate)) caRate = 0;
     var reinvest = ($('c_reinvest') || {}).value === 'yes';
 
@@ -126,10 +180,12 @@
             'If the exchange fails, the full tax below applies in the year of sale.']);
         } else {
           var taxRecap = recapture * RECAPTURE_RATE;
-          var taxRest = federalLTCG(ordGain, otherIncome, filing);
+          var taxRest = federalLTCG(ordGain, otherIncome, filing, taxYear);
           fedTax = taxRecap + taxRest;
 
-          caTax = gain * caRate / 100;
+          caTax = caMode === 'brackets_2026'
+            ? californiaProgressiveTax(gain, otherIncome, filing)
+            : gain * caRate / 100;
 
           var magi = otherIncome + gain;
           var over = magi - (NIIT_THRESHOLD[filing] || 200000);
@@ -199,7 +255,7 @@
         }
       } else {
         warnings.push(['bad', 'No discount rate',
-          'Present value cannot be computed without a discount rate. Enter at least the current 4.92% ten-year Treasury plus a property risk premium.']);
+          'Present value cannot be computed without a discount rate. Enter at least the current 4.91% ten-year Treasury (2026-11-24) plus a property risk premium.']);
       }
     } else {
       warnings.push(['bad', 'Contract rent not supplied', 'The hold case cannot be built without annual base rent from the lease.']);
@@ -298,6 +354,8 @@
         var e = $(id); if (!e) return;
         e.value = { c_sellcost: '4', c_mortgage: '0', c_income: '0', c_ca: '9.3', c_opex: '0', c_esc: '2', c_years: '5', c_vac: '12', c_capex: '0' }[id];
       });
+    var ty = $('c_taxyear'); if (ty) ty.value = '2026';
+    var cm = $('c_camode'); if (cm) cm.value = 'brackets_2026';
     var out = $('c_out'); if (out) out.classList.add('hidden');
   }
 

@@ -1,8 +1,8 @@
 {
   "meta": {
     "dataset": "valuation",
-    "version": "1.0",
-    "as_of": "2026-11-25",
+    "version": "1.1",
+    "as_of": "2026-11-26",
     "owner_session": "ses-41ea221b",
     "task": "W-02 — extend the private worksheet to a sell-versus-hold comparison; after-tax module",
     "design_rule": "This dataset computes METHOD, not a verdict. It defines exactly which inputs each side needs, which of those inputs are verified, and it refuses to emit a single preferred number while required inputs are missing. The live arithmetic happens in the reader's browser (assets/js/calc.js) on inputs the reader owns; nothing typed there is transmitted or stored."
@@ -11,22 +11,22 @@
     {
       "id": "VA-01",
       "metric": "10-year Treasury constant maturity",
-      "value": 4.92,
+      "value": 4.91,
       "unit": "percent",
-      "period": "2026-11-23",
+      "period": "2026-11-24 (2026-11-23 was 4.92%)",
       "status": "verified",
       "source_id": "S-004",
       "use": "Risk-free anchor. A commercial cap rate is built as this plus a spread; the spreadsheet must not hard-code a cap rate without showing the spread."
     },
     {
       "id": "VA-02",
-      "metric": "10-year Treasury, 30-day range",
+      "metric": "10-year Treasury, November 2026 range",
       "value": 5.15,
       "unit": "percent (high on 2026-11-13)",
-      "period": "2026-11-02 to 2026-11-23",
+      "period": "2026-11-02 to 2026-11-24",
       "status": "verified",
       "source_id": "S-004",
-      "use": "A 23 basis point move in three weeks is a reminder that exit cap rate assumptions move. Low was 4.84% on 2026-11-05."
+      "use": "A 31 basis point spread (4.84% low on 2026-11-05 to 5.15% high on 2026-11-13) within a single month is a reminder that exit cap rate assumptions move."
     },
     {
       "id": "VA-03",
@@ -83,10 +83,10 @@
   "tax_rules": [
     {
       "id": "TX-01",
-      "rule": "Federal long-term capital gain rate",
-      "detail": "0% / 15% / 20% by taxable income; 20% applies above the top threshold",
+      "rule": "Federal long-term capital gain rate (2026 Rev. Proc. 2025-32 / 2025 Topic 409)",
+      "detail": "2026: 0% up to $98,900 MFJ ($49,450 Single/MFS, $66,200 HoH); 15% up to $613,700 MFJ ($545,500 Single, $579,600 HoH, $306,850 MFS); 20% above. (2025 thresholds: $96,700/$600,050 MFJ; $48,350/$533,400 Single)",
       "status": "verified",
-      "source_id": "S-013"
+      "source_id": "S-032"
     },
     {
       "id": "TX-02",
@@ -99,7 +99,7 @@
     {
       "id": "TX-03",
       "rule": "Net investment income tax",
-      "detail": "3.8% on the lesser of net investment income or MAGI above 200k single / 250k MFJ",
+      "detail": "3.8% on the lesser of net investment income or MAGI above $200k single/HoH, $250k MFJ, $125k MFS",
       "status": "verified",
       "source_id": "S-014"
     },
@@ -134,11 +134,72 @@
     },
     {
       "id": "TX-08",
-      "rule": "California PIT brackets",
-      "detail": "Progressive 1% to 12.3%, plus the 1% mental health surcharge above the top threshold",
-      "status": "unverified",
-      "source_id": null,
-      "why_it_matters": "The FTB bracket page failed to load during this session. The calculator therefore takes the marginal California rate as a reader input rather than baking in a number that could not be checked line by line."
+      "rule": "California PIT rate schedules (2026 Schedules X, Y, Z)",
+      "detail": "Verified 1.00% to 12.30% across 9 brackets (+3.4% CCPI indexing). Top 12.30% tier begins over $768,213 Single/MFS, $1,536,426 MFJ, $1,044,771 HoH",
+      "status": "verified",
+      "source_id": "S-033",
+      "why_it_matters": "Verified directly from FTB Tax News October 2026 (closing IR-06). Both progressive 2026 brackets and manual marginal rate are now available in the browser calculator."
+    },
+    {
+      "id": "TX-09",
+      "rule": "California Mental Health Services Act (MHSA) surcharge",
+      "detail": "Additional 1.00% tax on California taxable income over $1,000,000 (making combined top CA marginal rate 13.30%)",
+      "status": "verified",
+      "source_id": "S-034"
+    },
+    {
+      "id": "TX-10",
+      "rule": "Proposition 13 assessment cap & change-of-ownership reset",
+      "detail": "1% base property tax + voter debt; max 2% annual assessed-value growth; resets to market value on sale or new construction",
+      "status": "verified",
+      "source_id": "S-031"
+    }
+  ],
+  "decision_options_risk_matrix": [
+    {
+      "id": "OPT-01",
+      "option": "Sell now (taxable sale)",
+      "wealth_preservation": "Eliminates single-asset, tenant-closure, and LA wildfire/seismic tail risk; converts illiquid pad into diversified liquid assets",
+      "growth_opportunity": "Reinvestment into diversified equities/bonds or lower-risk debt, starting from a smaller after-tax principal base",
+      "key_risks": "Immediate federal LTCG (up to 20%), 25% §1250 recapture, 3.8% NIIT, and CA ordinary-income tax (up to 13.3%); short-lease cap-rate discount if near 2030",
+      "risk_level": "Low operational risk / High immediate tax drag",
+      "source_id": "S-032"
+    },
+    {
+      "id": "OPT-02",
+      "option": "Sell now via IRC §1031 like-kind exchange",
+      "wealth_preservation": "Removes single-tenant/location concentration & California hazard exposure while preserving pre-tax equity (federal + CA tax deferred)",
+      "growth_opportunity": "Maintains 100% of equity compounding in replacement NNN or multi-tenant assets in lower-hazard / non-CA jurisdictions",
+      "key_risks": "Strict 45-day ID / 180-day close clock (disqualification triggers full tax); boot risk if debt is reduced; must pre-identify replacement assets before listing",
+      "risk_level": "Moderate execution risk / High wealth-preservation efficiency",
+      "source_id": "S-015"
+    },
+    {
+      "id": "OPT-03",
+      "option": "Hold & negotiate early renewal / exercise option",
+      "wealth_preservation": "Preserves Prop 13 low tax base and contractual NNN cash flow if guaranty is strong; avoids immediate capital-gains friction",
+      "growth_opportunity": "Contractual rent bumps (must benchmark vs 3.7% local CPI) plus extending WALT compresses exit cap rate if sold later",
+      "key_risks": "Concentrates net worth in one QSR tenant (Jack in the Box system SSS -1.1% to -6.7% in FY26, 2,115 units & pruning); CA insurance repricing; seismic/fire tail",
+      "risk_level": "Moderate-High concentration & tail risk",
+      "source_id": "S-039"
+    },
+    {
+      "id": "OPT-04",
+      "option": "Hold through expiry & re-tenant / redevelop",
+      "wealth_preservation": "Exposes capital to 12-24 months zero rent plus TI/LC/capex and full Prop 13 reassessment on major new construction",
+      "growth_opportunity": "Highest upside ONLY if parcel ZIMAS zoning / TOC tier unlocks higher-density mixed-use or stronger QSR/retail rent",
+      "key_risks": "QSR exclusivity/radius restrictions, parking/drive-thru nonconforming rules, construction cost & 7%+ financing spread risk",
+      "risk_level": "High execution & capital risk",
+      "source_id": "S-028"
+    },
+    {
+      "id": "OPT-05",
+      "option": "Hold passively ('do nothing until 2030')",
+      "wealth_preservation": "Worst risk-adjusted path: silently absorbs insurance repricing, roof/HVAC backlog, and potential notice-deadline forfeiture",
+      "growth_opportunity": "None beyond passive lease roll-off; declining WALT erodes sale multiple every year",
+      "key_risks": "Irreversible loss of renewal option if NC-01/NC-02 missed; misses 2026-11-30 Prop 13 decline-in-value window (NC-07); forced sale risk post-disaster",
+      "risk_level": "Unacceptable uncompensated risk",
+      "source_id": "S-019"
     }
   ],
   "gates": [
