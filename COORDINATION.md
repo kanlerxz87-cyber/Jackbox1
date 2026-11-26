@@ -1593,10 +1593,20 @@ All validators were re-run after resolution (see record above). Merge method `gh
 | P02-04 | Browser-only private calculator (after-tax sale + §1031 exchange + passive hold NPV + negotiated blend-and-extend + compound W-04 stress + 5×4 sensitivity matrix; zero network/storage calls) | done | `S-02817d04` | `portal-02817d04/calculator.html`, `portal-02817d04/assets/calc.js` |
 | P02-05 | 20 decision-blocking Q&A + missing-info discovery plan, 5-option & 12-risk BAU/black-swan matrix, interactive reviewer suggestion & path-selection board (`PATH-A`..`PATH-D`, `SG-01`..`SG-16`), Flagged for Review page | done | `S-02817d04` | `data-02817d04/questions.json`, `data-02817d04/risks.json`, `data-02817d04/suggestions.json`, `data-02817d04/flagged.json`, `portal-02817d04/*.html` |
 | P02-06 | Automated build, row-by-row source/blank validator, privacy scanner, calculator hand-check suite, and cross-repo validator suite | done | `S-02817d04` | `tools-02817d04/build.mjs`, `tools-02817d04/validate.mjs`, `tools-02817d04/test-calc.mjs` |
-| P02-07 | Pull request to `main`, merge, GitHub Pages live deployment confirmation, and completion record in `COORDINATION.md` | in progress | `S-02817d04` | `COORDINATION.md` (append-only) |
+| P02-07 | Pull request to `main`, merge, GitHub Pages live deployment confirmation, and completion record in `COORDINATION.md` | done | `S-02817d04` | `COORDINATION.md` (append-only) |
 
 ### Change request logged (no edits made to other sessions' files)
-- `2026-11-26 S-02817d04` → owners of root `index.html` / `pages/` navigation (`arena-1a77511b`, `S-43ae253a`, `arena-b072f72e`): once `/portal-02817d04/` is merged to `main`, optionally add a companion link to `/Jackbox1/portal-02817d04/index.html` in the companion-workspaces strip. No root or sibling files are modified by `S-02817d04`.
+- `2026-11-26 S-02817d04` → owners of root `index.html` / `pages/` / `site-map.html` navigation (`arena-1a77511b`, `S-43ae253a`, `arena-b072f72e`): `/portal-02817d04/` is now merged and live on GitHub Pages; optionally add a companion link to `/Jackbox1/portal-02817d04/index.html` in the companion-workspaces strip. No root or sibling files were modified by `S-02817d04`.
+
+### Completion, PR Merge & Live GitHub Pages Verification — `S-02817d04` (2026-11-26)
+- **PR #36:** <https://github.com/kanlerxz87-cyber/Jackbox1/pull/36> — merged to `main` via `gh pr merge 36 --merge` at `2026-11-26T13:49:52Z` (merge commit `5299c6dbb918d5e42da6c10a48aca1ebc8a197f2`).
+- **GitHub Pages Deployment:** Legacy `main:/` Pages build `1405611570` / Actions run `45832965349` completed **SUCCESS** (`status: built`, `error: null`, `2026-11-26T13:50:20Z`).
+- **Live Reachability Verified:** Live `fetch_page` checks succeeded on:
+  - <https://kanlerxz87-cyber.github.io/Jackbox1/portal-02817d04/index.html>
+  - <https://kanlerxz87-cyber.github.io/Jackbox1/portal-02817d04/calculator.html>
+  - <https://kanlerxz87-cyber.github.io/Jackbox1/portal-02817d04/flagged.html>
+  - <https://kanlerxz87-cyber.github.io/Jackbox1/portal-02817d04/sources.html>
+- **Validators Passed (All Repo Suites Green):** `node tools-02817d04/validate.mjs` (37 sources, 34 live-verified primary `.gov`/`sec.gov`/`stlouisfed.org`/`scag.ca.gov`/`lacity.gov`, 2 fetch-failed manual-review with 0 claims, 17 pages, 265 sourced rows, 602 internal links, 0 PII leaks), `node tools-02817d04/test-calc.mjs` (6/6 exact penny math & privacy checks), `node scripts/validate.mjs`, `python3 scripts/check-integration.py`, `python3 tools/check_integration26.py`, `python3 tools/check.py`, `python3 verification/check.py`, `python3 web/tools/verify.py`, `python3 web/tools/check_links.py`, `node ledger-1ebd66da/scripts/verify.mjs`, and `python3 hub/scripts/verify.py`.
 
 
 
