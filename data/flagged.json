@@ -25,8 +25,8 @@
     {
       "id": "IR-02",
       "severity": "high",
-      "title": "The lease expiration is stated as an eight-year window (2030-2035)",
-      "detail": "An eight-year window is not a term. A 2030 expiration with no options and a 2031 expiration with two five-year options are different assets, priced differently. No public source — including the tenant's SEC filings — discloses per-store lease expiration dates at this granularity, so the window could not be externally verified either.",
+      "title": "The lease expiration is stated as a five-year window (2030-2035)",
+      "detail": "A five-year window is not a term. A 2030 expiration with no options and a 2035 expiration with two five-year options are different assets, priced differently. No public source — including the tenant's SEC filings — discloses per-store lease expiration dates at this granularity, so the window could not be externally verified either.",
       "impact": "The single largest driver of value in this project is unresolved. The site refuses to price the asset until it is fixed.",
       "action_requested": "Provide the executed lease or state the four calendar dates directly.",
       "sources": [

@@ -104,6 +104,7 @@ ${body}
   <div class="wrap">
     <p><b>Privacy.</b> This site publishes aggregate, non-identifying findings only. No parcel address, owner identity, APN, lease document, rent figure or personal finance appears anywhere in this repository or on this site. The parcel is referred to as <code>PARCEL-001</code> throughout.</p>
     <p><b>Integrity.</b> Every data row carries a source identifier linking to an official source. Where an official source could not confirm a value, the value is left blank and listed on <a href="flagged.html">Flagged for review</a>. Nothing is inferred or filled in.</p>
+    <p class="faint">Entry &amp; companion trees: <a href="../index.html">Executive overview</a> · <a href="../integration-review.html">Integration review</a> · <a href="../release-review.html">Release review</a> · <a href="../audit/index.html">Audit desk</a> · <a href="../verification/REPORT.md">Verification report</a> · <a href="../docs/index.html">Docs dashboard</a> · <a href="../web/index.html">Web tree</a> · <a href="../workspace/index.html">Registry workspace</a> · <a href="../desk/index.html">Earlier desk</a>.</p>
     <p class="faint">Data cut-off 2026-11-26 · Build ${new Date().toISOString().slice(0, 10)} · Not investment, legal or tax advice. Engage a licensed appraiser, attorney and CPA before acting.</p>
   </div>
 </footer>
@@ -1038,16 +1039,5 @@ const printBody = `
 `;
 out('pages/print.html', layout({ title: 'Printable advisor brief', page: 'print.html', body: printBody }));
 
-/* ======================================================================= */
-/*  ROOT REDIRECT                                                          */
-/* ======================================================================= */
-out('index.html', `<!doctype html>
-<html lang="en"><head><meta charset="utf-8">
-<meta http-equiv="refresh" content="0; url=pages/index.html">
-<title>Jackbox property decision workspace</title>
-<link rel="canonical" href="pages/index.html">
-</head><body style="background:#0e1116;color:#e8edf4;font-family:system-ui,sans-serif;padding:40px">
-<p>Opening the workspace… <a href="pages/index.html" style="color:#4da3ff">continue to the dashboard</a></p>
-</body></html>`);
-
-console.log('built: index.html + ' + readdirSync(join(ROOT, 'pages')).length + ' pages');
+/* Root index.html is preserved as the Executive Overview landing page (merged from main). */
+console.log('built: ' + readdirSync(join(ROOT, 'pages')).length + ' pages (root index.html preserved)');
