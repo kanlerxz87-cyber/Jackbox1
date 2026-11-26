@@ -34,6 +34,7 @@ links, all resolving.**
 | `arena/2a61b633` | merged via PR #7 | `/workspace/` registry-driven site | done |
 | `arena-f5a16939` | merged via PR #2 | `docs/` sourced dashboard | done |
 | `ses-41ea221b` | `arena/41ea221b-jackbox1` | verified data layer + integration + publish | active |
+| `arena/88722e2f-jackbox1` | `arena/88722e2f-jackbox1` | continuation: independent spot verification + publish confirmation | active |
 
 ## Task board — ses-41ea221b
 
@@ -55,7 +56,8 @@ links, all resolving.**
 | T-14 | Flagged-for-review page | done | ses-41ea221b | `data/flagged.json`, `pages/flagged.html` |
 | T-15 | Line-by-line validator | done | ses-41ea221b | `scripts/validate.mjs` |
 | T-16 | Integration: merge, re-verify, rebuild | done | ses-41ea221b | site-wide |
-| T-17 | Publish + confirm deploy | in progress | ses-41ea221b | repo settings |
+| T-17 | Publish + confirm deploy | in progress | arena/88722e2f-jackbox1 | repo settings · taken over (stale claim on this checkout: no commits since branch point) |
+| T-18 | Independent spot verification of published figures against live official sources | in progress | arena/88722e2f-jackbox1 | `pages/`, `data/` + verification log on `pages/sources.html` |
 
 ## Earlier task boards (preserved verbatim from `main`)
 
@@ -1316,6 +1318,35 @@ PR #30 documentation integration: concurrent append-only board conflict resolved
 
 ---
 
+# Session `arena/cc9c3feb-jackbox1` — 2026-11-26 Audit, Verification & Expansion
+
+Concurrent PRs #25–#30 on `main` preserved verbatim above (including root `index.html`, `integration-review.html`, `release-review.html`, and their checkers). This merge integrates all of `main`'s additions with `arena/cc9c3feb-jackbox1`'s 2026-11-26 official-source verification, Q3 FY2026 SEC tenant series, expanded `pages/*.html` workspace, 2026 calculator rules, and HTML/link fixes.
+
+## Task board — `arena/cc9c3feb-jackbox1`
+
+| ID | Task | Status | Owner | File scope |
+|---|---|---|---|---|
+| C-01 | Full repo audit, privacy scan & cross-tree link validation | done | `arena/cc9c3feb-jackbox1` | `scripts/validate.mjs`, repo-wide scan |
+| C-02 | Official source verification (2026-11-26): SEC FY23–Q3'26, IRS Rev. Proc. 2025-32, FTB Oct 2026 PIT + 1% MHSA, BOE Pub 29, CDE, DOF E-1, SCAG 2024, USGS UCERF3, CDI Q1'26, FRED DGS10, LA Assessor, Caltrans, ZIMAS | done | `arena/cc9c3feb-jackbox1` | `data/sources.json` (41 official sources) |
+| C-03 | Add multi-period tenant SEC series (`pages/tenant.html` + `data/tenant.json`, FY23–Q3'26 & Series 2026-1 debt) | done | `arena/cc9c3feb-jackbox1` | `data/tenant.json`, `pages/tenant.html` |
+| C-04 | Expand `pages/market.html` (county, schools, DOF/SCAG projections, ZIMAS, tract-trend method) & `pages/hazards.html` (UCERF3 & FAIR Plan) | done | `arena/cc9c3feb-jackbox1` | `data/tradearea.json`, `data/hazards.json`, `pages/market.html`, `pages/hazards.html` |
+| C-05 | Expand `pages/decision.html` (5-option risk/wealth-preservation matrix, 2026 tax rules) & `assets/js/calc.js` (2026 LTCG + 2026 FTB PIT + 1% MHSA) | done | `arena/cc9c3feb-jackbox1` | `data/valuation.json`, `assets/js/calc.js`, `pages/decision.html` |
+| C-06 | Fix escaped anchors (`sources.html`, `flagged.html`), broken footer URL (`print.html`), row-level source links & retrieval dates, cross-tree map (`pages/index.html`), sync gates (`questions.json` / `G-15` closed), preserve root `index.html` landing | done | `arena/cc9c3feb-jackbox1` | `scripts/build.mjs`, `data/*.json`, `pages/*.html` |
+| C-07 | Rebuild, run all 7 validators, merge PR #33 to `main` & confirm GitHub Pages deployment | done | `arena/cc9c3feb-jackbox1` | `COORDINATION.md`, [PR #33](https://github.com/kanlerxz87-cyber/Jackbox1/pull/33) |
+
+## Verification & Flagged Summary (2026-11-26)
+
+- **No sell/renew winner selected.** Gates `G-01`–`G-14`, `G-16`, `G-17` remain open (private lease dates, parcel coordinates, broker quotes, basis, insurance binder); `G-15` (2026 California PIT brackets + 1% MHSA) closed via FTB Tax News Oct 2026 (`S-033`) and Form 5805F (`S-034`).
+- **Validators run & passing after merging `origin/main`:**
+  - `node scripts/validate.mjs`: 41 official sources, 252 rows (98 verified-like all sourced, 51 unverified all blank), 12 pages, 232 outbound source links, 2,499+ internal links across all 8 site trees, 0 privacy hits, 0 escaped anchors.
+  - `python3 tools/check.py`: 18 pages, 72 registry rows, passed.
+  - `python3 web/tools/verify.py` & `python3 web/tools/check_links.py`: 281 rows, 17 HTML files, 384 internal links, passed.
+  - `python3 verification/check.py`: 16/16 checks, 432 rows, 22 pages, passed.
+  - `python3 scripts/check-integration.py` & `python3 tools/check_integration26.py`: passed.
+- **New / updated flags (`pages/flagged.html`):** `IR-06` resolved (2026 FTB PIT brackets verified), `IR-07` resolved with county geographic caveat, `IR-14` added (no Q4/FY2026 Jack in the Box filing on SEC EDGAR as of 2026-11-26), `IR-15` added (macro HPI back-test vs unbacktested parcel model boundary).
+
+---
+
 # Session claim — `arena-d325275f` (2026-11-26)
 
 Branch `arena/d325275f-jackbox1` (from `eab14bb`, the tip of `main` at session start). Working tree was clean.
@@ -1405,3 +1436,10 @@ While this session's PR #32 was open, `main` advanced through PRs #25–#30. The
 3. **`.github/workflows/pages.yml`** — no conflict; this session's F-18 one-line fix (`path: docs` → `path: .`, workflow left disabled, legacy Pages source unchanged) is retained.
 
 All validators were re-run after resolution (see record above). Merge method `gh pr merge 32 --merge`; no approval wait, per standing instruction.
+
+
+---
+
+## Second concurrent-merge resolution — `arena-d325275f`, 2026-11-26
+
+`main` advanced again (PRs #31 and #33: `arena/88722e2f`, `arena/cc9c3feb`) while PR #32 was open. Conflict was limited to `COORDINATION.md` (append-only board) and was resolved the same way: `origin/main`'s board verbatim above; this session's claim, verification record and the first merge-resolution note retained below. No other session's rows were deleted or edited. No data files, pages or scripts conflicted.
