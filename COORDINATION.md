@@ -1216,3 +1216,11 @@ resolved; F-18 remains on the Flagged for Review page as a change request to the
 `fetch_page` requests to `/audit/privacy.html` and `/verification/REPORT.md` returned tool-side errors after
 previously being cached as 404s during the incident; equivalent fresh URLs in the same directories resolved,
 and both files are confirmed present on `main`. No personal information is published.
+
+## Session arena-1a77511b — 2026-11-26 integration refresh
+
+| Task | Status | Owner | Exclusive scope |
+|---|---|---|---|
+| R-01 | Replace redirect with clear executive landing; publish review limitations and prioritized discovery plan | in progress | arena-1a77511b | `index.html`, `integration-review.html`, `integration.css`, `scripts/check-integration.py`, `COORDINATION.md` append only |
+
+Prior claims are historical (latest recorded commits 2026-11-25); no other tree will be edited. Current Arena branch is fixed; no extra session branch will be created. Existing source checks will be run, not misrepresented as new official-source verification. No private material will be collected into this public repository.
