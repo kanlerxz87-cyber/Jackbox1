@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Private Browser-Only Calculator — Central LA NNN QSR Decision Hub</title>
+  <link rel="stylesheet" href="assets/css/hub.css">
+</head>
+<body>
+  <div class="privacy-bar">
+    <div><strong>PRIVACY FIREWALL ACTIVE (PARCEL-001):</strong> Zero street address, APN, owner identity, lease rent, store sales, or tax basis appear in this public repository.</div>
+    <div>As of <strong>2026-11-26</strong> · <a href="../index.html">Repository Portal</a> · <a href="sources.html">34 Official Sources</a></div>
+  </div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand-row">
+        <div class="brand-title"><a href="index.html">Central LA NNN QSR — Independent Decision Hub</a></div>
+        <div class="brand-meta">
+          <span class="badge badge-low">OPEN — NO WINNER DECLARED</span>
+          <span class="badge badge-low">Model v0.1-audit</span>
+          <span>Verified 2026-11-26</span>
+        </div>
+      </div>
+      <nav class="main-nav" aria-label="Primary sections">
+        <a href="index.html">Overview</a><a href="gates.html">W-03 Gates</a><a href="lease.html">Lease &amp; Notice</a><a href="trade-area.html">W-01 Trade Area</a><a href="tenant.html">Operator (JACK)</a><a href="valuation.html">W-02 Tax &amp; Quotes</a><a href="calculator.html" class="active">Calculator</a><a href="hazards.html">W-04 Hazards</a><a href="risks.html">BAU &amp; Tail Risks</a><a href="model.html">Model &amp; Back-Test</a><a href="questions.html">Questions</a><a href="suggestions.html">Suggestions</a><a href="flagged.html">Flagged</a><a href="summary.html">W-10 One-Pager</a><a href="sources.html">Sources</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="page-hero">
+      <h1>Private Sell-vs-Renew, §1031 &amp; Compound-Stress Calculator (2026 Tax Rules)</h1>
+      <p class="lead">Enter your private NOI, basis, cap-rate quotes, and stress parameters locally in browser memory. Uses exact 2026 IRS LTCG brackets, 25% §1250, 3.8% NIIT, progressive 2026 CA FTB Schedules X/Y/Z + 1% BHSA, County DTT, City Base 0.45%, and July 1, 2026 Measure ULA ($5.4M / $10.9M).</p>
+      <div class="hero-tags"><span class="badge badge-low">Zero Telemetry</span><span class="badge badge-low">2026 IRS &amp; FTB Exact</span><span class="badge badge-low">ULA Jul 1, 2026 Active</span><span class="badge badge-low">No Fake Defaults</span></div>
+    </section>
+
+    
+    <div class="alert alert-info">
+      <div class="alert-title"><span class="badge badge-low">Zero Telemetry Verified</span> <span>100% Local Browser RAM Execution</span> <a class="src-link" href="https://www.irs.gov/pub/irs-drop/rp-25-32.pdf" target="_blank" rel="noopener noreferrer" title="Internal Revenue Service (IRS) — Revenue Procedure 2025-32 — 2026 Inflation-Adjusted Tax Items (Brackets &amp; §1(h) Capital Gains) (Verified 2026-11-26)">SRC-23</a></div>
+      <p>Nothing you type here leaves your computer. <code>hub/assets/js/calculator.js</code> makes zero network calls, sets zero cookies, and writes nothing to browser storage. Refreshing the page or clicking <strong>Clear All Inputs</strong> wipes your figures instantly. <strong>No parcel numbers are pre-filled.</strong></p>
+    </div>
+
+    <div id="synthetic_warning" class="alert alert-urgent" style="display:none;">
+      <div class="alert-title"><span class="badge badge-low">SYNTHETIC TEST MODE</span> <span>Hypothetical Formula-Test Numbers Loaded — NOT PARCEL-001</span></div>
+      <p>These numbers are purely illustrative to verify calculator math (including Measure ULA tiering and 2026 progressive CA brackets). Replace with your real private inputs or click <strong>Clear All Inputs</strong>.</p>
+    </div>
+
+    <div class="calc-grid">
+      <form id="calc_form" autocomplete="off" onsubmit="return false;">
+        <div class="calc-group">
+          <h3>1. Property Income, Valuation & Jurisdiction (Private Inputs)</h3>
+          <div class="field-grid">
+            <div class="field">
+              <label for="in_noi">Current Annual NOI ($)</label>
+              <input id="in_noi" type="number" step="1000" min="0" placeholder="Enter private NOI">
+              <small>Net rent after any landlord expenses.</small>
+            </div>
+            <div class="field">
+              <label for="in_sale_cap">Today's Unrenewed Sale Cap Rate (%)</label>
+              <input id="in_sale_cap" type="number" step="0.05" min="1" max="20" placeholder="From Broker BOVs">
+              <small>Anchor: 10-Yr Treasury = 4.91%.</small>
+            </div>
+            <div class="field">
+              <label for="in_price_override">OR Direct Gross Sale Price Override ($)</label>
+              <input id="in_price_override" type="number" step="10000" min="0" placeholder="Optional override">
+              <small>Overrides NOI / Cap Rate if entered.</small>
+            </div>
+            <div class="field">
+              <label for="in_jurisdiction">Transfer-Tax Jurisdiction</label>
+              <select id="in_jurisdiction">
+                <option value="city_la">City of Los Angeles (0.45% Base + ULA + 0.11% County)</option>
+                <option value="uninc_la">Unincorporated LA County (0.11% County DTT only)</option>
+                <option value="custom">Other LA County City (0.11% County + Custom City %)</option>
+              </select>
+              <small>ULA eff. 7/1/2026: 4% &gt;$5.4M, 5.5% &ge;$10.9M.</small>
+            </div>
+            <div class="field" id="custom_city_wrap" style="display:none;">
+              <label for="in_custom_city_pct">Custom City Transfer Rate (%)</label>
+              <input id="in_custom_city_pct" type="number" step="0.01" min="0" placeholder="e.g. 0.45">
+              <small>Added on top of 0.11% LA County DTT.</small>
+            </div>
+            <div class="field">
+              <label for="in_sell_cost_pct">Brokerage & Escrow Costs (%)</label>
+              <input id="in_sell_cost_pct" type="number" step="0.1" min="0" max="15" placeholder="e.g. 3.0">
+              <small>Excludes transfer taxes (computed separately).</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="calc-group">
+          <h3>2. Owner Tax Profile & Debt (2026 IRS + CA FTB Exact Rules)</h3>
+          <div class="field-grid">
+            <div class="field">
+              <label for="in_filing_status">2026 Tax Filing Status</label>
+              <select id="in_filing_status">
+                <option value="mfj">Married Filing Jointly (MFJ)</option>
+                <option value="single">Single</option>
+                <option value="hoh">Head of Household (HOH)</option>
+                <option value="mfs">Married Filing Separately (MFS)</option>
+                <option value="trust">Irrevocable Trust / Estate</option>
+              </select>
+              <small>Selects exact 2026 IRS & CA FTB brackets.</small>
+            </div>
+            <div class="field">
+              <label for="in_basis">Adjusted Tax Basis Today ($)</label>
+              <input id="in_basis" type="number" step="10000" min="0" placeholder="From CPA schedule">
+              <small>Original cost + capex − depreciation.</small>
+            </div>
+            <div class="field">
+              <label for="in_depr">Accumulated §1250 Depreciation ($)</label>
+              <input id="in_depr" type="number" step="10000" min="0" placeholder="0 if land/stepped-up">
+              <small>Taxed up to 25% federal + CA ordinary.</small>
+            </div>
+            <div class="field">
+              <label for="in_other_income">Other Taxable Income in Sale Year ($)</label>
+              <input id="in_other_income" type="number" step="10000" min="0" placeholder="0">
+              <small>Stacks gain accurately into LTCG/NIIT/BHSA.</small>
+            </div>
+            <div class="field">
+              <label for="in_debt">Existing Mortgage Payoff ($)</label>
+              <input id="in_debt" type="number" step="10000" min="0" placeholder="0 if free & clear">
+              <small>Subtracted from sale &amp; terminal proceeds.</small>
+            </div>
+            <div class="field">
+              <label for="in_prepay">Prepayment / Defeasance Penalty ($)</label>
+              <input id="in_prepay" type="number" step="1000" min="0" placeholder="0">
+              <small>Applies to Sale-Today scenarios.</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="calc-group">
+          <h3>3. Hold / Negotiated Renewal Path &amp; Optional Stress Test</h3>
+          <div class="field-grid">
+            <div class="field">
+              <label for="in_rem_yrs">Remaining Primary Term (Years)</label>
+              <input id="in_rem_yrs" type="number" step="1" min="0" max="20" placeholder="4 to 9 yrs">
+              <small>Years left until 2030–2035 expiry.</small>
+            </div>
+            <div class="field">
+              <label for="in_renew_yrs">Renewal / Extra Hold Years</label>
+              <input id="in_renew_yrs" type="number" step="1" min="0" max="25" placeholder="0, 5, 10, 15">
+              <small>Total hold horizon = Primary + Renewal.</small>
+            </div>
+            <div class="field">
+              <label for="in_esc_pct">Annual NOI Escalation (%/yr)</label>
+              <input id="in_esc_pct" type="number" step="0.1" min="-5" max="10" placeholder="e.g. 2.0">
+              <small>Compare vs LA CPI-U +3.7% YoY.</small>
+            </div>
+            <div class="field">
+              <label for="in_renew_reset_pct">Rent Reset at Renewal (%)</label>
+              <input id="in_renew_reset_pct" type="number" step="1" min="-50" max="50" placeholder="0 (or -10 / +10)">
+              <small>One-time step at start of renewal.</small>
+            </div>
+            <div class="field">
+              <label for="in_renew_capex">Renewal TI / LC / Roof Capex ($)</label>
+              <input id="in_renew_capex" type="number" step="5000" min="0" placeholder="0">
+              <small>Out-of-pocket landlord renewal spend.</small>
+            </div>
+            <div class="field">
+              <label for="in_cf_tax_pct">Effective Tax Rate on Annual Rent (%)</label>
+              <input id="in_cf_tax_pct" type="number" step="1" min="0" max="55" placeholder="e.g. 35">
+              <small>Combined Fed + CA tax on annual NOI.</small>
+            </div>
+            <div class="field">
+              <label for="in_debt_service">Annual Debt Service ($/yr)</label>
+              <input id="in_debt_service" type="number" step="1000" min="0" placeholder="0">
+              <small>Annual P&amp;I if encumbered.</small>
+            </div>
+            <div class="field">
+              <label for="in_disc_pct">After-Tax Discount Rate (%/yr)</label>
+              <input id="in_disc_pct" type="number" step="0.25" min="1" max="20" placeholder="e.g. 6.5">
+              <small>Anchor: 10-Yr Treasury 4.91% + risk spread.</small>
+            </div>
+            <div class="field">
+              <label for="in_exit_cap">Terminal Exit Cap Rate (%)</label>
+              <input id="in_exit_cap" type="number" step="0.05" min="2" max="20" placeholder="Same as today if blank">
+              <small>Applied to Year N+1 forward NOI.</small>
+            </div>
+            <div class="field">
+              <label for="in_stress_vac_months">Stress: Vacancy / Downtime (Months)</label>
+              <input id="in_stress_vac_months" type="number" step="1" min="0" max="12" placeholder="0 (BAU)">
+              <small>Lost rent at expiry/shock year.</small>
+            </div>
+            <div class="field">
+              <label for="in_stress_repair">Stress: Uninsured Repair / EQ Deductible ($)</label>
+              <input id="in_stress_repair" type="number" step="10000" min="0" placeholder="0 (BAU)">
+              <small>Compound seismic / roof shock.</small>
+            </div>
+            <div class="field">
+              <label for="in_stress_cap_bps">Stress: Exit Cap-Rate Widening (bps)</label>
+              <input id="in_stress_cap_bps" type="number" step="25" min="0" max="500" placeholder="0 (BAU)">
+              <small>e.g. 100 bps = +1.00% wider exit cap.</small>
+            </div>
+          </div>
+          <div style="margin-top:0.75rem;">
+            <label style="font-size:0.84rem;font-weight:600;color:#14284b;cursor:pointer;">
+              <input id="in_step_up" type="checkbox" style="width:auto;margin-right:0.4rem;">
+              Model IRC §1014 Estate Step-Up in Basis at End of Hold (Eliminates Terminal Income Tax; Transfer Taxes Still Apply)
+            </label>
+          </div>
+          <div class="btn-row">
+            <button type="button" id="btn_clear_calc" class="btn btn-danger">Clear All Inputs</button>
+            <button type="button" id="btn_load_synthetic" class="btn btn-secondary">Test Formula With Synthetic Example (NOT Subject Parcel)</button>
+          </div>
+        </div>
+      </form>
+
+      <div>
+        <div id="calc_status_banner" class="result-banner">
+          <div class="rb-title">AWAITING PRIVATE OWNER INPUTS</div>
+          <div class="rb-main">Enter NOI, Sale Cap Rate &amp; Tax Basis</div>
+          <div class="rb-sub">Outputs appear live in browser memory only.</div>
+        </div>
+
+        <div class="case-grid">
+          <div class="case-box">
+            <h4>Case A: Sell Today (Taxable)</h4>
+            <div class="cb-val" id="out_case_a">—</div>
+            <div class="cb-note">Net after-tax cash in pocket today.</div>
+          </div>
+          <div class="case-box">
+            <h4>Case B: Sell Today (§1031)</h4>
+            <div class="cb-val" id="out_case_b">—</div>
+            <div class="cb-note">Reinvestable equity (ULA still owed; Form 3840 tracks CA).</div>
+          </div>
+          <div class="case-box">
+            <h4>Case C: Hold / Renew (PV)</h4>
+            <div class="cb-val" id="out_case_c">—</div>
+            <div class="cb-note">PV of after-tax cash flows + terminal net exit.</div>
+          </div>
+          <div class="case-box">
+            <h4>Comparable PV Bridge (C − A)</h4>
+            <div class="cb-val" id="out_bridge">—</div>
+            <div class="cb-note">Break-even terminal cap: <strong id="out_breakeven_cap">—</strong></div>
+          </div>
+        </div>
+
+        <div class="section" style="padding:1rem;">
+          <h2 style="font-size:1.05rem;">Line-by-Line 2026 Tax &amp; Present-Value Bridge</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>Line Item</th><th>Computed Output</th><th>Statutory Authority</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Implied Gross Sale Price Today</td><td class="mono" id="out_gross_price">—</td><td><a class="src-link" href="https://fred.stlouisfed.org/data/DGS10.txt" target="_blank" rel="noopener noreferrer" title="Board of Governors of the Federal Reserve System (via FRED) — H.15 Market Yield on U.S. Treasury Securities at 10-Year Constant Maturity (Series DGS10) (Verified 2026-11-26)">SRC-04</a></td></tr>
+                <tr><td>Brokerage &amp; Closing Costs</td><td class="mono" id="out_sell_cost">—</td><td><a class="src-link" href="https://www.irs.gov/pub/irs-prior/i8824--2026.pdf" target="_blank" rel="noopener noreferrer" title="Internal Revenue Service (IRS) — 2026 Instructions for Form 8824 — Like-Kind Exchanges (IRC §1031) (Verified 2026-11-26)">SRC-26</a></td></tr>
+                <tr><td>LA County Documentary Transfer Tax ($0.55/$500)</td><td class="mono" id="out_transfer_county">—</td><td><a class="src-link" href="https://finance.lacity.gov/faq/measure-ula" target="_blank" rel="noopener noreferrer" title="City of Los Angeles Office of Finance &amp; LA County Registrar-Recorder (lavote.gov) — Real Property Transfer Tax &amp; Measure ULA FAQ — Thresholds Effective July 1, 2026 (Verified 2026-11-26)">SRC-30</a></td></tr>
+                <tr><td>City of LA Base Transfer Tax ($2.25/$500 = 0.45%)</td><td class="mono" id="out_transfer_city">—</td><td><a class="src-link" href="https://finance.lacity.gov/faq/measure-ula" target="_blank" rel="noopener noreferrer" title="City of Los Angeles Office of Finance &amp; LA County Registrar-Recorder (lavote.gov) — Real Property Transfer Tax &amp; Measure ULA FAQ — Thresholds Effective July 1, 2026 (Verified 2026-11-26)">SRC-30</a></td></tr>
+                <tr><td>City of LA Measure ULA (<span id="out_ula_tier">—</span>)</td><td class="mono" id="out_transfer_ula">—</td><td><a class="src-link" href="https://finance.lacity.gov/faq/measure-ula" target="_blank" rel="noopener noreferrer" title="City of Los Angeles Office of Finance &amp; LA County Registrar-Recorder (lavote.gov) — Real Property Transfer Tax &amp; Measure ULA FAQ — Thresholds Effective July 1, 2026 (Verified 2026-11-26)">SRC-30</a></td></tr>
+                <tr><td>Total Taxable Gain (Realized − Basis)</td><td class="mono" id="out_total_gain">—</td><td><a class="src-link" href="https://www.irs.gov/taxtopics/tc409" target="_blank" rel="noopener noreferrer" title="Internal Revenue Service (IRS) — Topic No. 409 — Capital Gains and Losses (Unrecaptured Section 1250 Gain 25% Ceiling) (Verified 2026-11-26)">SRC-24</a></td></tr>
+                <tr><td>Federal Unrecaptured §1250 Tax (25% Cap)</td><td class="mono" id="out_fed_1250">—</td><td><a class="src-link" href="https://www.irs.gov/taxtopics/tc409" target="_blank" rel="noopener noreferrer" title="Internal Revenue Service (IRS) — Topic No. 409 — Capital Gains and Losses (Unrecaptured Section 1250 Gain 25% Ceiling) (Verified 2026-11-26)">SRC-24</a></td></tr>
+                <tr><td>Federal LTCG Tax (2026 Rev. Proc. 2025-32)</td><td class="mono" id="out_fed_ltcg">—</td><td><a class="src-link" href="https://www.irs.gov/pub/irs-drop/rp-25-32.pdf" target="_blank" rel="noopener noreferrer" title="Internal Revenue Service (IRS) — Revenue Procedure 2025-32 — 2026 Inflation-Adjusted Tax Items (Brackets &amp; §1(h) Capital Gains) (Verified 2026-11-26)">SRC-23</a></td></tr>
+                <tr><td>Federal NIIT (3.8% IRC §1411)</td><td class="mono" id="out_fed_niit">—</td><td><a class="src-link" href="https://www.irs.gov/taxtopics/tc559" target="_blank" rel="noopener noreferrer" title="Internal Revenue Service (IRS) — Topic No. 559 — Net Investment Income Tax (3.8% NIIT, IRC §1411) (Verified 2026-11-26)">SRC-25</a></td></tr>
+                <tr><td>California Incremental Tax (2026 FTB + 1% BHSA &gt;$1M)</td><td class="mono" id="out_ca_tax">—</td><td><a class="src-link" href="https://www.ftb.ca.gov/about-ftb/newsroom/tax-news/2026/10.html" target="_blank" rel="noopener noreferrer" title="California Franchise Tax Board (FTB) — FTB Tax News October 2026 — 2026 California Personal Income Tax Rate Schedules &amp; P.L. 119-21 Summary (Verified 2026-11-26)">SRC-27</a></td></tr>
+                <tr><td><strong>Total Income Taxes (Effective Rate: <span id="out_eff_rate">—</span>)</strong></td><td class="mono"><strong id="out_total_tax">—</strong></td><td><a class="src-link" href="https://www.ftb.ca.gov/forms/2026/2026-540-es-instructions.html" target="_blank" rel="noopener noreferrer" title="California Franchise Tax Board (FTB) — 2026 Instructions for Form 540-ES — Behavioral Health Services Tax (1% &gt; $1,000,000) &amp; Pub 1016 / Form 3840 (Verified 2026-11-26)">SRC-28</a></td></tr>
+                <tr><td>Debt Payoff &amp; Prepayment Penalty</td><td class="mono" id="out_debt_payoff">—</td><td><a class="src-link" href="https://fred.stlouisfed.org/data/DGS10.txt" target="_blank" rel="noopener noreferrer" title="Board of Governors of the Federal Reserve System (via FRED) — H.15 Market Yield on U.S. Treasury Securities at 10-Year Constant Maturity (Series DGS10) (Verified 2026-11-26)">SRC-04</a></td></tr>
+                <tr><td><strong>Case A — Net After-Tax Cash Proceeds Today</strong></td><td class="mono"><strong id="out_net_a">—</strong></td><td><a class="src-link" href="https://www.irs.gov/pub/irs-drop/rp-25-32.pdf" target="_blank" rel="noopener noreferrer" title="Internal Revenue Service (IRS) — Revenue Procedure 2025-32 — 2026 Inflation-Adjusted Tax Items (Brackets &amp; §1(h) Capital Gains) (Verified 2026-11-26)">SRC-23</a></td></tr>
+                <tr><td><strong>Case B — Net §1031 Reinvestable Equity Today</strong></td><td class="mono"><strong id="out_net_b">—</strong></td><td><a class="src-link" href="https://www.irs.gov/pub/irs-prior/i8824--2026.pdf" target="_blank" rel="noopener noreferrer" title="Internal Revenue Service (IRS) — 2026 Instructions for Form 8824 — Like-Kind Exchanges (IRC §1031) (Verified 2026-11-26)">SRC-26</a></td></tr>
+                <tr><td>Case C — PV of Annual After-Tax Cash Flows (incl. Capex/Stress)</td><td class="mono" id="out_pv_cf">—</td><td><a class="src-link" href="https://fred.stlouisfed.org/data/DGS10.txt" target="_blank" rel="noopener noreferrer" title="Board of Governors of the Federal Reserve System (via FRED) — H.15 Market Yield on U.S. Treasury Securities at 10-Year Constant Maturity (Series DGS10) (Verified 2026-11-26)">SRC-04</a></td></tr>
+                <tr><td>Case C — PV of Terminal After-Tax Exit Proceeds</td><td class="mono" id="out_pv_term">—</td><td><a class="src-link" href="https://www.ftb.ca.gov/about-ftb/newsroom/tax-news/2026/10.html" target="_blank" rel="noopener noreferrer" title="California Franchise Tax Board (FTB) — FTB Tax News October 2026 — 2026 California Personal Income Tax Rate Schedules &amp; P.L. 119-21 Summary (Verified 2026-11-26)">SRC-27</a></td></tr>
+                <tr><td><strong>Case C — Total Present Value (Hold / Renew Path)</strong></td><td class="mono"><strong id="out_net_c">—</strong></td><td><a class="src-link" href="https://fred.stlouisfed.org/graph/fredgraph.csv?id=ATNHPIUS31084Q" target="_blank" rel="noopener noreferrer" title="Federal Housing Finance Agency (FHFA, via FRED) — All-Transactions House Price Index for Los Angeles-Long Beach-Glendale MD (Series ATNHPIUS31084Q, 1995 Q1=100) (Verified 2026-11-26)">SRC-05</a></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p style="font-size:0.78rem;color:#6b7280;margin:0.65rem 0 0;">Advisory Notice: Planning calculator only — not legal or CPA tax advice. Confirm passive loss carryforwards, entity-level California franchise taxes, installment-sale eligibility, and Prop 13 buyer underwriting with qualified California counsel before acting.</p>
+        </div>
+      </div>
+    </div>
+    
+  </main>
+
+  <footer class="site-footer">
+    <div>Independent Advisory Verification Workspace (S-a293043a) · Static HTML/CSS/JS · Zero Analytics, Zero Cookies, Zero Telemetry.</div>
+    <div><a href="summary.html">Printable One-Page Summary</a> · <a href="flagged.html">Flagged Repo Audit</a> · <a href="../index.html">Back to Root Portal</a></div>
+  </footer>
+  <script src="assets/js/calculator.js"></script>
+</body>
+</html>
