@@ -1,0 +1,120 @@
+{
+  "meta": {
+    "dataset": "gates-02817d04",
+    "session_id": "S-02817d04",
+    "as_of": "2026-11-26",
+    "task": "W-03 · Decision-gate progress board"
+  },
+  "gates": [
+    {
+      "id": "G-01",
+      "phase": "Phase 0 · Privacy & Deadlines",
+      "title": "Stand up offline encrypted vault & check Nov 30, 2026 Decline-in-Value deadline",
+      "status": "open-urgent",
+      "owner": "Owner + CPA / Property Tax Counsel",
+      "cost_time": "$0 · Immediate (before 2026-11-30)",
+      "required_evidence": "Access-controlled offline folder (never Git); current LA County secured tax bill vs estimated market value before Nov 30, 2026 DIV deadline.",
+      "breaks_if_skipped": "PII leak if placed in public Git; missed 2026-2027 property tax reduction window if assessed value exceeds market value.",
+      "source_id": "SRC-27"
+    },
+    {
+      "id": "G-02",
+      "phase": "Phase 1 · Lease & Calendar",
+      "title": "Commission private lease abstract & reconcile option notice calendar",
+      "status": "open-blocker",
+      "owner": "Real Estate Attorney",
+      "cost_time": "$1,500–$3,500 · 5–10 business days",
+      "required_evidence": "Executed base lease, all amendments, assignments, commencement letter; exact expiry date (within 2030–2035), option notice open/close dates, rent bumps, ROFR, and Prop 13 tax pass-through clause.",
+      "breaks_if_skipped": "Soliciting buyers over an active ROFR or missing an option/notice window destroys negotiating leverage irreversibly.",
+      "source_id": "SRC-14"
+    },
+    {
+      "id": "G-03",
+      "phase": "Phase 1 · Tenant Credit",
+      "title": "Verify tenant-of-record, guarantor net worth & unit gross sales / rent-to-sales ratio",
+      "status": "open-blocker",
+      "owner": "Owner + Attorney (via lease reporting clause)",
+      "cost_time": "$0–$500 · 10–15 days",
+      "required_evidence": "3-year store gross sales statements (if lease requires reporting), guarantor financials, and confirmation whether store is on or immune from 'JACK on Track' closure list.",
+      "breaks_if_skipped": "System franchise SSS fell -7.0% in Q1 FY2026 with 50–100 closures guided; assuming automatic renewal without unit health is blind speculation.",
+      "source_id": "SRC-15"
+    },
+    {
+      "id": "G-04",
+      "phase": "Phase 2 · Trade Area (W-01)",
+      "title": "Fix private 1-mile & 3-mile Census tract ring, ZIMAS zoning & frontage AADT",
+      "status": "open-blocker",
+      "owner": "Analyst in Offline Workspace",
+      "cost_time": "$0 (free Census API key + ZIMAS + LADOT/Caltrans) · 2–3 days",
+      "required_evidence": "Exact parcel tract + 1-mi/3-mi ring tracts; multi-vintage ACS income/population trend, LEHD daytime workers, feeder school enrollment, ZIMAS TOC/zoning, and arterial AADT.",
+      "breaks_if_skipped": "City of LA (3.81M pop, -0.9% YoY) and LA Metro averages misstate hyper-local QSR trade-area demand and land redevelopment floor.",
+      "source_id": "SRC-06"
+    },
+    {
+      "id": "G-05",
+      "phase": "Phase 2 · Parcel Hazards (W-04)",
+      "title": "Screen parcel-level seismic, flood, fire zones, building vintage, Phase I ESA & insurance",
+      "status": "open-blocker",
+      "owner": "Insurance Broker + Structural/Environmental Consultant",
+      "cost_time": "$0 map screen; $2,500–$6,000 if Phase I ESA / PML needed · 2–3 weeks",
+      "required_evidence": "FEMA NFHL FIRMette, CGS EQ ZApp fault/liquefaction check, CAL FIRE LRA FHSZ check, loss-of-rent/earthquake/fire policy certificates, environmental history.",
+      "breaks_if_skipped": "Unpriced liquefaction, pre-1994 structural vulnerability, historical auto/fuel contamination, or insurer non-renewal kills buyer financing in escrow.",
+      "source_id": "SRC-29"
+    },
+    {
+      "id": "G-06",
+      "phase": "Phase 3 · Tax & Basis",
+      "title": "Reconstruct CPA tax basis, accumulated §1250 depreciation, debt payoff & ULA exposure",
+      "status": "open-blocker",
+      "owner": "CPA / Tax Advisor",
+      "cost_time": "$1,000–$2,500 · 1 week",
+      "required_evidence": "Original cost/step-up basis, depreciation schedule (allowed/allowable), debt prepayment terms, passive loss carryovers, City of LA jurisdiction check for Measure ULA (>$5M).",
+      "breaks_if_skipped": "Combined federal (20% LTCG / 25% §1250 + 3.8% NIIT) + CA (up to 13.3%) + ULA taxes can consume 30%–42%+ of gross gain, flipping sell vs hold.",
+      "source_id": "SRC-16"
+    },
+    {
+      "id": "G-07",
+      "phase": "Phase 3 · Market Quotes",
+      "title": "Price short-lease discount from real written BOVs, comps & lender term sheets",
+      "status": "open-blocker",
+      "owner": "2–3 Net-Lease Brokers (under NDA) + Commercial Mortgage Broker",
+      "cost_time": "$0 for BOVs · 2–3 weeks",
+      "required_evidence": "3 independent BOVs pricing PARCEL-001 'as-is' (short fuse) vs 'extended 10–15 yrs', backed by closed Southern California QSR NNN comps and 2 debt quotes.",
+      "breaks_if_skipped": "Without real quotes, the cap-rate penalty as remaining lease term drops below 5–7 years is an unverified guess.",
+      "source_id": "SRC-09"
+    },
+    {
+      "id": "G-08",
+      "phase": "Phase 3 · Renewal Case",
+      "title": "Explore confidential 'blend-and-extend' / early renewal terms (if lease & ROFR permit)",
+      "status": "open-conditional",
+      "owner": "Owner + Real Estate Counsel / Net-Lease Advisor",
+      "cost_time": "2–6 weeks (only after G-02 & G-03)",
+      "required_evidence": "Written term sheet or tenant response on early 10–15 yr extension, rent bump schedule, TI/remodel allowance request, and corporate/franchisee guaranty.",
+      "breaks_if_skipped": "Cannot compare after-tax sale against a 'negotiated renewal case' until actual renewal rent and TI concessions are tested.",
+      "source_id": "SRC-15"
+    },
+    {
+      "id": "G-09",
+      "phase": "Phase 4 · Model & Stress",
+      "title": "Populate versioned sell-vs-hold model, run back-test & compound black-swan stress",
+      "status": "open-blocked-by-G02-G08",
+      "owner": "Owner + Financial Advisor (using local browser calculator)",
+      "cost_time": "1–2 days once G-02..G-08 close",
+      "required_evidence": "After-tax net sale proceeds vs Risk-Adjusted Hold NPV, §1031 exchange alternative, and simultaneous earthquake/fire/vacancy stress survival check.",
+      "breaks_if_skipped": "Selecting a winner on single-point base-case assumptions ignores tail risks that wipe out concentrated single-asset wealth.",
+      "source_id": "SRC-10"
+    },
+    {
+      "id": "G-10",
+      "phase": "Phase 4 · Wealth Balance",
+      "title": "Evaluate owner portfolio concentration, liquidity need, estate horizon & §1031 appetite",
+      "status": "open-owner-personal",
+      "owner": "Owner + Wealth / Estate Counsel",
+      "cost_time": "Private family/advisor review",
+      "required_evidence": "Share of owner net worth in PARCEL-001, income replacement target, step-up-in-basis horizon (IRC §1014), and willingness to manage re-leasing vs passive 1031 DST/NNN.",
+      "breaks_if_skipped": "Best decision for the property is not automatically the best risk-adjusted decision for the individual owner.",
+      "source_id": "SRC-18"
+    }
+  ]
+}

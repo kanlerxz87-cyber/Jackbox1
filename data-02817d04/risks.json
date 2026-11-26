@@ -1,0 +1,194 @@
+{
+  "meta": {
+    "dataset": "risks-02817d04",
+    "session_id": "S-02817d04",
+    "as_of": "2026-11-26",
+    "purpose": "Decision-option comparison and comprehensive risk matrix covering Business-as-Usual (BAU) risks, Rare Black-Swan tail events, and Simultaneous Compound Hazard Stress."
+  },
+  "decision_options": [
+    {
+      "id": "OPT-01",
+      "option": "1. Sell Now (As-Is Short-to-Mid Fuse, Pre-Renewal)",
+      "wealth_preservation": "High — eliminates single-parcel seismic/fire tail risk, tenant closure risk, and 2030–2035 vacancy cliff immediately.",
+      "growth_opportunity": "Moderate — redeploys net proceeds into diversified liquid or higher-growth assets, but suffers taxable drag (30%–40%+ of gain) and short-lease buyer cap-rate discount.",
+      "key_risks": "Tax leakage (§1250 + Fed LTCG + NIIT + CA 13.3% + potential Measure ULA >$5M); buyer financing discount if <6 yrs remain; leaving upside on table if site is prime infill land.",
+      "when_optimal": "Best if store rent-to-sales is weak (>9.5%), parcel has high seismic/environmental capex exposure, or owner needs immediate liquidity.",
+      "source_id": "SRC-16"
+    },
+    {
+      "id": "OPT-02",
+      "option": "2. Sell via IRC § 1031 Tax-Deferred Exchange",
+      "wealth_preservation": "Very High — preserves 100% of pre-tax equity (avoiding Fed/CA/recapture tax) while diversifying out of a single QSR brand and single LA fault/wildfire basin.",
+      "growth_opportunity": "High — swaps into 15–20 yr investment-grade NNN or multi-tenant/geographic-diversified real estate with stronger rent bumps.",
+      "key_risks": "Strict 45-day ID / 180-day close clock can pressure overpayment for replacement property; Measure ULA (if >$5M in LA City) still applies at sale closing; QI counterparty risk.",
+      "when_optimal": "Often the strongest wealth-preservation + growth balance if basis is low (large embedded tax hit) and remaining lease term still attracts 1031/financed buyers (5–9 yrs left).",
+      "source_id": "SRC-19"
+    },
+    {
+      "id": "OPT-03",
+      "option": "3. Negotiate Early 'Blend-and-Extend' Renewal Now (Hold or Sell Extended)",
+      "wealth_preservation": "High (if achieved on strong credit) — locks in 10–15+ yr cash-flow visibility and restores institutional buyer financing eligibility.",
+      "growth_opportunity": "High — cap-rate compression from extending a short lease to 15 years often creates immediate capital value exceeding TI concessions, preserving optionality to hold OR sell/1031 at peak pricing.",
+      "key_risks": "Prematurely approaching tenant before checking store sales can invite a rent-reduction demand; franchisee may demand heavy remodel/drive-thru TI allowance.",
+      "when_optimal": "Best when PARCEL-001 has healthy store sales (<8% rent-to-sales) and strong arterial traffic, giving the tenant high switching costs.",
+      "source_id": "SRC-15"
+    },
+    {
+      "id": "OPT-04",
+      "option": "4. Passive Hold into 2030–2035 Option Window (Wait-and-See)",
+      "wealth_preservation": "Low-to-Moderate — collects current NNN rent and keeps low Prop 13 tax base, but concentrates 100% of binary non-renewal and short-fuse illiquidity risk.",
+      "growth_opportunity": "Bimodal — strong ONLY if contract rent is far below market AND parcel land/re-leasing demand is exceptional; severely negative if tenant vacates a specialized QSR pad.",
+      "key_risks": "Every passing year shrinks buyer LTV and widens exit cap rate; if tenant declines option with 6–12 months notice, landlord faces 12–24 months dark carry, taxes, insurance, vandalism, and $300k–$800k+ re-tenanting TI.",
+      "when_optimal": "Justifiable only when verified ZIMAS/infill land value or mark-to-market retail rent substantially exceeds leased-fee QSR value.",
+      "source_id": "SRC-14"
+    },
+    {
+      "id": "OPT-05",
+      "option": "5. Hold to Expiry & Reposition / Covered-Land Redevelopment",
+      "wealth_preservation": "Low (high execution, entitlement, construction & financing risk).",
+      "growth_opportunity": "Very High (upside case) — unlocks dense multifamily/mixed-use TOC/PDA land value or higher-credit drive-thru replacement tenant.",
+      "key_risks": "Entitlement delays, construction cost inflation, loss of grandfathered drive-thru rights if use lapses, environmental remediation discovery, and zero income during development.",
+      "when_optimal": "Only for well-capitalized owners when private ZIMAS audit proves high-tier TOC/PDA density and land value clearly dwarfs existing NNN valuation.",
+      "source_id": "SRC-06"
+    }
+  ],
+  "risk_register": [
+    {
+      "id": "RK-01",
+      "regime": "Business-as-Usual (BAU)",
+      "risk": "Tenant system comp-sales deterioration & 'JACK on Track' store closures",
+      "severity": "High",
+      "evidence": "Jack in the Box franchise SSS fell -4.5% (Q2'25), -7.2% (Q3'25), -7.6% (Q4'25), -7.0% (Q1'26); 86 closures in FY25 + 50–100 guided for FY26.",
+      "mitigation": "Obtain 3-year unit sales & rent-to-sales ratio before assuming renewal; consider early 1031 exit or blend-and-extend while >4–5 yrs remain.",
+      "source_id": "SRC-15"
+    },
+    {
+      "id": "RK-02",
+      "regime": "Business-as-Usual (BAU)",
+      "risk": "Franchisee store-margin squeeze from $20.00/hr CA fast-food wage & utility/food inflation",
+      "severity": "High",
+      "evidence": "CA AB 1228 mandates $20.00/hr for chains >=60 units; JACK company restaurant margin fell 710 bps YoY (23.2% → 16.1% in Q1 FY2026).",
+      "mitigation": "Underwrite renewal rent against realistic 15%–17% store EBITDAR margins, not 2021–2023 peak margins.",
+      "source_id": "SRC-08"
+    },
+    {
+      "id": "RK-03",
+      "regime": "Business-as-Usual (BAU)",
+      "risk": "Competing corporate real-estate dispositions expanding QSR NNN supply",
+      "severity": "Medium",
+      "evidence": "Q1 FY2026 8-K Note 4 states JACK expects 'higher than normal sales of real estate in an effort to pay down debt'.",
+      "mitigation": "Differentiate PARCEL-001 on Central LA infill land value and drive-thru scarcity; avoid listing blind without extended term or land story.",
+      "source_id": "SRC-15"
+    },
+    {
+      "id": "RK-04",
+      "regime": "Business-as-Usual (BAU)",
+      "risk": "Short-lease ('wasting asset') buyer debt cliff as 2030–2035 approaches",
+      "severity": "High",
+      "evidence": "With 10Y Treasury at 4.91% (2026-11-24), commercial lenders restrict LTV/amortization once remaining firm lease term drops under 5–7 years.",
+      "mitigation": "Act at least 5–6 years prior to firm expiry (i.e., now if expiry is 2030–2031) so buyers can still secure standard 5-to-7 year commercial debt.",
+      "source_id": "SRC-09"
+    },
+    {
+      "id": "RK-05",
+      "regime": "Business-as-Usual (BAU)",
+      "risk": "Prop 13 reassessment shock upon sale eroding tenant rent-paying capacity",
+      "severity": "Medium-High",
+      "evidence": "Under Prop 13 (BOE Pub 29), sale resets property taxes from historical base to 1% + bonds on current sale price, directly billed to NNN tenant.",
+      "mitigation": "Calculate post-sale property tax per sq ft and add to base rent to test buyer/tenant occupancy-cost tolerance.",
+      "source_id": "SRC-26"
+    },
+    {
+      "id": "RK-06",
+      "regime": "Business-as-Usual (BAU)",
+      "risk": "Real rent erosion when fixed NNN escalations lag Los Angeles CPI (+3.7%)",
+      "severity": "Medium",
+      "evidence": "BLS Sept 2026 LA CPI-U is +3.7% YoY (CPI-W +4.1%); flat or 1%/yr bumps lose 10%–18% of real purchasing power over 5–10 years.",
+      "mitigation": "Target CPI-linked or >=2.0%–2.5% annual / 10%–12% 5-year bumps in any negotiated renewal.",
+      "source_id": "SRC-01"
+    },
+    {
+      "id": "RK-07",
+      "regime": "Business-as-Usual (BAU)",
+      "risk": "City of LA Measure ULA gross-proceeds transfer tax cliff above $5M",
+      "severity": "Medium-High",
+      "evidence": "LAHD confirms special transfer tax on City of LA real property conveyances exceeding $5M base threshold (applied to gross price, not gain).",
+      "mitigation": "Verify municipal boundary (City of LA vs unincorporated/neighboring city) and price proximity to CPI-adjusted ULA threshold before setting asking price.",
+      "source_id": "SRC-25"
+    },
+    {
+      "id": "RK-08",
+      "regime": "Black Swan / Tail Event",
+      "risk": "Major Los Angeles earthquake (M>=6.7 to M>=7.5) + liquefaction / casualty lease termination",
+      "severity": "Critical Tail",
+      "evidence": "USGS UCERF3 30-year LA region probability is 60% for M>=6.7, 46% for M>=7.0, and 31% for M>=7.5; CGS maps liquefaction across LA basin sediments.",
+      "mitigation": "Verify CGS EQ ZApp status + building seismic vintage; check lease casualty-termination threshold (often >25%–50% damage in final lease years lets tenant walk!).",
+      "source_id": "SRC-28"
+    },
+    {
+      "id": "RK-09",
+      "regime": "Black Swan / Tail Event",
+      "risk": "Urban-interface conflagration / catastrophic smoke, grid outage & regional insurance retreat",
+      "severity": "High Tail",
+      "evidence": "CA DOF E-1 documents 11,160 LA housing units destroyed in the 2025 Eaton & Palisades fires; CDI reports 677,449 FAIR Plan policies across 662 distressed ZIPs.",
+      "mitigation": "Screen CAL FIRE 2025 LRA FHSZ; audit commercial property & 18–24 mo business-interruption/loss-of-rent coverage and carrier renewal terms.",
+      "source_id": "SRC-02"
+    },
+    {
+      "id": "RK-10",
+      "regime": "Black Swan / Tail Event",
+      "risk": "Atmospheric-river extreme urban flooding / stormwater inundation",
+      "severity": "Medium-High Tail",
+      "evidence": "FEMA NFHL effective + pending maps govern lender flood mandates; urban sheet-flow flooding can halt ground-floor QSR kitchen operations even in Zone X.",
+      "mitigation": "Check FEMA MSC effective & preliminary flood layers, street-grade drainage, and flood sub-limits in commercial property policy.",
+      "source_id": "SRC-31"
+    },
+    {
+      "id": "RK-11",
+      "regime": "Black Swan / Tail Event",
+      "risk": "Legacy subsurface environmental plume (historical gas station / auto / dry cleaner on corner pad)",
+      "severity": "High Tail",
+      "evidence": "Corner drive-thru QSR pads in Central LA frequently occupied mid-century service stations; subsurface contamination freezes conventional lender closings.",
+      "mitigation": "Run historical Sanborn/city-directory desktop screen privately before listing; never grant invasive Phase II rights without strict indemnification.",
+      "source_id": "SRC-06"
+    },
+    {
+      "id": "RK-12",
+      "regime": "Black Swan / Tail Event",
+      "risk": "Corridor transit construction, median/curb-cut elimination, or partial condemnation",
+      "severity": "Medium Tail",
+      "evidence": "QSR drive-thru volume depends acutely on right-in/right-out arterial access; leases often grant tenant rent abatement or termination upon access loss.",
+      "mitigation": "Check Metro/LADOT capital project corridors and audit the condemnation/access-impairment clause in Gate G-02.",
+      "source_id": "SRC-05"
+    }
+  ],
+  "compound_stress": [
+    {
+      "id": "ST-01",
+      "scenario": "BAU Soft-Landing Base Structure",
+      "rent_loss_months": "0 months (full rent collection through term)",
+      "uninsured_capex_pct": "0%–2% of property value (routine landlord admin/reserves)",
+      "exit_cap_shift": "0 to +50 bps if renewed; +75 to +150 bps if left unextended <5 yrs",
+      "liquidity_impact": "Normal 60–120 day marketing window with conventional debt if >=6–7 yrs term.",
+      "source_id": "SRC-09"
+    },
+    {
+      "id": "ST-02",
+      "scenario": "BAU Downside: Tenant Non-Renewal + Dark Re-Tenanting",
+      "rent_loss_months": "12–18 months lost rent + 100% NNN tax/insurance/security carry",
+      "uninsured_capex_pct": "10%–20% of value ($250k–$600k+ TI, facade de-imaging, roof/HVAC, leasing commissions)",
+      "exit_cap_shift": "+125 to +225 bps vacant-box discount (unless land floor supports value)",
+      "liquidity_impact": "Cash/bridge/value-add buyers only; conventional NNN financing unavailable while dark.",
+      "source_id": "SRC-15"
+    },
+    {
+      "id": "ST-03",
+      "scenario": "Compound Black Swan: M7.0 Earthquake OR Severe Fire/Flood + Casualty Termination in Final Lease Years",
+      "rent_loss_months": "18–30 months rent abatement / lease cancellation under late-term casualty clause",
+      "uninsured_capex_pct": "15%–35% of building replacement cost (seismic deductible / code-upgrade gap)",
+      "exit_cap_shift": "+150 to +300 bps + regional insurance moratorium / lender freeze",
+      "liquidity_impact": "Exit liquidity temporarily frozen or discounted to raw encumbered land value; single-asset owner bears 100% of shock.",
+      "source_id": "SRC-28"
+    }
+  ]
+}

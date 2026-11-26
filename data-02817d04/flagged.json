@@ -1,0 +1,189 @@
+{
+  "meta": {
+    "dataset": "flagged-and-repo-audit-02817d04",
+    "session_id": "S-02817d04",
+    "as_of": "2026-11-26",
+    "note": "Contains (1) line-by-line audit of every existing tree and validator in kanlerxz87-cyber/Jackbox1 as of main@297d901, and (2) all flagged irregularities published on Flagged for Review. Unverified data rows are automatically enumerated from findings.json and questions.json at build time so counts never drift."
+  },
+  "repo_trees_audit": [
+    {
+      "id": "RA-01",
+      "tree": "Root /pages/ + /data/ + /scripts/",
+      "owner_sessions": "ses-41ea221b + arena-b072f72e",
+      "validator_run": "node scripts/validate.mjs → PASS (26 sources, 225 rows: 83 verified-like, 50 blank, 1,556 links)",
+      "audit_finding": "Clean privacy gate and dynamic counts; PR #25 fixed IR-02 ('five-year window 2030-2035', formerly misstated as eight-year) and added multi-period SEC tenant series. Flagged: QuickFacts S-001 could not be re-fetched directly on 2026-11-26 (HTTP error), and reference-point hazard coordinates are downtown proxies, not parcel values.",
+      "status": "verified",
+      "source_id": "SRC-37"
+    },
+    {
+      "id": "RA-02",
+      "tree": "/docs/ dashboard + .github/workflows/pages.yml",
+      "owner_sessions": "arena-f5a16939 + ee4cc19f",
+      "validator_run": "Included in repo-wide internal link & privacy check",
+      "audit_finding": "Cites Census Vintage 2024 LA City population (3,878,704) and Sept 2025 EDD unemployment (5.9% NSA) — official for those earlier vintages, but non-comparable to DOF Jan 1, 2026 (3,806,201) and BLS Oct 2026 MD (4.6%p). Also .github/workflows/pages.yml uploads path: docs only (currently disabled_manually so legacy main:/ root build serves all trees).",
+      "status": "verified",
+      "source_id": "SRC-37"
+    },
+    {
+      "id": "RA-03",
+      "tree": "/workspace/ + data/registry.yaml + tools/check.py",
+      "owner_sessions": "arena/2a61b633",
+      "validator_run": "python3 tools/check.py → PASS (18 pages, 72 rows: 57 verified / 5 flagged / 10 blank)",
+      "audit_finding": "Strong registry architecture. Note: uses Census Reporter (third-party mirror) for ACS tract demonstration rows ('DEMO-TRACTS-A') and retains a demo ZIP string inside an external API citation URL (documented exemption in COORDINATION.md).",
+      "status": "verified",
+      "source_id": "SRC-37"
+    },
+    {
+      "id": "RA-04",
+      "tree": "/audit/ + /verification/check.py",
+      "owner_sessions": "S-62b1c0c2",
+      "validator_run": "python3 verification/check.py → PASS 16/16 (432 table rows, 22 pages, 0 PII)",
+      "audit_finding": "Rigorous row-level source & blank-cell enforcement. Logged F-06 (QuickFacts direct fetch blocked) and F-20 (cross-tree model back-test discrepancy), which portal-02817d04 formally reconciles on model.html.",
+      "status": "verified",
+      "source_id": "SRC-37"
+    },
+    {
+      "id": "RA-05",
+      "tree": "/audit-78005353/site/ + data/audit-78005353/",
+      "owner_sessions": "arena-78005353",
+      "validator_run": "Included in repo link & HTML integrity audit (11 pages, 47-row register)",
+      "audit_finding": "Logged IR-A3 stating the $20.00/hr CA fast-food minimum wage could not be confirmed on an official page during its pass. Resolved today (2026-11-26): confirmed verbatim on CA DIR's official Fast Food Minimum Wage FAQ (AB 1228, $20.00/hr effective Apr 1, 2024, SRC-08).",
+      "status": "verified",
+      "source_id": "SRC-08"
+    },
+    {
+      "id": "RA-06",
+      "tree": "/ledger-1ebd66da/ + scripts/verify.mjs",
+      "owner_sessions": "arena/1ebd66da",
+      "validator_run": "node ledger-1ebd66da/scripts/verify.mjs → PASS (24 sources, 55 rows: 44 verified / 11 blank, 15 pages)",
+      "audit_finding": "Includes independent 22-assertion calculator test suite and subdirectory relative-link verification.",
+      "status": "verified",
+      "source_id": "SRC-37"
+    },
+    {
+      "id": "RA-07",
+      "tree": "/web/ + web/tools/verify.py & check_links.py",
+      "owner_sessions": "S-1552e5d5",
+      "validator_run": "python3 web/tools/verify.py & check_links.py → PASS (281 rows, 39 sources, 17 HTML files, 384 links)",
+      "audit_finding": "Clean source-linked verification and strict privacy checks; documents DOF E-1, BLS, SCAG, CDE, Caltrans, SEC, IRS, FTB, BOE, OSFM, FEMA, CGS, USGS, and CDI.",
+      "status": "verified",
+      "source_id": "SRC-37"
+    },
+    {
+      "id": "RA-08",
+      "tree": "/desk/ (preserved PR #1 root tree)",
+      "owner_sessions": "arena-8c9d9d97",
+      "validator_run": "Preserved archive (8 pages, bannered)",
+      "audit_finding": "Historical initial build retained per non-deletion rule; contains generic 'Official reference' links on some process rows (previously flagged as F-11) and carries a banner directing readers to newer verified workspaces.",
+      "status": "verified",
+      "source_id": "SRC-37"
+    }
+  ],
+  "irregularities": [
+    {
+      "id": "FLG-01",
+      "severity": "Blocking Decision",
+      "title": "No parcel address, APN/AIN, or coordinates supplied (by privacy design)",
+      "detail": "Without a private offline parcel identifier, exact Census tracts, ZIMAS zoning, frontage AADT, FEMA flood zone, CGS fault/liquefaction zone, and CAL FIRE FHSZ cannot be determined. Every parcel-specific cell is left blank and marked unverified.",
+      "source_id": "SRC-06"
+    },
+    {
+      "id": "FLG-02",
+      "severity": "Blocking Decision",
+      "title": "Lease expiration stated only as a 5-year range (2030–2035) with no executed lease file",
+      "detail": "Contract rent, rent bumps, option counts, notice deadlines, NNN structural/tax carve-outs, ROFR, and franchisee guaranty are unverified externally.",
+      "source_id": "SRC-14"
+    },
+    {
+      "id": "FLG-03",
+      "severity": "Blocking Decision",
+      "title": "No owner adjusted basis, accumulated §1250 depreciation, debt balance, or filing bracket",
+      "detail": "Turns verified IRS/FTB tax rules into mechanics + a local browser calculator rather than a published dollar figure.",
+      "source_id": "SRC-20"
+    },
+    {
+      "id": "FLG-04",
+      "severity": "Blocking Decision",
+      "title": "No verified arm's-length short-lease QSR quote set or debt term sheets",
+      "detail": "Official government/SEC sources do not publish private Central LA QSR cap-rate quotes; the short-lease discount slot (TX-09) is left strictly blank until 3 BOVs and 2 debt quotes are collected.",
+      "source_id": "SRC-09"
+    },
+    {
+      "id": "FLG-05",
+      "severity": "Methodological",
+      "title": "'Central Los Angeles' is not an official Census, BLS, or municipal boundary",
+      "detail": "City of LA (469 sq mi) and LA County (9.84M residents) averages mask sharp neighborhood variation; parcel-specific Census tracts must be locked offline via ZIMAS + Census API.",
+      "source_id": "SRC-34"
+    },
+    {
+      "id": "FLG-06",
+      "severity": "Source Retrieval",
+      "title": "Direct HTTP fetch to U.S. Census QuickFacts failed on 2026-11-26",
+      "detail": "Both dual-geography and single-geography QuickFacts URLs returned fetch errors today. Per strict verification policy, zero QuickFacts values are marked verified in portal-02817d04 (TA-15 left blank); CA DOF E-1 (SRC-02) is used for verified 2025/2026 population & housing instead.",
+      "source_id": "SRC-35"
+    },
+    {
+      "id": "FLG-07",
+      "severity": "Source Retrieval",
+      "title": "Direct HTTP fetch to finance.lacity.gov transfer-tax FAQ failed on 2026-11-26",
+      "detail": "While CA RTC § 11911 ($0.55/$500 county rate, SRC-24) and LAHD's >$5M Measure ULA threshold (SRC-25) were verified directly, CPI-adjusted FY2026 ULA tier cutoffs on finance.lacity.gov could not be fetched directly today and remain user-editable in the calculator.",
+      "source_id": "SRC-36"
+    },
+    {
+      "id": "FLG-08",
+      "severity": "Cross-Tree Discrepancy",
+      "title": "Three different official LA City population figures appear across repository trees",
+      "detail": "/docs/ cites Census Vintage 2024 (3,878,704); /pages/ & /workspace/ cite Census QuickFacts July 1, 2025 V2025 (3,869,089); CA DOF E-1 reports Jan 1, 2025 (3,839,536) and Jan 1, 2026 (3,806,201). All are official, but DOF explicitly warns they measure different dates and methodologies and must not be mixed.",
+      "source_id": "SRC-02"
+    },
+    {
+      "id": "FLG-09",
+      "severity": "Cross-Tree Reconciliation",
+      "title": "Conflicting model back-test status across trees (Reconciling Flag F-20)",
+      "detail": "/pages/ reports a completed 47-quarter macro HPI back-test (r = -0.937), whereas /audit/ marks cash-flow back-testing BLOCKED. Both are accurate for separate layers: residential macro HPI can be back-tested (confirming mean reversion), while parcel-level QSR NNN cash-flow back-testing remains strictly BLOCKED.",
+      "source_id": "SRC-10"
+    },
+    {
+      "id": "FLG-10",
+      "severity": "Cross-Tree Resolution",
+      "title": "Prior unconfirmed $20.00/hr CA fast-food wage (IR-A3) verified on official CA DIR page",
+      "detail": "Session arena-78005353 could not reach CA DIR during its pass; on 2026-11-26 we fetched dir.ca.gov/dlse/Fast-Food-Minimum-Wage-FAQ.htm directly, confirming AB 1228's $20.00/hr statutory minimum for chains >=60 units effective April 1, 2024.",
+      "source_id": "SRC-08"
+    },
+    {
+      "id": "FLG-11",
+      "severity": "Data Caveat",
+      "title": "BLS October 2026 labor/payroll figures are preliminary (p) & Oct 2026 YoY CPI-U is blank",
+      "detail": "BLS marks Oct 2026 labor force and CES employment preliminary; Oct 2026 12-month CPI-U % change is omitted on the official BLS table due to the Oct 2025 collection lapse (Sept 2026 YoY +3.7% is latest annual rate).",
+      "source_id": "SRC-01"
+    },
+    {
+      "id": "FLG-12",
+      "severity": "Regulatory Window",
+      "title": "CAL FIRE 2026 SRA Fire Hazard Severity Zone maps are in active public comment (Nov 9, 2026 – Jan 8, 2027)",
+      "detail": "Any private FHSZ lookup performed during late 2026 must record both the 2025 LRA effective map and whether any adjacent SRA boundary is under revision.",
+      "source_id": "SRC-30"
+    },
+    {
+      "id": "FLG-13",
+      "severity": "Corporate vs Unit Gap",
+      "title": "SEC EDGAR disclosures measure Jack in the Box Inc. systemwide, not PARCEL-001's franchisee",
+      "detail": "93% of Jack in the Box restaurants are franchised (1,979 of 2,128 at Q1 FY2026). Systemwide -7.0% franchise SSS and 50–100 guided closures elevate credit scrutiny, but unit-level profitability is unknown without private store statements.",
+      "source_id": "SRC-15"
+    },
+    {
+      "id": "FLG-14",
+      "severity": "Time-Sensitive Action",
+      "title": "LA County Decline-in-Value (DIV) filing deadline is November 30, 2026 (4 days from 2026-11-26)",
+      "detail": "Verified on assessor.lacounty.gov/proposition-13: 2026–2027 DIV applications close Nov 30, 2026.",
+      "source_id": "SRC-27"
+    },
+    {
+      "id": "FLG-15",
+      "severity": "Repo / Deploy Governance",
+      "title": "Public GitHub repo is NOT an access-controlled workspace + multiple parallel trees & disabled docs-only workflow",
+      "detail": "Keep all private files offline. Also note .github/workflows/pages.yml uploads path: docs only (currently disabled_manually so legacy main:/ serves all trees); if Actions Pages is ever re-enabled, path must be '.' (root).",
+      "source_id": "SRC-37"
+    }
+  ]
+}
