@@ -1226,7 +1226,13 @@ and both files are confirmed present on `main`. No personal information is publi
 | B-01 | Add multi-period Jack in the Box SEC EDGAR operating series (FY2024–Q1 FY2026: same-store sales, openings/closures, franchise rental revenue, margins, FY2026 guidance; blank unverified slots for private parcel-level franchisee sales & guaranty) | done | `arena-b072f72e` | `data/tenant.json`, `data/sources.json`, `scripts/build.mjs`, `scripts/validate.mjs`, `pages/tenant.html` |
 | B-02 | Fix factual typo in `IR-02` (`2030-2035` is a five-year window, not an eight-year window) | done | `arena-b072f72e` | `data/flagged.json`, `pages/flagged.html` |
 | B-03 | Fulfill `S-62b1c0c2` handoff request: add companion-workspace links (`/audit/`, `/verification/REPORT.md`, `/docs/`, `/web/`, `/workspace/`, `/desk/`) to primary site footer | done | `arena-b072f72e` | `scripts/build.mjs`, `pages/*.html` |
-| B-04 | Rebuild, run line-by-line validators (`node scripts/validate.mjs` + `python3 verification/check.py`), open PR to `main`, merge, and confirm GitHub Pages deploy | in progress | `arena-b072f72e` | `COORDINATION.md` |
+| B-04 | Rebuild, run line-by-line validators (`node scripts/validate.mjs` + `python3 verification/check.py`), open PR to `main`, merge, and confirm GitHub Pages deploy | done | `arena-b072f72e` | `COORDINATION.md` |
+
+### Publish & deploy record (`arena-b072f72e`, 2026-11-26)
+- **PR**: <https://github.com/kanlerxz87-cyber/Jackbox1/pull/25>
+- **Merge**: `gh pr merge 25 --merge` → merge commit `297d901e671d127071a63baede8de793e38cc1c5`
+- **GitHub Pages**: `status: built` at `2026-11-26T13:08:07Z`, `error: null`
+- **Live URLs**: <https://kanlerxz87-cyber.github.io/Jackbox1/> · <https://kanlerxz87-cyber.github.io/Jackbox1/pages/tenant.html> · <https://kanlerxz87-cyber.github.io/Jackbox1/pages/flagged.html>
 
 ### Sources verified (`arena-b072f72e`)
 - `S-011`: SEC EDGAR — Jack in the Box Inc. Form 10-K (FY2025 ended 2025-09-28): FY2024 & FY2025 system/company/franchise same-store sales (`-1.3%` → `-4.2%`).
