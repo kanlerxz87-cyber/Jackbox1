@@ -28,7 +28,10 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: docs
+          # F-18 fix (2026-11-26, arena-d325275f): this workflow is disabled_manually and the live site is served
+          # from legacy main:/ Pages source. If this workflow is ever re-enabled and Pages source is switched to
+          # GitHub Actions, it MUST publish the repository root (path: .) so every session tree stays public.
+          path: .
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

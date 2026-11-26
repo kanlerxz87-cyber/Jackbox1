@@ -1344,3 +1344,102 @@ Concurrent PRs #25–#30 on `main` preserved verbatim above (including root `ind
   - `python3 verification/check.py`: 16/16 checks, 432 rows, 22 pages, passed.
   - `python3 scripts/check-integration.py` & `python3 tools/check_integration26.py`: passed.
 - **New / updated flags (`pages/flagged.html`):** `IR-06` resolved (2026 FTB PIT brackets verified), `IR-07` resolved with county geographic caveat, `IR-14` added (no Q4/FY2026 Jack in the Box filing on SEC EDGAR as of 2026-11-26), `IR-15` added (macro HPI back-test vs unbacktested parcel model boundary).
+
+---
+
+# Session claim — `arena-d325275f` (2026-11-26)
+
+Branch `arena/d325275f-jackbox1` (from `eab14bb`, the tip of `main` at session start). Working tree was clean.
+This session builds on, and does not rework, the published trees. Scope is deliberately narrow because all
+prior sessions are complete and `main` is green: the root landing page (currently a bare redirect that hides
+every published tree from visitors), the one-line workflow hazard flagged as F-18, and an append-only record.
+No data value is added, changed or inferred by this session.
+
+| Session ID | Branch | Role | Started (UTC) | File scope (exclusive) |
+|---|---|---|---|---|
+| `arena-d325275f` | `arena/d325275f-jackbox1` | Integration + publish hygiene for the root entry point | 2026-11-26 | `index.html` (root), `.github/workflows/pages.yml` (one line), `COORDINATION.md` (append-only) |
+
+## Task board — arena-d325275f
+
+| ID | Task | Status | File scope |
+|---|---|---|---|
+| D-01 | Session claim (this section), commit + push before any other work | done (pushed 2026-11-26) | `COORDINATION.md` |
+| D-02 | Root `index.html` is now a privacy-first hub listing all eight published trees, the flagged pages, the verification/governance documents and the site ground rules. No external assets; self-contained CSS; 2,417 internal refs repo-wide, 0 missing | done | `index.html` |
+| D-03 | F-18: `actions/upload-pages-artifact` now publishes repository root (`path: .`) with a comment. Workflow remains `disabled_manually`; Pages source remains legacy `main:/` (live site unchanged). If re-enabled with Actions source, it can no longer hide the other trees | done | `.github/workflows/pages.yml` |
+| D-04 | Done — see "Session record" below | done | read-only |
+| D-05 | Append session record (sources, verification, irregularities) | done | `COORDINATION.md` |
+| D-06 | PR → merge → confirm Pages build → record PR link | pending (this PR) | n/a |
+
+## Irregularities carried forward (not fixed by this session; none block publish)
+
+- F-18 — workflow artifact path was `docs` while Pages serves legacy `main:/`. This session fixes the one line; the Pages **source** stays legacy, which is the live, confirmed-good configuration.
+- Two parallel `pages.yml` states: workflow disabled_manually (GitHub side) with legacy `main:/` source serving the site. Kept as-is; re-enabling the workflow without switching source would only produce failing deploy runs, not a broken live site.
+- 8 published trees disagree in places on details (documented as F-20). This session does not reconcile them; reconciliation is assigned to a future review pass and the discrepancy stays on the Flagged for Review pages.
+- `data/tracts_demo_a.csv` / `data/registry.yaml` contain demonstration Census tract identifiers for geography `140|86000US90015` (a ZIP-shaped Census geo_id). Documented as demo data by the owning sessions; not parcel-identifying; not used as any parcel-level claim.
+- No sell / renew / hold winner is selected anywhere on the site, by design, until verified private inputs (lease, basis, quotes, APN hazard zones) exist.
+
+
+## Session record — `arena-d325275f` (2026-11-26)
+
+### What this session changed
+
+| File | Change |
+|---|---|
+| `index.html` (root) | Bare redirect to `/pages/` replaced with a self-contained, privacy-first hub: what the site is, the honest "no gate can close yet" headline, links to all eight published trees (`/pages/`, `/workspace/`, `/web/`, `/docs/`, `/audit/`, `/desk/`, `/ledger-1ebd66da/`, `/audit-78005353/site/`), the four flagged-for-review pages, the verification/governance plain-text documents, and the site's ground rules. No external assets, scripts or requests. |
+| `.github/workflows/pages.yml` | Comment + `path: docs` → `path: .` (F-18 file-side fix). Workflow remains `disabled_manually`; legacy `main:/` Pages source unchanged. |
+| `COORDINATION.md` | This claim and record (append-only). |
+
+### Verification performed on 2026-11-26 (all local, current tree)
+
+- `python3 verification/check.py` → **PASS 16/16**; 432 table rows; 22 pages; no personal-information patterns; no external scripts.
+- `python3 web/tools/verify.py` → **VERIFICATION PASSED**; 281 rows; 17 HTML files; 39 sources.
+- `python3 web/tools/check_links.py` → **LINK CHECK PASSED**; 17 HTML files, no broken internal links.
+- `node scripts/validate.mjs` → **All checks passed**; 211 rows, 11 pages, calculator network/storage scan clean.
+- `python3 tools/check.py` (workspace) → **all checks passed**; 18 pages, 72 registry rows.
+- Combined tree scan (every `.html` in repo, 121 files): **2,417 internal refs, 0 missing**.
+- Privacy sweep for emails / phone numbers / SSN / APN-like patterns across all text files: **0 hits**. The remaining "ZIP-shaped" hits are (a) federal tax bracket thresholds in calculator code, (b) Census tract demonstration identifiers under geography `140|86000US90015` already documented as demo data by the owning sessions, (c) `90015` strings in `COORDINATION.md`/`README.md`/`tools/build.py` describing that same documented demo set. None is parcel- or owner-identifying; none is used as a parcel-level claim.
+- Note: the sandbox network only reaches package/GitHub hosts, so `kanlerxz87-cyber.github.io` cannot be fetched from here; deploy confirmation is done via the GitHub Pages API (latest builds for `eab14bb` were `built`) plus the post-merge build for this session's commit.
+
+### 2026-11-26 spot re-verification against official sources (not a full re-audit)
+
+| Claim on site | Official source | Result |
+|---|---|---|
+| LA city population V2024 = 3,878,704 (V2025 = 3,869,089) | U.S. Census Bureau, Vintage 2024 press release & QuickFacts — <https://www.census.gov/newsroom/press-releases/2025/vintage-2024-popest.html> · <https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia,losangelescountycalifornia,CA,US/PST045223> | Confirmed |
+| LA–Long Beach–Glendale MD unemployment, Feb–Jun 2026 prelim: 5.5 / 5.1 / 5.1 / 5.2 / 5.3 (p); LA County NSA July 2026 = 5.2% (BLS LAUS, via CA workforce report); county nonfarm ≈ 4.58M | BLS — <https://www.bls.gov/regions/west/ca_losangeles_md.htm> | Confirmed (newer preliminary months exist than the 2025-11-25 cut-off; no conflict) |
+| Federal long-term capital gains 2025: 0% up to $48,350 single / $96,700 MFJ / $64,750 HoH; 15% to $533,400 / $600,050 / $566,700; 20% above; unrecaptured §1250 max 25%; §1031 real-property-only; 3.8% NIIT | IRS Topic 409 (fetched verbatim 2026-11-26) — <https://www.irs.gov/taxtopics/tc409> | Confirmed verbatim, matches the calculators in `/assets/js/calc.js`, `/web/` and `/docs/js/calculator.js` |
+
+### Irregularities / notes for review (not fixed; none block publish)
+
+1. F-18 file-side fix is in this PR; the Pages **source** intentionally stays legacy `main:/` (the only confirmed-live configuration). Re-enabling the workflow without switching source would produce failing deploy runs but would not take the live site down. A future session may optionally switch Pages to GitHub Actions once the root artifact (`path: .`) has been validated in a run.
+2. The eight trees intentionally disagree in places (counts of verified rows, model back-test status — see F-20). This session did **not** reconcile them; the discrepancy remains on every Flagged for Review page.
+3. `data/tracts_demo_a.csv` demo geography `140|86000US90015` (ZIP-shaped) is retained as documented demonstration data; it is not a parcel claim.
+4. All sell/renew/hold recommendations remain deliberately unselected; 0 of 15 decision gates can close from public data.
+5. Public repository; GitHub Pages site is public. Everything proprietary remains offline with authorised advisers.
+
+### Sources used by this session
+
+- <https://www.census.gov/newsroom/press-releases/2025/vintage-2024-popest.html> (fetched 2026-11-26)
+- <https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia,losangelescountycalifornia,CA,US/PST045223> (fetched 2026-11-26)
+- <https://www.bls.gov/regions/west/ca_losangeles_md.htm> (search-result verification 2026-11-26)
+- <https://www.irs.gov/taxtopics/tc409> (fetched 2026-11-26)
+- GitHub API (Pages config/builds/workflows) for deploy confirmation.
+
+
+---
+
+## Merge conflict resolution — index.html concurrent claim (`arena-d325275f`, 2026-11-26)
+
+While this session's PR #32 was open, `main` advanced through PRs #25–#30. The conflict touched two files:
+
+1. **`index.html`** — resolved by keeping `origin/main`'s executive landing page **verbatim** (`arena-1a77511b`, merged via PR #27, already live and content-checked). This session's replacement landing is preserved, reworked only as an additive page, **`site-map.html`** (links to all eight published trees, the four flagged-for-review pages, the verification/governance documents and the site's ground rules). One nav link (`Site map` → `site-map.html`) was added to the root page; nothing else in the root page was modified. No work was discarded: both landing pages remain reachable, cross-linked, and the deployed root is unchanged apart from that single nav link.
+2. **`COORDINATION.md`** — resolved the standard way: `origin/main`'s board is kept verbatim above; this session's claim and record are appended below it, and this note documents the resolution.
+3. **`.github/workflows/pages.yml`** — no conflict; this session's F-18 one-line fix (`path: docs` → `path: .`, workflow left disabled, legacy Pages source unchanged) is retained.
+
+All validators were re-run after resolution (see record above). Merge method `gh pr merge 32 --merge`; no approval wait, per standing instruction.
+
+
+---
+
+## Second concurrent-merge resolution — `arena-d325275f`, 2026-11-26
+
+`main` advanced again (PRs #31 and #33: `arena/88722e2f`, `arena/cc9c3feb`) while PR #32 was open. Conflict was limited to `COORDINATION.md` (append-only board) and was resolved the same way: `origin/main`'s board verbatim above; this session's claim, verification record and the first merge-resolution note retained below. No other session's rows were deleted or edited. No data files, pages or scripts conflicted.
