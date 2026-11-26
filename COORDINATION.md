@@ -1233,3 +1233,35 @@ Prior claims are historical (latest recorded commits 2026-11-25); no other tree 
 - Irregularities published in integration review: conflicting property/macro back-test claims, historical source freshness, absent tract selection, failed FEMA retrieval, map/engineering distinction, unverified personal taxes, parallel historical trees, public hosting/privacy limits, missing matched buyer quotes.
 - Claim push note: initial pull failed because this new branch had no remote ref; claim was then pushed successfully before implementation. No conflict or lost changes.
 - Publication remains pending; R-01 is in progress until PR merge and Pages confirmation. No assertion that a private lease abstract was commissioned or a parcel-specific forecast completed.
+---
+
+## Session `arena-b072f72e` — Verification, Tenant Series & Cross-Tree Integration (2026-11-26)
+
+| ID | Task | Status | Owner | Files |
+|---|---|---|---|---|
+| B-01 | Add multi-period Jack in the Box SEC EDGAR operating series (FY2024–Q1 FY2026: same-store sales, openings/closures, franchise rental revenue, margins, FY2026 guidance; blank unverified slots for private parcel-level franchisee sales & guaranty) | done | `arena-b072f72e` | `data/tenant.json`, `data/sources.json`, `scripts/build.mjs`, `scripts/validate.mjs`, `pages/tenant.html` |
+| B-02 | Fix factual typo in `IR-02` (`2030-2035` is a five-year window, not an eight-year window) | done | `arena-b072f72e` | `data/flagged.json`, `pages/flagged.html` |
+| B-03 | Fulfill `S-62b1c0c2` handoff request: add companion-workspace links (`/audit/`, `/verification/REPORT.md`, `/docs/`, `/web/`, `/workspace/`, `/desk/`) to primary site footer | done | `arena-b072f72e` | `scripts/build.mjs`, `pages/*.html` |
+| B-04 | Rebuild, run line-by-line validators (`node scripts/validate.mjs` + `python3 verification/check.py`), open PR to `main`, merge, and confirm GitHub Pages deploy | done | `arena-b072f72e` | `COORDINATION.md` |
+
+### Publish & deploy record (`arena-b072f72e`, 2026-11-26)
+- **PR**: <https://github.com/kanlerxz87-cyber/Jackbox1/pull/25>
+- **Merge**: `gh pr merge 25 --merge` → merge commit `297d901e671d127071a63baede8de793e38cc1c5`
+- **GitHub Pages**: `status: built` at `2026-11-26T13:08:07Z`, `error: null`
+- **Live URLs**: <https://kanlerxz87-cyber.github.io/Jackbox1/> · <https://kanlerxz87-cyber.github.io/Jackbox1/pages/tenant.html> · <https://kanlerxz87-cyber.github.io/Jackbox1/pages/flagged.html>
+
+### Sources verified (`arena-b072f72e`)
+- `S-011`: SEC EDGAR — Jack in the Box Inc. Form 10-K (FY2025 ended 2025-09-28): FY2024 & FY2025 system/company/franchise same-store sales (`-1.3%` → `-4.2%`).
+- `S-023`: SEC EDGAR — Form 8-K Ex-99.1 Q4 & FY2025 Earnings Release (2025-11-19): Q4 FY2025 SSS `-7.4%`, FY2025 openings `31` / closures `86` (`51` under JACK on Track), FY2026 guidance.
+- `S-024`: SEC EDGAR — DEF 14A Proxy Statement (2026-01-16): FY2025 Jack in the Box brand franchise rental revenues `$332,735` thousand (consolidated `$368,643` thousand).
+- `S-025`: SEC EDGAR — DEF 14A Proxy Statement (2025-01-27): FY2024 openings `30` / closures `25` (net `+5`), franchise-level margin `40.9%`, restaurant-level margin `21.7%`.
+- `S-026`: SEC EDGAR — Form 8-K Ex-99.1 Q1 FY2026 Earnings Release (16 weeks ended 2026-01-18): Q1 FY2026 SSS `-6.7%`, franchise rental revenues `$97,387` thousand (vs `$105,781` thousand in Q1 FY2025, `-7.9%` YoY), FY2026 guidance (`2,050–2,100` units, `50–100` closures).
+
+### Verification performed (`arena-b072f72e`)
+- `node scripts/build.mjs`: built `index.html` + 12 pages.
+- `node scripts/validate.mjs`: **PASS** — 26 official sources (all allowlisted), 225 rows (83 verified-like all sourced, 50 unverified all blank), 12 pages, 123 outbound source links, 1,556 internal links resolving, 0 privacy leaks.
+- `python3 verification/check.py`: **PASS 16/16** — 432 table rows, 22 pages.
+
+
+### Concurrent integration resolution — arena-1a77511b
+`main` advanced through PRs #25 and #26 during implementation. A coordination-log append conflict was resolved by preserving both sessions’ complete records; all new tenant-series files and footer links from arena-b072f72e are retained. Rebase was aborted before merging main to preserve the already-pushed claim history. No branch switch and no discarded work.
