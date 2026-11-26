@@ -9,13 +9,13 @@
 ## 🟢 Current board — 2026-11-26 (newest first; read this before the historical sections below)
 
 > Everything below this block is **history**. This block sits at the **top** of the file on purpose: other sessions append at the end, so keeping it here avoids add/add conflicts.
-> Last refreshed by `S-f6ebb740` at 2026-11-26 ~13:55 UTC.
+> Last refreshed by `S-f6ebb740` at 2026-11-26 ~14:00 UTC (after PR #37 merged and Pages rebuilt).
 
 ### Live session registry (from `gh pr list`, `git ls-remote` and each branch's own claim)
 
 | Session | Branch | Scope (as claimed) | Status |
 |---|---|---|---|
-| `S-f6ebb740` (this block) | `arena/f6ebb740-jackbox1` | `outlook/**`, `private-workflow/**`, this block, plus one logged integration edit to `site-map.html` | **done, PR pending below** |
+| `S-f6ebb740` (this block) | `arena/f6ebb740-jackbox1` | `outlook/**`, `private-workflow/**`, this block, plus logged integration edits to `site-map.html` | **done: merged (PR #37)**; this record is a follow-up PR |
 | `arena-1a77511b` | `arena/1a77511b-jackbox1` | R-01 root `index.html`, `integration-review.html` | merged (PR #27, #29) |
 | `S-43ae253a` | `arena/43ae253a-jackbox1` | AUD-26 `release-review.html`, `tools/check_integration26.py` | merged (PR #28, #30) |
 | `arena-b072f72e` | `arena/b072f72e-jackbox1` | tenant series `data/tenant.json`, `pages/tenant.html` | merged (PR #25, #26) |
@@ -23,7 +23,7 @@
 | `arena-d325275f` | `arena/d325275f-jackbox1` | root hub `site-map.html`, F-18 workflow fix | merged (PR #32, #34) |
 | `arena/cc9c3feb` | `arena/cc9c3feb-jackbox1` | audit and verification of `pages/`, `workspace/` | merged (PR #33) |
 | `S-a293043a` | `arena/a293043a-jackbox1` | `hub/**` decision hub | merged (PR #35) |
-| `S-02817d04` | `arena/02817d04-jackbox1` | `portal-02817d04/**`, `data-02817d04/**`, `tools-02817d04/**` | **claim only, no commits since 13:08 UTC**; a takeover would be allowed only after 14:08 UTC. This session did **not** take it over. |
+| `S-02817d04` | `arena/02817d04-jackbox1` | `portal-02817d04/**`, `data-02817d04/**`, `tools-02817d04/**` | merged (PR #36, just before PR #37). An earlier version of this block said 'claim only'; that was true at 13:55 and was overtaken within minutes. No takeover was needed or done. |
 
 ### Re-scope history (D-F6-02)
 
@@ -40,11 +40,11 @@
 | F6-05 | Private workflow: pick census tracts from the public Gazetteer file offline, optional single geocoder confirmation, ACS aggregate with a ten-tract minimum and no tract IDs, blank hazard checklist; 28 offline tests | done | `private-workflow/**`, `outlook/workflow.html` |
 | F6-06 | Landing page and category pages with simple tables and charts; Flagged page (17 items plus 7 repository review links); Sources page (37 sources with retrieval method) | done | `outlook/*.html`, `outlook/assets/outlook.css`, `outlook/data/flags.json`, `outlook/data/sources.json` |
 | F6-07 | Build and check tooling | done | `outlook/tools/{common,build,check}.py` |
-| F6-08 | PR, merge, Pages confirmation, record | in progress | this block |
+| F6-08 | PR, merge, Pages confirmation, record | done (record below) | this block |
 
 ### Integration edit made by this session (logged, minimal)
 
-`site-map.html` (owner `arena-d325275f`, merged and done): added cards for `hub/index.html` and `outlook/index.html`, two flagged-page cards (`hub/flagged.html`, `outlook/flagged.html`), and removed the count from the heading `eight entry points` (nine cards were already listed). No other root or sibling file was edited. `S-a293043a` had asked (CR-A01) for a link to `hub/`; this edit fulfils it. **Request to whoever merges `portal-02817d04/`:** add one card in the same place.
+`site-map.html` (owner `arena-d325275f`, merged and done), in two steps: (1) in PR #37, cards for `hub/index.html` and `outlook/index.html`, flagged-page cards for both, and the count removed from the heading `eight entry points` (nine cards were already listed); (2) in the follow-up record PR, a card and a flagged-page card for `portal-02817d04/` after PR #36 merged. No other root or sibling file was edited. `S-a293043a` had asked (CR-A01) for a link to `hub/`; this fulfils it. `site-map.html` now links every tree that has merged to main.
 
 ### Sources, verification and irregularities (full detail on the module pages)
 
@@ -54,7 +54,7 @@
 - **Irregularities found** (all on `outlook/flagged.html` with source links): two official population series differ by about 1.6% for 2025 (OL-F01); EDD county and state windows differ (OL-F02); the county projection moved about 10% in five years (OL-F03, illustrative only); tenant-brand FY2026 results are due 2026-12-09 so the series ends at Q3 (OL-F04); Metro Sections 2 and 3 have no stated date (OL-F05); wage-law current rate unconfirmed (OL-F06); FEMA service failing (OL-F07); stale CAL FIRE service (OL-F08); Census key required (OL-F09); **README.md is stale: says 12 irregularities while `data/flagged.json` lists 15, and still lists the renamed `data/tracts_demo_90015.csv` (OL-F10; request to the README owner, not edited)**; decline-in-value window closes Monday 2026-11-30 (OL-F12); overlapping parallel trees (OL-F16).
 - **Irregularity found and then cleared:** the board's F-18 (workflow publishing only `docs/`) is fixed on main: `pages.yml` now uploads the repository root and is disabled; the live site is served from legacy `main:/` (GitHub API: built).
 - **Mistake caught before publishing:** while writing flag OL-F01 a Census 2020 base figure was first typed wrongly; it was re-read against the source excerpt (10,017,414) and corrected before any commit of that file was merged.
-- **Checks run on the combined tree at ~13:50 UTC, all exit status 0:** `node scripts/validate.mjs` (252 rows), `python3 verification/check.py` (16/16), `python3 tools/check.py`, `python3 web/tools/verify.py`, `python3 web/tools/check_links.py`, `python3 scripts/check-integration.py`, `python3 tools/check_integration26.py`, `python3 hub/scripts/verify.py`, `python3 outlook/tools/check.py` (13 pages, 186 rows, 37 sources, 17 flags), `python3 outlook/tools/check.py --selftest` (23 negative tests), `python3 private-workflow/selftest.py` (28 tests). These are structure, link, privacy-pattern and arithmetic checks; they do **not** certify that every cited figure is current.
+- **Checks run on the combined tree at ~13:50 UTC, all exit status 0:** `node scripts/validate.mjs` (252 rows), `python3 verification/check.py` (16/16), `python3 tools/check.py`, `python3 web/tools/verify.py`, `python3 web/tools/check_links.py`, `python3 scripts/check-integration.py`, `python3 tools/check_integration26.py`, `python3 hub/scripts/verify.py`, `python3 outlook/tools/check.py` (13 pages, 186 rows, 37 sources, 17 flags), `python3 outlook/tools/check.py --selftest` (23 cases: 1 clean pass and 22 bad inputs that must be rejected), `python3 private-workflow/selftest.py` (28 tests). These are structure, link, privacy-pattern and arithmetic checks; they do **not** certify that every cited figure is current.
 - **Privacy:** no address, parcel number, owner, lease, rent, basis, coordinate, email, phone or personal name appears in `outlook/` or `private-workflow/`. Names and contact details in the Jack in the Box release were deliberately not copied. The private workflow's outputs live only in the git-ignored `private/` folder.
 
 ### Handoffs and requests (nothing below was done by this session)
@@ -62,13 +62,15 @@
 1. After 2026-12-09: extend the tenant and peer series with Jack in the Box Q4 and full-year FY2026 (suggestion SUG-1 on `outlook/suggestions.html`).
 2. README owner: correct counts and the renamed filename (OL-F10).
 3. Owner decision: one primary site and archive the rest (SUG-7, OL-F16).
-4. `S-02817d04`: stale claim; if it is taken over after 14:08 UTC, the portal needs a card in `site-map.html`.
+4. Three overlapping dashboards now exist on main (`hub/`, `portal-02817d04/`, `outlook/`) beside eight older trees; none of the validators compares their figures with each other. A line-by-line reconciliation of the shared metrics across trees has not been done by anyone.
 
 ### Publication record (this session)
 
-- **PR:** _pending: filled in below after the merge_
-- **Merge result:** _pending_
-- **GitHub Pages:** _pending_
+- **PR:** <https://github.com/kanlerxz87-cyber/Jackbox1/pull/37> (`arena/f6ebb740-jackbox1` into `main`), opened with summary, sources and flagged irregularities in the body.
+- **Merge result:** `gh pr merge 37 --merge` succeeded at 2026-11-26T13:49:53Z; merge commit `616f3fcd72181e7bd6a6bb8cf20ccdeaad23c810`. No conflicts: PR #36 (`S-02817d04`) merged one step earlier and the two merged cleanly. No approval wait.
+- **GitHub Pages:** legacy build from `main:/`, status `built`, error `null`, build commit `616f3fc` (created 13:49:55Z, built by 13:50:31Z). Live pages fetched afterwards: <https://kanlerxz87-cyber.github.io/Jackbox1/outlook/index.html> and `/outlook/flagged.html` returned the new content (headings, six key figures, 17 flags).
+- **Combined-tree checks after the merge (all exit status 0):** the eleven checks listed above plus `node tools-02817d04/validate.mjs` and `node tools-02817d04/test-calc.mjs` (6/6).
+- **Follow-up record PR:** this block's final text and the portal card in `site-map.html`; checks re-run before merge.
 
 **Platform constraint (D-F6-01):** the workspace fixes this session to branch `arena/f6ebb740-jackbox1`; the requested `session-<id>/<task>` branch names cannot be created. Non-overlap was enforced by disjoint file scopes and by pulling `main` before every push.
 
