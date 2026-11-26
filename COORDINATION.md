@@ -1216,3 +1216,16 @@ resolved; F-18 remains on the Flagged for Review page as a change request to the
 `fetch_page` requests to `/audit/privacy.html` and `/verification/REPORT.md` returned tool-side errors after
 previously being cached as 404s during the incident; equivalent fresh URLs in the same directories resolved,
 and both files are confirmed present on `main`. No personal information is published.
+
+## 2026-11-26 · S-43ae253a · integration and honest verification refresh
+
+Current branch: `arena/43ae253a-jackbox1` (Arena-fixed; no additional branch created).
+Historical claims above are preserved. Root integration claim is taken over after >60 hours since the recorded 2026-11-25 work; existing category trees will not be edited.
+
+| Task | Status | Owner | Exclusive file scope |
+|---|---|---|---|
+| INT-26 | Replace redirect with clear executive landing/navigation; expose outstanding decisions and review limitations | in progress | S-43ae253a | `index.html`, `assets/integration-26.css` |
+| AUD-26 | Current review/official retrieval log, strict new-page row and site-link checks | in progress | S-43ae253a | `release-review.html`, `tools/check_integration26.py` |
+| PUB-26 | Run existing checks, PR, merge, confirm Pages via GitHub API | in progress | S-43ae253a | `COORDINATION.md` append only; repository deployment API |
+
+No existing figure will be relabelled freshly verified just because its URL is official. No private documents will be requested or added to Git. Official-source retrieval failures and existing conflicting counts/back-test claims will be flagged publicly. Website source code is public and is not an access-controlled internal workspace.
