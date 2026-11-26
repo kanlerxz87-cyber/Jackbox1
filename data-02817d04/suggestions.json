@@ -169,7 +169,7 @@
       "path_id": "PATH-D",
       "category": "Site Improvement",
       "title": "Add encrypted local JSON export/import ('Bring Your Own Private File') to the browser calculator",
-      "why_it_helps": "Lets the owner save private scenario assumptions on an offline USB/encrypted drive and reload them into the browser without any server or localStorage persistence.",
+      "why_it_helps": "Lets the owner save private scenario assumptions on an offline USB/encrypted drive and reload them into the browser without any server or browser-storage persistence.",
       "effort_cost": "Low · 60 lines of client-side FileReader/Blob JS",
       "privacy_rule": "Uses explicit user file download/upload only; zero network or browser storage.",
       "source_id": "SRC-33"
