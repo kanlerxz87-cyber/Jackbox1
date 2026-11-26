@@ -1,0 +1,1443 @@
+{
+  "meta": {
+    "title": "Central Los Angeles NNN QSR — Independent Decision & Verification Hub",
+    "subtitle": "Sell-Before-Expiry vs. Renew/Hold Advisory Workspace (Private Parcel Firewall Active)",
+    "parcel_id": "PARCEL-001",
+    "as_of": "2026-11-26",
+    "model_version": "v0.1-audit",
+    "decision_status": "OPEN — NO WINNER DECLARED",
+    "owner_session": "S-a293043a",
+    "privacy_rule": "Zero street address, APN, owner identity, personal names, lease rent, store sales, debt balances, or tax basis appear anywhere in this public repository. Private figures are entered solely in the local zero-telemetry browser calculator or offline owner workbook."
+  },
+  "executive": {
+    "kpis": [
+      {
+        "label": "10-Yr U.S. Treasury (DGS10)",
+        "value": "4.91%",
+        "sub": "As of 2026-11-24 · Nov swing 31 bp (4.84%–5.15%)",
+        "status": "verified",
+        "source_id": "SRC-04"
+      },
+      {
+        "label": "Measure ULA Tiers (City of LA)",
+        "value": "$5.4M / $10.9M",
+        "sub": "Eff. 2026-07-01 · 4.0% / 5.5% (+0.56% base/county)",
+        "status": "verified",
+        "source_id": "SRC-30"
+      },
+      {
+        "label": "JACK Brand Units (Q3 FY2026)",
+        "value": "2,115",
+        "sub": "Down -76 vs FY24 · Q3 SSS -1.1% · 40W rent rev -6.8%",
+        "status": "verified",
+        "source_id": "SRC-18"
+      },
+      {
+        "label": "LA County Unemp. / QSR Jobs",
+        "value": "4.6% / 193.2k",
+        "sub": "Oct 2026 prelim · Limited-service jobs +1.6% YoY",
+        "status": "verified",
+        "source_id": "SRC-02"
+      },
+      {
+        "label": "CA Fast-Food Wage Floor",
+        "value": "$20.00/hr",
+        "sub": "AB 1228 vs City of LA $18.42/hr (eff. 2026-07-01)",
+        "status": "verified",
+        "source_id": "SRC-21"
+      },
+      {
+        "label": "Prop 8 DIV Filing Deadline",
+        "value": "2026-11-30",
+        "sub": "4 calendar days left for 2026–27 LA County review",
+        "status": "verified",
+        "source_id": "SRC-29"
+      }
+    ],
+    "alerts": [
+      {
+        "id": "ALT-01",
+        "severity": "URGENT",
+        "title": "LA County Prop 8 Decline-in-Value Window Closes November 30, 2026 (4 Days Remaining)",
+        "detail": "If PARCEL-001's market value as of Jan 1, 2026 fell below its Prop 13 factored base-year value (e.g., due to short remaining lease term or elevated 10-year rates), Form RP-87 must be filed by 2026-11-30 to preserve temporary assessment relief.",
+        "source_id": "SRC-29"
+      },
+      {
+        "id": "ALT-02",
+        "severity": "HIGH",
+        "title": "Jack in the Box Corporate Turnover & Net Rental Spread Compression (Aug–Nov 2026)",
+        "detail": "SEC filings through 2026-11-17 show Q3 FY2026 brand units down to 2,115 (-76 since FY24), 40-week franchise net rental spread down -15.4% YoY, dividend/buybacks suspended, $500M 2026-1 Class A-2 Notes maturing May 2031 ARD (overlapping the 2030–2035 lease window), and simultaneous planned departures of the CFO, CLO, and CTO announced Nov 17, 2026.",
+        "source_id": "SRC-20"
+      },
+      {
+        "id": "ALT-03",
+        "severity": "HIGH",
+        "title": "Decision Remains Open Until 12 Private Parcel, Lease, Tax & Quote Inputs Are Entered Offline",
+        "detail": "Because street address, APN, executed lease/option dates, rent schedule, guarantor identity, tax basis, debt, and 3 broker short-lease cap-rate quotes are intentionally excluded from this public repository, declaring 'Sell Now' or 'Renew/Hold' today would be fabricated advice.",
+        "source_id": "SRC-26"
+      }
+    ],
+    "summary_rows": [
+      {
+        "item": "Subject Asset Class & Geography",
+        "status": "verified",
+        "value": "Single-tenant NNN QSR (Jack in the Box) in Central Los Angeles (anonymous PARCEL-001)",
+        "note": "Exact address, APN, and City-of-LA vs. unincorporated jurisdiction intentionally withheld.",
+        "source_id": "SRC-30"
+      },
+      {
+        "item": "Decision Horizon",
+        "status": "verified",
+        "value": "Current term ends within 2030–2035 (4 to 9 years remaining from 2026-11-26)",
+        "note": "Note: 2030–2035 spans a 5-year calendar window (not 'eight-year', corrected in FLAG-02).",
+        "source_id": "SRC-18"
+      },
+      {
+        "item": "Macro Rate & Valuation Anchor",
+        "status": "verified",
+        "value": "10-Yr Treasury 4.91% (2026-11-24); LA FHFA HPI 553.76 Q3 2026 (-0.82% off Q1 peak)",
+        "note": "Higher risk-free rates compress NNN multiples and widen the short-lease buyer discount.",
+        "source_id": "SRC-04"
+      },
+      {
+        "item": "California & Local Tax Friction (2026)",
+        "status": "verified",
+        "value": "Fed LTCG 20% + 25% §1250 + 3.8% NIIT; CA up to 13.30% (incl. 1% BHSA >$1M); LA ULA 4.0% >$5.4M / 5.5% >=$10.9M",
+        "note": "Inside City of LA, combined transfer tax jumps from 0.56% to 4.56% at $5.4M+ and 6.06% at $10.9M+.",
+        "source_id": "SRC-30"
+      },
+      {
+        "item": "Operator Credit Trajectory (JACK)",
+        "status": "verified",
+        "value": "Q3 FY2026 SSS -1.1% (improving from Q1 -6.7%), 2,115 units, revised FY26 EBITDA $225–230M, C-suite turnover Nov 2026",
+        "note": "Must confirm privately whether PARCEL-001 lease is corporate-guaranteed or franchisee-only.",
+        "source_id": "SRC-18"
+      },
+      {
+        "item": "Parcel-Specific Rent, Lease Expiry, Basis & Quotes",
+        "status": "unverified",
+        "value": null,
+        "note": "BLANK BY PRIVACY DESIGN — enter privately in hub/calculator.html (100% browser memory).",
+        "source_id": "SRC-26"
+      }
+    ]
+  },
+  "gates": [
+    {
+      "id": "G-01",
+      "workstream": "Privacy & Governance",
+      "gate": "Private Workspace Firewall & Public Repository Hygiene",
+      "status": "Done",
+      "owner": "Owner + Advisor",
+      "completion_rule": "Zero street address, APN, personal names, basis, or lease rents stored in Git; zero-telemetry calculator verified.",
+      "blocking_gap": "None for public hub; maintain offline private folder for executed documents.",
+      "source_id": "SRC-26"
+    },
+    {
+      "id": "G-02",
+      "workstream": "Lease & Notice Gate",
+      "gate": "Executed Lease Abstract & Exact Notice-Date Reconciliation",
+      "status": "Blocked — Private Input",
+      "owner": "Real Estate Counsel",
+      "completion_rule": "Verify exact primary expiry date, option notice window (earliest/latest days), rent reset formula (fixed vs FMV), guarantor (JACK corporate vs franchisee), NNN carve-outs, ROFR/ROFO, and casualty/condemnation clauses.",
+      "blocking_gap": "Executed lease + all amendments/estoppels not yet abstracted offline.",
+      "source_id": "SRC-18"
+    },
+    {
+      "id": "G-03",
+      "workstream": "Parcel & Jurisdiction",
+      "gate": "APN, City-of-LA Boundary (Measure ULA Test) & Prop 8 DIV Check",
+      "status": "Blocked — Private Input",
+      "owner": "Owner + Tax Counsel",
+      "completion_rule": "Confirm whether PARCEL-001 sits inside City of LA (subject to Measure ULA $5.4M/$10.9M + 0.45% base) or unincorporated LA County (0.11% County DTT only); evaluate Prop 8 RP-87 filing before 2026-11-30.",
+      "blocking_gap": "Parcel APN, jurisdiction flag, and current 2026-27 tax bill assessment missing.",
+      "source_id": "SRC-29"
+    },
+    {
+      "id": "G-04",
+      "workstream": "W-01 Trade Area",
+      "gate": "Parcel-Level 1/3/5-Mile Trade Area, Traffic & Zoning Assembly",
+      "status": "Blocked — Private Input",
+      "owner": "Analyst (Offline)",
+      "completion_rule": "Pull exact Census ACS tracts, LADOT NavigateLA arterial ADT (<=2 yrs old), City Planning ZIMAS zoning/TOC/drive-thru grandfathered status, and 1-mile QSR competitor map offline.",
+      "blocking_gap": "Regional baselines verified; parcel coordinates withheld from public repo.",
+      "source_id": "SRC-10"
+    },
+    {
+      "id": "G-05",
+      "workstream": "W-04 Hazards & Insurance",
+      "gate": "Parcel Hazard Zones, Structural Seismic Check & Insurance Quotes",
+      "status": "Blocked — Private Input",
+      "owner": "Engineer + Insurance Broker",
+      "completion_rule": "Run CGS EQ Zapp (fault/liquefaction/landslide), USGS ASCE 7-22 Ss/S1, FEMA NFHL flood panel, CAL FIRE 2025 LRA FHSZ, Phase I ESA, PCA (roof/HVAC/paving), and bound Property + Earthquake + Loss-of-Rent quotes.",
+      "blocking_gap": "Regional hazard benchmarks verified; parcel maps & insurance binders withheld.",
+      "source_id": "SRC-32"
+    },
+    {
+      "id": "G-06",
+      "workstream": "W-02 Tax Rules",
+      "gate": "2026 Federal, California, Transfer Tax & §1031 Basis Verification",
+      "status": "In Progress",
+      "owner": "CPA / Tax Counsel",
+      "completion_rule": "Public 2026 IRS/FTB/ULA rules verified & coded in hub/calculator.html. Owner CPA must populate adjusted basis, accumulated §1250 depreciation, entity structure (trust/LLC/individual), suspended passive losses, and §1031 vs taxable comparison.",
+      "blocking_gap": "Statutory rules DONE; private tax basis & depreciation schedule needed offline.",
+      "source_id": "SRC-23"
+    },
+    {
+      "id": "G-07",
+      "workstream": "Operator Credit",
+      "gate": "Tenant Financial Audit: Corporate SEC Filings vs. Store-Level Unit Health",
+      "status": "In Progress",
+      "owner": "Owner + Broker",
+      "completion_rule": "Corporate JACK SEC filings through 2026-11-17 verified. Still need parcel-level gross sales (if reportable under lease), rent-to-sales occupancy ratio (target <8–10% QSR), franchisee unit count, and guarantor balance sheet.",
+      "blocking_gap": "Corporate trend DONE; store-level sales & franchisee credit unseen.",
+      "source_id": "SRC-18"
+    },
+    {
+      "id": "G-08",
+      "workstream": "W-02 Market Quotes",
+      "gate": "Short-Lease Market Cap-Rate Quotes & Financing Depth",
+      "status": "Blocked — Private Input",
+      "owner": "3 NNN Brokers + Lender",
+      "completion_rule": "Collect 3 written, dated broker BOVs plus lender DSCR/LTV quotes across 3-yr, 5-yr, 7-yr, 10-yr, and 15-yr remaining lease terms, and closed Central LA QSR comparable sales.",
+      "blocking_gap": "Zero verified broker quotes or comparable sales ledgers on file yet.",
+      "source_id": "SRC-04"
+    },
+    {
+      "id": "G-09",
+      "workstream": "Model & Back-Test",
+      "gate": "Versioned Cash-Flow Model v1.0 & Comparable-Sales Back-Test",
+      "status": "Gated",
+      "owner": "Owner + Analyst",
+      "completion_rule": "Promote model from v0.1-audit to v1.0 ONLY after Gates G-02 through G-08 are populated offline and calibrated against dated closed Central LA QSR comparables.",
+      "blocking_gap": "Cannot back-test NNN cash-flow projections until closed comps & private rent exist.",
+      "source_id": "SRC-05"
+    },
+    {
+      "id": "G-10",
+      "workstream": "Final Commitment",
+      "gate": "Sell-Before-Expiry vs. Early Renewal vs. Hold-to-Expiry Decision",
+      "status": "Gated",
+      "owner": "Owner",
+      "completion_rule": "Compare after-tax net sale proceeds (or §1031 replacement yield) vs. risk-adjusted PV of renewal/hold under BAU + compound seismic/vacancy stress; confirm estate step-up horizon.",
+      "blocking_gap": "Intentionally OPEN until G-02 through G-09 clear.",
+      "source_id": "SRC-27"
+    }
+  ],
+  "lease": {
+    "intro": "Every parcel-specific contractual field below is intentionally BLANK (null) in this public workspace to preserve owner privacy. Populate each row in the private offline lease abstract before initiating renewal discussions or listing the property.",
+    "rows": [
+      {
+        "id": "LS-01",
+        "clause": "Exact Lease Commencement & Primary Expiration Date",
+        "status": "unverified",
+        "value": null,
+        "why_critical": "Fixes exact remaining lease term (WALT) inside the 2030–2035 window; 12 months difference shifts institutional lender eligibility and buyer cap rates.",
+        "verification_step": "Read original lease + all recorded memoranda/amendments + latest signed tenant estoppel.",
+        "source_id": "SRC-18"
+      },
+      {
+        "id": "LS-02",
+        "clause": "Renewal Options Count, Term Length & Exact Exercise Notice Window",
+        "status": "unverified",
+        "value": null,
+        "why_critical": "Missing an option notice deadline (e.g., 180–365 days prior to expiry) or misunderstanding unilateral tenant options destroys negotiating leverage.",
+        "verification_step": "Extract earliest/latest notice dates, delivery method (certified mail/overnight), and notice addresses.",
+        "source_id": "SRC-18"
+      },
+      {
+        "id": "LS-03",
+        "clause": "Tenant Entity & Lease Guarantor (JACK Corporate vs. Franchisee LLC)",
+        "status": "unverified",
+        "value": null,
+        "why_critical": "93% of JACK units (1,966 of 2,115 in Q3 FY26) are franchised, often subleased from JACK or leased directly by franchisee SPEs. Credit pricing differs sharply.",
+        "verification_step": "Verify named tenant, corporate guaranty/master lease status, assignment release language, and franchisee store count.",
+        "source_id": "SRC-18"
+      },
+      {
+        "id": "LS-04",
+        "clause": "Current Base Rent, Percentage Rent & Escalation Schedule",
+        "status": "unverified",
+        "value": null,
+        "why_critical": "Determines current NOI, CPI vs. fixed bump protection against LA inflation (LA CPI-U +3.7% YoY Sep 2026), and mark-to-market spread.",
+        "verification_step": "Reconcile rent ledger against lease schedule, CPI caps/floors, and any historical COVID/deferral amendments.",
+        "source_id": "SRC-01"
+      },
+      {
+        "id": "LS-05",
+        "clause": "Option Period Rent Reset Formula (Fixed Bump vs. Fair Market Value)",
+        "status": "unverified",
+        "value": null,
+        "why_critical": "Below-market fixed option rents transfer value to the tenant; FMV resets introduce appraisal arbitration cost and rent uncertainty.",
+        "verification_step": "Check whether FMV has a floor ('not less than prior rent') and whether baseball arbitration applies.",
+        "source_id": "SRC-04"
+      },
+      {
+        "id": "LS-06",
+        "clause": "NNN Expense Recovery & Landlord Capex Carve-Outs (Roof, Structure, Parking)",
+        "status": "unverified",
+        "value": null,
+        "why_critical": "True Absolute NNN vs. NN (landlord roof/structure/slab/utility lines) changes cap rate, reserve deductions, and capital-expenditure exposure.",
+        "verification_step": "Verify who repairs/replaces roof, HVAC, parking lot, grease trap, ADA upgrades, and seismic retrofits.",
+        "source_id": "SRC-32"
+      },
+      {
+        "id": "LS-07",
+        "clause": "Prop 13 Reassessment Pass-Through & Tax Appeal Cooperation",
+        "status": "unverified",
+        "value": null,
+        "why_critical": "Buyers underwrite full Prop 13 market reassessment on sale; if the lease caps tax pass-throughs, buyer NOI drops and purchase price falls.",
+        "verification_step": "Confirm whether tenant pays 100% of reassessed real property taxes upon sale or has a Prop 13 protection cap.",
+        "source_id": "SRC-29"
+      },
+      {
+        "id": "LS-08",
+        "clause": "Store Sales Reporting & Co-Tenancy / Go-Dark Rights",
+        "status": "unverified",
+        "value": null,
+        "why_critical": "Store sales vs. rent (occupancy cost ratio) is the single strongest predictor of whether the tenant renews voluntarily or closes in JACK's store-optimization wave.",
+        "verification_step": "Check whether tenant must submit annual certified gross sales; inspect continuous-operation and recapture clauses.",
+        "source_id": "SRC-18"
+      },
+      {
+        "id": "LS-09",
+        "clause": "Tenant ROFR / ROFO (Right of First Refusal / Offer)",
+        "status": "unverified",
+        "value": null,
+        "why_critical": "A tenant ROFR chills third-party bidding and adds 15–45 days to closing timelines (critical when coordinating a 45-day §1031 identification clock).",
+        "verification_step": "Review purchase-option, ROFR, and ROFO provisions and notice timelines verbatim.",
+        "source_id": "SRC-26"
+      },
+      {
+        "id": "LS-10",
+        "clause": "Casualty, Earthquake Insurance & Condemnation Termination Clauses",
+        "status": "unverified",
+        "value": null,
+        "why_critical": "Determines whether tenant can terminate or abate rent after an earthquake, fire, or street widening—and who pays earthquake/FAIR Plan deductibles.",
+        "verification_step": "Cross-check lease insurance requirements against actual tenant COI and CDI commercial market limits.",
+        "source_id": "SRC-34"
+      },
+      {
+        "id": "LS-11",
+        "clause": "Environmental Indemnity & Drive-Thru / Signage Use Restrictions",
+        "status": "unverified",
+        "value": null,
+        "why_critical": "Governs historical UST/grease-trap liability, exclusivity clauses, and whether a grandfathered City of LA drive-thru entitlement survives vacancy (>1 year lapse risk).",
+        "verification_step": "Audit environmental indemnity + City of LA zoning/CUP conditions for drive-thru abandonment periods.",
+        "source_id": "SRC-10"
+      },
+      {
+        "id": "LS-12",
+        "clause": "Existing Debt Maturity, Prepayment Penalty & Assumability",
+        "status": "unverified",
+        "value": null,
+        "why_critical": "Defeasance or yield-maintenance penalties directly reduce net sale proceeds; low-rate assumable debt can widen the buyer pool when 10-Yr Treasury is 4.91%.",
+        "verification_step": "Pull promissory note, payoff quote, and maturity/prepayment schedule offline.",
+        "source_id": "SRC-04"
+      }
+    ]
+  },
+  "tradearea": {
+    "regional_baselines": [
+      {
+        "id": "TA-01",
+        "metric": "Los Angeles County Unemployment Rate (SA)",
+        "geography": "Los Angeles County",
+        "period": "Oct 2026 (prelim)",
+        "status": "verified",
+        "value": "4.6%",
+        "context": "Down from 4.8% rev Sep 2026 (vs CA 5.0%, US 4.1%); BLS MD NSA also 4.6% on 5,042.6k labor force.",
+        "source_id": "SRC-02"
+      },
+      {
+        "id": "TA-02",
+        "metric": "LA Total Nonfarm & Leisure/Hospitality Payrolls",
+        "geography": "LA-Long Beach-Glendale MD",
+        "period": "Oct 2026 (prelim)",
+        "status": "verified",
+        "value": "4,662.8k (+0.9% YoY) / L&H 548.0k (+2.0% YoY)",
+        "context": "Positive overall employment momentum despite demographic headwinds.",
+        "source_id": "SRC-01"
+      },
+      {
+        "id": "TA-03",
+        "metric": "Limited-Service Restaurant Employment (NAICS 722513)",
+        "geography": "Los Angeles County",
+        "period": "Oct 2026 (prelim)",
+        "status": "verified",
+        "value": "193,200 jobs (+1.6% YoY)",
+        "context": "Within 395,000 Food Services & Drinking Places jobs (+1.9% YoY); confirms steady QSR labor demand post-AB 1228.",
+        "source_id": "SRC-02"
+      },
+      {
+        "id": "TA-04",
+        "metric": "Los Angeles Area Consumer Price Index (CPI-U)",
+        "geography": "LA-Long Beach-Anaheim MSA",
+        "period": "Sep–Oct 2026",
+        "status": "verified",
+        "value": "360.965 (Oct 2026) · +3.7% YoY (Sep 2026)",
+        "context": "Sticky metro inflation elevates food/utility/labor costs for franchisees while eroding flat fixed-rent leases.",
+        "source_id": "SRC-01"
+      },
+      {
+        "id": "TA-05",
+        "metric": "CA Fast-Food vs. City of LA & CA Minimum Wages",
+        "geography": "California / City of LA",
+        "period": "2026 (eff. Jan 1 / Jul 1)",
+        "status": "verified",
+        "value": "$20.00/hr AB 1228 · $18.42/hr City of LA · $16.90/hr CA",
+        "context": "AB 1228 binds national QSR chains (60+ US units) at $20/hr, structurally squeezing store-level EBITDA margins.",
+        "source_id": "SRC-21"
+      },
+      {
+        "id": "TA-06",
+        "metric": "Population — CA DOF E-1 Estimates (Jan 1, 2026)",
+        "geography": "LA County & City of LA",
+        "period": "Jan 1, 2026",
+        "status": "verified",
+        "value": "LA County 9,837,286 (-0.6% YoY) · City of LA 3,806,201 (-0.9% YoY)",
+        "context": "County fell ~64,000 YoY partly due to 11,160 homes lost in Jan 2025 Eaton/Palisades wildfires; County still added +11,260 net housing units (62.7% multi-family).",
+        "source_id": "SRC-03"
+      },
+      {
+        "id": "TA-07",
+        "metric": "Population — U.S. Census PEP (via FRED CALOSA7POP)",
+        "geography": "Los Angeles County",
+        "period": "2025",
+        "status": "verified",
+        "value": "9,694.9k (-0.55% YoY; -3.96% vs 2016 peak)",
+        "context": "Separate methodology from CA DOF E-1; never mix series without reconciling vintage/base.",
+        "source_id": "SRC-06"
+      },
+      {
+        "id": "TA-08",
+        "metric": "Median Household Income (Census SAIPE)",
+        "geography": "Los Angeles County",
+        "period": "2024",
+        "status": "verified",
+        "value": "$90,757 (+4.92% YoY)",
+        "context": "County-wide median masks sharp Central LA sub-neighborhood variance (must pull parcel 1/3/5-mi tracts offline).",
+        "source_id": "SRC-07"
+      },
+      {
+        "id": "TA-09",
+        "metric": "LAUSD District-Wide K–12 Enrollment",
+        "geography": "LAUSD",
+        "period": "SY 2025–26",
+        "status": "verified",
+        "value": "497,105 students (16.4% English Learners)",
+        "context": "Secular enrollment contraction tracks younger-family outflow; check local feeder schools privately.",
+        "source_id": "SRC-08"
+      },
+      {
+        "id": "TA-10",
+        "metric": "SCAG Long-Term Forecast vs. 2025 CARB Draft Risk",
+        "geography": "SCAG / LA County",
+        "period": "2024–2050",
+        "status": "verified",
+        "value": "Connect SoCal 2024: LA jobs 5.03M -> 5.46M; Nov 2025 draft flags LA pop -5% (to 9.3M) but HH +6% (to 3.7M)",
+        "context": "Shrinking household size keeps total rooftops/households growing even if headcount dips.",
+        "source_id": "SRC-12"
+      },
+      {
+        "id": "TA-11",
+        "metric": "Traffic Count Governance (Highways vs. Arterials)",
+        "geography": "California / City of LA",
+        "period": "Through 2024 / Ongoing",
+        "status": "verified",
+        "value": "Caltrans = State Highways only; LADOT NavigateLA = City arterials (counts <=2 yrs required for studies)",
+        "context": "Surface-street QSR drive-thru counts must come from LADOT NavigateLA or a commissioned 48-hr tube count.",
+        "source_id": "SRC-10"
+      }
+    ],
+    "private_parcel_gaps": [
+      {
+        "id": "TP-01",
+        "field": "1-Mile / 3-Mile / 5-Mile Ring Population, Households & Median Income (ACS 5-Yr Tracts)",
+        "status": "unverified",
+        "value": null,
+        "protocol": "Run offline on exact parcel lat/lon via Census ACS API or TIGERweb; do NOT substitute any legacy downtown proxy ZIP.",
+        "source_id": "SRC-07"
+      },
+      {
+        "id": "TP-02",
+        "field": "Frontage Arterial Average Daily Traffic (ADT) & Ingress/Egress Turn Movements",
+        "status": "unverified",
+        "value": null,
+        "protocol": "Query LADOT NavigateLA for frontage intersection; order new count if data is >2 years old.",
+        "source_id": "SRC-10"
+      },
+      {
+        "id": "TP-03",
+        "field": "Underlying Zoning, TOC Tier, Lot Size & Drive-Thru Entitlement Grandfathered Status",
+        "status": "unverified",
+        "value": null,
+        "protocol": "Check City of LA ZIMAS privately — existing grandfathered drive-thru permits are scarce and raise residual land value.",
+        "source_id": "SRC-09"
+      },
+      {
+        "id": "TP-04",
+        "field": "Direct QSR Competitor Map & Adjacent Development Pipeline (1-Mile Radius)",
+        "status": "unverified",
+        "value": null,
+        "protocol": "Map competing burger/taco/chicken drive-thrus and planned multifamily infill near parcel offline.",
+        "source_id": "SRC-03"
+      }
+    ]
+  },
+  "tenant": {
+    "kpis": [
+      {
+        "label": "JACK Brand Units (Q3 FY26)",
+        "value": "2,115",
+        "note": "149 Co / 1,966 Fr (-76 since FY24; guidance ~2,100)",
+        "source_id": "SRC-18"
+      },
+      {
+        "label": "System Same-Store Sales",
+        "value": "-1.1% (Q3 FY26)",
+        "note": "Sequentially better than Q1 -6.7% / Q2 -3.8%, still negative",
+        "source_id": "SRC-18"
+      },
+      {
+        "label": "40W Franchise Net Rental Spread",
+        "value": "-15.4% YoY",
+        "note": "Rental rev $242.5M (-6.8%) vs occ exp $166.0M (-2.3%)",
+        "source_id": "SRC-18"
+      },
+      {
+        "label": "2026-1 Class A-2 Notes ARD",
+        "value": "May 2031",
+        "note": "$500M refinanced; directly overlaps 2030–2035 lease expiry",
+        "source_id": "SRC-18"
+      }
+    ],
+    "series": [
+      {
+        "period": "FY2024 (52 wks ended Sep 29, 2024)",
+        "system_sss": "-1.3%",
+        "units_end": "2,191",
+        "open_close": "Baseline year",
+        "franchise_rent_rev": "$375.43M (consolidated)",
+        "key_signal": "Pre-closure-wave footprint; consolidated net loss -$36.74M (incl. Del Taco).",
+        "source_id": "SRC-14"
+      },
+      {
+        "period": "FY2025 (52 wks ended Sep 28, 2025)",
+        "system_sss": "-4.2% (Q4: -7.4%)",
+        "units_end": "2,136",
+        "open_close": "31 opened / 86 closed (-55 net)",
+        "franchise_rent_rev": "$368.64M (consolidated)",
+        "key_signal": "Goodwill/intangible impairment $209.6M; net loss -$80.72M; stockholders' deficit -$938.3M; LT debt $1.674B.",
+        "source_id": "SRC-14"
+      },
+      {
+        "period": "Q1 FY2026 (16 wks ended Jan 18, 2026)",
+        "system_sss": "-6.7% (Co -4.7%, Fr -7.0%)",
+        "units_end": "2,128",
+        "open_close": "-8 net units",
+        "franchise_rent_rev": "Continuing ops post-Del Taco sale",
+        "key_signal": "Del Taco divestiture closed Dec 22, 2025; initial FY26 SSS guide (-1% to +1%) later cut in Q3.",
+        "source_id": "SRC-15"
+      },
+      {
+        "period": "Q2 FY2026 (12 wks ended Apr 12, 2026)",
+        "system_sss": "-3.8% (Co -2.8%, Fr -3.9%)",
+        "units_end": "2,128",
+        "open_close": "9 opened / 9 closed (flat)",
+        "franchise_rent_rev": "FLM $60.5M (37.9%)",
+        "key_signal": "Revenues $254.3M (-4.3% YoY); RLM 16.4%. On May 13, 2026 Mark King named Interim CEO replacing Lance Tucker.",
+        "source_id": "SRC-16"
+      },
+      {
+        "period": "Q3 FY2026 (12 & 40 wks ended Jul 5, 2026)",
+        "system_sss": "-1.1% (Co +0.9%, Fr -1.3%)",
+        "units_end": "2,115 (149 Co / 1,966 Fr)",
+        "open_close": "4 opened / 17 closed (-13 net)",
+        "franchise_rent_rev": "$242.53M (40W, -6.8% YoY)",
+        "key_signal": "40W occupancy expense $166.04M (-2.3%) -> net rental spread down -15.4%; higher bad-debt expense; $500M 2026-1 Notes (May 2031 ARD); dividend & buybacks suspended; revised FY26 guide ~2,100 units, low-single-digit SSS decline, Adj. EBITDA $225–230M.",
+        "source_id": "SRC-18"
+      },
+      {
+        "period": "Governance Events (Sep–Nov 2026; FY26 10-K unfiled)",
+        "system_sss": "FY26 10-K pending",
+        "units_end": "FY26 guide ~2,100",
+        "open_close": "FY26 guide ~25 open / 50–60 close",
+        "franchise_rent_rev": "Pending FY26 10-K",
+        "key_signal": "Sep 17, 2026: GreenWood Investors activist cooperation extended through 2028 + Rachel Ruggeri joins Board. Nov 17, 2026: simultaneous planned exits of CFO Dawn Hooper, CLO Sarah Super, and CTO Doug Cook ahead of CEO transition to Taylor Montgomery.",
+        "source_id": "SRC-20"
+      }
+    ],
+    "private_gaps": [
+      {
+        "id": "TN-01",
+        "field": "PARCEL-001 Actual Trailing 3-Year Store Gross Sales & Rent-to-Sales Ratio",
+        "status": "unverified",
+        "value": null,
+        "why_critical": "A strong Central LA urban drive-thru can dramatically outperform system averages—or sit on JACK's closure list if occupancy cost exceeds 10–12%.",
+        "source_id": "SRC-18"
+      },
+      {
+        "id": "TN-02",
+        "field": "Entity on Lease (Corporate Master Lease vs. Franchisee SPE) & Franchisee Unit Count",
+        "status": "unverified",
+        "value": null,
+        "why_critical": "JACK's 40-week franchise rental revenue drop (-6.8%) and higher franchisee bad-debt expense underscore counterparty separation risk.",
+        "source_id": "SRC-18"
+      },
+      {
+        "id": "TN-03",
+        "field": "Remodel / Image-Upgrade Obligation Status (CRAVE / Modernized Drive-Thru)",
+        "status": "unverified",
+        "value": null,
+        "why_critical": "Tenant willingness to invest capital in a remodel is a strong revealed preference signal for renewal intent.",
+        "source_id": "SRC-16"
+      }
+    ]
+  },
+  "valuation": {
+    "tax_rules_2026": [
+      {
+        "id": "TX-01",
+        "rule": "Federal Long-Term Capital Gains Brackets (2026)",
+        "rate_or_threshold": "0% / 15% / 20% — 20% above $613,700 (MFJ), $545,500 (Single), $579,600 (HOH), $306,850 (MFS), $16,250 (Trusts)",
+        "impact": "Applies to net gain above adjusted basis excluding unrecaptured §1250 depreciation. Updated from 2025 brackets.",
+        "source_id": "SRC-23"
+      },
+      {
+        "id": "TX-02",
+        "rule": "Federal Unrecaptured Section 1250 Depreciation Recapture",
+        "rate_or_threshold": "Up to 25.0% maximum federal rate",
+        "impact": "Long-held commercial properties often carry heavy accumulated depreciation, taxing the first slice of gain at 25% rather than 20%.",
+        "source_id": "SRC-24"
+      },
+      {
+        "id": "TX-03",
+        "rule": "Federal Net Investment Income Tax (NIIT, IRC §1411)",
+        "rate_or_threshold": "3.8% above $250,000 (MFJ) / $200,000 (Single/HOH) / $125,000 (MFS) — unindexed",
+        "impact": "Stacks atop both LTCG (23.8% max) and §1250 recapture (28.8% max) for passive NNN landlords.",
+        "source_id": "SRC-25"
+      },
+      {
+        "id": "TX-04",
+        "rule": "California Personal Income Tax (2026 Progressive Schedules — No LTCG Preference)",
+        "rate_or_threshold": "1.0%–12.30% (12.30% top >$768,213 Single/MFS, >$1,536,426 MFJ, >$1,044,771 HOH)",
+        "impact": "California taxes 100% of capital gains and §1250 recapture as ordinary income.",
+        "source_id": "SRC-27"
+      },
+      {
+        "id": "TX-05",
+        "rule": "California Behavioral Health Services Tax (Formerly Mental Health Services Tax)",
+        "rate_or_threshold": "+1.00% on CA taxable income > $1,000,000 -> 13.30% top CA rate",
+        "impact": "Fixed $1,000,000 threshold (unindexed) pushes combined top Fed + CA marginal tax on gain to 37.1% (LTCG) / 42.1% (§1250) before transfer taxes.",
+        "source_id": "SRC-28"
+      },
+      {
+        "id": "TX-06",
+        "rule": "City of Los Angeles Measure ULA (Effective July 1, 2026)",
+        "rate_or_threshold": "4.0% on total price >$5,400,000 to <$10,900,000; 5.5% on total price >=$10,900,000",
+        "impact": "Applies to GROSS sale price (not gain) and creates massive dollar cliffs at $5,400,000 ($216k jump) and $10,900,000 ($599.5k total ULA). Applies inside City of LA only — even on a §1031 exchange!",
+        "source_id": "SRC-30"
+      },
+      {
+        "id": "TX-07",
+        "rule": "City of LA Base Transfer Tax & LA County Documentary Transfer Tax",
+        "rate_or_threshold": "City of LA Base $2.25/$500 (0.45%) + County DTT $0.55/$500 (0.11%) = 0.56% base (4.56% / 6.06% with ULA)",
+        "impact": "Unincorporated LA County pays ONLY 0.11% County DTT. Note: corrects legacy workspace/tax.html error ('city 0.055%' vs actual 0.45%).",
+        "source_id": "SRC-30"
+      },
+      {
+        "id": "TX-08",
+        "rule": "IRC §1031 Like-Kind Exchange & CA FTB Form 3840 Out-of-State Clawback",
+        "rate_or_threshold": "45-day identification / 180-day closing; annual CA Form 3840 reporting for out-of-state replacements",
+        "impact": "Defers Federal + CA income taxes (NOT Measure ULA or transfer taxes). Moving equity out of California does NOT erase deferred CA tax — FTB tracks it annually via Form 3840 until eventual taxable sale (or IRC §1014 basis step-up at death).",
+        "source_id": "SRC-26"
+      },
+      {
+        "id": "TX-09",
+        "rule": "California Prop 13 & LA County Prop 8 Decline-in-Value Review",
+        "rate_or_threshold": "1% base + voter bonds, max 2%/yr cap; Prop 8 RP-87 filing deadline 2026-11-30",
+        "impact": "Holding preserves low Prop 13 tax basis; selling triggers buyer reassessment to market value. Prop 8 allows temporary relief if current value < factored base.",
+        "source_id": "SRC-29"
+      },
+      {
+        "id": "TX-10",
+        "rule": "Federal Estate Tax Exclusion & Step-Up in Basis (IRC §1014 / P.L. 119-21)",
+        "rate_or_threshold": "$15,000,000 federal estate/gift exclusion (per individual under P.L. 119-21)",
+        "impact": "For long-held, low-basis family assets, holding (or §1031-swapping into passive NNN until death) can permanently eliminate built-in capital gains & §1250 recapture via step-up in basis.",
+        "source_id": "SRC-27"
+      }
+    ],
+    "short_lease_quotes": [
+      {
+        "id": "QT-01",
+        "term_bucket": "Short Term: 3 Years Remaining (Unrenewed)",
+        "broker_bov_1": null,
+        "broker_bov_2": null,
+        "broker_bov_3": null,
+        "lender_ltv_dscr": null,
+        "status": "unverified",
+        "notes": "Blank until 3 dated Central LA QSR broker BOVs & lender quotes are logged. Typical institutional NNN lenders balk under 5 yrs WALT.",
+        "source_id": "SRC-04"
+      },
+      {
+        "id": "QT-02",
+        "term_bucket": "Short-Mid Term: 5 Years Remaining",
+        "broker_bov_1": null,
+        "broker_bov_2": null,
+        "broker_bov_3": null,
+        "lender_ltv_dscr": null,
+        "status": "unverified",
+        "notes": "Key inflection bucket relative to 2030–2035 expiry window and 4.91% 10-Yr Treasury anchor.",
+        "source_id": "SRC-04"
+      },
+      {
+        "id": "QT-03",
+        "term_bucket": "Mid Term: 7 Years Remaining",
+        "broker_bov_1": null,
+        "broker_bov_2": null,
+        "broker_bov_3": null,
+        "lender_ltv_dscr": null,
+        "status": "unverified",
+        "notes": "Tests whether selling slightly earlier preserves a wider 1031 exchange buyer pool before the 5-year cliff.",
+        "source_id": "SRC-26"
+      },
+      {
+        "id": "QT-04",
+        "term_bucket": "Renewed / Blend-and-Extend: 10–15 Years Remaining",
+        "broker_bov_1": null,
+        "broker_bov_2": null,
+        "broker_bov_3": null,
+        "lender_ltv_dscr": null,
+        "status": "unverified",
+        "notes": "Quantifies cap-rate compression upside if owner negotiates a 10–15 yr extension before marketing the asset.",
+        "source_id": "SRC-18"
+      },
+      {
+        "id": "QT-05",
+        "term_bucket": "Vacant / Residual Land & Grandfathered Drive-Thru Value",
+        "broker_bov_1": null,
+        "broker_bov_2": null,
+        "broker_bov_3": null,
+        "lender_ltv_dscr": null,
+        "status": "unverified",
+        "notes": "Sets downside floor value if JACK does not renew (compares re-tenanting to rival QSR vs. infill multifamily land value).",
+        "source_id": "SRC-03"
+      }
+    ]
+  },
+  "hazards": {
+    "regional_context": [
+      {
+        "id": "HZ-01",
+        "peril": "Regional Seismicity (M >= 4.5 within 50 km of Central LA)",
+        "status": "verified",
+        "value": "28 events (1990-01-01 to 2026-11-26)",
+        "detail": "Queried directly from USGS FDSN Event API (34.0522, -118.2437). Site-specific spectral accelerations (ASCE 7-22 Ss/S1) require private coordinates.",
+        "source_id": "SRC-31"
+      },
+      {
+        "id": "HZ-02",
+        "peril": "Statutory Seismic Zones (Alquist-Priolo Fault / Liquefaction / Landslide)",
+        "status": "verified",
+        "value": "CGS EQ Zapp statutory zones active across LA Basin",
+        "detail": "Fault rupture & liquefaction zones trigger mandatory geotechnical/structural disclosures and dramatically raise PML & seismic retrofit costs.",
+        "source_id": "SRC-32"
+      },
+      {
+        "id": "HZ-03",
+        "peril": "LA County Federal Disaster Declarations (All Hazards)",
+        "status": "verified",
+        "value": "88 declarations on record (OpenFEMA v2 through 2026-11-26)",
+        "detail": "Includes DR-4856-CA (Jan 2025 Eaton & Palisades Wildfires destroying 11,160 units), FM-5605 (Aug 2025 Canyon Fire), and 2023–24 atmospheric-river storm disasters (DR-4683, DR-4699, DR-4769).",
+        "source_id": "SRC-33"
+      },
+      {
+        "id": "HZ-04",
+        "peril": "Wildfire Hazard Severity Zones (CAL FIRE OSFM)",
+        "status": "verified",
+        "value": "2025 LRA maps rolled out Feb–Mar 2025; 2026 SRA comment open Nov 9, 2026–Jan 8, 2027",
+        "detail": "Updated Local Responsibility Area (LRA) maps expand VHFHSZ/HFHSZ disclosures and affect commercial property underwriting even near urban-interface edges.",
+        "source_id": "SRC-34"
+      },
+      {
+        "id": "HZ-05",
+        "peril": "California Commercial Property & FAIR Plan Insurance Regime",
+        "status": "verified",
+        "value": "FAIR Plan commercial limit $20M/bldg ($100M/loc) eff. Jul 26, 2025; sunsets Dec 31, 2028",
+        "detail": "CDI Order 2026-2 & Sustainable Insurance Strategy (85% voluntary-market write rule) stabilize capacity, but FAIR Plan excludes earthquake, carries high deductibles/co-insurance, and faces a 2028 sunset.",
+        "source_id": "SRC-34"
+      }
+    ],
+    "parcel_screen": [
+      {
+        "id": "HP-01",
+        "check": "USGS ASCE 7-22 Site-Specific Spectral Values (Ss, S1, Site Class) & Seismic PML",
+        "status": "unverified",
+        "value": null,
+        "action": "Run offline on parcel lat/lon + structural engineer seismic PML screening if building is pre-1994 or URM/non-ductile concrete.",
+        "source_id": "SRC-31"
+      },
+      {
+        "id": "HP-02",
+        "check": "CGS EQ Zapp — Alquist-Priolo Fault, Liquefaction & Landslide Zone Status",
+        "status": "unverified",
+        "value": null,
+        "action": "Query CGS EQ Zapp offline using parcel address/APN and save PDF map to private diligence folder.",
+        "source_id": "SRC-32"
+      },
+      {
+        "id": "HP-03",
+        "check": "FEMA National Flood Hazard Layer (NFHL / FIRM Panel & Flood Zone)",
+        "status": "unverified",
+        "value": null,
+        "action": "Pull official FIRMette from FEMA Map Service Center (msc.fema.gov); confirm urban stormwater/drainage history.",
+        "source_id": "SRC-33"
+      },
+      {
+        "id": "HP-04",
+        "check": "CAL FIRE 2025 LRA FHSZ Status & Smoke / Utility PSPS Exposure",
+        "status": "unverified",
+        "value": null,
+        "action": "Check CAL FIRE LRA FHSZ viewer privately; verify tenant business-interruption / civil-authority coverage wording.",
+        "source_id": "SRC-34"
+      },
+      {
+        "id": "HP-05",
+        "check": "Actual Commercial Property, Earthquake & Loss-of-Rent Insurance Quotes + Deductibles",
+        "status": "unverified",
+        "value": null,
+        "action": "Verify tenant's current COI vs. lease obligations; quote standalone DIC/Earthquake (typical 5%–15% deductible) & carrier non-renewal exposure.",
+        "source_id": "SRC-34"
+      },
+      {
+        "id": "HP-06",
+        "check": "Phase I Environmental (ESA) & Property Condition Assessment (PCA)",
+        "status": "unverified",
+        "value": null,
+        "action": "Check historical gas-station/dry-cleaner adjacency, grease-trap integrity, roof remaining useful life, HVAC age, and ADA compliance.",
+        "source_id": "SRC-32"
+      }
+    ],
+    "compound_stress": [
+      {
+        "id": "CS-01",
+        "scenario": "BAU Rate & Short-Lease Repricing",
+        "trigger": "10-Yr Treasury stays >= 5.0% while WALT slips below 5 years without renewal",
+        "cash_flow_impact": "Zero immediate rent loss, but buyer debt coverage shrinks and exit cap rate widens (+75 to +150 bps illustrative input in calculator).",
+        "mitigation": "Test early blend-and-extend before WALT falls under 5 years; verify broker quotes (Gate G-08).",
+        "source_id": "SRC-04"
+      },
+      {
+        "id": "CS-02",
+        "scenario": "Operator Closure + Re-Tenanting Downtime",
+        "trigger": "JACK or franchisee declines renewal amid negative SSS & store-closure program",
+        "cash_flow_impact": "6–18 months zero rent + owner absorbs taxes/insurance/security + $150k–$400k+ TI/LC/re-image capex (user-entered in calculator).",
+        "mitigation": "Audit store sales early; preserve grandfathered drive-thru CUP; pre-market to competing QSR chains.",
+        "source_id": "SRC-18"
+      },
+      {
+        "id": "CS-03",
+        "scenario": "Black-Swan Compound Seismic Shock (Central LA M6.5+)",
+        "trigger": "Major fault rupture / shaking damages building, utilities, and nearby corridors simultaneously",
+        "cash_flow_impact": "Rent abatement/termination clause triggered + uninsured 5–15% earthquake deductible or full structural loss (FAIR Plan excludes EQ) + frozen transaction market.",
+        "mitigation": "Verify lease casualty clause, confirm seismic PML & DIC earthquake coverage, avoid over-leverage.",
+        "source_id": "SRC-31"
+      },
+      {
+        "id": "CS-04",
+        "scenario": "Wildfire / Smoke / FAIR Plan Sunset & Insurance Shock",
+        "trigger": "Regional conflagration triggers utility shutoffs/smoke closures + carrier retreat ahead of Dec 31, 2028 FAIR Plan commercial sunset",
+        "cash_flow_impact": "Insurance premiums surge (straining franchisee NNN occupancy ratio) or lender declares insurance default.",
+        "mitigation": "Verify tenant policy endorsements, wildfire defensible space, and lender insurance covenants before renewal.",
+        "source_id": "SRC-34"
+      }
+    ]
+  },
+  "risks": [
+    {
+      "id": "RK-01",
+      "path": "Path 1: Sell Before Expiry (Taxable)",
+      "regime": "BAU",
+      "risk": "Severe Combined Tax & Transfer-Tax Haircut (Capital Erosion)",
+      "mechanism": "Federal 20% LTCG + 25% §1250 + 3.8% NIIT + CA up to 13.30% + City of LA Measure ULA (4.0% >$5.4M / 5.5% >=$10.9M) + 0.56% base/county transfer tax can consume 30%–45%+ of gross equity.",
+      "mitigation": "Run exact 2026 numbers in hub/calculator.html; verify City vs. unincorporated County jurisdiction; price strategically near ULA cliffs ($5.4M / $10.9M).",
+      "source_id": "SRC-30"
+    },
+    {
+      "id": "RK-02",
+      "path": "Path 1: Sell Before Expiry (Taxable)",
+      "regime": "BAU",
+      "risk": "Short-Lease Cap-Rate Discount & Shallow Lender Pool",
+      "mechanism": "With 10-Yr Treasury at 4.91% and JACK cutting store counts, selling unrenewed with <5 years remaining limits financed buyers and widens exit cap rate.",
+      "mitigation": "Obtain 3 dated broker BOVs across WALT buckets (Gate G-08) before listing; test whether negotiating a renewal first creates net price uplift exceeding rent concessions.",
+      "source_id": "SRC-04"
+    },
+    {
+      "id": "RK-03",
+      "path": "Path 1: Sell Before Expiry (Taxable)",
+      "regime": "Black Swan",
+      "risk": "Loss of Lifetime Estate Step-Up in Basis (IRC §1014)",
+      "mechanism": "Realizing decades of low-basis gain shortly before an estate transfer permanently pays Federal + CA capital gains taxes that step-up at death would have eliminated.",
+      "mitigation": "Coordinate sale timing with estate counsel under the $15M federal exclusion (P.L. 119-21).",
+      "source_id": "SRC-27"
+    },
+    {
+      "id": "RK-04",
+      "path": "Path 2: Sell Before Expiry (§1031 Exchange)",
+      "regime": "BAU",
+      "risk": "45-Day Identification Compression & Overpaying for Replacement Asset",
+      "mechanism": "Strict statutory 45-day ID / 180-day closing clock can force the owner into a lower-quality or over-priced replacement NNN property; Measure ULA still hits the LA sale!",
+      "mitigation": "Pre-identify replacement markets, DST/TIC backups, and Qualified Intermediary before going under contract; clear any tenant ROFR first.",
+      "source_id": "SRC-26"
+    },
+    {
+      "id": "RK-05",
+      "path": "Path 2: Sell Before Expiry (§1031 Exchange)",
+      "regime": "BAU",
+      "risk": "California FTB Form 3840 Out-of-State Tax Clawback",
+      "mechanism": "Exchanging into a zero-income-tax state does NOT forgive California deferred tax; FTB tracks deferred CA gain annually via Form 3840 and taxes it upon future taxable sale.",
+      "mitigation": "Plan a hold-until-step-up horizon on out-of-state replacement property or model eventual CA clawback explicitly.",
+      "source_id": "SRC-28"
+    },
+    {
+      "id": "RK-06",
+      "path": "Path 2: Sell Before Expiry (§1031 Exchange)",
+      "regime": "Black Swan",
+      "risk": "Credit-Market Freeze or Buyer Default Mid-Exchange Window",
+      "mechanism": "A sudden rate spike (>134 bp 2026 YTD volatility) or banking shock can blow up replacement financing after Day 45, triggering unintended taxable boot.",
+      "mitigation": "Maintain backup all-cash or low-LTV replacement properties and institutional QI escrow protections.",
+      "source_id": "SRC-04"
+    },
+    {
+      "id": "RK-07",
+      "path": "Path 3: Negotiate Early Renewal / Blend-and-Extend",
+      "regime": "BAU",
+      "risk": "Tenant Leverage & Rent Concession / TI Giveaway",
+      "mechanism": "Under AB 1228 ($20/hr wages), +3.7% LA CPI, and JACK's -15.4% franchise net rental spread compression, tenant may demand flat/reduced rent or remodel TI dollars to extend.",
+      "mitigation": "Demand trailing 3-year store sales before offering any rent concession; require corporate guaranty or stronger franchisee credit for any TI outlay.",
+      "source_id": "SRC-21"
+    },
+    {
+      "id": "RK-08",
+      "path": "Path 3: Negotiate Early Renewal / Blend-and-Extend",
+      "regime": "BAU",
+      "risk": "Locking In Sub-Inflation Escalations or Uncapped Landlord Capex",
+      "mechanism": "Fixed 1%–1.5%/yr bumps lose real purchasing power if LA inflation persists near 3.7%, while aging roofs/HVAC/paving erode net cash flow.",
+      "mitigation": "Negotiate CPI-linked or 2.5%–3.0% bumps (or 10% every 5 yrs), absolute NNN maintenance shift, and full Prop 13 tax pass-through.",
+      "source_id": "SRC-01"
+    },
+    {
+      "id": "RK-09",
+      "path": "Path 3: Negotiate Early Renewal / Blend-and-Extend",
+      "regime": "Black Swan",
+      "risk": "JACK Corporate Debt Refinancing / Restructuring Shock (May 2031 ARD)",
+      "mechanism": "JACK holds negative stockholders' equity (-$938M FY25), $500M 2026-1 Notes reaching May 2031 ARD, suspended dividends, and simultaneous CFO/CLO/CTO exits in Nov 2026. Distress could trigger lease rejection or renegotiation.",
+      "mitigation": "Monitor Q4/FY2026 10-K upon filing; verify underlying land/drive-thru residual value so recovery does not depend solely on JACK credit.",
+      "source_id": "SRC-20"
+    },
+    {
+      "id": "RK-10",
+      "path": "Path 4: Hold-to-Expiry / Re-Tenant / Redevelop",
+      "regime": "BAU",
+      "risk": "Dark-Store Vacancy, Re-Tenanting Capex & Entitlement Lapse",
+      "mechanism": "If tenant walks at expiry, landlord faces 6–18 months downtime, carry costs, heavy QSR retrofit capex, and potential loss of grandfathered City of LA drive-thru rights if vacant too long.",
+      "mitigation": "Begin shadow marketing 18–24 months before expiry; check ZIMAS drive-thru abandonment rules early; hold liquidity reserves.",
+      "source_id": "SRC-10"
+    },
+    {
+      "id": "RK-11",
+      "path": "Path 4: Hold-to-Expiry / Re-Tenant / Redevelop",
+      "regime": "BAU",
+      "risk": "Secular LA Population Outflow & Insurance Cost Escalation",
+      "mechanism": "City of LA population (-0.9% YoY Jan 2026) and LAUSD enrollment declines (497,105) plus rising commercial insurance costs ahead of Dec 2028 FAIR Plan sunset can cap rent growth.",
+      "mitigation": "Verify parcel's 1-mile infill multifamily pipeline (LA County added 62.7% multi-family share in 2025) and secure multi-carrier insurance quotes.",
+      "source_id": "SRC-03"
+    },
+    {
+      "id": "RK-12",
+      "path": "Path 4: Hold-to-Expiry / Re-Tenant / Redevelop",
+      "regime": "Black Swan",
+      "risk": "Major Central LA Earthquake + Uninsured Loss + Historical 21%–36% Drawdown",
+      "mechanism": "28 M>=4.5 quakes since 1990 within 50 km of Central LA; FAIR Plan excludes earthquake. Separately, FHFA LA HPI suffered -21.4% (1990–96) and -35.8% (2006–12) multi-year drawdowns taking 10–11 years to recover.",
+      "mitigation": "Maintain conservative/zero leverage, run CGS EQ Zapp + seismic PML check, and confirm casualty/earthquake insurance sufficiency.",
+      "source_id": "SRC-05"
+    }
+  ],
+  "model": {
+    "versions": [
+      {
+        "version": "v0.1-audit (CURRENT)",
+        "date": "2026-11-26",
+        "scope": "Verified 2026 statutory tax rules (IRS Rev. Proc. 2025-32, CA FTB Oct 2026 + 1% BHSA, Measure ULA eff. Jul 1, 2026), verified macro/operator baselines, zero-telemetry calculator engine, and full 1975–2026 FHFA HPI cycle audit.",
+        "backtest_status": "CYCLE PROXY AUDITED · CASH-FLOW MODEL GATED",
+        "gate_note": "Zero private parcel assumptions invented; calculator requires user inputs.",
+        "source_id": "SRC-05"
+      },
+      {
+        "version": "v0.2-planned",
+        "date": "Pending Gate G-02 / G-03",
+        "scope": "Private offline ingest of executed lease abstract, exact expiry/option dates, rent bumps, NNN carve-outs, City-of-LA ULA status, and tax basis.",
+        "backtest_status": "BLOCKED — Private Documents Required",
+        "gate_note": "Remains strictly offline or entered live in local browser calculator memory.",
+        "source_id": "SRC-26"
+      },
+      {
+        "version": "v0.3-planned",
+        "date": "Pending Gate G-04 / G-05 / G-07",
+        "scope": "Add parcel 1/3/5-mile ACS tracts, LADOT ADT, CGS EQ Zapp / FEMA / CAL FIRE hazard flags, insurance quotes, and store-level sales/guarantor credit.",
+        "backtest_status": "BLOCKED — Parcel Diligence Required",
+        "gate_note": "Enables parcel-specific compound seismic/vacancy stress testing.",
+        "source_id": "SRC-32"
+      },
+      {
+        "version": "v1.0-gated",
+        "date": "Pending Gate G-08 / G-09",
+        "scope": "Calibrate cap-rate & residual land model against 3 dated broker BOVs + closed Central LA QSR comparable sales ledger and back-test model spreads against realized closings.",
+        "backtest_status": "GATED — Required Before Final Decision Commitment",
+        "gate_note": "Only v1.0 qualifies for final Sell-vs-Renew commitment (Gate G-10).",
+        "source_id": "SRC-04"
+      }
+    ],
+    "observations_vs_assumptions": [
+      {
+        "id": "OA-01",
+        "variable": "10-Year U.S. Treasury Benchmark (DGS10)",
+        "classification": "OBSERVATION (Verified)",
+        "value": "4.91% (2026-11-24)",
+        "treatment": "Hard anchor for discount-rate floor and financing spread context; updated directly from FRED.",
+        "source_id": "SRC-04"
+      },
+      {
+        "id": "OA-02",
+        "variable": "2026 Federal, California & Measure ULA Statutory Tax Schedules",
+        "classification": "OBSERVATION (Statutory)",
+        "value": "Fed 0/15/20% + 25% §1250 + 3.8% NIIT; CA 1%–13.30%; LA ULA 4.0% >$5.4M / 5.5% >=$10.9M",
+        "treatment": "Hard-coded verbatim from IRS Rev. Proc. 2025-32, FTB Oct 2026, and LA Finance FAQ in hub/calculator.html.",
+        "source_id": "SRC-30"
+      },
+      {
+        "id": "OA-03",
+        "variable": "JACK Corporate Unit Trajectory & Net Rental Spread",
+        "classification": "OBSERVATION (Verified SEC)",
+        "value": "2,115 units Q3 FY26 (-76 vs FY24); 40W net rental spread -15.4% YoY",
+        "treatment": "Public credit signal; informs renewal probability and counterparty risk without assuming store-level performance.",
+        "source_id": "SRC-18"
+      },
+      {
+        "id": "OA-04",
+        "variable": "FHFA Los Angeles HPI 51.5-Year Cycle Behavior",
+        "classification": "OBSERVATION (Macro Proxy)",
+        "value": "6.61%/yr 51.5-yr CAGR; r = -0.418 (167 overlapping 5y pairs); max drawdowns -21.4% & -35.8%",
+        "treatment": "Residential cycle benchmark ONLY — cannot substitute for NNN QSR commercial cap-rate comps.",
+        "source_id": "SRC-05"
+      },
+      {
+        "id": "OA-05",
+        "variable": "Current Annual NOI, Remaining Lease Term, Adjusted Tax Basis & Debt Payoff",
+        "classification": "PRIVATE INPUT (Blank)",
+        "value": null,
+        "treatment": "Must be entered by owner in hub/calculator.html; never guessed or pre-filled with fake numbers.",
+        "source_id": "SRC-26"
+      },
+      {
+        "id": "OA-06",
+        "variable": "Sale Cap Rate Today, Renewal Rent Reset %, Exit Cap Rate at Horizon, Discount Rate & Vacancy Months",
+        "classification": "ASSUMPTION (User Sensitivity)",
+        "value": null,
+        "treatment": "User-supplied sensitivity inputs; must be bracketed by 3 written broker BOVs (Gate G-08) before decision.",
+        "source_id": "SRC-04"
+      }
+    ],
+    "fhfa_backtest": [
+      {
+        "metric": "Full Series Span & Latest Reading (ATNHPIUS31084Q)",
+        "result": "207 quarters: 1975 Q1 (20.49) to 2026 Q3 (553.76); 2026 Q1 peak = 558.32 (-0.82% pullback)",
+        "interpretation": "Shows clear late-cycle flattening (+0.46% YoY vs 51.5-yr CAGR 6.61%/yr and 10-yr CAGR 5.83%/yr).",
+        "source_id": "SRC-05"
+      },
+      {
+        "metric": "Full 51.5-Year Rolling 5-Yr vs. Forward 5-Yr Correlation (1975–2026)",
+        "result": "r = -0.418 (n = 167 overlapping quarterly pairs)",
+        "interpretation": "Moderate real cyclical mean reversion: hot 5-year booms tend to precede slower or negative next-5-year returns.",
+        "source_id": "SRC-05"
+      },
+      {
+        "metric": "Independent Non-Overlapping 5-Year Blocks (1975–2025)",
+        "result": "r = -0.409 (n = 9 independent blocks)",
+        "interpretation": "Confirms negative cyclical correlation holds even after removing serial overlap bias.",
+        "source_id": "SRC-05"
+      },
+      {
+        "metric": "Audit of Narrow 2015–2026 Sub-Sample (Cited in Prior Repo Tree)",
+        "result": "r = -0.938 (n = 7 heavily overlapping pairs from 2020 Q1–2021 Q3)",
+        "interpretation": "Reproduces data/model.json's '-0.937', but exposes severe small-sample overlap bias (FLAG-09): all 7 pairs overlap across a single post-COVID boom/rate-hike wave.",
+        "source_id": "SRC-05"
+      },
+      {
+        "metric": "Historical Peak-to-Trough LA Nominal Drawdowns & Recovery Time",
+        "result": "1990 Q3–1996 Q3: -21.39% (~9.75 yrs to recover) · 2006 Q4–2012 Q2: -35.84% (11.0 yrs to recover)",
+        "interpretation": "Proves that forced exits (debt maturity or dark-store distress) during LA real-estate downcycles lock in decade-scale losses.",
+        "source_id": "SRC-05"
+      },
+      {
+        "metric": "Commercial NNN QSR Cash-Flow Back-Test Status",
+        "result": "BLOCKED (v1.0-gated)",
+        "interpretation": "FHFA HPI tracks residential housing, not NNN QSR leases. True back-testing requires closed Central LA NNN sales comparables + private lease history.",
+        "source_id": "SRC-05"
+      }
+    ]
+  },
+  "questions": [
+    {
+      "id": "Q-01",
+      "category": "Tax & Jurisdiction",
+      "known": "City of LA Measure ULA is 4.0% (>$5.4M to <$10.9M) and 5.5% (>=$10.9M) eff. Jul 1, 2026 plus 0.56% base/county; unincorporated LA County is 0.11% only.",
+      "unknown": "Is PARCEL-001 inside City of Los Angeles municipal limits or an unincorporated/neighboring city jurisdiction?",
+      "decision_impact": "A $5.5M sale incurs $250,800 transfer tax in City of LA vs. $6,050 in unincorporated LA County—a $244,750 direct swing.",
+      "action": "Check APN tax-rate area on LA County Assessor bill offline (Cost: $0 · Time: 10 min).",
+      "source_id": "SRC-30"
+    },
+    {
+      "id": "Q-02",
+      "category": "Tax & Assessment",
+      "known": "LA County Prop 8 Decline-in-Value (Form RP-87) filing window closes November 30, 2026 (4 days left).",
+      "unknown": "Does PARCEL-001's 2026–27 enrolled value exceed its Jan 1, 2026 market value (and who benefits under the lease's tax pass-through)?",
+      "decision_impact": "Preserves immediate property tax reduction if assessed value exceeds short-lease market value.",
+      "action": "Review 2026–27 property tax bill with tax counsel/CPA before Nov 30, 2026 (Cost: $0–$1k · Time: Immediate).",
+      "source_id": "SRC-29"
+    },
+    {
+      "id": "Q-03",
+      "category": "Lease & Notice",
+      "known": "Current term ends in 2030–2035 (4–9 yrs left); JACK's $500M 2026-1 Notes hit May 2031 ARD.",
+      "unknown": "What are the exact primary expiry date, option count/terms, earliest/latest option notice deadlines, and option rent formula?",
+      "decision_impact": "Determines exact WALT today, when buyer pool drops off the 5-year cliff, and whether tenant holds cheap unilateral options.",
+      "action": "Commission 1-page real-estate counsel lease abstract & notice calendar (Cost: $1.5k–$3k · Time: 1 week).",
+      "source_id": "SRC-18"
+    },
+    {
+      "id": "Q-04",
+      "category": "Operator Credit",
+      "known": "93% of JACK units (1,966/2,115) are franchised; 40W FY26 franchise net rental spread fell -15.4% YoY; Nov 2026 saw CFO/CLO/CTO exits.",
+      "unknown": "Is PARCEL-001 backed by a Jack in the Box corporate lease/guaranty or a single-purpose franchisee LLC, and what are store gross sales?",
+      "decision_impact": "Corporate guaranty vs. weak franchisee shifts cap rate by 50–150+ bps and governs default recovery.",
+      "action": "Verify lease signatory/guaranty; request store sales if permitted under lease (Cost: $0 · Time: 1–2 weeks).",
+      "source_id": "SRC-18"
+    },
+    {
+      "id": "Q-05",
+      "category": "Lease Structure",
+      "known": "LA CPI-U rose +3.7% YoY (Sep 2026); AB 1228 sets fast-food wages at $20.00/hr.",
+      "unknown": "What is current NOI, rent bump formula, NNN roof/structure/parking carve-outs, and Prop 13 reassessment pass-through wording?",
+      "decision_impact": "Any Prop 13 pass-through cap or landlord roof/structural duty directly cuts buyer NOI and market price.",
+      "action": "Audit lease expense clauses + trailing 3-yr owner expense ledger (Cost: $0 · Time: 3 days).",
+      "source_id": "SRC-29"
+    },
+    {
+      "id": "Q-06",
+      "category": "Valuation & Liquidity",
+      "known": "10-Yr Treasury is 4.91% (2026-11-24; 31 bp Nov swing, 134 bp YTD range).",
+      "unknown": "What actual cap rates and LTV/DSCR financing terms will Central LA QSR buyers pay at 3-, 5-, 7-, and 15-year remaining terms?",
+      "decision_impact": "Directly sets the Sell-Now price vs. Renew-First uplift (Gate G-08).",
+      "action": "Solicit 3 written, dated BOVs from active LA NNN QSR brokers + 2 commercial lender term sheets (Cost: $0 · Time: 2 weeks).",
+      "source_id": "SRC-04"
+    },
+    {
+      "id": "Q-07",
+      "category": "After-Tax Strategy",
+      "known": "2026 top combined Fed + CA rates reach 37.1% (LTCG) / 42.1% (§1250); §1031 defers income tax (45/180-day clock) but CA FTB Form 3840 tracks out-of-state exchanges; federal estate exclusion is $15M.",
+      "unknown": "What are owner's adjusted tax basis, accumulated §1250 depreciation, entity structure (trust/LLC), passive losses, and estate/step-up horizon?",
+      "decision_impact": "A low-basis, older-owner holding can lose 35%–45% of wealth in a taxable sale vs. preserving step-up via hold or §1031.",
+      "action": "Pull CPA depreciation schedule & run hub/calculator.html privately with estate counsel (Cost: $1k–$3k · Time: 1–2 weeks).",
+      "source_id": "SRC-28"
+    },
+    {
+      "id": "Q-08",
+      "category": "Debt & Financing",
+      "known": "Higher 10-Yr Treasury (4.91%) makes refinancing more expensive and low-rate assumable debt valuable.",
+      "unknown": "What is the current loan balance, rate, maturity date, prepayment/defeasance penalty, and assumability?",
+      "decision_impact": "Near-term maturity forces a decision; heavy defeasance reduces net sale proceeds.",
+      "action": "Pull current loan statement & request informal payoff/defeasance quote (Cost: $0 · Time: 1 week).",
+      "source_id": "SRC-04"
+    },
+    {
+      "id": "Q-09",
+      "category": "Trade Area & Residual Land",
+      "known": "City of LA pop fell -0.9% YoY (Jan 2026) while LA County added +11,260 net units (62.7% multi-family) and 193,200 QSR jobs (+1.6% YoY).",
+      "unknown": "What are PARCEL-001's 1/3/5-mile ACS demographics, LADOT arterial ADT, lot square footage, TOC/zoning tier, and grandfathered drive-thru status?",
+      "decision_impact": "Determines vacant/residual land floor if JACK leaves (rival QSR re-tenant vs. multifamily redevelopment).",
+      "action": "Run offline Census ACS + LADOT NavigateLA + ZIMAS lookup (Cost: $0–$2k for tube count · Time: 1 week).",
+      "source_id": "SRC-10"
+    },
+    {
+      "id": "Q-10",
+      "category": "Physical & Seismic Hazards",
+      "known": "28 M>=4.5 quakes since 1990 within 50 km of Central LA; 88 LA FEMA declarations; CAL FIRE rolled out 2025 LRA FHSZ; FAIR Plan commercial cap sunsets Dec 31, 2028 and excludes EQ.",
+      "unknown": "Does PARCEL-001 sit in a CGS fault/liquefaction zone, FEMA flood zone, or CAL FIRE LRA FHSZ? What is its seismic PML and actual Property/EQ insurance cost?",
+      "decision_impact": "Uninsured seismic exposure or expiring insurance coverage can wipe out years of NNN cash flow or stall a buyer's loan.",
+      "action": "Run CGS EQ Zapp / FEMA NFHL / CAL FIRE LRA offline + order PCA/seismic screen & insurance quote review (Cost: $3k–$8k · Time: 2–4 weeks).",
+      "source_id": "SRC-32"
+    },
+    {
+      "id": "Q-11",
+      "category": "ROFR & Transaction Friction",
+      "known": "§1031 allows strictly 45 calendar days from closing to identify replacement property.",
+      "unknown": "Does the lease contain a tenant ROFR/ROFO or purchase option that could delay or chill third-party offers?",
+      "decision_impact": "ROFR clauses frequently cut institutional bidder participation and complicate §1031 sequencing.",
+      "action": "Verify ROFR/ROFO terms in Gate G-02 lease abstract before engaging brokers (Cost: included in G-02).",
+      "source_id": "SRC-26"
+    },
+    {
+      "id": "Q-12",
+      "category": "Environmental & Capital Condition",
+      "known": "Commercial QSR sites carry grease-trap, paved lot, roof, and occasional adjacent historic-use liabilities.",
+      "unknown": "Are there prior Phase I/II ESA findings, deferred roof/HVAC capex, or ADA accessibility claims?",
+      "decision_impact": "Buyers deduct 1.25x–1.5x estimated deferred capex from price during escrow diligence.",
+      "action": "Review prior ESA/PCA reports; commission fresh Phase I & PCA before listing if >5 yrs old (Cost: $4k–$7k · Time: 3 weeks).",
+      "source_id": "SRC-32"
+    }
+  ],
+  "suggestions": {
+    "tracks": [
+      {
+        "id": "TRK-A",
+        "name": "Track A — Diligence First, Hold Decision Open (Baseline Discipline)",
+        "focus": "Complete Gates G-02 through G-08 (lease abstract, Prop 8 check before 2026-11-30, CPA basis, 3 broker BOVs, hazard screen) over 45–60 days before engaging the tenant or listing.",
+        "pros": "Zero premature signaling to JACK; protects negotiating leverage; prevents irreversible tax/ULA mistakes.",
+        "cons": "Takes 6–8 weeks during which 10-Yr Treasury (31 bp Nov swing) or JACK credit could move.",
+        "status": "Proposed — Awaiting Reviewer Choice",
+        "source_id": "SRC-04"
+      },
+      {
+        "id": "TRK-B",
+        "name": "Track B — Blend-and-Extend First, Then Re-Evaluate Sale vs. Hold",
+        "focus": "Use store sales & lease abstract to test whether tenant will sign a 10–15 yr renewal (with inflation-protected bumps and clean NNN) before deciding to hold or sell at a compressed cap rate.",
+        "pros": "Eliminates short-lease valuation penalty if tenant accepts; expands financed buyer pool if sold later.",
+        "cons": "Signals landlord engagement early; tenant may demand rent reduction or TI dollars amid AB 1228 margin pressure.",
+        "status": "Proposed — Awaiting Reviewer Choice",
+        "source_id": "SRC-18"
+      },
+      {
+        "id": "TRK-C",
+        "name": "Track C — Pre-Cliff Marketing + §1031 Exchange Preparation",
+        "focus": "If broker BOVs show severe cap-rate widening below 5 years WALT AND CPA confirms unacceptable taxable drag, prepare off-market/marketed sale paired with pre-vetted §1031 replacements (noting ULA & Form 3840 rules).",
+        "pros": "Captures remaining WALT before cliff; diversifies out of single-asset LA seismic/operator concentration.",
+        "cons": "Measure ULA still applies inside City of LA; 45-day ID pressure; CA Form 3840 clawback persists on out-of-state swaps.",
+        "status": "Proposed — Awaiting Reviewer Choice",
+        "source_id": "SRC-26"
+      },
+      {
+        "id": "TRK-D",
+        "name": "Track D — Residual Land & Re-Tenanting Optionality Study",
+        "focus": "If Central LA parcel sits in high-density TOC/transit corridor or carries a scarce grandfathered drive-thru, underwrite rival QSR replacement rent vs. infill multifamily land value.",
+        "pros": "Establishes hard downside floor independent of JACK corporate turnaround.",
+        "cons": "Requires zoning/architectural feasibility spend and multi-year patience if redeveloped.",
+        "status": "Proposed — Awaiting Reviewer Choice",
+        "source_id": "SRC-03"
+      }
+    ],
+    "proposals": [
+      {
+        "id": "PROP-01",
+        "area": "Immediate Tax Action",
+        "proposal": "Evaluate LA County Prop 8 Decline-in-Value Form RP-87 Before 2026-11-30",
+        "benefit": "Preserves 2026–27 assessment review window before it closes in 4 calendar days.",
+        "cost_risk": "Low filing cost ($0 direct county filing); confirm lease tax-pass-through allocation first.",
+        "status": "Proposed — Awaiting Reviewer Choice",
+        "source_id": "SRC-29"
+      },
+      {
+        "id": "PROP-02",
+        "area": "Repo Hygiene (Cross-Scope CR)",
+        "proposal": "Approve Follow-Up PR Fixing Remaining Legacy Repo Defects Cataloged in Flagged for Review",
+        "benefit": "Eliminates workspace/tax.html 0.055% error (vs 0.45%), stale ULA thresholds ($5M/$5.3M vs $5.4M/$10.9M), missing ULA/transfer tax in assets/js/calc.js, 8 residual 'eight-year' files, and missing Q3 unit/May 2031 ARD/Nov 17 C-suite JACK updates.",
+        "cost_risk": "Requires owner sign-off to modify sibling directories outside hub/** (coordinated via COORDINATION.md).",
+        "status": "Proposed — Awaiting Reviewer Choice",
+        "source_id": "SRC-30"
+      },
+      {
+        "id": "PROP-03",
+        "area": "Root Portal Navigation",
+        "proposal": "Link hub/index.html from Root index.html via CR-A01",
+        "benefit": "Gives stakeholders one-click access from the repository landing page to this updated 2026-11-26 hub.",
+        "cost_risk": "Zero risk; already requested cleanly in COORDINATION.md (CR-A01) to respect file ownership.",
+        "status": "Proposed — Awaiting Reviewer Choice",
+        "source_id": "SRC-04"
+      },
+      {
+        "id": "PROP-04",
+        "area": "Data Refresh Cadence",
+        "proposal": "Trigger Automated Refresh Immediately Upon JACK FY2026 Form 10-K Filing",
+        "benefit": "Captures full-year FY2026 audited store closures, franchisee rent defaults, debt covenants, and FY2027 guidance as soon as SEC EDGAR publishes the 10-K.",
+        "cost_risk": "Minimal maintenance; prevents stale operator underwriting.",
+        "status": "Proposed — Awaiting Reviewer Choice",
+        "source_id": "SRC-13"
+      },
+      {
+        "id": "PROP-05",
+        "area": "Calculator Enhancement",
+        "proposal": "Add Optional Client-Side JSON Export/Import & Scenario Comparison Matrix to hub/calculator.html",
+        "benefit": "Lets owner/CPA save encrypted/offline JSON snapshots locally without ever transmitting data to a server or using browser cookies/storage.",
+        "cost_risk": "User must manage downloaded file confidentiality locally.",
+        "status": "Proposed — Awaiting Reviewer Choice",
+        "source_id": "SRC-23"
+      },
+      {
+        "id": "PROP-06",
+        "area": "Broker Intake Standardization",
+        "proposal": "Issue Standardized 1-Page Blind BOV Request Sheet to 3 LA NNN Brokers",
+        "benefit": "Forces apples-to-apples cap-rate quotes across 3/5/7/15-yr WALT buckets and residual land value (Gate G-08).",
+        "cost_risk": "Keep parcel identity under NDA until lease abstract (Gate G-02) is complete.",
+        "status": "Proposed — Awaiting Reviewer Choice",
+        "source_id": "SRC-04"
+      },
+      {
+        "id": "PROP-07",
+        "area": "Hazard & Insurance Diligence",
+        "proposal": "Bundle CGS EQ Zapp + FEMA NFHL + CAL FIRE 2025 LRA + Seismic PML Screening Before Renewal Talks",
+        "benefit": "Prevents signing a 10–15 yr renewal while carrying unpriced structural seismic or post-2028 FAIR Plan exposure.",
+        "cost_risk": "$3k–$8k engineering spend; high downside protection value.",
+        "status": "Proposed — Awaiting Reviewer Choice",
+        "source_id": "SRC-34"
+      },
+      {
+        "id": "PROP-08",
+        "area": "Deployment Governance",
+        "proposal": "Keep Legacy main:/ Pages Active or Validate Root Artifact (path: .) Before Ever Switching to Actions",
+        "benefit": "PR #32 fixed pages.yml from path='docs' to path='.'; validating a staging run before ever switching Pages source ensures zero downtime across root /, /hub/, /pages/, /workspace/, and /audit/.",
+        "cost_risk": "Zero risk while legacy main:/ deploy remains active.",
+        "status": "Proposed — Awaiting Reviewer Choice",
+        "source_id": "SRC-13"
+      }
+    ]
+  },
+  "flagged_irregularities": [
+    {
+      "id": "FLAG-01",
+      "severity": "CRITICAL",
+      "locations": "workspace/tax.html:219 · data/registry.yaml:556,567 · workspace/assets/js/calc.js:39 · ledger-1ebd66da/src/data/tax.json",
+      "defect": "Still open on main (df8e4e0): workspace/tax.html:219 states 'city 0.055%' instead of actual 0.45% ($2.25/$500 — nearly 10x understated!) AND sibling trees carry stale Measure ULA tiers ($5.0M/$10.0M or $5.3M/$10.6M instead of effective July 1, 2026 $5.4M/$10.9M).",
+      "verified_correction": "Effective July 1, 2026: City of LA Base = $2.25/$500 (0.45%) + County DTT = $0.55/$500 (0.11%) = 0.56% base; ULA = 4.0% (>$5,400,000 to <$10,900,000) and 5.5% (>=$10,900,000) -> 4.56% / 6.06% combined.",
+      "hub_status": "Corrected in hub/valuation.html & hub/calculator.html; legacy sibling trees untouched per disjoint-scope protocol.",
+      "source_id": "SRC-30"
+    },
+    {
+      "id": "FLAG-02",
+      "severity": "HIGH",
+      "locations": "data/lease.json · data/questions.json · data/suggestions.json · scripts/build.mjs · pages/index.html · pages/lease.html · pages/questions.html · pages/suggestions.html",
+      "defect": "Still open on main (df8e4e0): residual 'eight-year' arithmetic error remains live in 8 repository files for the 2030–2035 expiration window (2035 - 2030 = 5-year calendar window; 4–9 years from 2026).",
+      "verified_correction": "2030–2035 is a 5-year calendar expiration window (4 to 9 years remaining as of 2026-11-26).",
+      "hub_status": "Corrected everywhere in hub/**.",
+      "source_id": "SRC-18"
+    },
+    {
+      "id": "FLAG-03",
+      "severity": "LOW",
+      "locations": "data/valuation.json (VA-02) — Fixed on main in PR #33",
+      "defect": "Previously misstated the November 2026 DGS10 swing (4.84% to 5.15%) as a '23 basis point move' instead of 31 bp. Independently verified fixed to '31 basis point spread' on main in PR #33.",
+      "verified_correction": "Exact November 2026 DGS10 range is 4.84% (11-05) to 5.15% (11-13) = 31 basis points (2026 YTD 3.97%–5.31% = 134 bp).",
+      "hub_status": "Confirmed fixed in PR #33 & verified in hub/index.html.",
+      "source_id": "SRC-04"
+    },
+    {
+      "id": "FLAG-04",
+      "severity": "LOW",
+      "locations": "data/valuation.json (TX-08) — Verified on main in PR #33",
+      "defect": "Previously tagged status='unverified' with source_id=null while embedding an imprecise string ('above the top threshold') for CA's 1% surtax. PR #33 verified TX-08 against FTB Tax News Oct 2026.",
+      "verified_correction": "Verified from CA FTB 2026 Form 540-ES & Tax News Oct 2026: 1.00% Behavioral Health Services Tax applies strictly to CA taxable income > $1,000,000 (on top of 12.30% top bracket over $768,213 Single / $1,536,426 MFJ).",
+      "hub_status": "Verified & strictly enforced in hub/scripts/verify.py (unverified rows MUST have value=null).",
+      "source_id": "SRC-28"
+    },
+    {
+      "id": "FLAG-05",
+      "severity": "CRITICAL",
+      "locations": "data/tenant.json · pages/tenant.html · workspace/ · web/ · docs/",
+      "defect": "Still partially stale on main (df8e4e0): although PR #33 added 9M FY2026 franchise rental revenue ($242.5M) to data/tenant.json, it still omits Q3 ending unit count (2,115), the $500M 2026-1 Class A-2 Notes (May 2031 ARD overlapping 2030–2035 expiry), May 2026 CEO replacement (Mark King), Sep 2026 GreenWood extension through 2028, and the Nov 17, 2026 simultaneous CFO/CLO/CTO departures; sibling trees remain pre-Q3.",
+      "verified_correction": "Updated through 2026-11-17 SEC EDGAR filings: Q3 FY26 2,115 units (-76 vs FY24), SSS -1.1%, 40W franchise net rental spread -15.4%, $500M May 2031 ARD notes, revised FY26 guide ~2,100 units / low-single-digit SSS decline / $225–230M Adj. EBITDA, plus Nov 17 C-suite exits.",
+      "hub_status": "Fully updated through 2026-11-17 in hub/tenant.html.",
+      "source_id": "SRC-20"
+    },
+    {
+      "id": "FLAG-06",
+      "severity": "MEDIUM",
+      "locations": "data/hazards.json (HZ-06) · data/model.json (OB-09)",
+      "defect": "Still open on main (df8e4e0): cites USGS ASCE 7-22 Design Maps (S-006) as primary source_id on the M4.5+ earthquake count row (and restricts the window to 2000–2026 = 4 events, excluding 1990s Northridge-sequence seismicity).",
+      "verified_correction": "Directly queried USGS FDSN Event API: 2000–2026 box = 4 events (confirmed), while 1990-01-01 to 2026-11-26 within 50 km of Central LA (34.0522, -118.2437) = 28 verified M>=4.5 events.",
+      "hub_status": "Properly linked directly to USGS FDSN Event API in hub/hazards.html.",
+      "source_id": "SRC-31"
+    },
+    {
+      "id": "FLAG-07",
+      "severity": "HIGH",
+      "locations": "assets/js/calc.js",
+      "defect": "Still partially open on main (df8e4e0): PR #33 upgraded assets/js/calc.js to 2026 IRS/FTB brackets, but it STILL completely omits LA County DTT (0.11%), City of LA Base Transfer Tax (0.45%), and Measure ULA (4.0% >$5.4M / 5.5% >=$10.9M), potentially understating LA City sale friction by $240k–$600k+.",
+      "verified_correction": "hub/assets/js/calculator.js implements exact 2026 IRS Rev. Proc. 2025-32 LTCG, 25% §1250, 3.8% NIIT, progressive 2026 CA FTB (all 9 brackets) + 1% BHSA >$1M, City Base 0.45%, County DTT 0.11%, and July 1, 2026 Measure ULA ($5.4M/$10.9M).",
+      "hub_status": "Fully built & unit-tested in hub/calculator.html.",
+      "source_id": "SRC-30"
+    },
+    {
+      "id": "FLAG-08",
+      "severity": "LOW",
+      "locations": "verification/data/dataset.json · web/data/findings.json (data/valuation.json updated to 4.91% in PR #33)",
+      "defect": "Sibling verification/ and web/ trees still display prior-day 10-Year Treasury DGS10 = 4.92% (2026-11-23).",
+      "verified_correction": "Latest official FRED H.15 observation (2026-11-24) is 4.91%.",
+      "hub_status": "Updated to 4.91% across hub/**.",
+      "source_id": "SRC-04"
+    },
+    {
+      "id": "FLAG-09",
+      "severity": "HIGH",
+      "locations": "data/model.json (back_test)",
+      "defect": "Still open on main (df8e4e0): highlights r = -0.937 (2015–2026) computed on only n = 7 heavily overlapping quarterly pairs across a single post-COVID wave.",
+      "verified_correction": "Independent Python verification of full 207-quarter FHFA series (1975 Q1–2026 Q3) finds full overlapping r = -0.418 (n=167) and non-overlapping 5-yr blocks r = -0.409 (n=9) — moderate real mean reversion, plus -21.4% (1990–96) and -35.8% (2006–12) decade-long drawdowns.",
+      "hub_status": "Full 51.5-year back-test audit published in hub/model.html.",
+      "source_id": "SRC-05"
+    },
+    {
+      "id": "FLAG-10",
+      "severity": "MEDIUM",
+      "locations": "README.md:133 · data/registry.yaml · tools/build.py:533 · data/tracts_demo_a.csv · workspace/*.html",
+      "defect": "README.md cites a stale renamed demo-tract CSV filename (plus stale counts); Census Reporter demo URLs inside registry.yaml, tools/build.py, and workspace HTML still embed the legacy downtown proxy ZCTA that PR #25 explicitly purged as a proxy-ZIP leak.",
+      "verified_correction": "Zero proxy ZIPs or ZCTA codes appear anywhere in hub/**; enforced automatically by hub/scripts/verify.py.",
+      "hub_status": "Clean in hub/**; logged for sibling cleanup under PROP-02.",
+      "source_id": "SRC-07"
+    },
+    {
+      "id": "FLAG-11",
+      "severity": "MEDIUM",
+      "locations": "scripts/validate.mjs",
+      "defect": "Still open on main (df8e4e0): root validator omits sibling trees (audit/, web/, hub/) from TREE_DIRS link checks.",
+      "verified_correction": "hub/scripts/verify.py checks 100% of hub/** links, enforces value===null on unverified rows, allowlists official domains on every table row, and audits calculator zero-telemetry compliance.",
+      "hub_status": "Enforced in hub/scripts/verify.py.",
+      "source_id": "SRC-13"
+    },
+    {
+      "id": "FLAG-12",
+      "severity": "LOW",
+      "locations": "audit/flagged.html (IR-A3)",
+      "defect": "Previous audit tree left California AB 1228 fast-food minimum wage as unverified/blocked.",
+      "verified_correction": "Directly verified via CA DIR DLSE FAQ ($20.00/hr AB 1228), IWC Wage Order 7 ($16.90/hr CA general eff. 2026-01-01), and City of LA Office of Wage Standards ($18.42/hr eff. 2026-07-01).",
+      "hub_status": "Resolved & sourced in hub/trade-area.html.",
+      "source_id": "SRC-21"
+    },
+    {
+      "id": "FLAG-13",
+      "severity": "LOW",
+      "locations": ".github/workflows/pages.yml (Workflow 430390450) — Fixed on main in PR #32",
+      "defect": "Previously set path='docs' which would have broken root /, /hub/, /pages/, /workspace/, and /audit/ if re-enabled. PR #32 (2c151ac) updated path to '.' while keeping the workflow manually disabled and preserving legacy main:/ Pages.",
+      "verified_correction": "Confirmed path='.' on main (df8e4e0); live site remains served cleanly from legacy main:/ (https://kanlerxz87-cyber.github.io/Jackbox1/).",
+      "hub_status": "Confirmed fixed in PR #32; documented for audit continuity.",
+      "source_id": "SRC-13"
+    },
+    {
+      "id": "FLAG-14",
+      "severity": "INFO (BY DESIGN)",
+      "locations": "All 12 Private Parcel, Lease, Basis & Quote Rows Across hub/**",
+      "defect": "Parcel address, APN, executed lease dates/rent/guarantor, store sales, tax basis, debt terms, parcel hazard maps, and 3 broker short-lease quotes remain blank/unverified in public Git.",
+      "verified_correction": "Intentional privacy firewall — decision stays OPEN ('No Winner Declared') until owner enters these private figures locally in hub/calculator.html or an offline advisor workbook.",
+      "hub_status": "Enforced across all 15 hub pages.",
+      "source_id": "SRC-26"
+    }
+  ]
+}

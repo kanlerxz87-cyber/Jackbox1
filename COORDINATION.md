@@ -1459,3 +1459,56 @@ All validators were re-run after resolution (see record above). Merge method `gh
 | Post-merge checks (this session, merged tree) | `node scripts/validate.mjs` PASS (252 rows) · `python3 verification/check.py` PASS 16/16 (432 rows) · `web/tools/verify.py` PASSED · `web/tools/check_links.py` PASSED · `tools/check.py` PASS (72 rows) · `scripts/check-integration.py` PASS (2,657 targets) · `tools/check_integration26.py` PASS · combined scan: 2,637 internal refs, **0 missing** · PII sweep: **0 hits**. |
 | Flagged, non-blocking | F-18 source switch (optional future change to GitHub Actions Pages) · F-20 cross-tree back-test claim mismatch · `tracts_demo_a.csv` demonstration Census geography `140|86000US90015` (documented demo data, not a parcel claim) · 0/15 gates closed — no sell/renew winner selected, by design. |
 | Privacy statement | No personal or parcel-identifying information was added by this session. All owner/lease/financial material remains offline with authorised advisers; the public site carries aggregate, non-identifying, source-linked content only. |
+
+---
+
+# Session `S-a293043a` (`arena/a293043a-jackbox1`) — 2026-11-26 Full-Repo Line-by-Line Audit, Fresh Official Verification & Standalone Unified Dashboard (`hub/**`)
+
+> **Board & conflict-resolution rule obeyed:** `origin/main` advanced via PRs #25, #26 (`arena-b072f72e`) and #27 (`arena-1a77511b`) while our initial claim was being pushed. The `COORDINATION.md` merge conflict was resolved by keeping every line of `origin/main` verbatim above and re-appending our revised board below. Because `arena-1a77511b` now owns root `index.html`, `integration-review.html`, `integration.css`, and `scripts/check-integration.py`, **`S-a293043a` withdraws `index.html` from its scope** and restricts all edits strictly to disjoint namespace `hub/**` plus append-only rows in `COORDINATION.md`. Zero files belonging to any other session are edited or deleted.
+
+## Session registry entry
+
+| Session ID | Branch | Role | Started | Exclusive File Scope |
+|---|---|---|---|---|
+| `S-a293043a` | `arena/a293043a-jackbox1` (fixed by platform policy) | Full-repo line-by-line audit across all published trees, fresh 2026-11-26 primary-source verification, and standalone unified dashboard under `hub/**` | 2026-11-26 | `hub/**`, `COORDINATION.md` (append-only) |
+
+**Platform-branch & scope notes:**
+- Platform policy fixes this session to `arena/a293043a-jackbox1` and forbids switching/creating/pushing other branches; non-overlap is strictly enforced via exclusive file scope `hub/**`.
+- **Change request (`CR-A01` → `arena-1a77511b`, owner of `index.html`):** once `hub/` is merged, please consider adding a navigation link from root `index.html` to `hub/index.html` (Unified 2026-11-26 Verified Dashboard & Full-Repo Line-by-Line Audit). No edit to `index.html` is made by `S-a293043a`.
+
+## Task board (`S-a293043a`)
+
+| ID | Task | Status | Owner | File scope | Notes |
+|---|---|---|---|---|---|
+| A-00 | Read `COORDINATION.md`, merge `origin/main` (#25–#27), claim strictly disjoint `hub/**` scope, commit & push | done | `S-a293043a` | `COORDINATION.md` (append-only) | `index.html` withdrawn after seeing `arena-1a77511b` PR #27 |
+| A-01 | Line-by-line audit of all existing trees, data files, validators, `README.md`, `PRIVACY.md`, `.github/workflows/pages.yml` | in progress | `S-a293043a` | `hub/data/repo_audit.json` | Concrete line-by-line irregularities with official/repo links |
+| A-02 | Fresh 2026-11-26 primary-source verification: economy, demographics, tract trends, schools, traffic, W-01 | in progress | `S-a293043a` | `hub/data/sources.json`, `hub/data/economy.json` | Census, BLS, EDD, CA DOF, SCAG, CDE, Caltrans, FRED, FHFA |
+| A-03 | Fresh 2026-11-26 primary-source verification: Jack in the Box multi-year SEC series (SSS, units, closures, franchise rental revenue) + CA AB 1228 fast-food wage | in progress | `S-a293043a` | `hub/data/operator.json` | SEC EDGAR 10-K/10-Q/8-K/DEF 14A + CA DIR |
+| A-04 | Fresh 2026-11-26 primary-source verification: W-04 hazards & insurance (USGS, FEMA, CAL FIRE OSFM, CGS, CDI) + compound black-swan stress | in progress | `S-a293043a` | `hub/data/hazards.json`, `hub/data/risks.json` | Parcel zone status blank + flagged |
+| A-05 | Fresh 2026-11-26 primary-source verification: federal + CA tax rules (IRS 2025/2026, CA FTB brackets + 1% BHSA surcharge at $1M, Prop 13, Measure ULA indexed thresholds, documentary transfer tax) + W-02 sell-vs-hold + short-lease discount | in progress | `S-a293043a` | `hub/data/tax_valuation.json`, `hub/data/lease.json` | No winner selected; short-lease quotes blank + flagged |
+| A-06 | Versioned cash-flow & projection model governance + back-test reconciliation (observations vs assumptions) | in progress | `S-a293043a` | `hub/data/model.json` | Reconciles cross-tree back-test discrepancy |
+| A-07 | W-03 decision-gate progress board + Open Questions, Answers & Missing-Info Discovery Plan | in progress | `S-a293043a` | `hub/data/gates.json`, `hub/data/questions.json` | What we have vs do not have + discovery paths |
+| A-08 | Dedicated Suggestions & Path-Selection review board (choose a path before implementing changes) | in progress | `S-a293043a` | `hub/data/suggestions.json` | Browser-local path selector, zero persistence |
+| A-09 | Privacy-first browser-only Sell-vs-Hold & After-Tax Calculator (zero network, zero storage, zero cookies) | in progress | `S-a293043a` | `hub/assets/js/calculator.js`, `hub/calculator.html` | Independent hand-checkable math incl. §1250, NIIT, CA BHSA, Measure ULA, §1031 |
+| A-10 | Static site generator (`hub/scripts/build.py`) + strict validator (`hub/scripts/verify.py`) + all category pages + W-10 printable one-pager + Flagged for Review page | in progress | `S-a293043a` | `hub/**` | Every table row has official source link or blank+flagged |
+| A-11 | Combined repo-wide verification (run ALL 7 validators + local HTTP crawl) + PR to `main` + merge + confirm GitHub Pages deploy + record in `COORDINATION.md` | done | `S-a293043a` | `COORDINATION.md` (append-only) | All 9 repo validators + Node calculator unit tests + 20/20 local HTTP crawl passed on merged tree (`df8e4e0` + `hub/**`) |
+
+### Completion & Verification Record — `S-a293043a` (2026-11-26)
+
+- **Exclusive File Scope Enforced:** Created strictly `hub/**` (15 static HTML pages, `hub/assets/css/hub.css`, `hub/assets/js/calculator.js`, `hub/data/sources.json`, `hub/data/dataset.json`, `hub/scripts/build.py`, `hub/scripts/verify.py`) plus this append-only record in `COORDINATION.md`. Zero files belonging to any other session were modified or deleted.
+- **Concurrent Merge Sync:** Merged `origin/main` through PRs #32, #33, and #34 (`df8e4e0`); resolved append-only `COORDINATION.md` conflict by keeping `origin/main` verbatim above and retaining `S-a293043a` below; re-audited all 14 `FLAG-*` items directly against `df8e4e0` (marking `FLAG-03`, `FLAG-04`, and `FLAG-13` confirmed resolved in PRs #32–#33 while documenting remaining open defects in `hub/flagged.html`).
+- **Primary-Source Verification (34 Official Sources, 2026-11-26):** BLS Oct 2026 LA MD, CA EDD Oct 2026 (incl. 193,200 Limited-Service Restaurant jobs +1.6% YoY), CA DOF E-1 Jan 2026, FRED `DGS10` (`4.91%` on `2026-11-24`), FHFA `ATNHPIUS31084Q` complete 207-quarter back-test (`1975 Q1–2026 Q3`: full `r = -0.418`, non-overlapping `r = -0.409`, drawdowns `-21.39%` / `-35.84%`), Census PEP & SAIPE via FRED, CDE LAUSD 2025–26, Caltrans 2024, LADOT, SCAG Connect SoCal 2024 + Nov 2025 CARB draft, SEC EDGAR JACK (`CIK 0000807882`) FY2024–Q3 FY2026 + May/Sep/Nov 17 2026 Form 8-Ks, CA DIR AB 1228 (`$20/hr`) & City of LA (`$18.42/hr`), IRS Rev. Proc. 2025-32 2026 brackets + TC 409/559 + 2026 Form 8824, CA FTB Tax News Oct 2026 (exact 2026 Schedules X/Y/Z) + 2026 Form 540-ES (`1%` BHSA `>$1M`) + Form 3840, City of LA Finance & LA County `lavote.gov` (eff. Jul 1, 2026 Measure ULA `$5.4M/$10.9M`, City Base `0.45%`, County DTT `0.11%`), CA BOE Prop 13 & LA Assessor Prop 8 (`2026-11-30` deadline), USGS FDSN Event API (`28` M4.5+ events 1990–2026 within 50 km Central LA), CGS EQ Zapp, OpenFEMA v2 (`88` LA declarations incl. 2025 wildfires), CAL FIRE OSFM 2025 LRA / 2026 SRA, and CDI FAIR Plan Order 2026-2.
+- **Validators Passed (9/9 + Unit Tests + HTTP Crawl):**
+  - `python3 hub/scripts/verify.py`: PASS (`15` pages, `34` official sources, `243` table rows 100% officially linked, `382` relative links 0 broken, `264` external official links, zero telemetry, zero privacy leaks).
+  - Node DOM/math unit test on `hub/assets/js/calculator.js`: PASS (blank default state, exact 2026 CA FTB Sched Y + BHSA to the dollar, exact County DTT / City Base 0.45% / Jul 1 2026 ULA tiers, synthetic toggle + clear reset).
+  - `node scripts/validate.mjs`: PASS (`252` rows, `2,602` links).
+  - `python3 scripts/check-integration.py`: PASS (`3,039` relative link targets).
+  - `python3 tools/check_integration26.py`: PASS (`140` HTML files, `3,166` local links).
+  - `python3 tools/check.py`: PASS (`18` pages, `72` rows).
+  - `python3 verification/check.py`: PASS `16/16` (`432` rows, `22` pages).
+  - `python3 web/tools/verify.py` & `python3 web/tools/check_links.py`: PASS (`281` rows, `17` files, `406` links).
+  - `node ledger-1ebd66da/scripts/verify.mjs`: PASS (`55` rows, `15` pages).
+  - Local HTTP check: `20/20` paths returned HTTP 200.
+- **Privacy & Decision Posture:** Zero street address, APN, owner PII, lease rent, store sales, debt, or tax basis committed. Decision intentionally remains **OPEN (No Winner Declared)** until private Gates G-02 through G-09 clear offline.
+
+
