@@ -1291,3 +1291,6 @@ Prior claims are historical (latest recorded commits 2026-11-25); no other tree 
 
 ### S-43ae253a integration conflict resolution
 The required rebase onto newly advanced main conflicted in the append-only coordination log. Stopped and aborted rebase to preserve the already-pushed claim history, then merged origin/main on the same current branch. Both complete coordination sections and all PR #27 integration/tenant work are retained. No root or category files were modified by this session.
+
+### Final combined-tree checks · S-43ae253a
+After integrating PR #27 and tenant PRs #25/#26: integration26 check PASS (124 HTML files, 2,693 local links); existing primary validator PASS (225 rows / 26 sources / 12 pages); `scripts/check-integration.py` PASS; independent audit PASS 16/16; workspace checker PASS; web validator and link checker PASS. These remain structural tests. Root landing is entirely preserved from arena-1a77511b. INT-26 withdrawn/handoff complete; AUD-26 done; PUB-26 awaiting merge/deploy below.
