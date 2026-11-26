@@ -1217,40 +1217,85 @@ resolved; F-18 remains on the Flagged for Review page as a change request to the
 previously being cached as 404s during the incident; equivalent fresh URLs in the same directories resolved,
 and both files are confirmed present on `main`. No personal information is published.
 
+## Session arena-1a77511b — 2026-11-26 integration refresh
+
+| Task | Status | Owner | Exclusive scope |
+|---|---|---|---|
+| R-01 | Replace redirect with clear executive landing; publish review limitations and prioritized discovery plan | in progress | arena-1a77511b | `index.html`, `integration-review.html`, `integration.css`, `scripts/check-integration.py`, `COORDINATION.md` append only |
+
+Prior claims are historical (latest recorded commits 2026-11-25); no other tree will be edited. Current Arena branch is fixed; no extra session branch will be created. Existing source checks will be run, not misrepresented as new official-source verification. No private material will be collected into this public repository.
+
+### R-01 implementation and verification — arena-1a77511b
+- Replaced the root redirect with a responsive executive landing, six prioritized evidence/discovery rows, category routes and a printable advisor route. Added `integration-review.html` with nine explicit limitations, suggested remedies and source/evidence links; retained all historical trees without modification.
+- Sources actually retrieved 2026-11-26: Census ACS guidance <https://www.census.gov/programs-surveys/acs/guidance/estimates.html> (tract/5-year methodology); CGS EQ Zapp <https://www.conservation.ca.gov/cgs/geohazards/eq-zapp> (map limitations); IRS Publication 544 <https://www.irs.gov/publications/p544> (contents only, no tax result certified); GitHub Pages <https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages> (static hosting and visitor IP security logging). FEMA <https://msc.fema.gov/portal/home> returned HTTP 500; explicitly unverified.
+- All new table rows link primary evidence or first-party project evidence. Repository evidence routes do NOT assert official verification of a lease, quote, owner fact or parcel status. No property-specific figures were added. No private records were sought or stored.
+- Checks: `node scripts/validate.mjs` PASS (211 data rows; its phrase “verified line by line” means structural checks, NOT fresh official-source verification); `python3 verification/check.py` PASS 16/16 (432 rows); `python3 tools/check.py` PASS (18 pages); `python3 web/tools/verify.py` PASS (281 rows); `python3 web/tools/check_links.py` PASS (404 internal links). New `python3 scripts/check-integration.py` PASS: 15 evidence-linked integration rows, 2,451 repository-relative HTML link targets, no intake/persistence/scripts on new pages.
+- Irregularities published in integration review: conflicting property/macro back-test claims, historical source freshness, absent tract selection, failed FEMA retrieval, map/engineering distinction, unverified personal taxes, parallel historical trees, public hosting/privacy limits, missing matched buyer quotes.
+- Claim push note: initial pull failed because this new branch had no remote ref; claim was then pushed successfully before implementation. No conflict or lost changes.
+- Publication remains pending; R-01 is in progress until PR merge and Pages confirmation. No assertion that a private lease abstract was commissioned or a parcel-specific forecast completed.
 ---
 
-# Session `S-a293043a` (`arena/a293043a-jackbox1`) — 2026-11-26 Full-Repo Line-by-Line Audit, Fresh Official Verification & Final Integration
+## Session `arena-b072f72e` — Verification, Tenant Series & Cross-Tree Integration (2026-11-26)
 
-> **Board rule obeyed:** every line above is preserved verbatim from `main@eab14bb`. All 8 prior published trees
-> (`pages/`, `docs/`, `desk/`, `workspace/`, `audit-78005353/`, `ledger-1ebd66da/`, `audit/`, `web/`) remain
-> untouched and intact.
+| ID | Task | Status | Owner | Files |
+|---|---|---|---|---|
+| B-01 | Add multi-period Jack in the Box SEC EDGAR operating series (FY2024–Q1 FY2026: same-store sales, openings/closures, franchise rental revenue, margins, FY2026 guidance; blank unverified slots for private parcel-level franchisee sales & guaranty) | done | `arena-b072f72e` | `data/tenant.json`, `data/sources.json`, `scripts/build.mjs`, `scripts/validate.mjs`, `pages/tenant.html` |
+| B-02 | Fix factual typo in `IR-02` (`2030-2035` is a five-year window, not an eight-year window) | done | `arena-b072f72e` | `data/flagged.json`, `pages/flagged.html` |
+| B-03 | Fulfill `S-62b1c0c2` handoff request: add companion-workspace links (`/audit/`, `/verification/REPORT.md`, `/docs/`, `/web/`, `/workspace/`, `/desk/`) to primary site footer | done | `arena-b072f72e` | `scripts/build.mjs`, `pages/*.html` |
+| B-04 | Rebuild, run line-by-line validators (`node scripts/validate.mjs` + `python3 verification/check.py`), open PR to `main`, merge, and confirm GitHub Pages deploy | done | `arena-b072f72e` | `COORDINATION.md` |
+
+### Publish & deploy record (`arena-b072f72e`, 2026-11-26)
+- **PR**: <https://github.com/kanlerxz87-cyber/Jackbox1/pull/25>
+- **Merge**: `gh pr merge 25 --merge` → merge commit `297d901e671d127071a63baede8de793e38cc1c5`
+- **GitHub Pages**: `status: built` at `2026-11-26T13:08:07Z`, `error: null`
+- **Live URLs**: <https://kanlerxz87-cyber.github.io/Jackbox1/> · <https://kanlerxz87-cyber.github.io/Jackbox1/pages/tenant.html> · <https://kanlerxz87-cyber.github.io/Jackbox1/pages/flagged.html>
+
+### Sources verified (`arena-b072f72e`)
+- `S-011`: SEC EDGAR — Jack in the Box Inc. Form 10-K (FY2025 ended 2025-09-28): FY2024 & FY2025 system/company/franchise same-store sales (`-1.3%` → `-4.2%`).
+- `S-023`: SEC EDGAR — Form 8-K Ex-99.1 Q4 & FY2025 Earnings Release (2025-11-19): Q4 FY2025 SSS `-7.4%`, FY2025 openings `31` / closures `86` (`51` under JACK on Track), FY2026 guidance.
+- `S-024`: SEC EDGAR — DEF 14A Proxy Statement (2026-01-16): FY2025 Jack in the Box brand franchise rental revenues `$332,735` thousand (consolidated `$368,643` thousand).
+- `S-025`: SEC EDGAR — DEF 14A Proxy Statement (2025-01-27): FY2024 openings `30` / closures `25` (net `+5`), franchise-level margin `40.9%`, restaurant-level margin `21.7%`.
+- `S-026`: SEC EDGAR — Form 8-K Ex-99.1 Q1 FY2026 Earnings Release (16 weeks ended 2026-01-18): Q1 FY2026 SSS `-6.7%`, franchise rental revenues `$97,387` thousand (vs `$105,781` thousand in Q1 FY2025, `-7.9%` YoY), FY2026 guidance (`2,050–2,100` units, `50–100` closures).
+
+### Verification performed (`arena-b072f72e`)
+- `node scripts/build.mjs`: built `index.html` + 12 pages.
+- `node scripts/validate.mjs`: **PASS** — 26 official sources (all allowlisted), 225 rows (83 verified-like all sourced, 50 unverified all blank), 12 pages, 123 outbound source links, 1,556 internal links resolving, 0 privacy leaks.
+- `python3 verification/check.py`: **PASS 16/16** — 432 table rows, 22 pages.
+
+
+### Concurrent integration resolution — arena-1a77511b
+`main` advanced through PRs #25 and #26 during implementation. A coordination-log append conflict was resolved by preserving both sessions’ complete records; all new tenant-series files and footer links from arena-b072f72e are retained. Rebase was aborted before merging main to preserve the already-pushed claim history. No branch switch and no discarded work.
+
+---
+
+# Session `S-a293043a` (`arena/a293043a-jackbox1`) — 2026-11-26 Full-Repo Line-by-Line Audit, Fresh Official Verification & Standalone Unified Dashboard (`hub/**`)
+
+> **Board & conflict-resolution rule obeyed:** `origin/main` advanced via PRs #25, #26 (`arena-b072f72e`) and #27 (`arena-1a77511b`) while our initial claim was being pushed. The `COORDINATION.md` merge conflict was resolved by keeping every line of `origin/main` verbatim above and re-appending our revised board below. Because `arena-1a77511b` now owns root `index.html`, `integration-review.html`, `integration.css`, and `scripts/check-integration.py`, **`S-a293043a` withdraws `index.html` from its scope** and restricts all edits strictly to disjoint namespace `hub/**` plus append-only rows in `COORDINATION.md`. Zero files belonging to any other session are edited or deleted.
 
 ## Session registry entry
 
 | Session ID | Branch | Role | Started | Exclusive File Scope |
 |---|---|---|---|---|
-| `S-a293043a` | `arena/a293043a-jackbox1` (fixed by platform policy) | Full-repo line-by-line audit of all 8 trees, fresh 2026-11-26 official-source verification, unified flagship dashboard (`hub/**`), and final integration landing page (`index.html`) | 2026-11-26 | `hub/**`, `COORDINATION.md` (append-only), `index.html` (final integration step `A-11` only) |
+| `S-a293043a` | `arena/a293043a-jackbox1` (fixed by platform policy) | Full-repo line-by-line audit across all published trees, fresh 2026-11-26 primary-source verification, and standalone unified dashboard under `hub/**` | 2026-11-26 | `hub/**`, `COORDINATION.md` (append-only) |
 
-**Handoff & platform-branch note:**
-- All prior sessions completed and merged on 2026-11-25 (>22 hours ago); `origin` has no other active session branches.
-- Platform policy fixes this session to `arena/a293043a-jackbox1` and prohibits creating/switching/pushing other branches; non-overlap is enforced via disjoint file scope (`hub/**`) plus leaving all 8 existing trees untouched.
-- Shared root `index.html` will only be updated in final integration task `A-11` after all verification and repo-wide checks pass, fulfilling earlier change requests (`S-62b1c0c2`, `S-1552e5d5`, `ses-41ea221b`) to surface all trees and audit reports from `/` while keeping `/pages/index.html` intact.
+**Platform-branch & scope notes:**
+- Platform policy fixes this session to `arena/a293043a-jackbox1` and forbids switching/creating/pushing other branches; non-overlap is strictly enforced via exclusive file scope `hub/**`.
+- **Change request (`CR-A01` → `arena-1a77511b`, owner of `index.html`):** once `hub/` is merged, please consider adding a navigation link from root `index.html` to `hub/index.html` (Unified 2026-11-26 Verified Dashboard & Full-Repo Line-by-Line Audit). No edit to `index.html` is made by `S-a293043a`.
 
 ## Task board (`S-a293043a`)
 
 | ID | Task | Status | Owner | File scope | Notes |
 |---|---|---|---|---|---|
-| A-00 | Read `COORDINATION.md`, claim exclusive scope, commit & push claim | done | `S-a293043a` | `COORDINATION.md` (append-only) | Initial claim before research/build |
-| A-01 | Line-by-line audit of all 8 existing trees, validators, `README.md`, `PRIVACY.md`, `.github/workflows/pages.yml` | in progress | `S-a293043a` | `hub/data/repo_audit.json` | Identify factual, arithmetic, stale-count, validator-gap, privacy & cross-tree irregularities |
+| A-00 | Read `COORDINATION.md`, merge `origin/main` (#25–#27), claim strictly disjoint `hub/**` scope, commit & push | done | `S-a293043a` | `COORDINATION.md` (append-only) | `index.html` withdrawn after seeing `arena-1a77511b` PR #27 |
+| A-01 | Line-by-line audit of all existing trees, data files, validators, `README.md`, `PRIVACY.md`, `.github/workflows/pages.yml` | in progress | `S-a293043a` | `hub/data/repo_audit.json` | Concrete line-by-line irregularities with official/repo links |
 | A-02 | Fresh 2026-11-26 primary-source verification: economy, demographics, tract trends, schools, traffic, W-01 | in progress | `S-a293043a` | `hub/data/sources.json`, `hub/data/economy.json` | Census, BLS, EDD, CA DOF, SCAG, CDE, Caltrans, FRED, FHFA |
-| A-03 | Fresh 2026-11-26 primary-source verification: Jack in the Box multi-year SEC series (SSS, units, closures, franchise rental revenue) + CA AB 1228 wage | in progress | `S-a293043a` | `hub/data/operator.json` | SEC EDGAR 10-K/10-Q/8-K + CA DIR |
-| A-04 | Fresh 2026-11-26 primary-source verification: W-04 hazards & insurance (USGS, FEMA, CAL FIRE OSFM, CGS, CDI) + compound black-swan stress | in progress | `S-a293043a` | `hub/data/hazards.json`, `hub/data/risks.json` | Parcel zone status stays blank + flagged |
-| A-05 | Fresh 2026-11-26 primary-source verification: federal + CA tax rules (IRS 2025/2026, CA FTB exact brackets + 1% BHSA surcharge at $1M, Prop 13, Measure ULA indexed thresholds, documentary transfer tax) + W-02 sell-vs-hold + short-lease discount | in progress | `S-a293043a` | `hub/data/tax_valuation.json`, `hub/data/lease.json` | No winner selected; short-lease quotes blank + flagged |
-| A-06 | Versioned cash-flow & projection model governance + back-test audit (observations vs assumptions) | in progress | `S-a293043a` | `hub/data/model.json` | Reconciles cross-tree back-test discrepancy |
+| A-03 | Fresh 2026-11-26 primary-source verification: Jack in the Box multi-year SEC series (SSS, units, closures, franchise rental revenue) + CA AB 1228 fast-food wage | in progress | `S-a293043a` | `hub/data/operator.json` | SEC EDGAR 10-K/10-Q/8-K/DEF 14A + CA DIR |
+| A-04 | Fresh 2026-11-26 primary-source verification: W-04 hazards & insurance (USGS, FEMA, CAL FIRE OSFM, CGS, CDI) + compound black-swan stress | in progress | `S-a293043a` | `hub/data/hazards.json`, `hub/data/risks.json` | Parcel zone status blank + flagged |
+| A-05 | Fresh 2026-11-26 primary-source verification: federal + CA tax rules (IRS 2025/2026, CA FTB brackets + 1% BHSA surcharge at $1M, Prop 13, Measure ULA indexed thresholds, documentary transfer tax) + W-02 sell-vs-hold + short-lease discount | in progress | `S-a293043a` | `hub/data/tax_valuation.json`, `hub/data/lease.json` | No winner selected; short-lease quotes blank + flagged |
+| A-06 | Versioned cash-flow & projection model governance + back-test reconciliation (observations vs assumptions) | in progress | `S-a293043a` | `hub/data/model.json` | Reconciles cross-tree back-test discrepancy |
 | A-07 | W-03 decision-gate progress board + Open Questions, Answers & Missing-Info Discovery Plan | in progress | `S-a293043a` | `hub/data/gates.json`, `hub/data/questions.json` | What we have vs do not have + discovery paths |
 | A-08 | Dedicated Suggestions & Path-Selection review board (choose a path before implementing changes) | in progress | `S-a293043a` | `hub/data/suggestions.json` | Browser-local path selector, zero persistence |
-| A-09 | Privacy-first browser-only Sell-vs-Hold & After-Tax Calculator (zero network, zero storage, zero cookies) | in progress | `S-a293043a` | `hub/assets/js/calculator.js`, `hub/calculator.html` | Independent hand-checkable math + Measure ULA & CA BHSA options |
-| A-10 | Static site generator (`hub/scripts/build.py`) + strict repo-wide validator (`hub/scripts/verify.py`) + all category pages + W-10 printable one-pager + Flagged for Review page | in progress | `S-a293043a` | `hub/**` | Every table row has official source link or blank+flagged |
-| A-11 | Final integration: update root `index.html` landing dashboard linking unified `hub/` + all 8 preserved trees, re-run ALL 6 repo validators + live HTTP check | unclaimed | `S-a293043a` | `index.html`, `hub/**` | Runs only after A-01…A-10 pass 100% |
-| A-12 | PR to `main`, merge without approval wait, confirm GitHub Pages live deploy across `/` and `/hub/`, record PR/merge/deploy in `COORDINATION.md` | unclaimed | `S-a293043a` | `COORDINATION.md` (append-only) | Final step |
+| A-09 | Privacy-first browser-only Sell-vs-Hold & After-Tax Calculator (zero network, zero storage, zero cookies) | in progress | `S-a293043a` | `hub/assets/js/calculator.js`, `hub/calculator.html` | Independent hand-checkable math incl. §1250, NIIT, CA BHSA, Measure ULA, §1031 |
+| A-10 | Static site generator (`hub/scripts/build.py`) + strict validator (`hub/scripts/verify.py`) + all category pages + W-10 printable one-pager + Flagged for Review page | in progress | `S-a293043a` | `hub/**` | Every table row has official source link or blank+flagged |
+| A-11 | Combined repo-wide verification (run ALL 7 validators + local HTTP crawl) + PR to `main` + merge + confirm GitHub Pages deploy + record in `COORDINATION.md` | unclaimed | `S-a293043a` | `COORDINATION.md` (append-only) | Runs only after A-01…A-10 pass 100% |
 
