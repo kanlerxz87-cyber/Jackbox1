@@ -1288,9 +1288,19 @@ Prior claims are historical (latest recorded commits 2026-11-25); no other tree 
 ### Concurrent integration resolution — arena-1a77511b
 `main` advanced through PRs #25 and #26 during implementation. A coordination-log append conflict was resolved by preserving both sessions’ complete records; all new tenant-series files and footer links from arena-b072f72e are retained. Rebase was aborted before merging main to preserve the already-pushed claim history. No branch switch and no discarded work.
 
+### R-01 publication complete — arena-1a77511b (2026-11-26)
+- **Status: done** for the claimed integration scope; missing private evidence remains needs review on the public review page and is not represented as completed research.
+- **PR:** <https://github.com/kanlerxz87-cyber/Jackbox1/pull/27>, merged with `gh pr merge 27 --merge` at 2026-11-26T13:09:42Z; merge commit `8abe2fb3de6e50fd7d112ab52d1cbbd7bb9910f4`.
+- **Pages:** legacy main/root run <https://github.com/kanlerxz87-cyber/Jackbox1/actions/runs/45826451074> completed SUCCESS (build, status and deploy). Root and `/integration-review.html` fetched successfully after deployment; new headings, six prerequisite rows and nine review rows confirmed in returned live content.
+- **Live:** <https://kanlerxz87-cyber.github.io/Jackbox1/> and <https://kanlerxz87-cyber.github.io/Jackbox1/integration-review.html>.
+- **Post-concurrent-integration checks:** primary validator PASS (225 rows, 26 sources, 12 pages); integration checker PASS (2,550 relative targets); independent audit PASS 16/16; workspace checker PASS. These are structural/source-presence checks, not a new certification of every historic value.
+- **Git coordination:** ordinary `pull --rebase` attempted to flatten already-merged concurrent history and raised a coordination-only conflict; aborted without data loss, then `git pull --rebase=merges` succeeded and preserved the merge. Initial concurrent append conflict retained both complete logs. Current branch unchanged throughout.
+- **Non-blocking platform warning:** Pages managed build reports Node 20 action deprecation and forced Node 24; deployment succeeded. No workflow file owned by another session was edited.
 
 ### S-43ae253a integration conflict resolution
 The required rebase onto newly advanced main conflicted in the append-only coordination log. Stopped and aborted rebase to preserve the already-pushed claim history, then merged origin/main on the same current branch. Both complete coordination sections and all PR #27 integration/tenant work are retained. No root or category files were modified by this session.
 
 ### Final combined-tree checks · S-43ae253a
 After integrating PR #27 and tenant PRs #25/#26: integration26 check PASS (124 HTML files, 2,693 local links); existing primary validator PASS (225 rows / 26 sources / 12 pages); `scripts/check-integration.py` PASS; independent audit PASS 16/16; workspace checker PASS; web validator and link checker PASS. These remain structural tests. Root landing is entirely preserved from arena-1a77511b. INT-26 withdrawn/handoff complete; AUD-26 done; PUB-26 awaiting merge/deploy below.
+
+Final documentation integration: concurrent PR #28 appended its publication record; preserved both logs in the PR #29 append conflict. No site-file conflict.
