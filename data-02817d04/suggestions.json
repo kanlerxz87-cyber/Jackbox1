@@ -1,0 +1,208 @@
+{
+  "meta": {
+    "dataset": "suggestions-02817d04",
+    "session_id": "S-02817d04",
+    "as_of": "2026-11-26",
+    "purpose": "Structured review board of suggestions to discover missing information, strengthen decision-making, and improve repository/site governance before implementing changes."
+  },
+  "paths": [
+    {
+      "id": "PATH-A",
+      "name": "Path A · Zero-Cost Immediate Protection & Document Lock (Days 1–7)",
+      "goal": "Protect privacy, capture expiring tax deadlines, and pin down exact lease/calendar facts before spending a dollar on third-party reports.",
+      "estimated_cost": "$0 out-of-pocket (optional 2–3 hrs counsel review)",
+      "timeline": "1–7 days (DIV check before Nov 30, 2026)",
+      "risk_profile": "Lowest risk — purely protective and information-gathering; zero market signaling.",
+      "recommended_first": true
+    },
+    {
+      "id": "PATH-B",
+      "name": "Path B · Full Private Trade-Area, Hazard & Tax Underwriting (Weeks 2–4)",
+      "goal": "Replace all public blank cells offline with parcel-exact Census tract trends, ZIMAS land floor, FEMA/CGS/OSFM hazard screens, and CPA after-tax math.",
+      "estimated_cost": "$1,500–$4,500 (CPA + legal abstract; $0 for public GIS/Census API)",
+      "timeline": "2–3 weeks",
+      "risk_profile": "Low risk — builds an institutional-grade private dossier before speaking to brokers or tenant.",
+      "recommended_first": false
+    },
+    {
+      "id": "PATH-C",
+      "name": "Path C · Dual-Track Market Test vs Confidential Blend-and-Extend (Weeks 4–8)",
+      "goal": "Price the real short-lease discount via NDA BOVs & lender quotes while testing whether a 10–15 yr lease extension creates immediate risk-adjusted equity.",
+      "estimated_cost": "$0 for BOVs/debt quotes; legal fee only if LOI/amendment drafted",
+      "timeline": "4–6 weeks (strictly AFTER Paths A & B complete)",
+      "risk_profile": "Moderate — requires strict NDA discipline and prior ROFR check so tenant/market leverage is not leaked.",
+      "recommended_first": false
+    },
+    {
+      "id": "PATH-D",
+      "name": "Path D · Website & Repository Governance Improvements (Post-Review)",
+      "goal": "Improve the live decision site's usability, consolidate the 8+ parallel session trees upon owner approval, and keep automated verification green.",
+      "estimated_cost": "$0 engineering hygiene",
+      "timeline": "1 session after owner selects preferred primary layout",
+      "risk_profile": "Low — requires explicit owner sign-off before archiving any parallel session's tree.",
+      "recommended_first": false
+    }
+  ],
+  "suggestions": [
+    {
+      "id": "SG-01",
+      "path_id": "PATH-A",
+      "category": "Tax Deadline",
+      "title": "Check LA County Decline-in-Value (DIV) eligibility before November 30, 2026",
+      "why_it_helps": "Today is 2026-11-26; the 2026–2027 LA County Assessor DIV filing window closes November 30, 2026. Protects NNN occupancy cost if current assessed value exceeds market value.",
+      "effort_cost": "Low · $0 online filing",
+      "privacy_rule": "File directly on assessor.lacounty.gov; never copy AIN or tax bill into Git.",
+      "source_id": "SRC-27"
+    },
+    {
+      "id": "SG-02",
+      "path_id": "PATH-A",
+      "category": "Missing Info — Lease",
+      "title": "Abstract the four critical lease dates & ROFR clause into an offline notice calendar",
+      "why_it_helps": "Eliminates the 5-year ambiguity (2030–2035) and ensures no renewal notice or ROFR trap is accidentally triggered.",
+      "effort_cost": "Low · $0–$1,500",
+      "privacy_rule": "Store abstract PDF/sheet in encrypted offline vault only.",
+      "source_id": "SRC-14"
+    },
+    {
+      "id": "SG-03",
+      "path_id": "PATH-A",
+      "category": "Missing Info — Store Sales",
+      "title": "Request 3-year store gross sales statements under the lease reporting clause",
+      "why_it_helps": "Reveals exact rent-to-sales ratio (<7% strong renewal candidate vs >10% closure/rent-cut danger) amid -7.0% Q1 FY2026 system franchise SSS.",
+      "effort_cost": "Low · $0 written landlord request",
+      "privacy_rule": "Confidential tenant trade secret — offline advisor eyes only.",
+      "source_id": "SRC-15"
+    },
+    {
+      "id": "SG-04",
+      "path_id": "PATH-A",
+      "category": "Privacy Architecture",
+      "title": "Maintain hard air-gap between public GitHub Pages site and private advisor data room",
+      "why_it_helps": "A public Git repo has public commit history forever; keeping all parcel/owner numbers solely as ephemeral browser-calculator inputs guarantees zero PII exposure.",
+      "effort_cost": "Zero · Enforced by tools-02817d04/validate.mjs",
+      "privacy_rule": "Mandatory permanent guardrail.",
+      "source_id": "SRC-33"
+    },
+    {
+      "id": "SG-05",
+      "path_id": "PATH-B",
+      "category": "Missing Info — W-01 Tracts",
+      "title": "Register free Census API key & run offline 1-mile / 3-mile multi-vintage ACS + LEHD pull",
+      "why_it_helps": "Replaces 3.81M-person LA City proxies with exact neighborhood income, population, commuter, and poverty trajectories around PARCEL-001.",
+      "effort_cost": "Low · $0 (2 hours)",
+      "privacy_rule": "Publish only anonymized ring aggregates (e.g. '1-Mile Ring') if ever summarized; never publish tract GEOIDs.",
+      "source_id": "SRC-34"
+    },
+    {
+      "id": "SG-06",
+      "path_id": "PATH-B",
+      "category": "Missing Info — Land Floor",
+      "title": "Pull offline ZIMAS zoning, TOC/ED1 tier, lot size, and drive-thru CUP grandfathering status",
+      "why_it_helps": "Establishes the 'vacant-land / alternative-use floor' — if infill land value equals or exceeds NNN value, non-renewal stops being a catastrophe.",
+      "effort_cost": "Low · $0 via ZIMAS / BOE Cadastral",
+      "privacy_rule": "Keep APN, street names, and parcel map offline.",
+      "source_id": "SRC-06"
+    },
+    {
+      "id": "SG-07",
+      "path_id": "PATH-B",
+      "category": "Missing Info — W-04 Hazards",
+      "title": "Capture dated FEMA FIRMette, CGS EQ ZApp fault/liquefaction map, CAL FIRE LRA FHSZ & historical directory screen",
+      "why_it_helps": "Replaces regional LA hazard probabilities with parcel-exact regulatory zone determinations and flags any legacy gas-station/dry-cleaner environmental risk early.",
+      "effort_cost": "Low · $0–$500 desktop screen",
+      "privacy_rule": "Retain map PDFs offline; do not commit coordinates or map crops.",
+      "source_id": "SRC-29"
+    },
+    {
+      "id": "SG-08",
+      "path_id": "PATH-B",
+      "category": "Missing Info — After-Tax",
+      "title": "Have CPA certify adjusted basis, cumulative §1250 depreciation, and Measure ULA jurisdiction",
+      "why_it_helps": "Feeds exact verified inputs into the browser-only calculator so the single After-Tax Sale Proceeds figure is accurate to the dollar.",
+      "effort_cost": "Low-Medium · $1,000–$2,500 CPA memo",
+      "privacy_rule": "Enter numbers only in local browser memory; never save to repo.",
+      "source_id": "SRC-20"
+    },
+    {
+      "id": "SG-09",
+      "path_id": "PATH-C",
+      "category": "Missing Info — Short Lease",
+      "title": "Solicit 3 blind/NDA Net-Lease BOVs pricing BOTH 'As-Is Short Fuse' and '15-Yr Renewed'",
+      "why_it_helps": "Empirically measures the short-lease cap-rate penalty in bps rather than relying on rules of thumb.",
+      "effort_cost": "Low · $0 broker opinions under NDA",
+      "privacy_rule": "Require signed confidentiality & non-marketing agreement before sharing address.",
+      "source_id": "SRC-09"
+    },
+    {
+      "id": "SG-10",
+      "path_id": "PATH-C",
+      "category": "Missing Info — Debt Liquidity",
+      "title": "Obtain 2 commercial mortgage broker quotes (bank vs credit union/CMBS) for a buyer of PARCEL-001",
+      "why_it_helps": "Shows exact buyer LTV, amortization cliff, and DSCR constraint at current 4.91% 10Y Treasury benchmark.",
+      "effort_cost": "Low · $0 soft quote",
+      "privacy_rule": "Share anonymized lease term & NOI range first.",
+      "source_id": "SRC-09"
+    },
+    {
+      "id": "SG-11",
+      "path_id": "PATH-C",
+      "category": "Negotiated Renewal",
+      "title": "Model a 'Blend-and-Extend' proposal before choosing between Sell and Hold",
+      "why_it_helps": "Extending the lease to 12–15 years BEFORE selling can unlock BOTH higher hold security AND top-tier §1031 buyer cap-rate pricing.",
+      "effort_cost": "Medium · Legal/advisor structuring",
+      "privacy_rule": "Approach tenant only after Gate G-02 & G-03 confirm store strength.",
+      "source_id": "SRC-15"
+    },
+    {
+      "id": "SG-12",
+      "path_id": "PATH-C",
+      "category": "Wealth Preservation",
+      "title": "Pre-underwrite IRC § 1031 exchange replacement buckets alongside a taxable cash sale",
+      "why_it_helps": "Avoids forfeiting 30%–40%+ of equity to federal/CA taxes while eliminating single-tenant and single-fault-basin concentration.",
+      "effort_cost": "Low · Qualified Intermediary + CPA consult",
+      "privacy_rule": "Engage independent bonded QI prior to any sale closing.",
+      "source_id": "SRC-19"
+    },
+    {
+      "id": "SG-13",
+      "path_id": "PATH-D",
+      "category": "Site Improvement",
+      "title": "Add encrypted local JSON export/import ('Bring Your Own Private File') to the browser calculator",
+      "why_it_helps": "Lets the owner save private scenario assumptions on an offline USB/encrypted drive and reload them into the browser without any server or browser-storage persistence.",
+      "effort_cost": "Low · 60 lines of client-side FileReader/Blob JS",
+      "privacy_rule": "Uses explicit user file download/upload only; zero network or browser storage.",
+      "source_id": "SRC-33"
+    },
+    {
+      "id": "SG-14",
+      "path_id": "PATH-D",
+      "category": "Site Improvement",
+      "title": "Consolidate the repository's multiple parallel session trees into one canonical site + archive index",
+      "why_it_helps": "Eight+ parallel session directories (/pages/, /docs/, /workspace/, /audit/, /web/, /ledger-1ebd66da/, /portal-02817d04/) create reviewer fatigue; a single owner-chosen primary tree with an archived-editions drawer simplifies review.",
+      "effort_cost": "Medium · Requires explicit owner approval to archive sibling trees",
+      "privacy_rule": "Preserves git history and all audit logs.",
+      "source_id": "SRC-37"
+    },
+    {
+      "id": "SG-15",
+      "path_id": "PATH-D",
+      "category": "Site Improvement",
+      "title": "Standardize vintage & geography badges on every metric across the site",
+      "why_it_helps": "Prevents readers from confusing CA DOF Jan 1, 2026 LA City population (3,806,201) with Census July 1, 2025 V2025 (3,869,089) or Vintage 2024 (3,878,704).",
+      "effort_cost": "Low · Implemented in portal-02817d04 tables",
+      "privacy_rule": "Public aggregate metadata only.",
+      "source_id": "SRC-02"
+    },
+    {
+      "id": "SG-16",
+      "path_id": "PATH-D",
+      "category": "Site Improvement",
+      "title": "Align .github/workflows/pages.yml artifact path with repository root or keep disabled",
+      "why_it_helps": "Prevents accidental docs-only GitHub Actions deployments from hiding root and subdirectory trees served by legacy main:/ Pages.",
+      "effort_cost": "Low · 1-line YAML update by workflow owner",
+      "privacy_rule": "Ensure .gitignore continues excluding private/ offline templates.",
+      "source_id": "SRC-37"
+    }
+  ]
+}

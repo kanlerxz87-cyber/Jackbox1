@@ -1,0 +1,409 @@
+{
+  "meta": {
+    "dataset": "sources-02817d04",
+    "session_id": "S-02817d04",
+    "branch": "arena/02817d04-jackbox1",
+    "as_of": "2026-11-26",
+    "policy": "Every numeric or factual claim marked verified in portal-02817d04 was retrieved directly from the linked official primary source on 2026-11-26. Any source that failed direct retrieval or requires private parcel/owner identifiers contributes zero verified values and is flagged for manual review."
+  },
+  "allowlisted_hosts": [
+    "www.bls.gov",
+    "data.bls.gov",
+    "dof.ca.gov",
+    "www.cde.ca.gov",
+    "dot.ca.gov",
+    "www.scag.ca.gov",
+    "www.dir.ca.gov",
+    "www.sec.gov",
+    "www.irs.gov",
+    "www.ftb.ca.gov",
+    "www.boe.ca.gov",
+    "leginfo.legislature.ca.gov",
+    "assessor.lacounty.gov",
+    "housing.lacity.gov",
+    "planning.lacity.gov",
+    "finance.lacity.gov",
+    "fred.stlouisfed.org",
+    "www.usgs.gov",
+    "www.conservation.ca.gov",
+    "osfm.fire.ca.gov",
+    "www.fema.gov",
+    "www.insurance.ca.gov",
+    "oag.ca.gov",
+    "api.census.gov",
+    "www.census.gov",
+    "github.com"
+  ],
+  "sources": [
+    {
+      "id": "SRC-01",
+      "publisher": "U.S. Bureau of Labor Statistics",
+      "title": "Economy at a Glance: Los Angeles-Long Beach-Glendale, CA Metropolitan Division (extracted Nov 20, 2026)",
+      "url": "https://www.bls.gov/eag/eag.ca_losangeles_md.htm",
+      "retrieval_status": "fetched-2026-11-26",
+      "retrieved": "2026-11-26",
+      "scope": "economic",
+      "note": "All 3 chunks fetched directly. October 2026 labor force and CES sector figures carry BLS preliminary (p) flag; Oct 2026 12-month CPI-U % change is blank in official table due to Oct 2025 collection lapse."
+    },
+    {
+      "id": "SRC-02",
+      "publisher": "California Department of Finance — Demographic Research Unit",
+      "title": "E-1 Population Estimates for Cities, Counties, and the State (January 1, 2025 and 2026 Press Release, May 1, 2026)",
+      "url": "https://dof.ca.gov/media/docs/forecasting/demographics/estimates/e-1_2026_press_release.Pdf",
+      "retrieval_status": "fetched-2026-11-26",
+      "retrieved": "2026-11-26",
+      "scope": "economic",
+      "note": "Fetched directly. Provides Jan 1, 2025 and Jan 1, 2026 population and 2025 housing/wildfire loss counts for California, LA County, and City of Los Angeles."
+    },
+    {
+      "id": "SRC-03",
+      "publisher": "Southern California Association of Governments (SCAG)",
+      "title": "Connect SoCal 2024: Demographics & Growth Forecast Technical Report (Adopted April 4, 2024)",
+      "url": "https://www.scag.ca.gov/sites/default/files/2024-05/23-2987-tr-demographics-growth-forecast-final-040424.pdf",
+      "retrieval_status": "fetched-2026-11-26",
+      "retrieved": "2026-11-26",
+      "scope": "economic",
+      "note": "Fetched directly. Provides 2000-2050 regional employment by NAICS sector, headship rates, P:E ratio, remote-work/wage structure, and TAZ/PDA growth allocation methodology."
+    },
+    {
+      "id": "SRC-04",
+      "publisher": "California Department of Education",
+      "title": "District Profile: Los Angeles Unified School District (CDS 19-64733-0000000, SY 2025-26)",
+      "url": "https://www.cde.ca.gov/sdprofile/details.aspx?cds=19647330000000",
+      "retrieval_status": "fetched-2026-11-26",
+      "retrieved": "2026-11-26",
+      "scope": "economic",
+      "note": "Fetched directly. District street address, phone, and personal names omitted per strict repository privacy rule."
+    },
+    {
+      "id": "SRC-05",
+      "publisher": "California Department of Transportation (Caltrans)",
+      "title": "Traffic Census Program — Annual Average Daily Traffic (AADT) on California State Highways",
+      "url": "https://dot.ca.gov/programs/traffic-operations/census",
+      "retrieval_status": "fetched-2026-11-26",
+      "retrieved": "2026-11-26",
+      "scope": "economic",
+      "note": "Fetched directly. Official AADT workbooks cover State Highways only (2013-2024); arterial city street counts require LADOT/BOE lookup once parcel frontage is unlocked privately."
+    },
+    {
+      "id": "SRC-06",
+      "publisher": "Los Angeles City Planning",
+      "title": "Radius Maps Requirements & Guidelines (BOE Cadastral / ZIMAS Parcel & Tract Workflow)",
+      "url": "https://planning.lacity.gov/odocument/21c2f80a-a107-424f-9a6d-fb9a88019d8e/Radius_Map_Guidelines.pdf",
+      "retrieval_status": "fetched-2026-11-26",
+      "retrieved": "2026-11-26",
+      "scope": "economic",
+      "note": "Fetched directly. Documents official 500-ft / 1,000-ft radius mapping, zoning, and Census tract identification workflow."
+    },
+    {
+      "id": "SRC-07",
+      "publisher": "California Department of Industrial Relations — Labor Commissioner's Office",
+      "title": "Minimum Wage Frequently Asked Questions ($16.90/hr Statewide Effective Jan 1, 2026)",
+      "url": "https://www.dir.ca.gov/dlse/faq_minimumwage.htm",
+      "retrieval_status": "fetched-2026-11-26",
+      "retrieved": "2026-11-26",
+      "scope": "economic",
+      "note": "Fetched directly. Confirms statewide $16.90/hr minimum wage effective January 1, 2026 and CPI-W annual indexing cap of 3.5%."
+    },
+    {
+      "id": "SRC-08",
+      "publisher": "California Department of Industrial Relations — Labor Commissioner's Office",
+      "title": "Fast Food Minimum Wage Frequently Asked Questions (AB 1228 — $20.00/hr for Chains >=60 Units)",
+      "url": "https://www.dir.ca.gov/dlse/Fast-Food-Minimum-Wage-FAQ.htm",
+      "retrieval_status": "fetched-2026-11-26",
+      "retrieved": "2026-11-26",
+      "scope": "economic",
+      "note": "Fetched directly. Confirms AB 1228 (Labor Code §§ 1474-1476) $20.00/hr minimum wage effective April 1, 2024 for limited-service chains >=60 national units, explicitly covering franchisees."
+    },
+    {
+      "id": "SRC-09",
+      "publisher": "Board of Governors of the Federal Reserve System (H.15) via FRED",
+      "title": "DGS10 — Market Yield on U.S. Treasury Securities at 10-Year Constant Maturity (through 2026-11-24)",
+      "url": "https://fred.stlouisfed.org/data/DGS10",
+      "retrieval_status": "fetched-2026-11-26",
+      "retrieved": "2026-11-26",
+      "scope": "economic",
+      "note": "Fetched directly (updated 2026-11-25 3:16 PM CST). Latest daily yield 4.91% on 2026-11-24."
+    },
+    {
+      "id": "SRC-10",
+      "publisher": "Federal Housing Finance Agency (FHFA) via FRED",
+      "title": "ATNHPIUS31084Q — All-Transactions House Price Index for Los Angeles-Long Beach-Anaheim, CA (MSAD), 1975 Q1–2026 Q3",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=ATNHPIUS31084Q",
+      "retrieval_status": "fetched-2026-11-26",
+      "retrieved": "2026-11-26",
+      "scope": "economic",
+      "note": "Full 207-quarter CSV fetched directly. 2026 Q1 peak 558.32; 2026 Q2 557.08; 2026 Q3 553.76 (-0.82% off peak)."
+    },
+    {
+      "id": "SRC-11",
+      "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+      "title": "Jack in the Box Inc. Form 8-K Exhibit 99.1 — Q1 FY2025 Earnings Release (16 Weeks Ended Jan 19, 2025)",
+      "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788225000013/ex991-q125earningsrelease.htm",
+      "retrieval_status": "fetched-2026-11-26",
+      "retrieved": "2026-11-26",
+      "scope": "tenant",
+      "note": "Fetched directly. Q1 FY2025 system SSS +0.4%, openings 5, closures 6, ending count 2,190, RLM 23.2%, FLM 40.9%."
+    },
+    {
+      "id": "SRC-12",
+      "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+      "title": "Jack in the Box Inc. Form 8-K Exhibit 99.1 — Q2 FY2025 Earnings Release (12 Weeks Ended Apr 13, 2025)",
+      "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788225000029/ex991-q225earningsrelease.htm",
+      "retrieval_status": "fetched-2026-11-26",
+      "retrieved": "2026-11-26",
+      "scope": "tenant",
+      "note": "Fetched directly. Q2 FY2025 system SSS -4.4%, openings 5, closures 12, ending count 2,183, RLM 19.6%, FLM 40.0%."
+    },
+    {
+      "id": "SRC-13",
+      "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+      "title": "Jack in the Box Inc. Form 8-K Exhibit 99.1 — Q3 FY2025 Earnings Release (12 Weeks Ended Jul 6, 2025)",
+      "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788225000042/ex991-q325earningsrelease.htm",
+      "retrieval_status": "fetched-2026-11-26",
+      "retrieved": "2026-11-26",
+      "scope": "tenant",
+      "note": "Fetched directly. Q3 FY2025 system SSS -7.1%, openings 6, closures 21 (13 JACK on Track), ending count 2,168, RLM 17.9%, FLM 39.3%."
+    },
+    {
+      "id": "SRC-14",
+      "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+      "title": "Jack in the Box Inc. Form 8-K Exhibit 99.1 — Q4 & Full-Year FY2025 Earnings Release (Ended Sep 28, 2025)",
+      "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788225000070/ex991-q425earningsrelease.htm",
+      "retrieval_status": "fetched-2026-11-26",
+      "retrieved": "2026-11-26",
+      "scope": "tenant",
+      "note": "Fetched directly. Q4 SSS -7.4%; FY2025 SSS -4.2% (vs FY2024 -1.3%); FY2025 openings 31, closures 86; consolidated franchise rental revenue $368,643k (vs FY2024 $375,428k); FY2026 guidance."
+    },
+    {
+      "id": "SRC-15",
+      "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+      "title": "Jack in the Box Inc. Form 8-K Exhibit 99.1 — Q1 FY2026 Earnings Release (16 Weeks Ended Jan 18, 2026)",
+      "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788226000039/ex991-q126earningsrelease.htm",
+      "retrieval_status": "fetched-2026-11-26",
+      "retrieved": "2026-11-26",
+      "scope": "tenant",
+      "note": "Fetched directly. Q1 FY2026 SSS -6.7% (franchise -7.0%); openings 6, closures 14, ending units 2,128; continuing-ops franchise rental revenue $97,387k vs $105,781k (-7.9% YoY); Del Taco sold Dec 22, 2025."
+    },
+    {
+      "id": "SRC-16",
+      "publisher": "Internal Revenue Service",
+      "title": "Topic No. 409 — Capital Gains and Losses (2025 LTCG Brackets & 25% Unrecaptured Section 1250 Ceiling)",
+      "url": "https://www.irs.gov/taxtopics/tc409",
+      "retrieval_status": "fetched-2026-11-26",
+      "retrieved": "2026-11-26",
+      "scope": "tax",
+      "note": "Fetched directly. Confirms 0%/15%/20% LTCG thresholds and 25% maximum rate on unrecaptured Section 1250 real property depreciation."
+    },
+    {
+      "id": "SRC-17",
+      "publisher": "Internal Revenue Service",
+      "title": "Topic No. 559 — Net Investment Income Tax (3.8% NIIT & Statutory MAGI Thresholds)",
+      "url": "https://www.irs.gov/taxtopics/tc559",
+      "retrieval_status": "fetched-2026-11-26",
+      "retrieved": "2026-11-26",
+      "scope": "tax",
+      "note": "Fetched directly. Confirms 3.8% NIIT on lesser of NII or MAGI excess above $200k Single / $250k MFJ / $125k MFS."
+    },
+    {
+      "id": "SRC-18",
+      "publisher": "Internal Revenue Service",
+      "title": "Like-Kind Exchanges — Real Estate Tax Tips & Fact Sheet FS-2008-18 (IRC Section 1031)",
+      "url": "https://www.irs.gov/businesses/small-businesses-self-employed/like-kind-exchanges-real-estate-tax-tips",
+      "retrieval_status": "fetched-2026-11-26",
+      "retrieved": "2026-11-26",
+      "scope": "tax",
+      "note": "Fetched directly alongside FS-2008-18. Confirms post-2017 real-property-only qualification and boot recognition."
+    },
+    {
+      "id": "SRC-19",
+      "publisher": "Internal Revenue Service",
+      "title": "Fact Sheet FS-2008-18 — Like-Kind Exchanges Under IRC Section 1031 (45-Day & 180-Day Strict Deadlines)",
+      "url": "https://www.irs.gov/pub/irs-news/fs-08-18.pdf",
+      "retrieval_status": "fetched-2026-11-26",
+      "retrieved": "2026-11-26",
+      "scope": "tax",
+      "note": "Fetched directly. Confirms strict 45-day written identification and 180-day closing deadlines and Qualified Intermediary requirement."
+    },
+    {
+      "id": "SRC-20",
+      "publisher": "Internal Revenue Service",
+      "title": "Publication 946 — How To Depreciate Property (Adjusted Basis & Allowed/Allowable Depreciation)",
+      "url": "https://www.irs.gov/publications/p946",
+      "retrieval_status": "fetched-2026-11-26",
+      "retrieved": "2026-11-26",
+      "scope": "tax",
+      "note": "Fetched directly. Land is non-depreciable; basis is reduced by depreciation allowed or allowable."
+    },
+    {
+      "id": "SRC-21",
+      "publisher": "California Franchise Tax Board",
+      "title": "Capital Gains and Losses (Taxed as Ordinary Income — Updated 01/28/2026)",
+      "url": "https://www.ftb.ca.gov/file/personal/income-types/capital-gains-and-losses.html",
+      "retrieval_status": "fetched-2026-11-26",
+      "retrieved": "2026-11-26",
+      "scope": "tax",
+      "note": "Fetched directly. Confirms California has no preferential lower tax rate for capital gains; all capital gains are taxed as ordinary income."
+    },
+    {
+      "id": "SRC-22",
+      "publisher": "California Franchise Tax Board",
+      "title": "2025 California Tax Rate Schedules (Form 540 Schedules X, Y, Z)",
+      "url": "https://www.ftb.ca.gov/forms/2025/2025-540-tax-rate-schedules.pdf",
+      "retrieval_status": "fetched-2026-11-26",
+      "retrieved": "2026-11-26",
+      "scope": "tax",
+      "note": "Fetched directly. Confirms graduated brackets from 1.00% to 12.30% (top 12.30% bracket begins at $742,953 Single / $1,485,906 MFJ / $1,010,417 HoH)."
+    },
+    {
+      "id": "SRC-23",
+      "publisher": "California Legislative Information",
+      "title": "California Revenue and Taxation Code § 17043 (Additional 1% Mental Health Services Tax Above $1,000,000)",
+      "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=RTC&sectionNum=17043.",
+      "retrieval_status": "fetched-2026-11-26",
+      "retrieved": "2026-11-26",
+      "scope": "tax",
+      "note": "Fetched directly. Confirms additional 1% tax on taxable income in excess of $1,000,000 (bringing top CA personal rate on capital gains to 13.3%)."
+    },
+    {
+      "id": "SRC-24",
+      "publisher": "California Legislative Information",
+      "title": "California Revenue and Taxation Code § 11911 (County Documentary Transfer Tax Authorization — $0.55 per $500)",
+      "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=RTC&sectionNum=11911.",
+      "retrieval_status": "fetched-2026-11-26",
+      "retrieved": "2026-11-26",
+      "scope": "tax",
+      "note": "Fetched directly. Authorizes county transfer tax of $0.55 per $500 (0.11%) of consideration."
+    },
+    {
+      "id": "SRC-25",
+      "publisher": "Los Angeles Housing Department (LAHD)",
+      "title": "United to House LA (Measure ULA) — Special Real Property Transfer Tax on Conveyances Over $5 Million",
+      "url": "https://housing.lacity.gov/ula",
+      "retrieval_status": "fetched-2026-11-26",
+      "retrieved": "2026-11-26",
+      "scope": "tax",
+      "note": "Fetched directly. Confirms City of Los Angeles special transfer tax applies to real property conveyances exceeding $5 million threshold (LAMC § 21.9.2 et seq.)."
+    },
+    {
+      "id": "SRC-26",
+      "publisher": "California State Board of Equalization",
+      "title": "Publication 29 — California Property Tax: An Overview (March 2025)",
+      "url": "https://www.boe.ca.gov/proptaxes/pdf/pub29.pdf",
+      "retrieval_status": "fetched-2026-11-26",
+      "retrieved": "2026-11-26",
+      "scope": "tax",
+      "note": "Fetched directly. Confirms Prop 13 1% base tax limit + voter-approved debt, max 2% annual inflation factor, reassessment on change of ownership, and Dec 10 / Apr 10 installment deadlines."
+    },
+    {
+      "id": "SRC-27",
+      "publisher": "Los Angeles County Assessor",
+      "title": "Proposition 13 & 2026–2027 Decline-in-Value (DIV) Filing Window (July 2, 2026 – November 30, 2026)",
+      "url": "https://assessor.lacounty.gov/proposition-13",
+      "retrieval_status": "fetched-2026-11-26",
+      "retrieved": "2026-11-26",
+      "scope": "tax",
+      "note": "Fetched directly (page updated 11/17/2026). Confirms 2026-2027 DIV application window closes November 30, 2026 (4 days from 2026-11-26) and Misfortune & Calamity relief availability."
+    },
+    {
+      "id": "SRC-28",
+      "publisher": "U.S. Geological Survey (USGS)",
+      "title": "UCERF3 30-Year Earthquake Probabilities for the Los Angeles Region",
+      "url": "https://www.usgs.gov/faqs/what-probability-earthquake-will-occur-los-angeles-area-san-francisco-bay-area",
+      "retrieval_status": "fetched-2026-11-26",
+      "retrieved": "2026-11-26",
+      "scope": "hazard",
+      "note": "Fetched directly. Within next 30 years in LA region: 60% M>=6.7, 46% M>=7.0, 31% M>=7.5."
+    },
+    {
+      "id": "SRC-29",
+      "publisher": "California Geological Survey (CGS)",
+      "title": "California Seismic Hazards Program — Alquist-Priolo Fault, Liquefaction, Landslide Zones & EQ ZApp",
+      "url": "https://www.conservation.ca.gov/cgs/sh/program",
+      "retrieval_status": "fetched-2026-11-26",
+      "retrieved": "2026-11-26",
+      "scope": "hazard",
+      "note": "Fetched directly. Confirms statutory Zones of Required Investigation and mandatory seller hazard disclosure upon sale."
+    },
+    {
+      "id": "SRC-30",
+      "publisher": "CAL FIRE — Office of the State Fire Marshal",
+      "title": "Fire Hazard Severity Zones (2025 LRA Rollout & Nov 9, 2026 – Jan 8, 2027 SRA Public Comment Update)",
+      "url": "https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones",
+      "retrieval_status": "fetched-2026-11-26",
+      "retrieved": "2026-11-26",
+      "scope": "hazard",
+      "note": "Fetched directly. Confirms Moderate/High/Very High classifications, 2025 LRA phases 1-4 release, and active 2026-11-09 to 2027-01-08 SRA map comment window."
+    },
+    {
+      "id": "SRC-31",
+      "publisher": "Federal Emergency Management Agency (FEMA)",
+      "title": "National Flood Hazard Layer (NFHL) & Flood Map Service Center",
+      "url": "https://www.fema.gov/flood-maps/national-flood-hazard-layer",
+      "retrieval_status": "fetched-2026-11-26",
+      "retrieved": "2026-11-26",
+      "scope": "hazard",
+      "note": "Fetched directly. NFHL covers >90% of U.S. population; effective FIRM/LOMC plus preliminary/pending flood maps govern NFIP requirements."
+    },
+    {
+      "id": "SRC-32",
+      "publisher": "California Department of Insurance (CDI)",
+      "title": "Sustainable Insurance Strategy — Statewide Market & FAIR Plan Snapshot (Updated Nov 20, 2026)",
+      "url": "https://www.insurance.ca.gov/01-consumers/180-climate-change/sustainable-insurance-strategy.Cfm",
+      "retrieval_status": "fetched-2026-11-26",
+      "retrieved": "2026-11-26",
+      "scope": "hazard",
+      "note": "Fetched directly. Confirms 8,300,730 admitted homeowner policies, 677,449 FAIR Plan homeowner policies (+2,230 from July 2026), and 662 distressed ZIP codes."
+    },
+    {
+      "id": "SRC-33",
+      "publisher": "California Office of the Attorney General",
+      "title": "California Consumer Privacy Act (CCPA / CPRA) Guidance (Updated August 28, 2026)",
+      "url": "https://oag.ca.gov/privacy/ccpa",
+      "retrieval_status": "fetched-2026-11-26",
+      "retrieved": "2026-11-26",
+      "scope": "privacy",
+      "note": "Fetched directly. Defines personal and sensitive personal information and consumer privacy protections."
+    },
+    {
+      "id": "SRC-34",
+      "publisher": "U.S. Census Bureau",
+      "title": "Request a U.S. Census Data API Key (Required for Automated Tract-Level ACS 5-Year Queries)",
+      "url": "https://api.census.gov/data/key_signup.html",
+      "retrieval_status": "fetched-2026-11-26",
+      "retrieved": "2026-11-26",
+      "scope": "economic",
+      "note": "Fetched directly. Confirms key registration gateway required for private offline Census tract ACS pulls."
+    },
+    {
+      "id": "SRC-35",
+      "publisher": "U.S. Census Bureau",
+      "title": "QuickFacts — Los Angeles City & County, California (Direct Fetch Failed on 2026-11-26 — Manual Review Required)",
+      "url": "https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045224",
+      "retrieval_status": "fetch-failed-manual-review",
+      "retrieved": "2026-11-26",
+      "scope": "manual-review-only",
+      "note": "Direct HTTP fetch failed on 2026-11-26; zero values from QuickFacts are marked verified in portal-02817d04. Flagged for manual verification alongside earlier trees' 2026-11-25 transcriptions."
+    },
+    {
+      "id": "SRC-36",
+      "publisher": "City of Los Angeles Office of Finance",
+      "title": "Documentary Transfer Tax & Measure ULA Rate FAQ (Direct Fetch Failed on 2026-11-26 — Manual Review Required)",
+      "url": "https://finance.lacity.gov/real-property-transfer-tax-and-measure-ula-faq",
+      "retrieval_status": "fetch-failed-manual-review",
+      "retrieved": "2026-11-26",
+      "scope": "manual-review-only",
+      "note": "Direct HTTP fetch failed on 2026-11-26; exact FY2026 CPI-indexed ULA tier thresholds and City base transfer tax rate are therefore left unverified/blank in strict tables and user-configurable in the calculator."
+    },
+    {
+      "id": "SRC-37",
+      "publisher": "GitHub Repository — kanlerxz87-cyber/Jackbox1",
+      "title": "Repository Tree, COORDINATION.md & Validation Scripts (Commit 297d901 on main)",
+      "url": "https://github.com/kanlerxz87-cyber/Jackbox1",
+      "retrieval_status": "fetched-2026-11-26",
+      "retrieved": "2026-11-26",
+      "scope": "repo-audit-only",
+      "note": "Used strictly for repository-review audit rows on repo-audit.html; never used to verify economic, tenant, hazard, or tax figures."
+    }
+  ]
+}

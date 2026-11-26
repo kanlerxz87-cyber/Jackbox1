@@ -1511,4 +1511,24 @@ All validators were re-run after resolution (see record above). Merge method `gh
   - Local HTTP check: `20/20` paths returned HTTP 200.
 - **Privacy & Decision Posture:** Zero street address, APN, owner PII, lease rent, store sales, debt, or tax basis committed. Decision intentionally remains **OPEN (No Winner Declared)** until private Gates G-02 through G-09 clear offline.
 
+---
+
+## Session `S-02817d04` (`arena/02817d04-jackbox1`) — 2026-11-26 Independent Line-by-Line Audit, Fresh Official Verification & Self-Contained Decision Dashboard
+
+**Platform branch note:** Arena fixes this session to branch `arena/02817d04-jackbox1` and forbids creating/switching/pushing other branches. To keep scopes strictly non-overlapping with all concurrent sessions, `S-02817d04` claims an exclusive disjoint scope under `portal-02817d04/**`, `data-02817d04/**`, and `tools-02817d04/**`, plus append-only updates to `COORDINATION.md`.
+
+| ID | Task | Status | Owner | Exclusive file scope |
+|---|---|---|---|---|
+| P02-01 | Claim task board & inspect existing repo line by line across all retained trees | done | `S-02817d04` | `COORDINATION.md` (append-only), `data-02817d04/flagged.json` |
+| P02-02 | Fresh 2026-11-26 live verification from official `.gov` / SEC EDGAR / Federal Reserve / state sources (`SRC-01`..`SRC-34` live-fetched + `SRC-35`/`SRC-36` failed-fetch manual-review flags with 0 claims) | done | `S-02817d04` | `data-02817d04/sources.json`, `data-02817d04/findings.json` |
+| P02-03 | W-01..W-10 full requirements suite: trade-area vs proxies, tract trend evidence, lease abstract & notice calendar framework, parcel hazard screening, short-lease discount quote log, sell-vs-hold + after-tax module, versioned cash-flow model & back-test (`r = -0.937`, reconciling `F-20`), executive summary, printable one-page advisor brief | done | `S-02817d04` | `data-02817d04/*.json`, `portal-02817d04/*.html` |
+| P02-04 | Browser-only private calculator (after-tax sale + §1031 exchange + passive hold NPV + negotiated blend-and-extend + compound W-04 stress + 5×4 sensitivity matrix; zero network/storage calls) | done | `S-02817d04` | `portal-02817d04/calculator.html`, `portal-02817d04/assets/calc.js` |
+| P02-05 | 20 decision-blocking Q&A + missing-info discovery plan, 5-option & 12-risk BAU/black-swan matrix, interactive reviewer suggestion & path-selection board (`PATH-A`..`PATH-D`, `SG-01`..`SG-16`), Flagged for Review page | done | `S-02817d04` | `data-02817d04/questions.json`, `data-02817d04/risks.json`, `data-02817d04/suggestions.json`, `data-02817d04/flagged.json`, `portal-02817d04/*.html` |
+| P02-06 | Automated build, row-by-row source/blank validator, privacy scanner, calculator hand-check suite, and cross-repo validator suite | done | `S-02817d04` | `tools-02817d04/build.mjs`, `tools-02817d04/validate.mjs`, `tools-02817d04/test-calc.mjs` |
+| P02-07 | Pull request to `main`, merge, GitHub Pages live deployment confirmation, and completion record in `COORDINATION.md` | in progress | `S-02817d04` | `COORDINATION.md` (append-only) |
+
+### Change request logged (no edits made to other sessions' files)
+- `2026-11-26 S-02817d04` → owners of root `index.html` / `pages/` navigation (`arena-1a77511b`, `S-43ae253a`, `arena-b072f72e`): once `/portal-02817d04/` is merged to `main`, optionally add a companion link to `/Jackbox1/portal-02817d04/index.html` in the companion-workspaces strip. No root or sibling files are modified by `S-02817d04`.
+
+
 

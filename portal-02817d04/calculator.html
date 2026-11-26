@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>W-02 · Private Browser-Only After-Tax &amp; Renewal PV Calculator — PARCEL-001 Decision Support (S-02817d04)</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html">PARCEL-001 · NNN Lease Sell vs. Renew<span>Verified 2026-11-26 · S-02817d04</span></a>
+      <div class="privacy-pill">Privacy Hard-Gate Active · Zero PII · Placeholder IDs Only</div>
+    </div>
+  </header>
+  <nav class="subnav" aria-label="Dashboard sections">
+    <div class="subnav-inner">
+      <a href="index.html">Overview</a>
+      <a href="trade-area.html">W-01 Trade Area</a>
+      <a href="tenant.html">Tenant SEC Series</a>
+      <a href="lease.html">Lease &amp; Calendar</a>
+      <a href="hazards.html">W-04 Hazards</a>
+      <a href="sell-vs-hold.html">W-02 Sell vs Hold &amp; Tax</a>
+      <a href="model.html">Model &amp; Back-Test</a>
+      <a href="calculator.html" class="active">Private Calculator</a>
+      <a href="gates.html">W-03 Gates</a>
+      <a href="risks.html">Risks &amp; Black Swans</a>
+      <a href="questions.html">Questions &amp; Discovery</a>
+      <a href="suggestions.html">Suggestions &amp; Paths</a>
+      <a href="repo-audit.html">Repo Audit</a>
+      <a href="flagged.html" class="nav-flagged">Flagged (52)</a>
+      <a href="sources.html">Sources (34)</a>
+      <a href="print-summary.html">W-10 Print Brief</a>
+      <a href="privacy.html">Privacy</a>
+    </div>
+  </nav>
+  <main class="container">
+    <div class="hero">
+      <h1>W-02 · Private Browser-Only After-Tax &amp; Renewal PV Calculator</h1>
+      <p>Enter confidential rent, CPA basis, depreciation, debt, and market quotes locally in volatile browser memory — zero network transmission, zero persistence.</p>
+    </div>
+    <div class="banner-neutral">
+      <strong>Decision Neutrality &amp; Verification Rule:</strong> No sell-versus-renew winner is selected on this public site because parcel-specific lease, store-sales, hazard, quote, and CPA tax-basis inputs remain confidential offline (37 blank <code>unverified</code> slots across 17 data rows and 20 discovery questions). Every verified number links directly to an official primary source retrieved on <strong>2026-11-26</strong>; unconfirmed cells are left strictly blank and listed on <a href="flagged.html">Flagged for Review</a>.
+    </div>
+    
+<div class="card" style="margin-bottom:1.25rem; border-left:4px solid #135d35;">
+  <h3>Air-Gapped Browser Execution Guarantee</h3>
+  <p>This calculator executes <strong>100% locally in volatile JavaScript memory</strong> inside your browser tab (<code>assets/calc.js</code>, verified by <code>tools-02817d04/test-calc.mjs</code>). It contains <strong>zero network calls, zero cookies, zero browser storage, and zero free-text fields</strong>. Closing or refreshing the tab erases all entered numbers immediately. Default numbers below are labelled illustrative placeholders — replace them with your CPA basis, lease rent, and written broker quotes.</p>
+</div>
+
+<div class="calc-layout">
+  <div class="calc-panel">
+    <h2>1. Lease, Valuation &amp; CPA Tax Basis Inputs</h2>
+    <div class="field-row"><label for="c_noi">Current Annual Net Rent / NOI ($)</label><input id="c_noi" type="number" step="1000" value="225000"></div>
+    <div class="field-row"><label for="c_asIsCap">As-Is Short-Lease Sale Cap Rate (%)</label><input id="c_asIsCap" type="number" step="0.05" value="6.50"></div>
+    <div class="field-row"><label for="c_sellCost">Brokerage, Legal &amp; Escrow Closing (%)</label><input id="c_sellCost" type="number" step="0.1" value="4.0"></div>
+    <div class="field-row"><label for="c_inLA">Inside City of Los Angeles (Measure ULA)?</label><select id="c_inLA"><option value="yes" selected>Yes — City of LA</option><option value="no">No — Outside City of LA</option></select></div>
+    <div class="field-row"><label for="c_ulaT1">Measure ULA Tier-1 Threshold ($)</label><input id="c_ulaT1" type="number" step="50000" value="5000000"></div>
+    <div class="field-row"><label for="c_basis">Original Cost / Step-Up Basis ($)</label><input id="c_basis" type="number" step="10000" value="1400000"></div>
+    <div class="field-row"><label for="c_improv">Capital Improvements Added ($)</label><input id="c_improv" type="number" step="5000" value="100000"></div>
+    <div class="field-row"><label for="c_dep">Accumulated §1250 Depreciation ($)</label><input id="c_dep" type="number" step="10000" value="450000"></div>
+    <div class="field-row"><label for="c_debt">Current Mortgage Payoff ($)</label><input id="c_debt" type="number" step="10000" value="0"></div>
+    <div class="field-row"><label for="c_filing">Federal Filing Status (2025 IRS Brackets)</label><select id="c_filing"><option value="mfj" selected>Married Filing Jointly</option><option value="single">Single</option><option value="hoh">Head of Household</option><option value="mfs">Married Filing Separately</option></select></div>
+    <div class="field-row"><label for="c_otherInc">Other Annual Taxable Income ($)</label><input id="c_otherInc" type="number" step="10000" value="350000"></div>
+    <div class="field-row"><label for="c_caRate">CA Marginal Tax Rate (up to 13.3%)</label><input id="c_caRate" type="number" step="0.1" value="13.3"></div>
+  </div>
+
+  <div class="calc-panel">
+    <h2>2. Hold, Blend-and-Extend &amp; W-04 Stress Inputs</h2>
+    <div class="field-row"><label for="c_yrs">Years Remaining to Firm Expiry (2030–2035)</label><input id="c_yrs" type="number" min="1" max="15" step="1" value="6"></div>
+    <div class="field-row"><label for="c_bump">In-Term Annual Rent Escalation (%)</label><input id="c_bump" type="number" step="0.25" value="1.50"></div>
+    <div class="field-row"><label for="c_ordTax">Combined Ordinary Tax Rate on Rent (%)</label><input id="c_ordTax" type="number" step="0.5" value="42.0"></div>
+    <div class="field-row"><label for="c_disc">Risk-Adjusted Discount Rate (10Y=4.91% + spread)</label><input id="c_disc" type="number" step="0.25" value="7.50"></div>
+    <div class="field-row"><label for="c_renewProb">Probability Tenant Exercises Option (%)</label><input id="c_renewProb" type="number" min="0" max="100" step="5" value="60"></div>
+    <div class="field-row"><label for="c_optStep">Option Renewal Rent Bump at Expiry (%)</label><input id="c_optStep" type="number" step="0.5" value="8.0"></div>
+    <div class="field-row"><label for="c_renewCap">Renewed 10–15 Yr Exit Cap Rate (%)</label><input id="c_renewCap" type="number" step="0.05" value="5.75"></div>
+    <div class="field-row"><label for="c_darkMo">If Vacated: Dark Months Without Rent</label><input id="c_darkMo" type="number" min="0" max="48" step="1" value="14"></div>
+    <div class="field-row"><label for="c_reletTi">If Vacated: Re-Tenanting TI + Commissions ($)</label><input id="c_reletTi" type="number" step="25000" value="450000"></div>
+    <div class="field-row"><label for="c_landFloor">Verified ZIMAS Land Value Floor ($)</label><input id="c_landFloor" type="number" step="50000" value="2200000"></div>
+    <div class="field-row"><label for="c_blendCap">Blend-and-Extend Immediate Cap Rate (%)</label><input id="c_blendCap" type="number" step="0.05" value="5.50"></div>
+    <div class="field-row"><label for="c_blendTi">Blend-and-Extend TI Concession ($)</label><input id="c_blendTi" type="number" step="10000" value="100000"></div>
+    <div class="field-row"><label for="c_stMo">W-04 Stress: Hazard Rent-Loss Months</label><input id="c_stMo" type="number" min="0" max="36" step="1" value="0"></div>
+    <div class="field-row"><label for="c_stRep">W-04 Stress: Uninsured Seismic/Fire Repair ($)</label><input id="c_stRep" type="number" step="25000" value="0"></div>
+    <div class="field-row"><label for="c_stBps">W-04 Stress: Exit Cap-Rate Widening (bps)</label><input id="c_stBps" type="number" step="25" value="0"></div>
+    <div class="btn-row">
+      <button type="button" class="btn" id="btn_recalc">Recalculate Now</button>
+      <button type="button" class="btn btn-secondary" id="btn_stress">Apply M7.0 / Fire Compound Stress</button>
+      <button type="button" class="btn btn-secondary" id="btn_reset">Reset Illustrative Defaults</button>
+    </div>
+  </div>
+</div>
+
+<section>
+  <h2>3. Comparable After-Tax Decision Outputs (Volatile Local Computation)</h2>
+  <div class="kpi-grid">
+    <div class="kpi-card"><div class="kpi-label">1. Sell Now · After-Tax Net Cash</div><div class="kpi-val" id="out_afterTaxSale">$0</div><div class="kpi-sub" id="out_grossSale">Gross: $0</div></div>
+    <div class="kpi-card"><div class="kpi-label">2. Sell via IRC § 1031 Exchange</div><div class="kpi-val" id="out_1031">$0</div><div class="kpi-sub" id="out_1031Adv">Tax deferred vs cash sale</div></div>
+    <div class="kpi-card"><div class="kpi-label">3. Passive Hold · After-Tax NPV</div><div class="kpi-val" id="out_holdNpv">$0</div><div class="kpi-sub" id="out_holdDiff">vs. Taxable Sale Now</div></div>
+    <div class="kpi-card"><div class="kpi-label">4. Blend &amp; Extend · Sale / 1031 / Hold</div><div class="kpi-val" id="out_blendNet">$0</div><div class="kpi-sub" id="out_blendSub">1031 / Hold NPV</div></div>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Tax &amp; Cash-Flow Line Item</th>
+          <th>Computed Amount</th>
+          <th>Statutory Rule Applied</th>
+          <th>Official Source</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Gross Implied Sale Price</td><td id="t_gross">—</td><td>Current NOI ÷ As-Is Cap Rate</td><td><a href="https://fred.stlouisfed.org/data/DGS10" target="_blank" rel="noopener noreferrer">SRC-09 · Board of Governors of the Federal Reserve System (H.15) via FRED</a></td></tr>
+        <tr><td>Selling Friction + County Documentary Tax ($0.55/$500)</td><td id="t_friction">—</td><td>Brokerage/closing + CA RTC § 11911 (0.11%)</td><td><a href="https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=RTC&amp;sectionNum=11911." target="_blank" rel="noopener noreferrer">SRC-24 · California Legislative Information</a></td></tr>
+        <tr><td>City of LA Measure ULA Special Transfer Tax</td><td id="t_ula">—</td><td>Applies to full gross price above threshold in LA City</td><td><a href="https://housing.lacity.gov/ula" target="_blank" rel="noopener noreferrer">SRC-25 · Los Angeles Housing Department (LAHD)</a></td></tr>
+        <tr><td>Adjusted Tax Basis &amp; Total Realized Gain</td><td id="t_gain">—</td><td>Cost + Improvements − Allowed/Allowable Depreciation</td><td><a href="https://www.irs.gov/publications/p946" target="_blank" rel="noopener noreferrer">SRC-20 · Internal Revenue Service</a></td></tr>
+        <tr><td>Federal Unrecaptured § 1250 Tax (max 25%) + Federal LTCG (0/15/20%)</td><td id="t_fed">—</td><td>IRS Topic 409 statutory tiers</td><td><a href="https://www.irs.gov/taxtopics/tc409" target="_blank" rel="noopener noreferrer">SRC-16 · Internal Revenue Service</a></td></tr>
+        <tr><td>Federal Net Investment Income Tax (3.8% NIIT)</td><td id="t_niit">—</td><td>IRC § 1411 above $200k Single / $250k MFJ</td><td><a href="https://www.irs.gov/taxtopics/tc559" target="_blank" rel="noopener noreferrer">SRC-17 · Internal Revenue Service</a></td></tr>
+        <tr><td>California Personal Income Tax (Ordinary + 1% &gt;$1M)</td><td id="t_ca">—</td><td>FTB 2025 schedules + CA RTC § 17043 (up to 13.3%)</td><td><a href="https://www.ftb.ca.gov/file/personal/income-types/capital-gains-and-losses.html" target="_blank" rel="noopener noreferrer">SRC-21 · California Franchise Tax Board</a></td></tr>
+        <tr><td><strong>Single Comparable Number: Net After-Tax Cash From Sale</strong></td><td id="t_net"><strong>—</strong></td><td>Amount Realized − Debt Payoff − Total Income Taxes</td><td><a href="https://www.irs.gov/taxtopics/tc409" target="_blank" rel="noopener noreferrer">SRC-16 · Internal Revenue Service</a></td></tr>
+        <tr><td>IRC § 1031 Tax-Deferred Replacement Equity</td><td id="t_1031">—</td><td>45-day ID / 180-day close via Qualified Intermediary</td><td><a href="https://www.irs.gov/pub/irs-news/fs-08-18.pdf" target="_blank" rel="noopener noreferrer">SRC-19 · Internal Revenue Service</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <h2>4. Two-Way Sensitivity Matrix — Passive Hold NPV Minus Taxable Sale Cash ($)</h2>
+  <p>Positive values mean Passive Hold After-Tax NPV exceeds Immediate Taxable Sale Net Cash under your entered assumptions; negative values mean Selling Now beats Passive Hold even <em>after</em> paying full disposition taxes (before considering § 1031 deferral).</p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>As-Is Sale Cap Rate</th>
+          <th>After-Tax Cash Sale</th>
+          <th>25% Renew Prob.</th>
+          <th>50% Renew Prob.</th>
+          <th>75% Renew Prob.</th>
+          <th>100% Renew Prob.</th>
+          <th>Official Anchor</th>
+        </tr>
+      </thead>
+      <tbody id="sens_body">
+        <tr><td>5.25%</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td><a href="https://fred.stlouisfed.org/data/DGS10" target="_blank" rel="noopener noreferrer">SRC-09 · Board of Governors of the Federal Reserve System (H.15) via FRED</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+  </main>
+  <footer class="footer">
+    <div class="footer-inner">
+      <div><strong>Session S-02817d04 Independent Verification Edition</strong> · As of 2026-11-26 · Strict Non-PII Public Static Build · 34 live-fetched primary official sources · 41 verified rows · 37 blank unverified slots.</div>
+      <div class="companion-links no-print">
+        <span>Companion repository views:</span>
+        <a href="../index.html">Repository Root Overview</a>
+        <a href="../pages/index.html">Primary /pages/ Suite</a>
+        <a href="../hub/index.html">Hub /hub/</a>
+        <a href="../audit/index.html">Audit /audit/</a>
+        <a href="../web/index.html">Web /web/</a>
+        <a href="../docs/index.html">Docs /docs/</a>
+        <a href="../workspace/index.html">Workspace /workspace/</a>
+        <a href="../ledger-1ebd66da/index.html">Ledger /ledger-1ebd66da/</a>
+        <a href="../audit-78005353/site/index.html">Audit-78005353</a>
+        <a href="../desk/index.html">Archive /desk/</a>
+        <a href="../PRIVACY.md">PRIVACY.md</a>
+        <a href="../COORDINATION.md">COORDINATION.md</a>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/calc.js"></script>
+  <script>
+
+(function () {
+  function fmt(n) {
+    var sign = n < 0 ? '-' : '';
+    return sign + '$' + Math.round(Math.abs(n)).toLocaleString('en-US');
+  }
+  function val(id) { return document.getElementById(id).value; }
+  function gather() {
+    return {
+      currentNOI: Number(val('c_noi')),
+      asIsCapRatePct: Number(val('c_asIsCap')),
+      sellingCostPct: Number(val('c_sellCost')),
+      inLACity: val('c_inLA') === 'yes',
+      ulaThreshold1: Number(val('c_ulaT1')),
+      originalBasis: Number(val('c_basis')),
+      capImprovements: Number(val('c_improv')),
+      accumDepreciation: Number(val('c_dep')),
+      debtPayoff: Number(val('c_debt')),
+      filingStatus: val('c_filing'),
+      otherTaxableIncome: Number(val('c_otherInc')),
+      caMarginalRatePct: Number(val('c_caRate')),
+      yearsToExpiry: Number(val('c_yrs')),
+      inTermAnnualBumpPct: Number(val('c_bump')),
+      ordinaryIncomeTaxPct: Number(val('c_ordTax')),
+      discountRatePct: Number(val('c_disc')),
+      renewalProbPct: Number(val('c_renewProb')),
+      optionRentStepPct: Number(val('c_optStep')),
+      renewedExitCapPct: Number(val('c_renewCap')),
+      darkMonthsIfVacate: Number(val('c_darkMo')),
+      retenantingCapex: Number(val('c_reletTi')),
+      landValueFloor: Number(val('c_landFloor')),
+      blendExtendedCapPct: Number(val('c_blendCap')),
+      blendTiConcession: Number(val('c_blendTi')),
+      stressRentLossMonths: Number(val('c_stMo')),
+      stressUninsuredRepair: Number(val('c_stRep')),
+      stressExitCapWideningBps: Number(val('c_stBps'))
+    };
+  }
+  function render() {
+    var inp = gather();
+    var sale = window.JackboxCalc028.computeAfterTaxSale(inp);
+    var hold = window.JackboxCalc028.computeHoldAndRenewalPV(inp);
+    var grid = window.JackboxCalc028.buildSensitivityGrid(inp);
+
+    document.getElementById('out_afterTaxSale').textContent = fmt(sale.afterTaxSaleProceeds);
+    document.getElementById('out_grossSale').textContent = 'Gross: ' + fmt(sale.grossSalePrice) + ' · Eff. income tax: ' + sale.effectiveTaxPctOfGain.toFixed(1) + '% of gain';
+    document.getElementById('out_1031').textContent = fmt(sale.exchange1031Equity);
+    document.getElementById('out_1031Adv').textContent = '+' + fmt(sale.taxDeferralAdvantage1031) + ' preserved vs taxable sale';
+    document.getElementById('out_holdNpv').textContent = fmt(hold.passiveHoldAfterTaxNPV);
+    var diff = hold.passiveHoldAfterTaxNPV - sale.afterTaxSaleProceeds;
+    document.getElementById('out_holdDiff').textContent = (diff >= 0 ? '+' : '') + fmt(diff) + ' vs Taxable Sale Now';
+    document.getElementById('out_blendNet').textContent = fmt(hold.blendImmediateAfterTaxNet);
+    document.getElementById('out_blendSub').textContent = '1031: ' + fmt(hold.blendImmediate1031Equity) + ' · 10yr Hold NPV: ' + fmt(hold.blendHoldAfterTaxNPV);
+
+    document.getElementById('t_gross').textContent = fmt(sale.grossSalePrice);
+    document.getElementById('t_friction').textContent = fmt(sale.sellingCosts + sale.countyTransferTax) + ' (County: ' + fmt(sale.countyTransferTax) + ')';
+    document.getElementById('t_ula').textContent = fmt(sale.ulaTransferTax) + ' (' + sale.ulaTier + ')';
+    document.getElementById('t_gain').textContent = 'Basis ' + fmt(sale.adjustedBasis) + ' → Gain ' + fmt(sale.realizedGain);
+    document.getElementById('t_fed').textContent = '§1250: ' + fmt(sale.sec1250Tax) + ' + LTCG: ' + fmt(sale.fedLtcgTax);
+    document.getElementById('t_niit').textContent = fmt(sale.niitTax);
+    document.getElementById('t_ca').textContent = fmt(sale.caTax);
+    document.getElementById('t_net').innerHTML = '<strong>' + fmt(sale.afterTaxSaleProceeds) + '</strong>';
+    document.getElementById('t_1031').textContent = fmt(sale.exchange1031Equity);
+
+    var tbody = document.getElementById('sens_body');
+    while (tbody.firstChild) tbody.removeChild(tbody.firstChild);
+    for (var i = 0; i < grid.rows.length; i++) {
+      var r = grid.rows[i];
+      var trEl = document.createElement('tr');
+      var tdCap = document.createElement('td');
+      var st = document.createElement('strong');
+      st.textContent = r.asIsCapRatePct.toFixed(2) + '%';
+      tdCap.appendChild(st);
+      trEl.appendChild(tdCap);
+      var tdSale = document.createElement('td');
+      tdSale.textContent = fmt(r.afterTaxSaleProceeds);
+      trEl.appendChild(tdSale);
+      for (var j = 0; j < r.cells.length; j++) {
+        var d = r.cells[j].holdMinusSaleAfterTax;
+        var tdCell = document.createElement('td');
+        tdCell.style.color = d >= 0 ? '#135d35' : '#8e1d27';
+        tdCell.style.fontWeight = '600';
+        tdCell.textContent = (d >= 0 ? '+' : '') + fmt(d);
+        trEl.appendChild(tdCell);
+      }
+      var tdSrc = document.createElement('td');
+      var aEl = document.createElement('a');
+      aEl.setAttribute('href', 'https://fred.stlouisfed.org/series/DGS10');
+      aEl.setAttribute('target', '_blank');
+      aEl.setAttribute('rel', 'noopener noreferrer');
+      aEl.textContent = 'SRC-09 · FRED';
+      tdSrc.appendChild(aEl);
+      trEl.appendChild(tdSrc);
+      tbody.appendChild(trEl);
+    }
+  }
+
+  var inputs = document.querySelectorAll('input, select');
+  for (var k = 0; k < inputs.length; k++) {
+    inputs[k].addEventListener('input', render);
+    inputs[k].addEventListener('change', render);
+  }
+  document.getElementById('btn_recalc').addEventListener('click', render);
+  document.getElementById('btn_stress').addEventListener('click', function () {
+    document.getElementById('c_stMo').value = '18';
+    document.getElementById('c_stRep').value = '450000';
+    document.getElementById('c_stBps').value = '150';
+    render();
+  });
+  document.getElementById('btn_reset').addEventListener('click', function () {
+    window.location.reload();
+  });
+  render();
+})();
+
+</script>
+</body>
+</html>

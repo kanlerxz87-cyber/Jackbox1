@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Line-by-Line Repository Audit &amp; Cross-Tree Reconciliation — PARCEL-001 Decision Support (S-02817d04)</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html">PARCEL-001 · NNN Lease Sell vs. Renew<span>Verified 2026-11-26 · S-02817d04</span></a>
+      <div class="privacy-pill">Privacy Hard-Gate Active · Zero PII · Placeholder IDs Only</div>
+    </div>
+  </header>
+  <nav class="subnav" aria-label="Dashboard sections">
+    <div class="subnav-inner">
+      <a href="index.html">Overview</a>
+      <a href="trade-area.html">W-01 Trade Area</a>
+      <a href="tenant.html">Tenant SEC Series</a>
+      <a href="lease.html">Lease &amp; Calendar</a>
+      <a href="hazards.html">W-04 Hazards</a>
+      <a href="sell-vs-hold.html">W-02 Sell vs Hold &amp; Tax</a>
+      <a href="model.html">Model &amp; Back-Test</a>
+      <a href="calculator.html">Private Calculator</a>
+      <a href="gates.html">W-03 Gates</a>
+      <a href="risks.html">Risks &amp; Black Swans</a>
+      <a href="questions.html">Questions &amp; Discovery</a>
+      <a href="suggestions.html">Suggestions &amp; Paths</a>
+      <a href="repo-audit.html" class="active">Repo Audit</a>
+      <a href="flagged.html" class="nav-flagged">Flagged (52)</a>
+      <a href="sources.html">Sources (34)</a>
+      <a href="print-summary.html">W-10 Print Brief</a>
+      <a href="privacy.html">Privacy</a>
+    </div>
+  </nav>
+  <main class="container">
+    <div class="hero">
+      <h1>Line-by-Line Repository Audit &amp; Cross-Tree Reconciliation</h1>
+      <p>Independent audit of all 8 retained trees, validator outputs, LA City population vintage differences, Flag F-20 back-test reconciliation, and CA DIR $20/hr fast-food wage confirmation.</p>
+    </div>
+    <div class="banner-neutral">
+      <strong>Decision Neutrality &amp; Verification Rule:</strong> No sell-versus-renew winner is selected on this public site because parcel-specific lease, store-sales, hazard, quote, and CPA tax-basis inputs remain confidential offline (37 blank <code>unverified</code> slots across 17 data rows and 20 discovery questions). Every verified number links directly to an official primary source retrieved on <strong>2026-11-26</strong>; unconfirmed cells are left strictly blank and listed on <a href="flagged.html">Flagged for Review</a>.
+    </div>
+    
+<section>
+  <h2>Line-by-Line Audit of All Repository Trees &amp; Validators (As of 2026-11-26)</h2>
+  <p>Per coordination rules, Session <code>S-02817d04</code> inspected every existing tree in <code>kanlerxz87-cyber/Jackbox1</code> without modifying any sibling session's claimed files, ran all existing automated validators, and documented cross-tree vintage differences and resolutions below.</p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Audit ID</th>
+          <th>Repository Tree</th>
+          <th>Owner Session(s)</th>
+          <th>Automated Validator Result</th>
+          <th>Line-by-Line Review Finding &amp; Cross-Tree Reconciliation</th>
+          <th>Status</th>
+          <th>Official Source</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>RA-01</code></td>
+          <td><strong>Root /pages/ + /data/ + /scripts/</strong></td>
+          <td><code>ses-41ea221b + arena-b072f72e</code></td>
+          <td>node scripts/validate.mjs → PASS (26 sources, 225 rows: 83 verified-like, 50 blank, 1,556 links)</td>
+          <td>Clean privacy gate and dynamic counts; PR #25 fixed IR-02 ('five-year window 2030-2035', formerly misstated as eight-year) and added multi-period SEC tenant series. Flagged: QuickFacts S-001 could not be re-fetched directly on 2026-11-26 (HTTP error), and reference-point hazard coordinates are downtown proxies, not parcel values.</td>
+          <td><span class="badge badge-verified">verified</span></td>
+          <td><a href="https://github.com/kanlerxz87-cyber/Jackbox1" target="_blank" rel="noopener noreferrer">SRC-37 · GitHub Repository — kanlerxz87-cyber/Jackbox1</a></td>
+        </tr>
+        <tr>
+          <td><code>RA-02</code></td>
+          <td><strong>/docs/ dashboard + .github/workflows/pages.yml</strong></td>
+          <td><code>arena-f5a16939 + ee4cc19f + arena-d325275f</code></td>
+          <td>Included in repo-wide internal link &amp; privacy check</td>
+          <td>Cites Census Vintage 2024 LA City population (3,878,704) and Sept 2025 EDD unemployment (5.9% NSA) — official for those earlier vintages, but non-comparable to DOF Jan 1, 2026 (3,806,201) and BLS Oct 2026 MD (4.6%p). Note: .github/workflows/pages.yml was updated on 2026-11-26 (arena-d325275f) from path: docs to path: . while remaining disabled_manually under legacy main:/ Pages.</td>
+          <td><span class="badge badge-verified">verified</span></td>
+          <td><a href="https://github.com/kanlerxz87-cyber/Jackbox1" target="_blank" rel="noopener noreferrer">SRC-37 · GitHub Repository — kanlerxz87-cyber/Jackbox1</a></td>
+        </tr>
+        <tr>
+          <td><code>RA-03</code></td>
+          <td><strong>/workspace/ + data/registry.yaml + tools/check.py</strong></td>
+          <td><code>arena/2a61b633</code></td>
+          <td>python3 tools/check.py → PASS (18 pages, 72 rows: 57 verified / 5 flagged / 10 blank)</td>
+          <td>Strong registry architecture. Note: uses Census Reporter (third-party mirror) for ACS tract demonstration rows ('DEMO-TRACTS-A') and retains a demo ZIP string inside an external API citation URL (documented exemption in COORDINATION.md).</td>
+          <td><span class="badge badge-verified">verified</span></td>
+          <td><a href="https://github.com/kanlerxz87-cyber/Jackbox1" target="_blank" rel="noopener noreferrer">SRC-37 · GitHub Repository — kanlerxz87-cyber/Jackbox1</a></td>
+        </tr>
+        <tr>
+          <td><code>RA-04</code></td>
+          <td><strong>/audit/ + /verification/check.py</strong></td>
+          <td><code>S-62b1c0c2</code></td>
+          <td>python3 verification/check.py → PASS 16/16 (432 table rows, 22 pages, 0 PII)</td>
+          <td>Rigorous row-level source &amp; blank-cell enforcement. Logged F-06 (QuickFacts direct fetch blocked) and F-20 (cross-tree model back-test discrepancy), which portal-02817d04 formally reconciles on model.html.</td>
+          <td><span class="badge badge-verified">verified</span></td>
+          <td><a href="https://github.com/kanlerxz87-cyber/Jackbox1" target="_blank" rel="noopener noreferrer">SRC-37 · GitHub Repository — kanlerxz87-cyber/Jackbox1</a></td>
+        </tr>
+        <tr>
+          <td><code>RA-05</code></td>
+          <td><strong>/audit-78005353/site/ + data/audit-78005353/</strong></td>
+          <td><code>arena-78005353</code></td>
+          <td>Included in repo link &amp; HTML integrity audit (11 pages, 47-row register)</td>
+          <td>Logged IR-A3 stating the $20.00/hr CA fast-food minimum wage could not be confirmed on an official page during its pass. Resolved today (2026-11-26): confirmed verbatim on CA DIR's official Fast Food Minimum Wage FAQ (AB 1228, $20.00/hr effective Apr 1, 2024, SRC-08).</td>
+          <td><span class="badge badge-verified">verified</span></td>
+          <td><a href="https://www.dir.ca.gov/dlse/Fast-Food-Minimum-Wage-FAQ.htm" target="_blank" rel="noopener noreferrer">SRC-08 · California Department of Industrial Relations — Labor Commissioner's Office</a></td>
+        </tr>
+        <tr>
+          <td><code>RA-06</code></td>
+          <td><strong>/ledger-1ebd66da/ + scripts/verify.mjs</strong></td>
+          <td><code>arena/1ebd66da</code></td>
+          <td>node ledger-1ebd66da/scripts/verify.mjs → PASS (24 sources, 55 rows: 44 verified / 11 blank, 15 pages)</td>
+          <td>Includes independent 22-assertion calculator test suite and subdirectory relative-link verification.</td>
+          <td><span class="badge badge-verified">verified</span></td>
+          <td><a href="https://github.com/kanlerxz87-cyber/Jackbox1" target="_blank" rel="noopener noreferrer">SRC-37 · GitHub Repository — kanlerxz87-cyber/Jackbox1</a></td>
+        </tr>
+        <tr>
+          <td><code>RA-07</code></td>
+          <td><strong>/web/ + web/tools/verify.py &amp; check_links.py</strong></td>
+          <td><code>S-1552e5d5</code></td>
+          <td>python3 web/tools/verify.py &amp; check_links.py → PASS (281 rows, 39 sources, 17 HTML files, 384 links)</td>
+          <td>Clean source-linked verification and strict privacy checks; documents DOF E-1, BLS, SCAG, CDE, Caltrans, SEC, IRS, FTB, BOE, OSFM, FEMA, CGS, USGS, and CDI.</td>
+          <td><span class="badge badge-verified">verified</span></td>
+          <td><a href="https://github.com/kanlerxz87-cyber/Jackbox1" target="_blank" rel="noopener noreferrer">SRC-37 · GitHub Repository — kanlerxz87-cyber/Jackbox1</a></td>
+        </tr>
+        <tr>
+          <td><code>RA-08</code></td>
+          <td><strong>/desk/ (preserved PR #1 root tree)</strong></td>
+          <td><code>arena-8c9d9d97</code></td>
+          <td>Preserved archive (8 pages, bannered)</td>
+          <td>Historical initial build retained per non-deletion rule; contains generic 'Official reference' links on some process rows (previously flagged as F-11) and carries a banner directing readers to newer verified workspaces.</td>
+          <td><span class="badge badge-verified">verified</span></td>
+          <td><a href="https://github.com/kanlerxz87-cyber/Jackbox1" target="_blank" rel="noopener noreferrer">SRC-37 · GitHub Repository — kanlerxz87-cyber/Jackbox1</a></td>
+        </tr>
+        <tr>
+          <td><code>RA-09</code></td>
+          <td><strong>/hub/ + hub/scripts/verify.py</strong></td>
+          <td><code>S-a293043a</code></td>
+          <td>python3 hub/scripts/verify.py → PASS (15 pages, 34 sources, 243 table rows, 382 relative links)</td>
+          <td>Merged on 2026-11-26; includes 15 static pages, calculator, and full 207-quarter FHFA HPI series analysis alongside 34 official sources.</td>
+          <td><span class="badge badge-verified">verified</span></td>
+          <td><a href="https://github.com/kanlerxz87-cyber/Jackbox1" target="_blank" rel="noopener noreferrer">SRC-37 · GitHub Repository — kanlerxz87-cyber/Jackbox1</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+  </main>
+  <footer class="footer">
+    <div class="footer-inner">
+      <div><strong>Session S-02817d04 Independent Verification Edition</strong> · As of 2026-11-26 · Strict Non-PII Public Static Build · 34 live-fetched primary official sources · 41 verified rows · 37 blank unverified slots.</div>
+      <div class="companion-links no-print">
+        <span>Companion repository views:</span>
+        <a href="../index.html">Repository Root Overview</a>
+        <a href="../pages/index.html">Primary /pages/ Suite</a>
+        <a href="../hub/index.html">Hub /hub/</a>
+        <a href="../audit/index.html">Audit /audit/</a>
+        <a href="../web/index.html">Web /web/</a>
+        <a href="../docs/index.html">Docs /docs/</a>
+        <a href="../workspace/index.html">Workspace /workspace/</a>
+        <a href="../ledger-1ebd66da/index.html">Ledger /ledger-1ebd66da/</a>
+        <a href="../audit-78005353/site/index.html">Audit-78005353</a>
+        <a href="../desk/index.html">Archive /desk/</a>
+        <a href="../PRIVACY.md">PRIVACY.md</a>
+        <a href="../COORDINATION.md">COORDINATION.md</a>
+      </div>
+    </div>
+  </footer>
+  
+  
+</body>
+</html>

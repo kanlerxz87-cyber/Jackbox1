@@ -1,0 +1,671 @@
+{
+  "meta": {
+    "dataset": "findings-02817d04",
+    "session_id": "S-02817d04",
+    "as_of": "2026-11-26",
+    "rule": "Every row has a valid source_id in data-02817d04/sources.json. Rows with status='verified' contain values read directly from official primary sources on 2026-11-26. Rows with status='unverified' MUST have value=null and are rendered blank and listed on Flagged for Review. Rows with status='assumption' are explicitly labelled model structure parameters, never presented as empirical measurements."
+  },
+  "trade_area": [
+    {
+      "id": "TA-01",
+      "category": "Demographics (Proxy)",
+      "metric": "City of Los Angeles total population (provisional)",
+      "geography": "City of Los Angeles",
+      "period": "January 1, 2026",
+      "value": "3,806,201",
+      "unit": "persons",
+      "status": "verified",
+      "source_id": "SRC-02",
+      "note": "Down 0.9% from revised Jan 1, 2025 estimate (3,839,536). Proxy only: a 469-sq-mi city average hides 1-mile QSR ring trends."
+    },
+    {
+      "id": "TA-02",
+      "category": "Demographics (Proxy)",
+      "metric": "City of Los Angeles revised prior-year population",
+      "geography": "City of Los Angeles",
+      "period": "January 1, 2025",
+      "value": "3,839,536",
+      "unit": "persons",
+      "status": "verified",
+      "source_id": "SRC-02",
+      "note": "CA DOF E-1 benchmarked to 2020 Census; DOF warns against mixing Jan 1 DOF figures with July 1 U.S. Census vintages."
+    },
+    {
+      "id": "TA-03",
+      "category": "Demographics (Proxy)",
+      "metric": "Los Angeles County total population (provisional)",
+      "geography": "Los Angeles County",
+      "period": "January 1, 2026",
+      "value": "9,837,286",
+      "unit": "persons",
+      "status": "verified",
+      "source_id": "SRC-02",
+      "note": "Down 0.6% (-63,628 persons) from Jan 1, 2025 (9,900,914), reflecting Eaton/Palisades wildfire displacement, domestic out-migration, and federal immigration policy shifts."
+    },
+    {
+      "id": "TA-04",
+      "category": "Housing Supply",
+      "metric": "Net housing units added in 2025 (rank #1 in California)",
+      "geography": "Los Angeles (jurisdiction highlight)",
+      "period": "Calendar year 2025",
+      "value": "11,260",
+      "unit": "housing units",
+      "status": "verified",
+      "source_id": "SRC-02",
+      "note": "Includes 7,061 multifamily units (62.7% of net housing additions), supporting urban infill density around commercial corridors."
+    },
+    {
+      "id": "TA-05",
+      "category": "Wildfire Housing Shock",
+      "metric": "Housing units lost to Eaton and Palisades wildfires",
+      "geography": "Los Angeles County / California",
+      "period": "Calendar year 2025",
+      "value": "11,160",
+      "unit": "housing units lost",
+      "status": "verified",
+      "source_id": "SRC-02",
+      "note": "Out of 11,406 fire-destroyed housing units statewide in 2025 — empirical proof that LA tail-risk disasters alter local demographics and construction costs."
+    },
+    {
+      "id": "TA-06",
+      "category": "Labor Market",
+      "metric": "Civilian labor force",
+      "geography": "Los Angeles-Long Beach-Glendale, CA MD",
+      "period": "October 2026 (preliminary)",
+      "value": "5,042.6",
+      "unit": "thousands of persons (NSA)",
+      "status": "verified",
+      "source_id": "SRC-01",
+      "note": "Up from 5,017.0k in May 2026 and 5,030.8k in Sept 2026; BLS marks Oct 2026 preliminary (p)."
+    },
+    {
+      "id": "TA-07",
+      "category": "Labor Market",
+      "metric": "Unemployment rate (6-month trajectory: 5.2% → 5.3% → 5.2% → 4.9% → 4.5% → 4.6%)",
+      "geography": "Los Angeles-Long Beach-Glendale, CA MD",
+      "period": "October 2026 (preliminary)",
+      "value": "4.6",
+      "unit": "% (NSA)",
+      "status": "verified",
+      "source_id": "SRC-01",
+      "note": "Total employment 4,811.8k; unemployed 230.8k. Metro average masks neighborhood tract variation."
+    },
+    {
+      "id": "TA-08",
+      "category": "Job Growth",
+      "metric": "Total nonfarm wage and salary employment",
+      "geography": "Los Angeles-Long Beach-Glendale, CA MD",
+      "period": "October 2026 (preliminary)",
+      "value": "4,662.8",
+      "unit": "thousands of jobs (+0.9% YoY)",
+      "status": "verified",
+      "source_id": "SRC-01",
+      "note": "Modest positive job growth (+0.9% 12-month change); Education & Health (+3.3% YoY to 1,057.9k) leads, while Manufacturing (-1.5%), Information (-1.5%), and Finance (-1.9%) contracted."
+    },
+    {
+      "id": "TA-09",
+      "category": "QSR Demand Sector",
+      "metric": "Leisure and hospitality employment",
+      "geography": "Los Angeles-Long Beach-Glendale, CA MD",
+      "period": "October 2026 (preliminary)",
+      "value": "548.0",
+      "unit": "thousands of jobs (+2.0% YoY)",
+      "status": "verified",
+      "source_id": "SRC-01",
+      "note": "Outpacing overall metro payroll growth (+2.0% vs +0.9% YoY), showing resilient dining/hospitality employment despite QSR traffic headwinds."
+    },
+    {
+      "id": "TA-10",
+      "category": "Inflation (CPI)",
+      "metric": "CPI-U All Items index (Sept YoY +3.7%; Oct index 360.965)",
+      "geography": "Los Angeles-Long Beach-Anaheim, CA",
+      "period": "Sept–Oct 2026",
+      "value": "360.965",
+      "unit": "index (1982-84=100, NSA)",
+      "status": "verified",
+      "source_id": "SRC-01",
+      "note": "Sept 2026 12-month CPI-U change was +3.7% (CPI-W +4.1%). Oct 2026 12-month % change is officially blank due to Oct 2025 appropriations lapse."
+    },
+    {
+      "id": "TA-11",
+      "category": "Wage Floor",
+      "metric": "California statutory fast-food minimum wage (AB 1228, chains >=60 units)",
+      "geography": "State of California",
+      "period": "Effective April 1, 2024 (current)",
+      "value": "20.00",
+      "unit": "USD / hour",
+      "status": "verified",
+      "source_id": "SRC-08",
+      "note": "Applies directly to Jack in the Box franchisees (Labor Code §§ 1474-1476), vs $16.90/hr general CA minimum wage effective Jan 1, 2026 (SRC-07). Key driver of store margin compression."
+    },
+    {
+      "id": "TA-12",
+      "category": "School Systems",
+      "metric": "Los Angeles Unified School District (LAUSD) enrollment & English Learners",
+      "geography": "LAUSD (CDS 19-64733-0000000)",
+      "period": "SY 2025-26",
+      "value": "497,105",
+      "unit": "students (81,328 EL = 16.4%)",
+      "status": "verified",
+      "source_id": "SRC-04",
+      "note": "Districtwide figure only; attendance-zone school enrollment trend and proximity to PARCEL-001 require private address lookup."
+    },
+    {
+      "id": "TA-13",
+      "category": "Long-Range Projection",
+      "metric": "SCAG Connect SoCal regional employment growth forecast (2022–2050)",
+      "geography": "SCAG 6-County Southern California Region",
+      "period": "2022–2050 projection",
+      "value": "+15.0%",
+      "unit": "8,937k → 10,276k jobs (+0.50%/yr)",
+      "status": "verified",
+      "source_id": "SRC-03",
+      "note": "Accommodation & Food Services projected +12.8% (832k → 938k jobs); Hospitality & Food Services has lowest remote-work rate (0.59 days/wk), preserving physical commuter/workplace food trips."
+    },
+    {
+      "id": "TA-14",
+      "category": "Real Estate Price Cycle",
+      "metric": "FHFA All-Transactions House Price Index (off -0.82% from 2026 Q1 peak 558.32)",
+      "geography": "Los Angeles-Long Beach-Anaheim MSAD",
+      "period": "2026 Q3",
+      "value": "553.76",
+      "unit": "index (1995 Q1=100; +0.46% YoY)",
+      "status": "verified",
+      "source_id": "SRC-10",
+      "note": "Trailing 5-yr CAGR slowed to 4.57% (vs 5.83% 10-yr CAGR). Residential index is macro context only — does not price commercial QSR NNN pads."
+    },
+    {
+      "id": "TA-15",
+      "category": "Demographics (City Proxy)",
+      "metric": "U.S. Census QuickFacts Los Angeles City median household income & poverty rate",
+      "geography": "City of Los Angeles",
+      "period": "2020-2024 ACS 5-year",
+      "value": null,
+      "unit": "USD / %",
+      "status": "unverified",
+      "source_id": "SRC-35",
+      "note": "Direct fetch to www.census.gov/quickfacts failed on 2026-11-26; left strictly blank per zero-inference rule (earlier 2026-11-25 sessions recorded $81,939 and 16.5% — flagged for manual check)."
+    },
+    {
+      "id": "TA-16",
+      "category": "Trade-Area Ring (W-01)",
+      "metric": "PARCEL-001 1-mile & 3-mile Census tract population, median HH income, and daytime worker count",
+      "geography": "PARCEL-001 fixed Census tract ring [TRACT-TBD]",
+      "period": "ACS 5-year / LEHD LODES",
+      "value": null,
+      "unit": "persons / USD / jobs",
+      "status": "unverified",
+      "source_id": "SRC-34",
+      "note": "Blocked until parcel address is geocoded offline in private workspace and queried with a registered Census API key."
+    },
+    {
+      "id": "TA-17",
+      "category": "Traffic & Access",
+      "metric": "PARCEL-001 frontage arterial / highway AADT, curb-cut geometry, and drive-thru stacking capacity",
+      "geography": "PARCEL-001 immediate frontage",
+      "period": "2024 Caltrans / LADOT latest",
+      "value": null,
+      "unit": "vehicles / day",
+      "status": "unverified",
+      "source_id": "SRC-05",
+      "note": "Caltrans publishes State Highway AADT only (2013-2024); surface-street counts require LADOT lookup in offline workspace."
+    },
+    {
+      "id": "TA-18",
+      "category": "Zoning & Land Use",
+      "metric": "PARCEL-001 ZIMAS zoning, TOC/ED1/PDA density tier, drive-thru grandfathered/CUP status, and lot area",
+      "geography": "PARCEL-001 (BOE Cadastral / ZIMAS)",
+      "period": "Current",
+      "value": null,
+      "unit": "zone code / sq ft",
+      "status": "unverified",
+      "source_id": "SRC-06",
+      "note": "Determines highest-and-best-use land floor if tenant vacates; requires private APN lookup."
+    },
+    {
+      "id": "TA-19",
+      "category": "Local Schools & Competitors",
+      "metric": "500-ft / 1-mile feeder school enrollment trend and competing QSR drive-thru pads within 1 mile",
+      "geography": "PARCEL-001 trade area",
+      "period": "Current",
+      "value": null,
+      "unit": "schools / competing pads",
+      "status": "unverified",
+      "source_id": "SRC-04",
+      "note": "Cannot be verified without exposing parcel coordinates; execute in offline GIS/radius audit."
+    }
+  ],
+  "tenant": [
+    {
+      "id": "TN-01",
+      "metric": "Jack in the Box system same-store sales (full year)",
+      "period": "FY2024 (52 wks ended 2024-09-29)",
+      "value": "-1.3%",
+      "unit": "YoY (Company 0.0%, Franchise -1.5%)",
+      "status": "verified",
+      "source_id": "SRC-14",
+      "note": "Baseline fiscal year before accelerated FY2025 comp decline."
+    },
+    {
+      "id": "TN-02",
+      "metric": "Jack in the Box system same-store sales — Q1 FY2025",
+      "period": "Q1 FY2025 (16 wks ended 2025-01-19)",
+      "value": "+0.4%",
+      "unit": "YoY (Company -0.4%, Franchise +0.5%)",
+      "status": "verified",
+      "source_id": "SRC-11",
+      "note": "Last positive system same-store sales quarter; openings 5, closures 6, ending count 2,190."
+    },
+    {
+      "id": "TN-03",
+      "metric": "Jack in the Box system same-store sales — Q2 FY2025",
+      "period": "Q2 FY2025 (12 wks ended 2025-04-13)",
+      "value": "-4.4%",
+      "unit": "YoY (Company -4.0%, Franchise -4.5%)",
+      "status": "verified",
+      "source_id": "SRC-12",
+      "note": "Transactions and mix turned sharply negative; openings 5, closures 12, ending count 2,183."
+    },
+    {
+      "id": "TN-04",
+      "metric": "Jack in the Box system same-store sales — Q3 FY2025",
+      "period": "Q3 FY2025 (12 wks ended 2025-07-06)",
+      "value": "-7.1%",
+      "unit": "YoY (Company -6.4%, Franchise -7.2%)",
+      "status": "verified",
+      "source_id": "SRC-13",
+      "note": "Openings 6, closures 21 (including first 13 'JACK on Track' block closures), ending count 2,168."
+    },
+    {
+      "id": "TN-05",
+      "metric": "Jack in the Box system same-store sales — Q4 FY2025",
+      "period": "Q4 FY2025 (12 wks ended 2025-09-28)",
+      "value": "-7.4%",
+      "unit": "YoY (Company -5.3%, Franchise -7.6%)",
+      "status": "verified",
+      "source_id": "SRC-14",
+      "note": "Openings 15, closures 47 (38 under 'JACK on Track' block closure program), ending count 2,136."
+    },
+    {
+      "id": "TN-06",
+      "metric": "Jack in the Box system same-store sales & unit churn — Full Year FY2025",
+      "period": "FY2025 (52 wks ended 2025-09-28)",
+      "value": "-4.2%",
+      "unit": "SSS YoY | 31 opened / 86 closed",
+      "status": "verified",
+      "source_id": "SRC-14",
+      "note": "Net loss of 55 Jack in the Box units in FY2025 (2,191 → 2,136), with 51 closures under JACK on Track."
+    },
+    {
+      "id": "TN-07",
+      "metric": "Jack in the Box system same-store sales & unit churn — Q1 FY2026",
+      "period": "Q1 FY2026 (16 wks ended 2026-01-18)",
+      "value": "-6.7%",
+      "unit": "SSS YoY | 6 opened / 14 closed → 2,128 units",
+      "status": "verified",
+      "source_id": "SRC-15",
+      "note": "Franchise SSS -7.0%, Company SSS -4.7%; systemwide sales fell 7.1% YoY ($1,366.1M → $1,268.5M)."
+    },
+    {
+      "id": "TN-08",
+      "metric": "Consolidated franchise rental revenues (FY2024 → FY2025)",
+      "period": "FY2024 vs FY2025",
+      "value": "$368,643k",
+      "unit": "USD thousands (-1.8% vs $375,428k in FY2024)",
+      "status": "verified",
+      "source_id": "SRC-14",
+      "note": "Franchise occupancy expenses rose from $245,379k to $254,387k (+3.7%) while rental revenue fell."
+    },
+    {
+      "id": "TN-09",
+      "metric": "Standalone Jack in the Box franchise rental revenues — Q1 FY2026 vs Q1 FY2025",
+      "period": "Q1 FY2026 (16 wks ended 2026-01-18)",
+      "value": "$97,387k",
+      "unit": "USD thousands (-7.9% vs $105,781k in Q1 FY2025)",
+      "status": "verified",
+      "source_id": "SRC-15",
+      "note": "Post-Del Taco sale continuing operations: franchise occupancy expense ratio rose from 64.2% to 68.1% of franchise rental revenue."
+    },
+    {
+      "id": "TN-10",
+      "metric": "Company-operated Restaurant-Level Margin compression",
+      "period": "Q1 FY2025 → Q1 FY2026",
+      "value": "16.1%",
+      "unit": "down 710 bps from 23.2% in Q1 FY2025",
+      "status": "verified",
+      "source_id": "SRC-15",
+      "note": "Sequential trajectory: Q1'25 23.2% → Q2'25 19.6% → Q3'25 17.9% → Q4'25 16.1% → Q1'26 16.1%, pressured by CA wage floor, commodities, and utilities."
+    },
+    {
+      "id": "TN-11",
+      "metric": "FY2026 standalone Jack in the Box guidance & real estate divestitures",
+      "period": "FY2026 guidance (issued Nov 19, 2025)",
+      "value": "50–100 closures",
+      "unit": "2,050–2,100 ending units | SSS -1% to +1%",
+      "status": "verified",
+      "source_id": "SRC-14",
+      "note": "Dividend & buybacks discontinued; Q1'26 Note 4 confirms elevated corporate real estate sales to pay down debt; Del Taco sold Dec 22, 2025."
+    },
+    {
+      "id": "TN-12",
+      "metric": "PARCEL-001 gross store sales, EBITDAR, and rent-to-sales ratio",
+      "period": "Trailing 3 years",
+      "value": null,
+      "unit": "USD / %",
+      "status": "unverified",
+      "source_id": "SRC-15",
+      "note": "Private store-level metric. Critical indicator of whether tenant exercises renewal option or targets store for closure."
+    },
+    {
+      "id": "TN-13",
+      "metric": "PARCEL-001 tenant-of-record entity (corporate vs franchisee) and net-worth guaranty",
+      "period": "Current",
+      "value": null,
+      "unit": "entity credit tier",
+      "status": "unverified",
+      "source_id": "SRC-14",
+      "note": "Must be verified from executed lease, assignments, and estoppel certificate in private workspace."
+    }
+  ],
+  "lease": [
+    {
+      "id": "LS-01",
+      "metric": "Firm primary-term expiration date (within owner-stated 2030–2035 window)",
+      "period": "Executed lease + amendments",
+      "value": null,
+      "unit": "YYYY-MM-DD",
+      "status": "unverified",
+      "source_id": "SRC-14",
+      "note": "2030 vs 2035 is a 5-year spread that shifts buyer debt eligibility and cap rate materially; not disclosed in SEC filings."
+    },
+    {
+      "id": "LS-02",
+      "metric": "Remaining renewal options, option notice earliest/latest dates, and delivery method",
+      "period": "Notice calendar",
+      "value": null,
+      "unit": "count × years / notice window",
+      "status": "unverified",
+      "source_id": "SRC-14",
+      "note": "Reconciling the notice calendar before committing to a broker listing or tenant outreach prevents accidental waiver or holdover."
+    },
+    {
+      "id": "LS-03",
+      "metric": "Current annual base rent, percentage-rent breakpoint, and option escalation formula",
+      "period": "Current & renewal schedules",
+      "value": null,
+      "unit": "USD/yr / % bump or FMV",
+      "status": "unverified",
+      "source_id": "SRC-15",
+      "note": "Determines current NOI, option-period rent growth vs LA CPI (+3.7%), and whether rent is above or below market."
+    },
+    {
+      "id": "LS-04",
+      "metric": "NNN expense structure & landlord carve-outs (roof, structure, parking lot, HVAC, environmental, Prop 13 reassessment)",
+      "period": "Executed lease",
+      "value": null,
+      "unit": "absolute NNN vs NN carve-outs",
+      "status": "unverified",
+      "source_id": "SRC-26",
+      "note": "Critically, verify whether tenant reimburses Prop 13 property-tax reassessment jump if PARCEL-001 is sold!"
+    },
+    {
+      "id": "LS-05",
+      "metric": "Tenant Right of First Refusal (ROFR) / Right of First Offer (ROFO), casualty/condemnation termination, and gross-sales reporting clause",
+      "period": "Executed lease",
+      "value": null,
+      "unit": "days / contractual clauses",
+      "status": "unverified",
+      "source_id": "SRC-14",
+      "note": "An active ROFR chills institutional bidding by 15–30 days unless waived or priced upfront."
+    }
+  ],
+  "hazards": [
+    {
+      "id": "HZ-01",
+      "metric": "USGS UCERF3 30-year major earthquake probabilities (Los Angeles region)",
+      "geography": "Los Angeles Region",
+      "period": "30-year forecast window",
+      "value": "60% / 46% / 31%",
+      "unit": "M>=6.7 (60%) · M>=7.0 (46%) · M>=7.5 (31%)",
+      "status": "verified",
+      "source_id": "SRC-28",
+      "note": "High regional seismic baseline; actual parcel loss depends on local liquefaction/faulting and building structural vintage."
+    },
+    {
+      "id": "HZ-02",
+      "metric": "CGS regulatory Earthquake Zones of Required Investigation & mandatory seller disclosure",
+      "geography": "State of California",
+      "period": "Alquist-Priolo (1972) & SHMA (1990)",
+      "value": "4 statutory zones",
+      "unit": "Fault Rupture · Liquefaction · Landslide · Tsunami",
+      "status": "verified",
+      "source_id": "SRC-29",
+      "note": "Lookup tool: CGS EQ ZApp. Statutory seller disclosure applies if PARCEL-001 lies inside any mapped zone."
+    },
+    {
+      "id": "HZ-03",
+      "metric": "CAL FIRE OSFM Fire Hazard Severity Zones (2025 LRA rollout & active 2026 SRA comment period)",
+      "geography": "State of California / LA LRA & SRA",
+      "period": "2025 LRA; SRA comment 2026-11-09 to 2027-01-08",
+      "value": "Moderate / High / Very High",
+      "unit": "3 statutory hazard classes",
+      "status": "verified",
+      "source_id": "SRC-30",
+      "note": "LRA Phases 1–4 released Feb–Mar 2025; 2026 SRA map update is in public comment right now through Jan 8, 2027."
+    },
+    {
+      "id": "HZ-04",
+      "metric": "FEMA National Flood Hazard Layer (NFHL) & FIRM coverage standard",
+      "geography": "United States / Los Angeles",
+      "period": "Current effective + preliminary/pending FIRMs",
+      "value": ">90% U.S. pop.",
+      "unit": "Effective FIRM + LOMC + Pending NFHL",
+      "status": "verified",
+      "source_id": "SRC-31",
+      "note": "Mandatory lender flood insurance applies in Special Flood Hazard Areas (Zones A/AE/AO/AH)."
+    },
+    {
+      "id": "HZ-05",
+      "metric": "California property insurance distress & FAIR Plan policy expansion",
+      "geography": "State of California",
+      "period": "Updated November 20, 2026",
+      "value": "677,449",
+      "unit": "FAIR Plan homeowner policies (+2,230 vs Jul 2026) | 662 distressed ZIPs",
+      "status": "verified",
+      "source_id": "SRC-32",
+      "note": "8,300,730 admitted homeowner policies; 12 groups expanding under CDI Sustainable Insurance Strategy (vs 0 in 2025), signaling ongoing carrier selectivity."
+    },
+    {
+      "id": "HZ-06",
+      "metric": "PARCEL-001 actual FEMA Flood Zone, CGS Fault/Liquefaction status, and CAL FIRE LRA FHSZ class",
+      "geography": "PARCEL-001 [APN-REDACTED]",
+      "period": "Current parcel lookup",
+      "value": null,
+      "unit": "zone designations",
+      "status": "unverified",
+      "source_id": "SRC-29",
+      "note": "Replaces regional context only when checked privately via FEMA MSC, CGS EQ ZApp, and OSFM LRA viewer."
+    },
+    {
+      "id": "HZ-07",
+      "metric": "PARCEL-001 building construction year, seismic PML/retrofit status, Phase I ESA (prior gas/dry-cleaner), and NNN insurance certificates",
+      "geography": "PARCEL-001 [APN-REDACTED]",
+      "period": "Current engineering & binder audit",
+      "value": null,
+      "unit": "PML % / deductible % / binder limits",
+      "status": "unverified",
+      "source_id": "SRC-32",
+      "note": "Required to stress loss-of-rent abatement, uninsured earthquake/fire deductibles, and buyer lender insurability."
+    }
+  ],
+  "tax_valuation": [
+    {
+      "id": "TX-01",
+      "metric": "10-Year U.S. Treasury constant maturity yield (risk-free valuation & debt anchor)",
+      "period": "2026-11-24 (H.15 updated 2026-11-25)",
+      "value": "4.91%",
+      "unit": "annual yield (recent peak 5.31% on 2026-10-05)",
+      "status": "verified",
+      "source_id": "SRC-09",
+      "note": "Sets floor for commercial NNN mortgage rates and buyer cap-rate expectations."
+    },
+    {
+      "id": "TX-02",
+      "metric": "Federal long-term capital gains tax rates & 2025 thresholds",
+      "period": "Tax year 2025 (IRS Topic 409)",
+      "value": "0% / 15% / 20%",
+      "unit": "20% above $533,400 Single · $600,050 MFJ · $566,700 HoH",
+      "status": "verified",
+      "source_id": "SRC-16",
+      "note": "0% up to $48,350 Single / $96,700 MFJ; 15% up to $533,400 Single / $600,050 MFJ / $300,000 MFS."
+    },
+    {
+      "id": "TX-03",
+      "metric": "Federal unrecaptured Section 1250 real-property depreciation tax ceiling",
+      "period": "Current statutory ceiling (IRS Topic 409 & Pub 946)",
+      "value": "25.0%",
+      "unit": "maximum federal rate on straight-line realty depreciation",
+      "status": "verified",
+      "source_id": "SRC-16",
+      "note": "Applies to cumulative allowed or allowable building depreciation (SRC-20) before remaining gain is taxed at LTCG rates."
+    },
+    {
+      "id": "TX-04",
+      "metric": "Federal Net Investment Income Tax (NIIT — IRC § 1411)",
+      "period": "Current statutory rule (IRS Topic 559)",
+      "value": "3.8%",
+      "unit": "MAGI > $200k Single · $250k MFJ · $125k MFS",
+      "status": "verified",
+      "source_id": "SRC-17",
+      "note": "Applies to passive NNN rental income and disposition gains unless taxpayer qualifies as active real estate professional."
+    },
+    {
+      "id": "TX-05",
+      "metric": "California personal income tax on capital gains (ordinary income + Mental Health Services Tax)",
+      "period": "2025 FTB Schedule X/Y/Z & CA RTC § 17043",
+      "value": "1.0% – 13.3%",
+      "unit": "12.3% top schedule (> $742,953 S / $1,485,906 MFJ) + 1.0% > $1,000,000",
+      "status": "verified",
+      "source_id": "SRC-21",
+      "note": "CA grants zero preferential capital-gain discount (SRC-21); schedules (SRC-22) + Prop 63 1% surtax over $1M (SRC-23) reach 13.3%."
+    },
+    {
+      "id": "TX-06",
+      "metric": "IRC Section 1031 tax-deferred like-kind exchange rules & deadlines",
+      "period": "Post-TCJA real property only (IRS Tips & FS-2008-18)",
+      "value": "45 / 180 days",
+      "unit": "45-day written ID · 180-day close · Qualified Intermediary mandatory",
+      "status": "verified",
+      "source_id": "SRC-19",
+      "note": "Real property only since Jan 1, 2018 (SRC-18); cash or net debt-relief boot is recognized immediately."
+    },
+    {
+      "id": "TX-07",
+      "metric": "County documentary transfer tax & City of LA Measure ULA special transfer tax",
+      "period": "CA RTC § 11911 & LAHD Measure ULA (effective Apr 1, 2023)",
+      "value": "$0.55/$500 + ULA >$5M",
+      "unit": "0.11% county statutory rate | ULA applies to conveyances >$5M base threshold",
+      "status": "verified",
+      "source_id": "SRC-25",
+      "note": "RTC § 11911 sets $0.55/$500 (0.11%, SRC-24). Exact FY2026 CPI-adjusted ULA threshold/tier rates flagged for manual check on finance.lacity.gov (SRC-36)."
+    },
+    {
+      "id": "TX-08",
+      "metric": "Proposition 13 assessment cap & 2026–2027 Decline-in-Value (DIV) deadline",
+      "period": "BOE Pub 29 & LA County Assessor (deadline Nov 30, 2026)",
+      "value": "1% base / 2% cap",
+      "unit": "DIV filing deadline: November 30, 2026 (4 days from 2026-11-26)",
+      "status": "verified",
+      "source_id": "SRC-27",
+      "note": "Sale triggers full reassessment to market value — increasing NNN property-tax pass-through burden on the tenant!"
+    },
+    {
+      "id": "TX-09",
+      "metric": "Short-lease QSR NNN cap-rate & buyer financing quote log (Quotes Q-01..Q-03: 4–6 yrs left vs 10–15 yrs renewed)",
+      "period": "Current arm's-length market quotes",
+      "value": null,
+      "unit": "cap rate % / LTV % / debt spread bps",
+      "status": "unverified",
+      "source_id": "SRC-09",
+      "note": "Deliberately blank: no official public registry publishes QSR NNN short-lease cap-rate quotes. Must be priced from 3 written BOVs and 2 lender quotes."
+    },
+    {
+      "id": "TX-10",
+      "metric": "Owner adjusted tax basis, accumulated depreciation, debt payoff, entity type, and filing bracket",
+      "period": "Private CPA tax schedule",
+      "value": null,
+      "unit": "USD",
+      "status": "unverified",
+      "source_id": "SRC-20",
+      "note": "Never stored in repo; enter locally in the browser-only calculator (calculator.html) to compute exact after-tax net proceeds."
+    }
+  ],
+  "model_rows": [
+    {
+      "id": "MD-01",
+      "layer": "Verified Observation",
+      "metric": "Macro HPI 5-year rolling back-test correlation (trailing 5-yr CAGR vs forward 5-yr CAGR, 7 overlapping windows 2020Q1–2021Q3)",
+      "period": "2015 Q1 – 2026 Q3 (47 quarters, ATNHPIUS31084Q)",
+      "value": "-0.937",
+      "unit": "Pearson r (MAE = 1.70 pp; latest 5-yr CAGR = 4.57%)",
+      "status": "verified",
+      "source_id": "SRC-10",
+      "note": "Proves extrapolating past 5-year LA price appreciation into the next 5 years fails systematically at cycle peaks."
+    },
+    {
+      "id": "MD-02",
+      "layer": "Verified Observation",
+      "metric": "Risk-free discount anchor (10-Year U.S. Treasury constant maturity)",
+      "period": "2026-11-24",
+      "value": "4.91%",
+      "unit": "% per annum",
+      "status": "verified",
+      "source_id": "SRC-09",
+      "note": "Empirical anchor for hold-case discount rate (risk-free rate + illiquidity/tenant/lease-rollover risk premium)."
+    },
+    {
+      "id": "MD-03",
+      "layer": "Verified Observation",
+      "metric": "LA metro inflation reference (CPI-U 12-month change, September 2026)",
+      "period": "September 2026",
+      "value": "3.7%",
+      "unit": "% YoY",
+      "status": "verified",
+      "source_id": "SRC-01",
+      "note": "Benchmarks whether fixed NNN lease bumps (typically 1.0%–2.0%/yr or 7.5%–10% every 5 yrs) lose real purchasing power."
+    },
+    {
+      "id": "MD-04",
+      "layer": "Blocked Parcel Back-Test",
+      "metric": "Parcel-level QSR NNN cash-flow & cap-rate back-test (Reconciling Flag F-20)",
+      "period": "Historical store & comparable NNN trades",
+      "value": null,
+      "unit": "BLOCKED — insufficient private/comp history",
+      "status": "unverified",
+      "source_id": "SRC-15",
+      "note": "Reconciles repo Flag F-20: while macro residential HPI can be back-tested (MD-01), parcel-level NNN cash-flow back-testing is strictly BLOCKED until historical rent, store sales, and verified QSR comp trades exist."
+    },
+    {
+      "id": "MD-05",
+      "layer": "Labelled Structural Assumption",
+      "metric": "Illustrative calculator default risk premium over 10-Year Treasury (4.91% + 259 bps)",
+      "period": "Model v1.0.0-gated-02817d04",
+      "value": "7.50%",
+      "unit": "% discount rate (user-editable assumption)",
+      "status": "assumption",
+      "source_id": "SRC-09",
+      "note": "ASSUMPTION ONLY — not an official market quote. Reader overrides in browser calculator once lender/BOV quotes arrive."
+    },
+    {
+      "id": "MD-06",
+      "layer": "Labelled Structural Assumption",
+      "metric": "Illustrative short-lease vs renewed-lease cap-rate spread in stress sandbox",
+      "period": "Model v1.0.0-gated-02817d04",
+      "value": "+75 to +150 bps",
+      "unit": "illustrative sensitivity band (user-editable)",
+      "status": "assumption",
+      "source_id": "SRC-09",
+      "note": "ASSUMPTION ONLY — real short-lease discount must be replaced by dated written broker/lender quotes (TX-09)."
+    }
+  ]
+}
