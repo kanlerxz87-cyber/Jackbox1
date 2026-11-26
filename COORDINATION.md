@@ -1231,7 +1231,7 @@ and both files are confirmed present on `main`. No personal information is publi
 | C-04 | Expand `pages/market.html` (county, schools, DOF/SCAG projections, ZIMAS, tract-trend method) & `pages/hazards.html` (UCERF3 & FAIR Plan) | done | `arena/cc9c3feb-jackbox1` | `data/tradearea.json`, `data/hazards.json`, `pages/market.html`, `pages/hazards.html` |
 | C-05 | Expand `pages/decision.html` (5-option risk/wealth-preservation matrix, 2026 tax rules) & `assets/js/calc.js` (2026 LTCG + 2026 FTB PIT + 1% MHSA) | done | `arena/cc9c3feb-jackbox1` | `data/valuation.json`, `assets/js/calc.js`, `pages/decision.html` |
 | C-06 | Fix escaped anchors (`sources.html`, `flagged.html`), broken footer URL (`print.html`), row-level source links & retrieval dates, cross-tree map (`index.html`), sync gates (`questions.json` / `G-15` closed) | done | `arena/cc9c3feb-jackbox1` | `scripts/build.mjs`, `data/*.json`, `pages/*.html` |
-| C-07 | Rebuild, run all 5 validators, PR to `main`, merge & confirm GitHub Pages deployment | in progress | `arena/cc9c3feb-jackbox1` | `COORDINATION.md`, PR & Pages deploy |
+| C-07 | Rebuild, run all 5 validators, PR to `main`, merge & confirm GitHub Pages deployment | done | `arena/cc9c3feb-jackbox1` | `COORDINATION.md`, [PR #33](https://github.com/kanlerxz87-cyber/Jackbox1/pull/33) |
 
 ## Verification & Flagged Summary (2026-11-26)
 
