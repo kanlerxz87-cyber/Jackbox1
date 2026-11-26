@@ -901,6 +901,25 @@ ${table([
   <li>Trade-area query: <code>data/tradearea.json</code> → <code>tract_pull_plan</code></li>
   <li>Back-test inputs and arithmetic: <code>data/model.json</code> → <code>observations</code></li>
 </ul>
+
+<h2>Independent spot checks — session arena/88722e2f-jackbox1 (2026-11-26)</h2>
+<p class="sub">Each published headline figure below was re-read from the live official page during this session. No published figure was changed. Where a live official page could not be retrieved, the result is recorded as blocked and the previously captured value stands for manual review — nothing was inferred or substituted.</p>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Figure as published</th><th>Official page checked</th><th>Result</th><th>Detail</th></tr></thead>
+<tbody>
+<tr><td>LA–Long Beach–Glendale unemployment 4.6%, Oct 2026 (preliminary); labor force 5,042.6k; employment 4,811.8k</td><td><a href="https://www.bls.gov/eag/eag.ca_losangeles_md.htm" target="_blank" rel="noopener noreferrer">BLS Economy at a Glance — Los Angeles–Long Beach–Glendale, CA MD</a></td><td><span class="b b-ok">Confirmed</span></td><td>Oct 2026 unemployment rate 4.6 (p). Data extracted 2026-11-20.</td></tr>
+<tr><td>Metro nonfarm jobs +0.9% YoY (4,662.8k); leisure &amp; hospitality 548.0k, +2.0%</td><td><a href="https://www.bls.gov/eag/eag.ca_losangeles_md.htm" target="_blank" rel="noopener noreferrer">BLS Economy at a Glance (same release)</a></td><td><span class="b b-ok">Confirmed</span></td><td>Total nonfarm 4,662.8k (p), 12-month change 0.9; leisure &amp; hospitality 548.0k (p), +2.0.</td></tr>
+<tr><td>CPI-U 3.7% 12-month change (Sep 2026); Oct 2026 index 360.965, October change not published</td><td><a href="https://www.bls.gov/eag/eag.ca_losangeles_md.htm" target="_blank" rel="noopener noreferrer">BLS Economy at a Glance (same release)</a></td><td><span class="b b-ok">Confirmed</span></td><td>Matches the IR-09 disclosure: the 12-month change column stops at September.</td></tr>
+<tr><td>Metro HPI 4.57% five-year CAGR; index 0.82% below its 2026 Q1 peak (558.32 → 553.76)</td><td><a href="https://fred.stlouisfed.org/graph/fredgraph.csv?id=ATNHPIUS31084Q" target="_blank" rel="noopener noreferrer">FHFA via FRED — ATNHPIUS31084Q, Los Angeles–Long Beach–Anaheim MSA</a></td><td><span class="b b-ok">Confirmed</span></td><td>Series read live; CAGR recomputed (553.76 / 442.81)^(1/5) − 1 = 4.57%; vs-peak change −0.82%.</td></tr>
+<tr><td>10-year Treasury 4.92% on 2026-11-23</td><td><a href="https://fred.stlouisfed.org/data/DGS10" target="_blank" rel="noopener noreferrer">FRED — DGS10, 10-Year Treasury constant maturity</a></td><td><span class="b b-ok">Confirmed</span></td><td>2026-11-20 and 2026-11-23 both read 4.92.</td></tr>
+<tr><td>LA region 30-year earthquake probabilities: 60% (M≥6.7), 46% (M≥7), 31% (M≥7.5)</td><td><a href="https://www.usgs.gov/faqs/what-probability-earthquake-will-occur-los-angeles-area-san-francisco-bay-area" target="_blank" rel="noopener noreferrer">USGS FAQ — Uniform California Earthquake Rupture Forecast 3</a></td><td><span class="b b-ok">Confirmed</span></td><td>Los Angeles area figures match verbatim.</td></tr>
+<tr><td>Federal disaster declaration DR-4856-CA, declared 2025-01-08, incident period Jan 7–31 2025</td><td><a href="https://www.fema.gov/disaster/4856" target="_blank" rel="noopener noreferrer">FEMA — Disaster 4856, California Wildfires and Straight-line Winds</a></td><td><span class="b b-ok">Confirmed</span></td><td>Declaration date and incident period match the published row.</td></tr>
+<tr><td>Federal LTCG 0%/15%/20%; unrecaptured §1250 capped at 25%; NIIT 3.8%; §1031 45/180-day limits</td><td><a href="https://www.irs.gov/taxtopics/tc409" target="_blank" rel="noopener noreferrer">IRS Topic no. 409 — Capital gains and losses</a></td><td><span class="b b-ok">Confirmed</span></td><td>Tax-year-2025 thresholds read verbatim; NIIT cross-referenced to Topic 559.</td></tr>
+<tr><td>California taxes capital gains as ordinary income — no preferential rate</td><td><a href="https://www.ftb.ca.gov/file/personal/income-types/capital-gains-and-losses.html" target="_blank" rel="noopener noreferrer">CA Franchise Tax Board — Capital gains and losses</a></td><td><span class="b b-ok">Confirmed</span></td><td>Page states "California does not have a lower rate for capital gains"; updated 2026-01-28.</td></tr>
+<tr><td>Jack in the Box FY2025 Form 10-K on SEC EDGAR (FY ended 2025-09-28)</td><td><a href="https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/jack-20250928.htm" target="_blank" rel="noopener noreferrer">SEC EDGAR — JACK 10-K, accession 0000807882-25-000072</a></td><td><span class="b b-ok">Confirmed</span></td><td>Filing located; per-store lease expirations are not disclosed publicly, so IR-02 stands.</td></tr>
+<tr><td>Los Angeles city population 3,869,089 (Census QuickFacts V2025)</td><td><a href="https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045224" target="_blank" rel="noopener noreferrer">Census QuickFacts — Los Angeles city, California</a></td><td><span class="b b-bad">Blocked</span></td><td>Page could not be retrieved in this session (two attempts). Figure stands from the prior capture; re-confirm manually before external use. See IR-13 on vintage comparability.</td></tr>
+</tbody></table></div>
+<p class="sub">Verification method: direct read of the linked official page or machine-readable endpoint. Counts on the dashboard are computed from <code>data/*.json</code> at build time and are not hardcoded.</p>
 `;
 out('pages/sources.html', layout({ title: 'Sources', page: 'sources.html', body: srcBody }));
 
@@ -994,14 +1013,117 @@ out('pages/tenant.html', layout({ title: 'Tenant operating series', page: 'tenan
 
 /* ======================================================================= */
 /*  ROOT REDIRECT                                                          */
+
+/*  ROOT LANDING PAGE
 /* ======================================================================= */
+const LANDING_CARDS = [
+  ['pages/market.html', 'W-01', 'Market &amp; trade area', 'City and county figures are shown only to prove they are the wrong unit of analysis. Tract-level work is prepared and blocked on one free Census API key.'],
+  ['pages/hazards.html', 'W-04', 'Hazard screening', "Seismic, flood and fire. Real FEMA and USGS responses captured at a reference point, with the parcel's own zones explicitly still unknown."],
+  ['pages/lease.html', 'Lease', 'Abstract &amp; notice calendar', 'Identity-free abstract and a reconciled calendar, including the one dated item that expires in days.'],
+  ['pages/decision.html', 'W-02', 'Sell vs hold', 'Both sides, the after-tax module, the short-lease discount method, and a calculator that keeps your numbers in your browser.'],
+  ['pages/scenarios.html', 'Model', 'Model &amp; stress', 'A versioned cash-flow model with a completed back-test, plus the compound black-swan case.'],
+  ['pages/questions.html', 'Gaps', 'Open questions', 'Fifteen blocking questions, each with the holder, the discovery path, and a recommended order.'],
+  ['pages/suggestions.html', 'Review', 'Suggestions', 'Four paths and twelve proposals. You choose the path before anything is implemented.'],
+  ['pages/flagged.html', 'Integrity', 'Flagged for review', fl.irregularities.length + ' irregularities and ' + fl.unverified_values.length + ' unverified values, each with its source. Open for your review.'],
+  ['pages/print.html', 'W-10', 'Printable brief', 'One page for your advisers. No private figures, safe to hand over.'],
+].map(([href, tag, title, blurb]) => `<a class="card" href="${href}" style="display:block;color:inherit;text-decoration:none"><div class="eyebrow">${tag}</div><h3 style="margin:0 0 6px">${title}</h3><p class="sub" style="margin:0">${blurb}</p></a>`).join('');
+
+function ribbonRoot() {
+  return `<div class="ribbon">
+  <div class="chip">Parcel <b>PARCEL-001</b> · address withheld by design</div>
+  <div class="chip">Official sources <b>${sources.sources.length}</b></div>
+  <div class="chip">Tracked rows <b>${totalRows}</b></div>
+  <div class="chip">Verified rows <b>${verifiedRows}</b> (+ ${assumptionRows} assumptions)</div>
+  <div class="chip">Unverified values <b>${fl.unverified_values.length}</b></div>
+  <div class="chip">Irregularities <b>${fl.irregularities.length}</b></div>
+  <div class="chip">Open gates <b>${gateCount}</b> / ${gateCount} closed</div>
+  <div class="chip">Model version <b>${esc(md.meta.version)}</b></div>
+</div>`;
+}
+
+const rootBody = `<div class="eyebrow">Jackbox property decision workspace · anonymised · data cut-off 2026-11-25</div>
+<h1>Sell before expiry, or renew?</h1>
+<p class="lede">A single-tenant quick-service restaurant parcel on a triple-net lease in central Los Angeles, expiring between 2030 and 2035. This workspace verifies every factor that could affect the decision — and says, row by row, what is still unknown.</p>
+
+${ribbonRoot()}
+
+<div class="callout c-bad"><strong>The honest answer: not yet — and that is the finding</strong>No decision gate can be closed from public data alone. The exact lease term and a real cap rate exist only in private documents, so no sell/renew verdict is published. Everything below is the evidence base and the method, with every blank explained.</div>
+
+<h2>How to read this site</h2>
+<p class="sub">Every category below is one subpage. Every table row on those pages links to an official source; every dash means "unknown," never zero. Start with the dashboard, then work through Market, Hazard, Lease, Sell vs hold, Model, Questions, Suggestions and Flagged for review.</p>
+<div class="grid g3">
+${LANDING_CARDS}
+</div>
+
+<h2>What can be done this week, without spending anything</h2>
+<ol class="tight">
+  <li><b>Before 2026-11-30 — file the decline-in-value application.</b> If the assessed value exceeds market value, the Los Angeles County Assessor's 2026-2027 window (opened 2026-07-02, closes 2026-11-30) cuts the property tax line — the largest fixed expense in a triple-net hold. Free, and the window closes in days. <span class="faint">Source: LA County Assessor, <a href="https://assessor.lacounty.gov/proposition-13" target="_blank" rel="noopener noreferrer">Proposition 13 &amp; decline-in-value programme</a>.</span></li>
+  <li><b>Pin the four lease dates.</b> Option window opens, option deadline, tenant notice date, expiration. A lapsed renewal option is the only irreversible loss in this entire project. Nothing public can supply them — not even the tenant's SEC filings (see <a href="pages/flagged.html#IR-02">IR-02</a>).</li>
+  <li><b>Register a free Census API key.</b> One key unlocks the tract-level trade-area pull that replaces city and county proxies. The query is prepared in <code>data/tradearea.json</code> and has never run because keyless requests are rejected. <span class="faint">Source: Census API signup, <a href="https://api.census.gov/data/key_signup.html" target="_blank" rel="noopener noreferrer">api.census.gov/data/key_signup.html</a>.</span></li>
+</ol>
+
+<div class="callout c-warn"><strong>Privacy</strong>No parcel address, owner identity, APN, lease document, rent figure or personal finance appears on this site or in this repository. The parcel is referred to as <code>PARCEL-001</code> throughout. Keep lease files and owner finances offline with authorised advisers.</div>
+
+<h2>Other trees in this repository</h2>
+<p class="sub">This repository retains five earlier session trees, unchanged. Each is independently validated and each says the same thing: no sell/renew verdict yet.</p>
+<div class="grid g3">
+  <a class="card" href="pages/index.html" style="display:block;color:inherit;text-decoration:none"><div class="eyebrow">Primary</div><h3 style="margin:0 0 6px">Verified workspace</h3><p class="sub" style="margin:0">This session's tree: dashboard, ten subpages, data register, validator.</p></a>
+  <a class="card" href="/docs/index.html" style="display:block;color:inherit;text-decoration:none"><div class="eyebrow">Archive</div><h3 style="margin:0 0 6px">Sourced dashboard</h3><p class="sub" style="margin:0">Earlier session tree retained intact at <code>/docs/</code>.</p></a>
+  <a class="card" href="/desk/index.html" style="display:block;color:inherit;text-decoration:none"><div class="eyebrow">Archive</div><h3 style="margin:0 0 6px">Desk</h3><p class="sub" style="margin:0">Earlier root site, moved intact to <code>/desk/</code>.</p></a>
+  <a class="card" href="/workspace/index.html" style="display:block;color:inherit;text-decoration:none"><div class="eyebrow">Archive</div><h3 style="margin:0 0 6px">Second workspace</h3><p class="sub" style="margin:0">Registry-generated 17-page tree at <code>/workspace/</code>.</p></a>
+  <a class="card" href="/audit-78005353/site/index.html" style="display:block;color:inherit;text-decoration:none"><div class="eyebrow">Archive</div><h3 style="margin:0 0 6px">Independent audit</h3><p class="sub" style="margin:0">Separate second-opinion pass at <code>/audit-78005353/site/</code>.</p></a>
+  <a class="card" href="/web/index.html" style="display:block;color:inherit;text-decoration:none"><div class="eyebrow">Archive</div><h3 style="margin:0 0 6px">Independent desk</h3><p class="sub" style="margin:0">Additional independent tree at <code>/web/</code>.</p></a>
+</div>
+
+<footer class="site" style="margin-top:26px">
+  <div class="wrap">
+    <p><b>Integrity.</b> ${verifiedRows} verified rows (+ ${assumptionRows} labelled assumptions) out of ${totalRows} tracked rows across ${datasetCount} datasets, citing ${sources.sources.length} official sources. ${fl.unverified_values.length} values are deliberately blank and listed on <a href="pages/flagged.html">Flagged for review</a>; nothing is inferred or filled in.</p>
+    <p><b>Privacy.</b> Aggregate, non-identifying findings only. No personal or parcel-identifying information is published.</p>
+    <p class="faint">Data cut-off 2026-11-25 · Build ${new Date().toISOString().slice(0, 10)} · Not investment, legal or tax advice. Engage a licensed appraiser, attorney and CPA before acting.</p>
+  </div>
+</footer>
+`;
+
 out('index.html', `<!doctype html>
-<html lang="en"><head><meta charset="utf-8">
-<meta http-equiv="refresh" content="0; url=pages/index.html">
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Jackbox property decision workspace</title>
-<link rel="canonical" href="pages/index.html">
-</head><body style="background:#0e1116;color:#e8edf4;font-family:system-ui,sans-serif;padding:40px">
-<p>Opening the workspace… <a href="pages/index.html" style="color:#4da3ff">continue to the dashboard</a></p>
-</body></html>`);
+<meta name="description" content="Anonymised, source-verified decision workspace for a single-tenant quick-service restaurant parcel in central Los Angeles. Public aggregate findings only. No sell or renew verdict is published while inputs are missing.">
+<meta name="robots" content="index,follow">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+<header class="site">
+  <div class="wrap hdr">
+    <a class="brand" href="index.html"><span class="dot"></span>JACKBOX&nbsp;/&nbsp;PARCEL-001</a>
+    <nav class="main">
+      <a href="index.html" aria-current="page">Dashboard</a>
+      <a href="pages/market.html">Market &amp; trade area</a>
+      <a href="pages/hazards.html">Hazard screening</a>
+      <a href="pages/lease.html">Lease &amp; calendar</a>
+      <a href="pages/decision.html">Sell vs hold</a>
+      <a href="pages/scenarios.html">Model &amp; stress</a>
+      <a href="pages/questions.html">Open questions</a>
+      <a href="pages/suggestions.html">Suggestions</a>
+      <a href="pages/flagged.html">Flagged for review</a>
+      <a href="pages/sources.html">Sources</a>
+      <a href="pages/print.html">Printable brief</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <div class="wrap">
+${rootBody}
+  </div>
+</main>
+<footer class="site">
+  <div class="wrap">
+    <p class="faint">Jackbox property decision workspace · anonymised · data cut-off 2026-11-25 · Build ${new Date().toISOString().slice(0, 10)}</p>
+  </div>
+</footer>
+</body>
+</html>`);
 
 console.log('built: index.html + ' + readdirSync(join(ROOT, 'pages')).length + ' pages');

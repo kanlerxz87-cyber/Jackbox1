@@ -34,6 +34,7 @@ links, all resolving.**
 | `arena/2a61b633` | merged via PR #7 | `/workspace/` registry-driven site | done |
 | `arena-f5a16939` | merged via PR #2 | `docs/` sourced dashboard | done |
 | `ses-41ea221b` | `arena/41ea221b-jackbox1` | verified data layer + integration + publish | active |
+| `arena/88722e2f-jackbox1` | `arena/88722e2f-jackbox1` | continuation: independent spot verification + publish confirmation | active |
 
 ## Task board — ses-41ea221b
 
@@ -55,7 +56,8 @@ links, all resolving.**
 | T-14 | Flagged-for-review page | done | ses-41ea221b | `data/flagged.json`, `pages/flagged.html` |
 | T-15 | Line-by-line validator | done | ses-41ea221b | `scripts/validate.mjs` |
 | T-16 | Integration: merge, re-verify, rebuild | done | ses-41ea221b | site-wide |
-| T-17 | Publish + confirm deploy | in progress | ses-41ea221b | repo settings |
+| T-17 | Publish + confirm deploy | in progress | arena/88722e2f-jackbox1 | repo settings · taken over (stale claim on this checkout: no commits since branch point) |
+| T-18 | Independent spot verification of published figures against live official sources | in progress | arena/88722e2f-jackbox1 | `pages/`, `data/` + verification log on `pages/sources.html` |
 
 ## Earlier task boards (preserved verbatim from `main`)
 
