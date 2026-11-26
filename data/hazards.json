@@ -1,8 +1,8 @@
 {
   "meta": {
     "dataset": "hazards",
-    "version": "1.0",
-    "as_of": "2026-11-25",
+    "version": "1.1",
+    "as_of": "2026-11-26",
     "owner_session": "ses-41ea221b",
     "task": "W-04 — parcel-level hazard screening (seismic, flood, fire)",
     "critical_caveat": "The three official hazard tools below were successfully queried, but only at a REFERENCE POINT (downtown Los Angeles, 34.0522 / -118.2437) because the parcel coordinates are withheld. These are therefore demonstrations that the method works, NOT the parcel's zone status. Parcel zone status stays 'unverified' until G-03 is closed in a secure workflow. Nothing here may be quoted as the parcel's hazard rating."
@@ -199,8 +199,28 @@
       "value": null,
       "unit": null,
       "status": "unverified",
-      "source_id": null,
-      "note": "Requires the actual binder and quotes. This is the single largest unmodelled risk to the sell-versus-hold arithmetic and must not be assumed."
+      "source_id": "S-030",
+      "note": "Requires the actual binder and quotes. CDI Q1 2026 update confirms 21,464 commercial FAIR Plan policies statewide (up from 21,200); parcel premium remains unverified until G-08 closes."
+    },
+    {
+      "id": "HZ-19",
+      "hazard": "UCERF3 30-year Los Angeles area earthquake probability",
+      "geography": "Los Angeles region",
+      "value": "60% (M6.7) / 46% (M7.0) / 31% (M7.5)",
+      "unit": "30-year probability",
+      "status": "verified",
+      "source_id": "S-029",
+      "note": "Official USGS rupture-forecast probability, directly proving why 26-year historical counts (HZ-06) understate seismic tail risk."
+    },
+    {
+      "id": "HZ-20",
+      "hazard": "California FAIR Plan commercial policy count (Q1 2026)",
+      "geography": "State of California",
+      "value": 21464,
+      "unit": "policies (vs 21,200 prior quarter)",
+      "status": "verified",
+      "source_id": "S-030",
+      "note": "Residential FAIR Plan policies grew +2.4% QoQ (~16,000 added in Q1 2026) while commercial policies stayed elevated above 21,000."
     }
   ],
   "query_recipes": [

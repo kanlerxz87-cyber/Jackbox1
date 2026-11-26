@@ -1,8 +1,8 @@
 {
   "meta": {
     "dataset": "sources",
-    "version": "1.0",
-    "as_of": "2026-11-25",
+    "version": "1.1",
+    "as_of": "2026-11-26",
     "owner_session": "ses-41ea221b",
     "note": "Every data row in this repo must cite one of these IDs. Hosts are restricted to an official allowlist checked by scripts/validate.mjs."
   },
@@ -22,7 +22,7 @@
       "title": "Economy at a Glance: Los Angeles-Long Beach-Glendale, CA (data extracted 2026-11-20)",
       "url": "https://www.bls.gov/eag/eag.ca_losangeles_md.htm",
       "type": "official-primary",
-      "retrieved": "2026-11-25",
+      "retrieved": "2026-11-26",
       "used_for": "Labor force, unemployment rate, nonfarm and sector employment, CPI for the metropolitan division."
     },
     {
@@ -40,8 +40,8 @@
       "title": "DGS10 — 10-Year Treasury constant maturity",
       "url": "https://fred.stlouisfed.org/data/DGS10",
       "type": "official-primary",
-      "retrieved": "2026-11-25",
-      "used_for": "Risk-free rate anchor for discounting. Latest observation 2026-11-23."
+      "retrieved": "2026-11-26",
+      "used_for": "Risk-free rate anchor for discounting. Latest observation 2026-11-24 (4.91%); 2026-11-23 was 4.92%."
     },
     {
       "id": "S-005",
@@ -76,8 +76,8 @@
       "title": "OpenFEMA API v2 — DisasterDeclarationsSummaries",
       "url": "https://www.fema.gov/api/open/v2/DisasterDeclarationsSummaries",
       "type": "official-primary",
-      "retrieved": "2026-11-25",
-      "used_for": "Federal disaster declarations affecting Los Angeles County."
+      "retrieved": "2026-11-26",
+      "used_for": "Federal disaster declarations affecting Los Angeles County (incl. FM-5605 Canyon Fire, DR-4856 Eaton/Palisades)."
     },
     {
       "id": "S-009",
@@ -94,8 +94,8 @@
       "title": "Traffic Census Program — Annual Average Daily Traffic (AADT) by state highway",
       "url": "https://dot.ca.gov/programs/traffic-operations/census",
       "type": "official-primary",
-      "retrieved": "2026-11-25",
-      "used_for": "Traffic-volume evidence source for the adjacent state highway (parcel-specific segment not yet identified)."
+      "retrieved": "2026-11-26",
+      "used_for": "Traffic-volume evidence source (2021-2024 AADT workbooks) for state highways; parcel segment not yet identified."
     },
     {
       "id": "S-011",
@@ -118,10 +118,10 @@
     {
       "id": "S-013",
       "publisher": "Internal Revenue Service",
-      "title": "Topic no. 409 — Capital gains and losses",
+      "title": "Topic no. 409 — Capital gains and losses (2025 thresholds & 25% s.1250 rule)",
       "url": "https://www.irs.gov/taxtopics/tc409",
       "type": "official-primary",
-      "retrieved": "2026-11-25",
+      "retrieved": "2026-11-26",
       "used_for": "Federal long-term capital gain rates, 25% unrecaptured section 1250 rate."
     },
     {
@@ -130,8 +130,8 @@
       "title": "Topic no. 559 — Net investment income tax",
       "url": "https://www.irs.gov/taxtopics/tc559",
       "type": "official-primary",
-      "retrieved": "2026-11-25",
-      "used_for": "3.8% NIIT and MAGI thresholds."
+      "retrieved": "2026-11-26",
+      "used_for": "3.8% NIIT and MAGI thresholds ($200k single/HoH, $250k MFJ, $125k MFS)."
     },
     {
       "id": "S-015",
@@ -139,7 +139,7 @@
       "title": "FS-2008-18 — Like-kind exchanges under IRC Section 1031",
       "url": "https://www.irs.gov/pub/irs-news/fs-08-18.pdf",
       "type": "official-primary",
-      "retrieved": "2026-11-25",
+      "retrieved": "2026-11-26",
       "used_for": "45-day identification / 180-day completion limits for deferral."
     },
     {
@@ -148,7 +148,7 @@
       "title": "Publication 946 — How to depreciate property",
       "url": "https://www.irs.gov/publications/p946",
       "type": "official-primary",
-      "retrieved": "2026-11-25",
+      "retrieved": "2026-11-26",
       "used_for": "Adjusted basis and depreciation-recapture mechanics."
     },
     {
@@ -157,7 +157,7 @@
       "title": "Capital gains and losses",
       "url": "https://www.ftb.ca.gov/file/personal/income-types/capital-gains-and-losses.html",
       "type": "official-primary",
-      "retrieved": "2026-11-25",
+      "retrieved": "2026-11-26",
       "used_for": "California has no preferential capital-gain rate; gains taxed as ordinary income."
     },
     {
@@ -175,8 +175,8 @@
       "title": "Proposition 13 and decline-in-value (DIV) programme pages",
       "url": "https://assessor.lacounty.gov/proposition-13",
       "type": "official-primary",
-      "retrieved": "2026-11-25",
-      "used_for": "Assessment practice, DIV filing window (2026-2027 window opens 2026-07-02, deadline 2026-11-30), disaster relief."
+      "retrieved": "2026-11-26",
+      "used_for": "Assessment practice, DIV filing window (2026-2027 window opened 2026-07-02, deadline 2026-11-30), disaster relief."
     },
     {
       "id": "S-020",
@@ -203,7 +203,178 @@
       "url": "https://www.census.gov/programs-surveys/acs/guidance/comparing-acs-data/2024.html",
       "type": "official-primary",
       "retrieved": "2026-11-25",
-      "used_for": "Caution on comparing ACS 5-year vintages."
+      "used_for": "Caution on comparing ACS 5-year vintages (use non-overlapping 5-year windows for tract trends)."
+    },
+    {
+      "id": "S-023",
+      "publisher": "U.S. Census Bureau",
+      "title": "QuickFacts: Los Angeles County, California; Los Angeles city, California (V2025)",
+      "url": "https://www.census.gov/quickfacts/fact/table/losangelescountycalifornia,losangelescitycalifornia/PST045222",
+      "type": "official-primary",
+      "retrieved": "2026-11-26",
+      "used_for": "LA County July 1, 2025 population (9,694,934) and -3.2% change vs April 1, 2020."
+    },
+    {
+      "id": "S-024",
+      "publisher": "California Department of Finance",
+      "title": "E-1 Population Estimates for Cities, Counties, and the State, January 1, 2025 and 2026 (May 1, 2026)",
+      "url": "https://dof.ca.gov/media/docs/forecasting/demographics/estimates/e-1_2026_press_release.Pdf",
+      "type": "official-primary",
+      "retrieved": "2026-11-26",
+      "used_for": "LA County YoY population change (-64,000), housing unit additions (+11,260 net), and fire housing losses (11,160 units)."
+    },
+    {
+      "id": "S-025",
+      "publisher": "Southern California Association of Governments (SCAG)",
+      "title": "Connect SoCal 2024: Demographics & Growth Forecast Technical Report (Adopted April 4, 2024)",
+      "url": "https://www.scag.ca.gov/sites/default/files/2024-05/23-2987-tr-demographics-growth-forecast-final-040424.pdf",
+      "type": "official-primary",
+      "retrieved": "2026-11-26",
+      "used_for": "LA County 2019-2050 resident labor force & employment projections; SCAG regional population range (19.85M-21.9M)."
+    },
+    {
+      "id": "S-026",
+      "publisher": "California Department of Education (CDE)",
+      "title": "District Profile: Los Angeles Unified (CDS 19647330000000, SY 2025-26)",
+      "url": "https://www.cde.ca.gov/sdprofile/details.aspx?cds=19647330000000",
+      "type": "official-primary",
+      "retrieved": "2026-11-26",
+      "used_for": "LAUSD SY 2025-26 enrollment (497,105) and English Learners (81,328 / 16.4%)."
+    },
+    {
+      "id": "S-027",
+      "publisher": "California Department of Education (CDE)",
+      "title": "Largest & Smallest Public School Districts (SY 2025-26)",
+      "url": "https://www.cde.ca.gov/ds/ad/ceflargesmalldist.asp",
+      "type": "official-primary",
+      "retrieved": "2026-11-26",
+      "used_for": "Statewide California public K-12 enrollment (5,731,260) and district size context."
+    },
+    {
+      "id": "S-028",
+      "publisher": "Los Angeles Department of City Planning",
+      "title": "Radius Map Requirements & Guidelines (CP-7826) & ZIMAS Parcel Profile Reference",
+      "url": "https://planning.lacity.gov/odocument/21c2f80a-a107-424f-9a6d-fb9a88019d8e/Radius_Map_Guidelines.pdf",
+      "type": "official-primary",
+      "retrieved": "2026-11-26",
+      "used_for": "Official City Planning ZIMAS lookup procedure for parcel zoning, community plan, TOC tier and case history."
+    },
+    {
+      "id": "S-029",
+      "publisher": "U.S. Geological Survey",
+      "title": "UCERF3: What is the probability that an earthquake will occur in the Los Angeles Area?",
+      "url": "https://www.usgs.gov/faqs/what-probability-earthquake-will-occur-los-angeles-area-san-francisco-bay-area",
+      "type": "official-primary",
+      "retrieved": "2026-11-26",
+      "used_for": "30-year Los Angeles region earthquake probabilities (60% M6.7, 46% M7.0, 31% M7.5)."
+    },
+    {
+      "id": "S-030",
+      "publisher": "California Department of Insurance (CDI)",
+      "title": "Q1 2026 Sustainable Insurance Strategy & FAIR Plan Update (May 1, 2026)",
+      "url": "https://www.insurance.ca.gov/0400-news/0102-alerts/2026/Momentum-continues-to-build-under-Insura.cfm",
+      "type": "official-primary",
+      "retrieved": "2026-11-26",
+      "used_for": "Commercial FAIR Plan policy counts (21,200 -> 21,464) and Q1 2026 post-fire market capacity context."
+    },
+    {
+      "id": "S-031",
+      "publisher": "California State Board of Equalization (BOE)",
+      "title": "Publication 29: California Property Tax — An Overview (March 2025)",
+      "url": "https://www.boe.ca.gov/proptaxes/pdf/pub29.pdf",
+      "type": "official-primary",
+      "retrieved": "2026-11-26",
+      "used_for": "Prop 13 1% base rate, 2% annual inflation cap, and reassessment on change of ownership or new construction."
+    },
+    {
+      "id": "S-032",
+      "publisher": "Internal Revenue Service",
+      "title": "Rev. Proc. 2025-32 — 2026 Tax Year Inflation-Adjusted LTCG Brackets & Standard Deductions",
+      "url": "https://www.irs.gov/pub/irs-drop/rp-25-32.pdf",
+      "type": "official-primary",
+      "retrieved": "2026-11-26",
+      "used_for": "2026 Federal 0%/15%/20% LTCG brackets (MFJ $98,900/$613,700; Single $49,450/$545,500; HoH $66,200/$579,600; MFS $49,450/$306,850)."
+    },
+    {
+      "id": "S-033",
+      "publisher": "California Franchise Tax Board",
+      "title": "Tax News October 2026 — 2026 California Tax Rate Schedules (Schedules X, Y, Z)",
+      "url": "https://www.ftb.ca.gov/about-ftb/newsroom/tax-news/2026/10.html",
+      "type": "official-primary",
+      "retrieved": "2026-11-26",
+      "used_for": "Verified 2026 California PIT brackets (1.00% to 12.30%, +3.4% CCPI indexing; top bracket starts at $768,213 Single / $1,536,426 MFJ / $1,044,771 HoH)."
+    },
+    {
+      "id": "S-034",
+      "publisher": "California Franchise Tax Board",
+      "title": "Form FTB 5805F Instructions — Mental Health Services Act 1% Tax over $1,000,000",
+      "url": "https://www.ftb.ca.gov/forms/2024/2024-5805-f-instructions.html",
+      "type": "official-primary",
+      "retrieved": "2026-11-26",
+      "used_for": "Confirms California's additional 1% tax on taxable income over $1,000,000 (making top marginal rate 13.30%)."
+    },
+    {
+      "id": "S-035",
+      "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+      "title": "Jack in the Box Inc. FY2025 Form 10-K Segment & Franchise Rental Revenues (R33.htm)",
+      "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788225000072/R33.htm",
+      "type": "official-primary",
+      "retrieved": "2026-11-26",
+      "used_for": "FY2023-FY2025 Jack in the Box segment revenue, franchise rental revenues ($351.3M -> $347.2M -> $332.7M) and royalties."
+    },
+    {
+      "id": "S-036",
+      "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+      "title": "Jack in the Box Inc. Q4 & FY2025 Earnings Release (Ex. 99.1, Nov 19, 2025)",
+      "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788225000070/ex991-q425earningsrelease.htm",
+      "type": "official-primary",
+      "retrieved": "2026-11-26",
+      "used_for": "FY2024 (-1.3%) and FY2025 (-4.2%, Q4 -7.4%) same-store sales; FY25 31 openings / 86 closures -> 2,136 units."
+    },
+    {
+      "id": "S-037",
+      "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+      "title": "Jack in the Box Inc. Q1 FY2026 Earnings Release (Ex. 99.1, Feb 18, 2026)",
+      "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788226000039/ex991-q126earningsrelease.htm",
+      "type": "official-primary",
+      "retrieved": "2026-11-26",
+      "used_for": "Q1 FY2026 SSS (-6.7%), 6 openings / 14 closures -> 2,128 units, Del Taco divestiture Dec 22, 2025."
+    },
+    {
+      "id": "S-038",
+      "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+      "title": "Jack in the Box Inc. Q2 FY2026 Earnings Release (Ex. 99.1, May 13, 2026)",
+      "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788226000066/ex991-q226earningsrelease.htm",
+      "type": "official-primary",
+      "retrieved": "2026-11-26",
+      "used_for": "Q2 FY2026 SSS (-3.8%), 9 openings / 9 closures -> 2,128 units, franchise-level margin 37.9%."
+    },
+    {
+      "id": "S-039",
+      "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+      "title": "Jack in the Box Inc. Q3 FY2026 Earnings Release (Ex. 99.1, Aug 12, 2026)",
+      "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm",
+      "type": "official-primary",
+      "retrieved": "2026-11-26",
+      "used_for": "Q3 FY2026 SSS (-1.1%), 4 openings / 17 closures -> 2,115 units (149 Co / 1,966 franchised), FY26 guidance ~2,100 units."
+    },
+    {
+      "id": "S-040",
+      "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+      "title": "Jack in the Box Inc. Q3 FY2026 Form 10-Q Statements of Earnings (R4.htm, 9M ended Jul 5, 2026)",
+      "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788226000091/R4.htm",
+      "type": "official-primary",
+      "retrieved": "2026-11-26",
+      "used_for": "Q3 and 9M FY2026 franchise rental revenues ($73.0M Q3 / $242.5M 9M, down 4.6% / 6.8% YoY)."
+    },
+    {
+      "id": "S-041",
+      "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+      "title": "Jack in the Box Inc. Q3 FY2026 Form 10-Q Indebtedness Schedule (R30.htm, Jul 5, 2026)",
+      "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788226000091/R30.htm",
+      "type": "official-primary",
+      "retrieved": "2026-11-26",
+      "used_for": "Total debt $1,491,984k at Jul 5, 2026 including $500M Series 2026-1 7.624% Class A-2 Notes."
     }
   ],
   "allowlisted_hosts": [
@@ -214,6 +385,7 @@
     "www.fhfa.gov",
     "fred.stlouisfed.org",
     "earthquake.usgs.gov",
+    "www.usgs.gov",
     "hazards.fema.gov",
     "www.fema.gov",
     "osfm.fire.ca.gov",
@@ -225,15 +397,24 @@
     "data.sec.gov",
     "www.irs.gov",
     "www.ftb.ca.gov",
+    "www.boe.ca.gov",
     "assessor.lacounty.gov",
     "www.lacity.org",
+    "www.lacity.gov",
     "planning.lacity.org",
+    "planning.lacity.gov",
+    "zimas.lacity.org",
+    "zimas.lacity.gov",
     "data.lacity.org",
     "geohub.lacity.org",
     "www.cdph.ca.gov",
     "www2.calstate.edu",
     "www.cde.ca.gov",
     "www.hud.gov",
-    "www.federalreserve.gov"
+    "www.federalreserve.gov",
+    "dof.ca.gov",
+    "www.scag.ca.gov",
+    "sustain.scag.ca.gov",
+    "www.insurance.ca.gov"
   ]
 }

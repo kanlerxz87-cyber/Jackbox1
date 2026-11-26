@@ -1,8 +1,8 @@
 {
   "meta": {
     "dataset": "stress",
-    "version": "1.0",
-    "as_of": "2026-11-25",
+    "version": "1.1",
+    "as_of": "2026-11-26",
     "owner_session": "ses-41ea221b",
     "task": "Black-swan and business-as-usual stress: seismic, flood, fire, rent loss, repairs, exit liquidity — stressed together, not separately",
     "core_insight": "The dangerous case is not any single hazard. It is the compound case: the building is damaged (repairs), the tenant cannot operate (rent loss), and every other owner in the submarket is trying to sell at the same time (exit liquidity gone). Each of the three is survivable; together they force a sale into the worst possible market. This module therefore models the joint case as the primary stress, not the union of separate shocks.",

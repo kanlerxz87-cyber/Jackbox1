@@ -1,8 +1,8 @@
 {
   "meta": {
     "dataset": "suggestions",
-    "version": "1.0",
-    "as_of": "2026-11-25",
+    "version": "1.1",
+    "as_of": "2026-11-26",
     "owner_session": "ses-41ea221b",
     "purpose": "A dedicated review section. Each suggestion is a proposal with a stated benefit, cost, risk of adopting it, and a status. The owner reviews and chooses the path BEFORE anything is implemented. Nothing on this page has been auto-applied.",
     "how_to_use": "Read the suggested path first, then the individual proposals. Each proposal carries a 'decision needed from you' line so a choice can be recorded. Statuses are: proposed, under review, rejected, adopted. None are adopted."

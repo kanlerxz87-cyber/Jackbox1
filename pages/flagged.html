@@ -17,6 +17,7 @@
         <a href="index.html">Dashboard</a>
         <a href="market.html">Market &amp; trade area</a>
         <a href="hazards.html">Hazard screening</a>
+        <a href="tenant.html">Tenant (SEC)</a>
         <a href="lease.html">Lease &amp; calendar</a>
         <a href="decision.html">Sell vs hold</a>
         <a href="scenarios.html">Model &amp; stress</a>
@@ -37,7 +38,7 @@
 
 <div class="callout c-info"><strong>Counting rule</strong>An item is &#39;unverified&#39; if a value is required for the decision but no official source could confirm it in this session. It is left blank in the data, never filled with an estimate.</div>
 
-<h2>Irregularities — 13</h2>
+<h2>Irregularities — 15</h2>
 
 <div class="card">
   <div style="display:flex;justify-content:space-between;gap:12px;align-items:flex-start;flex-wrap:wrap">
@@ -107,28 +108,28 @@
 <div class="card">
   <div style="display:flex;justify-content:space-between;gap:12px;align-items:flex-start;flex-wrap:wrap">
     <div style="flex:1;min-width:240px">
-      <div class="eyebrow">IR-06 · severity: medium</div>
-      <h3 style="margin:0 0 8px">The California FTB tax rate schedule page failed to load</h3>
+      <div class="eyebrow">IR-06 · severity: low</div>
+      <h3 style="margin:0 0 8px">RESOLVED (2026-11-26): California FTB 2026 PIT rate schedules verified</h3>
     </div>
-    <span class="b b-warn">medium</span>
+    <span class="b b-neutral">low</span>
   </div>
-  <p class="sub">The 2025 540 tax rate schedules page did not return content during this session. The 1% to 12.3% range and the mental health surcharge are widely cited but were not verified line by line here.</p>
-  <p class="sub"><b>Impact.</b> No California marginal rate is baked into the calculator. The reader supplies it. California&#39;s lack of a preferential capital-gain rate itself IS verified (S-017, S-018).</p>
-  <p class="sub" style="margin-bottom:6px"><b>Action requested.</b> Download the current 540 rate schedule PDF from ftb.ca.gov and confirm the brackets.</p>
-  <p class="faint" style="margin:0">Sources: <a href="https://www.ftb.ca.gov/file/personal/income-types/capital-gains-and-losses.html" target="_blank" rel="noopener noreferrer">S-017</a> · <a href="https://www.ftb.ca.gov/forms/2025/2025-540-ca-instructions.html" target="_blank" rel="noopener noreferrer">S-018</a></p>
+  <p class="sub">Earlier session could not load the 2025 540 booklet. On 2026-11-26, FTB Tax News October 2026 (S-033) and FTB Form 5805F Instructions (S-034) verified the full 2026 Schedules X/Y/Z (1.00% to 12.30%) and the +1.00% Mental Health Services Act tax over $1,000,000. Only the owner&#39;s personal taxable-income tier remains private.</p>
+  <p class="sub"><b>Impact.</b> The browser calculator now offers both verified 2026 FTB progressive brackets and a custom marginal rate override.</p>
+  <p class="sub" style="margin-bottom:6px"><b>Action requested.</b> Confirm personal filing status and other taxable income privately in the browser calculator.</p>
+  <p class="faint" style="margin:0">Sources: <a href="https://www.ftb.ca.gov/about-ftb/newsroom/tax-news/2026/10.html" target="_blank" rel="noopener noreferrer">S-033</a> · <a href="https://www.ftb.ca.gov/forms/2024/2024-5805-f-instructions.html" target="_blank" rel="noopener noreferrer">S-034</a></p>
 </div>
 <div class="card">
   <div style="display:flex;justify-content:space-between;gap:12px;align-items:flex-start;flex-wrap:wrap">
     <div style="flex:1;min-width:240px">
       <div class="eyebrow">IR-07 · severity: low</div>
-      <h3 style="margin:0 0 8px">The Los Angeles County QuickFacts page failed repeatedly</h3>
+      <h3 style="margin:0 0 8px">RESOLVED (2026-11-26) WITH GEOGRAPHIC CAVEAT: LA County QuickFacts V2025 verified</h3>
     </div>
     <span class="b b-neutral">low</span>
   </div>
-  <p class="sub">Two attempts to fetch the county-level QuickFacts table failed. City-level figures were used instead and labelled as city-level.</p>
-  <p class="sub"><b>Impact.</b> No county-level demographics are presented. This is disclosed rather than substituting city figures silently.</p>
-  <p class="sub" style="margin-bottom:6px"><b>Action requested.</b> Retry, or pull county figures directly from the ACS API once the key exists.</p>
-  <p class="faint" style="margin:0">Sources: <a href="https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045224" target="_blank" rel="noopener noreferrer">S-001</a></p>
+  <p class="sub">County QuickFacts now verified at 9,694,934 (July 1, 2025, -3.2% since 2020, S-023) alongside CA DOF E-1 (-64,000 YoY to Jan 1, 2026, S-024). Still fails as a trade-area proxy because the county is 4,059 sq mi.</p>
+  <p class="sub"><b>Impact.</b> County context is now verified alongside city figures, both clearly marked as non-trade-area benchmarks.</p>
+  <p class="sub" style="margin-bottom:6px"><b>Action requested.</b> Pull census-tract figures via ACS API once G-01 and G-02 close.</p>
+  <p class="faint" style="margin:0">Sources: <a href="https://www.census.gov/quickfacts/fact/table/losangelescountycalifornia,losangelescitycalifornia/PST045222" target="_blank" rel="noopener noreferrer">S-023</a> · <a href="https://dof.ca.gov/media/docs/forecasting/demographics/estimates/e-1_2026_press_release.Pdf" target="_blank" rel="noopener noreferrer">S-024</a></p>
 </div>
 <div class="card">
   <div style="display:flex;justify-content:space-between;gap:12px;align-items:flex-start;flex-wrap:wrap">
@@ -208,31 +209,59 @@
   <p class="sub" style="margin-bottom:6px"><b>Action requested.</b> When a single figure is chosen for any external use, cite the vintage with it. Do not average or blend vintages.</p>
   <p class="faint" style="margin:0">Sources: <a href="https://www.census.gov/quickfacts/fact/table/losangelescitycalifornia/PST045224" target="_blank" rel="noopener noreferrer">S-001</a> · <a href="https://www.bls.gov/eag/eag.ca_losangeles_md.htm" target="_blank" rel="noopener noreferrer">S-002</a> · <a href="https://www.census.gov/quickfacts/fact/faq/losangelescitycalifornia/PST045225" target="_blank" rel="noopener noreferrer">S-021</a></p>
 </div>
+<div class="card">
+  <div style="display:flex;justify-content:space-between;gap:12px;align-items:flex-start;flex-wrap:wrap">
+    <div style="flex:1;min-width:240px">
+      <div class="eyebrow">IR-14 · severity: medium</div>
+      <h3 style="margin:0 0 8px">No Q4 / FY2026 Jack in the Box Form 10-K or earnings release found on SEC EDGAR as of 2026-11-26</h3>
+    </div>
+    <span class="b b-warn">medium</span>
+  </div>
+  <p class="sub">EDGAR holds Q1, Q2 and Q3 FY2026 releases and Form 10-Q through July 5, 2026 (S-037 to S-041), but no Q4/FY2026 filing appeared on EDGAR as of 2026-11-26 (prior year Q4 FY2025 was filed 2025-11-19).</p>
+  <p class="sub"><b>Impact.</b> Tenant operating series stops at Q3 FY2026 (ended July 5, 2026). Full-year FY2026 unit count and franchise rental totals remain pending.</p>
+  <p class="sub" style="margin-bottom:6px"><b>Action requested.</b> Check SEC EDGAR CIK 0000807882 for the FY2026 10-K before finalising renewal negotiations.</p>
+  <p class="faint" style="margin:0">Sources: <a href="https://data.sec.gov/api/xbrl/companyconcept/CIK0000807882/us-gaap/Revenues.json" target="_blank" rel="noopener noreferrer">S-012</a> · <a href="https://www.sec.gov/Archives/edgar/data/807882/000080788226000090/ex991-q326earningsrelease.htm" target="_blank" rel="noopener noreferrer">S-039</a> · <a href="https://www.sec.gov/Archives/edgar/data/807882/000080788226000091/R4.htm" target="_blank" rel="noopener noreferrer">S-040</a></p>
+</div>
+<div class="card">
+  <div style="display:flex;justify-content:space-between;gap:12px;align-items:flex-start;flex-wrap:wrap">
+    <div style="flex:1;min-width:240px">
+      <div class="eyebrow">IR-15 · severity: medium</div>
+      <h3 style="margin:0 0 8px">Back-test scope boundary: macro HPI is back-tested; parcel-level cash-flow model is NOT back-tested</h3>
+    </div>
+    <span class="b b-warn">medium</span>
+  </div>
+  <p class="sub">Across sibling trees (F-20), the FHFA MSA HPI mean-reversion rule has 7 overlapping back-test pairs (r = -0.937), whereas the parcel-level NNN cash-flow model has zero verified rent, cap-rate or historical comp inputs and therefore cannot be back-tested.</p>
+  <p class="sub"><b>Impact.</b> Readers must not mistake the macro HPI back-test for a validated parcel valuation model.</p>
+  <p class="sub" style="margin-bottom:6px"><b>Action requested.</b> Keep model status as v0.1-unbacktested-core until G-04, G-05 and G-06 close.</p>
+  <p class="faint" style="margin:0">Sources: <a href="https://fred.stlouisfed.org/graph/fredgraph.csv?id=ATNHPIUS31084Q" target="_blank" rel="noopener noreferrer">S-005</a></p>
+</div>
 
-<h2>Unverified values — 16</h2>
+<h2>Unverified values — 18</h2>
 <p class="sub">Each of these appears as a blank on its page. None has been estimated, interpolated or filled from a nearby geography.</p>
-<div class="tbl-wrap"><table><thead><tr><th>ID</th><th>Value left blank</th><th>Why it is blank</th><th>Appears on</th></tr></thead><tbody>
-<tr><td>UV-01</td><td>Parcel census tract and tract demographics</td><td>IR-01 plus IR-04</td><td>&lt;a href=&quot;market.html&quot;&gt;market&lt;/a&gt;</td></tr>
-<tr><td>UV-02</td><td>1/3/5-mile ring aggregates</td><td>No official source publishes ring aggregates; must be computed or bought</td><td>&lt;a href=&quot;market.html&quot;&gt;market&lt;/a&gt;</td></tr>
-<tr><td>UV-03</td><td>Parcel FEMA flood zone</td><td>IR-01, IR-11</td><td>&lt;a href=&quot;hazards.html&quot;&gt;hazards&lt;/a&gt;</td></tr>
-<tr><td>UV-04</td><td>Parcel CAL FIRE severity zone</td><td>IR-01, IR-05</td><td>&lt;a href=&quot;hazards.html&quot;&gt;hazards&lt;/a&gt;</td></tr>
-<tr><td>UV-05</td><td>Parcel seismic design values</td><td>IR-01, IR-11</td><td>&lt;a href=&quot;hazards.html&quot;&gt;hazards&lt;/a&gt;</td></tr>
-<tr><td>UV-06</td><td>Seismic retrofit status</td><td>Requires private report</td><td>&lt;a href=&quot;hazards.html&quot;&gt;hazards&lt;/a&gt;</td></tr>
-<tr><td>UV-07</td><td>Liquefaction and landslide susceptibility</td><td>Requires CGS quadrangle maps for the exact site</td><td>&lt;a href=&quot;hazards.html&quot;&gt;hazards&lt;/a&gt;</td></tr>
-<tr><td>UV-08</td><td>Insurance premium, limits, deductibles, BI period</td><td>Private binder</td><td>&lt;a href=&quot;decision.html&quot;&gt;decision&lt;/a&gt;</td></tr>
-<tr><td>UV-09</td><td>Contract rent and expense recoveries</td><td>Private lease</td><td>&lt;a href=&quot;decision.html&quot;&gt;decision&lt;/a&gt;</td></tr>
-<tr><td>UV-10</td><td>Exit cap rate and short-lease discount</td><td>IR-10</td><td>&lt;a href=&quot;decision.html&quot;&gt;decision&lt;/a&gt;</td></tr>
-<tr><td>UV-11</td><td>Adjusted basis and accumulated depreciation</td><td>Private tax records</td><td>&lt;a href=&quot;decision.html&quot;&gt;decision&lt;/a&gt;</td></tr>
-<tr><td>UV-12</td><td>California marginal bracket</td><td>IR-06</td><td>&lt;a href=&quot;decision.html&quot;&gt;decision&lt;/a&gt;</td></tr>
-<tr><td>UV-13</td><td>Exact lease expiration and option dates</td><td>IR-02</td><td>&lt;a href=&quot;lease.html&quot;&gt;lease&lt;/a&gt;</td></tr>
-<tr><td>UV-14</td><td>Traffic count on the adjacent street</td><td>IR-01; segment unknown</td><td>&lt;a href=&quot;market.html&quot;&gt;market&lt;/a&gt;</td></tr>
-<tr><td>UV-15</td><td>Competitive QSR set within 3 miles</td><td>Requires field survey or licensed vendor</td><td>&lt;a href=&quot;market.html&quot;&gt;market&lt;/a&gt;</td></tr>
-<tr><td>UV-16</td><td>Franchisee financials and guaranty</td><td>Private</td><td>&lt;a href=&quot;lease.html&quot;&gt;lease&lt;/a&gt;</td></tr>
+<div class="tbl-wrap"><table><thead><tr><th>ID</th><th>Value left blank</th><th>Why it is blank</th><th>Appears on</th><th>Official source</th></tr></thead><tbody>
+<tr><td>UV-01</td><td>Parcel census tract and tract demographics</td><td>IR-01 plus IR-04</td><td><a href="market.html">market</a></td><td class="src"><a href="https://api.census.gov/data/2024/acs/acs5" target="_blank" rel="noopener noreferrer">S-020</a> <span class="faint">(2026-11-25)</span><br><span class="faint">U.S. Census Bureau</span></td></tr>
+<tr><td>UV-02</td><td>1/3/5-mile ring aggregates</td><td>No official source publishes ring aggregates; must be computed or bought</td><td><a href="market.html">market</a></td><td class="blank" title="No official source could confirm this">no source — unverified</td></tr>
+<tr><td>UV-03</td><td>Parcel FEMA flood zone</td><td>IR-01, IR-11</td><td><a href="hazards.html">hazards</a></td><td class="src"><a href="https://hazards.fema.gov/arcgis/rest/services/public/NFHL/MapServer/28" target="_blank" rel="noopener noreferrer">S-007</a> <span class="faint">(2026-11-25)</span><br><span class="faint">FEMA</span></td></tr>
+<tr><td>UV-04</td><td>Parcel CAL FIRE severity zone</td><td>IR-01, IR-05</td><td><a href="hazards.html">hazards</a></td><td class="src"><a href="https://osfm.fire.ca.gov/what-we-do/community-wildfire-preparedness-and-mitigation/fire-hazard-severity-zones" target="_blank" rel="noopener noreferrer">S-009</a> <span class="faint">(2026-11-25)</span><br><span class="faint">CAL FIRE — Office of the State Fire Marshal</span></td></tr>
+<tr><td>UV-05</td><td>Parcel seismic design values</td><td>IR-01, IR-11</td><td><a href="hazards.html">hazards</a></td><td class="src"><a href="https://earthquake.usgs.gov/ws/designmaps/asce7-22.json" target="_blank" rel="noopener noreferrer">S-006</a> <span class="faint">(2026-11-25)</span><br><span class="faint">U.S. Geological Survey</span></td></tr>
+<tr><td>UV-06</td><td>Seismic retrofit status</td><td>Requires private report</td><td><a href="hazards.html">hazards</a></td><td class="blank" title="No official source could confirm this">no source — unverified</td></tr>
+<tr><td>UV-07</td><td>Liquefaction and landslide susceptibility</td><td>Requires CGS quadrangle maps for the exact site</td><td><a href="hazards.html">hazards</a></td><td class="blank" title="No official source could confirm this">no source — unverified</td></tr>
+<tr><td>UV-08</td><td>Insurance premium, limits, deductibles, BI period</td><td>Private binder (CDI FAIR Plan context in S-030)</td><td><a href="decision.html">decision</a></td><td class="src"><a href="https://www.insurance.ca.gov/0400-news/0102-alerts/2026/Momentum-continues-to-build-under-Insura.cfm" target="_blank" rel="noopener noreferrer">S-030</a> <span class="faint">(2026-11-26)</span><br><span class="faint">California Department of Insurance (CDI)</span></td></tr>
+<tr><td>UV-09</td><td>Contract rent and expense recoveries</td><td>Private lease</td><td><a href="decision.html">decision</a></td><td class="blank" title="No official source could confirm this">no source — unverified</td></tr>
+<tr><td>UV-10</td><td>Exit cap rate and short-lease discount</td><td>IR-10</td><td><a href="decision.html">decision</a></td><td class="blank" title="No official source could confirm this">no source — unverified</td></tr>
+<tr><td>UV-11</td><td>Adjusted basis and accumulated depreciation</td><td>Private tax records (IRS Pub 946 rules in S-016)</td><td><a href="decision.html">decision</a></td><td class="src"><a href="https://www.irs.gov/publications/p946" target="_blank" rel="noopener noreferrer">S-016</a> <span class="faint">(2026-11-26)</span><br><span class="faint">Internal Revenue Service</span></td></tr>
+<tr><td>UV-12</td><td>Owner&#39;s personal California marginal income tier</td><td>2026 FTB Schedules X/Y/Z (1.00%-12.30%) + 1% MHSA &gt;$1M are now verified (IR-06 resolved); personal taxable income stays private</td><td><a href="decision.html">decision</a></td><td class="src"><a href="https://www.ftb.ca.gov/about-ftb/newsroom/tax-news/2026/10.html" target="_blank" rel="noopener noreferrer">S-033</a> <span class="faint">(2026-11-26)</span><br><span class="faint">California Franchise Tax Board</span></td></tr>
+<tr><td>UV-13</td><td>Exact lease expiration and option dates</td><td>IR-02</td><td><a href="lease.html">lease</a></td><td class="blank" title="No official source could confirm this">no source — unverified</td></tr>
+<tr><td>UV-14</td><td>Traffic count on the adjacent street</td><td>IR-01; segment unknown</td><td><a href="market.html">market</a></td><td class="src"><a href="https://dot.ca.gov/programs/traffic-operations/census" target="_blank" rel="noopener noreferrer">S-010</a> <span class="faint">(2026-11-26)</span><br><span class="faint">Caltrans</span></td></tr>
+<tr><td>UV-15</td><td>Competitive QSR set within 3 miles</td><td>Requires field survey or licensed vendor</td><td><a href="market.html">market</a></td><td class="blank" title="No official source could confirm this">no source — unverified</td></tr>
+<tr><td>UV-16</td><td>Franchisee financials and guaranty</td><td>Private</td><td><a href="tenant.html">tenant</a></td><td class="blank" title="No official source could confirm this">no source — unverified</td></tr>
+<tr><td>UV-17</td><td>Parcel zoning, Community Plan &amp; TOC Tier (ZIMAS)</td><td>IR-01; requires APN/address in secure workspace</td><td><a href="market.html">market</a></td><td class="src"><a href="https://planning.lacity.gov/odocument/21c2f80a-a107-424f-9a6d-fb9a88019d8e/Radius_Map_Guidelines.pdf" target="_blank" rel="noopener noreferrer">S-028</a> <span class="faint">(2026-11-26)</span><br><span class="faint">Los Angeles Department of City Planning</span></td></tr>
+<tr><td>UV-18</td><td>Parcel-level cash-flow back-test against closed comps</td><td>IR-10 / IR-15; requires G-04, G-05 and G-06</td><td><a href="scenarios.html">scenarios</a></td><td class="src"><a href="https://fred.stlouisfed.org/graph/fredgraph.csv?id=ATNHPIUS31084Q" target="_blank" rel="noopener noreferrer">S-005</a> <span class="faint">(2026-11-25)</span><br><span class="faint">FHFA via FRED, St. Louis Fed</span></td></tr>
 </tbody></table></div>
 
 <h2>What was verified</h2>
 <div class="card">
-  <ul class="tight" style="margin-bottom:0"><li>Los Angeles city population, income, poverty, education, housing, retail sales (Census QuickFacts)</li><li>Metro labour force, unemployment, sector employment, CPI (BLS)</li><li>47 quarters of metro HPI and the derived back-test statistics (FHFA via FRED)</li><li>10-year Treasury at 4.92% on 2026-11-23 and its November range (Federal Reserve H.15 via FRED)</li><li>Reference-point FEMA flood zone, USGS seismic parameters and SDC, and the central-LA earthquake count</li><li>Twenty county disaster declarations with numbers and dates (OpenFEMA)</li><li>Federal capital gain rates, 25% recapture, 3.8% NIIT thresholds, §1031 45/180-day limits, depreciation basis rules (IRS)</li><li>California has no preferential capital gain rate (FTB)</li><li>Decline-in-value window: opens 2026-07-02, deadline 2026-11-30 (LA County Assessor)</li><li>Caltrans is the official AADT source for state highways (Caltrans)</li><li>Jack in the Box is an SEC registrant with public 10-K and XBRL revenue (SEC)</li></ul>
+  <ul class="tight" style="margin-bottom:0"><li>Los Angeles city (3,869,089) &amp; county (9,694,934) population, income, poverty, education, housing, retail sales (Census QuickFacts V2025 &amp; CA DOF E-1 Jan 1, 2026)</li><li>Metro labour force, unemployment (4.6% Oct 2026), sector employment, CPI (3.7% Sep 2026) (BLS)</li><li>SCAG Connect SoCal 2024 LA County 2019-2050 employment &amp; labor force forecasts and CDE SY 2025-26 LAUSD enrollment (497,105)</li><li>47 quarters of metro HPI and the derived back-test statistics (FHFA via FRED)</li><li>10-year Treasury at 4.91% on 2026-11-24 (4.92% on 2026-11-23) and its November 2026 range (Federal Reserve H.15 via FRED)</li><li>Reference-point FEMA flood zone, USGS seismic parameters, UCERF3 30-yr LA earthquake probabilities (60%/46%/31%), and central-LA earthquake count</li><li>Twenty county disaster declarations with numbers and dates (OpenFEMA) + CDI Q1 2026 FAIR Plan commercial policy counts (21,464)</li><li>2026 Federal LTCG brackets (IRS Rev. Proc. 2025-32), 2025 Topic 409, 25% recapture, 3.8% NIIT thresholds, §1031 45/180-day limits, depreciation basis rules (IRS)</li><li>2026 California PIT Schedules X/Y/Z (1.00%-12.30%), +1% MHSA tax &gt;$1M, no preferential capital gain rate (FTB Oct 2026 Tax News &amp; Form 5805F)</li><li>Prop 13 1% base rate, 2% annual cap, change-of-ownership reset (BOE Pub 29) &amp; 2026-27 DIV deadline 2026-11-30 (LA County Assessor)</li><li>Caltrans Traffic Census 2021-2024 AADT workbooks &amp; LA City Planning ZIMAS/CP-7826 lookup procedure</li><li>Jack in the Box Inc. FY2023-Q3 FY2026 SEC series: SSS (-1.1% Q3&#39;26), unit counts (2,115), franchise rental revenues ($332.7M FY25 / $242.5M 9M&#39;26), $1.49B debt incl. 7.624% Series 2026-1 Notes (SEC EDGAR)</li></ul>
 </div>
 
   </div>
@@ -241,7 +270,7 @@
   <div class="wrap">
     <p><b>Privacy.</b> This site publishes aggregate, non-identifying findings only. No parcel address, owner identity, APN, lease document, rent figure or personal finance appears anywhere in this repository or on this site. The parcel is referred to as <code>PARCEL-001</code> throughout.</p>
     <p><b>Integrity.</b> Every data row carries a source identifier linking to an official source. Where an official source could not confirm a value, the value is left blank and listed on <a href="flagged.html">Flagged for review</a>. Nothing is inferred or filled in.</p>
-    <p class="faint">Data cut-off 2026-11-25 · Build 2026-11-25 · Not investment, legal or tax advice. Engage a licensed appraiser, attorney and CPA before acting.</p>
+    <p class="faint">Data cut-off 2026-11-26 · Build 2026-11-26 · Not investment, legal or tax advice. Engage a licensed appraiser, attorney and CPA before acting.</p>
   </div>
 </footer>
 </body>

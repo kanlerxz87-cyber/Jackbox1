@@ -1216,3 +1216,30 @@ resolved; F-18 remains on the Flagged for Review page as a change request to the
 `fetch_page` requests to `/audit/privacy.html` and `/verification/REPORT.md` returned tool-side errors after
 previously being cached as 404s during the incident; equivalent fresh URLs in the same directories resolved,
 and both files are confirmed present on `main`. No personal information is published.
+
+---
+
+# Session `arena/cc9c3feb-jackbox1` — 2026-11-26 Audit, Verification & Expansion
+
+## Task board — `arena/cc9c3feb-jackbox1`
+
+| ID | Task | Status | Owner | File scope |
+|---|---|---|---|---|
+| C-01 | Full repo audit, privacy scan & cross-tree link validation | done | `arena/cc9c3feb-jackbox1` | `scripts/validate.mjs`, repo-wide scan |
+| C-02 | Official source verification (2026-11-26): SEC FY23–Q3'26, IRS Rev. Proc. 2025-32, FTB Oct 2026 PIT + 1% MHSA, BOE Pub 29, CDE, DOF E-1, SCAG 2024, USGS UCERF3, CDI Q1'26, FRED DGS10, LA Assessor, Caltrans, ZIMAS | done | `arena/cc9c3feb-jackbox1` | `data/sources.json` (41 official sources) |
+| C-03 | Add multi-period tenant SEC series (`pages/tenant.html` + `data/tenant.json`) | done | `arena/cc9c3feb-jackbox1` | `data/tenant.json`, `pages/tenant.html` |
+| C-04 | Expand `pages/market.html` (county, schools, DOF/SCAG projections, ZIMAS, tract-trend method) & `pages/hazards.html` (UCERF3 & FAIR Plan) | done | `arena/cc9c3feb-jackbox1` | `data/tradearea.json`, `data/hazards.json`, `pages/market.html`, `pages/hazards.html` |
+| C-05 | Expand `pages/decision.html` (5-option risk/wealth-preservation matrix, 2026 tax rules) & `assets/js/calc.js` (2026 LTCG + 2026 FTB PIT + 1% MHSA) | done | `arena/cc9c3feb-jackbox1` | `data/valuation.json`, `assets/js/calc.js`, `pages/decision.html` |
+| C-06 | Fix escaped anchors (`sources.html`, `flagged.html`), broken footer URL (`print.html`), row-level source links & retrieval dates, cross-tree map (`index.html`), sync gates (`questions.json` / `G-15` closed) | done | `arena/cc9c3feb-jackbox1` | `scripts/build.mjs`, `data/*.json`, `pages/*.html` |
+| C-07 | Rebuild, run all 5 validators, PR to `main`, merge & confirm GitHub Pages deployment | in progress | `arena/cc9c3feb-jackbox1` | `COORDINATION.md`, PR & Pages deploy |
+
+## Verification & Flagged Summary (2026-11-26)
+
+- **No sell/renew winner selected.** Gates `G-01`–`G-14`, `G-16`, `G-17` remain open (private lease dates, parcel coordinates, broker quotes, basis, insurance binder); `G-15` (2026 California PIT brackets + 1% MHSA) closed via FTB Tax News Oct 2026 (`S-033`) and Form 5805F (`S-034`).
+- **Validators run & passing:**
+  - `node scripts/validate.mjs`: 41 official sources, 252 rows (98 verified-like all sourced, 51 unverified all blank), 12 pages, 232 outbound source links, 2,472 internal links across all 8 site trees, 0 privacy hits, 0 escaped anchors.
+  - `python3 tools/check.py`: 18 pages, 72 registry rows, passed.
+  - `python3 web/tools/verify.py` & `python3 web/tools/check_links.py`: 281 rows, 17 HTML files, 384 internal links, passed.
+  - `python3 verification/check.py`: 16/16 checks, 432 rows, 22 pages, passed.
+- **New / updated flags (`pages/flagged.html`):** `IR-06` resolved (2026 FTB PIT brackets verified), `IR-07` resolved with county geographic caveat, `IR-14` added (no Q4/FY2026 Jack in the Box filing on SEC EDGAR as of 2026-11-26), `IR-15` added (macro HPI back-test vs unbacktested parcel model boundary).
+

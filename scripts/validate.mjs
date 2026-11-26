@@ -41,19 +41,21 @@ sources.sources.forEach(s => {
 P(`source register: ${sources.sources.length} sources, all hosts on allowlist`);
 
 /* ---------- 2. dataset row checks ---------- */
-const SETS = ['tradearea', 'hazards', 'lease', 'valuation', 'quotes', 'model', 'stress', 'questions', 'suggestions', 'flagged'];
+const SETS = ['tradearea', 'hazards', 'tenant', 'lease', 'valuation', 'quotes', 'model', 'stress', 'questions', 'suggestions', 'flagged'];
 let rowCount = 0, verifiedCount = 0, unverifiedCount = 0;
 
 function rowsOf(ds, obj) {
   const out = [];
   const push = (arr, label) => Array.isArray(arr) && arr.forEach(r => out.push({ r, label }));
   push(obj.rows, 'rows');
+  push(obj.series, 'series');
   push(obj.abstract_fields, 'abstract_fields');
   push(obj.notice_calendar, 'notice_calendar');
   push(obj.market_anchors, 'market_anchors');
   push(obj.sell_side_inputs, 'sell_side_inputs');
   push(obj.hold_side_inputs, 'hold_side_inputs');
   push(obj.tax_rules, 'tax_rules');
+  push(obj.decision_options_risk_matrix, 'decision_options_risk_matrix');
   push(obj.quote_log, 'quote_log');
   push(obj.what_the_public_record_does_show, 'what_the_public_record_does_show');
   push(obj.observations, 'observations');
@@ -102,6 +104,7 @@ const pages = readdirSync(join(ROOT, 'pages')).filter(f => f.endsWith('.html'));
 let srcLinks = 0;
 pages.forEach(f => {
   const html = readFileSync(join(ROOT, 'pages', f), 'utf8');
+  if (html.includes('&lt;a href=')) E(`${f}: contains HTML-escaped anchor tag (&lt;a href=)`);
   const matches = html.match(/href="https:\/\/[^"]+"/g) || [];
   srcLinks += matches.length;
 });
@@ -116,7 +119,7 @@ const linkTargets = pages.map(f => 'pages/' + f).concat(['index.html'])
 /* Every other session's tree is also link-checked, so no published page anywhere in the repo
    can carry a dead link. Discovery is dynamic: a new sibling tree is covered automatically. */
 const TREE_DIRS = [
-  'docs', 'workspace', 'audit-78005353', 'audit-78005353/site',
+  'docs', 'workspace', 'audit', 'web', 'audit-78005353', 'audit-78005353/site',
   // ledger-1ebd66da keeps its pages one level down, in its own pages/ directory
   'ledger-1ebd66da', 'ledger-1ebd66da/pages',
 ];
