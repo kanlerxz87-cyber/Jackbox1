@@ -45,7 +45,7 @@ def groups(d):
         "pop_rows": p["pop_rows"], "emp_rows": p["emp_rows"], "k12_rows": p["k12_rows"], "rev_rows": p["rev_rows"], "proj_blank": p["blank"],
         "calendar": dr["calendar"], "drivers": dr["drivers"], "peer_rows": pe["rows"], "peer_ops": pe["ops"],
         "options": op["options"], "wealth": op["wealth"], "swan": op["swan"],
-        "gates": wf["gates"], "rules": wf["rules"], "no_regret": wf["no_regret"], "questions": wf["questions"], "suggestions": wf["suggestions"],
+        "gates": wf["gates"], "rules": wf["rules"], "no_regret": wf["no_regret"], "questions": wf["questions"], "suggestions": wf["suggestions"], "worksheet": wf["worksheet"],
     }
 
 

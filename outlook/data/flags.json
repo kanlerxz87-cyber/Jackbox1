@@ -110,7 +110,7 @@
    "id": "OL-F10",
    "title": "Repository README is stale",
    "severity": "medium",
-   "finding": "README.md still says '12 irregularities' (line 63) while the board and the validator count 13, and line 133 still lists data/tracts_demo_90015.csv although the file is now data/tracts_demo_a.csv. The stale name also places a real ZIP code in a public document.",
+   "finding": "README.md line 63 still says '12 irregularities' while data/flagged.json currently lists 15 (IR-01 to IR-15), and line 133 still lists data/tracts_demo_90015.csv although the file in the repository is data/tracts_demo_a.csv. The stale name also places a real ZIP code in a public document. The README also says counts are never hardcoded.",
    "evidence": [
     "OL-S36"
    ],

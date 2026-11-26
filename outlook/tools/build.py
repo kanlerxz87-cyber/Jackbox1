@@ -404,7 +404,14 @@ def page_rules(c):
     rows = [tr(r["id"], [td(r["id"]), td(E(r["action"])), td(E(r["why"])), td(kind_badge(r["kind"])), td(c.ref_cell(r))]) for r in w["no_regret"]]
     out.append("<h2 id=\"noregret\">3. No-regret actions</h2>")
     out.append(table("Actions that make sense under every option", ["ID", "Action", "Why", "Kind", "Reference"], rows))
-    return "Decision rules", "Nine gates, conditional rules and break-evens, and the actions worth taking whichever way the decision goes. No winner is shown.", "".join(out)
+    rows = []
+    for r in w["worksheet"]:
+        rows.append(tr(r["id"], [td(r["id"]), td(E(r["case"])), td(E(r["line"])), td('<span class="blank">blank: unverified</span>'),
+                                 td(E(r["how_to_fill"])), td(kind_badge("blank")), td((c.srcs(r["src"]) + " " if r["src"] else "") + c.flag(r["flag"]))]))
+    out.append("<h2 id=\"worksheet\">4. Blank side-by-side worksheet: after-tax sale next to a negotiated renewal</h2>")
+    out.append("<p>Every value is blank on purpose. The two cases use one date, one set of tax assumptions and the same units (RULE-1). Do not enter private figures on this public page: complete a private copy offline.</p>")
+    out.append(table("After-tax comparison worksheet (template)", ["ID", "Case", "Line", "Value", "How to fill", "Kind", "Reference and flag"], rows))
+    return "Decision rules", "Nine gates, conditional rules and break-evens, a blank side-by-side worksheet, and the actions worth taking whichever way the decision goes. No winner is shown.", "".join(out)
 
 
 def page_questions(c):
@@ -517,7 +524,7 @@ def page_index(c):
     gates_open = sum(1 for g in w["gates"] if g["status"] == "open")
     kinds = {}
     for grp in [p["pop_rows"], p["emp_rows"], p["k12_rows"], p["rev_rows"], c.d["drivers"]["calendar"], c.d["drivers"]["drivers"], c.d["peers"]["rows"], c.d["peers"]["ops"],
-                c.d["options"]["options"], c.d["options"]["wealth"], c.d["options"]["swan"], w["gates"], w["rules"], w["no_regret"], w["questions"], w["suggestions"], p["blank"]]:
+                c.d["options"]["options"], c.d["options"]["wealth"], c.d["options"]["swan"], w["gates"], w["rules"], w["no_regret"], w["questions"], w["suggestions"], w["worksheet"], p["blank"]]:
         for r in grp:
             k = r.get("kind", "blank")
             kinds[k] = kinds.get(k, 0) + 1
