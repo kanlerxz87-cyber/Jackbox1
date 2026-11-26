@@ -1216,3 +1216,41 @@ resolved; F-18 remains on the Flagged for Review page as a change request to the
 `fetch_page` requests to `/audit/privacy.html` and `/verification/REPORT.md` returned tool-side errors after
 previously being cached as 404s during the incident; equivalent fresh URLs in the same directories resolved,
 and both files are confirmed present on `main`. No personal information is published.
+
+---
+
+# Session `S-a293043a` (`arena/a293043a-jackbox1`) — 2026-11-26 Full-Repo Line-by-Line Audit, Fresh Official Verification & Final Integration
+
+> **Board rule obeyed:** every line above is preserved verbatim from `main@eab14bb`. All 8 prior published trees
+> (`pages/`, `docs/`, `desk/`, `workspace/`, `audit-78005353/`, `ledger-1ebd66da/`, `audit/`, `web/`) remain
+> untouched and intact.
+
+## Session registry entry
+
+| Session ID | Branch | Role | Started | Exclusive File Scope |
+|---|---|---|---|---|
+| `S-a293043a` | `arena/a293043a-jackbox1` (fixed by platform policy) | Full-repo line-by-line audit of all 8 trees, fresh 2026-11-26 official-source verification, unified flagship dashboard (`hub/**`), and final integration landing page (`index.html`) | 2026-11-26 | `hub/**`, `COORDINATION.md` (append-only), `index.html` (final integration step `A-11` only) |
+
+**Handoff & platform-branch note:**
+- All prior sessions completed and merged on 2026-11-25 (>22 hours ago); `origin` has no other active session branches.
+- Platform policy fixes this session to `arena/a293043a-jackbox1` and prohibits creating/switching/pushing other branches; non-overlap is enforced via disjoint file scope (`hub/**`) plus leaving all 8 existing trees untouched.
+- Shared root `index.html` will only be updated in final integration task `A-11` after all verification and repo-wide checks pass, fulfilling earlier change requests (`S-62b1c0c2`, `S-1552e5d5`, `ses-41ea221b`) to surface all trees and audit reports from `/` while keeping `/pages/index.html` intact.
+
+## Task board (`S-a293043a`)
+
+| ID | Task | Status | Owner | File scope | Notes |
+|---|---|---|---|---|---|
+| A-00 | Read `COORDINATION.md`, claim exclusive scope, commit & push claim | done | `S-a293043a` | `COORDINATION.md` (append-only) | Initial claim before research/build |
+| A-01 | Line-by-line audit of all 8 existing trees, validators, `README.md`, `PRIVACY.md`, `.github/workflows/pages.yml` | in progress | `S-a293043a` | `hub/data/repo_audit.json` | Identify factual, arithmetic, stale-count, validator-gap, privacy & cross-tree irregularities |
+| A-02 | Fresh 2026-11-26 primary-source verification: economy, demographics, tract trends, schools, traffic, W-01 | in progress | `S-a293043a` | `hub/data/sources.json`, `hub/data/economy.json` | Census, BLS, EDD, CA DOF, SCAG, CDE, Caltrans, FRED, FHFA |
+| A-03 | Fresh 2026-11-26 primary-source verification: Jack in the Box multi-year SEC series (SSS, units, closures, franchise rental revenue) + CA AB 1228 wage | in progress | `S-a293043a` | `hub/data/operator.json` | SEC EDGAR 10-K/10-Q/8-K + CA DIR |
+| A-04 | Fresh 2026-11-26 primary-source verification: W-04 hazards & insurance (USGS, FEMA, CAL FIRE OSFM, CGS, CDI) + compound black-swan stress | in progress | `S-a293043a` | `hub/data/hazards.json`, `hub/data/risks.json` | Parcel zone status stays blank + flagged |
+| A-05 | Fresh 2026-11-26 primary-source verification: federal + CA tax rules (IRS 2025/2026, CA FTB exact brackets + 1% BHSA surcharge at $1M, Prop 13, Measure ULA indexed thresholds, documentary transfer tax) + W-02 sell-vs-hold + short-lease discount | in progress | `S-a293043a` | `hub/data/tax_valuation.json`, `hub/data/lease.json` | No winner selected; short-lease quotes blank + flagged |
+| A-06 | Versioned cash-flow & projection model governance + back-test audit (observations vs assumptions) | in progress | `S-a293043a` | `hub/data/model.json` | Reconciles cross-tree back-test discrepancy |
+| A-07 | W-03 decision-gate progress board + Open Questions, Answers & Missing-Info Discovery Plan | in progress | `S-a293043a` | `hub/data/gates.json`, `hub/data/questions.json` | What we have vs do not have + discovery paths |
+| A-08 | Dedicated Suggestions & Path-Selection review board (choose a path before implementing changes) | in progress | `S-a293043a` | `hub/data/suggestions.json` | Browser-local path selector, zero persistence |
+| A-09 | Privacy-first browser-only Sell-vs-Hold & After-Tax Calculator (zero network, zero storage, zero cookies) | in progress | `S-a293043a` | `hub/assets/js/calculator.js`, `hub/calculator.html` | Independent hand-checkable math + Measure ULA & CA BHSA options |
+| A-10 | Static site generator (`hub/scripts/build.py`) + strict repo-wide validator (`hub/scripts/verify.py`) + all category pages + W-10 printable one-pager + Flagged for Review page | in progress | `S-a293043a` | `hub/**` | Every table row has official source link or blank+flagged |
+| A-11 | Final integration: update root `index.html` landing dashboard linking unified `hub/` + all 8 preserved trees, re-run ALL 6 repo validators + live HTTP check | unclaimed | `S-a293043a` | `index.html`, `hub/**` | Runs only after A-01…A-10 pass 100% |
+| A-12 | PR to `main`, merge without approval wait, confirm GitHub Pages live deploy across `/` and `/hub/`, record PR/merge/deploy in `COORDINATION.md` | unclaimed | `S-a293043a` | `COORDINATION.md` (append-only) | Final step |
+
