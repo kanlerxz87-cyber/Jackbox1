@@ -1216,3 +1216,27 @@ resolved; F-18 remains on the Flagged for Review page as a change request to the
 `fetch_page` requests to `/audit/privacy.html` and `/verification/REPORT.md` returned tool-side errors after
 previously being cached as 404s during the incident; equivalent fresh URLs in the same directories resolved,
 and both files are confirmed present on `main`. No personal information is published.
+
+---
+
+## Session `arena-b072f72e` — Verification, Tenant Series & Cross-Tree Integration (2026-11-26)
+
+| ID | Task | Status | Owner | Files |
+|---|---|---|---|---|
+| B-01 | Add multi-period Jack in the Box SEC EDGAR operating series (FY2024–Q1 FY2026: same-store sales, openings/closures, franchise rental revenue, margins, FY2026 guidance; blank unverified slots for private parcel-level franchisee sales & guaranty) | done | `arena-b072f72e` | `data/tenant.json`, `data/sources.json`, `scripts/build.mjs`, `scripts/validate.mjs`, `pages/tenant.html` |
+| B-02 | Fix factual typo in `IR-02` (`2030-2035` is a five-year window, not an eight-year window) | done | `arena-b072f72e` | `data/flagged.json`, `pages/flagged.html` |
+| B-03 | Fulfill `S-62b1c0c2` handoff request: add companion-workspace links (`/audit/`, `/verification/REPORT.md`, `/docs/`, `/web/`, `/workspace/`, `/desk/`) to primary site footer | done | `arena-b072f72e` | `scripts/build.mjs`, `pages/*.html` |
+| B-04 | Rebuild, run line-by-line validators (`node scripts/validate.mjs` + `python3 verification/check.py`), open PR to `main`, merge, and confirm GitHub Pages deploy | in progress | `arena-b072f72e` | `COORDINATION.md` |
+
+### Sources verified (`arena-b072f72e`)
+- `S-011`: SEC EDGAR — Jack in the Box Inc. Form 10-K (FY2025 ended 2025-09-28): FY2024 & FY2025 system/company/franchise same-store sales (`-1.3%` → `-4.2%`).
+- `S-023`: SEC EDGAR — Form 8-K Ex-99.1 Q4 & FY2025 Earnings Release (2025-11-19): Q4 FY2025 SSS `-7.4%`, FY2025 openings `31` / closures `86` (`51` under JACK on Track), FY2026 guidance.
+- `S-024`: SEC EDGAR — DEF 14A Proxy Statement (2026-01-16): FY2025 Jack in the Box brand franchise rental revenues `$332,735` thousand (consolidated `$368,643` thousand).
+- `S-025`: SEC EDGAR — DEF 14A Proxy Statement (2025-01-27): FY2024 openings `30` / closures `25` (net `+5`), franchise-level margin `40.9%`, restaurant-level margin `21.7%`.
+- `S-026`: SEC EDGAR — Form 8-K Ex-99.1 Q1 FY2026 Earnings Release (16 weeks ended 2026-01-18): Q1 FY2026 SSS `-6.7%`, franchise rental revenues `$97,387` thousand (vs `$105,781` thousand in Q1 FY2025, `-7.9%` YoY), FY2026 guidance (`2,050–2,100` units, `50–100` closures).
+
+### Verification performed (`arena-b072f72e`)
+- `node scripts/build.mjs`: built `index.html` + 12 pages.
+- `node scripts/validate.mjs`: **PASS** — 26 official sources (all allowlisted), 225 rows (83 verified-like all sourced, 50 unverified all blank), 12 pages, 123 outbound source links, 1,556 internal links resolving, 0 privacy leaks.
+- `python3 verification/check.py`: **PASS 16/16** — 432 table rows, 22 pages.
+
