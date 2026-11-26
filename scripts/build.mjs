@@ -60,6 +60,7 @@ function srcCell(id) {
 const NAV = [
   ['index.html', 'Dashboard'],
   ['market.html', 'Market &amp; trade area'],
+  ['tenant.html', 'Tenant series'],
   ['hazards.html', 'Hazard screening'],
   ['lease.html', 'Lease &amp; calendar'],
   ['decision.html', 'Sell vs hold'],
@@ -103,7 +104,8 @@ ${body}
   <div class="wrap">
     <p><b>Privacy.</b> This site publishes aggregate, non-identifying findings only. No parcel address, owner identity, APN, lease document, rent figure or personal finance appears anywhere in this repository or on this site. The parcel is referred to as <code>PARCEL-001</code> throughout.</p>
     <p><b>Integrity.</b> Every data row carries a source identifier linking to an official source. Where an official source could not confirm a value, the value is left blank and listed on <a href="flagged.html">Flagged for review</a>. Nothing is inferred or filled in.</p>
-    <p class="faint">Data cut-off 2026-11-25 · Build ${new Date().toISOString().slice(0, 10)} · Not investment, legal or tax advice. Engage a licensed appraiser, attorney and CPA before acting.</p>
+    <p class="faint">Companion workspaces preserved in this repository: <a href="../audit/index.html">Audit desk</a> · <a href="../verification/REPORT.md">Verification report</a> · <a href="../docs/index.html">Docs dashboard</a> · <a href="../web/index.html">Web tree</a> · <a href="../workspace/index.html">Registry workspace</a> · <a href="../desk/index.html">Earlier desk</a>.</p>
+    <p class="faint">Data cut-off 2026-11-26 · Build ${new Date().toISOString().slice(0, 10)} · Not investment, legal or tax advice. Engage a licensed appraiser, attorney and CPA before acting.</p>
   </div>
 </footer>
 </body>
@@ -138,12 +140,12 @@ const callout = (kind, label, html) => `<div class="callout c-${kind}"><strong>$
 /* ======================================================================= */
 /*  DATA                                                                   */
 /* ======================================================================= */
-const ta = D('tradearea'), hz = D('hazards'), lz = D('lease'), va = D('valuation'),
+const ta = D('tradearea'), tn = D('tenant'), hz = D('hazards'), lz = D('lease'), va = D('valuation'),
   qt = D('quotes'), md = D('model'), st = D('stress'), qs = D('questions'),
   sg = D('suggestions'), fl = D('flagged');
 
 const countBy = (arr, f) => arr.reduce((m, x) => (m[f(x)] = (m[f(x)] || 0) + 1, m), {});
-const ALL = [{ d: ta, k: ['rows'] }, { d: hz, k: ['rows'] }, { d: lz, k: ['abstract_fields', 'notice_calendar'] },
+const ALL = [{ d: ta, k: ['rows'] }, { d: tn, k: ['rows'] }, { d: hz, k: ['rows'] }, { d: lz, k: ['abstract_fields', 'notice_calendar'] },
   { d: va, k: ['market_anchors', 'sell_side_inputs', 'hold_side_inputs', 'tax_rules'] },
   { d: qt, k: ['quote_log', 'what_the_public_record_does_show'] },
   { d: md, k: ['observations', 'assumptions'] },
@@ -966,6 +968,29 @@ const printBody = `
 </div>
 `;
 out('pages/print.html', layout({ title: 'Printable advisor brief', page: 'print.html', body: printBody }));
+
+/* ======================================================================= */
+/*  TENANT OPERATING SERIES (SEC EDGAR multi-period trend)                 */
+/* ======================================================================= */
+const tenantBody = `
+<div class="eyebrow">Tenant credit &amp; brand trajectory · SEC EDGAR multi-period series</div>
+<h1>Jack in the Box operating series</h1>
+<p class="lede">A single quarter can mislead. This table tracks <b>same-store sales, unit counts, closures, and franchise rental revenues</b> across FY2024, FY2025, and Q1 FY2026 directly from Jack in the Box Inc. SEC filings.</p>
+
+${callout('warn', 'Corporate brand ≠ parcel franchisee', 'Public SEC filings measure the franchisor (Jack in the Box Inc., NASDAQ: JACK). The operating tenant on <code>PARCEL-001</code> is a private franchisee whose unit-level sales, rent-to-sales ratio, and guaranty coverage are intentionally blank until verified privately.')}
+
+<h2>Verified multi-period operating series</h2>
+${table([
+  { k: 'id', label: 'ID' },
+  { k: 'metric', label: 'Metric' },
+  { k: 'period', label: 'Period' },
+  { k: 'value', label: 'Value', num: true },
+  { k: 'status', label: 'Status' },
+  { k: 'src', label: 'Official source' },
+  { k: 'note', label: 'Context' },
+], tn.rows, { note: 'Direction across FY2024 → FY2025 → Q1 FY2026: system same-store sales moved from -1.3% to -4.2% to -6.7%; closures accelerated from 25 to 86 (51 under JACK on Track) with 50–100 guided for FY2026; Q1 FY2026 franchise rental revenues fell 7.9% YoY. This raises renewal-credit risk and underscores why private store-level sales and guaranty review must precede any renewal commitment.' })}
+`;
+out('pages/tenant.html', layout({ title: 'Tenant operating series', page: 'tenant.html', body: tenantBody }));
 
 /* ======================================================================= */
 /*  ROOT REDIRECT                                                          */
