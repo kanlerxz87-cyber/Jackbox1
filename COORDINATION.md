@@ -6,6 +6,60 @@
 > Status values: `unclaimed` · `in progress` · `needs review` · `done`
 > Stale claims (> 60 min, no commits) may be taken over; note the handoff in the Log.
 
+## 🟢 Current board — 2026-11-26 (newest first; read this before the historical sections below)
+
+> Everything below this block is **history** from 2026-11-25 (all of those claims are > 60 min old and
+> every task on them is `done`). Three sessions started within one minute of each other on 2026-11-26.
+> This block is the live board. It is placed at the **top** of the file on purpose: the other two
+> sessions append at the end of the file, so keeping this block here avoids an add/add conflict.
+
+### Live session registry (verified from `git ls-remote` + each branch's own claim commit, 2026-11-26 13:08 UTC)
+
+| Session | Branch | Claim commit | Claimed scope (exclusive) | Status |
+|---|---|---|---|---|
+| `S-f6ebb740` | `arena/f6ebb740-jackbox1` | this commit | `dashboard/**` (new, self-contained) + this block of `COORDINATION.md` | in progress |
+| `arena-1a77511b` | `arena/1a77511b-jackbox1` | `9e9c2be` | R-01: `index.html`, `integration-review.html`, `integration.css`, `scripts/check-integration.py`, `COORDINATION.md` (append only) | in progress (not mine) |
+| `S-43ae253a` | `arena/43ae253a-jackbox1` | `245d618` | INT-26: `index.html`, `assets/integration-26.css` · AUD-26: `release-review.html`, `tools/check_integration26.py` · PUB-26: `COORDINATION.md` (append only) | in progress (not mine) |
+
+**Overlap observed, not mine to resolve:** `1a77511b` (R-01) and `43ae253a` (INT-26) **both** claim root
+`index.html`. `S-f6ebb740` does **not** claim or edit `index.html`. Whoever merges second will hit a
+content conflict on `index.html` and `COORDINATION.md`; the standing rule applies (resolve without
+discarding the other side, log it). Suggested split, offered not imposed: one session owns `index.html`,
+the other keeps its landing content in its own `integration-review.html` only.
+
+### S-f6ebb740 — task board
+
+| ID | Task | Status | Owner | File scope (exclusive to this session) |
+|---|---|---|---|---|
+| F6-01 | Re-verify headline evidence against official pages **fetched in this session**; one master ledger (value, vintage, verbatim excerpt, retrieval date, official URL); blank + flag anything not confirmed | in progress | S-f6ebb740 | `dashboard/data/ledger.json`, `dashboard/data/sources.json` |
+| F6-02 | Forward-looking area evidence the nine earlier trees lack: official population and employment projections, transit/event/housing drivers, policy cost pressures (fast-food wage law, transfer taxes, Prop 13/19), peer-brand series | in progress | S-f6ebb740 | `dashboard/data/ledger.json` (rows `FWD-*`, `POL-*`, `PEER-*`) |
+| F6-03 | Decision analysis: every option (sell / renew / extend / re-tenant / redevelop / exchange / installment / hold) with business-as-usual and black-swan risks, wealth-preservation lens for an individual owner, conditional decision rules, **no winner without verified inputs** | in progress | S-f6ebb740 | `dashboard/data/decision.json`, `dashboard/decision.html`, `dashboard/executive-summary.html` |
+| F6-04 | Category site: dashboard landing + subpages as simple tables, gates board (W-03), advisor one-pager (W-10), questions/gaps, suggestions board, flagged page, sources, privacy | in progress | S-f6ebb740 | `dashboard/*.html`, `dashboard/assets/**` |
+| F6-05 | Browser-only calculator (sell-vs-hold, after-tax, break-even, stress overlay) + blank private templates (lease abstract, notice calendar, quote log) generated client-side; no network, no storage | in progress | S-f6ebb740 | `dashboard/calculator.html`, `dashboard/assets/js/**`, `dashboard/templates/**` |
+| F6-06 | Cross-tree data audit: what each earlier tree published for the same metric vs the official page today (agreement / conflict / not re-checkable) | in progress | S-f6ebb740 | `dashboard/audit.html`, `dashboard/data/audit.json` |
+| F6-07 | Build + validate tooling (row-source rule, blank-means-unverified rule, privacy scan, internal link check, calculator test) | in progress | S-f6ebb740 | `dashboard/tools/**` |
+| F6-08 | PR from `arena/f6ebb740-jackbox1`, merge, confirm Pages deploy, record link + result **in this block** | unclaimed until F6-01…07 are done | S-f6ebb740 | this block of `COORDINATION.md` only |
+
+**Not touched by this session (owned by the two live sessions or by history):** root `index.html`,
+`integration-review.html`, `integration.css`, `release-review.html`, `assets/integration-26.css`,
+`scripts/check-integration.py`, `tools/check_integration26.py`, and every earlier tree
+(`pages/`, `data/*`, `docs/`, `desk/`, `workspace/`, `audit/`, `audit-78005353/`, `ledger-1ebd66da/`, `web/`,
+`verification/`). A link from the root landing page to `dashboard/index.html` is **requested, not
+performed**: whoever owns `index.html` is asked to add it. If neither does by the time F6-08 starts and
+both claims read `done`, this session will add exactly one navigation link as the final integration step
+and log it here.
+
+**Platform constraint (D-F6-01):** the workspace fixes this session to branch `arena/f6ebb740-jackbox1`;
+the requested `session-<id>/<task>` branch names cannot be created. Non-overlap is enforced by the
+disjoint file scopes above and by `git pull --rebase` / merge of `main` before every push.
+
+**Privacy rule for this session (highest priority):** no street address, APN/AIN, owner or entity name,
+lease text, rent, basis, finances or parcel coordinates enters Git. The parcel is `PARCEL-001`. The tenant
+*brand* is named only because it is an SEC registrant whose public filings are cited. Anything personal that
+turns up during research is kept out of the repository entirely.
+
+---
+
 ## ⚠️ Read first: four parallel sessions, four static trees
 
 This repository was built by **four** concurrent sessions. All four trees are retained.
