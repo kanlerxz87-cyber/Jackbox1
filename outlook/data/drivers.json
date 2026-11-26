@@ -1,0 +1,173 @@
+{
+  "calendar": [
+    {
+      "id": "CAL-01",
+      "date": "2026-05-08",
+      "when": "2026-05-08",
+      "status": "past",
+      "event": "Metro D Line Subway Extension Section 1 opened (Wilshire/La Brea, Wilshire/Fairfax, Wilshire/La Cienega)",
+      "why": "A completed transit change on the Wilshire corridor; whether the parcel is near it is unknown (location is private).",
+      "src": [
+        "OL-S09"
+      ],
+      "excerpt": "Section 1 Opened May 8, 2026",
+      "kind": "observation"
+    },
+    {
+      "id": "CAL-02",
+      "date": "2026-11-30",
+      "when": "Mon 2026-11-30 (4 days from this review)",
+      "status": "upcoming",
+      "event": "Los Angeles County Assessor decline-in-value (Proposition 8) filing window closes; the Assessor's annual window is July 2 to November 30",
+      "why": "Relevant only if the parcel's assessed value is above its January 1 market value. Who bears or controls property-tax appeals depends on the lease. Applicability is unknown, not assumed.",
+      "src": [
+        "OL-S25"
+      ],
+      "excerpt": "The annual Decline-in-Value filing period is July 2 through November 30.",
+      "kind": "observation",
+      "flag": "OL-F12",
+      "note": "The weekday is a calendar computation by this session, not a quotation."
+    },
+    {
+      "id": "CAL-03",
+      "date": "2026-12-09",
+      "when": "Wed 2026-12-09, after market close; call 5:00 p.m. ET",
+      "status": "upcoming",
+      "event": "Jack in the Box Inc. reports fourth quarter and full-year fiscal 2026 results",
+      "why": "Closes the tenant-brand series for FY2026 (same-store sales, closures, franchise margin, FY2027 signals). The tenant series on this module stops at Q3 FY2026 until then.",
+      "src": [
+        "OL-S19"
+      ],
+      "excerpt": "will report fourth quarter and full-year fiscal 2026 financial results after market close on Wednesday, December 9, 2026.",
+      "kind": "observation",
+      "flag": "OL-F04"
+    },
+    {
+      "id": "CAL-04",
+      "date": "2027-04-02",
+      "when": "2027-04-02",
+      "status": "upcoming",
+      "event": "Jack in the Box Inc. chief financial officer transition takes effect; successor search under way",
+      "why": "Management turnover at the franchisor is a governance signal; it does not itself change a franchisee's lease obligations.",
+      "src": [
+        "OL-S19"
+      ],
+      "excerpt": "stepping down as Executive Vice President and Chief Financial Officer, effective April 2, 2027.",
+      "kind": "observation",
+      "flag": "OL-F15"
+    },
+    {
+      "id": "CAL-05",
+      "date": "2028-07-14",
+      "when": "2028-07-14 to 2028-07-30 (Olympic Games); 2028-08-15 to 2028-08-27 (Paralympic Games)",
+      "status": "upcoming",
+      "event": "Los Angeles 2028 Olympic and Paralympic Games",
+      "why": "A dated demand and traffic event inside any lease or sale timeline. Effect on a specific trade area is unknown.",
+      "src": [
+        "OL-S08"
+      ],
+      "excerpt": "Olympic Games Dates: July 14-30, 2028 ... Paralympic Games Dates: August 15-27, 2028",
+      "kind": "observation"
+    },
+    {
+      "id": "CAL-06",
+      "date": "2029-01-01",
+      "when": "2029-01-01 as shown in the bill digest",
+      "status": "upcoming",
+      "event": "Statutory end date of the Fast Food Council as described in the AB 1228 digest ('until January 1, 2029, or as otherwise provided')",
+      "why": "A policy date inside the lease horizon. What happens to the wage floor after that date is a legal question not answered here.",
+      "src": [
+        "OL-S10"
+      ],
+      "excerpt": "this bill would, until January 1, 2029, or as otherwise provided, establish the Fast Food Council",
+      "kind": "observation",
+      "flag": "OL-F06"
+    },
+    {
+      "id": "CAL-07",
+      "date": "",
+      "when": "",
+      "status": "blank",
+      "event": "Metro D Line Sections 2 (Beverly Hills, Century City) and 3 (Westwood) opening dates",
+      "why": "The official project page lists both sections as under construction and states no opening date, so none is entered.",
+      "src": [
+        "OL-S09"
+      ],
+      "kind": "blank",
+      "flag": "OL-F05",
+      "how_to_fill": "Re-read the Metro project page or the 2026-11-18 community-meeting presentation it links; enter only a date Metro states."
+    },
+    {
+      "id": "CAL-08",
+      "date": "",
+      "when": "owner states 2030 to 2035",
+      "status": "blank",
+      "event": "Lease expiry and option-notice deadlines",
+      "why": "Only a five-year range supplied by the owner exists. Exact expiry, option windows and notice dates require the lease abstract.",
+      "src": [],
+      "kind": "blank",
+      "flag": "OL-F14",
+      "how_to_fill": "Commission the private lease abstract; build the notice calendar from it; keep both offline."
+    }
+  ],
+  "drivers": [
+    {
+      "id": "DRV-01",
+      "driver": "Transit construction and ridership (D Line Sections 2 and 3)",
+      "known": "Section 1 is open. Sections 2 and 3 are under construction along Wilshire with lane reductions and detours at times. Metro runs a mitigation program and a Business Interruption Fund for small businesses directly affected: 'up to $60,000 per impact year based on provable revenue loss'.",
+      "unknown": "Whether the parcel is on or near the corridor; whether a franchised QSR tenant would be eligible for the fund.",
+      "src": [
+        "OL-S09"
+      ],
+      "excerpt": "Businesses must be located along the project rail alignment and maybe eligible for up to $60,000 per impact year based on provable revenue loss.",
+      "kind": "observation"
+    },
+    {
+      "id": "DRV-02",
+      "driver": "Mega-event (LA28)",
+      "known": "Games dates are published by the organizing committee.",
+      "unknown": "Traffic restrictions, route closures, and any demand effect near the parcel.",
+      "src": [
+        "OL-S08"
+      ],
+      "excerpt": "Olympic Games Dates: July 14-30, 2028",
+      "kind": "observation"
+    },
+    {
+      "id": "DRV-03",
+      "driver": "Wage-law cost pressure on the tenant",
+      "known": "The statute text states a $20 hourly minimum wage for fast food restaurant employees effective April 1, 2024.",
+      "unknown": "Whether any later Council rate exists (DIR page fetch failed); coverage of this particular unit; the unit's labor cost share. Tenant P&L is private.",
+      "src": [
+        "OL-S10",
+        "OL-S34"
+      ],
+      "excerpt": "The hourly minimum wage for fast food restaurant employees shall be twenty dollars ($20) per hour, effective April 1, 2024.",
+      "kind": "observation",
+      "flag": "OL-F06"
+    },
+    {
+      "id": "DRV-04",
+      "driver": "County population and school-age decline",
+      "known": "DOF baseline has Los Angeles County population slightly lower in 2035 than in 2025, and projects the largest county K-12 enrollment decline in the state.",
+      "unknown": "How this maps to the trade area; trade areas can differ from county trends.",
+      "src": [
+        "OL-S02",
+        "OL-S05"
+      ],
+      "locator": "see Projections page rows D-03 and K-04",
+      "kind": "observation"
+    },
+    {
+      "id": "DRV-05",
+      "driver": "Restaurant job growth (more labor competition and more customers)",
+      "known": "EDD projects Los Angeles County food services and drinking places employment up 17.5% from 2023 to 2033.",
+      "unknown": "Net effect on a single QSR site; the series is county-wide jobs by place of work, not customers.",
+      "src": [
+        "OL-S04"
+      ],
+      "locator": "see Projections page row E-08",
+      "kind": "observation"
+    }
+  ]
+}

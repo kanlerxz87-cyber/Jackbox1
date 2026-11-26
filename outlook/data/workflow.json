@@ -1,0 +1,509 @@
+{
+  "gates": [
+    {
+      "id": "G-01",
+      "gate": "Private lease abstract complete and reconciled to a notice calendar",
+      "pass_when": "Counsel's abstract lists term, options, notice windows, rent steps, guaranty, casualty, assignment, and the calendar shows every deadline. Both stay offline.",
+      "status": "open",
+      "src": [],
+      "kind": "process",
+      "flag": "OL-F14"
+    },
+    {
+      "id": "G-02",
+      "gate": "Tenant and guarantor strength verified",
+      "pass_when": "Tenant and guarantor financials and an estoppel certificate are in hand; unit sales against rent are known.",
+      "status": "open",
+      "src": [
+        "OL-S16"
+      ],
+      "kind": "process"
+    },
+    {
+      "id": "G-03",
+      "gate": "Matched buyer quotes and a renewal term sheet",
+      "pass_when": "At least three independent broker opinions for the as-is lease and at least one negotiated-renewal term sheet, on the same date.",
+      "status": "open",
+      "src": [],
+      "kind": "process",
+      "flag": "OL-F14"
+    },
+    {
+      "id": "G-04",
+      "gate": "Short-lease discount priced from real quotes",
+      "pass_when": "Quotes for short remaining terms are logged with date and source; no assumed discount.",
+      "status": "open",
+      "src": [],
+      "kind": "process",
+      "flag": "OL-F14"
+    },
+    {
+      "id": "G-05",
+      "gate": "After-tax sale figure and after-tax hold figure on one basis",
+      "pass_when": "An accountant supplies basis, depreciation, recapture and state and local taxes; both cases are in the same units and dates.",
+      "status": "open",
+      "src": [
+        "OL-S21",
+        "OL-S23",
+        "OL-S22"
+      ],
+      "kind": "process"
+    },
+    {
+      "id": "G-06",
+      "gate": "Parcel hazard and insurance screening done on the real parcel",
+      "pass_when": "Flood, fire and seismic zone status and insurance terms are recorded privately; only a yes/no 'screened' flag is published.",
+      "status": "open",
+      "src": [
+        "OL-S31",
+        "OL-S32",
+        "OL-S33"
+      ],
+      "kind": "process"
+    },
+    {
+      "id": "G-07",
+      "gate": "Trade-area tract evidence from the private workflow",
+      "pass_when": "At least ten tracts aggregated for the area, same tract geography across vintages, aggregate-only output.",
+      "status": "open",
+      "src": [
+        "OL-S29",
+        "OL-S27"
+      ],
+      "kind": "process"
+    },
+    {
+      "id": "G-08",
+      "gate": "Owner policy written (horizon, liquidity, concentration)",
+      "pass_when": "A short written rule exists that the options can be tested against.",
+      "status": "open",
+      "src": [],
+      "kind": "process",
+      "flag": "OL-F14"
+    },
+    {
+      "id": "G-09",
+      "gate": "Tenant-brand FY2026 results reviewed",
+      "pass_when": "The 2026-12-09 release is read from EDGAR and the series on the Peers page is completed.",
+      "status": "open",
+      "src": [
+        "OL-S19"
+      ],
+      "kind": "process",
+      "flag": "OL-F04"
+    }
+  ],
+  "rules": [
+    {
+      "id": "RULE-0",
+      "title": "Default while any gate is open",
+      "text": "Make no irreversible commitment. Do only the no-regret actions listed below. No sell-versus-renew winner is shown.",
+      "src": [],
+      "kind": "process",
+      "flag": "OL-F14"
+    },
+    {
+      "id": "RULE-1",
+      "title": "Definitions (all inputs are blank until verified)",
+      "text": "S = after-tax net proceeds of selling (price after selling costs, minus all taxes). H = present value, at the owner's after-tax discount rate k, of expected after-tax rent and a terminal value, each weighted by the probability the tenant is still paying. S and H must use the same date, tax assumptions and units.",
+      "src": [],
+      "kind": "process",
+      "flag": "OL-F14"
+    },
+    {
+      "id": "RULE-2",
+      "title": "Comparison statistic",
+      "text": "Delta = S compounded at the owner's after-tax reinvestment return to the end of the horizon, minus H compounded to the same date. Delta is computed under the base case and under each stress case in RULE-4.",
+      "src": [],
+      "kind": "process",
+      "flag": "OL-F14"
+    },
+    {
+      "id": "RULE-3",
+      "title": "Conditional reading (only when every gate is closed)",
+      "text": "If Delta is positive in the base case and in every stress case, selling or exchanging is favored. If Delta is negative in all of them, renewing or holding is favored. If the sign changes between cases, the choice depends on the owner's loss tolerance: buy information (for example another quote) only if its cost is below the value of resolving the sign.",
+      "src": [],
+      "kind": "process",
+      "flag": "OL-F14"
+    },
+    {
+      "id": "RULE-4",
+      "title": "Stress set",
+      "text": "Run together: (a) months of lost rent, (b) repair or rebuild cost net of insurance, (c) an exit discount for a forced or slow sale. Run also: tenant default at the first option date; renewal at a lower rent; a higher required buyer return.",
+      "src": [],
+      "kind": "process",
+      "flag": "OL-F14"
+    },
+    {
+      "id": "RULE-5",
+      "title": "Break-evens to compute (not shown, no inputs)",
+      "text": "Break-even price: the price at which Delta is zero. Break-even renewal rent: the rent at which H equals S. Break-even tenant survival probability: the probability at which H equals S.",
+      "src": [],
+      "kind": "process",
+      "flag": "OL-F14"
+    }
+  ],
+  "no_regret": [
+    {
+      "id": "NR-1",
+      "action": "Commission the private lease abstract and notice calendar, and reconcile them, before any sale or renewal commitment.",
+      "why": "Every option depends on dates and terms no public source holds.",
+      "src": [],
+      "kind": "process",
+      "flag": "OL-F14"
+    },
+    {
+      "id": "NR-2",
+      "action": "Request at least three broker opinions of value (as-is, and with a hypothetical extension) and log any short-lease quotes.",
+      "why": "Replaces assumed discounts with real quotes.",
+      "src": [],
+      "kind": "process",
+      "flag": "OL-F14"
+    },
+    {
+      "id": "NR-3",
+      "action": "Ask for the tenant's and guarantor's financial statements and an estoppel certificate, if the lease entitles you to them.",
+      "why": "The brand series shows brand trends only, not this unit's rent coverage.",
+      "src": [],
+      "kind": "process",
+      "flag": "OL-F14"
+    },
+    {
+      "id": "NR-4",
+      "action": "Have an accountant produce basis, depreciation and recapture schedules and an after-tax sale figure.",
+      "why": "The tax levers on the Wealth page cannot be sized without them.",
+      "src": [
+        "OL-S21",
+        "OL-S23"
+      ],
+      "kind": "process"
+    },
+    {
+      "id": "NR-5",
+      "action": "Run the private workflow locally for tracts and the hazard checklist; publish aggregates only.",
+      "why": "Closes gates G-06 and G-07 without placing the location in Git.",
+      "src": [
+        "OL-S29",
+        "OL-S26"
+      ],
+      "kind": "process"
+    },
+    {
+      "id": "NR-6",
+      "action": "Read the tenant brand's FY2026 results after 2026-12-09 and extend the peers table.",
+      "why": "The series ends at Q3 FY2026.",
+      "src": [
+        "OL-S19"
+      ],
+      "kind": "process",
+      "flag": "OL-F04"
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q-01",
+      "q": "What are the exact lease expiry date and option or notice windows?",
+      "status": "unknown",
+      "answer": "",
+      "discover": "Private lease abstract and notice calendar by counsel; the owner's 2030-2035 range is unverified.",
+      "src": [],
+      "kind": "blank",
+      "flag": "OL-F14"
+    },
+    {
+      "id": "Q-02",
+      "q": "Who is the tenant entity, and is there a guaranty?",
+      "status": "unknown",
+      "answer": "",
+      "discover": "Lease and estoppel certificate; request financials under confidentiality.",
+      "src": [],
+      "kind": "blank",
+      "flag": "OL-F14"
+    },
+    {
+      "id": "Q-03",
+      "q": "What are current rent, escalators, reset mechanics, and rent coverage?",
+      "status": "unknown",
+      "answer": "",
+      "discover": "Lease abstract; tenant sales reports if the lease provides them.",
+      "src": [],
+      "kind": "blank",
+      "flag": "OL-F14"
+    },
+    {
+      "id": "Q-04",
+      "q": "Is this unit on the franchisor's closure or remodel list?",
+      "status": "unknown",
+      "answer": "",
+      "discover": "Ask the tenant and franchisor; public filings give only system totals.",
+      "src": [],
+      "kind": "blank",
+      "flag": "OL-F14"
+    },
+    {
+      "id": "Q-05",
+      "q": "What do buyers pay today for the as-is lease, and with an extension?",
+      "status": "unknown",
+      "answer": "",
+      "discover": "Three or more broker opinions; log short-lease quotes.",
+      "src": [],
+      "kind": "blank",
+      "flag": "OL-F14"
+    },
+    {
+      "id": "Q-06",
+      "q": "What are the owner's basis, depreciation taken, holding period and title?",
+      "status": "unknown",
+      "answer": "",
+      "discover": "Accountant's schedules, offline.",
+      "src": [
+        "OL-S21"
+      ],
+      "kind": "blank",
+      "flag": "OL-F14"
+    },
+    {
+      "id": "Q-07",
+      "q": "What are the owner's liquidity needs, horizon, concentration limit, heirs?",
+      "status": "unknown",
+      "answer": "",
+      "discover": "Owner and advisers write a policy, offline.",
+      "src": [],
+      "kind": "blank",
+      "flag": "OL-F14"
+    },
+    {
+      "id": "Q-08",
+      "q": "Which census tracts and neighbourhood define the trade area?",
+      "status": "unknown",
+      "answer": "",
+      "discover": "Private workflow on the owner's machine (Private workflow page).",
+      "src": [
+        "OL-S29"
+      ],
+      "kind": "blank",
+      "flag": "OL-F14"
+    },
+    {
+      "id": "Q-09",
+      "q": "What are the parcel's flood, fire and seismic zone statuses and insurance terms?",
+      "status": "unknown",
+      "answer": "",
+      "discover": "Hazard checklist with official viewers; insurance review. Results stay private.",
+      "src": [
+        "OL-S31",
+        "OL-S32",
+        "OL-S33"
+      ],
+      "kind": "blank",
+      "flag": "OL-F07"
+    },
+    {
+      "id": "Q-10",
+      "q": "What do official sources project for county population and jobs?",
+      "status": "known",
+      "answer": "Los Angeles County population 9,853,435 (2025) to 9,708,647 (2035) in the DOF baseline; county jobs +8.5% 2023-2033 (EDD). County level only.",
+      "discover": "See Projections page.",
+      "src": [
+        "OL-S02",
+        "OL-S04"
+      ],
+      "kind": "observation",
+      "locator": "Projections rows D-03 and E-01"
+    },
+    {
+      "id": "Q-11",
+      "q": "What is the tenant brand's recent sales trend?",
+      "status": "partly",
+      "answer": "System same-store sales: -7.4%, -6.7%, -3.8%, -1.1% from Q4 FY2025 to Q3 FY2026. Q4 FY2026 due 2026-12-09.",
+      "discover": "Peers page; revisit after 2026-12-09.",
+      "src": [
+        "OL-S18",
+        "OL-S17",
+        "OL-S15",
+        "OL-S16"
+      ],
+      "kind": "observation",
+      "locator": "Peers rows PR-09 to PR-12",
+      "flag": "OL-F04"
+    },
+    {
+      "id": "Q-12",
+      "q": "How do peer brands compare?",
+      "status": "known",
+      "answer": "Q3 2026: Burger King U.S. +8.4%, McDonald's U.S. -0.2%, Wendy's U.S. -5.7% (definitions and periods differ).",
+      "discover": "Peers page.",
+      "src": [
+        "OL-S14",
+        "OL-S12",
+        "OL-S13"
+      ],
+      "kind": "observation",
+      "locator": "Peers rows PR-01, PR-04, PR-07"
+    },
+    {
+      "id": "Q-13",
+      "q": "Is a property-tax decline-in-value filing relevant?",
+      "status": "unknown",
+      "answer": "",
+      "discover": "Compare assessed value with January 1 market value; check who controls appeals under the lease. Window closes 2026-11-30.",
+      "src": [
+        "OL-S25"
+      ],
+      "kind": "blank",
+      "flag": "OL-F12"
+    },
+    {
+      "id": "Q-14",
+      "q": "What taxes apply on a sale, and on transfer to heirs?",
+      "status": "partly",
+      "answer": "Commercial property is reassessed on transfer; the Proposition 19 parent-child exclusion covers only a family home or farm. Sale-side taxes not researched here.",
+      "discover": "Accountant and California property-tax counsel.",
+      "src": [
+        "OL-S24"
+      ],
+      "kind": "observation",
+      "locator": "Wealth row W-05",
+      "flag": "OL-F13"
+    },
+    {
+      "id": "Q-15",
+      "q": "Do transit works or the 2028 Games affect the parcel?",
+      "status": "unknown",
+      "answer": "",
+      "discover": "Needs the parcel location; compare with Metro and Games plans privately.",
+      "src": [
+        "OL-S09",
+        "OL-S08"
+      ],
+      "kind": "blank",
+      "flag": "OL-F05"
+    },
+    {
+      "id": "Q-16",
+      "q": "Does zoning allow other uses?",
+      "status": "unknown",
+      "answer": "",
+      "discover": "City planning review for the parcel, privately.",
+      "src": [],
+      "kind": "blank",
+      "flag": "OL-F14"
+    },
+    {
+      "id": "Q-17",
+      "q": "What do the casualty, condemnation and insurance clauses say, and who insures what?",
+      "status": "unknown",
+      "answer": "",
+      "discover": "Lease abstract; insurance certificates.",
+      "src": [],
+      "kind": "blank",
+      "flag": "OL-F14"
+    },
+    {
+      "id": "Q-18",
+      "q": "Does the $20 wage floor stand, and what happens after 2029-01-01?",
+      "status": "partly",
+      "answer": "Statute text states $20 effective 2024-04-01; Council sunset 2029-01-01 per the digest. Later amendments and any Council rate are unchecked.",
+      "discover": "DIR Fast Food Council page and current Labor Code text.",
+      "src": [
+        "OL-S10",
+        "OL-S34"
+      ],
+      "kind": "observation",
+      "locator": "Drivers row DRV-03",
+      "flag": "OL-F06"
+    }
+  ],
+  "suggestions": [
+    {
+      "id": "SUG-1",
+      "path": "Extend the tenant and peer series after 2026-12-09",
+      "what": "Add Q4 FY2026 and full-year results, closures, franchise margin and FY2027 guidance; refresh the peers.",
+      "cost": "Low (one session).",
+      "benefit": "Closes gate G-09.",
+      "risk": "None to privacy.",
+      "if_chosen": "Edit outlook/data/peers.json rows PR-13 and OP-*, rebuild.",
+      "kind": "process",
+      "src": [
+        "OL-S19"
+      ]
+    },
+    {
+      "id": "SUG-2",
+      "path": "Add SCAG growth forecast and the Los Angeles County K-12 level table",
+      "what": "Fill blank rows B-01 and B-02 on the Projections page from official files.",
+      "cost": "Low to medium.",
+      "benefit": "Adds a second official forward view and a school-system level.",
+      "risk": "Different vintages can disagree; both must be labelled.",
+      "if_chosen": "Edit outlook/data/projections.json blank rows.",
+      "kind": "process",
+      "src": [
+        "OL-S05"
+      ]
+    },
+    {
+      "id": "SUG-3",
+      "path": "Run the private workflow locally",
+      "what": "On the owner's or adviser's own machine, choose tracts, fetch ACS aggregates, and complete the hazard checklist.",
+      "cost": "Low; needs a free Census key and a downloaded public file.",
+      "benefit": "Closes gates G-06 and G-07 without exposing the location.",
+      "risk": "The optional online tract check sends coordinates to a government server; the default path sends nothing.",
+      "if_chosen": "Follow private-workflow/README.md; share only the aggregate JSON.",
+      "kind": "process",
+      "src": [
+        "OL-S29",
+        "OL-S27"
+      ]
+    },
+    {
+      "id": "SUG-4",
+      "path": "Commission the lease abstract and notice calendar first",
+      "what": "Counsel prepares the private abstract; reconcile against the calendar.",
+      "cost": "Professional fee.",
+      "benefit": "Closes G-01; every other gate depends on it.",
+      "risk": "Lease text must never enter Git.",
+      "if_chosen": "Outside this repository; log completion only as 'gate closed'.",
+      "kind": "process",
+      "src": [],
+      "flag": "OL-F14"
+    },
+    {
+      "id": "SUG-5",
+      "path": "Collect matched quotes",
+      "what": "Three or more broker opinions (as-is and with extension) and any short-lease quotes, dated the same week.",
+      "cost": "Usually free from brokers.",
+      "benefit": "Closes G-03 and G-04 and replaces assumed discounts.",
+      "risk": "Brokers have incentives; use independent firms.",
+      "if_chosen": "Outside this repository; log in the private quote log.",
+      "kind": "process",
+      "src": [],
+      "flag": "OL-F14"
+    },
+    {
+      "id": "SUG-6",
+      "path": "Engage an accountant for the after-tax comparison",
+      "what": "Basis, depreciation, recapture, state and local tax, installment and exchange variants.",
+      "cost": "Professional fee.",
+      "benefit": "Closes G-05.",
+      "risk": "Figures stay offline.",
+      "if_chosen": "Outside this repository.",
+      "kind": "process",
+      "src": [
+        "OL-S21",
+        "OL-S23"
+      ]
+    },
+    {
+      "id": "SUG-7",
+      "path": "Decide whether to consolidate the parallel trees",
+      "what": "Several sessions published overlapping sites. Choose one primary site and archive the rest, or keep a short index.",
+      "cost": "Medium.",
+      "benefit": "Less confusion; fewer stale pages.",
+      "risk": "Deleting others' work needs the owner's decision.",
+      "if_chosen": "A single integration session performs it and logs it.",
+      "kind": "process",
+      "src": [],
+      "flag": "OL-F14"
+    }
+  ]
+}

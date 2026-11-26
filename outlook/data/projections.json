@@ -1,0 +1,737 @@
+{
+ "meta": {
+  "scope": "County and state level official projections only. No tract-level or parcel-level projection exists in any source read here; that is stated, not filled in.",
+  "reading_rule": "Projections are published scenarios, not forecasts of this property. The vintage comparison on this page shows how far an official county projection moved in five years."
+ },
+ "pop_rows": [
+  {
+   "id": "P-01",
+   "label": "Los Angeles County total population, July 1",
+   "period": "2020",
+   "raw": 10012050,
+   "unit": "people",
+   "src": [
+    "OL-S02"
+   ],
+   "locator": "P-2A, FIPS 6037 LOS ANGELES, column 2020",
+   "kind": "observation"
+  },
+  {
+   "id": "P-02",
+   "label": "Los Angeles County total population, July 1",
+   "period": "2021",
+   "raw": 9914219,
+   "unit": "people",
+   "src": [
+    "OL-S02"
+   ],
+   "locator": "P-2A, FIPS 6037, column 2021",
+   "kind": "observation"
+  },
+  {
+   "id": "P-03",
+   "label": "Los Angeles County total population, July 1",
+   "period": "2022",
+   "raw": 9860931,
+   "unit": "people",
+   "src": [
+    "OL-S02"
+   ],
+   "locator": "P-2A, FIPS 6037, column 2022",
+   "kind": "observation"
+  },
+  {
+   "id": "P-04",
+   "label": "Los Angeles County total population, July 1",
+   "period": "2023",
+   "raw": 9855630,
+   "unit": "people",
+   "src": [
+    "OL-S02"
+   ],
+   "locator": "P-2A, FIPS 6037, column 2023",
+   "kind": "observation"
+  },
+  {
+   "id": "P-05",
+   "label": "Los Angeles County total population, July 1",
+   "period": "2024",
+   "raw": 9898257,
+   "unit": "people",
+   "src": [
+    "OL-S02"
+   ],
+   "locator": "P-2A, FIPS 6037, column 2024",
+   "kind": "observation"
+  },
+  {
+   "id": "P-06",
+   "label": "Los Angeles County total population, July 1",
+   "period": "2025",
+   "raw": 9853435,
+   "unit": "people",
+   "src": [
+    "OL-S02"
+   ],
+   "locator": "P-2A, FIPS 6037, column 2025",
+   "kind": "observation"
+  },
+  {
+   "id": "P-07",
+   "label": "Los Angeles County total population, July 1 (projected)",
+   "period": "2030",
+   "raw": 9727305,
+   "unit": "people",
+   "src": [
+    "OL-S02"
+   ],
+   "locator": "P-2A, FIPS 6037, column 2030",
+   "kind": "observation"
+  },
+  {
+   "id": "P-08",
+   "label": "Los Angeles County total population, July 1 (projected)",
+   "period": "2035",
+   "raw": 9708647,
+   "unit": "people",
+   "src": [
+    "OL-S02"
+   ],
+   "locator": "P-2A, FIPS 6037, column 2035",
+   "kind": "observation"
+  },
+  {
+   "id": "P-09",
+   "label": "Los Angeles County total population, July 1 (projected)",
+   "period": "2040",
+   "raw": 9637524,
+   "unit": "people",
+   "src": [
+    "OL-S02"
+   ],
+   "locator": "P-2A, FIPS 6037, column 2040",
+   "kind": "observation"
+  },
+  {
+   "id": "P-10",
+   "label": "California total population, July 1",
+   "period": "2025",
+   "raw": 39528899,
+   "unit": "people",
+   "src": [
+    "OL-S02"
+   ],
+   "locator": "P-2A, FIPS 6000 CALIFORNIA, column 2025",
+   "kind": "observation"
+  },
+  {
+   "id": "P-11",
+   "label": "California total population, July 1 (projected)",
+   "period": "2030",
+   "raw": 39879496,
+   "unit": "people",
+   "src": [
+    "OL-S02"
+   ],
+   "locator": "P-2A, FIPS 6000, column 2030",
+   "kind": "observation"
+  },
+  {
+   "id": "P-12",
+   "label": "California total population, July 1 (projected)",
+   "period": "2035",
+   "raw": 40410843,
+   "unit": "people",
+   "src": [
+    "OL-S02"
+   ],
+   "locator": "P-2A, FIPS 6000, column 2035",
+   "kind": "observation"
+  },
+  {
+   "id": "P-13",
+   "label": "Census Bureau estimate, Los Angeles County, July 1, 2025 (V2025)",
+   "period": "2025",
+   "raw": 9694934,
+   "unit": "people",
+   "src": [
+    "OL-S07"
+   ],
+   "excerpt": "Population estimates, July 1, 2025, (V2025) | 9,694,934 | 39,355,309",
+   "kind": "observation"
+  },
+  {
+   "id": "P-14",
+   "label": "Census Bureau estimate, California, July 1, 2025 (V2025)",
+   "period": "2025",
+   "raw": 39355309,
+   "unit": "people",
+   "src": [
+    "OL-S07"
+   ],
+   "excerpt": "Population estimates, July 1, 2025, (V2025) | 9,694,934 | 39,355,309",
+   "kind": "observation"
+  }
+ ],
+ "emp_rows": [
+  {
+   "id": "E-01",
+   "label": "Total employment (all industries)",
+   "code": "none",
+   "base": 4838860,
+   "proj": 5248680,
+   "chg_pub": 409820,
+   "pct_pub": 8.5,
+   "src": [
+    "OL-S04"
+   ],
+   "locator": "row 'Total Employment'",
+   "kind": "observation"
+  },
+  {
+   "id": "E-02",
+   "label": "Goods-producing",
+   "code": "101",
+   "base": 474830,
+   "proj": 461400,
+   "chg_pub": -13430,
+   "pct_pub": -2.8,
+   "src": [
+    "OL-S04"
+   ],
+   "locator": "row 'Goods-Producing'",
+   "kind": "observation"
+  },
+  {
+   "id": "E-03",
+   "label": "Manufacturing",
+   "code": "1013",
+   "base": 318060,
+   "proj": 291680,
+   "chg_pub": -26380,
+   "pct_pub": -8.3,
+   "src": [
+    "OL-S04"
+   ],
+   "locator": "row 'Manufacturing'",
+   "kind": "observation"
+  },
+  {
+   "id": "E-04",
+   "label": "Retail trade",
+   "code": "44-45",
+   "base": 404340,
+   "proj": 404430,
+   "chg_pub": 90,
+   "pct_pub": 0.0,
+   "src": [
+    "OL-S04"
+   ],
+   "locator": "row 'Retail Trade'",
+   "kind": "observation"
+  },
+  {
+   "id": "E-05",
+   "label": "Professional, scientific and technical services",
+   "code": "54",
+   "base": 308940,
+   "proj": 349320,
+   "chg_pub": 40380,
+   "pct_pub": 13.1,
+   "src": [
+    "OL-S04"
+   ],
+   "locator": "row 'Professional, Scientific, and Technical Services'",
+   "kind": "observation"
+  },
+  {
+   "id": "E-06",
+   "label": "Health care and social assistance",
+   "code": "62",
+   "base": 778560,
+   "proj": 935570,
+   "chg_pub": 157010,
+   "pct_pub": 20.2,
+   "src": [
+    "OL-S04"
+   ],
+   "locator": "row 'Health Care and Social Assistance'",
+   "kind": "observation"
+  },
+  {
+   "id": "E-07",
+   "label": "Accommodation and food services",
+   "code": "72",
+   "base": 436180,
+   "proj": 512980,
+   "chg_pub": 76800,
+   "pct_pub": 17.6,
+   "src": [
+    "OL-S04"
+   ],
+   "locator": "row 'Accommodation and Food Services'",
+   "kind": "observation"
+  },
+  {
+   "id": "E-08",
+   "label": "Food services and drinking places (restaurants)",
+   "code": "722",
+   "base": 390950,
+   "proj": 459540,
+   "chg_pub": 68590,
+   "pct_pub": 17.5,
+   "src": [
+    "OL-S04"
+   ],
+   "locator": "row 'Food Services and Drinking Places'",
+   "kind": "observation"
+  }
+ ],
+ "k12_rows": [
+  {
+   "id": "K-01",
+   "label": "California public K-12 enrollment, 2025-26",
+   "period": "2025-26",
+   "raw": 5731300,
+   "unit": "students",
+   "src": [
+    "OL-S05"
+   ],
+   "excerpt": "enrolling 5,731,300 students",
+   "kind": "observation"
+  },
+  {
+   "id": "K-02",
+   "label": "California public K-12 enrollment, projected",
+   "period": "2035-36",
+   "raw": 5020800,
+   "unit": "students",
+   "src": [
+    "OL-S05"
+   ],
+   "excerpt": "resulting in total enrollment of 5,020,800 by 2035-36",
+   "kind": "observation"
+  },
+  {
+   "id": "K-03",
+   "label": "California projected change in enrollment, 2025-26 to 2035-36",
+   "period": "10 years",
+   "raw": -710500,
+   "unit": "students",
+   "src": [
+    "OL-S05"
+   ],
+   "excerpt": "a further decline of 710,500 in total enrollment is projected",
+   "kind": "observation"
+  },
+  {
+   "id": "K-04",
+   "label": "Los Angeles County projected enrollment decline, 2025-26 to 2035-36 (largest of any county)",
+   "period": "10 years",
+   "raw": -240800,
+   "unit": "students",
+   "src": [
+    "OL-S05"
+   ],
+   "excerpt": "The biggest decline in enrollment is expected in Los Angeles County, which will fall by 240,800 students by the end of the 10-year projection.",
+   "kind": "observation"
+  },
+  {
+   "id": "K-05",
+   "label": "California enrollment change in 2025-26 (9th consecutive annual decrease)",
+   "period": "2025-26",
+   "raw": -75000,
+   "unit": "students",
+   "src": [
+    "OL-S05"
+   ],
+   "excerpt": "California experienced the 9th consecutive decrease in total Public K-12 Enrollment in the 2025-26 school year (-75,000 students)",
+   "kind": "observation"
+  }
+ ],
+ "rev_rows": [
+  {
+   "id": "R-01",
+   "label": "Earlier official projection (DOF May 2019 vintage, as quoted by an LAUSD analyst): Los Angeles County by 2030, approximate",
+   "period": "2030",
+   "raw": 10800000,
+   "unit": "people",
+   "src": [
+    "OL-S06"
+   ],
+   "excerpt": "By 2030, the County is projected to be home to approximately 10.8 million residents.",
+   "kind": "observation",
+   "approx": true
+  },
+  {
+   "id": "R-02",
+   "label": "2019-vintage projected annual change, Los Angeles County total",
+   "period": "2021",
+   "raw": 0.07,
+   "unit": "%",
+   "src": [
+    "OL-S06"
+   ],
+   "locator": "table 'LA County % Population Change Among Age Cohorts', Los Angeles County Total (%), 2021",
+   "kind": "observation"
+  },
+  {
+   "id": "R-03",
+   "label": "2019-vintage projected annual change, Los Angeles County total",
+   "period": "2022",
+   "raw": 0.07,
+   "unit": "%",
+   "src": [
+    "OL-S06"
+   ],
+   "locator": "same table, 2022",
+   "kind": "observation"
+  },
+  {
+   "id": "R-04",
+   "label": "2019-vintage projected annual change, Los Angeles County total",
+   "period": "2023",
+   "raw": 0.05,
+   "unit": "%",
+   "src": [
+    "OL-S06"
+   ],
+   "locator": "same table, 2023",
+   "kind": "observation"
+  },
+  {
+   "id": "R-05",
+   "label": "2019-vintage projected annual change, Los Angeles County total",
+   "period": "2024",
+   "raw": 0.02,
+   "unit": "%",
+   "src": [
+    "OL-S06"
+   ],
+   "locator": "same table, 2024",
+   "kind": "observation"
+  },
+  {
+   "id": "R-06",
+   "label": "2019-vintage projected annual change, Los Angeles County total",
+   "period": "2025",
+   "raw": -0.04,
+   "unit": "%",
+   "src": [
+    "OL-S06"
+   ],
+   "locator": "same table, 2025",
+   "kind": "observation"
+  }
+ ],
+ "derived": [
+  {
+   "id": "D-01",
+   "label": "Los Angeles County, DOF baseline: change 2025 to 2030",
+   "op": "pct_change",
+   "inputs": [
+    "P-06",
+    "P-07"
+   ],
+   "unit": "%",
+   "src": [
+    "OL-S02"
+   ],
+   "group": "pop"
+  },
+  {
+   "id": "D-02",
+   "label": "Los Angeles County, DOF baseline: change 2030 to 2035 (the owner-stated 2030 to 2035 expiry window; the expiry itself is unverified)",
+   "op": "pct_change",
+   "inputs": [
+    "P-07",
+    "P-08"
+   ],
+   "unit": "%",
+   "src": [
+    "OL-S02"
+   ],
+   "group": "pop"
+  },
+  {
+   "id": "D-03",
+   "label": "Los Angeles County, DOF baseline: change 2025 to 2035",
+   "op": "pct_change",
+   "inputs": [
+    "P-06",
+    "P-08"
+   ],
+   "unit": "%",
+   "src": [
+    "OL-S02"
+   ],
+   "group": "pop"
+  },
+  {
+   "id": "D-04",
+   "label": "California, DOF baseline: change 2025 to 2035",
+   "op": "pct_change",
+   "inputs": [
+    "P-10",
+    "P-12"
+   ],
+   "unit": "%",
+   "src": [
+    "OL-S02"
+   ],
+   "group": "pop"
+  },
+  {
+   "id": "D-05",
+   "label": "Los Angeles County, DOF baseline: change 2020 to 2025",
+   "op": "pct_change",
+   "inputs": [
+    "P-01",
+    "P-06"
+   ],
+   "unit": "%",
+   "src": [
+    "OL-S02"
+   ],
+   "group": "pop"
+  },
+  {
+   "id": "D-06",
+   "label": "2025 population, Los Angeles County: DOF series minus Census Bureau V2025 estimate (people)",
+   "op": "diff",
+   "inputs": [
+    "P-13",
+    "P-06"
+   ],
+   "unit": "people",
+   "src": [
+    "OL-S02",
+    "OL-S07"
+   ],
+   "group": "check",
+   "flag": "OL-F01"
+  },
+  {
+   "id": "D-07",
+   "label": "Same difference as a percent of the Census estimate",
+   "op": "pct_change",
+   "inputs": [
+    "P-13",
+    "P-06"
+   ],
+   "unit": "%",
+   "src": [
+    "OL-S02",
+    "OL-S07"
+   ],
+   "group": "check",
+   "flag": "OL-F01"
+  },
+  {
+   "id": "D-08",
+   "label": "California 2025 population: DOF series minus Census V2025 (people)",
+   "op": "diff",
+   "inputs": [
+    "P-14",
+    "P-10"
+   ],
+   "unit": "people",
+   "src": [
+    "OL-S02",
+    "OL-S07"
+   ],
+   "group": "check",
+   "flag": "OL-F01"
+  },
+  {
+   "id": "D-09",
+   "label": "K-12: California projected change as a percent of 2025-26 enrollment",
+   "op": "pct_change",
+   "inputs": [
+    "K-01",
+    "K-02"
+   ],
+   "unit": "%",
+   "src": [
+    "OL-S05"
+   ],
+   "group": "k12"
+  },
+  {
+   "id": "D-10",
+   "label": "Vintage check: 2030 projection for Los Angeles County, current DOF baseline minus the quoted 2019 vintage (people, approximate because the 2019 figure is rounded)",
+   "op": "diff",
+   "inputs": [
+    "R-01",
+    "P-07"
+   ],
+   "unit": "people",
+   "src": [
+    "OL-S02",
+    "OL-S06"
+   ],
+   "group": "rev",
+   "flag": "OL-F03"
+  },
+  {
+   "id": "D-11",
+   "label": "Vintage check: same revision as a percent of the 2019-vintage figure (approximate)",
+   "op": "pct_change",
+   "inputs": [
+    "R-01",
+    "P-07"
+   ],
+   "unit": "%",
+   "src": [
+    "OL-S02",
+    "OL-S06"
+   ],
+   "group": "rev",
+   "flag": "OL-F03"
+  },
+  {
+   "id": "D-12",
+   "label": "Path check: 2019-vintage projection compounded over 2021-2024 (cumulative %)",
+   "op": "compound_pct",
+   "inputs": [
+    "R-02",
+    "R-03",
+    "R-04",
+    "R-05"
+   ],
+   "unit": "%",
+   "src": [
+    "OL-S06"
+   ],
+   "group": "rev",
+   "flag": "OL-F03"
+  },
+  {
+   "id": "D-13",
+   "label": "Path check: current DOF series, 2020 to 2024 (cumulative %)",
+   "op": "pct_change",
+   "inputs": [
+    "P-01",
+    "P-05"
+   ],
+   "unit": "%",
+   "src": [
+    "OL-S02"
+   ],
+   "group": "rev",
+   "flag": "OL-F03"
+  },
+  {
+   "id": "D-14",
+   "label": "Annual change in the current DOF series, 2021 (%)",
+   "op": "pct_change",
+   "inputs": [
+    "P-01",
+    "P-02"
+   ],
+   "unit": "%",
+   "src": [
+    "OL-S02"
+   ],
+   "group": "rev"
+  },
+  {
+   "id": "D-15",
+   "label": "Annual change in the current DOF series, 2022 (%)",
+   "op": "pct_change",
+   "inputs": [
+    "P-02",
+    "P-03"
+   ],
+   "unit": "%",
+   "src": [
+    "OL-S02"
+   ],
+   "group": "rev"
+  },
+  {
+   "id": "D-16",
+   "label": "Annual change in the current DOF series, 2023 (%)",
+   "op": "pct_change",
+   "inputs": [
+    "P-03",
+    "P-04"
+   ],
+   "unit": "%",
+   "src": [
+    "OL-S02"
+   ],
+   "group": "rev"
+  },
+  {
+   "id": "D-17",
+   "label": "Annual change in the current DOF series, 2024 (%)",
+   "op": "pct_change",
+   "inputs": [
+    "P-04",
+    "P-05"
+   ],
+   "unit": "%",
+   "src": [
+    "OL-S02"
+   ],
+   "group": "rev"
+  },
+  {
+   "id": "D-18",
+   "label": "Annual change in the current DOF series, 2025 (%)",
+   "op": "pct_change",
+   "inputs": [
+    "P-05",
+    "P-06"
+   ],
+   "unit": "%",
+   "src": [
+    "OL-S02"
+   ],
+   "group": "rev"
+  }
+ ],
+ "blank": [
+  {
+   "id": "B-01",
+   "label": "Los Angeles County K-12 enrollment LEVEL for 2025-26 and 2035-36",
+   "why": "The DOF workbook has a county table but only the page-level highlights were read, so the county level is not entered.",
+   "how_to_fill": "Open the 2026 Series workbook, sheet '2026 Series Table', county 'Los Angeles', column K-12, rows 2025-26 and 2035-36.",
+   "src": [
+    "OL-S05"
+   ],
+   "flag": "OL-F13"
+  },
+  {
+   "id": "B-02",
+   "label": "SCAG regional growth forecast (Connect SoCal) for the sub-region containing the trade area",
+   "why": "Not retrieved in this session.",
+   "how_to_fill": "Retrieve SCAG's current adopted growth forecast by jurisdiction and record vintage and adoption date.",
+   "src": [
+    "OL-S06"
+   ],
+   "flag": "OL-F13"
+  },
+  {
+   "id": "B-03",
+   "label": "Census-tract-level population or employment projection",
+   "why": "No official tract-level projection was found. Tract trends can only be observed (ACS), not projected from an official source.",
+   "how_to_fill": "Use the private workflow for tract observations; treat any tract projection as an assumption, labelled as such.",
+   "src": [
+    "OL-S29"
+   ],
+   "flag": "OL-F13"
+  },
+  {
+   "id": "B-04",
+   "label": "EDD occupational projections and sub-county (city or ZIP) employment projections",
+   "why": "Only the county industry file was read.",
+   "how_to_fill": "Read the county occupational file linked from the EDD projections page; no sub-county projection is published there.",
+   "src": [
+    "OL-S03"
+   ],
+   "flag": "OL-F13"
+  }
+ ]
+}
