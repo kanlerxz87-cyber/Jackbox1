@@ -204,6 +204,42 @@
       "type": "official-primary",
       "retrieved": "2026-11-25",
       "used_for": "Caution on comparing ACS 5-year vintages."
+    },
+    {
+      "id": "S-023",
+      "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+      "title": "Jack in the Box Inc. Form 8-K Exhibit 99.1 — Q4 & FY2025 Earnings Release (Nov 19, 2025)",
+      "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788225000070/ex991-q425earningsrelease.htm",
+      "type": "official-primary",
+      "retrieved": "2026-11-26",
+      "used_for": "FY2025 Q4 and full-year same-store sales, openings, closures, JACK on Track block closure counts, and FY2026 guidance."
+    },
+    {
+      "id": "S-024",
+      "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+      "title": "Jack in the Box Inc. — Proxy Statement (DEF 14A, filed 2026-01-16)",
+      "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788226000007/jack-20260116.htm",
+      "type": "official-primary",
+      "retrieved": "2026-11-26",
+      "used_for": "FY2025 Jack in the Box brand franchise rental revenues ($332,735 thousand) and consolidated franchise rental revenues ($368,643 thousand)."
+    },
+    {
+      "id": "S-025",
+      "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+      "title": "Jack in the Box Inc. — Proxy Statement (DEF 14A, filed 2025-01-27)",
+      "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788225000004/jack-20250127.htm",
+      "type": "official-primary",
+      "retrieved": "2026-11-26",
+      "used_for": "FY2024 Jack in the Box brand same-store sales, openings, closures, net unit change, and restaurant/franchise-level margins."
+    },
+    {
+      "id": "S-026",
+      "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+      "title": "Jack in the Box Inc. Form 8-K Exhibit 99.1 — Q1 FY2026 Earnings Release (16 weeks ended Jan 18, 2026)",
+      "url": "https://www.sec.gov/Archives/edgar/data/807882/000080788226000039/ex991-q126earningsrelease.htm",
+      "type": "official-primary",
+      "retrieved": "2026-11-26",
+      "used_for": "Q1 FY2026 vs Q1 FY2025 same-store sales, franchise rental revenues, total revenues, and FY2026 unit/closure guidance."
     }
   ],
   "allowlisted_hosts": [

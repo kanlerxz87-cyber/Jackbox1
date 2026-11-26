@@ -41,7 +41,7 @@ sources.sources.forEach(s => {
 P(`source register: ${sources.sources.length} sources, all hosts on allowlist`);
 
 /* ---------- 2. dataset row checks ---------- */
-const SETS = ['tradearea', 'hazards', 'lease', 'valuation', 'quotes', 'model', 'stress', 'questions', 'suggestions', 'flagged'];
+const SETS = ['tradearea', 'tenant', 'hazards', 'lease', 'valuation', 'quotes', 'model', 'stress', 'questions', 'suggestions', 'flagged'];
 let rowCount = 0, verifiedCount = 0, unverifiedCount = 0;
 
 function rowsOf(ds, obj) {

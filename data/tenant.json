@@ -1,0 +1,151 @@
+{
+  "meta": {
+    "dataset": "tenant",
+    "version": "1.0",
+    "as_of": "2026-11-26",
+    "owner_session": "arena-b072f72e",
+    "purpose": "Multi-period operating series for Jack in the Box Inc. (NASDAQ: JACK) from official SEC EDGAR filings. Shows direction across FY2024, FY2025, and Q1 FY2026 rather than a single quarter. Corporate brand health is context only — it does not substitute for private franchisee financials or PARCEL-001 store-level sales."
+  },
+  "rows": [
+    {
+      "id": "TN-01",
+      "metric": "Jack in the Box system same-store sales (FY2024)",
+      "period": "FY2024",
+      "value": -1.3,
+      "unit": "% YoY",
+      "status": "verified",
+      "source_id": "S-011",
+      "note": "Company-operated 0.0%, franchised -1.5%."
+    },
+    {
+      "id": "TN-02",
+      "metric": "Jack in the Box system same-store sales (FY2025)",
+      "period": "FY2025",
+      "value": -4.2,
+      "unit": "% YoY",
+      "status": "verified",
+      "source_id": "S-011",
+      "note": "Company-operated -3.7% (transactions -5.7%, avg check +2.0%), franchised -4.3%."
+    },
+    {
+      "id": "TN-03",
+      "metric": "Jack in the Box system same-store sales (Q4 FY2025)",
+      "period": "Q4 FY2025 (12 wks ended 2025-09-28)",
+      "value": -7.4,
+      "unit": "% YoY",
+      "status": "verified",
+      "source_id": "S-023",
+      "note": "Company-operated -5.3%, franchised -7.6%. Sequential deterioration into fiscal year-end."
+    },
+    {
+      "id": "TN-04",
+      "metric": "Jack in the Box system same-store sales (Q1 FY2026)",
+      "period": "Q1 FY2026 (16 wks ended 2026-01-18)",
+      "value": -6.7,
+      "unit": "% YoY",
+      "status": "verified",
+      "source_id": "S-026",
+      "note": "Company-operated -4.7%, franchised -7.0% (vs Q1 FY2025 system +0.4%)."
+    },
+    {
+      "id": "TN-05",
+      "metric": "Jack in the Box restaurant openings (FY2024)",
+      "period": "FY2024",
+      "value": 30,
+      "unit": "restaurants",
+      "status": "verified",
+      "source_id": "S-025",
+      "note": "Gross new restaurant openings during FY2024."
+    },
+    {
+      "id": "TN-06",
+      "metric": "Jack in the Box restaurant closures (FY2024)",
+      "period": "FY2024",
+      "value": 25,
+      "unit": "restaurants",
+      "status": "verified",
+      "source_id": "S-025",
+      "note": "Net unit change +5 in FY2024."
+    },
+    {
+      "id": "TN-07",
+      "metric": "Jack in the Box restaurant openings (FY2025)",
+      "period": "FY2025",
+      "value": 31,
+      "unit": "restaurants",
+      "status": "verified",
+      "source_id": "S-023",
+      "note": "Gross new restaurant openings during FY2025."
+    },
+    {
+      "id": "TN-08",
+      "metric": "Jack in the Box restaurant closures (FY2025)",
+      "period": "FY2025",
+      "value": 86,
+      "unit": "restaurants",
+      "status": "verified",
+      "source_id": "S-023",
+      "note": "Net unit change -55 in FY2025. Includes 51 closures under the 'JACK on Track' block closure program announced April 2025 (47 closed in Q4 alone, 38 under JACK on Track)."
+    },
+    {
+      "id": "TN-09",
+      "metric": "Jack in the Box FY2026 restaurant count guidance",
+      "period": "FY2026 guidance",
+      "value": "2,050 to 2,100",
+      "unit": "restaurants",
+      "status": "verified-context",
+      "source_id": "S-026",
+      "note": "Management guidance: ~20 openings and ~50 to 100 closures (mostly franchised); same-store sales -1% to +1% vs FY2025."
+    },
+    {
+      "id": "TN-10",
+      "metric": "Jack in the Box brand franchise rental revenues (FY2025)",
+      "period": "FY2025 (52 wks ended 2025-09-28)",
+      "value": 332735,
+      "unit": "USD thousands",
+      "status": "verified",
+      "source_id": "S-024",
+      "note": "Consolidated franchise rental revenues (including Del Taco) were $368,643 thousand."
+    },
+    {
+      "id": "TN-11",
+      "metric": "Franchise rental revenues — Q1 FY2026 vs Q1 FY2025",
+      "period": "Q1 FY2026 (16 wks ended 2026-01-18)",
+      "value": 97387,
+      "unit": "USD thousands",
+      "status": "verified",
+      "source_id": "S-026",
+      "note": "Down from $105,781 thousand in Q1 FY2025 (-7.9% YoY), reflecting lower same-store sales and fewer franchised units."
+    },
+    {
+      "id": "TN-12",
+      "metric": "Jack in the Box franchise-level margin (FY2024)",
+      "period": "FY2024",
+      "value": 40.9,
+      "unit": "%",
+      "status": "verified",
+      "source_id": "S-025",
+      "note": "Restaurant-level margin was 21.7% in FY2024."
+    },
+    {
+      "id": "TN-13",
+      "metric": "PARCEL-001 store-level annual sales and rent-to-sales ratio",
+      "period": "Current",
+      "value": null,
+      "unit": "USD / %",
+      "status": "unverified",
+      "source_id": null,
+      "note": "Private operator data. Cannot be inferred from systemwide averages; must be requested under lease reporting clauses in the private workspace."
+    },
+    {
+      "id": "TN-14",
+      "metric": "PARCEL-001 franchisee guarantor financial strength",
+      "period": "Current",
+      "value": null,
+      "unit": "rating / coverage",
+      "status": "unverified",
+      "source_id": null,
+      "note": "Private entity. Public JACK filings cover the franchisor, not the specific franchisee operating PARCEL-001."
+    }
+  ]
+}
